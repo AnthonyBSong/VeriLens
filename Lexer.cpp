@@ -1,5 +1,8 @@
 #include <string>
 #include <iostream>
+#include <vector>
+#include "TokenTypes/TokenType.h"
+#include "TokenTypes/Keywords.h"
 
 class Lexer {
     private:
@@ -15,8 +18,14 @@ class Lexer {
 
         char advance() {
             position++;
-            previous_char = current_char;
+            char previous_char = current_char;
             current_char = input[position];
             return previous_char;
         }
+
+        std::vector<Token> run() {
+            
+        }
+
+
 };
