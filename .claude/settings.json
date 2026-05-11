@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(magick /Users/song/Projects/VeriLens/sources/VeriLens2.png -fuzz 8% -transparent \"rgb\\(246,246,246\\)\" -background \"#ffffff\" -flatten /Users/song/Projects/VeriLens/sources/VeriLens_light.png)"
+    ]
+  }
+}
