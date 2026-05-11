@@ -156,13 +156,13 @@ enum class TokenType {
     TILDE_CARET,        // ~^ or ^~ 
 
     // --- Shift Operators ---
-    LESS_LESS,          // <<  (logical left shift)
-    GREATER_GREATER,    // >>  (logical right shift)
-    LESS_LESS_LESS,     // <<< (arithmetic left shift)
-    GREATER_GREATER_GREATER, // >>> (arithmetic right shift)
+    LESS_LESS,          // << 
+    GREATER_GREATER,    // >> 
+    LESS_LESS_LESS,     // <<<
+    GREATER_GREATER_GREATER, // >>> 
 
     // --- Assignment ---
-    EQ,                 // =  (blocking assignment / continuous)
+    EQ,                 // = 
 
     // --- Ternary & Misc ---
     QUESTION,           // ?
