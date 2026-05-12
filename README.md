@@ -34,6 +34,27 @@ The validator builds a symbol table (module name → port list) as a first pass,
 **Diagram Frontend**
 Consumes the validated AST and renders the hardware diagram. The structural netlist model maps naturally to a graph — modules are nodes, port connections are edges.
 
+## Repository Structure
+
+VeriLens is a monorepo. The C++ core and all JS/TS frontends live together with clear package boundaries.
+
+```
+verilens/
+├── core/          # C++ — lexer, parser, AST, validator, JSON netlist output
+├── packages/
+│   ├── renderer/  # Shared diagram rendering — consumes JSON, used by all frontends
+│   ├── extension/ # VSCode extension — calls core binary, renders in a Webview panel
+│   ├── cli/       # Terminal tool — calls core binary, opens diagram in browser
+│   └── web/       # Website — drag-and-drop Verilog upload, fully browser-based
+└── schemas/       # JSON schema defining the netlist contract between core and renderer
+```
+
+The C++ core outputs a JSON netlist. That JSON is the interface between the C++ and JS sides — both can be developed independently as long as they agree on that schema.
+
+`packages/renderer` is the shared package that all three frontends depend on. Diagram rendering logic is written once and reused across the VSCode extension, CLI, and website.
+
+The VSCode extension and CLI invoke the compiled `core` binary via `child_process`. For the website, `core` can either be compiled to WebAssembly via Emscripten (fully client-side) or called from a backend server.
+
 ## What VeriLens does not do
 
 VeriLens is intentionally scoped to visualization. For other use cases we recommend:
