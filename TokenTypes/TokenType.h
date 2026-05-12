@@ -167,7 +167,7 @@ enum class TokenType {
     // --- Ternary & Misc ---
     QUESTION,           // ?
     COLON,              // :
-    COLON_COLON,        // :: (scope resolution, SystemVerilog)
+    COLON_COLON,        // :: (scope resolution for SystemVerilog)
 
     // --- Punctuation ---
     SEMICOLON,          // ;
