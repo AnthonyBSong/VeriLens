@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <unordered_map>
-#include "TokenType.h"
+#include "Token.h"
 
 // Maps every Verilog keyword string to its TokenType.
 // Usage: scan an identifier, then call lookupKeyword() to distinguish
