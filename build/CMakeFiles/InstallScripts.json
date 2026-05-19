@@ -1,9 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/Users/song/Projects/VeriLens/build/cmake_install.cmake",
-		"/Users/song/Projects/VeriLens/build/core/cmake_install.cmake",
-		"/Users/song/Projects/VeriLens/build/core/tests/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

@@ -1,1 +1,0 @@
-/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/lexer_tests.dir/lexer/lexer_test.cpp.o CMakeFiles/lexer_tests.dir/__/Lexer.cpp.o -o lexer_tests  /opt/homebrew/lib/libgtest_main.a /opt/homebrew/lib/libgtest.a
