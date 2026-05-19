@@ -127,18 +127,3 @@ VeriLens is intentionally scoped to visualization and structural understanding. 
 - **Synthesis** — [Yosys](https://github.com/YosysHQ/yosys)
 
 VeriLens does not aim to replace these tools. Instead, it complements them by helping users understand the structure of their hardware projects visually.
-
-## Project Goal
-
-The long-term goal of VeriLens is to become an open-source visual exploration tool for Verilog/SystemVerilog projects.
-
-A user should be able to open a hardware repository and quickly answer questions like:
-
-- What is the top-level module?
-- How are the major modules connected?
-- Where does this signal go?
-- What modules are inside this subsystem?
-- Which logic belongs to this clock or reset domain?
-- What does this design look like at a higher or lower abstraction level?
-
-VeriLens aims to make hardware codebases easier to navigate, explain, and debug through interactive visualization.
