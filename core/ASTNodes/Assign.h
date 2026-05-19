@@ -1,13 +1,14 @@
 #pragma once
-#include <string>
+#include <memory>
 #include "Node.h"
+#include "Expression.h"
 
 // Continuous assignment: assign lhs = rhs;
-// rhs is stored as raw text — we don't evaluate it, just need lhs to know what signal is driven.
 struct Assign : Node {
-    std::string lhs;  // signal being driven
-    std::string rhs;  // expression, opaque
+    ExprPtr lhs;  // usually IdentifierExpr or BitSelectExpr
+    ExprPtr rhs;  // full expression tree
 
-    Assign(const std::string& lhs, const std::string& rhs, int line, int column)
-        : Node(NodeKind::ASSIGN, line, column), lhs(lhs), rhs(rhs) {}
+    Assign(ExprPtr lhs, ExprPtr rhs, int line, int column)
+        : Node(NodeKind::ASSIGN, line, column),
+          lhs(std::move(lhs)), rhs(std::move(rhs)) {}
 };
