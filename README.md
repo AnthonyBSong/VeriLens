@@ -66,20 +66,17 @@ The frontend should make large hardware designs easier to understand by supporti
 - Clean hardware-oriented layout, not just raw graph output
 - Multiple views of the same design at different abstraction levels
 
-## Multiple Abstraction Levels
+## Diagram Views
 
-VeriLens is intended to support multiple visualization modes, because a single diagram is rarely enough to understand a real hardware project.
+VeriLens produces two diagram types per module. They are complementary — one shows what the hardware is made of, the other shows what the control logic is doing.
 
-Users should be able to switch between views such as:
+**Combined structural + dataflow view**
+The primary diagram for any module. Shows submodule instantiations and internal dataflow logic together — operator nodes (muxes, adders, gates) from `assign` statements alongside submodule boxes, all connected by signal edges. Real modules contain both, so separating them into distinct views would split apart tightly coupled logic and produce less useful diagrams. Users can zoom in to a single module, zoom out to the project hierarchy, expand or collapse submodules, and trace signals across module boundaries.
 
-- **Module hierarchy view** — shows the project-level hierarchy of modules and submodules
-- **RTL block/dataflow view** — shows structural data movement between registers, combinational logic, memories, and module instances
-- **FSM view** — shows detected or user-annotated finite state machines when possible
-- **Signal fan-in / fan-out view** — allows users to trace where a signal comes from and where it is used
-- **Clock/reset tree view** — highlights clock and reset distribution across the design
-- **Netlist/gate-level view** — provides a lower-level structural view when the input or backend representation supports it
+**FSM view**
+A per-module lens available on any module that contains a detectable state machine. VeriLens detects the state register and state transitions from `always` block `case` statement structure and renders a dedicated FSM diagram with states as nodes and transitions as labelled edges. Modules without a detectable FSM — pure datapath logic, memories, glue logic — simply do not show this view.
 
-This multi-view approach is an important part of VeriLens. Existing tools often produce a single static schematic or hierarchy graph, while VeriLens aims to provide an interactive frontend for exploring a hardware project from several useful perspectives.
+Consider a `datapath_controlunit` module: the combined view shows the hardware — an adder, a mux, registers, submodules, and the signal wires connecting them. The FSM view on the same module shows the control logic driving all of it — what states exist, what conditions cause transitions, what outputs are asserted in each state. A user understanding an unfamiliar design would naturally use both: the combined view to understand the structure, the FSM view to understand the behavior.
 
 ## Repository Structure
 
