@@ -1,0 +1,20 @@
+[
+  { "type": "MODULE",           "lexeme": "module" },
+  { "type": "IDENTIFIER",       "lexeme": "counter" },
+  { "type": "LPAREN",           "lexeme": "(" },
+  { "type": "INPUT",            "lexeme": "input" },
+  { "type": "IDENTIFIER",       "lexeme": "clk" },
+  { "type": "COMMA",            "lexeme": "," },
+  { "type": "OUTPUT",           "lexeme": "output" },
+  { "type": "REG",              "lexeme": "reg" },
+  { "type": "LBRACKET",         "lexeme": "[" },
+  { "type": "INTEGER_LITERAL",  "lexeme": "7" },
+  { "type": "COLON",            "lexeme": ":" },
+  { "type": "INTEGER_LITERAL",  "lexeme": "0" },
+  { "type": "RBRACKET",         "lexeme": "]" },
+  { "type": "IDENTIFIER",       "lexeme": "q" },
+  { "type": "RPAREN",           "lexeme": ")" },
+  { "type": "SEMICOLON",        "lexeme": ";" },
+  { "type": "ENDMODULE",        "lexeme": "endmodule" },
+  { "type": "END_OF_FILE",      "lexeme": "" }
+]

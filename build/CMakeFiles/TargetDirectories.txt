@@ -1,0 +1,10 @@
+/Users/song/Projects/VeriLens/build/CMakeFiles/test.dir
+/Users/song/Projects/VeriLens/build/CMakeFiles/edit_cache.dir
+/Users/song/Projects/VeriLens/build/CMakeFiles/rebuild_cache.dir
+/Users/song/Projects/VeriLens/build/core/CMakeFiles/test.dir
+/Users/song/Projects/VeriLens/build/core/CMakeFiles/edit_cache.dir
+/Users/song/Projects/VeriLens/build/core/CMakeFiles/rebuild_cache.dir
+/Users/song/Projects/VeriLens/build/core/tests/CMakeFiles/lexer_tests.dir
+/Users/song/Projects/VeriLens/build/core/tests/CMakeFiles/test.dir
+/Users/song/Projects/VeriLens/build/core/tests/CMakeFiles/edit_cache.dir
+/Users/song/Projects/VeriLens/build/core/tests/CMakeFiles/rebuild_cache.dir

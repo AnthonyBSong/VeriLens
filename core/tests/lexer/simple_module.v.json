@@ -1,0 +1,18 @@
+[
+  { "type": "MODULE",       "lexeme": "module" },
+  { "type": "IDENTIFIER",   "lexeme": "counter" },
+  { "type": "LPAREN",       "lexeme": "(" },
+  { "type": "IDENTIFIER",   "lexeme": "clk" },
+  { "type": "COMMA",        "lexeme": "," },
+  { "type": "IDENTIFIER",   "lexeme": "reset" },
+  { "type": "RPAREN",       "lexeme": ")" },
+  { "type": "SEMICOLON",    "lexeme": ";" },
+  { "type": "INPUT",        "lexeme": "input" },
+  { "type": "IDENTIFIER",   "lexeme": "clk" },
+  { "type": "SEMICOLON",    "lexeme": ";" },
+  { "type": "INPUT",        "lexeme": "input" },
+  { "type": "IDENTIFIER",   "lexeme": "reset" },
+  { "type": "SEMICOLON",    "lexeme": ";" },
+  { "type": "ENDMODULE",    "lexeme": "endmodule" },
+  { "type": "END_OF_FILE",  "lexeme": "" }
+]
