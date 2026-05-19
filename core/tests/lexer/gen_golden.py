@@ -1,0 +1,175 @@
+#!/usr/bin/env python3
+"""Generates .json golden files for Verilog lexer tests."""
+
+import json, sys
+from pathlib import Path
+
+KEYWORD_TYPES = {
+    "module": "MODULE", "endmodule": "ENDMODULE",
+    "input": "INPUT", "output": "OUTPUT", "inout": "INOUT",
+    "wire": "WIRE", "tri": "TRI", "tri0": "TRI0", "tri1": "TRI1",
+    "wand": "WAND", "wor": "WOR", "supply0": "SUPPLY0", "supply1": "SUPPLY1",
+    "reg": "REG", "logic": "LOGIC", "integer": "INTEGER", "real": "REAL",
+    "time": "TIME", "realtime": "REALTIME",
+    "parameter": "PARAMETER", "localparam": "LOCALPARAM", "defparam": "DEFPARAM",
+    "always": "ALWAYS", "initial": "INITIAL", "begin": "BEGIN", "end": "END",
+    "if": "IF", "else": "ELSE", "case": "CASE", "casex": "CASEX",
+    "casez": "CASEZ", "endcase": "ENDCASE", "default": "DEFAULT",
+    "for": "FOR", "while": "WHILE", "repeat": "REPEAT", "forever": "FOREVER",
+    "disable": "DISABLE", "fork": "FORK", "join": "JOIN",
+    "posedge": "POSEDGE", "negedge": "NEGEDGE",
+    "assign": "ASSIGN", "deassign": "DEASSIGN", "force": "FORCE", "release": "RELEASE",
+    "and": "AND", "or": "OR", "not": "NOT", "nand": "NAND", "nor": "NOR",
+    "xor": "XOR", "xnor": "XNOR", "buf": "BUF",
+    "bufif0": "BUFIF0", "bufif1": "BUFIF1", "notif0": "NOTIF0", "notif1": "NOTIF1",
+    "function": "FUNCTION", "endfunction": "ENDFUNCTION",
+    "task": "TASK", "endtask": "ENDTASK", "automatic": "AUTOMATIC", "return": "RETURN",
+    "generate": "GENERATE", "endgenerate": "ENDGENERATE", "genvar": "GENVAR",
+    "strong0": "STRONG0", "strong1": "STRONG1", "weak0": "WEAK0", "weak1": "WEAK1",
+    "highz0": "HIGHZ0", "highz1": "HIGHZ1", "pull0": "PULL0", "pull1": "PULL1",
+    "signed": "SIGNED", "unsigned": "UNSIGNED",
+    "specify": "SPECIFY", "endspecify": "ENDSPECIFY", "specparam": "SPECPARAM",
+}
+
+THREE_MAP = {
+    "===": "EQ_EQ_EQ", "!==": "BANG_EQ_EQ",
+    "<<<": "LESS_LESS_LESS", ">>>": "GREATER_GREATER_GREATER",
+}
+TWO_MAP = {
+    "==": "EQ_EQ", "!=": "BANG_EQ", "<=": "LESS_EQ", ">=": "GREATER_EQ",
+    "<<": "LESS_LESS", ">>": "GREATER_GREATER", "**": "STAR_STAR",
+    "&&": "AMP_AMP", "||": "PIPE_PIPE",
+    "~&": "TILDE_AMP", "~|": "TILDE_PIPE", "~^": "TILDE_CARET", "^~": "TILDE_CARET",
+    "::": "COLON_COLON",
+}
+ONE_MAP = {
+    '+': "PLUS", '-': "MINUS", '*': "STAR", '/': "SLASH", '%': "PERCENT",
+    '^': "CARET", '!': "BANG", '&': "AMP", '|': "PIPE", '~': "TILDE",
+    '<': "LESS", '>': "GREATER", '=': "EQ", '?': "QUESTION",
+    ':': "COLON", ';': "SEMICOLON", ',': "COMMA", '.': "DOT",
+    '#': "HASH", '@': "AT", "'": "APOSTROPHE",
+    '(': "LPAREN", ')': "RPAREN",
+    '[': "LBRACKET", ']': "RBRACKET",
+    '{': "LBRACE", '}': "RBRACE",
+}
+
+def tokenize(src):
+    tokens = []
+    i, n = 0, len(src)
+
+    while i < n:
+        # whitespace
+        if src[i].isspace():
+            i += 1
+            continue
+
+        # single-line comment
+        if src[i:i+2] == '//':
+            while i < n and src[i] != '\n':
+                i += 1
+            continue
+
+        # block comment
+        if src[i:i+2] == '/*':
+            i += 2
+            while i < n and src[i:i+2] != '*/':
+                i += 1
+            i += 2
+            continue
+
+        # compiler directive
+        if src[i] == '`':
+            j = i + 1
+            while j < n and (src[j].isalnum() or src[j] == '_'):
+                j += 1
+            tokens.append({"type": "COMPILER_DIRECTIVE", "lexeme": src[i:j]})
+            i = j
+            continue
+
+        # system task
+        if src[i] == '$':
+            j = i + 1
+            while j < n and (src[j].isalnum() or src[j] == '_'):
+                j += 1
+            tokens.append({"type": "SYSTEM_TASK", "lexeme": src[i:j]})
+            i = j
+            continue
+
+        # string literal
+        if src[i] == '"':
+            j = i + 1
+            while j < n and src[j] != '"':
+                if src[j] == '\\':
+                    j += 1
+                j += 1
+            j += 1
+            tokens.append({"type": "STRING_LITERAL", "lexeme": src[i:j]})
+            i = j
+            continue
+
+        # number (integer or real or sized)
+        if src[i].isdigit():
+            j = i
+            while j < n and (src[j].isdigit() or src[j] == '_'):
+                j += 1
+            if j < n and src[j] == "'" and j+1 < n and src[j+1].lower() in 'bodh':
+                j += 2
+                while j < n and (src[j].isalnum() or src[j] == '_'):
+                    j += 1
+                tokens.append({"type": "INTEGER_LITERAL", "lexeme": src[i:j]})
+            elif j < n and src[j] == '.' and j+1 < n and src[j+1].isdigit():
+                j += 1
+                while j < n and (src[j].isdigit() or src[j] == '_'):
+                    j += 1
+                if j < n and src[j] in 'eE':
+                    j += 1
+                    if j < n and src[j] in '+-':
+                        j += 1
+                    while j < n and src[j].isdigit():
+                        j += 1
+                tokens.append({"type": "REAL_LITERAL", "lexeme": src[i:j]})
+            else:
+                tokens.append({"type": "INTEGER_LITERAL", "lexeme": src[i:j]})
+            i = j
+            continue
+
+        # identifier or keyword
+        if src[i].isalpha() or src[i] == '_':
+            j = i
+            while j < n and (src[j].isalnum() or src[j] == '_'):
+                j += 1
+            word = src[i:j]
+            tokens.append({"type": KEYWORD_TYPES.get(word, "IDENTIFIER"), "lexeme": word})
+            i = j
+            continue
+
+        # operators — longest match first
+        if src[i:i+3] in THREE_MAP:
+            tokens.append({"type": THREE_MAP[src[i:i+3]], "lexeme": src[i:i+3]})
+            i += 3
+        elif src[i:i+2] in TWO_MAP:
+            tokens.append({"type": TWO_MAP[src[i:i+2]], "lexeme": src[i:i+2]})
+            i += 2
+        elif src[i] in ONE_MAP:
+            tokens.append({"type": ONE_MAP[src[i]], "lexeme": src[i]})
+            i += 1
+        else:
+            tokens.append({"type": "UNKNOWN", "lexeme": src[i]})
+            i += 1
+
+    tokens.append({"type": "END_OF_FILE", "lexeme": ""})
+    return tokens
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: python3 gen_golden.py <file.v> [file2.v ...]")
+        sys.exit(1)
+
+    for path in sys.argv[1:]:
+        src = Path(path).read_text()
+        tokens = tokenize(src)
+        out = path + ".json"
+        with open(out, 'w') as f:
+            json.dump(tokens, f, indent=2)
+        print(f"{path}: {len(tokens)} tokens → {out}")
