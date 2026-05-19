@@ -113,7 +113,17 @@ cmake --build build
 
 ### Linux
 
-Install the equivalent packages for your distro, then build:
+The recommended approach is **Nix**, which works on any distro and uses a declarative `shell.nix`:
+
+```bash
+nix-shell        # drops you into a shell with all dependencies available
+cmake -S . -B build
+cmake --build build
+```
+
+If you don't have Nix, install it from [nixos.org/download](https://nixos.org/download) first.
+
+Alternatively, install manually for your distro:
 
 ```bash
 # Debian / Ubuntu
@@ -121,9 +131,6 @@ sudo apt install cmake libgtest-dev nlohmann-json3-dev
 
 # Arch
 sudo pacman -S cmake gtest nlohmann-json
-
-cmake -S . -B build
-cmake --build build
 ```
 
 ### Windows
