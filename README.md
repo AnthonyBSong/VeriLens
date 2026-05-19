@@ -99,6 +99,53 @@ The C++ core outputs a JSON structural netlist. This JSON format is the interfac
 
 The VSCode extension and CLI invoke the compiled `core` binary through `child_process`. For the website, `core` can either be compiled to WebAssembly using Emscripten for a fully client-side experience, or called from a backend server for larger projects and heavier analysis.
 
+## Installation
+
+### macOS
+
+Install dependencies via Homebrew, then build:
+
+```bash
+brew bundle
+cmake -S . -B build
+cmake --build build
+```
+
+### Linux
+
+Install the equivalent packages for your distro, then build:
+
+```bash
+# Debian / Ubuntu
+sudo apt install cmake libgtest-dev nlohmann-json3-dev
+
+# Arch
+sudo pacman -S cmake gtest nlohmann-json
+
+cmake -S . -B build
+cmake --build build
+```
+
+### Windows
+
+Install CMake via winget, then install C++ libraries via vcpkg:
+
+```powershell
+# Install tools
+winget import -i winget-packages.json
+
+# Install C++ libraries
+vcpkg install
+
+# Build
+cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake"
+cmake --build build
+```
+
+> **Note:** `VCPKG_ROOT` should point to your local vcpkg installation. If you do not have vcpkg, clone it from [github.com/microsoft/vcpkg](https://github.com/microsoft/vcpkg) and run `bootstrap-vcpkg.bat`.
+
+---
+
 ## What makes VeriLens different
 
 VeriLens is not trying to be the first tool that draws a diagram from Verilog. Instead, its goal is to provide a better developer experience for understanding real hardware projects.
