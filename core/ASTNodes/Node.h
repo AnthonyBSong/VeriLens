@@ -1,4 +1,5 @@
 #pragma once
+#include "ValidationError.h"
 
 enum class NodeKind {
     MODULE,
@@ -10,7 +11,8 @@ enum class NodeKind {
     ALWAYS_BLOCK,
 };
 
-struct Node {
+class Node {
+public:
     NodeKind kind;
     int      line;
     int      column;
@@ -19,4 +21,5 @@ struct Node {
         : kind(kind), line(line), column(column) {}
 
     virtual ~Node() = default;
+    virtual void validate(ValidationContext& ctx) const {}
 };

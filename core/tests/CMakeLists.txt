@@ -17,6 +17,7 @@ add_executable(parser_tests
     ../Lexer.cpp
     ../Parser.cpp
     ../Linker.cpp
+    ../Validator.cpp
 )
 target_include_directories(parser_tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/..)
 target_link_libraries(parser_tests PRIVATE GTest::gtest_main nlohmann_json::nlohmann_json)

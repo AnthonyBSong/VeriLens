@@ -72,7 +72,7 @@ digraph AST {
   n18 -> n31;
     n32 [label=".u_to_mem_nm1\n(u_to_mem_nm1)" shape=plaintext fontsize=9];
   n18 -> n32;
-    n33 [label="M10KMem\n[external]\n(mem_n)" shape=box style="filled,dashed" fillcolor="#d5d8dc" fontcolor="#5d6d7e"];
+    n33 [label="M10KMem\n(mem_n)" shape=box style="filled" fillcolor="#a9dfbf" fontcolor="#1b5e20"];
   n1 -> n33 [label="instance"];
     n34 [label=".clk\n(clk)" shape=plaintext fontsize=9];
   n33 -> n34;
@@ -86,7 +86,7 @@ digraph AST {
   n33 -> n38;
     n39 [label=".q\n(u_up)" shape=plaintext fontsize=9];
   n33 -> n39;
-    n40 [label="M10KMem\n[external]\n(mem_nm1)" shape=box style="filled,dashed" fillcolor="#d5d8dc" fontcolor="#5d6d7e"];
+    n40 [label="M10KMem\n(mem_nm1)" shape=box style="filled" fillcolor="#a9dfbf" fontcolor="#1b5e20"];
   n1 -> n40 [label="instance"];
     n41 [label=".clk\n(clk)" shape=plaintext fontsize=9];
   n40 -> n41;
@@ -168,5 +168,38 @@ digraph AST {
   n77 -> n80 [label="0"];
   n75 -> n76 [label="lhs"];
   n75 -> n77 [label="rhs"];
+  }
+  subgraph cluster_M10KMem_1 {
+    label=<<b>module M10KMem</b>>;
+    style=filled; fillcolor="#eaf4fb";
+    n81 [label="module\nM10KMem" shape=box3d style=filled fillcolor="#aed6f1" fontcolor="#1a237e" fontsize=13];
+    n82 [label="input\nclk" shape=parallelogram style=filled fillcolor="#a9cce3"];
+  n81 -> n82 [label="port"];
+    n83 [label="input\nwe" shape=parallelogram style=filled fillcolor="#a9cce3"];
+  n81 -> n83 [label="port"];
+    n84 [label="input\nwrite_address\n[0:0]" shape=parallelogram style=filled fillcolor="#a9cce3"];
+  n81 -> n84 [label="port"];
+    n85 [label="input\nread_address\n[0:0]" shape=parallelogram style=filled fillcolor="#a9cce3"];
+  n81 -> n85 [label="port"];
+    n86 [label="input\nd\n[17:0]" shape=parallelogram style=filled fillcolor="#a9cce3"];
+  n81 -> n86 [label="port"];
+    n87 [label="output\nq\n[17:0]" shape=parallelogram style=filled fillcolor="#a9cce3"];
+  n81 -> n87 [label="port"];
+    n88 [label="param\nDEPTH=256" shape=note style=filled fillcolor="#fef9e7"];
+  n81 -> n88 [label="param"];
+    n89 [label="always\n@(posedge clk)" style=filled fillcolor="#d2b4de" fontcolor="#4a148c"];
+  n81 -> n89 [label="always"];
+  n90 [label="SEQ_BLOCK" style=filled fillcolor="#d5f5e3"];
+  n91 [label="IF_STATEMENT" style=filled fillcolor="#e8daef"];
+  n92 [label="we" shape=ellipse style=filled fillcolor="#aed6f1"];
+  n93 [label="NONBLOCKING_ASSIGN" style=filled fillcolor="#d5f5e3"];
+  n94 [label="q" shape=ellipse style=filled fillcolor="#aed6f1"];
+  n95 [label="d" shape=ellipse style=filled fillcolor="#aed6f1"];
+  n93 -> n94 [label="lhs"];
+  n93 -> n95 [label="rhs"];
+  n91 -> n92 [label="cond"];
+  n91 -> n93 [label="then"];
+  n90 -> n91;
+  n89 -> n90;
   }
 }
