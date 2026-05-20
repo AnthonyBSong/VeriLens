@@ -1,0 +1,1580 @@
+[
+  {
+    "always_blocks": [],
+    "assigns": [
+      {"lhs": {"kind": "IDENTIFIER", "name": "HEX4"}, "rhs": {"kind": "LITERAL", "value": "7'b1111111"}},
+      {"lhs": {"kind": "IDENTIFIER", "name": "HEX5"}, "rhs": {"kind": "LITERAL", "value": "7'b1111111"}}
+    ],
+    "instances": [
+      {
+        "connections": [{"port": "", "signal": "HEX0"}, {"port": "", "signal": "hex3_hex0[3:0]"}],
+        "instance": "Digit0",
+        "module": "HexDigit",
+        "parameters": [],
+        "resolved": false
+      },
+      {
+        "connections": [{"port": "", "signal": "HEX1"}, {"port": "", "signal": "hex3_hex0[7:4]"}],
+        "instance": "Digit1",
+        "module": "HexDigit",
+        "parameters": [],
+        "resolved": false
+      },
+      {
+        "connections": [{"port": "", "signal": "HEX2"}, {"port": "", "signal": "hex3_hex0[11:8]"}],
+        "instance": "Digit2",
+        "module": "HexDigit",
+        "parameters": [],
+        "resolved": false
+      },
+      {
+        "connections": [{"port": "", "signal": "HEX3"}, {"port": "", "signal": "hex3_hex0[15:12]"}],
+        "instance": "Digit3",
+        "module": "HexDigit",
+        "parameters": [],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {"port": "clk", "signal": "m10k_pll"},
+          {"port": "rst", "signal": "~KEY[0]"},
+          {"port": "vga_clk", "signal": "vga_pll"},
+          {"port": "hsync", "signal": "VGA_HS"},
+          {"port": "vsync", "signal": "VGA_VS"},
+          {"port": "red", "signal": "VGA_R"},
+          {"port": "green", "signal": "VGA_G"},
+          {"port": "blue", "signal": "VGA_B"},
+          {"port": "sync", "signal": "VGA_SYNC_N"},
+          {"port": "vga_clk_out", "signal": "VGA_CLK"},
+          {"port": "blank", "signal": "VGA_BLANK_N"}
+        ],
+        "instance": "DUT",
+        "module": "Mandelbrot_v2",
+        "parameters": [],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {"port": "system_pll_ref_clk_clk", "signal": "CLOCK_50"},
+          {"port": "system_pll_ref_reset_reset", "signal": "1'b0"},
+          {"port": "vga_pll_clk", "signal": "vga_pll"},
+          {"port": "m10k_pll_clk", "signal": "m10k_pll"},
+          {"port": "pio_horizontal_control_export", "signal": "pio_horizontal_control_export"},
+          {"port": "pio_vertical_control_export", "signal": "pio_vertical_control_export"},
+          {"port": "pio_zoom_control_export", "signal": "pio_zoom_control_export"},
+          {"port": "av_config_SCLK", "signal": "FPGA_I2C_SCLK"},
+          {"port": "av_config_SDAT", "signal": "FPGA_I2C_SDAT"},
+          {"port": "audio_pll_ref_clk_clk", "signal": "CLOCK3_50"},
+          {"port": "audio_pll_ref_reset_reset", "signal": "1'b0"},
+          {"port": "audio_clk_clk", "signal": "AUD_XCK"},
+          {"port": "audio_ADCDAT", "signal": "AUD_ADCDAT"},
+          {"port": "audio_ADCLRCK", "signal": "AUD_ADCLRCK"},
+          {"port": "audio_BCLK", "signal": "AUD_BCLK"},
+          {"port": "audio_DACDAT", "signal": "AUD_DACDAT"},
+          {"port": "audio_DACLRCK", "signal": "AUD_DACLRCK"},
+          {"port": "slider_switches_export", "signal": "SW"},
+          {"port": "pushbuttons_export", "signal": "~KEY[3:0]"},
+          {"port": "leds_export", "signal": "LEDR"},
+          {"port": "sdram_clk_clk", "signal": "DRAM_CLK"},
+          {"port": "memory_mem_a", "signal": "HPS_DDR3_ADDR"},
+          {"port": "memory_mem_ba", "signal": "HPS_DDR3_BA"},
+          {"port": "memory_mem_ck", "signal": "HPS_DDR3_CK_P"},
+          {"port": "memory_mem_ck_n", "signal": "HPS_DDR3_CK_N"},
+          {"port": "memory_mem_cke", "signal": "HPS_DDR3_CKE"},
+          {"port": "memory_mem_cs_n", "signal": "HPS_DDR3_CS_N"},
+          {"port": "memory_mem_ras_n", "signal": "HPS_DDR3_RAS_N"},
+          {"port": "memory_mem_cas_n", "signal": "HPS_DDR3_CAS_N"},
+          {"port": "memory_mem_we_n", "signal": "HPS_DDR3_WE_N"},
+          {"port": "memory_mem_reset_n", "signal": "HPS_DDR3_RESET_N"},
+          {"port": "memory_mem_dq", "signal": "HPS_DDR3_DQ"},
+          {"port": "memory_mem_dqs", "signal": "HPS_DDR3_DQS_P"},
+          {"port": "memory_mem_dqs_n", "signal": "HPS_DDR3_DQS_N"},
+          {"port": "memory_mem_odt", "signal": "HPS_DDR3_ODT"},
+          {"port": "memory_mem_dm", "signal": "HPS_DDR3_DM"},
+          {"port": "memory_oct_rzqin", "signal": "HPS_DDR3_RZQ"},
+          {"port": "hps_io_hps_io_gpio_inst_GPIO35", "signal": "HPS_ENET_INT_N"},
+          {"port": "hps_io_hps_io_emac1_inst_TX_CLK", "signal": "HPS_ENET_GTX_CLK"},
+          {"port": "hps_io_hps_io_emac1_inst_TXD0", "signal": "HPS_ENET_TX_DATA[0]"},
+          {"port": "hps_io_hps_io_emac1_inst_TXD1", "signal": "HPS_ENET_TX_DATA[1]"},
+          {"port": "hps_io_hps_io_emac1_inst_TXD2", "signal": "HPS_ENET_TX_DATA[2]"},
+          {"port": "hps_io_hps_io_emac1_inst_TXD3", "signal": "HPS_ENET_TX_DATA[3]"},
+          {"port": "hps_io_hps_io_emac1_inst_RXD0", "signal": "HPS_ENET_RX_DATA[0]"},
+          {"port": "hps_io_hps_io_emac1_inst_MDIO", "signal": "HPS_ENET_MDIO"},
+          {"port": "hps_io_hps_io_emac1_inst_MDC", "signal": "HPS_ENET_MDC"},
+          {"port": "hps_io_hps_io_emac1_inst_RX_CTL", "signal": "HPS_ENET_RX_DV"},
+          {"port": "hps_io_hps_io_emac1_inst_TX_CTL", "signal": "HPS_ENET_TX_EN"},
+          {"port": "hps_io_hps_io_emac1_inst_RX_CLK", "signal": "HPS_ENET_RX_CLK"},
+          {"port": "hps_io_hps_io_emac1_inst_RXD1", "signal": "HPS_ENET_RX_DATA[1]"},
+          {"port": "hps_io_hps_io_emac1_inst_RXD2", "signal": "HPS_ENET_RX_DATA[2]"},
+          {"port": "hps_io_hps_io_emac1_inst_RXD3", "signal": "HPS_ENET_RX_DATA[3]"},
+          {"port": "hps_io_hps_io_qspi_inst_IO0", "signal": "HPS_FLASH_DATA[0]"},
+          {"port": "hps_io_hps_io_qspi_inst_IO1", "signal": "HPS_FLASH_DATA[1]"},
+          {"port": "hps_io_hps_io_qspi_inst_IO2", "signal": "HPS_FLASH_DATA[2]"},
+          {"port": "hps_io_hps_io_qspi_inst_IO3", "signal": "HPS_FLASH_DATA[3]"},
+          {"port": "hps_io_hps_io_qspi_inst_SS0", "signal": "HPS_FLASH_NCSO"},
+          {"port": "hps_io_hps_io_qspi_inst_CLK", "signal": "HPS_FLASH_DCLK"},
+          {"port": "hps_io_hps_io_gpio_inst_GPIO61", "signal": "HPS_GSENSOR_INT"},
+          {"port": "hps_io_hps_io_gpio_inst_GPIO40", "signal": "HPS_GPIO[0]"},
+          {"port": "hps_io_hps_io_gpio_inst_GPIO41", "signal": "HPS_GPIO[1]"},
+          {"port": "hps_io_hps_io_gpio_inst_GPIO48", "signal": "HPS_I2C_CONTROL"},
+          {"port": "hps_io_hps_io_i2c0_inst_SDA", "signal": "HPS_I2C1_SDAT"},
+          {"port": "hps_io_hps_io_i2c0_inst_SCL", "signal": "HPS_I2C1_SCLK"},
+          {"port": "hps_io_hps_io_i2c1_inst_SDA", "signal": "HPS_I2C2_SDAT"},
+          {"port": "hps_io_hps_io_i2c1_inst_SCL", "signal": "HPS_I2C2_SCLK"},
+          {"port": "hps_io_hps_io_gpio_inst_GPIO54", "signal": "HPS_KEY"},
+          {"port": "hps_io_hps_io_gpio_inst_GPIO53", "signal": "HPS_LED"},
+          {"port": "hps_io_hps_io_sdio_inst_CMD", "signal": "HPS_SD_CMD"},
+          {"port": "hps_io_hps_io_sdio_inst_D0", "signal": "HPS_SD_DATA[0]"},
+          {"port": "hps_io_hps_io_sdio_inst_D1", "signal": "HPS_SD_DATA[1]"},
+          {"port": "hps_io_hps_io_sdio_inst_CLK", "signal": "HPS_SD_CLK"},
+          {"port": "hps_io_hps_io_sdio_inst_D2", "signal": "HPS_SD_DATA[2]"},
+          {"port": "hps_io_hps_io_sdio_inst_D3", "signal": "HPS_SD_DATA[3]"},
+          {"port": "hps_io_hps_io_spim1_inst_CLK", "signal": "HPS_SPIM_CLK"},
+          {"port": "hps_io_hps_io_spim1_inst_MOSI", "signal": "HPS_SPIM_MOSI"},
+          {"port": "hps_io_hps_io_spim1_inst_MISO", "signal": "HPS_SPIM_MISO"},
+          {"port": "hps_io_hps_io_spim1_inst_SS0", "signal": "HPS_SPIM_SS"},
+          {"port": "hps_io_hps_io_uart0_inst_RX", "signal": "HPS_UART_RX"},
+          {"port": "hps_io_hps_io_uart0_inst_TX", "signal": "HPS_UART_TX"},
+          {"port": "hps_io_hps_io_gpio_inst_GPIO09", "signal": "HPS_CONV_USB_N"},
+          {"port": "hps_io_hps_io_usb1_inst_D0", "signal": "HPS_USB_DATA[0]"},
+          {"port": "hps_io_hps_io_usb1_inst_D1", "signal": "HPS_USB_DATA[1]"},
+          {"port": "hps_io_hps_io_usb1_inst_D2", "signal": "HPS_USB_DATA[2]"},
+          {"port": "hps_io_hps_io_usb1_inst_D3", "signal": "HPS_USB_DATA[3]"},
+          {"port": "hps_io_hps_io_usb1_inst_D4", "signal": "HPS_USB_DATA[4]"},
+          {"port": "hps_io_hps_io_usb1_inst_D5", "signal": "HPS_USB_DATA[5]"},
+          {"port": "hps_io_hps_io_usb1_inst_D6", "signal": "HPS_USB_DATA[6]"},
+          {"port": "hps_io_hps_io_usb1_inst_D7", "signal": "HPS_USB_DATA[7]"},
+          {"port": "hps_io_hps_io_usb1_inst_CLK", "signal": "HPS_USB_CLKOUT"},
+          {"port": "hps_io_hps_io_usb1_inst_STP", "signal": "HPS_USB_STP"},
+          {"port": "hps_io_hps_io_usb1_inst_DIR", "signal": "HPS_USB_DIR"},
+          {"port": "hps_io_hps_io_usb1_inst_NXT", "signal": "HPS_USB_NXT"}
+        ],
+        "instance": "The_System",
+        "module": "Computer_System",
+        "parameters": [],
+        "resolved": false
+      }
+    ],
+    "name": "DE1_SoC_Computer",
+    "net_decls": [
+      {"lsb": 0, "msb": 15, "name": "hex3_hex0", "scalar": false, "type": "wire"},
+      {"lsb": 0, "msb": 0, "name": "vga_pll", "scalar": true, "type": "wire"},
+      {"lsb": 0, "msb": 0, "name": "m10k_pll", "scalar": true, "type": "wire"},
+      {"lsb": 0, "msb": 31, "name": "pio_horizontal_control_export", "scalar": false, "type": "wire"},
+      {"lsb": 0, "msb": 31, "name": "pio_vertical_control_export", "scalar": false, "type": "wire"},
+      {"lsb": 0, "msb": 1, "name": "pio_zoom_control_export", "scalar": false, "type": "wire"}
+    ],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "CLOCK_50",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "CLOCK2_50",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "CLOCK3_50",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "CLOCK4_50",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "ADC_CS_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "ADC_DIN", "scalar": true, "type": "unspecified"},
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "ADC_DOUT",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "ADC_SCLK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "AUD_ADCDAT",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "AUD_ADCLRCK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "AUD_BCLK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "AUD_DACDAT",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "AUD_DACLRCK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "AUD_XCK", "scalar": true, "type": "unspecified"},
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "DRAM_ADDR",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "DRAM_BA", "scalar": true, "type": "unspecified"},
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "DRAM_CAS_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "DRAM_CKE",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "DRAM_CLK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "DRAM_CS_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "DRAM_DQ", "scalar": true, "type": "unspecified"},
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "DRAM_LDQM",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "DRAM_RAS_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "DRAM_UDQM",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "DRAM_WE_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "FPGA_I2C_SCLK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "FPGA_I2C_SDAT",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "GPIO_0", "scalar": true, "type": "unspecified"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "GPIO_1", "scalar": true, "type": "unspecified"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "HEX0", "scalar": true, "type": "unspecified"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "HEX1", "scalar": true, "type": "unspecified"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "HEX2", "scalar": true, "type": "unspecified"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "HEX3", "scalar": true, "type": "unspecified"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "HEX4", "scalar": true, "type": "unspecified"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "HEX5", "scalar": true, "type": "unspecified"},
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "IRDA_RXD",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "IRDA_TXD",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "KEY", "scalar": true, "type": "unspecified"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "LEDR", "scalar": true, "type": "unspecified"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "PS2_CLK", "scalar": true, "type": "unspecified"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "PS2_DAT", "scalar": true, "type": "unspecified"},
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "PS2_CLK2",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "PS2_DAT2",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "SW", "scalar": true, "type": "unspecified"},
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "TD_CLK27",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "TD_DATA", "scalar": true, "type": "unspecified"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "TD_HS", "scalar": true, "type": "unspecified"},
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "TD_RESET_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "TD_VS", "scalar": true, "type": "unspecified"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "VGA_B", "scalar": true, "type": "unspecified"},
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "VGA_BLANK_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "VGA_CLK", "scalar": true, "type": "unspecified"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "VGA_G", "scalar": true, "type": "unspecified"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "VGA_HS", "scalar": true, "type": "unspecified"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "VGA_R", "scalar": true, "type": "unspecified"},
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "VGA_SYNC_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "VGA_VS", "scalar": true, "type": "unspecified"},
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_DDR3_ADDR",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_DDR3_BA",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_DDR3_CAS_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_DDR3_CKE",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_DDR3_CK_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_DDR3_CK_P",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_DDR3_CS_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_DDR3_DM",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_DDR3_DQ",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_DDR3_DQS_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_DDR3_DQS_P",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_DDR3_ODT",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_DDR3_RAS_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_DDR3_RESET_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_DDR3_RZQ",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_DDR3_WE_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_ENET_GTX_CLK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_ENET_INT_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_ENET_MDC",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_ENET_MDIO",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_ENET_RX_CLK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_ENET_RX_DATA",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_ENET_RX_DV",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_ENET_TX_DATA",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_ENET_TX_EN",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_FLASH_DATA",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_FLASH_DCLK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_FLASH_NCSO",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_GSENSOR_INT",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_GPIO",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_I2C_CONTROL",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_I2C1_SCLK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_I2C1_SDAT",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_I2C2_SCLK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_I2C2_SDAT",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "HPS_KEY", "scalar": true, "type": "unspecified"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "HPS_LED", "scalar": true, "type": "unspecified"},
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_SD_CLK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_SD_CMD",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_SD_DATA",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_SPIM_CLK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_SPIM_MISO",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_SPIM_MOSI",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_SPIM_SS",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_UART_RX",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_UART_TX",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_CONV_USB_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_USB_CLKOUT",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_USB_DATA",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_USB_DIR",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_USB_NXT",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_USB_STP",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "CLOCK_50",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "CLOCK2_50",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "CLOCK3_50",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "CLOCK4_50",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 0,
+        "name": "ADC_CS_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "ADC_DIN",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "ADC_DOUT",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "ADC_SCLK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "AUD_ADCDAT",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 0,
+        "name": "AUD_ADCLRCK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 0,
+        "name": "AUD_BCLK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "AUD_DACDAT",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 0,
+        "name": "AUD_DACLRCK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "AUD_XCK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 12,
+        "name": "DRAM_ADDR",
+        "scalar": false,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 1,
+        "name": "DRAM_BA",
+        "scalar": false,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "DRAM_CAS_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "DRAM_CKE",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "DRAM_CLK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "DRAM_CS_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 15,
+        "name": "DRAM_DQ",
+        "scalar": false,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "DRAM_LDQM",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "DRAM_RAS_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "DRAM_UDQM",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "DRAM_WE_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "FPGA_I2C_SCLK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 0,
+        "name": "FPGA_I2C_SDAT",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 35,
+        "name": "GPIO_0",
+        "scalar": false,
+        "type": "unspecified"
+      },
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 35,
+        "name": "GPIO_1",
+        "scalar": false,
+        "type": "unspecified"
+      },
+      {"direction": "output", "lsb": 0, "msb": 6, "name": "HEX0", "scalar": false, "type": "unspecified"},
+      {"direction": "output", "lsb": 0, "msb": 6, "name": "HEX1", "scalar": false, "type": "unspecified"},
+      {"direction": "output", "lsb": 0, "msb": 6, "name": "HEX2", "scalar": false, "type": "unspecified"},
+      {"direction": "output", "lsb": 0, "msb": 6, "name": "HEX3", "scalar": false, "type": "unspecified"},
+      {"direction": "output", "lsb": 0, "msb": 6, "name": "HEX4", "scalar": false, "type": "unspecified"},
+      {"direction": "output", "lsb": 0, "msb": 6, "name": "HEX5", "scalar": false, "type": "unspecified"},
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "IRDA_RXD",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "IRDA_TXD",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {"direction": "input", "lsb": 0, "msb": 3, "name": "KEY", "scalar": false, "type": "unspecified"},
+      {"direction": "output", "lsb": 0, "msb": 9, "name": "LEDR", "scalar": false, "type": "unspecified"},
+      {"direction": "inout", "lsb": 0, "msb": 0, "name": "PS2_CLK", "scalar": true, "type": "unspecified"},
+      {"direction": "inout", "lsb": 0, "msb": 0, "name": "PS2_DAT", "scalar": true, "type": "unspecified"},
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 0,
+        "name": "PS2_CLK2",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 0,
+        "name": "PS2_DAT2",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {"direction": "input", "lsb": 0, "msb": 9, "name": "SW", "scalar": false, "type": "unspecified"},
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "TD_CLK27",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 7,
+        "name": "TD_DATA",
+        "scalar": false,
+        "type": "unspecified"
+      },
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "TD_HS", "scalar": true, "type": "unspecified"},
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "TD_RESET_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "TD_VS", "scalar": true, "type": "unspecified"},
+      {"direction": "output", "lsb": 0, "msb": 7, "name": "VGA_B", "scalar": false, "type": "unspecified"},
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "VGA_BLANK_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "VGA_CLK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {"direction": "output", "lsb": 0, "msb": 7, "name": "VGA_G", "scalar": false, "type": "unspecified"},
+      {"direction": "output", "lsb": 0, "msb": 0, "name": "VGA_HS", "scalar": true, "type": "unspecified"},
+      {"direction": "output", "lsb": 0, "msb": 7, "name": "VGA_R", "scalar": false, "type": "unspecified"},
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "VGA_SYNC_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {"direction": "output", "lsb": 0, "msb": 0, "name": "VGA_VS", "scalar": true, "type": "unspecified"},
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 14,
+        "name": "HPS_DDR3_ADDR",
+        "scalar": false,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 2,
+        "name": "HPS_DDR3_BA",
+        "scalar": false,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_DDR3_CAS_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_DDR3_CKE",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_DDR3_CK_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_DDR3_CK_P",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_DDR3_CS_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 3,
+        "name": "HPS_DDR3_DM",
+        "scalar": false,
+        "type": "unspecified"
+      },
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 31,
+        "name": "HPS_DDR3_DQ",
+        "scalar": false,
+        "type": "unspecified"
+      },
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 3,
+        "name": "HPS_DDR3_DQS_N",
+        "scalar": false,
+        "type": "unspecified"
+      },
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 3,
+        "name": "HPS_DDR3_DQS_P",
+        "scalar": false,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_DDR3_ODT",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_DDR3_RAS_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_DDR3_RESET_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_DDR3_RZQ",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_DDR3_WE_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_ENET_GTX_CLK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_ENET_INT_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_ENET_MDC",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_ENET_MDIO",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_ENET_RX_CLK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 3,
+        "name": "HPS_ENET_RX_DATA",
+        "scalar": false,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_ENET_RX_DV",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 3,
+        "name": "HPS_ENET_TX_DATA",
+        "scalar": false,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_ENET_TX_EN",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 3,
+        "name": "HPS_FLASH_DATA",
+        "scalar": false,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_FLASH_DCLK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_FLASH_NCSO",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_GSENSOR_INT",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 1,
+        "name": "HPS_GPIO",
+        "scalar": false,
+        "type": "unspecified"
+      },
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_I2C_CONTROL",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_I2C1_SCLK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_I2C1_SDAT",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_I2C2_SCLK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_I2C2_SDAT",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {"direction": "inout", "lsb": 0, "msb": 0, "name": "HPS_KEY", "scalar": true, "type": "unspecified"},
+      {"direction": "inout", "lsb": 0, "msb": 0, "name": "HPS_LED", "scalar": true, "type": "unspecified"},
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_SD_CLK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_SD_CMD",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 3,
+        "name": "HPS_SD_DATA",
+        "scalar": false,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_SPIM_CLK",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_SPIM_MISO",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_SPIM_MOSI",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_SPIM_SS",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_UART_RX",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_UART_TX",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_CONV_USB_N",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_USB_CLKOUT",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "inout",
+        "lsb": 0,
+        "msb": 7,
+        "name": "HPS_USB_DATA",
+        "scalar": false,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_USB_DIR",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_USB_NXT",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "HPS_USB_STP",
+        "scalar": true,
+        "type": "unspecified"
+      }
+    ],
+    "source_file": "De1_SoC_Computer.v"
+  }
+]

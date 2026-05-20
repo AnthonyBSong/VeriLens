@@ -1,0 +1,76 @@
+[
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {"kind": "IDENTIFIER", "name": "rst"},
+              "else": {
+                "expr": {"kind": "IDENTIFIER", "name": "state"},
+                "items": [
+                  {
+                    "body": {
+                      "kind": "NONBLOCKING_ASSIGN",
+                      "lhs": {"kind": "IDENTIFIER", "name": "state"},
+                      "rhs": {"kind": "LITERAL", "value": "2'b01"}
+                    },
+                    "patterns": [{"kind": "LITERAL", "value": "2'b00"}]
+                  },
+                  {
+                    "body": {
+                      "kind": "NONBLOCKING_ASSIGN",
+                      "lhs": {"kind": "IDENTIFIER", "name": "state"},
+                      "rhs": {"kind": "LITERAL", "value": "2'b10"}
+                    },
+                    "patterns": [{"kind": "LITERAL", "value": "2'b01"}]
+                  },
+                  {
+                    "body": {
+                      "kind": "NONBLOCKING_ASSIGN",
+                      "lhs": {"kind": "IDENTIFIER", "name": "state"},
+                      "rhs": {"kind": "LITERAL", "value": "2'b00"}
+                    },
+                    "patterns": [{"kind": "LITERAL", "value": "2'b10"}]
+                  },
+                  {
+                    "body": {
+                      "kind": "NONBLOCKING_ASSIGN",
+                      "lhs": {"kind": "IDENTIFIER", "name": "state"},
+                      "rhs": {"kind": "LITERAL", "value": "2'b00"}
+                    },
+                    "patterns": []
+                  }
+                ],
+                "kind": "CASE_STATEMENT",
+                "variant": "case"
+              },
+              "kind": "IF_STATEMENT",
+              "then": {
+                "kind": "NONBLOCKING_ASSIGN",
+                "lhs": {"kind": "IDENTIFIER", "name": "state"},
+                "rhs": {"kind": "LITERAL", "value": "2'b00"}
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "posedge clk"
+      }
+    ],
+    "assigns": [],
+    "instances": [],
+    "name": "traffic_light",
+    "net_decls": [],
+    "parameters": [],
+    "ports": [
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "clk", "scalar": true, "type": "unspecified"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "rst", "scalar": true, "type": "unspecified"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "state", "scalar": true, "type": "unspecified"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "clk", "scalar": true, "type": "unspecified"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "rst", "scalar": true, "type": "unspecified"},
+      {"direction": "output", "lsb": 0, "msb": 1, "name": "state", "scalar": false, "type": "reg"}
+    ],
+    "source_file": "fsm.v"
+  }
+]

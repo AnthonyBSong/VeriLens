@@ -10,10 +10,10 @@ The goal is not to replace a simulator, synthesizer, or full compiler. Instead, 
 
 ## Architecture
 
-VeriLens contains a lexer, parser, structural AST, validator, and interactive diagram frontend. It is a **structural extractor**, not a full compiler. The goal is to extract enough information from Verilog/SystemVerilog to produce accurate, meaningful hardware diagrams.
+VeriLens contains a lexer, parser, structural AST, linker, validator, and interactive diagram frontend. It is a **structural extractor**, not a full compiler. The goal is to extract enough information from Verilog/SystemVerilog to produce accurate, meaningful hardware diagrams.
 
 ```
-Lexer → Parser → AST → Validator → Diagram Frontend
+Lexer → Parser → AST → Linker → Validator → Diagram Frontend
 ```
 
 ### What each stage does
@@ -25,32 +25,36 @@ The extracted information includes:
 
 - Module declarations, including names, ports, directions, and widths
 - Module instantiations, including module names, instance names, and port connections
-- Wire/reg declarations for tracing connections between instances
-- Assign and always blocks represented as opaque logic nodes
-- Generate blocks unrolled into parallel instantiation nodes
+- Wire/reg and other net declarations for tracing connections between instances
+- Continuous assign statements with their full expression trees (binary/unary operators, muxes, concatenation, replication, bit/part selects)
+- Always blocks with their sensitivity lists and full statement trees (sequential blocks, if/case statements, blocking and non-blocking assignments)
 
 The AST is not intended to represent every semantic detail of Verilog/SystemVerilog. Instead, it captures the subset of the design that is useful for understanding hierarchy, connectivity, and structural organization.
 
-`generate` blocks are elaborated into concrete structural nodes. Parameters must be resolved before elaboration, which is a reasonable constraint for a visualization-focused tool.
+The parser uses a two-pass approach: a lightweight first pass collects all module names defined in the current file, and the full parse uses this set to disambiguate module instantiations from net declarations when the same `IDENTIFIER IDENTIFIER` pattern appears in a module body. Cross-file instantiations are handled by look-ahead disambiguation — if the token after an identifier is `#(` or the following two tokens are `IDENTIFIER (`, it is always an instantiation regardless of whether the module is locally defined.
+
+**Linker**
+The linker operates over the ASTs produced from all source files in a project. It builds a project-level symbol table mapping module names to their definitions, then resolves all module instantiation references against it.
+
+Each instance in the AST carries a `resolved` flag. After the link pass:
+
+- `resolved: true` — the referenced module is defined somewhere in the project and the instance is fully connected
+- `resolved: false` — the referenced module is external (defined in a file not yet provided, or a library cell)
+
+The `gen_ast` tool accepts a single file, a list of files, or a directory. In directory mode it scans recursively for `.v` and `.sv` files, parses all of them, runs the linker, and emits a single combined JSON containing all modules with their resolution state. Unresolved instances are preserved in the output rather than silently dropped — this lets the diagram frontend render them as external placeholders that can be expanded later when the missing files are provided.
+
+Each module in the output also carries a `source_file` field so the diagram frontend can label modules by the file they came from and support cross-file navigation.
 
 **Validator**
-The validator performs lightweight semantic analysis over the structural AST. Its purpose is to ensure that the generated diagram is coherent and not misleading.
+The validator performs lightweight semantic analysis over the linked structural AST. Its purpose is to ensure that the generated diagram is coherent and not misleading.
 
 The validator checks:
 
-- All instantiated modules are defined in the input project
 - Port connection counts match the target module definition
 - Connected signals have compatible widths
 - Required ports do not have dangling connections
-- Module references across files are resolved correctly
 
-The validator builds a symbol table in a first pass:
-
-```
-module name → port list / module metadata
-```
-
-It then checks all instantiations against this symbol table. This is connectivity validation, not full language-level semantic analysis.
+Because the linker has already built the symbol table and resolved all cross-file references before the validator runs, the validator can focus purely on connectivity correctness. This is connectivity validation, not full language-level semantic analysis.
 
 **Diagram Frontend**
 The diagram frontend consumes the validated structural model and renders an interactive hardware diagram. The structural model maps naturally to a graph: modules become nodes, and port/signal connections become edges.
@@ -84,7 +88,7 @@ VeriLens is a monorepo. The C++ core and all JS/TS frontends live together with 
 
 ```
 verilens/
-├── core/          # C++ — lexer, parser, AST, validator, JSON netlist output
+├── core/          # C++ — lexer, parser, AST, linker, validator, JSON netlist output
 ├── packages/
 │   ├── renderer/  # Shared diagram rendering — consumes JSON, used by all frontends
 │   ├── extension/ # VSCode extension — calls core binary, renders in a Webview panel

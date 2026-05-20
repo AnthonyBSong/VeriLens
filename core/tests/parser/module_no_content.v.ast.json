@@ -1,0 +1,15 @@
+[
+  {
+    "always_blocks": [],
+    "assigns": [],
+    "instances": [],
+    "name": "counter",
+    "net_decls": [],
+    "parameters": [],
+    "ports": [
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "clk", "scalar": true, "type": "unspecified"},
+      {"direction": "output", "lsb": 0, "msb": 7, "name": "q", "scalar": false, "type": "reg"}
+    ],
+    "source_file": "module_no_content.v"
+  }
+]

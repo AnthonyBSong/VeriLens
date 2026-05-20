@@ -11,6 +11,7 @@
 
 struct Module : Node {
     std::string              name;
+    std::string              source_file;  // set by gen_ast; empty when parsed via Parser::toAST()
     std::vector<Parameter>   parameters;
     std::vector<Port>        ports;
     std::vector<NetDecl>     net_decls;
