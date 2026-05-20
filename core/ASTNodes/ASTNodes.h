@@ -1,0 +1,12 @@
+#pragma once
+#include "PortWidth.h"
+#include "Parameter.h"
+#include "Expression.h"
+#include "Statement.h"
+#include "Node.h"
+#include "Port.h"
+#include "NetDecl.h"
+#include "Instance.h"
+#include "Assign.h"
+#include "AlwaysBlock.h"
+#include "Module.h"
