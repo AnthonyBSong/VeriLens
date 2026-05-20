@@ -68,9 +68,14 @@ private:
 
 
     // Expression parsing
-    ExprPtr parseExpression();   // full expression (handles precedence)
-    ExprPtr parseLValue();       // assignment target: id / id[i] / id[a:b]
-    PortWidth parseWidth();      // [msb:lsb]
+    ExprPtr parseExpression();          // entry: handles ternary then delegates
+    ExprPtr parseBinary(int minPrec);   // precedence climbing for binary ops
+    ExprPtr parseUnary();               // ~, !, -, reduction operators
+    ExprPtr parseAtom();                // literal, identifier, (expr), {concat}
+    ExprPtr parseLValue();              // assignment target: id / id[i] / id[a:b]
+    PortWidth parseWidth();             // [msb:lsb]
+
+    static int binaryPrecedence(TokenType t);
 
 
     // State

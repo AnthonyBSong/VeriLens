@@ -1,46 +1,55 @@
 #include "Parser.h"
+#include "ParseError.h"
+#include <stdexcept>
+#include <memory>
 
-// Constructor
 Parser::Parser(const std::vector<Token>& tokens)
     : tokens_(tokens), pos_(0) {}
 
-// Pass 1 : scan tokens_ & return IDENTIFIER of {MODULE : IDENTIFIER} pairs
+// pass 1 — collect module names for instance disambiguation
 std::unordered_set<std::string> Parser::collectModuleNames() {
-    std::unordered_set<std::string> module_names_;
+    module_names_.clear();
     for (size_t i = 0; i + 1 < tokens_.size(); i++) {
         if (tokens_[i].type == TokenType::MODULE &&
             tokens_[i + 1].type == TokenType::IDENTIFIER) {
-                module_names_.insert(tokens_[i + 1].lexeme);
+            module_names_.insert(tokens_[i + 1].lexeme);
         }
     }
     return module_names_;
 }
 
-// Pass 2
+// pass 2 — full parse
 std::vector<Module> Parser::parse() {
-    // TODO: call collectModuleNames(), then loop calling parseModule() until EOF
-    std::unordered_set<std::string> module_names_ = collectModuleNames();
-
-    return {};
+    collectModuleNames();
+    std::vector<Module> modules;
+    while (!check(TokenType::END_OF_FILE)) {
+        if (check(TokenType::MODULE))
+            modules.push_back(parseModule());
+        else
+            consume(); // skip compiler directives, stray tokens
+    }
+    return modules;
 }
 
-// Token stream helpers
+// token helpers
+
 const Token& Parser::current() const {
-    if (pos_ >= tokens_.size()) {
-        throw std::out_of_range("current(): past end of token stream");
-    }
+    if (pos_ >= tokens_.size())
+        return tokens_.back(); // END_OF_FILE sentinel
     return tokens_[pos_];
 }
 
 const Token& Parser::peek(int offset) const {
-    if (pos_ + offset >= tokens_.size()) {
-        throw std::out_of_range("peek(): past end of token stream");
-    }
-    return tokens_[pos_ + offset];
+    size_t idx = pos_ + offset;
+    if (idx >= tokens_.size())
+        return tokens_.back();
+    return tokens_[idx];
 }
 
 Token Parser::consume() {
-    return tokens_[pos_++];
+    Token t = current();
+    if (pos_ < tokens_.size()) pos_++;
+    return t;
 }
 
 bool Parser::check(TokenType type) const {
@@ -48,170 +57,537 @@ bool Parser::check(TokenType type) const {
 }
 
 Token Parser::expect(TokenType type) {
-    if (!check(type)) {
+    if (!check(type))
         throw ParseError(
-            "expected " + ::toString(type) +
-            ", got '"   + current().lexeme + "'",
-            current()
-        );
-    }
+            "expected " + ::toString(type) + ", got '" + current().lexeme + "'",
+            current());
     return consume();
 }
 
 bool Parser::match(TokenType type) {
-    if (check(type)) {
-        return true;
-    }
+    if (check(type)) { consume(); return true; }
     return false;
 }
 
-// Error recovery
+// error recovery
+
 void Parser::skipToSemicolon() {
-    // TODO: advance until SEMICOLON or END_OF_FILE
+    while (!check(TokenType::SEMICOLON) && !check(TokenType::END_OF_FILE))
+        consume();
 }
 
 void Parser::skipToEndmodule() {
-    // TODO: advance until ENDMODULE or END_OF_FILE
+    while (!check(TokenType::ENDMODULE) && !check(TokenType::END_OF_FILE))
+        consume();
 }
 
 void Parser::skipBlock() {
-    // TODO: consume tokens tracking BEGIN/END nesting until the matched END
+    // tracks BEGIN/END nesting — call when current token is BEGIN
+    int depth = 0;
+    do {
+        if (check(TokenType::BEGIN))    depth++;
+        else if (check(TokenType::END)) depth--;
+        consume();
+    } while (depth > 0 && !check(TokenType::END_OF_FILE));
 }
 
-// Top level
+// top level
+
 Module Parser::parseModule() {
-    // TODO: expect MODULE, call parseModuleHeader, loop parseModule body items
-    //       until ENDMODULE
-    return Module("", 0, 0);
+    int line = current().line, col = current().column;
+    expect(TokenType::MODULE);
+    Module mod("", line, col);
+    parseModuleHeader(mod);
+
+    while (!check(TokenType::ENDMODULE) && !check(TokenType::END_OF_FILE)) {
+        if (check(TokenType::INPUT) || check(TokenType::OUTPUT) || check(TokenType::INOUT)) {
+            mod.ports.push_back(parsePortDeclaration());
+        } else if (check(TokenType::WIRE)    || check(TokenType::REG)    ||
+                   check(TokenType::LOGIC)   || check(TokenType::TRI)    ||
+                   check(TokenType::WAND)    || check(TokenType::WOR)    ||
+                   check(TokenType::SUPPLY0) || check(TokenType::SUPPLY1)) {
+            mod.net_decls.push_back(parseNetDeclaration());
+        } else if (check(TokenType::PARAMETER) || check(TokenType::LOCALPARAM)) {
+            mod.parameters.push_back(parseParameterDeclaration());
+        } else if (check(TokenType::ASSIGN)) {
+            mod.assigns.push_back(parseContinuousAssign());
+        } else if (check(TokenType::ALWAYS)) {
+            mod.always_blocks.push_back(parseAlwaysBlock());
+        } else if (check(TokenType::IDENTIFIER)) {
+            if (module_names_.count(current().lexeme))
+                mod.instances.push_back(parseInstance());
+            else { skipToSemicolon(); match(TokenType::SEMICOLON); }
+        } else {
+            consume();
+        }
+    }
+
+    match(TokenType::ENDMODULE);
+    return mod;
 }
 
-// Module header
+// module header
+
 void Parser::parseModuleHeader(Module& mod) {
-    // TODO: consume module name into mod.name
-    //       if HASH, call parseParameterList
-    //       call parsePortList
-    //       expect SEMICOLON
+    mod.name = expect(TokenType::IDENTIFIER).lexeme;
+    if (match(TokenType::HASH))
+        parseParameterList(mod);
+    parsePortList(mod);
+    expect(TokenType::SEMICOLON);
 }
 
 void Parser::parseParameterList(Module& mod) {
-    // TODO: consume LPAREN, parse comma-separated parameter declarations,
-    //       consume RPAREN
+    expect(TokenType::LPAREN);
+    if (!check(TokenType::RPAREN)) {
+        do {
+            if (check(TokenType::PARAMETER) || check(TokenType::LOCALPARAM)) {
+                mod.parameters.push_back(parseParameterDeclaration());
+            } else {
+                std::string val;
+                while (!check(TokenType::COMMA) && !check(TokenType::RPAREN) &&
+                       !check(TokenType::END_OF_FILE))
+                    val += consume().lexeme;
+                mod.parameters.push_back(Parameter("", val));
+            }
+        } while (match(TokenType::COMMA));
+    }
+    expect(TokenType::RPAREN);
 }
 
 void Parser::parsePortList(Module& mod) {
-    // TODO: handle both port-name-only list (a, b, c) and ANSI inline
-    //       port declarations (input wire [7:0] a, ...)
+    expect(TokenType::LPAREN);
+    if (check(TokenType::RPAREN)) { consume(); return; }
+
+    do {
+        if (check(TokenType::RPAREN)) break;
+        int line = current().line, col = current().column;
+
+        if (check(TokenType::INPUT) || check(TokenType::OUTPUT) || check(TokenType::INOUT)) {
+            // ANSI inline port
+            PortDirection dir = PortDirection::INPUT;
+            if      (check(TokenType::INPUT))  { dir = PortDirection::INPUT;  consume(); }
+            else if (check(TokenType::OUTPUT)) { dir = PortDirection::OUTPUT; consume(); }
+            else if (check(TokenType::INOUT))  { dir = PortDirection::INOUT;  consume(); }
+
+            PortType ptype = PortType::UNSPECIFIED;
+            if      (check(TokenType::WIRE))  { ptype = PortType::WIRE;  consume(); }
+            else if (check(TokenType::REG))   { ptype = PortType::REG;   consume(); }
+            else if (check(TokenType::LOGIC)) { ptype = PortType::LOGIC; consume(); }
+
+            if (check(TokenType::SIGNED)) consume();
+
+            PortWidth width;
+            if (check(TokenType::LBRACKET)) width = parseWidth();
+
+            std::string name = expect(TokenType::IDENTIFIER).lexeme;
+            mod.ports.push_back(Port(dir, ptype, width, name, line, col));
+        } else if (check(TokenType::IDENTIFIER)) {
+            // non-ANSI: name only, direction declared later in body
+            std::string name = consume().lexeme;
+            mod.ports.push_back(Port(PortDirection::INPUT, PortType::UNSPECIFIED,
+                                     PortWidth(), name, line, col));
+        } else {
+            consume();
+        }
+    } while (match(TokenType::COMMA));
+
+    expect(TokenType::RPAREN);
 }
 
-// Module body items
+// module body items
+
 Port Parser::parsePortDeclaration() {
-    // TODO: consume direction keyword, optional type keyword, optional width,
-    //       consume name, expect SEMICOLON
-    return Port(PortDirection::INPUT, PortType::UNSPECIFIED, PortWidth(), "", 0, 0);
+    int line = current().line, col = current().column;
+
+    PortDirection dir = PortDirection::INPUT;
+    if      (check(TokenType::INPUT))  { dir = PortDirection::INPUT;  consume(); }
+    else if (check(TokenType::OUTPUT)) { dir = PortDirection::OUTPUT; consume(); }
+    else if (check(TokenType::INOUT))  { dir = PortDirection::INOUT;  consume(); }
+
+    PortType ptype = PortType::UNSPECIFIED;
+    if      (check(TokenType::WIRE))  { ptype = PortType::WIRE;  consume(); }
+    else if (check(TokenType::REG))   { ptype = PortType::REG;   consume(); }
+    else if (check(TokenType::LOGIC)) { ptype = PortType::LOGIC; consume(); }
+
+    if (check(TokenType::SIGNED)) consume();
+
+    PortWidth width;
+    if (check(TokenType::LBRACKET)) width = parseWidth();
+
+    std::string name = expect(TokenType::IDENTIFIER).lexeme;
+    expect(TokenType::SEMICOLON);
+    return Port(dir, ptype, width, name, line, col);
 }
 
 NetDecl Parser::parseNetDeclaration() {
-    // TODO: consume net type keyword, optional width, consume name, expect SEMICOLON
-    return NetDecl(NetType::WIRE, PortWidth(), "", 0, 0);
+    int line = current().line, col = current().column;
+
+    NetType ntype = NetType::WIRE;
+    if      (check(TokenType::WIRE))    { ntype = NetType::WIRE;    consume(); }
+    else if (check(TokenType::REG))     { ntype = NetType::REG;     consume(); }
+    else if (check(TokenType::LOGIC))   { ntype = NetType::LOGIC;   consume(); }
+    else if (check(TokenType::TRI))     { ntype = NetType::TRI;     consume(); }
+    else if (check(TokenType::WAND))    { ntype = NetType::WAND;    consume(); }
+    else if (check(TokenType::WOR))     { ntype = NetType::WOR;     consume(); }
+    else if (check(TokenType::SUPPLY0)) { ntype = NetType::SUPPLY0; consume(); }
+    else if (check(TokenType::SUPPLY1)) { ntype = NetType::SUPPLY1; consume(); }
+
+    if (check(TokenType::SIGNED)) consume();
+
+    PortWidth width;
+    if (check(TokenType::LBRACKET)) width = parseWidth();
+
+    std::string name = expect(TokenType::IDENTIFIER).lexeme;
+    expect(TokenType::SEMICOLON);
+    return NetDecl(ntype, width, name, line, col);
 }
 
 Parameter Parser::parseParameterDeclaration() {
-    // TODO: consume PARAMETER or LOCALPARAM, consume name,
-    //       if EQ consume default value expression as raw text
-    return Parameter("");
+    consume(); // PARAMETER or LOCALPARAM
+    std::string name = expect(TokenType::IDENTIFIER).lexeme;
+    std::string default_val;
+    if (match(TokenType::EQ)) {
+        while (!check(TokenType::SEMICOLON) && !check(TokenType::COMMA) &&
+               !check(TokenType::RPAREN)    && !check(TokenType::END_OF_FILE))
+            default_val += consume().lexeme;
+    }
+    match(TokenType::SEMICOLON);
+    return Parameter(name, default_val);
 }
 
 Instance Parser::parseInstance() {
-    // TODO: consume module name, optional #() parameter override list,
-    //       consume instance name, consume port connection list
-    return Instance("", "", 0, 0);
+    int line = current().line, col = current().column;
+    std::string module_name = consume().lexeme;
+    Instance inst(module_name, "", line, col);
+
+    if (match(TokenType::HASH)) {
+        expect(TokenType::LPAREN);
+        while (!check(TokenType::RPAREN) && !check(TokenType::END_OF_FILE)) {
+            std::string param;
+            while (!check(TokenType::COMMA) && !check(TokenType::RPAREN) &&
+                   !check(TokenType::END_OF_FILE))
+                param += consume().lexeme;
+            inst.parameters.push_back(param);
+            if (!match(TokenType::COMMA)) break;
+        }
+        expect(TokenType::RPAREN);
+    }
+
+    inst.instance_name = expect(TokenType::IDENTIFIER).lexeme;
+
+    expect(TokenType::LPAREN);
+    while (!check(TokenType::RPAREN) && !check(TokenType::END_OF_FILE)) {
+        int pline = current().line, pcol = current().column;
+        if (match(TokenType::DOT)) {
+            std::string port_name = expect(TokenType::IDENTIFIER).lexeme;
+            expect(TokenType::LPAREN);
+            std::string signal;
+            while (!check(TokenType::RPAREN) && !check(TokenType::END_OF_FILE))
+                signal += consume().lexeme;
+            expect(TokenType::RPAREN);
+            inst.connections.push_back(PortConnection(port_name, signal, pline, pcol));
+        } else {
+            std::string signal;
+            while (!check(TokenType::COMMA) && !check(TokenType::RPAREN) &&
+                   !check(TokenType::END_OF_FILE))
+                signal += consume().lexeme;
+            inst.connections.push_back(PortConnection("", signal, pline, pcol));
+        }
+        if (!match(TokenType::COMMA)) break;
+    }
+    expect(TokenType::RPAREN);
+    expect(TokenType::SEMICOLON);
+    return inst;
 }
 
 Assign Parser::parseContinuousAssign() {
-    // TODO: consume ASSIGN, call parseLValue, expect EQ,
-    //       call parseExpression, expect SEMICOLON
-    return Assign(nullptr, nullptr, 0, 0);
+    int line = current().line, col = current().column;
+    expect(TokenType::ASSIGN);
+    ExprPtr lhs = parseLValue();
+    expect(TokenType::EQ);
+    ExprPtr rhs = parseExpression();
+    expect(TokenType::SEMICOLON);
+    return Assign(std::move(lhs), std::move(rhs), line, col);
 }
 
 AlwaysBlock Parser::parseAlwaysBlock() {
-    // TODO: consume ALWAYS, call parseSensitivityList, call parseStatement
-    return AlwaysBlock("", nullptr, 0, 0);
+    int line = current().line, col = current().column;
+    expect(TokenType::ALWAYS);
+    std::string sensitivity = parseSensitivityList();
+    StmtPtr body = parseStatement();
+    return AlwaysBlock(sensitivity, std::move(body), line, col);
 }
 
-// Always block internals
+// always block internals
+
 std::string Parser::parseSensitivityList() {
-    // TODO: consume AT, consume LPAREN, capture tokens until matching RPAREN
-    return "";
+    if (!check(TokenType::AT)) return "";
+    expect(TokenType::AT);
+    if (check(TokenType::STAR)) { consume(); return "*"; } // @*
+    expect(TokenType::LPAREN);
+    if (check(TokenType::STAR)) { consume(); expect(TokenType::RPAREN); return "*"; } // @(*)
+    std::string sens;
+    while (!check(TokenType::RPAREN) && !check(TokenType::END_OF_FILE)) {
+        if (!sens.empty()) sens += " ";
+        sens += consume().lexeme;
+    }
+    expect(TokenType::RPAREN);
+    return sens;
 }
 
 StmtPtr Parser::parseStatement() {
-    // TODO: dispatch on current token type:
-    //   BEGIN         -> parseSeqBlock()
-    //   IF            -> parseIfStatement()
-    //   CASE/CASEX/Z  -> parseCaseStatement()
-    //   IDENTIFIER    -> parseLValue(), then check EQ vs LESS_EQ
+    if (check(TokenType::BEGIN)) return parseSeqBlock();
+    if (check(TokenType::IF))    return parseIfStatement();
+    if (check(TokenType::CASE) || check(TokenType::CASEX) || check(TokenType::CASEZ))
+        return parseCaseStatement();
+    if (check(TokenType::IDENTIFIER)) {
+        ExprPtr lhs = parseLValue();
+        if (check(TokenType::EQ))      return parseBlockingAssign(std::move(lhs));
+        if (check(TokenType::LESS_EQ)) return parseNonBlockingAssign(std::move(lhs));
+    }
+    skipToSemicolon();
+    match(TokenType::SEMICOLON);
     return nullptr;
 }
 
 StmtPtr Parser::parseSeqBlock() {
-    // TODO: consume BEGIN, loop parseStatement until END
-    return nullptr;
+    int line = current().line, col = current().column;
+    expect(TokenType::BEGIN);
+    auto block = std::make_unique<SeqBlock>(line, col);
+    while (!check(TokenType::END) && !check(TokenType::END_OF_FILE)) {
+        StmtPtr stmt = parseStatement();
+        if (stmt) block->body.push_back(std::move(stmt));
+    }
+    expect(TokenType::END);
+    return block;
 }
 
 StmtPtr Parser::parseIfStatement() {
-    // TODO: consume IF, expect LPAREN, parseExpression, expect RPAREN
-    //       parseStatement for then_branch
-    //       if ELSE, parseStatement for else_branch
-    return nullptr;
+    int line = current().line, col = current().column;
+    expect(TokenType::IF);
+    expect(TokenType::LPAREN);
+    ExprPtr cond = parseExpression();
+    expect(TokenType::RPAREN);
+    StmtPtr then_branch = parseStatement();
+    StmtPtr else_branch = nullptr;
+    if (match(TokenType::ELSE))
+        else_branch = parseStatement();
+    return std::make_unique<IfStatement>(
+        std::move(cond), std::move(then_branch), std::move(else_branch), line, col);
 }
 
 StmtPtr Parser::parseCaseStatement() {
-    // TODO: consume CASE/CASEX/CASEZ, expect LPAREN, parseExpression, expect RPAREN
-    //       loop parseCaseItem until ENDCASE
-    return nullptr;
+    int line = current().line, col = current().column;
+    std::string variant = current().lexeme;
+    consume();
+    expect(TokenType::LPAREN);
+    ExprPtr expr = parseExpression();
+    expect(TokenType::RPAREN);
+    auto stmt = std::make_unique<CaseStatement>(variant, std::move(expr), line, col);
+    while (!check(TokenType::ENDCASE) && !check(TokenType::END_OF_FILE)) {
+        auto item = parseCaseItem();
+        if (item) stmt->items.push_back(std::move(*item));
+    }
+    expect(TokenType::ENDCASE);
+    return stmt;
 }
 
 std::unique_ptr<CaseItem> Parser::parseCaseItem() {
-    // TODO: if DEFAULT consume it (empty patterns)
-    //       else parse comma-separated expressions as patterns
-    //       expect COLON, parseStatement as body
-    return nullptr;
+    auto item = std::make_unique<CaseItem>();
+    if (check(TokenType::DEFAULT)) {
+        consume();
+        match(TokenType::COLON);
+    } else {
+        do {
+            item->patterns.push_back(parseExpression());
+        } while (match(TokenType::COMMA) && !check(TokenType::COLON));
+        expect(TokenType::COLON);
+    }
+    item->body = parseStatement();
+    return item;
 }
 
 StmtPtr Parser::parseBlockingAssign(ExprPtr lhs) {
-    // TODO: expect EQ, parseExpression for rhs, expect SEMICOLON
-    return nullptr;
+    int line = current().line, col = current().column;
+    expect(TokenType::EQ);
+    ExprPtr rhs = parseExpression();
+    expect(TokenType::SEMICOLON);
+    return std::make_unique<BlockingAssign>(std::move(lhs), std::move(rhs), line, col);
 }
 
 StmtPtr Parser::parseNonBlockingAssign(ExprPtr lhs) {
-    // TODO: expect LESS_EQ, parseExpression for rhs, expect SEMICOLON
-    return nullptr;
+    int line = current().line, col = current().column;
+    expect(TokenType::LESS_EQ);
+    ExprPtr rhs = parseExpression();
+    expect(TokenType::SEMICOLON);
+    return std::make_unique<NonBlockingAssign>(std::move(lhs), std::move(rhs), line, col);
 }
 
-// Expression parsing
+// expression parsing
+
+int Parser::binaryPrecedence(TokenType t) {
+    switch (t) {
+        case TokenType::PIPE_PIPE:                              return 2;
+        case TokenType::AMP_AMP:                               return 3;
+        case TokenType::PIPE:                                   return 4;
+        case TokenType::CARET:                                  return 5;
+        case TokenType::AMP:                                    return 6;
+        case TokenType::EQ_EQ:     case TokenType::BANG_EQ:
+        case TokenType::EQ_EQ_EQ:  case TokenType::BANG_EQ_EQ: return 7;
+        case TokenType::LESS:      case TokenType::LESS_EQ:
+        case TokenType::GREATER:   case TokenType::GREATER_EQ: return 8;
+        case TokenType::LESS_LESS: case TokenType::GREATER_GREATER:
+        case TokenType::LESS_LESS_LESS:
+        case TokenType::GREATER_GREATER_GREATER:                return 9;
+        case TokenType::PLUS:      case TokenType::MINUS:       return 10;
+        case TokenType::STAR:      case TokenType::SLASH:
+        case TokenType::PERCENT:                                return 11;
+        default: return -1;
+    }
+}
+
 ExprPtr Parser::parseExpression() {
-    // TODO: recursive descent with operator precedence
-    //   lowest:  ternary   ? :
-    //   then:    ||
-    //   then:    &&
-    //   then:    | ^ &  (bitwise)
-    //   then:    == != === !==
-    //   then:    < <= > >=
-    //   then:    << >> <<< >>>
-    //   then:    + -
-    //   then:    * / %
-    //   highest: unary ~ ! - &(reduction) |(reduction)
-    //            then parseAtom() for literals, identifiers, parens, concat
-    return nullptr;
+    ExprPtr lhs = parseBinary(1);
+    // ternary is lowest precedence and right-associative
+    if (match(TokenType::QUESTION)) {
+        ExprPtr then_ = parseExpression();
+        expect(TokenType::COLON);
+        ExprPtr else_ = parseExpression();
+        return std::make_unique<ConditionalExpr>(
+            std::move(lhs), std::move(then_), std::move(else_));
+    }
+    return lhs;
+}
+
+ExprPtr Parser::parseBinary(int minPrec) {
+    ExprPtr lhs = parseUnary();
+    while (true) {
+        int prec = binaryPrecedence(current().type);
+        if (prec < minPrec) break;
+        std::string op = consume().lexeme;
+        ExprPtr rhs = parseBinary(prec + 1); // left-associative
+        lhs = std::make_unique<BinaryOpExpr>(op, std::move(lhs), std::move(rhs));
+    }
+    return lhs;
+}
+
+ExprPtr Parser::parseUnary() {
+    if (check(TokenType::TILDE)      || check(TokenType::BANG)       ||
+        check(TokenType::MINUS)      || check(TokenType::AMP)        ||
+        check(TokenType::PIPE)       || check(TokenType::CARET)      ||
+        check(TokenType::TILDE_AMP)  || check(TokenType::TILDE_PIPE) ||
+        check(TokenType::TILDE_CARET)) {
+        std::string op = consume().lexeme;
+        return std::make_unique<UnaryOpExpr>(op, parseUnary());
+    }
+    return parseAtom();
+}
+
+ExprPtr Parser::parseAtom() {
+    // parenthesised expression
+    if (match(TokenType::LPAREN)) {
+        ExprPtr inner = parseExpression();
+        expect(TokenType::RPAREN);
+        return inner;
+    }
+
+    // concatenation or replication: { ... }
+    if (check(TokenType::LBRACE)) {
+        consume();
+        ExprPtr first = parseExpression();
+        if (check(TokenType::LBRACE)) {
+            // replication: {n{expr}}
+            consume();
+            ExprPtr value = parseExpression();
+            expect(TokenType::RBRACE);
+            expect(TokenType::RBRACE);
+            return std::make_unique<ReplicationExpr>(std::move(first), std::move(value));
+        }
+        auto concat = std::make_unique<ConcatExpr>();
+        concat->parts.push_back(std::move(first));
+        while (match(TokenType::COMMA))
+            concat->parts.push_back(parseExpression());
+        expect(TokenType::RBRACE);
+        return concat;
+    }
+
+    // literals
+    if (check(TokenType::INTEGER_LITERAL) || check(TokenType::REAL_LITERAL) ||
+        check(TokenType::STRING_LITERAL)  || check(TokenType::TIME_LITERAL))
+        return std::make_unique<LiteralExpr>(consume().lexeme);
+
+    // identifier with optional bit/part select
+    if (check(TokenType::IDENTIFIER)) {
+        ExprPtr base = std::make_unique<IdentifierExpr>(consume().lexeme);
+        if (check(TokenType::LBRACKET)) {
+            consume();
+            ExprPtr idx = parseExpression();
+            if (match(TokenType::COLON)) {
+                ExprPtr lsb = parseExpression();
+                expect(TokenType::RBRACKET);
+                return std::make_unique<PartSelectExpr>(
+                    std::move(base), std::move(idx), std::move(lsb));
+            }
+            expect(TokenType::RBRACKET);
+            return std::make_unique<BitSelectExpr>(std::move(base), std::move(idx));
+        }
+        return base;
+    }
+
+    // system task as expression: $clog2(N)
+    if (check(TokenType::SYSTEM_TASK)) {
+        ExprPtr base = std::make_unique<IdentifierExpr>(consume().lexeme);
+        if (match(TokenType::LPAREN)) {
+            auto args = std::make_unique<ConcatExpr>();
+            if (!check(TokenType::RPAREN))
+                args->parts.push_back(parseExpression());
+            while (match(TokenType::COMMA))
+                args->parts.push_back(parseExpression());
+            expect(TokenType::RPAREN);
+            return std::make_unique<BinaryOpExpr>("call", std::move(base), std::move(args));
+        }
+        return base;
+    }
+
+    return std::make_unique<LiteralExpr>(consume().lexeme); // fallback
 }
 
 ExprPtr Parser::parseLValue() {
-    // TODO: consume IDENTIFIER, then optionally [expr] or [expr:expr]
-    return nullptr;
+    ExprPtr base = std::make_unique<IdentifierExpr>(expect(TokenType::IDENTIFIER).lexeme);
+    if (check(TokenType::LBRACKET)) {
+        consume();
+        ExprPtr idx = parseExpression();
+        if (match(TokenType::COLON)) {
+            ExprPtr lsb = parseExpression();
+            expect(TokenType::RBRACKET);
+            return std::make_unique<PartSelectExpr>(
+                std::move(base), std::move(idx), std::move(lsb));
+        }
+        expect(TokenType::RBRACKET);
+        return std::make_unique<BitSelectExpr>(std::move(base), std::move(idx));
+    }
+    return base;
 }
 
 PortWidth Parser::parseWidth() {
-    // TODO: expect LBRACKET, parse msb expr, expect COLON, parse lsb expr,
-    //       expect RBRACKET — return PortWidth(msb, lsb)
-    return PortWidth();
+    expect(TokenType::LBRACKET);
+
+    // extract int from a simple literal expression, -1 if complex
+    auto tryInt = [](const ExprPtr& e) -> int {
+        if (e && e->kind == ExprKind::LITERAL) {
+            try { return std::stoi(static_cast<const LiteralExpr*>(e.get())->value); }
+            catch (...) {}
+        }
+        return -1;
+    };
+
+    ExprPtr msb_expr = parseExpression();
+    expect(TokenType::COLON);
+    ExprPtr lsb_expr = parseExpression();
+    expect(TokenType::RBRACKET);
+
+    int msb = tryInt(msb_expr);
+    int lsb = tryInt(lsb_expr);
+    if (msb >= 0 && lsb >= 0) return PortWidth(msb, lsb);
+    return PortWidth(0, 0); // fallback for complex widths e.g. [$clog2(N)-1:0]
 }
