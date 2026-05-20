@@ -1,0 +1,322 @@
+[
+  {
+    "type": "MODULE",
+    "lexeme": "module"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "M10KMem"
+  },
+  {
+    "type": "HASH",
+    "lexeme": "#"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "PARAMETER",
+    "lexeme": "parameter"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "DEPTH"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "256"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "clk"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "we"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$clog2"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "DEPTH"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "write_address"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$clog2"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "DEPTH"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "read_address"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "SIGNED",
+    "lexeme": "signed"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "17"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "d"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "OUTPUT",
+    "lexeme": "output"
+  },
+  {
+    "type": "REG",
+    "lexeme": "reg"
+  },
+  {
+    "type": "SIGNED",
+    "lexeme": "signed"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "17"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "q"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "ALWAYS",
+    "lexeme": "always"
+  },
+  {
+    "type": "AT",
+    "lexeme": "@"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "POSEDGE",
+    "lexeme": "posedge"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "clk"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "BEGIN",
+    "lexeme": "begin"
+  },
+  {
+    "type": "IF",
+    "lexeme": "if"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "we"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "q"
+  },
+  {
+    "type": "LESS_EQ",
+    "lexeme": "<="
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "d"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "END",
+    "lexeme": "end"
+  },
+  {
+    "type": "ENDMODULE",
+    "lexeme": "endmodule"
+  },
+  {
+    "type": "END_OF_FILE",
+    "lexeme": ""
+  }
+]
