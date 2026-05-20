@@ -37,27 +37,63 @@ public:
         seen.clear();
         for (const auto& n  : net_decls) { if (!seen.insert(n.name).second)          ctx.error("duplicate net '" + n.name + "'", n.line, n.column);              n.validate(ctx);  }
         seen.clear();
-        for (const auto& i  : instances) {
+        // Returns false for complex widths we couldn't parse (stored as non-scalar 0:0).
+        auto isKnownWidth = [](const PortWidth& w) {
+            return w.scalar || (w.msb != 0 || w.lsb != 0);
+        };
+        // Look up a signal name in the current module's port/net table.
+        auto signalWidth = [&](const std::string& sig) -> const PortWidth* {
+            if (auto it = ctx.port_map.find(sig); it != ctx.port_map.end()) return &it->second->width;
+            if (auto it = ctx.net_map.find(sig);  it != ctx.net_map.end()) return &it->second->width;
+            return nullptr;
+        };
+
+        for (const auto& i : instances) {
             if (!seen.insert(i.instance_name).second)
                 ctx.error("duplicate instance '" + i.instance_name + "'", i.line, i.column);
             i.validate(ctx); // warns if unresolved
 
-            // Port-connection judgment lives here: requires both the instance and
-            // the target Module definition, which are both in scope at this level.
-            if (i.resolved) {
-                const Module* target = ctx.symbols.at(i.module_name);
-                std::unordered_set<std::string> known;
-                for (const auto& p : target->ports) known.insert(p.name);
-                std::unordered_set<std::string> connected;
-                for (const auto& conn : i.connections) {
-                    if (conn.port_name.empty()) continue;
-                    if (!known.count(conn.port_name))
-                        ctx.error("instance '" + i.instance_name + "': '." + conn.port_name +
-                                  "' is not a port of '" + i.module_name + "'", i.line, i.column);
-                    if (!connected.insert(conn.port_name).second)
-                        ctx.error("instance '" + i.instance_name + "': '." + conn.port_name +
-                                  "' connected more than once", i.line, i.column);
+            // All remaining judgments require both the instance and the target Module.
+            if (!i.resolved) continue;
+            const Module* target = ctx.symbols.at(i.module_name);
+
+            // Index target ports by name for O(1) lookup below.
+            std::unordered_map<std::string, const Port*> tports;
+            for (const auto& p : target->ports) tports[p.name] = &p;
+
+            std::unordered_set<std::string> connected;
+            for (const auto& conn : i.connections) {
+                if (conn.port_name.empty()) continue;
+
+                auto pit = tports.find(conn.port_name);
+                if (pit == tports.end()) {
+                    ctx.error("instance '" + i.instance_name + "': '." + conn.port_name +
+                              "' is not a port of '" + i.module_name + "'", i.line, i.column);
+                    continue;
                 }
+                if (!connected.insert(conn.port_name).second) {
+                    ctx.error("instance '" + i.instance_name + "': '." + conn.port_name +
+                              "' connected more than once", i.line, i.column);
+                    continue;
+                }
+
+                // Judgment: width of connected signal must match the port's declared width.
+                const PortWidth& tp = pit->second->width;
+                if (const PortWidth* sp = signalWidth(conn.signal)) {
+                    if (isKnownWidth(tp) && isKnownWidth(*sp) && tp.width() != sp->width())
+                        ctx.warn("instance '" + i.instance_name + "': port '." + conn.port_name +
+                                 "' is " + std::to_string(tp.width()) + " bit(s) but '" +
+                                 conn.signal + "' is " + std::to_string(sp->width()) +
+                                 " bit(s)", i.line, i.column);
+                }
+            }
+
+            // Judgment: every output port of the target module must be connected.
+            // A floating output means data is silently discarded — misleading in a diagram.
+            for (const auto& [pname, pptr] : tports) {
+                if (pptr->direction == PortDirection::OUTPUT && !connected.count(pname))
+                    ctx.warn("instance '" + i.instance_name + "': output port '." + pname +
+                             "' is not connected", i.line, i.column);
             }
         }
         for (const auto& a  : assigns)       a.validate(ctx);
