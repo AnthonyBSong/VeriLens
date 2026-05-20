@@ -2,7 +2,8 @@
 
 // Represents a bit-width range [msb:lsb].
 // Scalar signals have msb = lsb = 0 and scalar = true.
-struct PortWidth {
+class PortWidth {
+public:
     int  msb;
     int  lsb;
     bool scalar;  // true if no [x:y] was written (e.g. plain `input clk`)

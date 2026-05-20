@@ -1,4 +1,5 @@
 #pragma once
+#include "ValidationError.h"
 #include "PortWidth.h"
 #include "Parameter.h"
 #include "Expression.h"

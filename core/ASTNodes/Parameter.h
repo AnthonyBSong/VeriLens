@@ -1,7 +1,8 @@
 #pragma once
 #include <string>
 
-struct Parameter {
+class Parameter {
+public:
     std::string name;
     std::string default_value;  // raw text, empty if no default
 

@@ -1,0 +1,52 @@
+[
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {"kind": "IDENTIFIER", "name": "we"},
+              "else": null,
+              "kind": "IF_STATEMENT",
+              "then": {
+                "kind": "NONBLOCKING_ASSIGN",
+                "lhs": {"kind": "IDENTIFIER", "name": "q"},
+                "rhs": {"kind": "IDENTIFIER", "name": "d"}
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "posedge clk"
+      }
+    ],
+    "assigns": [],
+    "instances": [],
+    "name": "M10KMem",
+    "net_decls": [],
+    "parameters": [{"default": "256", "name": "DEPTH"}],
+    "ports": [
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "clk", "scalar": true, "type": "unspecified"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "we", "scalar": true, "type": "unspecified"},
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "write_address",
+        "scalar": false,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "read_address",
+        "scalar": false,
+        "type": "unspecified"
+      },
+      {"direction": "input", "lsb": 0, "msb": 17, "name": "d", "scalar": false, "type": "unspecified"},
+      {"direction": "output", "lsb": 0, "msb": 17, "name": "q", "scalar": false, "type": "reg"}
+    ],
+    "source_file": "M10KMem.v"
+  }
+]
