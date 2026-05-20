@@ -1,0 +1,45 @@
+[
+  {
+    "always_blocks": [],
+    "assigns": [],
+    "instances": [],
+    "name": "counter",
+    "net_decls": [],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reset",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reset",
+        "scalar": true,
+        "type": "unspecified"
+      }
+    ],
+    "source_file": "simple_module.v"
+  }
+]

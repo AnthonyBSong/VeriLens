@@ -1,0 +1,30 @@
+digraph AST {
+  node [fontname="Helvetica" fontsize=11 margin="0.15,0.08"];
+  edge [fontsize=9 color="#555555"];
+  rankdir=TB;
+  compound=true;
+  concentrate=true;
+  nodesep=0.4;
+  ranksep=0.6;
+  subgraph cluster_adder_0 {
+    label=<<b>module adder</b>>;
+    style=filled; fillcolor="#eaf4fb";
+    n1 [label="module\nadder" shape=box3d style=filled fillcolor="#aed6f1" fontcolor="#1a237e" fontsize=13];
+    n2 [label="input\na\n[7:0]" shape=parallelogram style=filled fillcolor="#a9cce3"];
+  n1 -> n2 [label="port"];
+    n3 [label="input\nb\n[7:0]" shape=parallelogram style=filled fillcolor="#a9cce3"];
+  n1 -> n3 [label="port"];
+    n4 [label="output\ny\n[7:0]" shape=parallelogram style=filled fillcolor="#a9cce3"];
+  n1 -> n4 [label="port"];
+    n5 [label="assign" style=filled fillcolor="#f9cba5"];
+  n1 -> n5 [label="assign"];
+  n6 [label="y" shape=ellipse style=filled fillcolor="#aed6f1"];
+  n7 [label="ADD" shape=diamond style=filled fillcolor="#f9e79f"];
+  n8 [label="a" shape=ellipse style=filled fillcolor="#aed6f1"];
+  n9 [label="b" shape=ellipse style=filled fillcolor="#aed6f1"];
+  n7 -> n8 [label="lhs"];
+  n7 -> n9 [label="rhs"];
+  n5 -> n6 [label="lhs"];
+  n5 -> n7 [label="rhs"];
+  }
+}

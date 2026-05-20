@@ -1,0 +1,61 @@
+[
+  {
+    "always_blocks": [],
+    "assigns": [],
+    "instances": [],
+    "name": "simple",
+    "net_decls": [],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "rst",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "out",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "rst",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "out",
+        "scalar": true,
+        "type": "unspecified"
+      }
+    ],
+    "source_file": "simple.v"
+  }
+]

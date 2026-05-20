@@ -1,12 +1,11 @@
 #include "Parser.h"
-#include "ParseError.h"
-#include <stdexcept>
-#include <memory>
+
+using json = nlohmann::json;
 
 Parser::Parser(const std::vector<Token>& tokens)
     : tokens_(tokens), pos_(0) {}
 
-// pass 1 — collect module names for instance disambiguation
+// pass 1: collect module names for instance disambiguation
 std::unordered_set<std::string> Parser::collectModuleNames() {
     module_names_.clear();
     for (size_t i = 0; i + 1 < tokens_.size(); i++) {
@@ -18,7 +17,7 @@ std::unordered_set<std::string> Parser::collectModuleNames() {
     return module_names_;
 }
 
-// pass 2 — full parse
+// pass 2: full parse
 std::vector<Module> Parser::parse() {
     collectModuleNames();
     std::vector<Module> modules;
@@ -26,7 +25,7 @@ std::vector<Module> Parser::parse() {
         if (check(TokenType::MODULE))
             modules.push_back(parseModule());
         else
-            consume(); // skip compiler directives, stray tokens
+            consume(); // skip compiler directives, stray tokens, etc.
     }
     return modules;
 }
@@ -35,7 +34,7 @@ std::vector<Module> Parser::parse() {
 
 const Token& Parser::current() const {
     if (pos_ >= tokens_.size())
-        return tokens_.back(); // END_OF_FILE sentinel
+        return tokens_.back(); // END_OF_FILE equivalent
     return tokens_[pos_];
 }
 
@@ -110,11 +109,24 @@ Module Parser::parseModule() {
         } else if (check(TokenType::PARAMETER) || check(TokenType::LOCALPARAM)) {
             mod.parameters.push_back(parseParameterDeclaration());
         } else if (check(TokenType::ASSIGN)) {
-            mod.assigns.push_back(parseContinuousAssign());
+            for (auto& a : parseContinuousAssign())
+                mod.assigns.push_back(std::move(a));
         } else if (check(TokenType::ALWAYS)) {
             mod.always_blocks.push_back(parseAlwaysBlock());
+        } else if (check(TokenType::INITIAL)) {
+            consume();
+            if (check(TokenType::BEGIN)) skipBlock();
+            else { skipToSemicolon(); match(TokenType::SEMICOLON); }
         } else if (check(TokenType::IDENTIFIER)) {
-            if (module_names_.count(current().lexeme))
+            // disambiguate instance vs unknown declaration:
+            //   instance:     ModName #(...) instName (...)  — HASH after module name
+            //                 ModName instName (...)          — IDENTIFIER LPAREN after module name
+            //   net/other:    never has '(' immediately after the instance name
+            bool is_instance = module_names_.count(current().lexeme)
+                || peek(1).type == TokenType::HASH
+                || (peek(1).type == TokenType::IDENTIFIER
+                    && peek(2).type == TokenType::LPAREN);
+            if (is_instance)
                 mod.instances.push_back(parseInstance());
             else { skipToSemicolon(); match(TokenType::SEMICOLON); }
         } else {
@@ -238,8 +250,13 @@ NetDecl Parser::parseNetDeclaration() {
     if (check(TokenType::LBRACKET)) width = parseWidth();
 
     std::string name = expect(TokenType::IDENTIFIER).lexeme;
+
+    ExprPtr init = nullptr;
+    if (match(TokenType::EQ))
+        init = parseExpression();
+
     expect(TokenType::SEMICOLON);
-    return NetDecl(ntype, width, name, line, col);
+    return NetDecl(ntype, width, name, line, col, std::move(init));
 }
 
 Parameter Parser::parseParameterDeclaration() {
@@ -300,14 +317,18 @@ Instance Parser::parseInstance() {
     return inst;
 }
 
-Assign Parser::parseContinuousAssign() {
-    int line = current().line, col = current().column;
+std::vector<Assign> Parser::parseContinuousAssign() {
     expect(TokenType::ASSIGN);
-    ExprPtr lhs = parseLValue();
-    expect(TokenType::EQ);
-    ExprPtr rhs = parseExpression();
+    std::vector<Assign> assigns;
+    do {
+        int line = current().line, col = current().column;
+        ExprPtr lhs = parseLValue();
+        expect(TokenType::EQ);
+        ExprPtr rhs = parseExpression();
+        assigns.push_back(Assign(std::move(lhs), std::move(rhs), line, col));
+    } while (match(TokenType::COMMA));
     expect(TokenType::SEMICOLON);
-    return Assign(std::move(lhs), std::move(rhs), line, col);
+    return assigns;
 }
 
 AlwaysBlock Parser::parseAlwaysBlock() {
@@ -473,10 +494,10 @@ ExprPtr Parser::parseBinary(int minPrec) {
 
 ExprPtr Parser::parseUnary() {
     if (check(TokenType::TILDE)      || check(TokenType::BANG)       ||
-        check(TokenType::MINUS)      || check(TokenType::AMP)        ||
-        check(TokenType::PIPE)       || check(TokenType::CARET)      ||
-        check(TokenType::TILDE_AMP)  || check(TokenType::TILDE_PIPE) ||
-        check(TokenType::TILDE_CARET)) {
+        check(TokenType::MINUS)      || check(TokenType::PLUS)       ||
+        check(TokenType::AMP)        || check(TokenType::PIPE)       ||
+        check(TokenType::CARET)      || check(TokenType::TILDE_AMP)  ||
+        check(TokenType::TILDE_PIPE) || check(TokenType::TILDE_CARET)) {
         std::string op = consume().lexeme;
         return std::make_unique<UnaryOpExpr>(op, parseUnary());
     }
@@ -590,4 +611,206 @@ PortWidth Parser::parseWidth() {
     int lsb = tryInt(lsb_expr);
     if (msb >= 0 && lsb >= 0) return PortWidth(msb, lsb);
     return PortWidth(0, 0); // fallback for complex widths e.g. [$clog2(N)-1:0]
+}
+
+// json serialization
+
+static json exprToJson(const ExprPtr& e) {
+    if (!e) return nullptr;
+    switch (e->kind) {
+        case ExprKind::IDENTIFIER:
+            return { {"kind", "IDENTIFIER"}, {"name", static_cast<const IdentifierExpr*>(e.get())->name} };
+        case ExprKind::LITERAL:
+            return { {"kind", "LITERAL"}, {"value", static_cast<const LiteralExpr*>(e.get())->value} };
+        case ExprKind::UNARY_OP: {
+            auto* n = static_cast<const UnaryOpExpr*>(e.get());
+            return { {"kind", "UNARY_OP"}, {"op", n->op}, {"operand", exprToJson(n->operand)} };
+        }
+        case ExprKind::BINARY_OP: {
+            auto* n = static_cast<const BinaryOpExpr*>(e.get());
+            return { {"kind", "BINARY_OP"}, {"op", n->op},
+                     {"lhs", exprToJson(n->lhs)}, {"rhs", exprToJson(n->rhs)} };
+        }
+        case ExprKind::CONDITIONAL: {
+            auto* n = static_cast<const ConditionalExpr*>(e.get());
+            return { {"kind", "CONDITIONAL"}, {"cond", exprToJson(n->cond)},
+                     {"then", exprToJson(n->then_)}, {"else", exprToJson(n->else_)} };
+        }
+        case ExprKind::CONCAT: {
+            auto* n = static_cast<const ConcatExpr*>(e.get());
+            json parts = json::array();
+            for (const auto& p : n->parts) parts.push_back(exprToJson(p));
+            return { {"kind", "CONCAT"}, {"parts", parts} };
+        }
+        case ExprKind::REPLICATION: {
+            auto* n = static_cast<const ReplicationExpr*>(e.get());
+            return { {"kind", "REPLICATION"}, {"count", exprToJson(n->count)},
+                     {"value", exprToJson(n->value)} };
+        }
+        case ExprKind::BIT_SELECT: {
+            auto* n = static_cast<const BitSelectExpr*>(e.get());
+            return { {"kind", "BIT_SELECT"}, {"base", exprToJson(n->base)},
+                     {"index", exprToJson(n->index)} };
+        }
+        case ExprKind::PART_SELECT: {
+            auto* n = static_cast<const PartSelectExpr*>(e.get());
+            return { {"kind", "PART_SELECT"}, {"base", exprToJson(n->base)},
+                     {"msb", exprToJson(n->msb)}, {"lsb", exprToJson(n->lsb)} };
+        }
+        default: return nullptr;
+    }
+}
+
+static json stmtToJson(const StmtPtr& s);
+
+static json caseItemToJson(const CaseItem& item) {
+    json patterns = json::array();
+    for (const auto& p : item.patterns) patterns.push_back(exprToJson(p));
+    return { {"patterns", patterns}, {"body", stmtToJson(item.body)} };
+}
+
+static json stmtToJson(const StmtPtr& s) {
+    if (!s) return nullptr;
+    switch (s->kind) {
+        case StatementKind::SEQ_BLOCK: {
+            auto* n = static_cast<const SeqBlock*>(s.get());
+            json body = json::array();
+            for (const auto& stmt : n->body) body.push_back(stmtToJson(stmt));
+            return { {"kind", "SEQ_BLOCK"}, {"body", body} };
+        }
+        case StatementKind::BLOCKING_ASSIGN: {
+            auto* n = static_cast<const BlockingAssign*>(s.get());
+            return { {"kind", "BLOCKING_ASSIGN"},
+                     {"lhs", exprToJson(n->lhs)}, {"rhs", exprToJson(n->rhs)} };
+        }
+        case StatementKind::NONBLOCKING_ASSIGN: {
+            auto* n = static_cast<const NonBlockingAssign*>(s.get());
+            return { {"kind", "NONBLOCKING_ASSIGN"},
+                     {"lhs", exprToJson(n->lhs)}, {"rhs", exprToJson(n->rhs)} };
+        }
+        case StatementKind::IF_STATEMENT: {
+            auto* n = static_cast<const IfStatement*>(s.get());
+            return { {"kind", "IF_STATEMENT"}, {"cond", exprToJson(n->cond)},
+                     {"then", stmtToJson(n->then_branch)},
+                     {"else", stmtToJson(n->else_branch)} };
+        }
+        case StatementKind::CASE_STATEMENT: {
+            auto* n = static_cast<const CaseStatement*>(s.get());
+            json items = json::array();
+            for (const auto& item : n->items) items.push_back(caseItemToJson(item));
+            return { {"kind", "CASE_STATEMENT"}, {"variant", n->variant},
+                     {"expr", exprToJson(n->expr)}, {"items", items} };
+        }
+        default: return nullptr;
+    }
+}
+
+static std::string portDirectionStr(PortDirection d) {
+    switch (d) {
+        case PortDirection::INPUT:  return "input";
+        case PortDirection::OUTPUT: return "output";
+        case PortDirection::INOUT:  return "inout";
+        default: return "unknown";
+    }
+}
+
+static std::string portTypeStr(PortType t) {
+    switch (t) {
+        case PortType::WIRE:        return "wire";
+        case PortType::REG:         return "reg";
+        case PortType::LOGIC:       return "logic";
+        case PortType::UNSPECIFIED: return "unspecified";
+        default:                    return "unspecified";
+    }
+}
+
+static std::string netTypeStr(NetType t) {
+    switch (t) {
+        case NetType::WIRE:    return "wire";
+        case NetType::REG:     return "reg";
+        case NetType::LOGIC:   return "logic";
+        case NetType::TRI:     return "tri";
+        case NetType::WAND:    return "wand";
+        case NetType::WOR:     return "wor";
+        case NetType::SUPPLY0: return "supply0";
+        case NetType::SUPPLY1: return "supply1";
+        default:               return "wire";
+    }
+}
+
+static json moduleToJson(const Module& mod) {
+    json ports = json::array();
+    for (const auto& p : mod.ports)
+        ports.push_back({
+            {"name",      p.name},
+            {"direction", portDirectionStr(p.direction)},
+            {"type",      portTypeStr(p.type)},
+            {"msb",       p.width.msb},
+            {"lsb",       p.width.lsb},
+            {"scalar",    p.width.scalar}
+        });
+
+    json parameters = json::array();
+    for (const auto& p : mod.parameters)
+        parameters.push_back({ {"name", p.name}, {"default", p.default_value} });
+
+    json net_decls = json::array();
+    for (const auto& n : mod.net_decls) {
+        json nd = {
+            {"name",   n.name},
+            {"type",   netTypeStr(n.net_type)},
+            {"msb",    n.width.msb},
+            {"lsb",    n.width.lsb},
+            {"scalar", n.width.scalar}
+        };
+        if (n.init) nd["init"] = exprToJson(n.init);
+        net_decls.push_back(nd);
+    }
+
+    json instances = json::array();
+    for (const auto& inst : mod.instances) {
+        json connections = json::array();
+        for (const auto& c : inst.connections)
+            connections.push_back({ {"port", c.port_name}, {"signal", c.signal} });
+        instances.push_back({
+            {"module",      inst.module_name},
+            {"instance",    inst.instance_name},
+            {"resolved",    inst.resolved},
+            {"parameters",  inst.parameters},
+            {"connections", connections}
+        });
+    }
+
+    json assigns = json::array();
+    for (const auto& a : mod.assigns)
+        assigns.push_back({ {"lhs", exprToJson(a.lhs)}, {"rhs", exprToJson(a.rhs)} });
+
+    json always_blocks = json::array();
+    for (const auto& ab : mod.always_blocks)
+        always_blocks.push_back({
+            {"sensitivity", ab.sensitivity},
+            {"body",        stmtToJson(ab.body)}
+        });
+
+    return {
+        {"name",          mod.name},
+        {"source_file",   mod.source_file},
+        {"parameters",    parameters},
+        {"ports",         ports},
+        {"net_decls",     net_decls},
+        {"instances",     instances},
+        {"assigns",       assigns},
+        {"always_blocks", always_blocks}
+    };
+}
+
+std::string modulesToJSON(const std::vector<Module>& modules) {
+    json root = json::array();
+    for (const auto& mod : modules)
+        root.push_back(moduleToJson(mod));
+    return root.dump(2);
+}
+
+std::string Parser::toAST() {
+    return modulesToJSON(parse());
 }

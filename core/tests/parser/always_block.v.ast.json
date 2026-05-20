@@ -1,0 +1,81 @@
+[
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "kind": "NONBLOCKING_ASSIGN",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "q"
+              },
+              "rhs": {
+                "kind": "IDENTIFIER",
+                "name": "d"
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "posedge clk"
+      }
+    ],
+    "assigns": [],
+    "instances": [],
+    "name": "dff",
+    "net_decls": [],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "d",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "q",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "d",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "q",
+        "scalar": true,
+        "type": "reg"
+      }
+    ],
+    "source_file": "always_block.v"
+  }
+]

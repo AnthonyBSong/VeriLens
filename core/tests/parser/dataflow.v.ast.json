@@ -1,0 +1,56 @@
+[
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "y"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "a"
+          },
+          "op": "+",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "b"
+          }
+        }
+      }
+    ],
+    "instances": [],
+    "name": "adder",
+    "net_decls": [],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 7,
+        "name": "a",
+        "scalar": false,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 7,
+        "name": "b",
+        "scalar": false,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 7,
+        "name": "y",
+        "scalar": false,
+        "type": "unspecified"
+      }
+    ],
+    "source_file": "dataflow.v"
+  }
+]

@@ -1,0 +1,26 @@
+digraph AST {
+  node [fontname="Helvetica" fontsize=11 margin="0.15,0.08"];
+  edge [fontsize=9 color="#555555"];
+  rankdir=TB;
+  compound=true;
+  concentrate=true;
+  nodesep=0.4;
+  ranksep=0.6;
+  subgraph cluster_simple_0 {
+    label=<<b>module simple</b>>;
+    style=filled; fillcolor="#eaf4fb";
+    n1 [label="module\nsimple" shape=box3d style=filled fillcolor="#aed6f1" fontcolor="#1a237e" fontsize=13];
+    n2 [label="input\nclk" shape=parallelogram style=filled fillcolor="#a9cce3"];
+  n1 -> n2 [label="port"];
+    n3 [label="input\nrst" shape=parallelogram style=filled fillcolor="#a9cce3"];
+  n1 -> n3 [label="port"];
+    n4 [label="input\nout" shape=parallelogram style=filled fillcolor="#a9cce3"];
+  n1 -> n4 [label="port"];
+    n5 [label="input\nclk" shape=parallelogram style=filled fillcolor="#a9cce3"];
+  n1 -> n5 [label="port"];
+    n6 [label="input\nrst" shape=parallelogram style=filled fillcolor="#a9cce3"];
+  n1 -> n6 [label="port"];
+    n7 [label="output\nout" shape=parallelogram style=filled fillcolor="#a9cce3"];
+  n1 -> n7 [label="port"];
+  }
+}

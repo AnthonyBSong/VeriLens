@@ -7,7 +7,11 @@
 #include "ASTNodes/ASTNodes.h"
 #include "ParseError.h"
 #include <stdexcept>
-#include <memory>
+#include <nlohmann/json.hpp>
+
+
+// Serialize a module list to a JSON string (used by gen_ast after linking).
+std::string modulesToJSON(const std::vector<Module>& modules);
 
 class Parser {
 public:
@@ -18,6 +22,9 @@ public:
 
     // Pass 2 — full parse, returns every module found in the token stream
     std::vector<Module> parse();
+
+    // Serialize the parsed AST to a JSON string (single-file, no linker)
+    std::string toAST();
 
 private:
     // Token streaming helpers
@@ -49,7 +56,7 @@ private:
     NetDecl     parseNetDeclaration();        // wire / reg / logic ...
     Parameter   parseParameterDeclaration();  // parameter / localparam
     Instance    parseInstance();              // ModName #() instName (...)
-    Assign      parseContinuousAssign();      // assign lhs = rhs;
+    std::vector<Assign> parseContinuousAssign();  // assign a = x [, b = y, ...];
     AlwaysBlock parseAlwaysBlock();           // always @(...) ...
 
 

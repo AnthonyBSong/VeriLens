@@ -1,0 +1,88 @@
+[
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "y"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "a"
+          },
+          "op": "&",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "b"
+          }
+        }
+      }
+    ],
+    "instances": [],
+    "name": "and_gate",
+    "net_decls": [
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "y",
+        "scalar": true,
+        "type": "wire"
+      }
+    ],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "a",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "b",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "y",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "a",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "b",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "y",
+        "scalar": true,
+        "type": "unspecified"
+      }
+    ],
+    "source_file": "assign_wire.v"
+  }
+]
