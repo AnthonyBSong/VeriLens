@@ -10,7 +10,7 @@ The goal is not to replace a simulator, synthesizer, or full compiler. Instead, 
 
 ## Architecture
 
-VeriLens contains a lexer, parser, structural AST, validator, and interactive diagram frontend. It is a **structural extractor**, not a full compiler. The goal is to extract just enough information from Verilog/SystemVerilog to produce accurate, meaningful hardware diagrams.
+VeriLens contains a lexer, parser, structural AST, validator, and interactive diagram frontend. It is a **structural extractor**, not a full compiler. The goal is to extract enough information from Verilog/SystemVerilog to produce accurate, meaningful hardware diagrams.
 
 ```
 Lexer → Parser → AST → Validator → Diagram Frontend
