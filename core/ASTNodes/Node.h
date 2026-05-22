@@ -9,6 +9,7 @@ enum class NodeKind {
     PORT_CONNECTION,
     ASSIGN,
     ALWAYS_BLOCK,
+    GATE_PRIMITIVE,
 };
 
 class Node {

@@ -125,6 +125,14 @@ Module Parser::parseModule() {
             consume();
             if (check(TokenType::BEGIN)) skipBlock();
             else { skipToSemicolon(); match(TokenType::SEMICOLON); }
+        } else if (check(TokenType::AND)    || check(TokenType::OR)     ||
+                   check(TokenType::NOT)    || check(TokenType::NAND)   ||
+                   check(TokenType::NOR)    || check(TokenType::XOR)    ||
+                   check(TokenType::XNOR)   || check(TokenType::BUF)    ||
+                   check(TokenType::BUFIF0) || check(TokenType::BUFIF1) ||
+                   check(TokenType::NOTIF0) || check(TokenType::NOTIF1)) {
+            for (auto& g : parseGatePrimitive())
+                mod.gate_primitives.push_back(std::move(g));
         } else if (check(TokenType::IDENTIFIER)) {
             // used to disambiguate instance vs unknown declaration
             bool is_instance = module_names_.count(current().lexeme)
@@ -356,6 +364,78 @@ Instance Parser::parseInstance() {
     expect(TokenType::RPAREN);
     expect(TokenType::SEMICOLON);
     return inst;
+}
+
+std::vector<GatePrimitive> Parser::parseGatePrimitive() {
+    int line = current().line, col = current().column;
+    std::string gate_type = consume().lexeme; // e.g. "and", "or", "not"
+
+    // Skip optional drive strength: (strong0, weak1) etc.
+    // Strength tokens appear as the first LPAREN followed by strength keywords.
+    // We peek ahead: if the token after LPAREN is a strength keyword, skip the pair.
+    if (check(TokenType::LPAREN)) {
+        TokenType next = peek(1).type;
+        if (next == TokenType::STRONG0 || next == TokenType::STRONG1 ||
+            next == TokenType::WEAK0   || next == TokenType::WEAK1   ||
+            next == TokenType::HIGHZ0  || next == TokenType::HIGHZ1  ||
+            next == TokenType::PULL0   || next == TokenType::PULL1) {
+            consume(); // (
+            while (!check(TokenType::RPAREN) && !check(TokenType::END_OF_FILE))
+                consume();
+            match(TokenType::RPAREN);
+        }
+    }
+
+    // Skip optional delay: #5 or #(1,2,3)
+    if (match(TokenType::HASH)) {
+        if (check(TokenType::LPAREN)) {
+            consume(); // (
+            int depth = 1;
+            while (depth > 0 && !check(TokenType::END_OF_FILE)) {
+                if      (check(TokenType::LPAREN)) depth++;
+                else if (check(TokenType::RPAREN)) depth--;
+                consume();
+            }
+        } else {
+            consume(); // single delay value
+        }
+    }
+
+    // Parse one or more gate instances: [name] (port, port, ...)
+    std::vector<GatePrimitive> gates;
+    do {
+        // Optional instance name — present when current token is IDENTIFIER
+        // and next is LPAREN (not another IDENTIFIER, which would be a net).
+        std::string inst_name;
+        if (check(TokenType::IDENTIFIER) && peek(1).type == TokenType::LPAREN) {
+            inst_name = consume().lexeme;
+        }
+
+        expect(TokenType::LPAREN);
+        std::vector<std::string> ports;
+        while (!check(TokenType::RPAREN) && !check(TokenType::END_OF_FILE)) {
+            // Collect one port expression as raw text (handles bit-selects, etc.)
+            std::string sig;
+            int depth = 0;
+            while (!check(TokenType::END_OF_FILE)) {
+                if      (check(TokenType::LPAREN)) { depth++; sig += consume().lexeme; }
+                else if (check(TokenType::RPAREN)) { if (depth == 0) break; depth--; sig += consume().lexeme; }
+                else if (depth == 0 && check(TokenType::COMMA)) break;
+                else sig += consume().lexeme;
+            }
+            // trim leading/trailing whitespace
+            auto s = sig.find_first_not_of(' ');
+            auto e = sig.find_last_not_of(' ');
+            if (s != std::string::npos) sig = sig.substr(s, e - s + 1);
+            ports.push_back(sig);
+            if (!match(TokenType::COMMA)) break;
+        }
+        expect(TokenType::RPAREN);
+        gates.emplace_back(gate_type, inst_name, std::move(ports), line, col);
+    } while (match(TokenType::COMMA));
+
+    expect(TokenType::SEMICOLON);
+    return gates;
 }
 
 std::vector<Assign> Parser::parseContinuousAssign() {
@@ -843,6 +923,14 @@ static json moduleToJson(const Module& mod) {
         });
     }
 
+    json gate_primitives = json::array();
+    for (const auto& g : mod.gate_primitives)
+        gate_primitives.push_back({
+            {"type",     g.gate_type},
+            {"instance", g.instance_name},
+            {"ports",    g.ports}
+        });
+
     json assigns = json::array();
     for (const auto& a : mod.assigns)
         assigns.push_back({ {"lhs", exprToJson(a.lhs)}, {"rhs", exprToJson(a.rhs)} });
@@ -855,14 +943,15 @@ static json moduleToJson(const Module& mod) {
         });
 
     return {
-        {"name",          mod.name},
-        {"source_file",   mod.source_file},
-        {"parameters",    parameters},
-        {"ports",         ports},
-        {"net_decls",     net_decls},
-        {"instances",     instances},
-        {"assigns",       assigns},
-        {"always_blocks", always_blocks}
+        {"name",             mod.name},
+        {"source_file",      mod.source_file},
+        {"parameters",       parameters},
+        {"ports",            ports},
+        {"net_decls",        net_decls},
+        {"instances",        instances},
+        {"gate_primitives",  gate_primitives},
+        {"assigns",          assigns},
+        {"always_blocks",    always_blocks}
     };
 }
 

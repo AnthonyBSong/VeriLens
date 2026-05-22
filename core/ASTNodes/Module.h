@@ -10,17 +10,19 @@
 #include "Instance.h"
 #include "Assign.h"
 #include "AlwaysBlock.h"
+#include "GatePrimitive.h"
 
 class Module : public Node {
 public:
-    std::string              name;
-    std::string              source_file;  // set by gen_ast; empty when parsed via Parser::toAST()
-    std::vector<Parameter>   parameters;
-    std::vector<Port>        ports;
-    std::vector<NetDecl>     net_decls;
-    std::vector<Instance>    instances;
-    std::vector<Assign>      assigns;
-    std::vector<AlwaysBlock> always_blocks;
+    std::string                name;
+    std::string                source_file;  // set by gen_ast; empty when parsed via Parser::toAST()
+    std::vector<Parameter>     parameters;
+    std::vector<Port>          ports;
+    std::vector<NetDecl>       net_decls;
+    std::vector<Instance>      instances;
+    std::vector<GatePrimitive> gate_primitives;
+    std::vector<Assign>        assigns;
+    std::vector<AlwaysBlock>   always_blocks;
 
     Module(const std::string& name, int line, int column)
         : Node(NodeKind::MODULE, line, column), name(name) {}
