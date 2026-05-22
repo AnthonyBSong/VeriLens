@@ -1,0 +1,245 @@
+[
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {
+                "kind": "IDENTIFIER",
+                "name": "rst"
+              },
+              "else": {
+                "body": [
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "wb_alu_result"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "mem_alu_result"
+                    }
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "wb_read_data"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "mem_read_data"
+                    }
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "wb_rd"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "mem_rd"
+                    }
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "wb_reg_write"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "mem_reg_write"
+                    }
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "wb_mem_to_reg"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "mem_mem_to_reg"
+                    }
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              },
+              "kind": "IF_STATEMENT",
+              "then": {
+                "body": [
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "wb_alu_result"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "0"
+                    }
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "wb_read_data"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "0"
+                    }
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "wb_rd"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "0"
+                    }
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "wb_reg_write"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "0"
+                    }
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "wb_mem_to_reg"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "0"
+                    }
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "posedge clk"
+      }
+    ],
+    "assigns": [],
+    "instances": [],
+    "name": "PipelineReg_MEM_WB",
+    "net_decls": [],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "rst",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "mem_alu_result",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "mem_read_data",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 4,
+        "name": "mem_rd",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "mem_reg_write",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "mem_mem_to_reg",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 31,
+        "name": "wb_alu_result",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 31,
+        "name": "wb_read_data",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 4,
+        "name": "wb_rd",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "wb_reg_write",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "wb_mem_to_reg",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "source_file": "PipelineReg_MEM_WB.sv"
+  }
+]

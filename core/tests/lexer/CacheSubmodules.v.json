@@ -1,0 +1,774 @@
+[
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`ifndef"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "LAB3_MEM_CACHE_SUBMODULES_V"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "LAB3_MEM_CACHE_SUBMODULES_V"
+  },
+  {
+    "type": "MODULE",
+    "lexeme": "module"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "lab3_mem_Wben_Dec"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "31"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "addr"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "OUTPUT",
+    "lexeme": "output"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "15"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "wb_en"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "always_comb"
+  },
+  {
+    "type": "BEGIN",
+    "lexeme": "begin"
+  },
+  {
+    "type": "CASE",
+    "lexeme": "case"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "addr"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "3"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "2"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "2'b00"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "wb_en"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "16'h000F"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "2'b01"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "wb_en"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "16'h00F0"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "2'b10"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "wb_en"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "16'h0F00"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "2'b11"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "wb_en"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "16'hF000"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "DEFAULT",
+    "lexeme": "default"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "wb_en"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "APOSTROPHE",
+    "lexeme": "'"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "x"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "ENDCASE",
+    "lexeme": "endcase"
+  },
+  {
+    "type": "END",
+    "lexeme": "end"
+  },
+  {
+    "type": "ENDMODULE",
+    "lexeme": "endmodule"
+  },
+  {
+    "type": "MODULE",
+    "lexeme": "module"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "lab3_mem_Mkaddr"
+  },
+  {
+    "type": "HASH",
+    "lexeme": "#"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "PARAMETER",
+    "lexeme": "parameter"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "p_num_banks"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "PARAMETER",
+    "lexeme": "parameter"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "index_width"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "4"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "LOCALPARAM",
+    "lexeme": "localparam"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "c_bank_bits"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$clog2"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "p_num_banks"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "27"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "index_width"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "c_bank_bits"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "tag"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "index_width"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "index"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "31"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_addr"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "OUTPUT",
+    "lexeme": "output"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "31"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "memreq_addr"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "GENERATE",
+    "lexeme": "generate"
+  },
+  {
+    "type": "IF",
+    "lexeme": "if"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "c_bank_bits"
+  },
+  {
+    "type": "GREATER",
+    "lexeme": ">"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "BEGIN",
+    "lexeme": "begin"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "c_bank_bits"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "bank"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "ASSIGN",
+    "lexeme": "assign"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "bank"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_addr"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "3"
+  },
+  {
+    "type": "PLUS",
+    "lexeme": "+"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "c_bank_bits"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "4"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "ASSIGN",
+    "lexeme": "assign"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "memreq_addr"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "LBRACE",
+    "lexeme": "{"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "tag"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "index"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "bank"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "4'b0"
+  },
+  {
+    "type": "RBRACE",
+    "lexeme": "}"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "END",
+    "lexeme": "end"
+  },
+  {
+    "type": "ELSE",
+    "lexeme": "else"
+  },
+  {
+    "type": "ASSIGN",
+    "lexeme": "assign"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "memreq_addr"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "LBRACE",
+    "lexeme": "{"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "tag"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "index"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "4'b0"
+  },
+  {
+    "type": "RBRACE",
+    "lexeme": "}"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "ENDGENERATE",
+    "lexeme": "endgenerate"
+  },
+  {
+    "type": "ENDMODULE",
+    "lexeme": "endmodule"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`endif"
+  },
+  {
+    "type": "END_OF_FILE",
+    "lexeme": ""
+  }
+]

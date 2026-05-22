@@ -1,0 +1,37 @@
+[
+  {
+    "always_blocks": [],
+    "assigns": [],
+    "instances": [],
+    "name": "lab2_proc_ProcDpathImmGen",
+    "net_decls": [],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 2,
+        "name": "imm_type",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "inst",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 31,
+        "name": "imm",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "source_file": "ProcDpathImmGen.v"
+  }
+]

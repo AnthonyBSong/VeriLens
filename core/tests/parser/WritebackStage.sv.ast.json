@@ -1,0 +1,67 @@
+[
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "wb_data"
+        },
+        "rhs": {
+          "cond": {
+            "kind": "IDENTIFIER",
+            "name": "mem_to_reg"
+          },
+          "else": {
+            "kind": "IDENTIFIER",
+            "name": "alu_result"
+          },
+          "kind": "CONDITIONAL",
+          "then": {
+            "kind": "IDENTIFIER",
+            "name": "read_data"
+          }
+        }
+      }
+    ],
+    "instances": [],
+    "name": "WritebackStage",
+    "net_decls": [],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "alu_result",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "read_data",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "mem_to_reg",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 31,
+        "name": "wb_data",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "source_file": "WritebackStage.sv"
+  }
+]

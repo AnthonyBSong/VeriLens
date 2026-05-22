@@ -1,0 +1,2883 @@
+[
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "reg_en_F"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "UNARY_OP",
+            "op": "!",
+            "operand": {
+              "kind": "IDENTIFIER",
+              "name": "stall_F"
+            }
+          },
+          "op": "||",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "squash_F"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "ostall_F"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "val_F"
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "UNARY_OP",
+            "op": "!",
+            "operand": {
+              "kind": "IDENTIFIER",
+              "name": "imem_respstream_val"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "stall_F"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "val_F"
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "BINARY_OP",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "ostall_F"
+                  },
+                  "op": "||",
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "ostall_D"
+                  }
+                },
+                "op": "||",
+                "rhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "ostall_X"
+                }
+              },
+              "op": "||",
+              "rhs": {
+                "kind": "IDENTIFIER",
+                "name": "ostall_M"
+              }
+            },
+            "op": "||",
+            "rhs": {
+              "kind": "IDENTIFIER",
+              "name": "ostall_W"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "squash_F"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "val_F"
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "osquash_D"
+            },
+            "op": "||",
+            "rhs": {
+              "kind": "IDENTIFIER",
+              "name": "osquash_X"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "imem_respstream_drop"
+        },
+        "rhs": {
+          "kind": "IDENTIFIER",
+          "name": "squash_F"
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "imem_reqstream_val"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "UNARY_OP",
+              "op": "!",
+              "operand": {
+                "kind": "IDENTIFIER",
+                "name": "stall_F"
+              }
+            },
+            "op": "||",
+            "rhs": {
+              "kind": "IDENTIFIER",
+              "name": "squash_F"
+            }
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "UNARY_OP",
+            "op": "!",
+            "operand": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "imem_respstream_rdy"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "UNARY_OP",
+            "op": "!",
+            "operand": {
+              "kind": "IDENTIFIER",
+              "name": "stall_F"
+            }
+          },
+          "op": "||",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "squash_F"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "next_val_F"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "val_F"
+            },
+            "op": "&&",
+            "rhs": {
+              "kind": "UNARY_OP",
+              "op": "!",
+              "operand": {
+                "kind": "IDENTIFIER",
+                "name": "stall_F"
+              }
+            }
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "UNARY_OP",
+            "op": "!",
+            "operand": {
+              "kind": "IDENTIFIER",
+              "name": "squash_F"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "reg_en_D"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "UNARY_OP",
+            "op": "!",
+            "operand": {
+              "kind": "IDENTIFIER",
+              "name": "stall_D"
+            }
+          },
+          "op": "||",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "squash_D"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "rf_waddr_D"
+        },
+        "rhs": {
+          "kind": "IDENTIFIER",
+          "name": "inst_rd_D"
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "mngr2proc_rdy"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "val_D"
+            },
+            "op": "&&",
+            "rhs": {
+              "kind": "UNARY_OP",
+              "op": "!",
+              "operand": {
+                "kind": "IDENTIFIER",
+                "name": "stall_D"
+              }
+            }
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "mngr2proc_rdy_D"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "ostall_mngr2proc_D"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "val_D"
+            },
+            "op": "&&",
+            "rhs": {
+              "kind": "IDENTIFIER",
+              "name": "mngr2proc_rdy_D"
+            }
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "UNARY_OP",
+            "op": "!",
+            "operand": {
+              "kind": "IDENTIFIER",
+              "name": "mngr2proc_val"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "ostall_load_use_X_rs1_D"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "BINARY_OP",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "rs1_en_D"
+                  },
+                  "op": "&&",
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "val_X"
+                  }
+                },
+                "op": "&&",
+                "rhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "rf_wen_X"
+                }
+              },
+              "op": "&&",
+              "rhs": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "inst_rs1_D"
+                },
+                "op": "==",
+                "rhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "rf_waddr_X"
+                }
+              }
+            },
+            "op": "&&",
+            "rhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "rf_waddr_X"
+              },
+              "op": "!=",
+              "rhs": {
+                "kind": "LITERAL",
+                "value": "5'd0"
+              }
+            }
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "dmem_type_X"
+            },
+            "op": "==",
+            "rhs": {
+              "kind": "IDENTIFIER",
+              "name": "ld"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "ostall_load_use_X_rs2_D"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "BINARY_OP",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "rs2_en_D"
+                  },
+                  "op": "&&",
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "val_X"
+                  }
+                },
+                "op": "&&",
+                "rhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "rf_wen_X"
+                }
+              },
+              "op": "&&",
+              "rhs": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "inst_rs2_D"
+                },
+                "op": "==",
+                "rhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "rf_waddr_X"
+                }
+              }
+            },
+            "op": "&&",
+            "rhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "rf_waddr_X"
+              },
+              "op": "!=",
+              "rhs": {
+                "kind": "LITERAL",
+                "value": "5'd0"
+              }
+            }
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "dmem_type_X"
+            },
+            "op": "==",
+            "rhs": {
+              "kind": "IDENTIFIER",
+              "name": "ld"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "ostall_mul_not_rdy"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "val_D"
+            },
+            "op": "&&",
+            "rhs": {
+              "kind": "IDENTIFIER",
+              "name": "mul_D"
+            }
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "UNARY_OP",
+            "op": "!",
+            "operand": {
+              "kind": "IDENTIFIER",
+              "name": "imul_req_rdy_D"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "bypass_waddr_X_rs1_D"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "BINARY_OP",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "rs1_en_D"
+                  },
+                  "op": "&&",
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "val_X"
+                  }
+                },
+                "op": "&&",
+                "rhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "rf_wen_X"
+                }
+              },
+              "op": "&&",
+              "rhs": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "inst_rs1_D"
+                },
+                "op": "==",
+                "rhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "rf_waddr_X"
+                }
+              }
+            },
+            "op": "&&",
+            "rhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "rf_waddr_X"
+              },
+              "op": "!=",
+              "rhs": {
+                "kind": "LITERAL",
+                "value": "5'd0"
+              }
+            }
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "dmem_type_X"
+            },
+            "op": "!=",
+            "rhs": {
+              "kind": "IDENTIFIER",
+              "name": "ld"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "bypass_waddr_M_rs1_D"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "rs1_en_D"
+                },
+                "op": "&&",
+                "rhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "val_M"
+                }
+              },
+              "op": "&&",
+              "rhs": {
+                "kind": "IDENTIFIER",
+                "name": "rf_wen_M"
+              }
+            },
+            "op": "&&",
+            "rhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "inst_rs1_D"
+              },
+              "op": "==",
+              "rhs": {
+                "kind": "IDENTIFIER",
+                "name": "rf_waddr_M"
+              }
+            }
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "rf_waddr_M"
+            },
+            "op": "!=",
+            "rhs": {
+              "kind": "LITERAL",
+              "value": "5'd0"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "bypass_waddr_W_rs1_D"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "rs1_en_D"
+                },
+                "op": "&&",
+                "rhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "val_W"
+                }
+              },
+              "op": "&&",
+              "rhs": {
+                "kind": "IDENTIFIER",
+                "name": "rf_wen_W"
+              }
+            },
+            "op": "&&",
+            "rhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "inst_rs1_D"
+              },
+              "op": "==",
+              "rhs": {
+                "kind": "IDENTIFIER",
+                "name": "rf_waddr_W"
+              }
+            }
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "rf_waddr_W"
+            },
+            "op": "!=",
+            "rhs": {
+              "kind": "LITERAL",
+              "value": "5'd0"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "bypass_waddr_X_rs2_D"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "BINARY_OP",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "rs2_en_D"
+                  },
+                  "op": "&&",
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "val_X"
+                  }
+                },
+                "op": "&&",
+                "rhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "rf_wen_X"
+                }
+              },
+              "op": "&&",
+              "rhs": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "inst_rs2_D"
+                },
+                "op": "==",
+                "rhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "rf_waddr_X"
+                }
+              }
+            },
+            "op": "&&",
+            "rhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "rf_waddr_X"
+              },
+              "op": "!=",
+              "rhs": {
+                "kind": "LITERAL",
+                "value": "5'd0"
+              }
+            }
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "dmem_type_X"
+            },
+            "op": "!=",
+            "rhs": {
+              "kind": "IDENTIFIER",
+              "name": "ld"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "bypass_waddr_M_rs2_D"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "rs2_en_D"
+                },
+                "op": "&&",
+                "rhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "val_M"
+                }
+              },
+              "op": "&&",
+              "rhs": {
+                "kind": "IDENTIFIER",
+                "name": "rf_wen_M"
+              }
+            },
+            "op": "&&",
+            "rhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "inst_rs2_D"
+              },
+              "op": "==",
+              "rhs": {
+                "kind": "IDENTIFIER",
+                "name": "rf_waddr_M"
+              }
+            }
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "rf_waddr_M"
+            },
+            "op": "!=",
+            "rhs": {
+              "kind": "LITERAL",
+              "value": "5'd0"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "bypass_waddr_W_rs2_D"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "rs2_en_D"
+                },
+                "op": "&&",
+                "rhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "val_W"
+                }
+              },
+              "op": "&&",
+              "rhs": {
+                "kind": "IDENTIFIER",
+                "name": "rf_wen_W"
+              }
+            },
+            "op": "&&",
+            "rhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "inst_rs2_D"
+              },
+              "op": "==",
+              "rhs": {
+                "kind": "IDENTIFIER",
+                "name": "rf_waddr_W"
+              }
+            }
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "rf_waddr_W"
+            },
+            "op": "!=",
+            "rhs": {
+              "kind": "LITERAL",
+              "value": "5'd0"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "ostall_raw_hazard_D"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "ostall_load_use_X_rs1_D"
+          },
+          "op": "||",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "ostall_load_use_X_rs2_D"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "ostall_D"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "val_D"
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "ostall_mngr2proc_D"
+              },
+              "op": "||",
+              "rhs": {
+                "kind": "IDENTIFIER",
+                "name": "ostall_raw_hazard_D"
+              }
+            },
+            "op": "||",
+            "rhs": {
+              "kind": "IDENTIFIER",
+              "name": "ostall_mul_not_rdy"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "osquash_D"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "val_D"
+            },
+            "op": "&&",
+            "rhs": {
+              "kind": "UNARY_OP",
+              "op": "!",
+              "operand": {
+                "kind": "IDENTIFIER",
+                "name": "stall_D"
+              }
+            }
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "pc_redirect_D"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "stall_D"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "val_D"
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "ostall_D"
+                },
+                "op": "||",
+                "rhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "ostall_X"
+                }
+              },
+              "op": "||",
+              "rhs": {
+                "kind": "IDENTIFIER",
+                "name": "ostall_M"
+              }
+            },
+            "op": "||",
+            "rhs": {
+              "kind": "IDENTIFIER",
+              "name": "ostall_W"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "squash_D"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "val_D"
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "osquash_X"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "next_val_D"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "val_D"
+            },
+            "op": "&&",
+            "rhs": {
+              "kind": "UNARY_OP",
+              "op": "!",
+              "operand": {
+                "kind": "IDENTIFIER",
+                "name": "stall_D"
+              }
+            }
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "UNARY_OP",
+            "op": "!",
+            "operand": {
+              "kind": "IDENTIFIER",
+              "name": "squash_D"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "imul_req_val_D"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "mul_D"
+              },
+              "op": "&&",
+              "rhs": {
+                "kind": "IDENTIFIER",
+                "name": "val_D"
+              }
+            },
+            "op": "&&",
+            "rhs": {
+              "kind": "UNARY_OP",
+              "op": "!",
+              "operand": {
+                "kind": "IDENTIFIER",
+                "name": "squash_D"
+              }
+            }
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "UNARY_OP",
+            "op": "!",
+            "operand": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "BINARY_OP",
+                  "lhs": {
+                    "kind": "BINARY_OP",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "ostall_X"
+                    },
+                    "op": "||",
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "ostall_M"
+                    }
+                  },
+                  "op": "||",
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "ostall_W"
+                  }
+                },
+                "op": "||",
+                "rhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "ostall_mngr2proc_D"
+                }
+              },
+              "op": "||",
+              "rhs": {
+                "kind": "IDENTIFIER",
+                "name": "ostall_raw_hazard_D"
+              }
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "reg_en_X"
+        },
+        "rhs": {
+          "kind": "UNARY_OP",
+          "op": "!",
+          "operand": {
+            "kind": "IDENTIFIER",
+            "name": "stall_X"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "ostall_dmem_not_rdy"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "val_X"
+            },
+            "op": "&&",
+            "rhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "dmem_type_X"
+              },
+              "op": "!=",
+              "rhs": {
+                "kind": "IDENTIFIER",
+                "name": "nr"
+              }
+            }
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "UNARY_OP",
+            "op": "!",
+            "operand": {
+              "kind": "IDENTIFIER",
+              "name": "dmem_reqstream_rdy"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "ostall_mul_not_val"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "val_X"
+            },
+            "op": "&&",
+            "rhs": {
+              "kind": "IDENTIFIER",
+              "name": "mul_X"
+            }
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "UNARY_OP",
+            "op": "!",
+            "operand": {
+              "kind": "IDENTIFIER",
+              "name": "imul_resp_val_X"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "ostall_X"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "ostall_dmem_not_rdy"
+          },
+          "op": "||",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "ostall_mul_not_val"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "osquash_X"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "val_X"
+            },
+            "op": "&&",
+            "rhs": {
+              "kind": "UNARY_OP",
+              "op": "!",
+              "operand": {
+                "kind": "IDENTIFIER",
+                "name": "stall_X"
+              }
+            }
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "pc_redirect_X"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "stall_X"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "val_X"
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "ostall_X"
+              },
+              "op": "||",
+              "rhs": {
+                "kind": "IDENTIFIER",
+                "name": "ostall_M"
+              }
+            },
+            "op": "||",
+            "rhs": {
+              "kind": "IDENTIFIER",
+              "name": "ostall_W"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "dmem_reqstream_val"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "val_X"
+            },
+            "op": "&&",
+            "rhs": {
+              "kind": "UNARY_OP",
+              "op": "!",
+              "operand": {
+                "kind": "IDENTIFIER",
+                "name": "stall_X"
+              }
+            }
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "dmem_type_X"
+            },
+            "op": "!=",
+            "rhs": {
+              "kind": "IDENTIFIER",
+              "name": "nr"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "imul_resp_rdy_X"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "val_X"
+            },
+            "op": "&&",
+            "rhs": {
+              "kind": "UNARY_OP",
+              "op": "!",
+              "operand": {
+                "kind": "IDENTIFIER",
+                "name": "stall_X"
+              }
+            }
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "mul_X"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "next_val_X"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "val_X"
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "UNARY_OP",
+            "op": "!",
+            "operand": {
+              "kind": "IDENTIFIER",
+              "name": "stall_X"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "dmem_fn_X"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "dmem_type_X"
+          },
+          "op": "==",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "st"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "reg_en_M"
+        },
+        "rhs": {
+          "kind": "UNARY_OP",
+          "op": "!",
+          "operand": {
+            "kind": "IDENTIFIER",
+            "name": "stall_M"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "ostall_M"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "val_M"
+            },
+            "op": "&&",
+            "rhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "dmem_type_M"
+              },
+              "op": "!=",
+              "rhs": {
+                "kind": "IDENTIFIER",
+                "name": "nr"
+              }
+            }
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "UNARY_OP",
+            "op": "!",
+            "operand": {
+              "kind": "IDENTIFIER",
+              "name": "dmem_respstream_val"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "stall_M"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "val_M"
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "ostall_M"
+            },
+            "op": "||",
+            "rhs": {
+              "kind": "IDENTIFIER",
+              "name": "ostall_W"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "dmem_respstream_rdy"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "val_M"
+            },
+            "op": "&&",
+            "rhs": {
+              "kind": "UNARY_OP",
+              "op": "!",
+              "operand": {
+                "kind": "IDENTIFIER",
+                "name": "stall_M"
+              }
+            }
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "dmem_type_M"
+            },
+            "op": "!=",
+            "rhs": {
+              "kind": "IDENTIFIER",
+              "name": "nr"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "next_val_M"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "val_M"
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "UNARY_OP",
+            "op": "!",
+            "operand": {
+              "kind": "IDENTIFIER",
+              "name": "stall_M"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "reg_en_W"
+        },
+        "rhs": {
+          "kind": "UNARY_OP",
+          "op": "!",
+          "operand": {
+            "kind": "IDENTIFIER",
+            "name": "stall_W"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "rf_wen_W"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "val_W"
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "rf_wen_pending_W"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "stats_en_wen_W"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "val_W"
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "stats_en_wen_pending_W"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "ostall_W"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "val_W"
+            },
+            "op": "&&",
+            "rhs": {
+              "kind": "IDENTIFIER",
+              "name": "proc2mngr_val_W"
+            }
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "UNARY_OP",
+            "op": "!",
+            "operand": {
+              "kind": "IDENTIFIER",
+              "name": "proc2mngr_rdy"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "stall_W"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "val_W"
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "ostall_W"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "proc2mngr_val"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "val_W"
+            },
+            "op": "&&",
+            "rhs": {
+              "kind": "UNARY_OP",
+              "op": "!",
+              "operand": {
+                "kind": "IDENTIFIER",
+                "name": "stall_W"
+              }
+            }
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "proc2mngr_val_W"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "commit_inst"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "val_W"
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "UNARY_OP",
+            "op": "!",
+            "operand": {
+              "kind": "IDENTIFIER",
+              "name": "stall_W"
+            }
+          }
+        }
+      }
+    ],
+    "instances": [
+      {
+        "connections": [
+          {
+            "port": "inst",
+            "signal": "inst_D"
+          },
+          {
+            "port": "opcode",
+            "signal": ""
+          },
+          {
+            "port": "rd",
+            "signal": "inst_rd_D"
+          },
+          {
+            "port": "rs1",
+            "signal": "inst_rs1_D"
+          },
+          {
+            "port": "rs2",
+            "signal": "inst_rs2_D"
+          },
+          {
+            "port": "funct3",
+            "signal": ""
+          },
+          {
+            "port": "funct7",
+            "signal": ""
+          },
+          {
+            "port": "csr",
+            "signal": "inst_csr_D"
+          }
+        ],
+        "instance": "inst_unpack",
+        "module": "lab2_proc_tinyrv2_encoding_InstUnpack",
+        "parameters": [],
+        "resolved": false
+      }
+    ],
+    "name": "lab2_proc_ProcAltCtrl",
+    "net_decls": [
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "val_F",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "val_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "val_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "val_M",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "val_W",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "ostall_F",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "ostall_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "ostall_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "ostall_M",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "ostall_W",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "stall_F",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "stall_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "stall_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "stall_M",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "stall_W",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "osquash_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "osquash_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "squash_F",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "squash_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "take_branch_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "take_branch_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "pc_redirect_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "pc_redirect_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 1,
+        "name": "pc_sel_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 1,
+        "name": "pc_sel_X",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "next_val_F",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 4,
+        "name": "inst_rd_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 4,
+        "name": "inst_rs1_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 4,
+        "name": "inst_rs2_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 11,
+        "name": "inst_csr_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "inst_val_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "mul_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 2,
+        "name": "br_type_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "rs1_en_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "rs2_en_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 3,
+        "name": "alu_fn_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 1,
+        "name": "ex_result_sel_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 1,
+        "name": "dmem_type_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "wb_result_sel_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "rf_wen_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "csrr_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "csrw_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "proc2mngr_val_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "mngr2proc_rdy_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "stats_en_wen_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 4,
+        "name": "rf_waddr_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "ostall_mngr2proc_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "ostall_load_use_X_rs1_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "ostall_load_use_X_rs2_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "ostall_mul_not_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "bypass_waddr_X_rs1_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "bypass_waddr_M_rs1_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "bypass_waddr_W_rs1_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "bypass_waddr_X_rs2_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "bypass_waddr_M_rs2_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "bypass_waddr_W_rs2_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "ostall_raw_hazard_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "next_val_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "inst_X",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "mul_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 1,
+        "name": "dmem_type_X",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "wb_result_sel_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "rf_wen_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 4,
+        "name": "rf_waddr_X",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "proc2mngr_val_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "stats_en_wen_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 2,
+        "name": "br_type_X",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "mispredict",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "ostall_dmem_not_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "ostall_mul_not_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "next_val_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "inst_M",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 1,
+        "name": "dmem_type_M",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "rf_wen_M",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 4,
+        "name": "rf_waddr_M",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "proc2mngr_val_M",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "stats_en_wen_M",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "next_val_M",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "inst_W",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "proc2mngr_val_W",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "rf_wen_pending_W",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "stats_en_wen_pending_W",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "parameters": [
+      {
+        "default": "1'd0",
+        "name": "n"
+      },
+      {
+        "default": "1'd1",
+        "name": "y"
+      },
+      {
+        "default": "5'bx",
+        "name": "rx"
+      },
+      {
+        "default": "5'd0",
+        "name": "r0"
+      },
+      {
+        "default": "5'd31",
+        "name": "rL"
+      },
+      {
+        "default": "3'bx",
+        "name": "br_x"
+      },
+      {
+        "default": "3'd0",
+        "name": "br_na"
+      },
+      {
+        "default": "3'd1",
+        "name": "br_bne"
+      },
+      {
+        "default": "3'd2",
+        "name": "br_beq"
+      },
+      {
+        "default": "3'd3",
+        "name": "br_blt"
+      },
+      {
+        "default": "3'd4",
+        "name": "br_bltu"
+      },
+      {
+        "default": "3'd5",
+        "name": "br_bge"
+      },
+      {
+        "default": "3'd6",
+        "name": "br_jal"
+      },
+      {
+        "default": "3'd7",
+        "name": "br_jalr"
+      },
+      {
+        "default": "1'bx",
+        "name": "o1_x"
+      },
+      {
+        "default": "1'd0",
+        "name": "o1_pc"
+      },
+      {
+        "default": "1'd1",
+        "name": "o1_rf"
+      },
+      {
+        "default": "2'bx",
+        "name": "o2_x"
+      },
+      {
+        "default": "2'd0",
+        "name": "o2_rf"
+      },
+      {
+        "default": "2'd1",
+        "name": "o2_imm"
+      },
+      {
+        "default": "2'd2",
+        "name": "o2_csr"
+      },
+      {
+        "default": "4'bx",
+        "name": "alu_x"
+      },
+      {
+        "default": "4'd0",
+        "name": "alu_add"
+      },
+      {
+        "default": "4'd1",
+        "name": "alu_sub"
+      },
+      {
+        "default": "4'd2",
+        "name": "alu_and"
+      },
+      {
+        "default": "4'd3",
+        "name": "alu_or"
+      },
+      {
+        "default": "4'd4",
+        "name": "alu_xor"
+      },
+      {
+        "default": "4'd5",
+        "name": "alu_slt"
+      },
+      {
+        "default": "4'd6",
+        "name": "alu_sra"
+      },
+      {
+        "default": "4'd7",
+        "name": "alu_srl"
+      },
+      {
+        "default": "4'd8",
+        "name": "alu_sll"
+      },
+      {
+        "default": "4'd9",
+        "name": "alu_jalr"
+      },
+      {
+        "default": "4'd11",
+        "name": "alu_cp0"
+      },
+      {
+        "default": "4'd12",
+        "name": "alu_cp1"
+      },
+      {
+        "default": "2'd0",
+        "name": "ex_pc"
+      },
+      {
+        "default": "2'd1",
+        "name": "ex_alu"
+      },
+      {
+        "default": "2'd2",
+        "name": "ex_mul"
+      },
+      {
+        "default": "3'bx",
+        "name": "imm_x"
+      },
+      {
+        "default": "3'd0",
+        "name": "imm_i"
+      },
+      {
+        "default": "3'd1",
+        "name": "imm_s"
+      },
+      {
+        "default": "3'd2",
+        "name": "imm_b"
+      },
+      {
+        "default": "3'd3",
+        "name": "imm_u"
+      },
+      {
+        "default": "3'd4",
+        "name": "imm_j"
+      },
+      {
+        "default": "2'd0",
+        "name": "nr"
+      },
+      {
+        "default": "2'd1",
+        "name": "ld"
+      },
+      {
+        "default": "2'd2",
+        "name": "st"
+      },
+      {
+        "default": "1'bx",
+        "name": "wm_x"
+      },
+      {
+        "default": "1'b0",
+        "name": "wm_a"
+      },
+      {
+        "default": "1'b1",
+        "name": "wm_m"
+      },
+      {
+        "default": "2'd0",
+        "name": "by_d"
+      },
+      {
+        "default": "2'd1",
+        "name": "by_x"
+      },
+      {
+        "default": "2'd2",
+        "name": "by_m"
+      },
+      {
+        "default": "2'd3",
+        "name": "by_w"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reset",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "imem_reqstream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "imem_reqstream_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "imem_respstream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "imem_respstream_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "imem_respstream_drop",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "dmem_reqstream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "dmem_reqstream_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "dmem_respstream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "dmem_respstream_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "mngr2proc_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "mngr2proc_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "proc2mngr_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "proc2mngr_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "imul_req_val_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "imul_req_rdy_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "imul_resp_val_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "imul_resp_rdy_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reg_en_F",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 1,
+        "name": "pc_sel_F",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reg_en_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 1,
+        "name": "op1_bypass_sel_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 1,
+        "name": "op2_bypass_sel_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "op1_sel_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 1,
+        "name": "op2_sel_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 1,
+        "name": "csrr_sel_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 2,
+        "name": "imm_type_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reg_en_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "dmem_fn_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 3,
+        "name": "alu_fn_X",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 1,
+        "name": "ex_result_sel_X",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "branch_taken_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reg_en_M",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "wb_result_sel_M",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reg_en_W",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 4,
+        "name": "rf_waddr_W",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "rf_wen_W",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "stats_en_wen_W",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "take_branch_F",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "inst_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "br_cond_eq_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "br_cond_lt_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "br_cond_ltu_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "commit_inst",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "source_file": "ProcAltCtrl.v"
+  }
+]

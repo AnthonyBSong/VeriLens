@@ -1,0 +1,4518 @@
+[
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`ifndef"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "LAB3_MEM_CACHE_BASE_DPATH_V"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "LAB3_MEM_CACHE_BASE_DPATH_V"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`include"
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"vc/arithmetic.v\""
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`include"
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"vc/muxes.v\""
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`include"
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"vc/mem-msgs.v\""
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`include"
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"vc/srams.v\""
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`include"
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"vc/regs.v\""
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`include"
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"lab3_mem/CacheSubmodules.v\""
+  },
+  {
+    "type": "MODULE",
+    "lexeme": "module"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "lab3_mem_CacheBaseDpath"
+  },
+  {
+    "type": "HASH",
+    "lexeme": "#"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "PARAMETER",
+    "lexeme": "parameter"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "p_num_banks"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "clk"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "reset"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "mem_req_4B_t"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "proc2cache_reqstream_msg"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "OUTPUT",
+    "lexeme": "output"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "mem_resp_4B_t"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "proc2cache_respstream_msg"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "OUTPUT",
+    "lexeme": "output"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "mem_req_16B_t"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cache2mem_reqstream_msg"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "mem_resp_16B_t"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cache2mem_respstream_msg"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "OUTPUT",
+    "lexeme": "output"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "3"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_type"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "OUTPUT",
+    "lexeme": "output"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "3"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "index"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "OUTPUT",
+    "lexeme": "output"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "tag_match"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_en"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "memresp_en"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "write_data_mux_sel"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "tag_array_ren"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "tag_array_wen"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "data_array_ren"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "data_array_wen"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "refill"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "read_data_zero_mux_sel"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "read_data_reg_en"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "evict_addr_reg_en"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "memreq_addr_mux_sel"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "3"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cacheresp_type"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "3"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "memreq_type"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "hit"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "LOCALPARAM",
+    "lexeme": "localparam"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "c_bank_bits"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$clog2"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "p_num_banks"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "7"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_opaque"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "vc_EnReg"
+  },
+  {
+    "type": "HASH",
+    "lexeme": "#"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "8"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_opaque_reg"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "clk"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "clk"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "reset"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "reset"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "d"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "proc2cache_reqstream_msg"
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "opaque"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "q"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_opaque"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "en"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_en"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "vc_EnReg"
+  },
+  {
+    "type": "HASH",
+    "lexeme": "#"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "4"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_type_reg"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "clk"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "clk"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "reset"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "reset"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "d"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "proc2cache_reqstream_msg"
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "type_"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "q"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_type"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "en"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_en"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "31"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_addr"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "vc_EnReg"
+  },
+  {
+    "type": "HASH",
+    "lexeme": "#"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_addr_reg"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "clk"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "clk"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "reset"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "reset"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "d"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "proc2cache_reqstream_msg"
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "addr"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "q"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_addr"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "en"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_en"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "31"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_data"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "vc_EnReg"
+  },
+  {
+    "type": "HASH",
+    "lexeme": "#"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_data_reg"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "clk"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "clk"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "reset"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "reset"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "d"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "proc2cache_reqstream_msg"
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "data"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "q"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_data"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "en"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_en"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "127"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "memresp_data"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "vc_EnReg"
+  },
+  {
+    "type": "HASH",
+    "lexeme": "#"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "128"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "memresp_data_reg"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "clk"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "clk"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "reset"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "reset"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "d"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cache2mem_respstream_msg"
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "data"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "q"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "memresp_data"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "en"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "memresp_en"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "127"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "data_array_write_data"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "vc_Mux2"
+  },
+  {
+    "type": "HASH",
+    "lexeme": "#"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "128"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "write_data_mux"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "in0"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "LBRACE",
+    "lexeme": "{"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "4"
+  },
+  {
+    "type": "LBRACE",
+    "lexeme": "{"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_data"
+  },
+  {
+    "type": "RBRACE",
+    "lexeme": "}"
+  },
+  {
+    "type": "RBRACE",
+    "lexeme": "}"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "in1"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "memresp_data"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "sel"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "write_data_mux_sel"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "out"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "data_array_write_data"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "15"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cache_write_wb_en"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "lab3_mem_Wben_Dec"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "wben_dec"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "addr"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_addr"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "wb_en"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cache_write_wb_en"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "15"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "data_array_wb_en"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "vc_Mux2"
+  },
+  {
+    "type": "HASH",
+    "lexeme": "#"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "16"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "wben_mux"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "in0"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cache_write_wb_en"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "in1"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "16'hffff"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "sel"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "refill"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "out"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "data_array_wb_en"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "offset"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "23"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "c_bank_bits"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "tag"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "ASSIGN",
+    "lexeme": "assign"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "offset"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_addr"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "3"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "2"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "ASSIGN",
+    "lexeme": "assign"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "index"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_addr"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "7"
+  },
+  {
+    "type": "PLUS",
+    "lexeme": "+"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "c_bank_bits"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "4"
+  },
+  {
+    "type": "PLUS",
+    "lexeme": "+"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "c_bank_bits"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "ASSIGN",
+    "lexeme": "assign"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "tag"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_addr"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "31"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "8"
+  },
+  {
+    "type": "PLUS",
+    "lexeme": "+"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "c_bank_bits"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "23"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "c_bank_bits"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "tag_array_read_data"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "vc_CombinationalBitSRAM_1rw"
+  },
+  {
+    "type": "HASH",
+    "lexeme": "#"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "p_data_nbits"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "24"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "c_bank_bits"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "p_num_entries"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "16"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "tag_array"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "clk"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "clk"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "reset"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "reset"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "read_en"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "tag_array_ren"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "read_addr"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "index"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "read_data"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "tag_array_read_data"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "write_en"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "tag_array_wen"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "write_addr"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "index"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "write_data"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "tag"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "127"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "data_array_read_data"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "vc_CombinationalSRAM_1rw"
+  },
+  {
+    "type": "HASH",
+    "lexeme": "#"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "p_data_nbits"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "128"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "p_num_entries"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "16"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "data_array"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "clk"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "clk"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "reset"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "reset"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "read_en"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "data_array_ren"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "read_addr"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "index"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "read_data"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "data_array_read_data"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "write_en"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "data_array_wen"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "write_byte_en"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "data_array_wb_en"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "write_addr"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "index"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "write_data"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "data_array_write_data"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "vc_EqComparator"
+  },
+  {
+    "type": "HASH",
+    "lexeme": "#"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "24"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "c_bank_bits"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "tag_comparator"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "in0"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "tag"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "in1"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "tag_array_read_data"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "out"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "tag_match"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "31"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "evict_mkaddr_addr"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "lab3_mem_Mkaddr"
+  },
+  {
+    "type": "HASH",
+    "lexeme": "#"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "p_num_banks"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "4"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "evict_mkaddr"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "tag"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "tag_array_read_data"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "index"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "index"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_addr"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_addr"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "memreq_addr"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "evict_mkaddr_addr"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "31"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "evict_addr"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "vc_EnReg"
+  },
+  {
+    "type": "HASH",
+    "lexeme": "#"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "evict_addr_reg"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "clk"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "clk"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "reset"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "reset"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "d"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "evict_mkaddr_addr"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "q"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "evict_addr"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "en"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "evict_addr_reg_en"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "31"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "curr_addr"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "lab3_mem_Mkaddr"
+  },
+  {
+    "type": "HASH",
+    "lexeme": "#"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "p_num_banks"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "4"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "curr_mkaddr"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "tag"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "tag"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "index"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "index"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_addr"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_addr"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "memreq_addr"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "curr_addr"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "31"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "memreq_addr"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "vc_Mux2"
+  },
+  {
+    "type": "HASH",
+    "lexeme": "#"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "memreq_addr_mux"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "in0"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "evict_addr"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "in1"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "curr_addr"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "sel"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "memreq_addr_mux_sel"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "out"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "memreq_addr"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "127"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "read_data_mux_data"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "vc_Mux2"
+  },
+  {
+    "type": "HASH",
+    "lexeme": "#"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "128"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "read_data_zero_mux"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "in0"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "data_array_read_data"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "in1"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "128'b0"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "sel"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "read_data_zero_mux_sel"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "out"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "read_data_mux_data"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "127"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "memreq_data"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "vc_EnReg"
+  },
+  {
+    "type": "HASH",
+    "lexeme": "#"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "128"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "read_data_reg"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "clk"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "clk"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "reset"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "reset"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "d"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "read_data_mux_data"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "q"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "memreq_data"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "en"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "read_data_reg_en"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "31"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cacheresp_data"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "vc_Mux4"
+  },
+  {
+    "type": "HASH",
+    "lexeme": "#"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cache_data_mux"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "in0"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "memreq_data"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "31"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "in1"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "memreq_data"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "63"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "in2"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "memreq_data"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "95"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "64"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "in3"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "memreq_data"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "127"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "96"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "sel"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "offset"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "out"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cacheresp_data"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "always_comb"
+  },
+  {
+    "type": "BEGIN",
+    "lexeme": "begin"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "proc2cache_respstream_msg"
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "opaque"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cachereq_opaque"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "proc2cache_respstream_msg"
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "type_"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cacheresp_type"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "proc2cache_respstream_msg"
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "len"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "2'b0"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "proc2cache_respstream_msg"
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "test"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "hit"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "proc2cache_respstream_msg"
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "data"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cacheresp_data"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "END",
+    "lexeme": "end"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "always_comb"
+  },
+  {
+    "type": "BEGIN",
+    "lexeme": "begin"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cache2mem_reqstream_msg"
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "type_"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "memreq_type"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cache2mem_reqstream_msg"
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "len"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "4'b0"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cache2mem_reqstream_msg"
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "addr"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "memreq_addr"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cache2mem_reqstream_msg"
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "data"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "memreq_data"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "cache2mem_reqstream_msg"
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "opaque"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "8'b0"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "END",
+    "lexeme": "end"
+  },
+  {
+    "type": "ENDMODULE",
+    "lexeme": "endmodule"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`endif"
+  },
+  {
+    "type": "END_OF_FILE",
+    "lexeme": ""
+  }
+]

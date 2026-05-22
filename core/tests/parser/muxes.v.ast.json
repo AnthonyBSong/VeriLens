@@ -1,0 +1,506 @@
+[
+  {
+    "always_blocks": [],
+    "assigns": [],
+    "instances": [],
+    "name": "vc_Mux2",
+    "net_decls": [],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_nbits"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in0",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in1",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "sel",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "out",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "source_file": "muxes.v"
+  },
+  {
+    "always_blocks": [],
+    "assigns": [],
+    "instances": [],
+    "name": "vc_Mux3",
+    "net_decls": [],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_nbits"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in0",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in1",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in2",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 1,
+        "name": "sel",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "out",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "source_file": "muxes.v"
+  },
+  {
+    "always_blocks": [],
+    "assigns": [],
+    "instances": [],
+    "name": "vc_Mux4",
+    "net_decls": [],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_nbits"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in0",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in1",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in2",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in3",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 1,
+        "name": "sel",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "out",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "source_file": "muxes.v"
+  },
+  {
+    "always_blocks": [],
+    "assigns": [],
+    "instances": [],
+    "name": "vc_Mux5",
+    "net_decls": [],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_nbits"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in0",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in1",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in2",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in3",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in4",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 2,
+        "name": "sel",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "out",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "source_file": "muxes.v"
+  },
+  {
+    "always_blocks": [],
+    "assigns": [],
+    "instances": [],
+    "name": "vc_Mux6",
+    "net_decls": [],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_nbits"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in0",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in1",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in2",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in3",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in4",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in5",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 2,
+        "name": "sel",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "out",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "source_file": "muxes.v"
+  },
+  {
+    "always_blocks": [],
+    "assigns": [],
+    "instances": [],
+    "name": "vc_Mux7",
+    "net_decls": [],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_nbits"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in0",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in1",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in2",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in3",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in4",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in5",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in6",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 2,
+        "name": "sel",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "out",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "source_file": "muxes.v"
+  },
+  {
+    "always_blocks": [],
+    "assigns": [],
+    "instances": [],
+    "name": "vc_Mux8",
+    "net_decls": [],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_nbits"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in0",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in1",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in2",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in3",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in4",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in5",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in6",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in7",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 2,
+        "name": "sel",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "out",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "source_file": "muxes.v"
+  }
+]

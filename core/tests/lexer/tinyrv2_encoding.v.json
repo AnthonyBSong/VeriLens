@@ -1,0 +1,11038 @@
+[
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`ifndef"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "LAB2_PROC_TINYRV2_ENCODING_V"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "LAB2_PROC_TINYRV2_ENCODING_V"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`include"
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"vc/trace.v\""
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_OPCODE"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "6"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_RD"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "11"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "7"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_RS1"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "19"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "15"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_RS2"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "24"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "20"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_FUNCT3"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "14"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "12"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_FUNCT7"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "31"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "25"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_CSR"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "31"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "20"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_XD"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "14"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "14"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_XS1"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "13"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "13"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_XS2"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "12"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "12"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_NBITS"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_OPCODE_NBITS"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "7"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_RD_NBITS"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "5"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_RS1_NBITS"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "5"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_RS2_NBITS"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "5"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_FUNCT3_NBITS"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "3"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_FUNCT7_NBITS"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "7"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_CSR_NBITS"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "12"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_CSRRX"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b0111111_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_010_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_1110011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_CSRR"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_010_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_1110011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_CSRW"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_001_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_1110011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_NOP"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b0000000_00000_00000_000_00000_0010011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_ZERO"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b0000000_00000_00000_000_00000_0000000"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_ADD"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b0000000_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_000_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_0110011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_SUB"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b0100000_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_000_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_0110011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_AND"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b0000000_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_111_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_0110011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_OR"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b0000000_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_110_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_0110011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_XOR"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b0000000_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_100_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_0110011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_SLT"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b0000000_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_010_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_0110011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_SLTU"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b0000000_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_011_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_0110011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_MUL"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b0000001_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_000_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_0110011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_ADDI"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_000_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_0010011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_ANDI"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_111_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_0010011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_ORI"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_110_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_0010011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_XORI"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_100_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_0010011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_SLTI"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_010_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_0010011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_SLTIU"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_011_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_0010011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_SRA"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b0100000_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_101_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_0110011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_SRL"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b0000000_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_101_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_0110011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_SLL"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b0000000_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_001_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_0110011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_SRAI"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b0100000_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_101_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_0010011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_SRLI"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b0000000_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_101_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_0010011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_SLLI"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b0000000_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_001_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_0010011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_LUI"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_0110111"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_AUIPC"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_0010111"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_LW"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_010_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_0000011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_SW"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_010_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_0100011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_JAL"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_1101111"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_JALR"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_000_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_1100111"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_BEQ"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_000_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_1100011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_BNE"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_001_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_1100011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_BLT"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_100_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_1100011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_BGE"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_101_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_1100011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_BLTU"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_110_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_1100011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_BGEU"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_111_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_1100011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_INST_CUST0"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "32'b"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "QUESTION",
+    "lexeme": "?"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "_0001011"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_CPR_PROC2MNGR"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "12'h7C0"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_CPR_MNGR2PROC"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "12'hFC0"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_CPR_COREID"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "12'hF14"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_CPR_NUMCORES"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "12'hFC1"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`define"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "TINYRV2_CPR_STATS_EN"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "12'h7C1"
+  },
+  {
+    "type": "MODULE",
+    "lexeme": "module"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "lab2_proc_tinyrv2_encoding_InstTasks"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "FUNCTION",
+    "lexeme": "function"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "11"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_i"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_NBITS"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "BEGIN",
+    "lexeme": "begin"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_i"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "LBRACE",
+    "lexeme": "{"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "31"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "30"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "25"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "24"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "21"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "20"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "RBRACE",
+    "lexeme": "}"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "END",
+    "lexeme": "end"
+  },
+  {
+    "type": "ENDFUNCTION",
+    "lexeme": "endfunction"
+  },
+  {
+    "type": "FUNCTION",
+    "lexeme": "function"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "4"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_shamt"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_NBITS"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "BEGIN",
+    "lexeme": "begin"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_shamt"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "LBRACE",
+    "lexeme": "{"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "24"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "21"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "20"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "RBRACE",
+    "lexeme": "}"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "END",
+    "lexeme": "end"
+  },
+  {
+    "type": "ENDFUNCTION",
+    "lexeme": "endfunction"
+  },
+  {
+    "type": "FUNCTION",
+    "lexeme": "function"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "11"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_s"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_NBITS"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "BEGIN",
+    "lexeme": "begin"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_s"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "LBRACE",
+    "lexeme": "{"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "31"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "30"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "25"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "11"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "8"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "7"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "RBRACE",
+    "lexeme": "}"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "END",
+    "lexeme": "end"
+  },
+  {
+    "type": "ENDFUNCTION",
+    "lexeme": "endfunction"
+  },
+  {
+    "type": "FUNCTION",
+    "lexeme": "function"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "12"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_b"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_NBITS"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "BEGIN",
+    "lexeme": "begin"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_b"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "LBRACE",
+    "lexeme": "{"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "31"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "7"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "30"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "25"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "11"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "8"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1'b0"
+  },
+  {
+    "type": "RBRACE",
+    "lexeme": "}"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "END",
+    "lexeme": "end"
+  },
+  {
+    "type": "ENDFUNCTION",
+    "lexeme": "endfunction"
+  },
+  {
+    "type": "FUNCTION",
+    "lexeme": "function"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "19"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_u_sh12"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_NBITS"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "BEGIN",
+    "lexeme": "begin"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_u_sh12"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "LBRACE",
+    "lexeme": "{"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "31"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "30"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "20"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "19"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "12"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "RBRACE",
+    "lexeme": "}"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "END",
+    "lexeme": "end"
+  },
+  {
+    "type": "ENDFUNCTION",
+    "lexeme": "endfunction"
+  },
+  {
+    "type": "FUNCTION",
+    "lexeme": "function"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "20"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_j"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_NBITS"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "BEGIN",
+    "lexeme": "begin"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_j"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "LBRACE",
+    "lexeme": "{"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "31"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "19"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "12"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "20"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "30"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "25"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "24"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "21"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1'b0"
+  },
+  {
+    "type": "RBRACE",
+    "lexeme": "}"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "END",
+    "lexeme": "end"
+  },
+  {
+    "type": "ENDFUNCTION",
+    "lexeme": "endfunction"
+  },
+  {
+    "type": "REG",
+    "lexeme": "reg"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "3"
+  },
+  {
+    "type": "STAR",
+    "lexeme": "*"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "8"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "REG",
+    "lexeme": "reg"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "3"
+  },
+  {
+    "type": "STAR",
+    "lexeme": "*"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "8"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs2_str"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "REG",
+    "lexeme": "reg"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "3"
+  },
+  {
+    "type": "STAR",
+    "lexeme": "*"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "8"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "REG",
+    "lexeme": "reg"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "9"
+  },
+  {
+    "type": "STAR",
+    "lexeme": "*"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "8"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "csr_str"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "REG",
+    "lexeme": "reg"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "2"
+  },
+  {
+    "type": "STAR",
+    "lexeme": "*"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "8"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "funct_str"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_RS1_NBITS"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_RS2_NBITS"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs2"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_RD_NBITS"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_CSR_NBITS"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "csr"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "LOGIC",
+    "lexeme": "logic"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_FUNCT7_NBITS"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "funct"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "FUNCTION",
+    "lexeme": "function"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "25"
+  },
+  {
+    "type": "STAR",
+    "lexeme": "*"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "8"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_NBITS"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "BEGIN",
+    "lexeme": "begin"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_RS1"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs2"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_RS2"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_RD"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "csr"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_CSR"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "funct"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_FUNCT7"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IF",
+    "lexeme": "if"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1"
+  },
+  {
+    "type": "LESS_EQ",
+    "lexeme": "<="
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "9"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"x0%0d\""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "ELSE",
+    "lexeme": "else"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"x%d\""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IF",
+    "lexeme": "if"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs2"
+  },
+  {
+    "type": "LESS_EQ",
+    "lexeme": "<="
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "9"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs2_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"x0%0d\""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs2"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "ELSE",
+    "lexeme": "else"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs2_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"x%d\""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs2"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IF",
+    "lexeme": "if"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd"
+  },
+  {
+    "type": "LESS_EQ",
+    "lexeme": "<="
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "9"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"x0%0d\""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "ELSE",
+    "lexeme": "else"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"x%d\""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IF",
+    "lexeme": "if"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "csr"
+  },
+  {
+    "type": "EQ_EQ",
+    "lexeme": "=="
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_CPR_PROC2MNGR"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "csr_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"proc2mngr\""
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "ELSE",
+    "lexeme": "else"
+  },
+  {
+    "type": "IF",
+    "lexeme": "if"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "csr"
+  },
+  {
+    "type": "EQ_EQ",
+    "lexeme": "=="
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_CPR_MNGR2PROC"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "csr_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"mngr2proc\""
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "ELSE",
+    "lexeme": "else"
+  },
+  {
+    "type": "IF",
+    "lexeme": "if"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "csr"
+  },
+  {
+    "type": "EQ_EQ",
+    "lexeme": "=="
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_CPR_COREID"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "csr_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"coreid   \""
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "ELSE",
+    "lexeme": "else"
+  },
+  {
+    "type": "IF",
+    "lexeme": "if"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "csr"
+  },
+  {
+    "type": "EQ_EQ",
+    "lexeme": "=="
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_CPR_NUMCORES"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "csr_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"numcores \""
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "ELSE",
+    "lexeme": "else"
+  },
+  {
+    "type": "IF",
+    "lexeme": "if"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "csr"
+  },
+  {
+    "type": "EQ_EQ",
+    "lexeme": "=="
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_CPR_STATS_EN"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "csr_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"stats_en \""
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "ELSE",
+    "lexeme": "else"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "csr_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"    0x%x\""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "csr"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "funct_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"%x\""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "funct"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "CASEZ",
+    "lexeme": "casez"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_CSRR"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"csrr   %s, %s  \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "csr_str"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_CSRW"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"csrw   %s, %s  \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "csr_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_NOP"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"nop                    \""
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_ZERO"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"                       \""
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_ADD"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"add    %s, %s, %s   \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs2_str"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_SUB"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"sub    %s, %s, %s   \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs2_str"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_AND"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"and    %s, %s, %s   \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs2_str"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_OR"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"or     %s, %s, %s   \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs2_str"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_XOR"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"xor    %s, %s, %s   \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs2_str"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_SLT"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"slt    %s, %s, %s   \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs2_str"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_SLTU"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"sltu   %s, %s, %s   \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs2_str"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_MUL"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"mul    %s, %s, %s   \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs2_str"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_ADDI"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"addi   %s, %s, 0x%x \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_i"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_ANDI"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"andi   %s, %s, 0x%x \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_i"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_ORI"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"ori    %s, %s, 0x%x \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_i"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_XORI"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"xori   %s, %s, 0x%x \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_i"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_SLTI"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"slti   %s, %s, 0x%x \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_i"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_SLTIU"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"sltiu  %s, %s, 0x%x \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_i"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_SRA"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"sra    %s, %s, 0x%x  \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_shamt"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_SRL"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"srl    %s, %s, 0x%x  \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_shamt"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_SLL"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"sll    %s, %s, 0x%x  \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_shamt"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_SRAI"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"srai   %s, %s, 0x%x  \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_shamt"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_SRLI"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"srli   %s, %s, 0x%x  \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_shamt"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_SLLI"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"slli   %s, %s, 0x%x  \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_shamt"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_LUI"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"lui    %s, 0x%x    \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_u_sh12"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_AUIPC"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"auipc  %s, 0x%x    \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_u_sh12"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_LW"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"lw     %s, 0x%x(%s) \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_i"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_SW"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"sw     %s, 0x%x(%s) \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs2_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_s"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_JAL"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"jal    %s, 0x%x   \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_j"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_JALR"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"jalr   %s, %s, 0x%x \""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_i"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_BEQ"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"beq    %s, %s, 0x%x\""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs2_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_b"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_BNE"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"bne    %s, %s, 0x%x\""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs2_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_b"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_BLT"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"blt    %s, %s, 0x%x\""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs2_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_b"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_BGE"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"bge    %s, %s, 0x%x\""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs2_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_b"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_BLTU"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"bltu   %s, %s, 0x%x\""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs2_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_b"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_BGEU"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"bgeu   %s, %s, 0x%x\""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs2_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "imm_b"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_CUST0"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"cust0 %s, %s, %s, %s\""
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs2_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "funct_str"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "DEFAULT",
+    "lexeme": "default"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "SYSTEM_TASK",
+    "lexeme": "$sformat"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"illegal inst           \""
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "ENDCASE",
+    "lexeme": "endcase"
+  },
+  {
+    "type": "END",
+    "lexeme": "end"
+  },
+  {
+    "type": "ENDFUNCTION",
+    "lexeme": "endfunction"
+  },
+  {
+    "type": "FUNCTION",
+    "lexeme": "function"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "4"
+  },
+  {
+    "type": "STAR",
+    "lexeme": "*"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "8"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_NBITS"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "BEGIN",
+    "lexeme": "begin"
+  },
+  {
+    "type": "CASEZ",
+    "lexeme": "casez"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_CSRR"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"csrr\""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_CSRW"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"csrw\""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_NOP"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"nop \""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_ADD"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"add \""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_SUB"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"sub \""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_AND"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"and \""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_OR"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"or  \""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_XOR"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"xor \""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_SLT"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"slt \""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_SLTU"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"sltu\""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_MUL"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"mul \""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_ADDI"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"addi\""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_ANDI"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"andi\""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_ORI"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"ori \""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_XORI"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"xori\""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_SLTI"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"slti\""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_SLTIU"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"sltI\""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_SRA"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"sra \""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_SRL"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"srl \""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_SLL"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"sll \""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_SRAI"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"srai\""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_SRLI"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"srli\""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_SLLI"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"slli\""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_LUI"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"lui \""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_AUIPC"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"auiP\""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_LW"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"lw  \""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_SW"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"sw  \""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_JAL"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"jal \""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_JALR"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"jalr\""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_BEQ"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"beq \""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_BNE"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"bne \""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_BLT"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"blt \""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_BGE"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"bge \""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_BLTU"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"bltu\""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_BGEU"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"bgeu\""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_CUST0"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"cus0\""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "DEFAULT",
+    "lexeme": "default"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\"????\""
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "ENDCASE",
+    "lexeme": "endcase"
+  },
+  {
+    "type": "END",
+    "lexeme": "end"
+  },
+  {
+    "type": "ENDFUNCTION",
+    "lexeme": "endfunction"
+  },
+  {
+    "type": "ENDMODULE",
+    "lexeme": "endmodule"
+  },
+  {
+    "type": "MODULE",
+    "lexeme": "module"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "lab2_proc_tinyrv2_encoding_InstUnpack"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_NBITS"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "OUTPUT",
+    "lexeme": "output"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_OPCODE_NBITS"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "opcode"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "OUTPUT",
+    "lexeme": "output"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_RD_NBITS"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "OUTPUT",
+    "lexeme": "output"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_RS1_NBITS"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "OUTPUT",
+    "lexeme": "output"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_RS2_NBITS"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs2"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "OUTPUT",
+    "lexeme": "output"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_FUNCT3_NBITS"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "funct3"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "OUTPUT",
+    "lexeme": "output"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_FUNCT7_NBITS"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "funct7"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "OUTPUT",
+    "lexeme": "output"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_CSR_NBITS"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "csr"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "ASSIGN",
+    "lexeme": "assign"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "opcode"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_OPCODE"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "ASSIGN",
+    "lexeme": "assign"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rd"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_RD"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "ASSIGN",
+    "lexeme": "assign"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs1"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_RS1"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "ASSIGN",
+    "lexeme": "assign"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "rs2"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_RS2"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "ASSIGN",
+    "lexeme": "assign"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "funct3"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_FUNCT3"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "ASSIGN",
+    "lexeme": "assign"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "csr"
+  },
+  {
+    "type": "EQ",
+    "lexeme": "="
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_CSR"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "ENDMODULE",
+    "lexeme": "endmodule"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`ifndef"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "SYNTHESIS"
+  },
+  {
+    "type": "MODULE",
+    "lexeme": "module"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "lab2_proc_tinyrv2_encoding_InstTrace"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "clk"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "reset"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "INPUT",
+    "lexeme": "input"
+  },
+  {
+    "type": "LBRACKET",
+    "lexeme": "["
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`TINYRV2_INST_NBITS"
+  },
+  {
+    "type": "MINUS",
+    "lexeme": "-"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "1"
+  },
+  {
+    "type": "COLON",
+    "lexeme": ":"
+  },
+  {
+    "type": "INTEGER_LITERAL",
+    "lexeme": "0"
+  },
+  {
+    "type": "RBRACKET",
+    "lexeme": "]"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "lab2_proc_tinyrv2_encoding_InstTasks"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "tinyrv2"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`VC_TRACE_BEGIN"
+  },
+  {
+    "type": "BEGIN",
+    "lexeme": "begin"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "vc_trace"
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "append_str"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "trace_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "tinyrv2"
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "vc_trace"
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "append_str"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "trace_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "STRING_LITERAL",
+    "lexeme": "\" | \""
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "vc_trace"
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "append_str"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "trace_str"
+  },
+  {
+    "type": "COMMA",
+    "lexeme": ","
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "tinyrv2"
+  },
+  {
+    "type": "DOT",
+    "lexeme": "."
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "disasm_tiny"
+  },
+  {
+    "type": "LPAREN",
+    "lexeme": "("
+  },
+  {
+    "type": "IDENTIFIER",
+    "lexeme": "inst"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "RPAREN",
+    "lexeme": ")"
+  },
+  {
+    "type": "SEMICOLON",
+    "lexeme": ";"
+  },
+  {
+    "type": "END",
+    "lexeme": "end"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`VC_TRACE_END"
+  },
+  {
+    "type": "ENDMODULE",
+    "lexeme": "endmodule"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`endif"
+  },
+  {
+    "type": "COMPILER_DIRECTIVE",
+    "lexeme": "`endif"
+  },
+  {
+    "type": "END_OF_FILE",
+    "lexeme": ""
+  }
+]

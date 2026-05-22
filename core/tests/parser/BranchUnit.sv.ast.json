@@ -1,0 +1,367 @@
+[
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "taken"
+              },
+              "rhs": {
+                "kind": "LITERAL",
+                "value": "1'b0"
+              }
+            },
+            {
+              "cond": {
+                "kind": "IDENTIFIER",
+                "name": "branch"
+              },
+              "else": null,
+              "kind": "IF_STATEMENT",
+              "then": {
+                "body": [
+                  {
+                    "expr": {
+                      "kind": "IDENTIFIER",
+                      "name": "funct3"
+                    },
+                    "items": [
+                      {
+                        "body": {
+                          "kind": "BLOCKING_ASSIGN",
+                          "lhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "taken"
+                          },
+                          "rhs": {
+                            "kind": "BINARY_OP",
+                            "lhs": {
+                              "kind": "IDENTIFIER",
+                              "name": "rs1"
+                            },
+                            "op": "==",
+                            "rhs": {
+                              "kind": "IDENTIFIER",
+                              "name": "rs2"
+                            }
+                          }
+                        },
+                        "patterns": [
+                          {
+                            "kind": "LITERAL",
+                            "value": "3'b000"
+                          }
+                        ]
+                      },
+                      {
+                        "body": {
+                          "kind": "BLOCKING_ASSIGN",
+                          "lhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "taken"
+                          },
+                          "rhs": {
+                            "kind": "BINARY_OP",
+                            "lhs": {
+                              "kind": "IDENTIFIER",
+                              "name": "rs1"
+                            },
+                            "op": "!=",
+                            "rhs": {
+                              "kind": "IDENTIFIER",
+                              "name": "rs2"
+                            }
+                          }
+                        },
+                        "patterns": [
+                          {
+                            "kind": "LITERAL",
+                            "value": "3'b001"
+                          }
+                        ]
+                      },
+                      {
+                        "body": {
+                          "kind": "BLOCKING_ASSIGN",
+                          "lhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "taken"
+                          },
+                          "rhs": {
+                            "kind": "BINARY_OP",
+                            "lhs": {
+                              "kind": "BINARY_OP",
+                              "lhs": {
+                                "kind": "IDENTIFIER",
+                                "name": "$signed"
+                              },
+                              "op": "call",
+                              "rhs": {
+                                "kind": "CONCAT",
+                                "parts": [
+                                  {
+                                    "kind": "IDENTIFIER",
+                                    "name": "rs1"
+                                  }
+                                ]
+                              }
+                            },
+                            "op": "<",
+                            "rhs": {
+                              "kind": "BINARY_OP",
+                              "lhs": {
+                                "kind": "IDENTIFIER",
+                                "name": "$signed"
+                              },
+                              "op": "call",
+                              "rhs": {
+                                "kind": "CONCAT",
+                                "parts": [
+                                  {
+                                    "kind": "IDENTIFIER",
+                                    "name": "rs2"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "patterns": [
+                          {
+                            "kind": "LITERAL",
+                            "value": "3'b100"
+                          }
+                        ]
+                      },
+                      {
+                        "body": {
+                          "kind": "BLOCKING_ASSIGN",
+                          "lhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "taken"
+                          },
+                          "rhs": {
+                            "kind": "BINARY_OP",
+                            "lhs": {
+                              "kind": "BINARY_OP",
+                              "lhs": {
+                                "kind": "IDENTIFIER",
+                                "name": "$signed"
+                              },
+                              "op": "call",
+                              "rhs": {
+                                "kind": "CONCAT",
+                                "parts": [
+                                  {
+                                    "kind": "IDENTIFIER",
+                                    "name": "rs1"
+                                  }
+                                ]
+                              }
+                            },
+                            "op": ">=",
+                            "rhs": {
+                              "kind": "BINARY_OP",
+                              "lhs": {
+                                "kind": "IDENTIFIER",
+                                "name": "$signed"
+                              },
+                              "op": "call",
+                              "rhs": {
+                                "kind": "CONCAT",
+                                "parts": [
+                                  {
+                                    "kind": "IDENTIFIER",
+                                    "name": "rs2"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "patterns": [
+                          {
+                            "kind": "LITERAL",
+                            "value": "3'b101"
+                          }
+                        ]
+                      },
+                      {
+                        "body": {
+                          "kind": "BLOCKING_ASSIGN",
+                          "lhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "taken"
+                          },
+                          "rhs": {
+                            "kind": "BINARY_OP",
+                            "lhs": {
+                              "kind": "IDENTIFIER",
+                              "name": "rs1"
+                            },
+                            "op": "<",
+                            "rhs": {
+                              "kind": "IDENTIFIER",
+                              "name": "rs2"
+                            }
+                          }
+                        },
+                        "patterns": [
+                          {
+                            "kind": "LITERAL",
+                            "value": "3'b110"
+                          }
+                        ]
+                      },
+                      {
+                        "body": {
+                          "kind": "BLOCKING_ASSIGN",
+                          "lhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "taken"
+                          },
+                          "rhs": {
+                            "kind": "BINARY_OP",
+                            "lhs": {
+                              "kind": "IDENTIFIER",
+                              "name": "rs1"
+                            },
+                            "op": ">=",
+                            "rhs": {
+                              "kind": "IDENTIFIER",
+                              "name": "rs2"
+                            }
+                          }
+                        },
+                        "patterns": [
+                          {
+                            "kind": "LITERAL",
+                            "value": "3'b111"
+                          }
+                        ]
+                      },
+                      {
+                        "body": {
+                          "kind": "BLOCKING_ASSIGN",
+                          "lhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "taken"
+                          },
+                          "rhs": {
+                            "kind": "LITERAL",
+                            "value": "1'b0"
+                          }
+                        },
+                        "patterns": []
+                      }
+                    ],
+                    "kind": "CASE_STATEMENT",
+                    "variant": "case"
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      }
+    ],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "target"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "pc"
+          },
+          "op": "+",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "imm"
+          }
+        }
+      }
+    ],
+    "instances": [],
+    "name": "BranchUnit",
+    "net_decls": [],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "pc",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "rs1",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "rs2",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "imm",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 2,
+        "name": "funct3",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "branch",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 31,
+        "name": "target",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "taken",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "source_file": "BranchUnit.sv"
+  }
+]

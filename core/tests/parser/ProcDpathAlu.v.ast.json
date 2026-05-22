@@ -1,0 +1,155 @@
+[
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "ops_lt"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "$signed"
+            },
+            "op": "call",
+            "rhs": {
+              "kind": "CONCAT",
+              "parts": [
+                {
+                  "kind": "IDENTIFIER",
+                  "name": "in0"
+                }
+              ]
+            }
+          },
+          "op": "<",
+          "rhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "$signed"
+            },
+            "op": "call",
+            "rhs": {
+              "kind": "CONCAT",
+              "parts": [
+                {
+                  "kind": "IDENTIFIER",
+                  "name": "in1"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "ops_ltu"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "in0"
+          },
+          "op": "<",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "in1"
+          }
+        }
+      }
+    ],
+    "instances": [
+      {
+        "connections": [
+          {
+            "port": "in0",
+            "signal": "in0"
+          },
+          {
+            "port": "in1",
+            "signal": "in1"
+          },
+          {
+            "port": "out",
+            "signal": "ops_eq"
+          }
+        ],
+        "instance": "cond_eq_comp",
+        "module": "vc_EqComparator",
+        "parameters": [
+          "32"
+        ],
+        "resolved": false
+      }
+    ],
+    "name": "lab2_proc_ProcDpathAlu",
+    "net_decls": [],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "in0",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "in1",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 3,
+        "name": "fn",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 31,
+        "name": "out",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "ops_eq",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "ops_lt",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "ops_ltu",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "source_file": "ProcDpathAlu.v"
+  }
+]

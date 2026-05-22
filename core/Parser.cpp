@@ -1,4 +1,5 @@
 #include "Parser.h"
+#include <algorithm>
 
 using json = nlohmann::json;
 
@@ -100,7 +101,13 @@ Module Parser::parseModule() {
 
     while (!check(TokenType::ENDMODULE) && !check(TokenType::END_OF_FILE)) {
         if (check(TokenType::INPUT) || check(TokenType::OUTPUT) || check(TokenType::INOUT)) {
-            mod.ports.push_back(parsePortDeclaration());
+            Port decl = parsePortDeclaration();
+            // Non-ANSI style: port list creates stubs, body declarations refine them.
+            // Update the stub in-place rather than appending a duplicate.
+            auto it = std::find_if(mod.ports.begin(), mod.ports.end(),
+                [&](const Port& p){ return p.name == decl.name; });
+            if (it != mod.ports.end()) *it = decl;
+            else                       mod.ports.push_back(std::move(decl));
         } else if (check(TokenType::WIRE)    || check(TokenType::REG)    ||
                    check(TokenType::LOGIC)   || check(TokenType::TRI)    ||
                    check(TokenType::WAND)    || check(TokenType::WOR)    ||

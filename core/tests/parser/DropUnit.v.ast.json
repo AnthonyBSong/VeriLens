@@ -1,0 +1,149 @@
+[
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "istream_go"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "istream_rdy"
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "istream_val"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "ostream_msg"
+        },
+        "rhs": {
+          "kind": "IDENTIFIER",
+          "name": "istream_msg"
+        }
+      }
+    ],
+    "instances": [],
+    "name": "lab2_proc_DropUnit",
+    "net_decls": [
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "state",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "next_state",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "istream_go",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_msg_nbits"
+      },
+      {
+        "default": "1'b0",
+        "name": "c_state_pass"
+      },
+      {
+        "default": "1'b1",
+        "name": "c_state_drop"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reset",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "drop",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "istream_msg",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "istream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "istream_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "ostream_msg",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "ostream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "ostream_rdy",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "source_file": "DropUnit.v"
+  }
+]

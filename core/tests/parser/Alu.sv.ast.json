@@ -1,0 +1,469 @@
+[
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "expr": {
+                "kind": "IDENTIFIER",
+                "name": "op"
+              },
+              "items": [
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "result"
+                    },
+                    "rhs": {
+                      "kind": "BINARY_OP",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "a"
+                      },
+                      "op": "+",
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "b"
+                      }
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "4'b0000"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "result"
+                    },
+                    "rhs": {
+                      "kind": "BINARY_OP",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "a"
+                      },
+                      "op": "-",
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "b"
+                      }
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "4'b0001"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "result"
+                    },
+                    "rhs": {
+                      "kind": "BINARY_OP",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "a"
+                      },
+                      "op": "&",
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "b"
+                      }
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "4'b0010"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "result"
+                    },
+                    "rhs": {
+                      "kind": "BINARY_OP",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "a"
+                      },
+                      "op": "|",
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "b"
+                      }
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "4'b0011"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "result"
+                    },
+                    "rhs": {
+                      "kind": "BINARY_OP",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "a"
+                      },
+                      "op": "^",
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "b"
+                      }
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "4'b0100"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "result"
+                    },
+                    "rhs": {
+                      "kind": "BINARY_OP",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "a"
+                      },
+                      "op": "<<",
+                      "rhs": {
+                        "base": {
+                          "kind": "IDENTIFIER",
+                          "name": "b"
+                        },
+                        "kind": "PART_SELECT",
+                        "lsb": {
+                          "kind": "LITERAL",
+                          "value": "0"
+                        },
+                        "msb": {
+                          "kind": "LITERAL",
+                          "value": "4"
+                        }
+                      }
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "4'b0101"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "result"
+                    },
+                    "rhs": {
+                      "kind": "BINARY_OP",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "a"
+                      },
+                      "op": ">>",
+                      "rhs": {
+                        "base": {
+                          "kind": "IDENTIFIER",
+                          "name": "b"
+                        },
+                        "kind": "PART_SELECT",
+                        "lsb": {
+                          "kind": "LITERAL",
+                          "value": "0"
+                        },
+                        "msb": {
+                          "kind": "LITERAL",
+                          "value": "4"
+                        }
+                      }
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "4'b0110"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "result"
+                    },
+                    "rhs": {
+                      "kind": "BINARY_OP",
+                      "lhs": {
+                        "kind": "BINARY_OP",
+                        "lhs": {
+                          "kind": "IDENTIFIER",
+                          "name": "$signed"
+                        },
+                        "op": "call",
+                        "rhs": {
+                          "kind": "CONCAT",
+                          "parts": [
+                            {
+                              "kind": "IDENTIFIER",
+                              "name": "a"
+                            }
+                          ]
+                        }
+                      },
+                      "op": ">>>",
+                      "rhs": {
+                        "base": {
+                          "kind": "IDENTIFIER",
+                          "name": "b"
+                        },
+                        "kind": "PART_SELECT",
+                        "lsb": {
+                          "kind": "LITERAL",
+                          "value": "0"
+                        },
+                        "msb": {
+                          "kind": "LITERAL",
+                          "value": "4"
+                        }
+                      }
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "4'b0111"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "result"
+                    },
+                    "rhs": {
+                      "cond": {
+                        "kind": "BINARY_OP",
+                        "lhs": {
+                          "kind": "BINARY_OP",
+                          "lhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "$signed"
+                          },
+                          "op": "call",
+                          "rhs": {
+                            "kind": "CONCAT",
+                            "parts": [
+                              {
+                                "kind": "IDENTIFIER",
+                                "name": "a"
+                              }
+                            ]
+                          }
+                        },
+                        "op": "<",
+                        "rhs": {
+                          "kind": "BINARY_OP",
+                          "lhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "$signed"
+                          },
+                          "op": "call",
+                          "rhs": {
+                            "kind": "CONCAT",
+                            "parts": [
+                              {
+                                "kind": "IDENTIFIER",
+                                "name": "b"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "else": {
+                        "kind": "LITERAL",
+                        "value": "32'b0"
+                      },
+                      "kind": "CONDITIONAL",
+                      "then": {
+                        "kind": "LITERAL",
+                        "value": "32'b1"
+                      }
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "4'b1000"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "result"
+                    },
+                    "rhs": {
+                      "cond": {
+                        "kind": "BINARY_OP",
+                        "lhs": {
+                          "kind": "IDENTIFIER",
+                          "name": "a"
+                        },
+                        "op": "<",
+                        "rhs": {
+                          "kind": "IDENTIFIER",
+                          "name": "b"
+                        }
+                      },
+                      "else": {
+                        "kind": "LITERAL",
+                        "value": "32'b0"
+                      },
+                      "kind": "CONDITIONAL",
+                      "then": {
+                        "kind": "LITERAL",
+                        "value": "32'b1"
+                      }
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "4'b1001"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "result"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "32'b0"
+                    }
+                  },
+                  "patterns": []
+                }
+              ],
+              "kind": "CASE_STATEMENT",
+              "variant": "case"
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      }
+    ],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "zero"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "result"
+          },
+          "op": "==",
+          "rhs": {
+            "kind": "LITERAL",
+            "value": "32'b0"
+          }
+        }
+      }
+    ],
+    "instances": [],
+    "name": "Alu",
+    "net_decls": [],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "a",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "b",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 3,
+        "name": "op",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 31,
+        "name": "result",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "zero",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "source_file": "Alu.sv"
+  }
+]

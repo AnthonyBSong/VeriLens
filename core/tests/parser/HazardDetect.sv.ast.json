@@ -1,0 +1,96 @@
+[
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "stall"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "id_ex_mem_read"
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "id_ex_rd"
+              },
+              "op": "==",
+              "rhs": {
+                "kind": "IDENTIFIER",
+                "name": "if_id_rs1"
+              }
+            },
+            "op": "||",
+            "rhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "id_ex_rd"
+              },
+              "op": "==",
+              "rhs": {
+                "kind": "IDENTIFIER",
+                "name": "if_id_rs2"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "instances": [],
+    "name": "HazardDetect",
+    "net_decls": [],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "id_ex_mem_read",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 4,
+        "name": "id_ex_rd",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 4,
+        "name": "if_id_rs1",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 4,
+        "name": "if_id_rs2",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "stall",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "source_file": "HazardDetect.sv"
+  }
+]
