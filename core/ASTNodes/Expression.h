@@ -141,9 +141,10 @@ public:
     }
 };
 
-// Shared judgment: valid assignment targets are identifiers or selects.
+// Shared judgment: valid assignment targets are identifiers, selects, or concatenations.
 inline bool isLValue(const ExprPtr& e) {
     return e && (e->kind == ExprKind::IDENTIFIER
               || e->kind == ExprKind::BIT_SELECT
-              || e->kind == ExprKind::PART_SELECT);
+              || e->kind == ExprKind::PART_SELECT
+              || e->kind == ExprKind::CONCAT);
 }

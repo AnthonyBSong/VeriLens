@@ -12,6 +12,12 @@ void Linker::link() {
     for (auto& mod : modules_)
         for (auto& inst : mod.instances)
             inst.resolved = symbol_table_.count(inst.module_name) > 0;
+
+    // Build pointer-based symbol table once, after all push_backs are done
+    // and modules_ will no longer reallocate.
+    symbol_table_ptr_.clear();
+    for (const auto& mod : modules_)
+        symbol_table_ptr_[mod.name] = &mod;
 }
 
 const Module* Linker::lookup(const std::string& module_name) const {

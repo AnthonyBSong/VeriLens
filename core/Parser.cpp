@@ -112,7 +112,8 @@ Module Parser::parseModule() {
                    check(TokenType::LOGIC)   || check(TokenType::TRI)    ||
                    check(TokenType::WAND)    || check(TokenType::WOR)    ||
                    check(TokenType::SUPPLY0) || check(TokenType::SUPPLY1)) {
-            mod.net_decls.push_back(parseNetDeclaration());
+            for (auto& d : parseNetDeclaration())
+                mod.net_decls.push_back(std::move(d));
         } else if (check(TokenType::PARAMETER) || check(TokenType::LOCALPARAM)) {
             mod.parameters.push_back(parseParameterDeclaration());
         } else if (check(TokenType::ASSIGN)) {
@@ -125,10 +126,7 @@ Module Parser::parseModule() {
             if (check(TokenType::BEGIN)) skipBlock();
             else { skipToSemicolon(); match(TokenType::SEMICOLON); }
         } else if (check(TokenType::IDENTIFIER)) {
-            // disambiguate instance vs unknown declaration:
-            //   instance:     ModName #(...) instName (...)  — HASH after module name
-            //                 ModName instName (...)          — IDENTIFIER LPAREN after module name
-            //   net/other:    never has '(' immediately after the instance name
+            // used to disambiguate instance vs unknown declaration
             bool is_instance = module_names_.count(current().lexeme)
                 || peek(1).type == TokenType::HASH
                 || (peek(1).type == TokenType::IDENTIFIER
@@ -195,6 +193,10 @@ void Parser::parsePortList(Module& mod) {
 
             if (check(TokenType::SIGNED)) consume();
 
+            // user-defined type: "output mem_req_4B_t portname" — first IDENTIFIER is the type
+            if (check(TokenType::IDENTIFIER) && peek(1).type == TokenType::IDENTIFIER)
+                consume(); // discard the typedef name
+
             PortWidth width;
             if (check(TokenType::LBRACKET)) width = parseWidth();
 
@@ -238,7 +240,7 @@ Port Parser::parsePortDeclaration() {
     return Port(dir, ptype, width, name, line, col);
 }
 
-NetDecl Parser::parseNetDeclaration() {
+std::vector<NetDecl> Parser::parseNetDeclaration() {
     int line = current().line, col = current().column;
 
     NetType ntype = NetType::WIRE;
@@ -256,14 +258,24 @@ NetDecl Parser::parseNetDeclaration() {
     PortWidth width;
     if (check(TokenType::LBRACKET)) width = parseWidth();
 
-    std::string name = expect(TokenType::IDENTIFIER).lexeme;
-
-    ExprPtr init = nullptr;
-    if (match(TokenType::EQ))
-        init = parseExpression();
+    std::vector<NetDecl> decls;
+    do {
+        std::string name = expect(TokenType::IDENTIFIER).lexeme;
+        // skip unpacked array dimensions: logic [31:0] mem [0:N-1]
+        while (check(TokenType::LBRACKET)) {
+            consume();
+            while (!check(TokenType::RBRACKET) && !check(TokenType::END_OF_FILE))
+                consume();
+            match(TokenType::RBRACKET);
+        }
+        ExprPtr init = nullptr;
+        if (match(TokenType::EQ))
+            init = parseExpression();
+        decls.push_back(NetDecl(ntype, width, name, line, col, std::move(init)));
+    } while (match(TokenType::COMMA));
 
     expect(TokenType::SEMICOLON);
-    return NetDecl(ntype, width, name, line, col, std::move(init));
+    return decls;
 }
 
 Parameter Parser::parseParameterDeclaration() {
@@ -271,9 +283,18 @@ Parameter Parser::parseParameterDeclaration() {
     std::string name = expect(TokenType::IDENTIFIER).lexeme;
     std::string default_val;
     if (match(TokenType::EQ)) {
-        while (!check(TokenType::SEMICOLON) && !check(TokenType::COMMA) &&
-               !check(TokenType::RPAREN)    && !check(TokenType::END_OF_FILE))
+        int depth = 0;
+        while (!check(TokenType::END_OF_FILE)) {
+            if (check(TokenType::LPAREN)) {
+                depth++;
+            } else if (check(TokenType::RPAREN)) {
+                if (depth == 0) break;
+                depth--;
+            } else if (depth == 0 && (check(TokenType::SEMICOLON) || check(TokenType::COMMA))) {
+                break;
+            }
             default_val += consume().lexeme;
+        }
     }
     match(TokenType::SEMICOLON);
     return Parameter(name, default_val);
@@ -288,9 +309,18 @@ Instance Parser::parseInstance() {
         expect(TokenType::LPAREN);
         while (!check(TokenType::RPAREN) && !check(TokenType::END_OF_FILE)) {
             std::string param;
-            while (!check(TokenType::COMMA) && !check(TokenType::RPAREN) &&
-                   !check(TokenType::END_OF_FILE))
+            int depth = 0;
+            while (!check(TokenType::END_OF_FILE)) {
+                if (check(TokenType::LPAREN)) {
+                    depth++;
+                } else if (check(TokenType::RPAREN)) {
+                    if (depth == 0) break;
+                    depth--;
+                } else if (depth == 0 && check(TokenType::COMMA)) {
+                    break;
+                }
                 param += consume().lexeme;
+            }
             inst.parameters.push_back(param);
             if (!match(TokenType::COMMA)) break;
         }
@@ -303,6 +333,9 @@ Instance Parser::parseInstance() {
     while (!check(TokenType::RPAREN) && !check(TokenType::END_OF_FILE)) {
         int pline = current().line, pcol = current().column;
         if (match(TokenType::DOT)) {
+            if (match(TokenType::STAR)) {
+                // .* wildcard — connect all matching ports implicitly, skip
+            } else {
             std::string port_name = expect(TokenType::IDENTIFIER).lexeme;
             expect(TokenType::LPAREN);
             std::string signal;
@@ -310,6 +343,7 @@ Instance Parser::parseInstance() {
                 signal += consume().lexeme;
             expect(TokenType::RPAREN);
             inst.connections.push_back(PortConnection(port_name, signal, pline, pcol));
+            }
         } else {
             std::string signal;
             while (!check(TokenType::COMMA) && !check(TokenType::RPAREN) &&
@@ -456,14 +490,14 @@ StmtPtr Parser::parseNonBlockingAssign(ExprPtr lhs) {
 int Parser::binaryPrecedence(TokenType t) {
     switch (t) {
         case TokenType::PIPE_PIPE:                              return 2;
-        case TokenType::AMP_AMP:                               return 3;
+        case TokenType::AMP_AMP:                                return 3;
         case TokenType::PIPE:                                   return 4;
         case TokenType::CARET:                                  return 5;
         case TokenType::AMP:                                    return 6;
         case TokenType::EQ_EQ:     case TokenType::BANG_EQ:
-        case TokenType::EQ_EQ_EQ:  case TokenType::BANG_EQ_EQ: return 7;
+        case TokenType::EQ_EQ_EQ:  case TokenType::BANG_EQ_EQ:  return 7;
         case TokenType::LESS:      case TokenType::LESS_EQ:
-        case TokenType::GREATER:   case TokenType::GREATER_EQ: return 8;
+        case TokenType::GREATER:   case TokenType::GREATER_EQ:  return 8;
         case TokenType::LESS_LESS: case TokenType::GREATER_GREATER:
         case TokenType::LESS_LESS_LESS:
         case TokenType::GREATER_GREATER_GREATER:                return 9;
@@ -524,7 +558,7 @@ ExprPtr Parser::parseAtom() {
         consume();
         ExprPtr first = parseExpression();
         if (check(TokenType::LBRACE)) {
-            // replication: {n{expr}}
+            // handling replication: {n{expr}}
             consume();
             ExprPtr value = parseExpression();
             expect(TokenType::RBRACE);
@@ -544,9 +578,14 @@ ExprPtr Parser::parseAtom() {
         check(TokenType::STRING_LITERAL)  || check(TokenType::TIME_LITERAL))
         return std::make_unique<LiteralExpr>(consume().lexeme);
 
-    // identifier with optional bit/part select
+    // identifier with optional dot-access chain and bit/part select
     if (check(TokenType::IDENTIFIER)) {
-        ExprPtr base = std::make_unique<IdentifierExpr>(consume().lexeme);
+        std::string name = consume().lexeme;
+        while (check(TokenType::DOT) && peek(1).type == TokenType::IDENTIFIER) {
+            consume(); // .
+            name += "." + consume().lexeme;
+        }
+        ExprPtr base = std::make_unique<IdentifierExpr>(name);
         if (check(TokenType::LBRACKET)) {
             consume();
             ExprPtr idx = parseExpression();
@@ -581,7 +620,23 @@ ExprPtr Parser::parseAtom() {
 }
 
 ExprPtr Parser::parseLValue() {
-    ExprPtr base = std::make_unique<IdentifierExpr>(expect(TokenType::IDENTIFIER).lexeme);
+    if (check(TokenType::LBRACE)) {
+        consume();
+        auto concat = std::make_unique<ConcatExpr>();
+        if (!check(TokenType::RBRACE))
+            concat->parts.push_back(parseLValue());
+        while (match(TokenType::COMMA))
+            concat->parts.push_back(parseLValue());
+        expect(TokenType::RBRACE);
+        return concat;
+    }
+    std::string baseName = expect(TokenType::IDENTIFIER).lexeme;
+    // struct/record member access: signal.field (e.g. msg.type_)
+    while (check(TokenType::DOT) && peek(1).type == TokenType::IDENTIFIER) {
+        consume(); // .
+        baseName += "." + consume().lexeme;
+    }
+    ExprPtr base = std::make_unique<IdentifierExpr>(baseName);
     if (check(TokenType::LBRACKET)) {
         consume();
         ExprPtr idx = parseExpression();
