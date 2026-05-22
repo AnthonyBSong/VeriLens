@@ -56,6 +56,7 @@ private:
     std::vector<NetDecl> parseNetDeclaration(); // wire / reg / logic ...
     Parameter   parseParameterDeclaration();  // parameter / localparam
     Instance    parseInstance();              // ModName #() instName (...)
+    std::vector<GatePrimitive> parseGatePrimitive(); // and/or/not/... [name] (...);
     std::vector<Assign> parseContinuousAssign();  // assign a = x [, b = y, ...];
     AlwaysBlock parseAlwaysBlock();
 

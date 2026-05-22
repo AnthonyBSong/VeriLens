@@ -10,4 +10,5 @@
 #include "Instance.h"
 #include "Assign.h"
 #include "AlwaysBlock.h"
+#include "GatePrimitive.h"
 #include "Module.h"
