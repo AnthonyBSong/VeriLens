@@ -125,10 +125,7 @@ Module Parser::parseModule() {
             if (check(TokenType::BEGIN)) skipBlock();
             else { skipToSemicolon(); match(TokenType::SEMICOLON); }
         } else if (check(TokenType::IDENTIFIER)) {
-            // disambiguate instance vs unknown declaration:
-            //   instance:     ModName #(...) instName (...)  — HASH after module name
-            //                 ModName instName (...)          — IDENTIFIER LPAREN after module name
-            //   net/other:    never has '(' immediately after the instance name
+            // used to disambiguate instance vs unknown declaration
             bool is_instance = module_names_.count(current().lexeme)
                 || peek(1).type == TokenType::HASH
                 || (peek(1).type == TokenType::IDENTIFIER
@@ -456,14 +453,14 @@ StmtPtr Parser::parseNonBlockingAssign(ExprPtr lhs) {
 int Parser::binaryPrecedence(TokenType t) {
     switch (t) {
         case TokenType::PIPE_PIPE:                              return 2;
-        case TokenType::AMP_AMP:                               return 3;
+        case TokenType::AMP_AMP:                                return 3;
         case TokenType::PIPE:                                   return 4;
         case TokenType::CARET:                                  return 5;
         case TokenType::AMP:                                    return 6;
         case TokenType::EQ_EQ:     case TokenType::BANG_EQ:
-        case TokenType::EQ_EQ_EQ:  case TokenType::BANG_EQ_EQ: return 7;
+        case TokenType::EQ_EQ_EQ:  case TokenType::BANG_EQ_EQ:  return 7;
         case TokenType::LESS:      case TokenType::LESS_EQ:
-        case TokenType::GREATER:   case TokenType::GREATER_EQ: return 8;
+        case TokenType::GREATER:   case TokenType::GREATER_EQ:  return 8;
         case TokenType::LESS_LESS: case TokenType::GREATER_GREATER:
         case TokenType::LESS_LESS_LESS:
         case TokenType::GREATER_GREATER_GREATER:                return 9;
@@ -524,7 +521,7 @@ ExprPtr Parser::parseAtom() {
         consume();
         ExprPtr first = parseExpression();
         if (check(TokenType::LBRACE)) {
-            // replication: {n{expr}}
+            // handling replication: {n{expr}}
             consume();
             ExprPtr value = parseExpression();
             expect(TokenType::RBRACE);

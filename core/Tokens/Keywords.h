@@ -4,8 +4,7 @@
 #include "Token.h"
 
 // Maps every Verilog keyword string to its TokenType.
-// Usage: scan an identifier, then call lookupKeyword() to distinguish
-// keywords from user-defined identifiers.
+
 inline TokenType lookupKeyword(const std::string& word) {
     static const std::unordered_map<std::string, TokenType> KEYWORDS = {
         // Module structure
