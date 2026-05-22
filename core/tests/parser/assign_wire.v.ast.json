@@ -19,9 +19,6 @@
     "ports": [
       {"direction": "input", "lsb": 0, "msb": 0, "name": "a", "scalar": true, "type": "unspecified"},
       {"direction": "input", "lsb": 0, "msb": 0, "name": "b", "scalar": true, "type": "unspecified"},
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "y", "scalar": true, "type": "unspecified"},
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "a", "scalar": true, "type": "unspecified"},
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "b", "scalar": true, "type": "unspecified"},
       {"direction": "output", "lsb": 0, "msb": 0, "name": "y", "scalar": true, "type": "unspecified"}
     ],
     "source_file": "assign_wire.v"

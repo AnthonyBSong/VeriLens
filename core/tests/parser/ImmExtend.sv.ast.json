@@ -1,0 +1,207 @@
+[
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "expr": {"kind": "IDENTIFIER", "name": "sel"},
+              "items": [
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "imm"},
+                    "rhs": {
+                      "kind": "CONCAT",
+                      "parts": [
+                        {
+                          "count": {"kind": "LITERAL", "value": "20"},
+                          "kind": "REPLICATION",
+                          "value": {
+                            "base": {"kind": "IDENTIFIER", "name": "instr"},
+                            "index": {"kind": "LITERAL", "value": "31"},
+                            "kind": "BIT_SELECT"
+                          }
+                        },
+                        {
+                          "base": {"kind": "IDENTIFIER", "name": "instr"},
+                          "kind": "PART_SELECT",
+                          "lsb": {"kind": "LITERAL", "value": "20"},
+                          "msb": {"kind": "LITERAL", "value": "31"}
+                        }
+                      ]
+                    }
+                  },
+                  "patterns": [{"kind": "LITERAL", "value": "3'b000"}]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "imm"},
+                    "rhs": {
+                      "kind": "CONCAT",
+                      "parts": [
+                        {
+                          "count": {"kind": "LITERAL", "value": "20"},
+                          "kind": "REPLICATION",
+                          "value": {
+                            "base": {"kind": "IDENTIFIER", "name": "instr"},
+                            "index": {"kind": "LITERAL", "value": "31"},
+                            "kind": "BIT_SELECT"
+                          }
+                        },
+                        {
+                          "base": {"kind": "IDENTIFIER", "name": "instr"},
+                          "kind": "PART_SELECT",
+                          "lsb": {"kind": "LITERAL", "value": "25"},
+                          "msb": {"kind": "LITERAL", "value": "31"}
+                        },
+                        {
+                          "base": {"kind": "IDENTIFIER", "name": "instr"},
+                          "kind": "PART_SELECT",
+                          "lsb": {"kind": "LITERAL", "value": "7"},
+                          "msb": {"kind": "LITERAL", "value": "11"}
+                        }
+                      ]
+                    }
+                  },
+                  "patterns": [{"kind": "LITERAL", "value": "3'b001"}]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "imm"},
+                    "rhs": {
+                      "kind": "CONCAT",
+                      "parts": [
+                        {
+                          "count": {"kind": "LITERAL", "value": "19"},
+                          "kind": "REPLICATION",
+                          "value": {
+                            "base": {"kind": "IDENTIFIER", "name": "instr"},
+                            "index": {"kind": "LITERAL", "value": "31"},
+                            "kind": "BIT_SELECT"
+                          }
+                        },
+                        {
+                          "base": {"kind": "IDENTIFIER", "name": "instr"},
+                          "index": {"kind": "LITERAL", "value": "31"},
+                          "kind": "BIT_SELECT"
+                        },
+                        {
+                          "base": {"kind": "IDENTIFIER", "name": "instr"},
+                          "index": {"kind": "LITERAL", "value": "7"},
+                          "kind": "BIT_SELECT"
+                        },
+                        {
+                          "base": {"kind": "IDENTIFIER", "name": "instr"},
+                          "kind": "PART_SELECT",
+                          "lsb": {"kind": "LITERAL", "value": "25"},
+                          "msb": {"kind": "LITERAL", "value": "30"}
+                        },
+                        {
+                          "base": {"kind": "IDENTIFIER", "name": "instr"},
+                          "kind": "PART_SELECT",
+                          "lsb": {"kind": "LITERAL", "value": "8"},
+                          "msb": {"kind": "LITERAL", "value": "11"}
+                        },
+                        {"kind": "LITERAL", "value": "1'b0"}
+                      ]
+                    }
+                  },
+                  "patterns": [{"kind": "LITERAL", "value": "3'b010"}]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "imm"},
+                    "rhs": {
+                      "kind": "CONCAT",
+                      "parts": [
+                        {
+                          "base": {"kind": "IDENTIFIER", "name": "instr"},
+                          "kind": "PART_SELECT",
+                          "lsb": {"kind": "LITERAL", "value": "12"},
+                          "msb": {"kind": "LITERAL", "value": "31"}
+                        },
+                        {"kind": "LITERAL", "value": "12'b0"}
+                      ]
+                    }
+                  },
+                  "patterns": [{"kind": "LITERAL", "value": "3'b011"}]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "imm"},
+                    "rhs": {
+                      "kind": "CONCAT",
+                      "parts": [
+                        {
+                          "count": {"kind": "LITERAL", "value": "11"},
+                          "kind": "REPLICATION",
+                          "value": {
+                            "base": {"kind": "IDENTIFIER", "name": "instr"},
+                            "index": {"kind": "LITERAL", "value": "31"},
+                            "kind": "BIT_SELECT"
+                          }
+                        },
+                        {
+                          "base": {"kind": "IDENTIFIER", "name": "instr"},
+                          "index": {"kind": "LITERAL", "value": "31"},
+                          "kind": "BIT_SELECT"
+                        },
+                        {
+                          "base": {"kind": "IDENTIFIER", "name": "instr"},
+                          "kind": "PART_SELECT",
+                          "lsb": {"kind": "LITERAL", "value": "12"},
+                          "msb": {"kind": "LITERAL", "value": "19"}
+                        },
+                        {
+                          "base": {"kind": "IDENTIFIER", "name": "instr"},
+                          "index": {"kind": "LITERAL", "value": "20"},
+                          "kind": "BIT_SELECT"
+                        },
+                        {
+                          "base": {"kind": "IDENTIFIER", "name": "instr"},
+                          "kind": "PART_SELECT",
+                          "lsb": {"kind": "LITERAL", "value": "21"},
+                          "msb": {"kind": "LITERAL", "value": "30"}
+                        },
+                        {"kind": "LITERAL", "value": "1'b0"}
+                      ]
+                    }
+                  },
+                  "patterns": [{"kind": "LITERAL", "value": "3'b100"}]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "imm"},
+                    "rhs": {"kind": "LITERAL", "value": "32'b0"}
+                  },
+                  "patterns": []
+                }
+              ],
+              "kind": "CASE_STATEMENT",
+              "variant": "case"
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      }
+    ],
+    "assigns": [],
+    "instances": [],
+    "name": "ImmExtend",
+    "net_decls": [],
+    "parameters": [],
+    "ports": [
+      {"direction": "input", "lsb": 0, "msb": 31, "name": "instr", "scalar": false, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 2, "name": "sel", "scalar": false, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 31, "name": "imm", "scalar": false, "type": "logic"}
+    ],
+    "source_file": "ImmExtend.sv"
+  }
+]

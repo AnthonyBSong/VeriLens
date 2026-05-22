@@ -1,0 +1,140 @@
+[
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "rs1"},
+        "rhs": {
+          "base": {"kind": "IDENTIFIER", "name": "instr"},
+          "kind": "PART_SELECT",
+          "lsb": {"kind": "LITERAL", "value": "15"},
+          "msb": {"kind": "LITERAL", "value": "19"}
+        }
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "rs2"},
+        "rhs": {
+          "base": {"kind": "IDENTIFIER", "name": "instr"},
+          "kind": "PART_SELECT",
+          "lsb": {"kind": "LITERAL", "value": "20"},
+          "msb": {"kind": "LITERAL", "value": "24"}
+        }
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "rd"},
+        "rhs": {
+          "base": {"kind": "IDENTIFIER", "name": "instr"},
+          "kind": "PART_SELECT",
+          "lsb": {"kind": "LITERAL", "value": "7"},
+          "msb": {"kind": "LITERAL", "value": "11"}
+        }
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "opcode"},
+        "rhs": {
+          "base": {"kind": "IDENTIFIER", "name": "instr"},
+          "kind": "PART_SELECT",
+          "lsb": {"kind": "LITERAL", "value": "0"},
+          "msb": {"kind": "LITERAL", "value": "6"}
+        }
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "funct3"},
+        "rhs": {
+          "base": {"kind": "IDENTIFIER", "name": "instr"},
+          "kind": "PART_SELECT",
+          "lsb": {"kind": "LITERAL", "value": "12"},
+          "msb": {"kind": "LITERAL", "value": "14"}
+        }
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "funct7"},
+        "rhs": {
+          "base": {"kind": "IDENTIFIER", "name": "instr"},
+          "kind": "PART_SELECT",
+          "lsb": {"kind": "LITERAL", "value": "25"},
+          "msb": {"kind": "LITERAL", "value": "31"}
+        }
+      }
+    ],
+    "instances": [
+      {
+        "connections": [
+          {"port": "clk", "signal": "clk"},
+          {"port": "we", "signal": "wb_we"},
+          {"port": "rs1", "signal": "rs1"},
+          {"port": "rs2", "signal": "rs2"},
+          {"port": "rd", "signal": "wb_rd"},
+          {"port": "wd", "signal": "wb_wd"},
+          {"port": "rd1", "signal": "rs1_val"},
+          {"port": "rd2", "signal": "rs2_val"}
+        ],
+        "instance": "rf",
+        "module": "RegFile",
+        "parameters": [],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {"port": "instr", "signal": "instr"},
+          {"port": "sel", "signal": "imm_sel"},
+          {"port": "imm", "signal": "imm"}
+        ],
+        "instance": "ie",
+        "module": "ImmExtend",
+        "parameters": [],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {"port": "opcode", "signal": "opcode"},
+          {"port": "funct3", "signal": "funct3"},
+          {"port": "funct7", "signal": "funct7"},
+          {"port": "reg_write", "signal": "reg_write"},
+          {"port": "mem_read", "signal": "mem_read"},
+          {"port": "mem_write", "signal": "mem_write"},
+          {"port": "mem_to_reg", "signal": "mem_to_reg"},
+          {"port": "alu_src", "signal": "alu_src"},
+          {"port": "branch", "signal": "branch"},
+          {"port": "jump", "signal": "jump"},
+          {"port": "alu_op", "signal": "alu_op"},
+          {"port": "imm_sel", "signal": "imm_sel"}
+        ],
+        "instance": "cu",
+        "module": "ControlUnit",
+        "parameters": [],
+        "resolved": false
+      }
+    ],
+    "name": "DecodeStage",
+    "net_decls": [],
+    "parameters": [],
+    "ports": [
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "clk", "scalar": true, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "rst", "scalar": true, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 31, "name": "instr", "scalar": false, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 31, "name": "wb_wd", "scalar": false, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 4, "name": "wb_rd", "scalar": false, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "wb_we", "scalar": true, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 31, "name": "rs1_val", "scalar": false, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 31, "name": "rs2_val", "scalar": false, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 31, "name": "imm", "scalar": false, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 4, "name": "rs1", "scalar": false, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 4, "name": "rs2", "scalar": false, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 4, "name": "rd", "scalar": false, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 6, "name": "opcode", "scalar": false, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 2, "name": "funct3", "scalar": false, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 6, "name": "funct7", "scalar": false, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 0, "name": "reg_write", "scalar": true, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 0, "name": "mem_read", "scalar": true, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 0, "name": "mem_write", "scalar": true, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 0, "name": "mem_to_reg", "scalar": true, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 0, "name": "alu_src", "scalar": true, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 0, "name": "branch", "scalar": true, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 0, "name": "jump", "scalar": true, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 3, "name": "alu_op", "scalar": false, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 2, "name": "imm_sel", "scalar": false, "type": "logic"}
+    ],
+    "source_file": "DecodeStage.sv"
+  }
+]

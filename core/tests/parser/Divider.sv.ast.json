@@ -1,0 +1,245 @@
+[
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {
+                "kind": "BINARY_OP",
+                "lhs": {"kind": "IDENTIFIER", "name": "rst"},
+                "op": "||",
+                "rhs": {"kind": "IDENTIFIER", "name": "start"}
+              },
+              "else": {
+                "cond": {
+                  "kind": "BINARY_OP",
+                  "lhs": {"kind": "UNARY_OP", "op": "!", "operand": {"kind": "IDENTIFIER", "name": "div_by_zero"}},
+                  "op": "&&",
+                  "rhs": {
+                    "kind": "BINARY_OP",
+                    "lhs": {"kind": "IDENTIFIER", "name": "count"},
+                    "op": "<",
+                    "rhs": {"kind": "LITERAL", "value": "32"}
+                  }
+                },
+                "else": {
+                  "cond": {
+                    "kind": "BINARY_OP",
+                    "lhs": {"kind": "IDENTIFIER", "name": "count"},
+                    "op": "==",
+                    "rhs": {"kind": "LITERAL", "value": "32"}
+                  },
+                  "else": null,
+                  "kind": "IF_STATEMENT",
+                  "then": {
+                    "body": [
+                      {
+                        "kind": "NONBLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "quotient"},
+                        "rhs": {"kind": "IDENTIFIER", "name": "q_shift"}
+                      },
+                      {
+                        "kind": "NONBLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "remainder"},
+                        "rhs": {
+                          "base": {"kind": "IDENTIFIER", "name": "partial"},
+                          "kind": "PART_SELECT",
+                          "lsb": {"kind": "LITERAL", "value": "32"},
+                          "msb": {"kind": "LITERAL", "value": "63"}
+                        }
+                      },
+                      {
+                        "kind": "NONBLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "done"},
+                        "rhs": {"kind": "LITERAL", "value": "1'b1"}
+                      }
+                    ],
+                    "kind": "SEQ_BLOCK"
+                  }
+                },
+                "kind": "IF_STATEMENT",
+                "then": {
+                  "body": [
+                    {
+                      "cond": {
+                        "kind": "BINARY_OP",
+                        "lhs": {
+                          "base": {"kind": "IDENTIFIER", "name": "partial"},
+                          "kind": "PART_SELECT",
+                          "lsb": {"kind": "LITERAL", "value": "32"},
+                          "msb": {"kind": "LITERAL", "value": "63"}
+                        },
+                        "op": ">=",
+                        "rhs": {"kind": "IDENTIFIER", "name": "divisor"}
+                      },
+                      "else": {
+                        "body": [
+                          {
+                            "kind": "NONBLOCKING_ASSIGN",
+                            "lhs": {"kind": "IDENTIFIER", "name": "partial"},
+                            "rhs": {
+                              "kind": "CONCAT",
+                              "parts": [
+                                {
+                                  "base": {"kind": "IDENTIFIER", "name": "partial"},
+                                  "kind": "PART_SELECT",
+                                  "lsb": {"kind": "LITERAL", "value": "0"},
+                                  "msb": {"kind": "LITERAL", "value": "62"}
+                                },
+                                {"kind": "LITERAL", "value": "1'b0"}
+                              ]
+                            }
+                          },
+                          {
+                            "kind": "NONBLOCKING_ASSIGN",
+                            "lhs": {"kind": "IDENTIFIER", "name": "q_shift"},
+                            "rhs": {
+                              "kind": "CONCAT",
+                              "parts": [
+                                {
+                                  "base": {"kind": "IDENTIFIER", "name": "q_shift"},
+                                  "kind": "PART_SELECT",
+                                  "lsb": {"kind": "LITERAL", "value": "0"},
+                                  "msb": {"kind": "LITERAL", "value": "30"}
+                                },
+                                {"kind": "LITERAL", "value": "1'b0"}
+                              ]
+                            }
+                          }
+                        ],
+                        "kind": "SEQ_BLOCK"
+                      },
+                      "kind": "IF_STATEMENT",
+                      "then": {
+                        "body": [
+                          {
+                            "kind": "NONBLOCKING_ASSIGN",
+                            "lhs": {"kind": "IDENTIFIER", "name": "partial"},
+                            "rhs": {
+                              "kind": "CONCAT",
+                              "parts": [
+                                {
+                                  "kind": "BINARY_OP",
+                                  "lhs": {
+                                    "base": {"kind": "IDENTIFIER", "name": "partial"},
+                                    "kind": "PART_SELECT",
+                                    "lsb": {"kind": "LITERAL", "value": "32"},
+                                    "msb": {"kind": "LITERAL", "value": "63"}
+                                  },
+                                  "op": "-",
+                                  "rhs": {"kind": "IDENTIFIER", "name": "divisor"}
+                                },
+                                {
+                                  "base": {"kind": "IDENTIFIER", "name": "partial"},
+                                  "kind": "PART_SELECT",
+                                  "lsb": {"kind": "LITERAL", "value": "0"},
+                                  "msb": {"kind": "LITERAL", "value": "31"}
+                                },
+                                {"kind": "LITERAL", "value": "1'b1"}
+                              ]
+                            }
+                          },
+                          {
+                            "kind": "NONBLOCKING_ASSIGN",
+                            "lhs": {"kind": "IDENTIFIER", "name": "q_shift"},
+                            "rhs": {
+                              "kind": "CONCAT",
+                              "parts": [
+                                {
+                                  "base": {"kind": "IDENTIFIER", "name": "q_shift"},
+                                  "kind": "PART_SELECT",
+                                  "lsb": {"kind": "LITERAL", "value": "0"},
+                                  "msb": {"kind": "LITERAL", "value": "30"}
+                                },
+                                {"kind": "LITERAL", "value": "1'b1"}
+                              ]
+                            }
+                          }
+                        ],
+                        "kind": "SEQ_BLOCK"
+                      }
+                    },
+                    {
+                      "kind": "NONBLOCKING_ASSIGN",
+                      "lhs": {"kind": "IDENTIFIER", "name": "count"},
+                      "rhs": {
+                        "kind": "BINARY_OP",
+                        "lhs": {"kind": "IDENTIFIER", "name": "count"},
+                        "op": "+",
+                        "rhs": {"kind": "LITERAL", "value": "1"}
+                      }
+                    }
+                  ],
+                  "kind": "SEQ_BLOCK"
+                }
+              },
+              "kind": "IF_STATEMENT",
+              "then": {
+                "body": [
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "partial"},
+                    "rhs": {
+                      "kind": "CONCAT",
+                      "parts": [{"kind": "LITERAL", "value": "32'b0"}, {"kind": "IDENTIFIER", "name": "dividend"}]
+                    }
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "q_shift"},
+                    "rhs": {"kind": "LITERAL", "value": "32'b0"}
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "count"},
+                    "rhs": {"kind": "LITERAL", "value": "6'd0"}
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "done"},
+                    "rhs": {"kind": "LITERAL", "value": "1'b0"}
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "posedge clk"
+      }
+    ],
+    "assigns": [
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "div_by_zero"},
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {"kind": "IDENTIFIER", "name": "divisor"},
+          "op": "==",
+          "rhs": {"kind": "LITERAL", "value": "32'b0"}
+        }
+      }
+    ],
+    "instances": [],
+    "name": "Divider",
+    "net_decls": [
+      {"lsb": 0, "msb": 63, "name": "partial", "scalar": false, "type": "logic"},
+      {"lsb": 0, "msb": 31, "name": "q_shift", "scalar": false, "type": "logic"},
+      {"lsb": 0, "msb": 5, "name": "count", "scalar": false, "type": "logic"}
+    ],
+    "parameters": [],
+    "ports": [
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "clk", "scalar": true, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "rst", "scalar": true, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "start", "scalar": true, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 31, "name": "dividend", "scalar": false, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 31, "name": "divisor", "scalar": false, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 31, "name": "quotient", "scalar": false, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 31, "name": "remainder", "scalar": false, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 0, "name": "done", "scalar": true, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 0, "name": "div_by_zero", "scalar": true, "type": "logic"}
+    ],
+    "source_file": "Divider.sv"
+  }
+]

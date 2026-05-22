@@ -1,0 +1,151 @@
+[
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "expr": {"kind": "IDENTIFIER", "name": "funct3"},
+              "items": [
+                {
+                  "body": {
+                    "body": [
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "byte_en"},
+                        "rhs": {
+                          "kind": "BINARY_OP",
+                          "lhs": {"kind": "LITERAL", "value": "4'b0001"},
+                          "op": "<<",
+                          "rhs": {
+                            "base": {"kind": "IDENTIFIER", "name": "addr"},
+                            "kind": "PART_SELECT",
+                            "lsb": {"kind": "LITERAL", "value": "0"},
+                            "msb": {"kind": "LITERAL", "value": "1"}
+                          }
+                        }
+                      },
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "aligned_data"},
+                        "rhs": {
+                          "count": {"kind": "LITERAL", "value": "4"},
+                          "kind": "REPLICATION",
+                          "value": {
+                            "base": {"kind": "IDENTIFIER", "name": "store_data"},
+                            "kind": "PART_SELECT",
+                            "lsb": {"kind": "LITERAL", "value": "0"},
+                            "msb": {"kind": "LITERAL", "value": "7"}
+                          }
+                        }
+                      }
+                    ],
+                    "kind": "SEQ_BLOCK"
+                  },
+                  "patterns": [{"kind": "LITERAL", "value": "3'b000"}]
+                },
+                {
+                  "body": {
+                    "body": [
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "byte_en"},
+                        "rhs": {
+                          "kind": "BINARY_OP",
+                          "lhs": {"kind": "LITERAL", "value": "4'b0011"},
+                          "op": "<<",
+                          "rhs": {
+                            "base": {"kind": "IDENTIFIER", "name": "addr"},
+                            "kind": "PART_SELECT",
+                            "lsb": {"kind": "LITERAL", "value": "0"},
+                            "msb": {"kind": "LITERAL", "value": "1"}
+                          }
+                        }
+                      },
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "aligned_data"},
+                        "rhs": {
+                          "count": {"kind": "LITERAL", "value": "2"},
+                          "kind": "REPLICATION",
+                          "value": {
+                            "base": {"kind": "IDENTIFIER", "name": "store_data"},
+                            "kind": "PART_SELECT",
+                            "lsb": {"kind": "LITERAL", "value": "0"},
+                            "msb": {"kind": "LITERAL", "value": "15"}
+                          }
+                        }
+                      }
+                    ],
+                    "kind": "SEQ_BLOCK"
+                  },
+                  "patterns": [{"kind": "LITERAL", "value": "3'b001"}]
+                },
+                {
+                  "body": {
+                    "body": [
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "byte_en"},
+                        "rhs": {"kind": "LITERAL", "value": "4'b1111"}
+                      },
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "aligned_data"},
+                        "rhs": {"kind": "IDENTIFIER", "name": "store_data"}
+                      }
+                    ],
+                    "kind": "SEQ_BLOCK"
+                  },
+                  "patterns": [{"kind": "LITERAL", "value": "3'b010"}]
+                },
+                {
+                  "body": {
+                    "body": [
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "byte_en"},
+                        "rhs": {"kind": "LITERAL", "value": "4'b1111"}
+                      },
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "aligned_data"},
+                        "rhs": {"kind": "IDENTIFIER", "name": "store_data"}
+                      }
+                    ],
+                    "kind": "SEQ_BLOCK"
+                  },
+                  "patterns": []
+                }
+              ],
+              "kind": "CASE_STATEMENT",
+              "variant": "case"
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      }
+    ],
+    "assigns": [],
+    "instances": [],
+    "name": "LoadStoreUnit",
+    "net_decls": [],
+    "parameters": [],
+    "ports": [
+      {"direction": "input", "lsb": 0, "msb": 2, "name": "funct3", "scalar": false, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 31, "name": "addr", "scalar": false, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 31, "name": "store_data", "scalar": false, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 3, "name": "byte_en", "scalar": false, "type": "logic"},
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 31,
+        "name": "aligned_data",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "source_file": "LoadStoreUnit.sv"
+  }
+]

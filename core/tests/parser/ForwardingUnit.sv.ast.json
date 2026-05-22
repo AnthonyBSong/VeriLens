@@ -1,0 +1,172 @@
+[
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "fwd_a"},
+              "rhs": {"kind": "LITERAL", "value": "2'b00"}
+            },
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "fwd_b"},
+              "rhs": {"kind": "LITERAL", "value": "2'b00"}
+            },
+            {
+              "cond": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "BINARY_OP",
+                  "lhs": {"kind": "IDENTIFIER", "name": "ex_mem_reg_write"},
+                  "op": "&&",
+                  "rhs": {
+                    "kind": "BINARY_OP",
+                    "lhs": {"kind": "IDENTIFIER", "name": "ex_mem_rd"},
+                    "op": "!=",
+                    "rhs": {"kind": "LITERAL", "value": "5'b0"}
+                  }
+                },
+                "op": "&&",
+                "rhs": {
+                  "kind": "BINARY_OP",
+                  "lhs": {"kind": "IDENTIFIER", "name": "ex_mem_rd"},
+                  "op": "==",
+                  "rhs": {"kind": "IDENTIFIER", "name": "id_ex_rs1"}
+                }
+              },
+              "else": {
+                "cond": {
+                  "kind": "BINARY_OP",
+                  "lhs": {
+                    "kind": "BINARY_OP",
+                    "lhs": {"kind": "IDENTIFIER", "name": "mem_wb_reg_write"},
+                    "op": "&&",
+                    "rhs": {
+                      "kind": "BINARY_OP",
+                      "lhs": {"kind": "IDENTIFIER", "name": "mem_wb_rd"},
+                      "op": "!=",
+                      "rhs": {"kind": "LITERAL", "value": "5'b0"}
+                    }
+                  },
+                  "op": "&&",
+                  "rhs": {
+                    "kind": "BINARY_OP",
+                    "lhs": {"kind": "IDENTIFIER", "name": "mem_wb_rd"},
+                    "op": "==",
+                    "rhs": {"kind": "IDENTIFIER", "name": "id_ex_rs1"}
+                  }
+                },
+                "else": null,
+                "kind": "IF_STATEMENT",
+                "then": {
+                  "kind": "BLOCKING_ASSIGN",
+                  "lhs": {"kind": "IDENTIFIER", "name": "fwd_a"},
+                  "rhs": {"kind": "LITERAL", "value": "2'b01"}
+                }
+              },
+              "kind": "IF_STATEMENT",
+              "then": {
+                "kind": "BLOCKING_ASSIGN",
+                "lhs": {"kind": "IDENTIFIER", "name": "fwd_a"},
+                "rhs": {"kind": "LITERAL", "value": "2'b10"}
+              }
+            },
+            {
+              "cond": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "BINARY_OP",
+                  "lhs": {"kind": "IDENTIFIER", "name": "ex_mem_reg_write"},
+                  "op": "&&",
+                  "rhs": {
+                    "kind": "BINARY_OP",
+                    "lhs": {"kind": "IDENTIFIER", "name": "ex_mem_rd"},
+                    "op": "!=",
+                    "rhs": {"kind": "LITERAL", "value": "5'b0"}
+                  }
+                },
+                "op": "&&",
+                "rhs": {
+                  "kind": "BINARY_OP",
+                  "lhs": {"kind": "IDENTIFIER", "name": "ex_mem_rd"},
+                  "op": "==",
+                  "rhs": {"kind": "IDENTIFIER", "name": "id_ex_rs2"}
+                }
+              },
+              "else": {
+                "cond": {
+                  "kind": "BINARY_OP",
+                  "lhs": {
+                    "kind": "BINARY_OP",
+                    "lhs": {"kind": "IDENTIFIER", "name": "mem_wb_reg_write"},
+                    "op": "&&",
+                    "rhs": {
+                      "kind": "BINARY_OP",
+                      "lhs": {"kind": "IDENTIFIER", "name": "mem_wb_rd"},
+                      "op": "!=",
+                      "rhs": {"kind": "LITERAL", "value": "5'b0"}
+                    }
+                  },
+                  "op": "&&",
+                  "rhs": {
+                    "kind": "BINARY_OP",
+                    "lhs": {"kind": "IDENTIFIER", "name": "mem_wb_rd"},
+                    "op": "==",
+                    "rhs": {"kind": "IDENTIFIER", "name": "id_ex_rs2"}
+                  }
+                },
+                "else": null,
+                "kind": "IF_STATEMENT",
+                "then": {
+                  "kind": "BLOCKING_ASSIGN",
+                  "lhs": {"kind": "IDENTIFIER", "name": "fwd_b"},
+                  "rhs": {"kind": "LITERAL", "value": "2'b01"}
+                }
+              },
+              "kind": "IF_STATEMENT",
+              "then": {
+                "kind": "BLOCKING_ASSIGN",
+                "lhs": {"kind": "IDENTIFIER", "name": "fwd_b"},
+                "rhs": {"kind": "LITERAL", "value": "2'b10"}
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      }
+    ],
+    "assigns": [],
+    "instances": [],
+    "name": "ForwardingUnit",
+    "net_decls": [],
+    "parameters": [],
+    "ports": [
+      {"direction": "input", "lsb": 0, "msb": 4, "name": "ex_mem_rd", "scalar": false, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 4, "name": "mem_wb_rd", "scalar": false, "type": "logic"},
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "ex_mem_reg_write",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "mem_wb_reg_write",
+        "scalar": true,
+        "type": "logic"
+      },
+      {"direction": "input", "lsb": 0, "msb": 4, "name": "id_ex_rs1", "scalar": false, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 4, "name": "id_ex_rs2", "scalar": false, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 1, "name": "fwd_a", "scalar": false, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 1, "name": "fwd_b", "scalar": false, "type": "logic"}
+    ],
+    "source_file": "ForwardingUnit.sv"
+  }
+]

@@ -177,8 +177,11 @@ TEST_P(LexerFileTest, MatchesGolden) {
     auto file = GetParam();
     auto tokens = tokenizef(file);
 
-    std::ifstream golden_file(file.string() + ".json");
-    ASSERT_TRUE(golden_file.is_open()) << "Missing golden file: " << file.string() + ".json";
+    // Goldens live in lexer/ regardless of where the source file is.
+    path lexer_dir  = path(__FILE__).parent_path();
+    path golden_path = lexer_dir / (file.filename().string() + ".json");
+    std::ifstream golden_file(golden_path);
+    ASSERT_TRUE(golden_file.is_open()) << "Missing golden file: " << golden_path;
 
     nlohmann::json expected;
     golden_file >> expected;
@@ -191,10 +194,10 @@ TEST_P(LexerFileTest, MatchesGolden) {
 }
 
 INSTANTIATE_TEST_SUITE_P(
-    DirectoryFiles,
+    AllExamples,
     LexerFileTest,
     ::testing::ValuesIn(collect_files(
-        std::filesystem::path(__FILE__).parent_path().string()
+        (std::filesystem::path(__FILE__).parent_path().parent_path() / "examples").string()
     )),
     [](const ::testing::TestParamInfo<std::filesystem::path>& info) {
         return info.param.stem().string();

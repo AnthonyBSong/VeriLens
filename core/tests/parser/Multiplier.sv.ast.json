@@ -1,0 +1,148 @@
+[
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {
+                "kind": "BINARY_OP",
+                "lhs": {"kind": "IDENTIFIER", "name": "rst"},
+                "op": "||",
+                "rhs": {"kind": "IDENTIFIER", "name": "start"}
+              },
+              "else": {
+                "cond": {
+                  "kind": "BINARY_OP",
+                  "lhs": {"kind": "IDENTIFIER", "name": "count"},
+                  "op": "<",
+                  "rhs": {"kind": "LITERAL", "value": "32"}
+                },
+                "else": {
+                  "body": [
+                    {
+                      "kind": "NONBLOCKING_ASSIGN",
+                      "lhs": {"kind": "IDENTIFIER", "name": "product"},
+                      "rhs": {"kind": "IDENTIFIER", "name": "acc"}
+                    },
+                    {
+                      "kind": "NONBLOCKING_ASSIGN",
+                      "lhs": {"kind": "IDENTIFIER", "name": "done"},
+                      "rhs": {"kind": "LITERAL", "value": "1'b1"}
+                    }
+                  ],
+                  "kind": "SEQ_BLOCK"
+                },
+                "kind": "IF_STATEMENT",
+                "then": {
+                  "body": [
+                    {
+                      "cond": {
+                        "base": {"kind": "IDENTIFIER", "name": "shifter"},
+                        "index": {"kind": "LITERAL", "value": "0"},
+                        "kind": "BIT_SELECT"
+                      },
+                      "else": null,
+                      "kind": "IF_STATEMENT",
+                      "then": {
+                        "kind": "NONBLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "acc"},
+                        "rhs": {
+                          "kind": "BINARY_OP",
+                          "lhs": {"kind": "IDENTIFIER", "name": "acc"},
+                          "op": "+",
+                          "rhs": {
+                            "kind": "BINARY_OP",
+                            "lhs": {
+                              "kind": "CONCAT",
+                              "parts": [{"kind": "LITERAL", "value": "32'b0"}, {"kind": "IDENTIFIER", "name": "b"}]
+                            },
+                            "op": "<<",
+                            "rhs": {"kind": "IDENTIFIER", "name": "count"}
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "kind": "NONBLOCKING_ASSIGN",
+                      "lhs": {"kind": "IDENTIFIER", "name": "shifter"},
+                      "rhs": {
+                        "kind": "BINARY_OP",
+                        "lhs": {"kind": "IDENTIFIER", "name": "shifter"},
+                        "op": ">>",
+                        "rhs": {"kind": "LITERAL", "value": "1"}
+                      }
+                    },
+                    {
+                      "kind": "NONBLOCKING_ASSIGN",
+                      "lhs": {"kind": "IDENTIFIER", "name": "count"},
+                      "rhs": {
+                        "kind": "BINARY_OP",
+                        "lhs": {"kind": "IDENTIFIER", "name": "count"},
+                        "op": "+",
+                        "rhs": {"kind": "LITERAL", "value": "1"}
+                      }
+                    }
+                  ],
+                  "kind": "SEQ_BLOCK"
+                }
+              },
+              "kind": "IF_STATEMENT",
+              "then": {
+                "body": [
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "acc"},
+                    "rhs": {"kind": "LITERAL", "value": "64'b0"}
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "shifter"},
+                    "rhs": {"kind": "IDENTIFIER", "name": "a"}
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "count"},
+                    "rhs": {"kind": "LITERAL", "value": "6'd0"}
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "done"},
+                    "rhs": {"kind": "LITERAL", "value": "1'b0"}
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "product"},
+                    "rhs": {"kind": "LITERAL", "value": "64'b0"}
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "posedge clk"
+      }
+    ],
+    "assigns": [],
+    "instances": [],
+    "name": "Multiplier",
+    "net_decls": [
+      {"lsb": 0, "msb": 63, "name": "acc", "scalar": false, "type": "logic"},
+      {"lsb": 0, "msb": 31, "name": "shifter", "scalar": false, "type": "logic"},
+      {"lsb": 0, "msb": 5, "name": "count", "scalar": false, "type": "logic"}
+    ],
+    "parameters": [],
+    "ports": [
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "clk", "scalar": true, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "rst", "scalar": true, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "start", "scalar": true, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 31, "name": "a", "scalar": false, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 31, "name": "b", "scalar": false, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 63, "name": "product", "scalar": false, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 0, "name": "done", "scalar": true, "type": "logic"}
+    ],
+    "source_file": "Multiplier.sv"
+  }
+]

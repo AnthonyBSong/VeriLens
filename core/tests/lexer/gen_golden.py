@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Generates .json golden files for Verilog lexer tests."""
+"""Generate .json golden files for Verilog/SV lexer tests.
+
+Scans core/tests/examples/ for .v and .sv files and writes
+<filename>.json golden files into this directory (core/tests/lexer/).
+"""
 
 import json, sys
 from pathlib import Path
@@ -58,118 +62,82 @@ def tokenize(src):
     i, n = 0, len(src)
 
     while i < n:
-        # whitespace
         if src[i].isspace():
-            i += 1
-            continue
-
-        # single-line comment
+            i += 1; continue
         if src[i:i+2] == '//':
-            while i < n and src[i] != '\n':
-                i += 1
+            while i < n and src[i] != '\n': i += 1
             continue
-
-        # block comment
         if src[i:i+2] == '/*':
             i += 2
-            while i < n and src[i:i+2] != '*/':
-                i += 1
-            i += 2
-            continue
-
-        # compiler directive
+            while i < n and src[i:i+2] != '*/': i += 1
+            i += 2; continue
         if src[i] == '`':
             j = i + 1
-            while j < n and (src[j].isalnum() or src[j] == '_'):
-                j += 1
+            while j < n and (src[j].isalnum() or src[j] == '_'): j += 1
             tokens.append({"type": "COMPILER_DIRECTIVE", "lexeme": src[i:j]})
-            i = j
-            continue
-
-        # system task
+            i = j; continue
         if src[i] == '$':
             j = i + 1
-            while j < n and (src[j].isalnum() or src[j] == '_'):
-                j += 1
+            while j < n and (src[j].isalnum() or src[j] == '_'): j += 1
             tokens.append({"type": "SYSTEM_TASK", "lexeme": src[i:j]})
-            i = j
-            continue
-
-        # string literal
+            i = j; continue
         if src[i] == '"':
             j = i + 1
             while j < n and src[j] != '"':
-                if src[j] == '\\':
-                    j += 1
+                if src[j] == '\\': j += 1
                 j += 1
             j += 1
             tokens.append({"type": "STRING_LITERAL", "lexeme": src[i:j]})
-            i = j
-            continue
-
-        # number (integer or real or sized)
+            i = j; continue
         if src[i].isdigit():
             j = i
-            while j < n and (src[j].isdigit() or src[j] == '_'):
-                j += 1
+            while j < n and (src[j].isdigit() or src[j] == '_'): j += 1
             if j < n and src[j] == "'" and j+1 < n and src[j+1].lower() in 'bodh':
                 j += 2
-                while j < n and (src[j].isalnum() or src[j] == '_'):
-                    j += 1
+                while j < n and (src[j].isalnum() or src[j] == '_'): j += 1
                 tokens.append({"type": "INTEGER_LITERAL", "lexeme": src[i:j]})
             elif j < n and src[j] == '.' and j+1 < n and src[j+1].isdigit():
                 j += 1
-                while j < n and (src[j].isdigit() or src[j] == '_'):
-                    j += 1
+                while j < n and (src[j].isdigit() or src[j] == '_'): j += 1
                 if j < n and src[j] in 'eE':
                     j += 1
-                    if j < n and src[j] in '+-':
-                        j += 1
-                    while j < n and src[j].isdigit():
-                        j += 1
+                    if j < n and src[j] in '+-': j += 1
+                    while j < n and src[j].isdigit(): j += 1
                 tokens.append({"type": "REAL_LITERAL", "lexeme": src[i:j]})
             else:
                 tokens.append({"type": "INTEGER_LITERAL", "lexeme": src[i:j]})
-            i = j
-            continue
-
-        # identifier or keyword
+            i = j; continue
         if src[i].isalpha() or src[i] == '_':
             j = i
-            while j < n and (src[j].isalnum() or src[j] == '_'):
-                j += 1
+            while j < n and (src[j].isalnum() or src[j] == '_'): j += 1
             word = src[i:j]
             tokens.append({"type": KEYWORD_TYPES.get(word, "IDENTIFIER"), "lexeme": word})
-            i = j
-            continue
-
-        # operators — longest match first
+            i = j; continue
         if src[i:i+3] in THREE_MAP:
-            tokens.append({"type": THREE_MAP[src[i:i+3]], "lexeme": src[i:i+3]})
-            i += 3
+            tokens.append({"type": THREE_MAP[src[i:i+3]], "lexeme": src[i:i+3]}); i += 3
         elif src[i:i+2] in TWO_MAP:
-            tokens.append({"type": TWO_MAP[src[i:i+2]], "lexeme": src[i:i+2]})
-            i += 2
+            tokens.append({"type": TWO_MAP[src[i:i+2]], "lexeme": src[i:i+2]}); i += 2
         elif src[i] in ONE_MAP:
-            tokens.append({"type": ONE_MAP[src[i]], "lexeme": src[i]})
-            i += 1
+            tokens.append({"type": ONE_MAP[src[i]], "lexeme": src[i]}); i += 1
         else:
-            tokens.append({"type": "UNKNOWN", "lexeme": src[i]})
-            i += 1
+            tokens.append({"type": "UNKNOWN", "lexeme": src[i]}); i += 1
 
     tokens.append({"type": "END_OF_FILE", "lexeme": ""})
     return tokens
 
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: python3 gen_golden.py <file.v> [file2.v ...]")
+    lexer_dir   = Path(__file__).resolve().parent
+    examples_dir = lexer_dir.parent / "examples"
+
+    files = sorted(examples_dir.rglob("*.v")) + sorted(examples_dir.rglob("*.sv"))
+    if not files:
+        print(f"No .v/.sv files found in {examples_dir}")
         sys.exit(1)
 
-    for path in sys.argv[1:]:
-        src = Path(path).read_text()
+    for vfile in files:
+        src    = vfile.read_text()
         tokens = tokenize(src)
-        out = path + ".json"
-        with open(out, 'w') as f:
-            json.dump(tokens, f, indent=2)
-        print(f"{path}: {len(tokens)} tokens → {out}")
+        out    = lexer_dir / (vfile.name + ".json")
+        out.write_text(json.dumps(tokens, indent=2))
+        print(f"  {vfile.name} → {out.name}  ({len(tokens)} tokens)")

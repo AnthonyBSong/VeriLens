@@ -1,0 +1,253 @@
+[
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "reg_write"},
+              "rhs": {"kind": "LITERAL", "value": "1'b0"}
+            },
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "mem_read"},
+              "rhs": {"kind": "LITERAL", "value": "1'b0"}
+            },
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "mem_write"},
+              "rhs": {"kind": "LITERAL", "value": "1'b0"}
+            },
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "mem_to_reg"},
+              "rhs": {"kind": "LITERAL", "value": "1'b0"}
+            },
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "alu_src"},
+              "rhs": {"kind": "LITERAL", "value": "1'b0"}
+            },
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "branch"},
+              "rhs": {"kind": "LITERAL", "value": "1'b0"}
+            },
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "jump"},
+              "rhs": {"kind": "LITERAL", "value": "1'b0"}
+            },
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "alu_op"},
+              "rhs": {"kind": "LITERAL", "value": "4'b0"}
+            },
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "imm_sel"},
+              "rhs": {"kind": "LITERAL", "value": "3'b0"}
+            },
+            {
+              "expr": {"kind": "IDENTIFIER", "name": "opcode"},
+              "items": [
+                {
+                  "body": {
+                    "body": [
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "reg_write"},
+                        "rhs": {"kind": "LITERAL", "value": "1"}
+                      },
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "alu_src"},
+                        "rhs": {"kind": "LITERAL", "value": "0"}
+                      },
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "mem_to_reg"},
+                        "rhs": {"kind": "LITERAL", "value": "0"}
+                      }
+                    ],
+                    "kind": "SEQ_BLOCK"
+                  },
+                  "patterns": [{"kind": "LITERAL", "value": "7'b0110011"}]
+                },
+                {
+                  "body": {
+                    "body": [
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "reg_write"},
+                        "rhs": {"kind": "LITERAL", "value": "1"}
+                      },
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "alu_src"},
+                        "rhs": {"kind": "LITERAL", "value": "1"}
+                      },
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "imm_sel"},
+                        "rhs": {"kind": "LITERAL", "value": "3'b000"}
+                      }
+                    ],
+                    "kind": "SEQ_BLOCK"
+                  },
+                  "patterns": [{"kind": "LITERAL", "value": "7'b0010011"}]
+                },
+                {
+                  "body": {
+                    "body": [
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "reg_write"},
+                        "rhs": {"kind": "LITERAL", "value": "1"}
+                      },
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "mem_read"},
+                        "rhs": {"kind": "LITERAL", "value": "1"}
+                      },
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "alu_src"},
+                        "rhs": {"kind": "LITERAL", "value": "1"}
+                      },
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "mem_to_reg"},
+                        "rhs": {"kind": "LITERAL", "value": "1"}
+                      },
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "imm_sel"},
+                        "rhs": {"kind": "LITERAL", "value": "3'b000"}
+                      }
+                    ],
+                    "kind": "SEQ_BLOCK"
+                  },
+                  "patterns": [{"kind": "LITERAL", "value": "7'b0000011"}]
+                },
+                {
+                  "body": {
+                    "body": [
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "mem_write"},
+                        "rhs": {"kind": "LITERAL", "value": "1"}
+                      },
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "alu_src"},
+                        "rhs": {"kind": "LITERAL", "value": "1"}
+                      },
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "imm_sel"},
+                        "rhs": {"kind": "LITERAL", "value": "3'b001"}
+                      }
+                    ],
+                    "kind": "SEQ_BLOCK"
+                  },
+                  "patterns": [{"kind": "LITERAL", "value": "7'b0100011"}]
+                },
+                {
+                  "body": {
+                    "body": [
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "branch"},
+                        "rhs": {"kind": "LITERAL", "value": "1"}
+                      },
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "imm_sel"},
+                        "rhs": {"kind": "LITERAL", "value": "3'b010"}
+                      }
+                    ],
+                    "kind": "SEQ_BLOCK"
+                  },
+                  "patterns": [{"kind": "LITERAL", "value": "7'b1100011"}]
+                },
+                {
+                  "body": {
+                    "body": [
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "jump"},
+                        "rhs": {"kind": "LITERAL", "value": "1"}
+                      },
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "reg_write"},
+                        "rhs": {"kind": "LITERAL", "value": "1"}
+                      },
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "imm_sel"},
+                        "rhs": {"kind": "LITERAL", "value": "3'b100"}
+                      }
+                    ],
+                    "kind": "SEQ_BLOCK"
+                  },
+                  "patterns": [{"kind": "LITERAL", "value": "7'b1101111"}]
+                },
+                {
+                  "body": {
+                    "body": [
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "reg_write"},
+                        "rhs": {"kind": "LITERAL", "value": "1"}
+                      },
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "alu_src"},
+                        "rhs": {"kind": "LITERAL", "value": "1"}
+                      },
+                      {
+                        "kind": "BLOCKING_ASSIGN",
+                        "lhs": {"kind": "IDENTIFIER", "name": "imm_sel"},
+                        "rhs": {"kind": "LITERAL", "value": "3'b011"}
+                      }
+                    ],
+                    "kind": "SEQ_BLOCK"
+                  },
+                  "patterns": [{"kind": "LITERAL", "value": "7'b0110111"}]
+                },
+                {"body": null, "patterns": []}
+              ],
+              "kind": "CASE_STATEMENT",
+              "variant": "case"
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      }
+    ],
+    "assigns": [],
+    "instances": [],
+    "name": "ControlUnit",
+    "net_decls": [],
+    "parameters": [],
+    "ports": [
+      {"direction": "input", "lsb": 0, "msb": 6, "name": "opcode", "scalar": false, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 2, "name": "funct3", "scalar": false, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 6, "name": "funct7", "scalar": false, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 0, "name": "reg_write", "scalar": true, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 0, "name": "mem_read", "scalar": true, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 0, "name": "mem_write", "scalar": true, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 0, "name": "mem_to_reg", "scalar": true, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 0, "name": "alu_src", "scalar": true, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 0, "name": "branch", "scalar": true, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 0, "name": "jump", "scalar": true, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 3, "name": "alu_op", "scalar": false, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 2, "name": "imm_sel", "scalar": false, "type": "logic"}
+    ],
+    "source_file": "ControlUnit.sv"
+  }
+]
