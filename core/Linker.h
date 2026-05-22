@@ -19,7 +19,11 @@ public:
     // Returns nullptr if not found.
     const Module* lookup(const std::string& module_name) const;
 
+    // The pointer-based symbol table ready for ValidationContext.
+    const ValidationContext::SymbolTable& symbolTable() const { return symbol_table_ptr_; }
+
 private:
-    std::vector<Module>                           modules_;
-    std::unordered_map<std::string, std::size_t>  symbol_table_; // name -> index into modules_
+    std::vector<Module>               modules_;
+    std::unordered_map<std::string, std::size_t>  symbol_table_;     // name -> index (used by link())
+    ValidationContext::SymbolTable    symbol_table_ptr_;              // name -> Module* (used by Validator)
 };

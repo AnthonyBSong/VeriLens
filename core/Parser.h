@@ -37,47 +37,47 @@ private:
 
 
     // Error recovery
-    void skipToSemicolon();    // panic: advance until `;`
-    void skipToEndmodule();    // panic: advance until `endmodule`
-    void skipBlock();          // skip a matched begin/end block
+    void skipToSemicolon();
+    void skipToEndmodule();
+    void skipBlock();
 
     // Top level
     Module parseModule();
 
 
     // Module header
-    void parseModuleHeader(Module& mod);   // name + optional #() + port list
-    void parseParameterList(Module& mod);  // #( parameter P = val, ... )
+    void parseModuleHeader(Module& mod);
+    void parseParameterList(Module& mod);
     void parsePortList(Module& mod);       // (a, b, c) or ANSI port list
 
 
     // Module body items
     Port        parsePortDeclaration();       // input / output / inout ...
-    NetDecl     parseNetDeclaration();        // wire / reg / logic ...
+    std::vector<NetDecl> parseNetDeclaration(); // wire / reg / logic ...
     Parameter   parseParameterDeclaration();  // parameter / localparam
     Instance    parseInstance();              // ModName #() instName (...)
     std::vector<Assign> parseContinuousAssign();  // assign a = x [, b = y, ...];
-    AlwaysBlock parseAlwaysBlock();           // always @(...) ...
+    AlwaysBlock parseAlwaysBlock();
 
 
     // Always block internals  (needed for FSM detection)
     std::string parseSensitivityList();  // @( posedge clk, negedge rst )
 
-    StmtPtr parseStatement();            // dispatches to helpers below
-    StmtPtr parseSeqBlock();             // begin ... end
-    StmtPtr parseIfStatement();          // if (...) ... [else ...]
-    StmtPtr parseCaseStatement();        // case / casex / casez
+    StmtPtr parseStatement();
+    StmtPtr parseSeqBlock(); 
+    StmtPtr parseIfStatement();  
+    StmtPtr parseCaseStatement();
     std::unique_ptr<CaseItem> parseCaseItem();
 
-    // called after lhs already parsed — caller checked = vs <=
-    StmtPtr parseBlockingAssign(ExprPtr lhs);     // lhs = rhs;
-    StmtPtr parseNonBlockingAssign(ExprPtr lhs);  // lhs <= rhs;
+    // called after lhs already parsed
+    StmtPtr parseBlockingAssign(ExprPtr lhs); 
+    StmtPtr parseNonBlockingAssign(ExprPtr lhs);
 
 
     // Expression parsing
-    ExprPtr parseExpression();          // entry: handles ternary then delegates
-    ExprPtr parseBinary(int minPrec);   // precedence climbing for binary ops
-    ExprPtr parseUnary();               // ~, !, -, reduction operators
+    ExprPtr parseExpression();
+    ExprPtr parseBinary(int minPrec);
+    ExprPtr parseUnary();
     ExprPtr parseAtom();                // literal, identifier, (expr), {concat}
     ExprPtr parseLValue();              // assignment target: id / id[i] / id[a:b]
     PortWidth parseWidth();             // [msb:lsb]

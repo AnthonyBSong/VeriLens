@@ -4,13 +4,7 @@
 Validator::Validator(const Linker& linker) : linker_(linker) {}
 
 std::vector<ValidationError> Validator::run() const {
-    // Build a pointer-based symbol table from the linker's resolved module list.
-    ValidationContext::SymbolTable symbols;
-    for (const auto& mod : linker_.modules())
-        symbols[mod.name] = &mod;
-
-    // Each Module::validate() recursively applies the typing judgments defined
-    // inline on every node in its subtree and appends to the shared error list.
+    const auto& symbols = linker_.symbolTable();
     std::vector<ValidationError> all;
     for (const auto& mod : linker_.modules()) {
         auto errs = mod.validate(symbols);
