@@ -183,42 +183,58 @@ void Parser::parsePortList(Module& mod) {
     expect(TokenType::LPAREN);
     if (check(TokenType::RPAREN)) { consume(); return; }
 
-    do {
-        if (check(TokenType::RPAREN)) break;
+    // Track current ANSI direction context so comma-separated names in the same
+    // group all inherit it: "input a, b, cin, output sum, cout" works correctly.
+    PortDirection curDir   = PortDirection::INPUT;
+    PortType      curType  = PortType::UNSPECIFIED;
+    PortWidth     curWidth;
+    bool          hasAnsiDir = false;
+
+    while (!check(TokenType::RPAREN) && !check(TokenType::END_OF_FILE)) {
+        if (check(TokenType::COMMA)) { consume(); continue; }
+
         int line = current().line, col = current().column;
 
         if (check(TokenType::INPUT) || check(TokenType::OUTPUT) || check(TokenType::INOUT)) {
-            // ANSI inline port
-            PortDirection dir = PortDirection::INPUT;
-            if      (check(TokenType::INPUT))  { dir = PortDirection::INPUT;  consume(); }
-            else if (check(TokenType::OUTPUT)) { dir = PortDirection::OUTPUT; consume(); }
-            else if (check(TokenType::INOUT))  { dir = PortDirection::INOUT;  consume(); }
+            // New direction keyword — update context for this group.
+            if      (check(TokenType::INPUT))  { curDir = PortDirection::INPUT;  consume(); }
+            else if (check(TokenType::OUTPUT)) { curDir = PortDirection::OUTPUT; consume(); }
+            else                               { curDir = PortDirection::INOUT;  consume(); }
 
-            PortType ptype = PortType::UNSPECIFIED;
-            if      (check(TokenType::WIRE))  { ptype = PortType::WIRE;  consume(); }
-            else if (check(TokenType::REG))   { ptype = PortType::REG;   consume(); }
-            else if (check(TokenType::LOGIC)) { ptype = PortType::LOGIC; consume(); }
+            curType = PortType::UNSPECIFIED;
+            if      (check(TokenType::WIRE))  { curType = PortType::WIRE;  consume(); }
+            else if (check(TokenType::REG))   { curType = PortType::REG;   consume(); }
+            else if (check(TokenType::LOGIC)) { curType = PortType::LOGIC; consume(); }
 
             if (check(TokenType::SIGNED)) consume();
 
-            // user-defined type: "output mem_req_4B_t portname" — first IDENTIFIER is the type
+            // User-defined type: two consecutive IDENTIFIERs — first is the typedef name.
             if (check(TokenType::IDENTIFIER) && peek(1).type == TokenType::IDENTIFIER)
-                consume(); // discard the typedef name
+                consume();
 
-            PortWidth width;
-            if (check(TokenType::LBRACKET)) width = parseWidth();
+            curWidth = PortWidth();
+            if (check(TokenType::LBRACKET)) curWidth = parseWidth();
 
-            std::string name = expect(TokenType::IDENTIFIER).lexeme;
-            mod.ports.push_back(Port(dir, ptype, width, name, line, col));
+            hasAnsiDir = true;
+
+            if (check(TokenType::IDENTIFIER)) {
+                std::string name = consume().lexeme;
+                mod.ports.push_back(Port(curDir, curType, curWidth, name, line, col));
+            }
         } else if (check(TokenType::IDENTIFIER)) {
-            // non-ANSI: name only, direction declared later in body
             std::string name = consume().lexeme;
-            mod.ports.push_back(Port(PortDirection::INPUT, PortType::UNSPECIFIED,
-                                     PortWidth(), name, line, col));
+            if (hasAnsiDir) {
+                // Continuation of current direction group (e.g. "b, cin" after "input a").
+                mod.ports.push_back(Port(curDir, curType, curWidth, name, line, col));
+            } else {
+                // Non-ANSI style: bare name, direction declared in module body.
+                mod.ports.push_back(Port(PortDirection::INPUT, PortType::UNSPECIFIED,
+                                         PortWidth(), name, line, col));
+            }
         } else {
             consume();
         }
-    } while (match(TokenType::COMMA));
+    }
 
     expect(TokenType::RPAREN);
 }
