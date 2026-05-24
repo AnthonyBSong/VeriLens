@@ -74,18 +74,35 @@ std::vector<Token> Lexer::tokenize() {
             continue;
         }
 
-        // number: integer, sized literal (4'b1010, 8'hFF), or real (3.14)
+        // number: integer, sized literal (4'b1010, 8'sh1F), or real (3.14, 1e5)
         if (isdigit(current_char)) {
             std::string lexeme;
             while (isdigit(current_char) || current_char == '_') lexeme += advance();
 
-            char base = tolower(peek());
-            if (current_char == '\'' && (base == 'b' || base == 'o' || base == 'd' || base == 'h')) {
-                lexeme += advance(); // '
-                lexeme += advance(); // base specifier
-                while (isalnum(current_char) || current_char == '_') lexeme += advance();
-                tokens.push_back({TokenType::INTEGER_LITERAL, lexeme, tok_line, tok_col});
-            } else if (current_char == '.' && isdigit(peek())) {
+            // Sized literal — accepts optional signed marker:
+            //   <size>'[s|S]<base><digits>     e.g. 4'b1010, 8'sh1F, 32'sd-1
+            // peek 'sb', 'sd', 'so', 'sh' before the bare-base case.
+            if (current_char == '\'') {
+                char p1 = tolower(peek());
+                bool signed_lit = (p1 == 's');
+                size_t base_off = signed_lit ? 2 : 1; // offset of base char after '
+                char base = '\0';
+                if (position + base_off < input.size())
+                    base = tolower(input[position + base_off]);
+
+                if (base == 'b' || base == 'o' || base == 'd' || base == 'h') {
+                    lexeme += advance();                     // '
+                    if (signed_lit) lexeme += advance();     // s
+                    lexeme += advance();                     // base specifier
+                    while (isalnum(current_char) || current_char == '_')
+                        lexeme += advance();
+                    tokens.push_back({TokenType::INTEGER_LITERAL, lexeme, tok_line, tok_col});
+                    continue;
+                }
+            }
+
+            // Real with fraction:  3.14, 1.2e+5
+            if (current_char == '.' && isdigit(peek())) {
                 lexeme += advance(); // .
                 while (isdigit(current_char) || current_char == '_') lexeme += advance();
                 if (current_char == 'e' || current_char == 'E') {
@@ -94,9 +111,25 @@ std::vector<Token> Lexer::tokenize() {
                     while (isdigit(current_char)) lexeme += advance();
                 }
                 tokens.push_back({TokenType::REAL_LITERAL, lexeme, tok_line, tok_col});
-            } else {
-                tokens.push_back({TokenType::INTEGER_LITERAL, lexeme, tok_line, tok_col});
+                continue;
             }
+
+            // Real with bare exponent: 1e5, 1E+10, 2e-3 (no decimal point).
+            // Require digit after the optional sign so we don't swallow `1e` + IDENT.
+            if ((current_char == 'e' || current_char == 'E')) {
+                size_t look = position + 1;
+                if (look < input.size() && (input[look] == '+' || input[look] == '-')) look++;
+                if (look < input.size() && isdigit(static_cast<unsigned char>(input[look]))) {
+                    lexeme += advance();                                  // e/E
+                    if (current_char == '+' || current_char == '-')
+                        lexeme += advance();
+                    while (isdigit(current_char)) lexeme += advance();
+                    tokens.push_back({TokenType::REAL_LITERAL, lexeme, tok_line, tok_col});
+                    continue;
+                }
+            }
+
+            tokens.push_back({TokenType::INTEGER_LITERAL, lexeme, tok_line, tok_col});
             continue;
         }
 

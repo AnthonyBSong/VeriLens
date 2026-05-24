@@ -96,11 +96,17 @@ def tokenize(src):
         if src[i].isdigit():
             j = i
             while j < n and (src[j].isdigit() or src[j] == '_'): j += 1
-            if j < n and src[j] == "'" and j+1 < n and src[j+1].lower() in 'bodh':
-                j += 2
-                while j < n and (src[j].isalnum() or src[j] == '_'): j += 1
-                tokens.append({"type": "INTEGER_LITERAL", "lexeme": src[i:j]})
-            elif j < n and src[j] == '.' and j+1 < n and src[j+1].isdigit():
+            # Sized literal — optional signed marker:  4'b1010, 8'sh1F, 32'sd-1
+            if j < n and src[j] == "'":
+                signed_lit = (j+1 < n and src[j+1].lower() == 's')
+                base_off = 2 if signed_lit else 1
+                if j+base_off < n and src[j+base_off].lower() in 'bodh':
+                    k = j + base_off + 1
+                    while k < n and (src[k].isalnum() or src[k] == '_'): k += 1
+                    tokens.append({"type": "INTEGER_LITERAL", "lexeme": src[i:k]})
+                    i = k; continue
+            # Real with fraction
+            if j < n and src[j] == '.' and j+1 < n and src[j+1].isdigit():
                 j += 1
                 while j < n and (src[j].isdigit() or src[j] == '_'): j += 1
                 if j < n and src[j] in 'eE':
@@ -108,8 +114,17 @@ def tokenize(src):
                     if j < n and src[j] in '+-': j += 1
                     while j < n and src[j].isdigit(): j += 1
                 tokens.append({"type": "REAL_LITERAL", "lexeme": src[i:j]})
-            else:
-                tokens.append({"type": "INTEGER_LITERAL", "lexeme": src[i:j]})
+                i = j; continue
+            # Real with bare exponent: 1e5, 1E+10
+            if j < n and src[j] in 'eE':
+                k = j + 1
+                if k < n and src[k] in '+-': k += 1
+                if k < n and src[k].isdigit():
+                    j = k + 1
+                    while j < n and src[j].isdigit(): j += 1
+                    tokens.append({"type": "REAL_LITERAL", "lexeme": src[i:j]})
+                    i = j; continue
+            tokens.append({"type": "INTEGER_LITERAL", "lexeme": src[i:j]})
             i = j; continue
         if src[i].isalpha() or src[i] == '_':
             j = i
