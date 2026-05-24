@@ -77,7 +77,8 @@
         "instance": "ctrl_unit",
         "module": "NodeColumnCtrl",
         "parameters": ["NUM_ROWS"],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -99,7 +100,8 @@
         "instance": "dpath",
         "module": "NodeColumnDpath",
         "parameters": ["NUM_ROWS"],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -113,7 +115,8 @@
         "instance": "mem_n",
         "module": "M10KMem",
         "parameters": ["NUM_ROWS"],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -127,7 +130,8 @@
         "instance": "mem_nm1",
         "module": "M10KMem",
         "parameters": ["NUM_ROWS"],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       }
     ],
     "name": "ColumnWrapper",

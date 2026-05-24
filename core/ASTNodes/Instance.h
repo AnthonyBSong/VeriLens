@@ -19,6 +19,7 @@ public:
     std::vector<std::string>     parameters;   // raw parameter overrides e.g. "NUM_ROWS"
     std::vector<PortConnection>  connections;
     bool                         resolved = false; // set by Linker::link()
+    bool                         wildcard = false; // true if `.*` wildcard was used
 
     Instance(const std::string& module_name, const std::string& instance_name, int line, int column)
         : Node(NodeKind::INSTANCE, line, column),

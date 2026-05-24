@@ -33,10 +33,17 @@ public:
     explicit IdentifierExpr(const std::string& name)
         : Expression(ExprKind::IDENTIFIER), name(name) {}
     // Judgment: identifier must be declared in enclosing module scope.
-    // Names beginning with '$' are system functions/tasks (e.g. $signed,
-    // $clog2) and are never declared locally — skip them.
+    //  - Names beginning with '$' are system functions/tasks (e.g. $signed,
+    //    $clog2) and are never declared locally.
+    //  - Dotted names (`pkg::name`, `inst.port`, `msg.type_`) refer to
+    //    package, hierarchical, or struct-member symbols whose tail is not
+    //    in the local signal table; we can only judge them once full type
+    //    information is wired in.
     void validate(ValidationContext& ctx) const override {
-        if (!name.empty() && name[0] == '$') return;
+        if (name.empty())                              return;
+        if (name[0] == '$')                            return;
+        if (name.find('.') != std::string::npos)       return;
+        if (name.find("::") != std::string::npos)      return;
         if (!ctx.hasSignal(name))
             ctx.warn("identifier '" + name + "' not declared in module scope", 0, 0);
     }

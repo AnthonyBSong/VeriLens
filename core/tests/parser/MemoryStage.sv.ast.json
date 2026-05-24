@@ -15,7 +15,8 @@
         "instance": "lsu",
         "module": "LoadStoreUnit",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -30,7 +31,8 @@
         "instance": "dmem",
         "module": "DataMemory",
         "parameters": [".DEPTH(1024)"],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       }
     ],
     "name": "MemoryStage",

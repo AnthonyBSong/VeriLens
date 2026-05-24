@@ -101,7 +101,8 @@
         "instance": "alu",
         "module": "Alu",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -117,7 +118,8 @@
         "instance": "bu",
         "module": "BranchUnit",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       }
     ],
     "name": "ExecuteStage",

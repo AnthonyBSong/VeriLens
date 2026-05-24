@@ -92,10 +92,13 @@ public:
 
             // Judgment: every output port of the target module must be connected.
             // A floating output means data is silently discarded — misleading in a diagram.
-            for (const auto& [pname, pptr] : tports) {
-                if (pptr->direction == PortDirection::OUTPUT && !connected.count(pname))
-                    ctx.warn("instance '" + i.instance_name + "': output port '." + pname +
-                             "' is not connected", i.line, i.column);
+            // .* wildcard implicitly connects matching ports, so skip the check.
+            if (!i.wildcard) {
+                for (const auto& [pname, pptr] : tports) {
+                    if (pptr->direction == PortDirection::OUTPUT && !connected.count(pname))
+                        ctx.warn("instance '" + i.instance_name + "': output port '." + pname +
+                                 "' is not connected", i.line, i.column);
+                }
             }
         }
         for (const auto& a  : assigns)       a.validate(ctx);
