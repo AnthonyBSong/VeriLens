@@ -292,6 +292,7 @@
         }
       }
     ],
+    "gate_primitives": [],
     "instances": [],
     "name": "BranchUnit",
     "net_decls": [],

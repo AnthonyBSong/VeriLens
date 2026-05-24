@@ -41,6 +41,9 @@ inline TokenType lookupKeyword(const std::string& word) {
 
         // Procedural blocks
         {"always",      TokenType::ALWAYS},
+        {"always_ff",   TokenType::ALWAYS_FF},
+        {"always_comb", TokenType::ALWAYS_COMB},
+        {"always_latch",TokenType::ALWAYS_LATCH},
         {"initial",     TokenType::INITIAL},
         {"begin",       TokenType::BEGIN},
         {"end",         TokenType::END},
@@ -116,6 +119,13 @@ inline TokenType lookupKeyword(const std::string& word) {
         {"specify",     TokenType::SPECIFY},
         {"endspecify",  TokenType::ENDSPECIFY},
         {"specparam",   TokenType::SPECPARAM},
+
+        // SystemVerilog type constructs
+        {"typedef",     TokenType::TYPEDEF},
+        {"enum",        TokenType::ENUM},
+        {"struct",      TokenType::STRUCT},
+        {"union",       TokenType::UNION},
+        {"packed",      TokenType::PACKED},
     };
 
     auto it = KEYWORDS.find(word);

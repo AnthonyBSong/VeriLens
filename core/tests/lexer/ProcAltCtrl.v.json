@@ -1252,7 +1252,7 @@
     "lexeme": ";"
   },
   {
-    "type": "IDENTIFIER",
+    "type": "ALWAYS_FF",
     "lexeme": "always_ff"
   },
   {
@@ -1440,7 +1440,7 @@
     "lexeme": ";"
   },
   {
-    "type": "IDENTIFIER",
+    "type": "ALWAYS_COMB",
     "lexeme": "always_comb"
   },
   {
@@ -1876,7 +1876,7 @@
     "lexeme": ";"
   },
   {
-    "type": "IDENTIFIER",
+    "type": "ALWAYS_FF",
     "lexeme": "always_ff"
   },
   {
@@ -4272,7 +4272,7 @@
     "lexeme": "endtask"
   },
   {
-    "type": "IDENTIFIER",
+    "type": "ALWAYS_COMB",
     "lexeme": "always_comb"
   },
   {
@@ -8976,7 +8976,7 @@
     "lexeme": ";"
   },
   {
-    "type": "IDENTIFIER",
+    "type": "ALWAYS_COMB",
     "lexeme": "always_comb"
   },
   {
@@ -9292,7 +9292,7 @@
     "lexeme": "end"
   },
   {
-    "type": "IDENTIFIER",
+    "type": "ALWAYS_COMB",
     "lexeme": "always_comb"
   },
   {
@@ -10804,7 +10804,7 @@
     "lexeme": ";"
   },
   {
-    "type": "IDENTIFIER",
+    "type": "ALWAYS_COMB",
     "lexeme": "always_comb"
   },
   {
@@ -10940,7 +10940,7 @@
     "lexeme": "end"
   },
   {
-    "type": "IDENTIFIER",
+    "type": "ALWAYS_COMB",
     "lexeme": "always_comb"
   },
   {
@@ -11288,7 +11288,7 @@
     "lexeme": ";"
   },
   {
-    "type": "IDENTIFIER",
+    "type": "ALWAYS_FF",
     "lexeme": "always_ff"
   },
   {
@@ -11600,7 +11600,7 @@
     "lexeme": ";"
   },
   {
-    "type": "IDENTIFIER",
+    "type": "ALWAYS_COMB",
     "lexeme": "always_comb"
   },
   {
@@ -12532,7 +12532,7 @@
     "lexeme": ";"
   },
   {
-    "type": "IDENTIFIER",
+    "type": "ALWAYS_FF",
     "lexeme": "always_ff"
   },
   {
@@ -13044,7 +13044,7 @@
     "lexeme": ";"
   },
   {
-    "type": "IDENTIFIER",
+    "type": "ALWAYS_FF",
     "lexeme": "always_ff"
   },
   {

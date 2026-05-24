@@ -366,6 +366,7 @@
       }
     ],
     "assigns": [],
+    "gate_primitives": [],
     "instances": [],
     "name": "PipelineReg_ID_EX",
     "net_decls": [],

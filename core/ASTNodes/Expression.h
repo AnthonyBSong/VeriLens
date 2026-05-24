@@ -33,7 +33,10 @@ public:
     explicit IdentifierExpr(const std::string& name)
         : Expression(ExprKind::IDENTIFIER), name(name) {}
     // Judgment: identifier must be declared in enclosing module scope.
+    // Names beginning with '$' are system functions/tasks (e.g. $signed,
+    // $clog2) and are never declared locally — skip them.
     void validate(ValidationContext& ctx) const override {
+        if (!name.empty() && name[0] == '$') return;
         if (!ctx.hasSignal(name))
             ctx.warn("identifier '" + name + "' not declared in module scope", 0, 0);
     }

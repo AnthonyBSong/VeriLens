@@ -1,1 +1,1110 @@
-[]
+[
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "istream_msg_a"
+        },
+        "rhs": {
+          "base": {
+            "kind": "IDENTIFIER",
+            "name": "istream_msg"
+          },
+          "kind": "PART_SELECT",
+          "lsb": {
+            "kind": "LITERAL",
+            "value": "32"
+          },
+          "msb": {
+            "kind": "LITERAL",
+            "value": "63"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "istream_msg_b"
+        },
+        "rhs": {
+          "base": {
+            "kind": "IDENTIFIER",
+            "name": "istream_msg"
+          },
+          "kind": "PART_SELECT",
+          "lsb": {
+            "kind": "LITERAL",
+            "value": "0"
+          },
+          "msb": {
+            "kind": "LITERAL",
+            "value": "31"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "b_lsb"
+        },
+        "rhs": {
+          "base": {
+            "kind": "IDENTIFIER",
+            "name": "b_reg_out"
+          },
+          "index": {
+            "kind": "LITERAL",
+            "value": "0"
+          },
+          "kind": "BIT_SELECT"
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "ostream_msg"
+        },
+        "rhs": {
+          "kind": "IDENTIFIER",
+          "name": "result_reg_out"
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [
+      {
+        "connections": [
+          {
+            "port": "sel",
+            "signal": "a_mux_sel"
+          },
+          {
+            "port": "in0",
+            "signal": "a_shift_out"
+          },
+          {
+            "port": "in1",
+            "signal": "istream_msg_a"
+          },
+          {
+            "port": "out",
+            "signal": "a_mux_out"
+          }
+        ],
+        "instance": "a_mux",
+        "module": "vc_Mux2",
+        "parameters": [
+          "32"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "d",
+            "signal": "a_mux_out"
+          },
+          {
+            "port": "q",
+            "signal": "a_reg_out"
+          }
+        ],
+        "instance": "a_reg",
+        "module": "vc_ResetReg",
+        "parameters": [
+          "32"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "in",
+            "signal": "a_reg_out"
+          },
+          {
+            "port": "shamt",
+            "signal": "1'b1"
+          },
+          {
+            "port": "out",
+            "signal": "a_shift_out"
+          }
+        ],
+        "instance": "a_shift",
+        "module": "vc_LeftLogicalShifter",
+        "parameters": [
+          "32",
+          "1"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "sel",
+            "signal": "b_mux_sel"
+          },
+          {
+            "port": "in0",
+            "signal": "b_shift_out"
+          },
+          {
+            "port": "in1",
+            "signal": "istream_msg_b"
+          },
+          {
+            "port": "out",
+            "signal": "b_mux_out"
+          }
+        ],
+        "instance": "b_mux",
+        "module": "vc_Mux2",
+        "parameters": [
+          "32"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "d",
+            "signal": "b_mux_out"
+          },
+          {
+            "port": "q",
+            "signal": "b_reg_out"
+          }
+        ],
+        "instance": "b_reg",
+        "module": "vc_ResetReg",
+        "parameters": [
+          "32"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "in",
+            "signal": "b_reg_out"
+          },
+          {
+            "port": "shamt",
+            "signal": "1'b1"
+          },
+          {
+            "port": "out",
+            "signal": "b_shift_out"
+          }
+        ],
+        "instance": "b_shift",
+        "module": "vc_RightLogicalShifter",
+        "parameters": [
+          "32",
+          "1"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "sel",
+            "signal": "result_mux_sel"
+          },
+          {
+            "port": "in0",
+            "signal": "add_mux_out"
+          },
+          {
+            "port": "in1",
+            "signal": "32'b0"
+          },
+          {
+            "port": "out",
+            "signal": "result_mux_out"
+          }
+        ],
+        "instance": "result_mux",
+        "module": "vc_Mux2",
+        "parameters": [
+          "32"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "en",
+            "signal": "result_en"
+          },
+          {
+            "port": "d",
+            "signal": "result_mux_out"
+          },
+          {
+            "port": "q",
+            "signal": "result_reg_out"
+          }
+        ],
+        "instance": "result_reg",
+        "module": "vc_EnReg",
+        "parameters": [
+          "32"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "in0",
+            "signal": "a_reg_out"
+          },
+          {
+            "port": "in1",
+            "signal": "result_reg_out"
+          },
+          {
+            "port": "out",
+            "signal": "adder_out"
+          }
+        ],
+        "instance": "adder",
+        "module": "vc_SimpleAdder",
+        "parameters": [
+          "32"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "sel",
+            "signal": "add_mux_sel"
+          },
+          {
+            "port": "in0",
+            "signal": "adder_out"
+          },
+          {
+            "port": "in1",
+            "signal": "result_reg_out"
+          },
+          {
+            "port": "out",
+            "signal": "add_mux_out"
+          }
+        ],
+        "instance": "adder_mux",
+        "module": "vc_Mux2",
+        "parameters": [
+          "32"
+        ],
+        "resolved": false
+      }
+    ],
+    "name": "lab1_imul_IntMulBaseDpath",
+    "net_decls": [
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "istream_msg_a",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "istream_msg_b",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "a_shift_out",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "a_mux_out",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "a_reg_out",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "b_shift_out",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "b_mux_out",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "b_reg_out",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "add_mux_out",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "result_mux_out",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "result_reg_out",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "adder_out",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reset",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 63,
+        "name": "istream_msg",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 31,
+        "name": "ostream_msg",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "a_mux_sel",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "b_mux_sel",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "result_mux_sel",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "add_mux_sel",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "result_en",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "b_lsb",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "source_file": "IntMulBase.v"
+  },
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {
+                "kind": "IDENTIFIER",
+                "name": "reset"
+              },
+              "else": {
+                "body": [
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "state_reg"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "state_next"
+                    }
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              },
+              "kind": "IF_STATEMENT",
+              "then": {
+                "body": [
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "state_reg"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_IDLE"
+                    }
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "posedge clk"
+      },
+      {
+        "body": {
+          "body": [
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "state_next"
+              },
+              "rhs": {
+                "kind": "IDENTIFIER",
+                "name": "state_reg"
+              }
+            },
+            {
+              "expr": {
+                "kind": "IDENTIFIER",
+                "name": "state_reg"
+              },
+              "items": [
+                {
+                  "body": {
+                    "cond": {
+                      "kind": "IDENTIFIER",
+                      "name": "req_go"
+                    },
+                    "else": null,
+                    "kind": "IF_STATEMENT",
+                    "then": {
+                      "kind": "BLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "state_next"
+                      },
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "STATE_CALC"
+                      }
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_IDLE"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "cond": {
+                      "kind": "IDENTIFIER",
+                      "name": "calc_done"
+                    },
+                    "else": null,
+                    "kind": "IF_STATEMENT",
+                    "then": {
+                      "kind": "BLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "state_next"
+                      },
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "STATE_DONE"
+                      }
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_CALC"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "cond": {
+                      "kind": "IDENTIFIER",
+                      "name": "resp_go"
+                    },
+                    "else": null,
+                    "kind": "IF_STATEMENT",
+                    "then": {
+                      "kind": "BLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "state_next"
+                      },
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "STATE_IDLE"
+                      }
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_DONE"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "state_next"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_IDLE"
+                    }
+                  },
+                  "patterns": []
+                }
+              ],
+              "kind": "CASE_STATEMENT",
+              "variant": "case"
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      },
+      {
+        "body": {
+          "body": [
+            {
+              "expr": {
+                "kind": "IDENTIFIER",
+                "name": "state_reg"
+              },
+              "items": [
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_IDLE"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "cond": {
+                      "kind": "IDENTIFIER",
+                      "name": "do_add"
+                    },
+                    "else": null,
+                    "kind": "IF_STATEMENT",
+                    "then": null
+                  },
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_CALC"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_DONE"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": []
+                }
+              ],
+              "kind": "CASE_STATEMENT",
+              "variant": "case"
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      }
+    ],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "req_go"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "istream_val"
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "istream_rdy"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "resp_go"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "ostream_val"
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "ostream_rdy"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "do_add"
+        },
+        "rhs": {
+          "kind": "IDENTIFIER",
+          "name": "b_lsb"
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "clear",
+            "signal": "req_go"
+          },
+          {
+            "port": "increment",
+            "signal": "1'b1"
+          },
+          {
+            "port": "decrement",
+            "signal": "1'b0"
+          },
+          {
+            "port": "count",
+            "signal": "count"
+          },
+          {
+            "port": "count_is_zero",
+            "signal": "_count_is_zero"
+          },
+          {
+            "port": "count_is_max",
+            "signal": "calc_done"
+          }
+        ],
+        "instance": "counter",
+        "module": "vc_BasicCounter",
+        "parameters": [
+          "5",
+          "0",
+          "31"
+        ],
+        "resolved": false
+      }
+    ],
+    "name": "lab1_imul_IntMulBaseCtrl",
+    "net_decls": [
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "req_go",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "resp_go",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "calc_done",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 4,
+        "name": "count",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "_count_is_zero",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "do_add",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reset",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "istream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "istream_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "ostream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "ostream_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "a_mux_sel",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "b_mux_sel",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "result_mux_sel",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "add_mux_sel",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "result_en",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "b_lsb",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "source_file": "IntMulBase.v"
+  },
+  {
+    "always_blocks": [],
+    "assigns": [],
+    "gate_primitives": [],
+    "instances": [
+      {
+        "connections": [],
+        "instance": "ctrl",
+        "module": "lab1_imul_IntMulBaseCtrl",
+        "parameters": [],
+        "resolved": true
+      },
+      {
+        "connections": [],
+        "instance": "dpath",
+        "module": "lab1_imul_IntMulBaseDpath",
+        "parameters": [],
+        "resolved": true
+      }
+    ],
+    "name": "lab1_imul_IntMulBase",
+    "net_decls": [
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "a_mux_sel",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "b_mux_sel",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "result_mux_sel",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "add_mux_sel",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "result_en",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "b_lsb",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reset",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "istream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "istream_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 63,
+        "name": "istream_msg",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "ostream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "ostream_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 31,
+        "name": "ostream_msg",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "source_file": "IntMulBase.v"
+  }
+]

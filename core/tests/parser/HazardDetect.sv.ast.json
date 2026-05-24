@@ -45,6 +45,7 @@
         }
       }
     ],
+    "gate_primitives": [],
     "instances": [],
     "name": "HazardDetect",
     "net_decls": [],

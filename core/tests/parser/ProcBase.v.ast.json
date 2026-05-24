@@ -1,1 +1,1009 @@
-[]
+[
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "imem_reqstream_enq_msg.type_"
+        },
+        "rhs": {
+          "kind": "LITERAL",
+          "value": "`VC_MEM_REQ_MSG_TYPE_READ"
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "imem_reqstream_enq_msg.opaque"
+        },
+        "rhs": {
+          "kind": "LITERAL",
+          "value": "8'b0"
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "imem_reqstream_enq_msg.addr"
+        },
+        "rhs": {
+          "kind": "IDENTIFIER",
+          "name": "imem_reqstream_enq_msg_addr"
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "imem_reqstream_enq_msg.len"
+        },
+        "rhs": {
+          "kind": "LITERAL",
+          "value": "2'd0"
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "imem_reqstream_enq_msg.data"
+        },
+        "rhs": {
+          "kind": "LITERAL",
+          "value": "32'bx"
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "dmem_reqstream_enq_msg.type_"
+        },
+        "rhs": {
+          "kind": "IDENTIFIER",
+          "name": "dmem_reqstream_enq_msg_type"
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "dmem_reqstream_enq_msg.opaque"
+        },
+        "rhs": {
+          "kind": "LITERAL",
+          "value": "8'b0"
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "dmem_reqstream_enq_msg.addr"
+        },
+        "rhs": {
+          "kind": "IDENTIFIER",
+          "name": "dmem_reqstream_enq_msg_addr"
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "dmem_reqstream_enq_msg.len"
+        },
+        "rhs": {
+          "kind": "LITERAL",
+          "value": "2'd0"
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "dmem_reqstream_enq_msg.data"
+        },
+        "rhs": {
+          "kind": "IDENTIFIER",
+          "name": "dmem_reqstream_enq_msg_data"
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "num_free_entries",
+            "signal": "imem_queue_num_free_entries"
+          },
+          {
+            "port": "enq_msg",
+            "signal": "imem_reqstream_enq_msg"
+          },
+          {
+            "port": "enq_val",
+            "signal": "imem_reqstream_enq_val"
+          },
+          {
+            "port": "enq_rdy",
+            "signal": "imem_reqstream_enq_rdy"
+          },
+          {
+            "port": "deq_msg",
+            "signal": "imem_reqstream_msg"
+          },
+          {
+            "port": "deq_val",
+            "signal": "imem_reqstream_val"
+          },
+          {
+            "port": "deq_rdy",
+            "signal": "imem_reqstream_rdy"
+          }
+        ],
+        "instance": "imem_queue",
+        "module": "vc_Queue",
+        "parameters": [
+          "`VC_QUEUE_BYPASS",
+          "$bits(mem_req_4B_t)",
+          "2"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "drop",
+            "signal": "imem_respstream_drop"
+          },
+          {
+            "port": "istream_msg",
+            "signal": "imem_respstream_msg"
+          },
+          {
+            "port": "istream_val",
+            "signal": "imem_respstream_val"
+          },
+          {
+            "port": "istream_rdy",
+            "signal": "imem_respstream_rdy"
+          },
+          {
+            "port": "ostream_msg",
+            "signal": "imem_respstream_drop_msg"
+          },
+          {
+            "port": "ostream_val",
+            "signal": "imem_respstream_drop_val"
+          },
+          {
+            "port": "ostream_rdy",
+            "signal": "imem_respstream_drop_rdy"
+          }
+        ],
+        "instance": "imem_respstream_drop_unit",
+        "module": "lab2_proc_DropUnit",
+        "parameters": [
+          "$bits(mem_resp_4B_t)"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "num_free_entries",
+            "signal": "dmem_queue_num_free_entries"
+          },
+          {
+            "port": "enq_msg",
+            "signal": "dmem_reqstream_enq_msg"
+          },
+          {
+            "port": "enq_val",
+            "signal": "dmem_reqstream_enq_val"
+          },
+          {
+            "port": "enq_rdy",
+            "signal": "dmem_reqstream_enq_rdy"
+          },
+          {
+            "port": "deq_msg",
+            "signal": "dmem_reqstream_msg"
+          },
+          {
+            "port": "deq_val",
+            "signal": "dmem_reqstream_val"
+          },
+          {
+            "port": "deq_rdy",
+            "signal": "dmem_reqstream_rdy"
+          }
+        ],
+        "instance": "dmem_queue",
+        "module": "vc_Queue",
+        "parameters": [
+          "`VC_QUEUE_BYPASS",
+          "$bits(mem_req_4B_t)",
+          "1"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "num_free_entries",
+            "signal": "proc2mngr_queue_num_free_entries"
+          },
+          {
+            "port": "enq_msg",
+            "signal": "proc2mngr_enq_msg"
+          },
+          {
+            "port": "enq_val",
+            "signal": "proc2mngr_enq_val"
+          },
+          {
+            "port": "enq_rdy",
+            "signal": "proc2mngr_enq_rdy"
+          },
+          {
+            "port": "deq_msg",
+            "signal": "proc2mngr_msg"
+          },
+          {
+            "port": "deq_val",
+            "signal": "proc2mngr_val"
+          },
+          {
+            "port": "deq_rdy",
+            "signal": "proc2mngr_rdy"
+          }
+        ],
+        "instance": "proc2mngr_queue",
+        "module": "vc_Queue",
+        "parameters": [
+          "`VC_QUEUE_BYPASS",
+          "32",
+          "1"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "imem_reqstream_val",
+            "signal": "imem_reqstream_enq_val"
+          },
+          {
+            "port": "imem_reqstream_rdy",
+            "signal": "imem_reqstream_enq_rdy"
+          },
+          {
+            "port": "imem_respstream_val",
+            "signal": "imem_respstream_drop_val"
+          },
+          {
+            "port": "imem_respstream_rdy",
+            "signal": "imem_respstream_drop_rdy"
+          },
+          {
+            "port": "dmem_reqstream_val",
+            "signal": "dmem_reqstream_enq_val"
+          },
+          {
+            "port": "dmem_reqstream_rdy",
+            "signal": "dmem_reqstream_enq_rdy"
+          },
+          {
+            "port": "dmem_respstream_val",
+            "signal": "dmem_respstream_val"
+          },
+          {
+            "port": "dmem_respstream_rdy",
+            "signal": "dmem_respstream_rdy"
+          },
+          {
+            "port": "mngr2proc_val",
+            "signal": "mngr2proc_val"
+          },
+          {
+            "port": "mngr2proc_rdy",
+            "signal": "mngr2proc_rdy"
+          },
+          {
+            "port": "proc2mngr_val",
+            "signal": "proc2mngr_enq_val"
+          },
+          {
+            "port": "proc2mngr_rdy",
+            "signal": "proc2mngr_enq_rdy"
+          }
+        ],
+        "instance": "ctrl",
+        "module": "lab2_proc_ProcBaseCtrl",
+        "parameters": [],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "imem_reqstream_msg_addr",
+            "signal": "imem_reqstream_enq_msg_addr"
+          },
+          {
+            "port": "imem_respstream_msg",
+            "signal": "imem_respstream_drop_msg"
+          },
+          {
+            "port": "dmem_reqstream_msg_addr",
+            "signal": "dmem_reqstream_enq_msg_addr"
+          },
+          {
+            "port": "dmem_reqstream_msg_data",
+            "signal": "dmem_reqstream_enq_msg_data"
+          },
+          {
+            "port": "dmem_reqstream_msg_type",
+            "signal": "dmem_reqstream_enq_msg_type"
+          },
+          {
+            "port": "dmem_respstream_msg_data",
+            "signal": "dmem_respstream_msg.data"
+          },
+          {
+            "port": "mngr2proc_data",
+            "signal": "mngr2proc_msg"
+          },
+          {
+            "port": "proc2mngr_data",
+            "signal": "proc2mngr_enq_msg"
+          }
+        ],
+        "instance": "dpath",
+        "module": "lab2_proc_ProcBaseDpath",
+        "parameters": [
+          ".p_num_cores(p_num_cores)"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "msg",
+            "signal": "imem_reqstream_msg"
+          },
+          {
+            "port": "val",
+            "signal": "imem_reqstream_val"
+          },
+          {
+            "port": "rdy",
+            "signal": "imem_reqstream_rdy"
+          }
+        ],
+        "instance": "imem_reqstream_trace",
+        "module": "vc_MemReqMsg4BTrace",
+        "parameters": [],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "msg",
+            "signal": "dmem_reqstream_msg"
+          },
+          {
+            "port": "val",
+            "signal": "dmem_reqstream_val"
+          },
+          {
+            "port": "rdy",
+            "signal": "dmem_reqstream_rdy"
+          }
+        ],
+        "instance": "dmem_reqstream_trace",
+        "module": "vc_MemReqMsg4BTrace",
+        "parameters": [],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "msg",
+            "signal": "imem_respstream_msg"
+          },
+          {
+            "port": "val",
+            "signal": "imem_respstream_val"
+          },
+          {
+            "port": "rdy",
+            "signal": "imem_respstream_rdy"
+          }
+        ],
+        "instance": "imem_respstream_trace",
+        "module": "vc_MemRespMsg4BTrace",
+        "parameters": [],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "msg",
+            "signal": "dmem_respstream_msg"
+          },
+          {
+            "port": "val",
+            "signal": "dmem_respstream_val"
+          },
+          {
+            "port": "rdy",
+            "signal": "dmem_respstream_rdy"
+          }
+        ],
+        "instance": "dmem_respstream_trace",
+        "module": "vc_MemRespMsg4BTrace",
+        "parameters": [],
+        "resolved": false
+      }
+    ],
+    "name": "lab2_proc_ProcBase",
+    "net_decls": [
+      {
+        "lsb": 0,
+        "msb": 1,
+        "name": "imem_queue_num_free_entries",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "imem_reqstream_enq_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "imem_reqstream_enq_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "imem_reqstream_enq_msg_addr",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "imem_respstream_drop",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "imem_respstream_drop_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "imem_respstream_drop_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "dmem_queue_num_free_entries",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "dmem_reqstream_enq_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "dmem_reqstream_enq_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "dmem_reqstream_enq_msg_addr",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "dmem_reqstream_enq_msg_data",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 3,
+        "name": "dmem_reqstream_enq_msg_type",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "proc2mngr_queue_num_free_entries",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "proc2mngr_enq_msg",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "proc2mngr_enq_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "proc2mngr_enq_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "imul_req_val_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "imul_req_rdy_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "imul_resp_val_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "imul_resp_rdy_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "reg_en_F",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 1,
+        "name": "pc_sel_F",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "reg_en_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "op1_sel_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 1,
+        "name": "op2_sel_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 1,
+        "name": "csrr_sel_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 2,
+        "name": "imm_type_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "reg_en_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "dmem_fn_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 3,
+        "name": "alu_fn_X",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 1,
+        "name": "ex_result_sel_X",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "reg_en_M",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "wb_result_sel_M",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "reg_en_W",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 4,
+        "name": "rf_waddr_W",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "rf_wen_W",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "stats_en_wen_W",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "inst_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "br_cond_eq_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "br_cond_lt_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "br_cond_ltu_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "expr": "`VC_TRACE_NBITS-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "str",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      }
+    ],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_num_cores"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reset",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "mngr2proc_msg",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "mngr2proc_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "mngr2proc_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 31,
+        "name": "proc2mngr_msg",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "proc2mngr_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "proc2mngr_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "imem_reqstream_msg",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "imem_reqstream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "imem_reqstream_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "imem_respstream_msg",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "imem_respstream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "imem_respstream_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "dmem_reqstream_msg",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "dmem_reqstream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "dmem_reqstream_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "dmem_respstream_msg",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "dmem_respstream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "dmem_respstream_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "core_id",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "commit_inst",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "stats_en",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "source_file": "ProcBase.v"
+  }
+]

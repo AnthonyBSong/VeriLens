@@ -22,8 +22,12 @@ public:
     // The pointer-based symbol table ready for ValidationContext.
     const ValidationContext::SymbolTable& symbolTable() const { return symbol_table_ptr_; }
 
+    // Diagnostics collected during linking (e.g. duplicate module definitions).
+    const std::vector<ValidationError>& diagnostics() const { return diagnostics_; }
+
 private:
-    std::vector<Module>               modules_;
-    std::unordered_map<std::string, std::size_t>  symbol_table_;     // name -> index (used by link())
-    ValidationContext::SymbolTable    symbol_table_ptr_;              // name -> Module* (used by Validator)
+    std::vector<Module>                          modules_;
+    std::unordered_map<std::string, std::size_t> symbol_table_;     // name -> index of canonical def
+    ValidationContext::SymbolTable               symbol_table_ptr_; // name -> Module* (used by Validator)
+    std::vector<ValidationError>                 diagnostics_;
 };

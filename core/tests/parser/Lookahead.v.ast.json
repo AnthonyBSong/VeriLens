@@ -1,1 +1,550 @@
-[]
+[
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "base": {
+            "kind": "IDENTIFIER",
+            "name": "seen"
+          },
+          "index": {
+            "kind": "LITERAL",
+            "value": "0"
+          },
+          "kind": "BIT_SELECT"
+        },
+        "rhs": {
+          "kind": "LITERAL",
+          "value": "1'b0"
+        }
+      },
+      {
+        "lhs": {
+          "base": {
+            "kind": "IDENTIFIER",
+            "name": "out"
+          },
+          "index": {
+            "kind": "IDENTIFIER",
+            "name": "i"
+          },
+          "kind": "BIT_SELECT"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "base": {
+              "kind": "IDENTIFIER",
+              "name": "in_"
+            },
+            "index": {
+              "kind": "IDENTIFIER",
+              "name": "i"
+            },
+            "kind": "BIT_SELECT"
+          },
+          "op": "&",
+          "rhs": {
+            "kind": "UNARY_OP",
+            "op": "~",
+            "operand": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "seen"
+              },
+              "index": {
+                "kind": "IDENTIFIER",
+                "name": "i"
+              },
+              "kind": "BIT_SELECT"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "base": {
+            "kind": "IDENTIFIER",
+            "name": "seen"
+          },
+          "index": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "i"
+            },
+            "op": "+",
+            "rhs": {
+              "kind": "LITERAL",
+              "value": "1"
+            }
+          },
+          "kind": "BIT_SELECT"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "base": {
+              "kind": "IDENTIFIER",
+              "name": "seen"
+            },
+            "index": {
+              "kind": "IDENTIFIER",
+              "name": "i"
+            },
+            "kind": "BIT_SELECT"
+          },
+          "op": "|",
+          "rhs": {
+            "base": {
+              "kind": "IDENTIFIER",
+              "name": "in_"
+            },
+            "index": {
+              "kind": "IDENTIFIER",
+              "name": "i"
+            },
+            "kind": "BIT_SELECT"
+          }
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [],
+    "name": "lab1_imul_PriorityEncoder",
+    "net_decls": [
+      {
+        "lsb": 0,
+        "msb": 32,
+        "name": "seen",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "in_",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 31,
+        "name": "out",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "source_file": "Lookahead.v"
+  },
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "base": {
+            "kind": "IDENTIFIER",
+            "name": "shifted"
+          },
+          "index": {
+            "kind": "IDENTIFIER",
+            "name": "i"
+          },
+          "kind": "BIT_SELECT"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "in_"
+          },
+          "op": "<<",
+          "rhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "i"
+            },
+            "op": "+",
+            "rhs": {
+              "kind": "LITERAL",
+              "value": "1"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "base": {
+            "kind": "IDENTIFIER",
+            "name": "and_out"
+          },
+          "index": {
+            "kind": "IDENTIFIER",
+            "name": "i"
+          },
+          "kind": "BIT_SELECT"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "base": {
+              "kind": "IDENTIFIER",
+              "name": "shifted"
+            },
+            "index": {
+              "kind": "IDENTIFIER",
+              "name": "i"
+            },
+            "kind": "BIT_SELECT"
+          },
+          "op": "&",
+          "rhs": {
+            "count": {
+              "kind": "LITERAL",
+              "value": "32"
+            },
+            "kind": "REPLICATION",
+            "value": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "shamt"
+              },
+              "index": {
+                "kind": "IDENTIFIER",
+                "name": "i"
+              },
+              "kind": "BIT_SELECT"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "base": {
+            "kind": "IDENTIFIER",
+            "name": "or_out"
+          },
+          "index": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "i"
+            },
+            "op": "+",
+            "rhs": {
+              "kind": "LITERAL",
+              "value": "1"
+            }
+          },
+          "kind": "BIT_SELECT"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "base": {
+              "kind": "IDENTIFIER",
+              "name": "or_out"
+            },
+            "index": {
+              "kind": "IDENTIFIER",
+              "name": "i"
+            },
+            "kind": "BIT_SELECT"
+          },
+          "op": "|",
+          "rhs": {
+            "base": {
+              "kind": "IDENTIFIER",
+              "name": "and_out"
+            },
+            "index": {
+              "kind": "IDENTIFIER",
+              "name": "i"
+            },
+            "kind": "BIT_SELECT"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "out"
+        },
+        "rhs": {
+          "base": {
+            "kind": "IDENTIFIER",
+            "name": "or_out"
+          },
+          "index": {
+            "kind": "LITERAL",
+            "value": "32"
+          },
+          "kind": "BIT_SELECT"
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [],
+    "name": "lab1_imul_EncodedLeftShifter",
+    "net_decls": [
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "shifted",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "and_out",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "or_out",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "in_",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "shamt",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 31,
+        "name": "out",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "source_file": "Lookahead.v"
+  },
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "base": {
+            "kind": "IDENTIFIER",
+            "name": "shifted"
+          },
+          "index": {
+            "kind": "IDENTIFIER",
+            "name": "i"
+          },
+          "kind": "BIT_SELECT"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "in_"
+          },
+          "op": ">>",
+          "rhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "i"
+            },
+            "op": "+",
+            "rhs": {
+              "kind": "LITERAL",
+              "value": "1"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "base": {
+            "kind": "IDENTIFIER",
+            "name": "and_out"
+          },
+          "index": {
+            "kind": "IDENTIFIER",
+            "name": "i"
+          },
+          "kind": "BIT_SELECT"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "base": {
+              "kind": "IDENTIFIER",
+              "name": "shifted"
+            },
+            "index": {
+              "kind": "IDENTIFIER",
+              "name": "i"
+            },
+            "kind": "BIT_SELECT"
+          },
+          "op": "&",
+          "rhs": {
+            "count": {
+              "kind": "LITERAL",
+              "value": "32"
+            },
+            "kind": "REPLICATION",
+            "value": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "shamt"
+              },
+              "index": {
+                "kind": "IDENTIFIER",
+                "name": "i"
+              },
+              "kind": "BIT_SELECT"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "base": {
+            "kind": "IDENTIFIER",
+            "name": "or_out"
+          },
+          "index": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "i"
+            },
+            "op": "+",
+            "rhs": {
+              "kind": "LITERAL",
+              "value": "1"
+            }
+          },
+          "kind": "BIT_SELECT"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "base": {
+              "kind": "IDENTIFIER",
+              "name": "or_out"
+            },
+            "index": {
+              "kind": "IDENTIFIER",
+              "name": "i"
+            },
+            "kind": "BIT_SELECT"
+          },
+          "op": "|",
+          "rhs": {
+            "base": {
+              "kind": "IDENTIFIER",
+              "name": "and_out"
+            },
+            "index": {
+              "kind": "IDENTIFIER",
+              "name": "i"
+            },
+            "kind": "BIT_SELECT"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "out"
+        },
+        "rhs": {
+          "base": {
+            "kind": "IDENTIFIER",
+            "name": "or_out"
+          },
+          "index": {
+            "kind": "LITERAL",
+            "value": "32"
+          },
+          "kind": "BIT_SELECT"
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [],
+    "name": "lab1_imul_EncodedRightShifter",
+    "net_decls": [
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "shifted",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "and_out",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "or_out",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "in_",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "shamt",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 31,
+        "name": "out",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "source_file": "Lookahead.v"
+  }
+]

@@ -123,6 +123,7 @@
         }
       }
     ],
+    "gate_primitives": [],
     "instances": [
       {
         "connections": [
@@ -334,32 +335,40 @@
         "type": "wire"
       },
       {
+        "expr": "$clog2call?-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "mem_n_raddr",
         "scalar": false,
-        "type": "wire"
+        "type": "wire",
+        "unknown": true
       },
       {
+        "expr": "$clog2call?-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "mem_nm1_raddr",
         "scalar": false,
-        "type": "wire"
+        "type": "wire",
+        "unknown": true
       },
       {
+        "expr": "$clog2call?-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "mem_n_waddr",
         "scalar": false,
-        "type": "wire"
+        "type": "wire",
+        "unknown": true
       },
       {
+        "expr": "$clog2call?-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "mem_nm1_waddr",
         "scalar": false,
-        "type": "wire"
+        "type": "wire",
+        "unknown": true
       },
       {
         "lsb": 0,
@@ -425,11 +434,13 @@
         "type": "wire"
       },
       {
+        "expr": "$clog2call?-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "mem_n_waddr_muxed",
         "scalar": false,
-        "type": "wire"
+        "type": "wire",
+        "unknown": true
       },
       {
         "lsb": 0,
@@ -446,11 +457,13 @@
         "type": "wire"
       },
       {
+        "expr": "$clog2call?-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "mem_nm1_waddr_muxed",
         "scalar": false,
-        "type": "wire"
+        "type": "wire",
+        "unknown": true
       },
       {
         "lsb": 0,
@@ -525,11 +538,13 @@
       },
       {
         "direction": "input",
+        "expr": "$clog2call?-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "mem_n_waddr_ovrd",
         "scalar": false,
-        "type": "unspecified"
+        "type": "unspecified",
+        "unknown": true
       },
       {
         "direction": "input",
@@ -549,11 +564,13 @@
       },
       {
         "direction": "input",
+        "expr": "$clog2call?-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "mem_nm1_waddr_ovrd",
         "scalar": false,
-        "type": "unspecified"
+        "type": "unspecified",
+        "unknown": true
       },
       {
         "direction": "input",

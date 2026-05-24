@@ -383,6 +383,7 @@
       }
     ],
     "assigns": [],
+    "gate_primitives": [],
     "instances": [],
     "name": "ImmExtend",
     "net_decls": [],

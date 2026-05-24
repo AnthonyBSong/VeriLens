@@ -42,7 +42,7 @@ TEST_P(ParserFileTest, MatchesGolden) {
     try {
         ast_str = parse_file(file);
     } catch (const std::exception& e) {
-        GTEST_SKIP() << "Parse error (unsupported syntax): " << e.what();
+        FAIL() << "Parser threw on " << file.filename() << ": " << e.what();
     }
 
     // Goldens always live in the parser test directory.

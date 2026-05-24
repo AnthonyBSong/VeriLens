@@ -1,1 +1,301 @@
-[]
+[
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "expr": {
+                "base": {
+                  "kind": "IDENTIFIER",
+                  "name": "addr"
+                },
+                "kind": "PART_SELECT",
+                "lsb": {
+                  "kind": "LITERAL",
+                  "value": "2"
+                },
+                "msb": {
+                  "kind": "LITERAL",
+                  "value": "3"
+                }
+              },
+              "items": [
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "wb_en"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "16'h000F"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "2'b00"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "wb_en"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "16'h00F0"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "2'b01"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "wb_en"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "16'h0F00"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "2'b10"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "wb_en"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "16'hF000"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "2'b11"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "wb_en"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "'x"
+                    }
+                  },
+                  "patterns": []
+                }
+              ],
+              "kind": "CASE_STATEMENT",
+              "variant": "case"
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      }
+    ],
+    "assigns": [],
+    "gate_primitives": [],
+    "instances": [],
+    "name": "lab3_mem_Wben_Dec",
+    "net_decls": [],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "addr",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 15,
+        "name": "wb_en",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "source_file": "CacheSubmodules.v"
+  },
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "bank"
+        },
+        "rhs": {
+          "base": {
+            "kind": "IDENTIFIER",
+            "name": "cachereq_addr"
+          },
+          "kind": "PART_SELECT",
+          "lsb": {
+            "kind": "LITERAL",
+            "value": "4"
+          },
+          "msb": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "LITERAL",
+              "value": "3"
+            },
+            "op": "+",
+            "rhs": {
+              "kind": "IDENTIFIER",
+              "name": "c_bank_bits"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "memreq_addr"
+        },
+        "rhs": {
+          "kind": "CONCAT",
+          "parts": [
+            {
+              "kind": "IDENTIFIER",
+              "name": "tag"
+            },
+            {
+              "kind": "IDENTIFIER",
+              "name": "index"
+            },
+            {
+              "kind": "IDENTIFIER",
+              "name": "bank"
+            },
+            {
+              "kind": "LITERAL",
+              "value": "4'b0"
+            }
+          ]
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "memreq_addr"
+        },
+        "rhs": {
+          "kind": "CONCAT",
+          "parts": [
+            {
+              "kind": "IDENTIFIER",
+              "name": "tag"
+            },
+            {
+              "kind": "IDENTIFIER",
+              "name": "index"
+            },
+            {
+              "kind": "LITERAL",
+              "value": "4'b0"
+            }
+          ]
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [],
+    "name": "lab3_mem_Mkaddr",
+    "net_decls": [
+      {
+        "expr": "c_bank_bits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "bank",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      }
+    ],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_num_banks"
+      },
+      {
+        "default": "4",
+        "name": "index_width"
+      },
+      {
+        "default": "$clog2(p_num_banks)",
+        "name": "c_bank_bits"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "expr": "27-index_width-c_bank_bits:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "tag",
+        "scalar": false,
+        "type": "unspecified",
+        "unknown": true
+      },
+      {
+        "direction": "input",
+        "expr": "index_width-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "index",
+        "scalar": false,
+        "type": "unspecified",
+        "unknown": true
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "cachereq_addr",
+        "scalar": false,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 31,
+        "name": "memreq_addr",
+        "scalar": false,
+        "type": "unspecified"
+      }
+    ],
+    "source_file": "CacheSubmodules.v"
+  }
+]

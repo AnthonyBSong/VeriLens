@@ -108,6 +108,23 @@ std::vector<Token> Lexer::tokenize() {
             continue;
         }
 
+        // unsized literal: 'b1010, 'h1F, 'd5, 'o7, '0, '1, 'x, 'z, 'X, 'Z
+        // distinguished from a bare APOSTROPHE by what follows it.
+        if (current_char == '\'') {
+            char nx = peek();
+            char nxl = tolower(nx);
+            bool is_base   = (nxl == 'b' || nxl == 'o' || nxl == 'd' || nxl == 'h');
+            bool is_unsized = (nx == '0' || nx == '1' || nxl == 'x' || nxl == 'z');
+            if (is_base || is_unsized) {
+                std::string lexeme(1, advance()); // '
+                lexeme += advance();              // base/value char
+                while (isalnum(current_char) || current_char == '_') lexeme += advance();
+                tokens.push_back({TokenType::INTEGER_LITERAL, lexeme, tok_line, tok_col});
+                continue;
+            }
+            // otherwise fall through and lex as APOSTROPHE punctuation
+        }
+
         // operators and punctuation — check longest match first
         {
             std::string lexeme(1, advance());

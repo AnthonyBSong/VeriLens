@@ -21,6 +21,7 @@
         }
       }
     ],
+    "gate_primitives": [],
     "instances": [],
     "name": "and_gate",
     "net_decls": [

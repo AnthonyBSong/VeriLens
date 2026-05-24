@@ -5,7 +5,7 @@ Validator::Validator(const Linker& linker) : linker_(linker) {}
 
 std::vector<ValidationError> Validator::run() const {
     const auto& symbols = linker_.symbolTable();
-    std::vector<ValidationError> all;
+    std::vector<ValidationError> all = linker_.diagnostics();
     for (const auto& mod : linker_.modules()) {
         auto errs = mod.validate(symbols);
         all.insert(all.end(), errs.begin(), errs.end());

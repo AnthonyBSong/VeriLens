@@ -1,1 +1,1363 @@
-[]
+[
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {
+                "kind": "IDENTIFIER",
+                "name": "reset"
+              },
+              "else": {
+                "body": [
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "state_reg"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "state_next"
+                    }
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              },
+              "kind": "IF_STATEMENT",
+              "then": {
+                "body": [
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "state_reg"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_IDLE"
+                    }
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "posedge clk"
+      },
+      {
+        "body": {
+          "body": [
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "state_next"
+              },
+              "rhs": {
+                "kind": "IDENTIFIER",
+                "name": "state_reg"
+              }
+            },
+            {
+              "expr": {
+                "kind": "IDENTIFIER",
+                "name": "state_reg"
+              },
+              "items": [
+                {
+                  "body": {
+                    "cond": {
+                      "kind": "IDENTIFIER",
+                      "name": "cachereq_val"
+                    },
+                    "else": null,
+                    "kind": "IF_STATEMENT",
+                    "then": {
+                      "kind": "BLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "state_next"
+                      },
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "STATE_TAG_CHECK"
+                      }
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_IDLE"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "body": [
+                      {
+                        "cond": {
+                          "kind": "IDENTIFIER",
+                          "name": "init"
+                        },
+                        "else": {
+                          "cond": {
+                            "kind": "BINARY_OP",
+                            "lhs": {
+                              "kind": "IDENTIFIER",
+                              "name": "read"
+                            },
+                            "op": "&&",
+                            "rhs": {
+                              "kind": "IDENTIFIER",
+                              "name": "hit_TC"
+                            }
+                          },
+                          "else": {
+                            "cond": {
+                              "kind": "BINARY_OP",
+                              "lhs": {
+                                "kind": "IDENTIFIER",
+                                "name": "write"
+                              },
+                              "op": "&&",
+                              "rhs": {
+                                "kind": "IDENTIFIER",
+                                "name": "hit_TC"
+                              }
+                            },
+                            "else": {
+                              "cond": {
+                                "kind": "BINARY_OP",
+                                "lhs": {
+                                  "kind": "UNARY_OP",
+                                  "op": "!",
+                                  "operand": {
+                                    "kind": "IDENTIFIER",
+                                    "name": "hit_TC"
+                                  }
+                                },
+                                "op": "&&",
+                                "rhs": {
+                                  "kind": "UNARY_OP",
+                                  "op": "!",
+                                  "operand": {
+                                    "kind": "IDENTIFIER",
+                                    "name": "dirty"
+                                  }
+                                }
+                              },
+                              "else": {
+                                "cond": {
+                                  "kind": "BINARY_OP",
+                                  "lhs": {
+                                    "kind": "UNARY_OP",
+                                    "op": "!",
+                                    "operand": {
+                                      "kind": "IDENTIFIER",
+                                      "name": "hit_TC"
+                                    }
+                                  },
+                                  "op": "&&",
+                                  "rhs": {
+                                    "kind": "IDENTIFIER",
+                                    "name": "dirty"
+                                  }
+                                },
+                                "else": null,
+                                "kind": "IF_STATEMENT",
+                                "then": {
+                                  "kind": "BLOCKING_ASSIGN",
+                                  "lhs": {
+                                    "kind": "IDENTIFIER",
+                                    "name": "state_next"
+                                  },
+                                  "rhs": {
+                                    "kind": "IDENTIFIER",
+                                    "name": "STATE_EVICT_PREPARE"
+                                  }
+                                }
+                              },
+                              "kind": "IF_STATEMENT",
+                              "then": {
+                                "kind": "BLOCKING_ASSIGN",
+                                "lhs": {
+                                  "kind": "IDENTIFIER",
+                                  "name": "state_next"
+                                },
+                                "rhs": {
+                                  "kind": "IDENTIFIER",
+                                  "name": "STATE_REFILL_REQUEST"
+                                }
+                              }
+                            },
+                            "kind": "IF_STATEMENT",
+                            "then": {
+                              "kind": "BLOCKING_ASSIGN",
+                              "lhs": {
+                                "kind": "IDENTIFIER",
+                                "name": "state_next"
+                              },
+                              "rhs": {
+                                "kind": "IDENTIFIER",
+                                "name": "STATE_WRITE_DATA_ACCESS"
+                              }
+                            }
+                          },
+                          "kind": "IF_STATEMENT",
+                          "then": {
+                            "kind": "BLOCKING_ASSIGN",
+                            "lhs": {
+                              "kind": "IDENTIFIER",
+                              "name": "state_next"
+                            },
+                            "rhs": {
+                              "kind": "IDENTIFIER",
+                              "name": "STATE_READ_DATA_ACCESS"
+                            }
+                          }
+                        },
+                        "kind": "IF_STATEMENT",
+                        "then": {
+                          "kind": "BLOCKING_ASSIGN",
+                          "lhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "state_next"
+                          },
+                          "rhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "STATE_INIT_DATA_ACCESS"
+                          }
+                        }
+                      }
+                    ],
+                    "kind": "SEQ_BLOCK"
+                  },
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_TAG_CHECK"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "state_next"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_WAIT"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_INIT_DATA_ACCESS"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "state_next"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_WAIT"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_READ_DATA_ACCESS"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "state_next"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_WAIT"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_WRITE_DATA_ACCESS"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "cond": {
+                      "kind": "IDENTIFIER",
+                      "name": "memreq_rdy"
+                    },
+                    "else": null,
+                    "kind": "IF_STATEMENT",
+                    "then": {
+                      "kind": "BLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "state_next"
+                      },
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "STATE_REFILL_WAIT"
+                      }
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_REFILL_REQUEST"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "cond": {
+                      "kind": "IDENTIFIER",
+                      "name": "memresp_val"
+                    },
+                    "else": null,
+                    "kind": "IF_STATEMENT",
+                    "then": {
+                      "kind": "BLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "state_next"
+                      },
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "STATE_REFILL_UPDATE"
+                      }
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_REFILL_WAIT"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "cond": {
+                      "kind": "IDENTIFIER",
+                      "name": "read"
+                    },
+                    "else": {
+                      "kind": "BLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "state_next"
+                      },
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "STATE_WRITE_DATA_ACCESS"
+                      }
+                    },
+                    "kind": "IF_STATEMENT",
+                    "then": {
+                      "kind": "BLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "state_next"
+                      },
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "STATE_READ_DATA_ACCESS"
+                      }
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_REFILL_UPDATE"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "state_next"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_EVICT_REQUEST"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_EVICT_PREPARE"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "cond": {
+                      "kind": "IDENTIFIER",
+                      "name": "memreq_rdy"
+                    },
+                    "else": null,
+                    "kind": "IF_STATEMENT",
+                    "then": {
+                      "kind": "BLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "state_next"
+                      },
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "STATE_EVICT_WAIT"
+                      }
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_EVICT_REQUEST"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "cond": {
+                      "kind": "IDENTIFIER",
+                      "name": "memresp_val"
+                    },
+                    "else": null,
+                    "kind": "IF_STATEMENT",
+                    "then": {
+                      "kind": "BLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "state_next"
+                      },
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "STATE_REFILL_REQUEST"
+                      }
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_EVICT_WAIT"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "cond": {
+                      "kind": "IDENTIFIER",
+                      "name": "cacheresp_rdy"
+                    },
+                    "else": null,
+                    "kind": "IF_STATEMENT",
+                    "then": {
+                      "kind": "BLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "state_next"
+                      },
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "STATE_IDLE"
+                      }
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_WAIT"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "state_next"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_IDLE"
+                    }
+                  },
+                  "patterns": []
+                }
+              ],
+              "kind": "CASE_STATEMENT",
+              "variant": "case"
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      },
+      {
+        "body": {
+          "body": [
+            {
+              "expr": {
+                "kind": "IDENTIFIER",
+                "name": "state_reg"
+              },
+              "items": [
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_IDLE"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_TAG_CHECK"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_INIT_DATA_ACCESS"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_READ_DATA_ACCESS"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_WRITE_DATA_ACCESS"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_REFILL_REQUEST"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_REFILL_WAIT"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_REFILL_UPDATE"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_EVICT_PREPARE"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_EVICT_REQUEST"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_EVICT_WAIT"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "STATE_WAIT"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": []
+                }
+              ],
+              "kind": "CASE_STATEMENT",
+              "variant": "case"
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      },
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {
+                "kind": "IDENTIFIER",
+                "name": "reset"
+              },
+              "else": {
+                "cond": {
+                  "kind": "BINARY_OP",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "state_reg"
+                  },
+                  "op": "==",
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "STATE_TAG_CHECK"
+                  }
+                },
+                "else": null,
+                "kind": "IF_STATEMENT",
+                "then": {
+                  "body": [
+                    {
+                      "kind": "NONBLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "cacheresp_type"
+                      },
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "cachereq_type"
+                      }
+                    },
+                    {
+                      "kind": "NONBLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "hit"
+                      },
+                      "rhs": {
+                        "cond": {
+                          "kind": "BINARY_OP",
+                          "lhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "cachereq_type"
+                          },
+                          "op": "==",
+                          "rhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "in"
+                          }
+                        },
+                        "else": {
+                          "kind": "IDENTIFIER",
+                          "name": "hit_TC"
+                        },
+                        "kind": "CONDITIONAL",
+                        "then": {
+                          "kind": "LITERAL",
+                          "value": "1'b0"
+                        }
+                      }
+                    }
+                  ],
+                  "kind": "SEQ_BLOCK"
+                }
+              },
+              "kind": "IF_STATEMENT",
+              "then": {
+                "body": [
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "cacheresp_type"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "4'b0"
+                    }
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "hit"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "1'b0"
+                    }
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "posedge clk"
+      }
+    ],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "init"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "cachereq_type"
+          },
+          "op": "==",
+          "rhs": {
+            "kind": "LITERAL",
+            "value": "`VC_MEM_REQ_MSG_TYPE_WRITE_INIT"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "read"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "cachereq_type"
+          },
+          "op": "==",
+          "rhs": {
+            "kind": "LITERAL",
+            "value": "`VC_MEM_REQ_MSG_TYPE_READ"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "write"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "cachereq_type"
+          },
+          "op": "==",
+          "rhs": {
+            "kind": "LITERAL",
+            "value": "`VC_MEM_REQ_MSG_TYPE_WRITE"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "hit_TC"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "tag_match"
+          },
+          "op": "&&",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "valid"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "memreq_rdy"
+        },
+        "rhs": {
+          "kind": "IDENTIFIER",
+          "name": "cache2mem_reqstream_rdy"
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "memresp_val"
+        },
+        "rhs": {
+          "kind": "IDENTIFIER",
+          "name": "cache2mem_respstream_val"
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "cachereq_val"
+        },
+        "rhs": {
+          "kind": "IDENTIFIER",
+          "name": "proc2cache_reqstream_val"
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "cacheresp_rdy"
+        },
+        "rhs": {
+          "kind": "IDENTIFIER",
+          "name": "proc2cache_respstream_rdy"
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "read_addr",
+            "signal": "index"
+          },
+          {
+            "port": "read_data",
+            "signal": "valid"
+          },
+          {
+            "port": "write_en",
+            "signal": "set_valid"
+          },
+          {
+            "port": "write_addr",
+            "signal": "index"
+          },
+          {
+            "port": "write_data",
+            "signal": "y"
+          }
+        ],
+        "instance": "valid_bits",
+        "module": "vc_ResetRegfile_1r1w",
+        "parameters": [
+          ".p_data_nbits(1)",
+          ".p_num_entries(16)",
+          ".p_reset_value(0)"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "read_addr",
+            "signal": "index"
+          },
+          {
+            "port": "read_data",
+            "signal": "dirty"
+          },
+          {
+            "port": "write_en",
+            "signal": "set_dirty"
+          },
+          {
+            "port": "write_addr",
+            "signal": "index"
+          },
+          {
+            "port": "write_data",
+            "signal": "dirty_wdata"
+          }
+        ],
+        "instance": "dirty_bits",
+        "module": "vc_ResetRegfile_1r1w",
+        "parameters": [
+          ".p_data_nbits(1)",
+          ".p_num_entries(16)",
+          ".p_reset_value(0)"
+        ],
+        "resolved": false
+      }
+    ],
+    "name": "lab3_mem_CacheBaseCtrl",
+    "net_decls": [
+      {
+        "lsb": 0,
+        "msb": 4,
+        "name": "state_reg",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 4,
+        "name": "state_next",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "valid",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "dirty",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "hit_TC",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "init",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "read",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "write",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "memreq_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "memresp_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "cachereq_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "cacheresp_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "set_valid",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "set_dirty",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "dirty_wdata",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_num_banks"
+      },
+      {
+        "default": "5'd0",
+        "name": "STATE_IDLE"
+      },
+      {
+        "default": "5'd1",
+        "name": "STATE_TAG_CHECK"
+      },
+      {
+        "default": "5'd2",
+        "name": "STATE_INIT_DATA_ACCESS"
+      },
+      {
+        "default": "5'd3",
+        "name": "STATE_READ_DATA_ACCESS"
+      },
+      {
+        "default": "5'd4",
+        "name": "STATE_WRITE_DATA_ACCESS"
+      },
+      {
+        "default": "5'd5",
+        "name": "STATE_REFILL_REQUEST"
+      },
+      {
+        "default": "5'd6",
+        "name": "STATE_REFILL_WAIT"
+      },
+      {
+        "default": "5'd7",
+        "name": "STATE_REFILL_UPDATE"
+      },
+      {
+        "default": "5'd8",
+        "name": "STATE_EVICT_PREPARE"
+      },
+      {
+        "default": "5'd9",
+        "name": "STATE_EVICT_REQUEST"
+      },
+      {
+        "default": "5'd10",
+        "name": "STATE_EVICT_WAIT"
+      },
+      {
+        "default": "5'd11",
+        "name": "STATE_WAIT"
+      },
+      {
+        "default": "1'b0",
+        "name": "n"
+      },
+      {
+        "default": "1'b1",
+        "name": "y"
+      },
+      {
+        "default": "1'bx",
+        "name": "d"
+      },
+      {
+        "default": "`VC_MEM_REQ_MSG_TYPE_READ",
+        "name": "rd"
+      },
+      {
+        "default": "`VC_MEM_REQ_MSG_TYPE_WRITE",
+        "name": "wr"
+      },
+      {
+        "default": "`VC_MEM_REQ_MSG_TYPE_WRITE_INIT",
+        "name": "in"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reset",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "proc2cache_reqstream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "proc2cache_reqstream_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "proc2cache_respstream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "proc2cache_respstream_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "cache2mem_reqstream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "cache2mem_reqstream_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "cache2mem_respstream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "cache2mem_respstream_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "cachereq_en",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "memresp_en",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "write_data_mux_sel",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "tag_array_ren",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "tag_array_wen",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "data_array_ren",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "data_array_wen",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "refill",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "read_data_zero_mux_sel",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "read_data_reg_en",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "evict_addr_reg_en",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "memreq_addr_mux_sel",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 3,
+        "name": "cacheresp_type",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 3,
+        "name": "memreq_type",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "hit",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 3,
+        "name": "cachereq_type",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 3,
+        "name": "index",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "tag_match",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "source_file": "CacheBaseCtrl.v"
+  }
+]

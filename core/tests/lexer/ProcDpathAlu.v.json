@@ -232,7 +232,7 @@
     "lexeme": ";"
   },
   {
-    "type": "IDENTIFIER",
+    "type": "ALWAYS_COMB",
     "lexeme": "always_comb"
   },
   {

@@ -418,6 +418,7 @@
         }
       }
     ],
+    "gate_primitives": [],
     "instances": [],
     "name": "Alu",
     "net_decls": [],

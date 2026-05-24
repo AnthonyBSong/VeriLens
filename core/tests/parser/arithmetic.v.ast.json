@@ -1,1 +1,877 @@
-[]
+[
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "CONCAT",
+          "parts": [
+            {
+              "kind": "IDENTIFIER",
+              "name": "cout"
+            },
+            {
+              "kind": "IDENTIFIER",
+              "name": "out"
+            }
+          ]
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "in0"
+            },
+            "op": "+",
+            "rhs": {
+              "kind": "IDENTIFIER",
+              "name": "in1"
+            }
+          },
+          "op": "+",
+          "rhs": {
+            "kind": "CONCAT",
+            "parts": [
+              {
+                "count": {
+                  "kind": "BINARY_OP",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "p_nbits"
+                  },
+                  "op": "-",
+                  "rhs": {
+                    "kind": "LITERAL",
+                    "value": "1"
+                  }
+                },
+                "kind": "REPLICATION",
+                "value": {
+                  "kind": "LITERAL",
+                  "value": "1'b0"
+                }
+              },
+              {
+                "kind": "IDENTIFIER",
+                "name": "cin"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [],
+    "name": "vc_Adder",
+    "net_decls": [],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_nbits"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "expr": "p_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in0",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "input",
+        "expr": "p_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in1",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "cin",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "expr": "p_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "out",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "cout",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "source_file": "arithmetic.v"
+  },
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "out"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "in0"
+          },
+          "op": "+",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "in1"
+          }
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [],
+    "name": "vc_SimpleAdder",
+    "net_decls": [],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_nbits"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "expr": "p_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in0",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "input",
+        "expr": "p_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in1",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "output",
+        "expr": "p_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "out",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      }
+    ],
+    "source_file": "arithmetic.v"
+  },
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "out"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "in0"
+          },
+          "op": "-",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "in1"
+          }
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [],
+    "name": "vc_Subtractor",
+    "net_decls": [],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_nbits"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "expr": "p_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in0",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "input",
+        "expr": "p_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in1",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "output",
+        "expr": "p_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "out",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      }
+    ],
+    "source_file": "arithmetic.v"
+  },
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "out"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "in"
+          },
+          "op": "+",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "p_inc_value"
+          }
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [],
+    "name": "vc_Incrementer",
+    "net_decls": [],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_nbits"
+      },
+      {
+        "default": "1",
+        "name": "p_inc_value"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "expr": "p_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "output",
+        "expr": "p_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "out",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      }
+    ],
+    "source_file": "arithmetic.v"
+  },
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "out"
+        },
+        "rhs": {
+          "kind": "CONCAT",
+          "parts": [
+            {
+              "count": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "p_out_nbits"
+                },
+                "op": "-",
+                "rhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "p_in_nbits"
+                }
+              },
+              "kind": "REPLICATION",
+              "value": {
+                "kind": "LITERAL",
+                "value": "1'b0"
+              }
+            },
+            {
+              "kind": "IDENTIFIER",
+              "name": "in"
+            }
+          ]
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [],
+    "name": "vc_ZeroExtender",
+    "net_decls": [],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_in_nbits"
+      },
+      {
+        "default": "8",
+        "name": "p_out_nbits"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "expr": "p_in_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "output",
+        "expr": "p_out_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "out",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      }
+    ],
+    "source_file": "arithmetic.v"
+  },
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "out"
+        },
+        "rhs": {
+          "kind": "CONCAT",
+          "parts": [
+            {
+              "count": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "p_out_nbits"
+                },
+                "op": "-",
+                "rhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "p_in_nbits"
+                }
+              },
+              "kind": "REPLICATION",
+              "value": {
+                "base": {
+                  "kind": "IDENTIFIER",
+                  "name": "in"
+                },
+                "index": {
+                  "kind": "BINARY_OP",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "p_in_nbits"
+                  },
+                  "op": "-",
+                  "rhs": {
+                    "kind": "LITERAL",
+                    "value": "1"
+                  }
+                },
+                "kind": "BIT_SELECT"
+              }
+            },
+            {
+              "kind": "IDENTIFIER",
+              "name": "in"
+            }
+          ]
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [],
+    "name": "vc_SignExtender",
+    "net_decls": [],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_in_nbits"
+      },
+      {
+        "default": "8",
+        "name": "p_out_nbits"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "expr": "p_in_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "output",
+        "expr": "p_out_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "out",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      }
+    ],
+    "source_file": "arithmetic.v"
+  },
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "out"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "in"
+          },
+          "op": "==",
+          "rhs": {
+            "count": {
+              "kind": "IDENTIFIER",
+              "name": "p_nbits"
+            },
+            "kind": "REPLICATION",
+            "value": {
+              "kind": "LITERAL",
+              "value": "1'b0"
+            }
+          }
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [],
+    "name": "vc_ZeroComparator",
+    "net_decls": [],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_nbits"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "expr": "p_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "out",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "source_file": "arithmetic.v"
+  },
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "out"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "in0"
+          },
+          "op": "==",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "in1"
+          }
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [],
+    "name": "vc_EqComparator",
+    "net_decls": [],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_nbits"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "expr": "p_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in0",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "input",
+        "expr": "p_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in1",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "out",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "source_file": "arithmetic.v"
+  },
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "out"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "in0"
+          },
+          "op": "<",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "in1"
+          }
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [],
+    "name": "vc_LtComparator",
+    "net_decls": [],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_nbits"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "expr": "p_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in0",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "input",
+        "expr": "p_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in1",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "out",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "source_file": "arithmetic.v"
+  },
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "out"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "in0"
+          },
+          "op": ">",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "in1"
+          }
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [],
+    "name": "vc_GtComparator",
+    "net_decls": [],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_nbits"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "expr": "p_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in0",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "input",
+        "expr": "p_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in1",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "out",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "source_file": "arithmetic.v"
+  },
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "out"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "in"
+          },
+          "op": "<<",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "shamt"
+          }
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [],
+    "name": "vc_LeftLogicalShifter",
+    "net_decls": [],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_nbits"
+      },
+      {
+        "default": "1",
+        "name": "p_shamt_nbits"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "expr": "p_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "input",
+        "expr": "p_shamt_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "shamt",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "output",
+        "expr": "p_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "out",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      }
+    ],
+    "source_file": "arithmetic.v"
+  },
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "out"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "in"
+          },
+          "op": ">>",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "shamt"
+          }
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [],
+    "name": "vc_RightLogicalShifter",
+    "net_decls": [],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_nbits"
+      },
+      {
+        "default": "1",
+        "name": "p_shamt_nbits"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "expr": "p_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "in",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "input",
+        "expr": "p_shamt_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "shamt",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "output",
+        "expr": "p_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "out",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      }
+    ],
+    "source_file": "arithmetic.v"
+  }
+]

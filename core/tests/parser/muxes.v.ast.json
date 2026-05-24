@@ -1,7 +1,86 @@
 [
   {
-    "always_blocks": [],
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "expr": {
+                "kind": "IDENTIFIER",
+                "name": "sel"
+              },
+              "items": [
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in0"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "1'd0"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in1"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "1'd1"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "count": {
+                        "kind": "IDENTIFIER",
+                        "name": "p_nbits"
+                      },
+                      "kind": "REPLICATION",
+                      "value": {
+                        "kind": "LITERAL",
+                        "value": "1'bx"
+                      }
+                    }
+                  },
+                  "patterns": []
+                }
+              ],
+              "kind": "CASE_STATEMENT",
+              "variant": "case"
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      }
+    ],
     "assigns": [],
+    "gate_primitives": [],
     "instances": [],
     "name": "vc_Mux2",
     "net_decls": [],
@@ -14,19 +93,23 @@
     "ports": [
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in0",
         "scalar": false,
-        "type": "logic"
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in1",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
@@ -38,18 +121,118 @@
       },
       {
         "direction": "output",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "out",
         "scalar": false,
-        "type": "logic"
+        "type": "logic",
+        "unknown": true
       }
     ],
     "source_file": "muxes.v"
   },
   {
-    "always_blocks": [],
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "expr": {
+                "kind": "IDENTIFIER",
+                "name": "sel"
+              },
+              "items": [
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in0"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "2'd0"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in1"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "2'd1"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in2"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "2'd2"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "count": {
+                        "kind": "IDENTIFIER",
+                        "name": "p_nbits"
+                      },
+                      "kind": "REPLICATION",
+                      "value": {
+                        "kind": "LITERAL",
+                        "value": "1'bx"
+                      }
+                    }
+                  },
+                  "patterns": []
+                }
+              ],
+              "kind": "CASE_STATEMENT",
+              "variant": "case"
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      }
+    ],
     "assigns": [],
+    "gate_primitives": [],
     "instances": [],
     "name": "vc_Mux3",
     "net_decls": [],
@@ -62,27 +245,33 @@
     "ports": [
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in0",
         "scalar": false,
-        "type": "logic"
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in1",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in2",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
@@ -94,18 +283,137 @@
       },
       {
         "direction": "output",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "out",
         "scalar": false,
-        "type": "logic"
+        "type": "logic",
+        "unknown": true
       }
     ],
     "source_file": "muxes.v"
   },
   {
-    "always_blocks": [],
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "expr": {
+                "kind": "IDENTIFIER",
+                "name": "sel"
+              },
+              "items": [
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in0"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "2'd0"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in1"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "2'd1"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in2"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "2'd2"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in3"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "2'd3"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "count": {
+                        "kind": "IDENTIFIER",
+                        "name": "p_nbits"
+                      },
+                      "kind": "REPLICATION",
+                      "value": {
+                        "kind": "LITERAL",
+                        "value": "1'bx"
+                      }
+                    }
+                  },
+                  "patterns": []
+                }
+              ],
+              "kind": "CASE_STATEMENT",
+              "variant": "case"
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      }
+    ],
     "assigns": [],
+    "gate_primitives": [],
     "instances": [],
     "name": "vc_Mux4",
     "net_decls": [],
@@ -118,35 +426,43 @@
     "ports": [
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in0",
         "scalar": false,
-        "type": "logic"
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in1",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in2",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in3",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
@@ -158,18 +474,156 @@
       },
       {
         "direction": "output",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "out",
         "scalar": false,
-        "type": "logic"
+        "type": "logic",
+        "unknown": true
       }
     ],
     "source_file": "muxes.v"
   },
   {
-    "always_blocks": [],
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "expr": {
+                "kind": "IDENTIFIER",
+                "name": "sel"
+              },
+              "items": [
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in0"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "3'd0"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in1"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "3'd1"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in2"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "3'd2"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in3"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "3'd3"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in4"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "3'd4"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "count": {
+                        "kind": "IDENTIFIER",
+                        "name": "p_nbits"
+                      },
+                      "kind": "REPLICATION",
+                      "value": {
+                        "kind": "LITERAL",
+                        "value": "1'bx"
+                      }
+                    }
+                  },
+                  "patterns": []
+                }
+              ],
+              "kind": "CASE_STATEMENT",
+              "variant": "case"
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      }
+    ],
     "assigns": [],
+    "gate_primitives": [],
     "instances": [],
     "name": "vc_Mux5",
     "net_decls": [],
@@ -182,43 +636,53 @@
     "ports": [
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in0",
         "scalar": false,
-        "type": "logic"
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in1",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in2",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in3",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in4",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
@@ -230,18 +694,175 @@
       },
       {
         "direction": "output",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "out",
         "scalar": false,
-        "type": "logic"
+        "type": "logic",
+        "unknown": true
       }
     ],
     "source_file": "muxes.v"
   },
   {
-    "always_blocks": [],
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "expr": {
+                "kind": "IDENTIFIER",
+                "name": "sel"
+              },
+              "items": [
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in0"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "3'd0"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in1"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "3'd1"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in2"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "3'd2"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in3"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "3'd3"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in4"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "3'd4"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in5"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "3'd5"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "count": {
+                        "kind": "IDENTIFIER",
+                        "name": "p_nbits"
+                      },
+                      "kind": "REPLICATION",
+                      "value": {
+                        "kind": "LITERAL",
+                        "value": "1'bx"
+                      }
+                    }
+                  },
+                  "patterns": []
+                }
+              ],
+              "kind": "CASE_STATEMENT",
+              "variant": "case"
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      }
+    ],
     "assigns": [],
+    "gate_primitives": [],
     "instances": [],
     "name": "vc_Mux6",
     "net_decls": [],
@@ -254,51 +875,63 @@
     "ports": [
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in0",
         "scalar": false,
-        "type": "logic"
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in1",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in2",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in3",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in4",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in5",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
@@ -310,18 +943,194 @@
       },
       {
         "direction": "output",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "out",
         "scalar": false,
-        "type": "logic"
+        "type": "logic",
+        "unknown": true
       }
     ],
     "source_file": "muxes.v"
   },
   {
-    "always_blocks": [],
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "expr": {
+                "kind": "IDENTIFIER",
+                "name": "sel"
+              },
+              "items": [
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in0"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "3'd0"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in1"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "3'd1"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in2"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "3'd2"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in3"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "3'd3"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in4"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "3'd4"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in5"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "3'd5"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in6"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "3'd6"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "count": {
+                        "kind": "IDENTIFIER",
+                        "name": "p_nbits"
+                      },
+                      "kind": "REPLICATION",
+                      "value": {
+                        "kind": "LITERAL",
+                        "value": "1'bx"
+                      }
+                    }
+                  },
+                  "patterns": []
+                }
+              ],
+              "kind": "CASE_STATEMENT",
+              "variant": "case"
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      }
+    ],
     "assigns": [],
+    "gate_primitives": [],
     "instances": [],
     "name": "vc_Mux7",
     "net_decls": [],
@@ -334,59 +1143,73 @@
     "ports": [
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in0",
         "scalar": false,
-        "type": "logic"
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in1",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in2",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in3",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in4",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in5",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in6",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
@@ -398,18 +1221,213 @@
       },
       {
         "direction": "output",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "out",
         "scalar": false,
-        "type": "logic"
+        "type": "logic",
+        "unknown": true
       }
     ],
     "source_file": "muxes.v"
   },
   {
-    "always_blocks": [],
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "expr": {
+                "kind": "IDENTIFIER",
+                "name": "sel"
+              },
+              "items": [
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in0"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "3'd0"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in1"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "3'd1"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in2"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "3'd2"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in3"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "3'd3"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in4"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "3'd4"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in5"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "3'd5"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in6"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "3'd6"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "in7"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "3'd7"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "out"
+                    },
+                    "rhs": {
+                      "count": {
+                        "kind": "IDENTIFIER",
+                        "name": "p_nbits"
+                      },
+                      "kind": "REPLICATION",
+                      "value": {
+                        "kind": "LITERAL",
+                        "value": "1'bx"
+                      }
+                    }
+                  },
+                  "patterns": []
+                }
+              ],
+              "kind": "CASE_STATEMENT",
+              "variant": "case"
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      }
+    ],
     "assigns": [],
+    "gate_primitives": [],
     "instances": [],
     "name": "vc_Mux8",
     "net_decls": [],
@@ -422,67 +1440,83 @@
     "ports": [
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in0",
         "scalar": false,
-        "type": "logic"
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in1",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in2",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in3",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in4",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in5",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in6",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "in7",
-        "scalar": true,
-        "type": "unspecified"
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
@@ -494,11 +1528,13 @@
       },
       {
         "direction": "output",
+        "expr": "p_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "out",
         "scalar": false,
-        "type": "logic"
+        "type": "logic",
+        "unknown": true
       }
     ],
     "source_file": "muxes.v"

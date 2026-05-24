@@ -1,6 +1,7 @@
 #include "Lexer.h"
 #include "Parser.h"
 #include "Linker.h"
+#include "Validator.h"
 #include <filesystem>
 #include <fstream>
 #include <iostream>
@@ -26,15 +27,18 @@ static std::vector<fs::path> collectVerilog(const fs::path& root) {
     return files;
 }
 
-int main(int argc, char* argv[]) {
-    if (argc < 2) {
-        std::cerr << "Usage: gen_ast <file.v|directory> [file2.v ...]\n";
-        return 1;
-    }
+static void usage() {
+    std::cerr << "Usage: gen_ast [--no-validate] <file.v|directory> [more inputs ...]\n";
+}
 
+int main(int argc, char* argv[]) {
+    bool run_validator = true;
     std::vector<fs::path> inputs;
     for (int i = 1; i < argc; i++) {
-        fs::path p(argv[i]);
+        std::string a = argv[i];
+        if (a == "--no-validate") { run_validator = false; continue; }
+        if (a == "-h" || a == "--help") { usage(); return 0; }
+        fs::path p(a);
         if (fs::is_directory(p)) {
             for (auto& f : collectVerilog(p)) inputs.push_back(f);
         } else {
@@ -42,10 +46,7 @@ int main(int argc, char* argv[]) {
         }
     }
 
-    if (inputs.empty()) {
-        std::cerr << "No .v/.sv files found\n";
-        return 1;
-    }
+    if (inputs.empty()) { usage(); return 1; }
 
     Linker linker;
     for (const auto& path : inputs) {
@@ -65,5 +66,16 @@ int main(int argc, char* argv[]) {
 
     linker.link();
     std::cout << modulesToJSON(linker.modules()) << std::endl;
-    return 0;
+
+    // Diagnostics go to stderr so JSON output on stdout stays consumable
+    // by downstream renderers. Errors flip the exit code.
+    int exit_code = 0;
+    if (run_validator) {
+        Validator validator(linker);
+        for (const auto& diag : validator.run()) {
+            std::cerr << Validator::format(diag) << "\n";
+            if (diag.severity == ValidationError::Severity::ERROR) exit_code = 2;
+        }
+    }
+    return exit_code;
 }

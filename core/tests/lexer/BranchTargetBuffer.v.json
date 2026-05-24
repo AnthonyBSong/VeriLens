@@ -424,7 +424,7 @@
     "lexeme": ";"
   },
   {
-    "type": "IDENTIFIER",
+    "type": "ALWAYS_COMB",
     "lexeme": "always_comb"
   },
   {
@@ -1192,7 +1192,7 @@
     "lexeme": ";"
   },
   {
-    "type": "IDENTIFIER",
+    "type": "ALWAYS_FF",
     "lexeme": "always_ff"
   },
   {

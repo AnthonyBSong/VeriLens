@@ -1,6 +1,1607 @@
 [
   {
-    "always_blocks": [],
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {
+                "kind": "IDENTIFIER",
+                "name": "reset"
+              },
+              "else": {
+                "cond": {
+                  "kind": "IDENTIFIER",
+                  "name": "reg_en_F"
+                },
+                "else": null,
+                "kind": "IF_STATEMENT",
+                "then": {
+                  "kind": "NONBLOCKING_ASSIGN",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "val_F"
+                  },
+                  "rhs": {
+                    "kind": "LITERAL",
+                    "value": "1'b1"
+                  }
+                }
+              },
+              "kind": "IF_STATEMENT",
+              "then": {
+                "kind": "NONBLOCKING_ASSIGN",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "val_F"
+                },
+                "rhs": {
+                  "kind": "LITERAL",
+                  "value": "1'b0"
+                }
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "posedge clk"
+      },
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {
+                "kind": "IDENTIFIER",
+                "name": "pc_redirect_X"
+              },
+              "else": {
+                "cond": {
+                  "kind": "IDENTIFIER",
+                  "name": "pc_redirect_D"
+                },
+                "else": {
+                  "kind": "BLOCKING_ASSIGN",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "pc_sel_F"
+                  },
+                  "rhs": {
+                    "kind": "LITERAL",
+                    "value": "2'b0"
+                  }
+                },
+                "kind": "IF_STATEMENT",
+                "then": {
+                  "kind": "BLOCKING_ASSIGN",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "pc_sel_F"
+                  },
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "pc_sel_D"
+                  }
+                }
+              },
+              "kind": "IF_STATEMENT",
+              "then": {
+                "kind": "BLOCKING_ASSIGN",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "pc_sel_F"
+                },
+                "rhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "pc_sel_X"
+                }
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      },
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {
+                "kind": "IDENTIFIER",
+                "name": "reset"
+              },
+              "else": {
+                "cond": {
+                  "kind": "IDENTIFIER",
+                  "name": "reg_en_D"
+                },
+                "else": null,
+                "kind": "IF_STATEMENT",
+                "then": {
+                  "body": [
+                    {
+                      "kind": "NONBLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "val_D"
+                      },
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "next_val_F"
+                      }
+                    },
+                    {
+                      "kind": "NONBLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "take_branch_D"
+                      },
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "take_branch_F"
+                      }
+                    }
+                  ],
+                  "kind": "SEQ_BLOCK"
+                }
+              },
+              "kind": "IF_STATEMENT",
+              "then": {
+                "kind": "NONBLOCKING_ASSIGN",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "val_D"
+                },
+                "rhs": {
+                  "kind": "LITERAL",
+                  "value": "1'b0"
+                }
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "posedge clk"
+      },
+      {
+        "body": {
+          "body": [
+            {
+              "expr": {
+                "kind": "IDENTIFIER",
+                "name": "inst_D"
+              },
+              "items": [
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_NOP"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_ADD"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_LW"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_BNE"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_CSRR"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_CSRW"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_SUB"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_MUL"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_AND"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_OR"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_XOR"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_SLT"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_SRA"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_SRL"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_SLL"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_ADDI"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_ANDI"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_ORI"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_XORI"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_SLTI"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_SRAI"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_SRLI"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_SLLI"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_LUI"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_AUIPC"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_SW"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_JAL"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_JALR"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_BEQ"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_BLT"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_BLTU"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": [
+                    {
+                      "kind": "LITERAL",
+                      "value": "`TINYRV2_INST_BGE"
+                    }
+                  ]
+                },
+                {
+                  "body": null,
+                  "patterns": []
+                }
+              ],
+              "kind": "CASE_STATEMENT",
+              "variant": "casez"
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      },
+      {
+        "body": {
+          "body": [
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "proc2mngr_val_D"
+              },
+              "rhs": {
+                "kind": "LITERAL",
+                "value": "1'b0"
+              }
+            },
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "mngr2proc_rdy_D"
+              },
+              "rhs": {
+                "kind": "LITERAL",
+                "value": "1'b0"
+              }
+            },
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "csrr_sel_D"
+              },
+              "rhs": {
+                "kind": "LITERAL",
+                "value": "2'h0"
+              }
+            },
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "stats_en_wen_D"
+              },
+              "rhs": {
+                "kind": "LITERAL",
+                "value": "1'b0"
+              }
+            },
+            {
+              "cond": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "csrw_D"
+                },
+                "op": "&&",
+                "rhs": {
+                  "kind": "BINARY_OP",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "inst_csr_D"
+                  },
+                  "op": "==",
+                  "rhs": {
+                    "kind": "LITERAL",
+                    "value": "`TINYRV2_CPR_PROC2MNGR"
+                  }
+                }
+              },
+              "else": null,
+              "kind": "IF_STATEMENT",
+              "then": {
+                "kind": "BLOCKING_ASSIGN",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "proc2mngr_val_D"
+                },
+                "rhs": {
+                  "kind": "LITERAL",
+                  "value": "1'b1"
+                }
+              }
+            },
+            {
+              "cond": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "csrr_D"
+                },
+                "op": "&&",
+                "rhs": {
+                  "kind": "BINARY_OP",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "inst_csr_D"
+                  },
+                  "op": "==",
+                  "rhs": {
+                    "kind": "LITERAL",
+                    "value": "`TINYRV2_CPR_MNGR2PROC"
+                  }
+                }
+              },
+              "else": null,
+              "kind": "IF_STATEMENT",
+              "then": {
+                "kind": "BLOCKING_ASSIGN",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "mngr2proc_rdy_D"
+                },
+                "rhs": {
+                  "kind": "LITERAL",
+                  "value": "1'b1"
+                }
+              }
+            },
+            {
+              "cond": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "csrw_D"
+                },
+                "op": "&&",
+                "rhs": {
+                  "kind": "BINARY_OP",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "inst_csr_D"
+                  },
+                  "op": "==",
+                  "rhs": {
+                    "kind": "LITERAL",
+                    "value": "`TINYRV2_CPR_STATS_EN"
+                  }
+                }
+              },
+              "else": null,
+              "kind": "IF_STATEMENT",
+              "then": {
+                "kind": "BLOCKING_ASSIGN",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "stats_en_wen_D"
+                },
+                "rhs": {
+                  "kind": "LITERAL",
+                  "value": "1'b1"
+                }
+              }
+            },
+            {
+              "cond": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "csrr_D"
+                },
+                "op": "&&",
+                "rhs": {
+                  "kind": "BINARY_OP",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "inst_csr_D"
+                  },
+                  "op": "==",
+                  "rhs": {
+                    "kind": "LITERAL",
+                    "value": "`TINYRV2_CPR_NUMCORES"
+                  }
+                }
+              },
+              "else": null,
+              "kind": "IF_STATEMENT",
+              "then": {
+                "kind": "BLOCKING_ASSIGN",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "csrr_sel_D"
+                },
+                "rhs": {
+                  "kind": "LITERAL",
+                  "value": "2'h1"
+                }
+              }
+            },
+            {
+              "cond": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "csrr_D"
+                },
+                "op": "&&",
+                "rhs": {
+                  "kind": "BINARY_OP",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "inst_csr_D"
+                  },
+                  "op": "==",
+                  "rhs": {
+                    "kind": "LITERAL",
+                    "value": "`TINYRV2_CPR_COREID"
+                  }
+                }
+              },
+              "else": null,
+              "kind": "IF_STATEMENT",
+              "then": {
+                "kind": "BLOCKING_ASSIGN",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "csrr_sel_D"
+                },
+                "rhs": {
+                  "kind": "LITERAL",
+                  "value": "2'h2"
+                }
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      },
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "val_D"
+                },
+                "op": "&&",
+                "rhs": {
+                  "kind": "BINARY_OP",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "br_type_D"
+                  },
+                  "op": "==",
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "br_jal"
+                  }
+                }
+              },
+              "else": {
+                "body": [
+                  {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "pc_redirect_D"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "1'b0"
+                    }
+                  },
+                  {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "pc_sel_D"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "2'd0"
+                    }
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              },
+              "kind": "IF_STATEMENT",
+              "then": {
+                "body": [
+                  {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "pc_redirect_D"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "1'b1"
+                    }
+                  },
+                  {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "pc_sel_D"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "2'd2"
+                    }
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      },
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {
+                "kind": "IDENTIFIER",
+                "name": "bypass_waddr_X_rs1_D"
+              },
+              "else": {
+                "cond": {
+                  "kind": "IDENTIFIER",
+                  "name": "bypass_waddr_M_rs1_D"
+                },
+                "else": {
+                  "cond": {
+                    "kind": "IDENTIFIER",
+                    "name": "bypass_waddr_W_rs1_D"
+                  },
+                  "else": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "op1_bypass_sel_D"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "by_d"
+                    }
+                  },
+                  "kind": "IF_STATEMENT",
+                  "then": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "op1_bypass_sel_D"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "by_w"
+                    }
+                  }
+                },
+                "kind": "IF_STATEMENT",
+                "then": {
+                  "kind": "BLOCKING_ASSIGN",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "op1_bypass_sel_D"
+                  },
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "by_m"
+                  }
+                }
+              },
+              "kind": "IF_STATEMENT",
+              "then": {
+                "kind": "BLOCKING_ASSIGN",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "op1_bypass_sel_D"
+                },
+                "rhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "by_x"
+                }
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      },
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {
+                "kind": "IDENTIFIER",
+                "name": "bypass_waddr_X_rs2_D"
+              },
+              "else": {
+                "cond": {
+                  "kind": "IDENTIFIER",
+                  "name": "bypass_waddr_M_rs2_D"
+                },
+                "else": {
+                  "cond": {
+                    "kind": "IDENTIFIER",
+                    "name": "bypass_waddr_W_rs2_D"
+                  },
+                  "else": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "op2_bypass_sel_D"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "by_d"
+                    }
+                  },
+                  "kind": "IF_STATEMENT",
+                  "then": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "op2_bypass_sel_D"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "by_w"
+                    }
+                  }
+                },
+                "kind": "IF_STATEMENT",
+                "then": {
+                  "kind": "BLOCKING_ASSIGN",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "op2_bypass_sel_D"
+                  },
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "by_m"
+                  }
+                }
+              },
+              "kind": "IF_STATEMENT",
+              "then": {
+                "kind": "BLOCKING_ASSIGN",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "op2_bypass_sel_D"
+                },
+                "rhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "by_x"
+                }
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      },
+      {
+        "body": {
+          "cond": {
+            "kind": "IDENTIFIER",
+            "name": "reset"
+          },
+          "else": {
+            "cond": {
+              "kind": "IDENTIFIER",
+              "name": "reg_en_X"
+            },
+            "else": null,
+            "kind": "IF_STATEMENT",
+            "then": {
+              "body": [
+                {
+                  "kind": "NONBLOCKING_ASSIGN",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "val_X"
+                  },
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "next_val_D"
+                  }
+                },
+                {
+                  "kind": "NONBLOCKING_ASSIGN",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "rf_wen_X"
+                  },
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "rf_wen_D"
+                  }
+                },
+                {
+                  "kind": "NONBLOCKING_ASSIGN",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "inst_X"
+                  },
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "inst_D"
+                  }
+                },
+                {
+                  "kind": "NONBLOCKING_ASSIGN",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "mul_X"
+                  },
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "mul_D"
+                  }
+                },
+                {
+                  "kind": "NONBLOCKING_ASSIGN",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "alu_fn_X"
+                  },
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "alu_fn_D"
+                  }
+                },
+                {
+                  "kind": "NONBLOCKING_ASSIGN",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "rf_waddr_X"
+                  },
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "rf_waddr_D"
+                  }
+                },
+                {
+                  "kind": "NONBLOCKING_ASSIGN",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "proc2mngr_val_X"
+                  },
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "proc2mngr_val_D"
+                  }
+                },
+                {
+                  "kind": "NONBLOCKING_ASSIGN",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "ex_result_sel_X"
+                  },
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "ex_result_sel_D"
+                  }
+                },
+                {
+                  "kind": "NONBLOCKING_ASSIGN",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "dmem_type_X"
+                  },
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "dmem_type_D"
+                  }
+                },
+                {
+                  "kind": "NONBLOCKING_ASSIGN",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "wb_result_sel_X"
+                  },
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "wb_result_sel_D"
+                  }
+                },
+                {
+                  "kind": "NONBLOCKING_ASSIGN",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "stats_en_wen_X"
+                  },
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "stats_en_wen_D"
+                  }
+                },
+                {
+                  "kind": "NONBLOCKING_ASSIGN",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "br_type_X"
+                  },
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "br_type_D"
+                  }
+                },
+                {
+                  "kind": "NONBLOCKING_ASSIGN",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "take_branch_X"
+                  },
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "take_branch_D"
+                  }
+                }
+              ],
+              "kind": "SEQ_BLOCK"
+            }
+          },
+          "kind": "IF_STATEMENT",
+          "then": {
+            "body": [
+              {
+                "kind": "NONBLOCKING_ASSIGN",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "val_X"
+                },
+                "rhs": {
+                  "kind": "LITERAL",
+                  "value": "1'b0"
+                }
+              }
+            ],
+            "kind": "SEQ_BLOCK"
+          }
+        },
+        "sensitivity": "posedge clk"
+      },
+      {
+        "body": {
+          "body": [
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "pc_redirect_X"
+              },
+              "rhs": {
+                "kind": "LITERAL",
+                "value": "1'b0"
+              }
+            },
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "pc_sel_X"
+              },
+              "rhs": {
+                "kind": "LITERAL",
+                "value": "2'b0"
+              }
+            },
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "branch_taken_X"
+              },
+              "rhs": {
+                "kind": "LITERAL",
+                "value": "1'b0"
+              }
+            },
+            {
+              "cond": {
+                "kind": "IDENTIFIER",
+                "name": "val_X"
+              },
+              "else": null,
+              "kind": "IF_STATEMENT",
+              "then": {
+                "body": [
+                  {
+                    "expr": {
+                      "kind": "IDENTIFIER",
+                      "name": "br_type_X"
+                    },
+                    "items": [
+                      {
+                        "body": {
+                          "kind": "BLOCKING_ASSIGN",
+                          "lhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "branch_taken_X"
+                          },
+                          "rhs": {
+                            "kind": "UNARY_OP",
+                            "op": "!",
+                            "operand": {
+                              "kind": "IDENTIFIER",
+                              "name": "br_cond_eq_X"
+                            }
+                          }
+                        },
+                        "patterns": [
+                          {
+                            "kind": "IDENTIFIER",
+                            "name": "br_bne"
+                          }
+                        ]
+                      },
+                      {
+                        "body": {
+                          "kind": "BLOCKING_ASSIGN",
+                          "lhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "branch_taken_X"
+                          },
+                          "rhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "br_cond_eq_X"
+                          }
+                        },
+                        "patterns": [
+                          {
+                            "kind": "IDENTIFIER",
+                            "name": "br_beq"
+                          }
+                        ]
+                      },
+                      {
+                        "body": {
+                          "kind": "BLOCKING_ASSIGN",
+                          "lhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "branch_taken_X"
+                          },
+                          "rhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "br_cond_lt_X"
+                          }
+                        },
+                        "patterns": [
+                          {
+                            "kind": "IDENTIFIER",
+                            "name": "br_blt"
+                          }
+                        ]
+                      },
+                      {
+                        "body": {
+                          "kind": "BLOCKING_ASSIGN",
+                          "lhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "branch_taken_X"
+                          },
+                          "rhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "br_cond_ltu_X"
+                          }
+                        },
+                        "patterns": [
+                          {
+                            "kind": "IDENTIFIER",
+                            "name": "br_bltu"
+                          }
+                        ]
+                      },
+                      {
+                        "body": {
+                          "kind": "BLOCKING_ASSIGN",
+                          "lhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "branch_taken_X"
+                          },
+                          "rhs": {
+                            "kind": "UNARY_OP",
+                            "op": "!",
+                            "operand": {
+                              "kind": "IDENTIFIER",
+                              "name": "br_cond_lt_X"
+                            }
+                          }
+                        },
+                        "patterns": [
+                          {
+                            "kind": "IDENTIFIER",
+                            "name": "br_bge"
+                          }
+                        ]
+                      },
+                      {
+                        "body": {
+                          "body": [
+                            {
+                              "kind": "BLOCKING_ASSIGN",
+                              "lhs": {
+                                "kind": "IDENTIFIER",
+                                "name": "pc_redirect_X"
+                              },
+                              "rhs": {
+                                "kind": "LITERAL",
+                                "value": "1'b1"
+                              }
+                            },
+                            {
+                              "kind": "BLOCKING_ASSIGN",
+                              "lhs": {
+                                "kind": "IDENTIFIER",
+                                "name": "pc_sel_X"
+                              },
+                              "rhs": {
+                                "kind": "LITERAL",
+                                "value": "2'd3"
+                              }
+                            }
+                          ],
+                          "kind": "SEQ_BLOCK"
+                        },
+                        "patterns": [
+                          {
+                            "kind": "IDENTIFIER",
+                            "name": "br_jalr"
+                          }
+                        ]
+                      },
+                      {
+                        "body": {
+                          "body": [],
+                          "kind": "SEQ_BLOCK"
+                        },
+                        "patterns": []
+                      }
+                    ],
+                    "kind": "CASE_STATEMENT",
+                    "variant": "case"
+                  },
+                  {
+                    "cond": {
+                      "kind": "BINARY_OP",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "branch_taken_X"
+                      },
+                      "op": "!=",
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "take_branch_X"
+                      }
+                    },
+                    "else": null,
+                    "kind": "IF_STATEMENT",
+                    "then": {
+                      "body": [
+                        {
+                          "kind": "BLOCKING_ASSIGN",
+                          "lhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "pc_redirect_X"
+                          },
+                          "rhs": {
+                            "kind": "LITERAL",
+                            "value": "1'b1"
+                          }
+                        },
+                        {
+                          "kind": "BLOCKING_ASSIGN",
+                          "lhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "pc_sel_X"
+                          },
+                          "rhs": {
+                            "kind": "LITERAL",
+                            "value": "2'b1"
+                          }
+                        }
+                      ],
+                      "kind": "SEQ_BLOCK"
+                    }
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      },
+      {
+        "body": {
+          "cond": {
+            "kind": "IDENTIFIER",
+            "name": "reset"
+          },
+          "else": {
+            "cond": {
+              "kind": "IDENTIFIER",
+              "name": "reg_en_M"
+            },
+            "else": null,
+            "kind": "IF_STATEMENT",
+            "then": {
+              "body": [
+                {
+                  "kind": "NONBLOCKING_ASSIGN",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "val_M"
+                  },
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "next_val_X"
+                  }
+                },
+                {
+                  "kind": "NONBLOCKING_ASSIGN",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "rf_wen_M"
+                  },
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "rf_wen_X"
+                  }
+                },
+                {
+                  "kind": "NONBLOCKING_ASSIGN",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "inst_M"
+                  },
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "inst_X"
+                  }
+                },
+                {
+                  "kind": "NONBLOCKING_ASSIGN",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "rf_waddr_M"
+                  },
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "rf_waddr_X"
+                  }
+                },
+                {
+                  "kind": "NONBLOCKING_ASSIGN",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "proc2mngr_val_M"
+                  },
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "proc2mngr_val_X"
+                  }
+                },
+                {
+                  "kind": "NONBLOCKING_ASSIGN",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "dmem_type_M"
+                  },
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "dmem_type_X"
+                  }
+                },
+                {
+                  "kind": "NONBLOCKING_ASSIGN",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "wb_result_sel_M"
+                  },
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "wb_result_sel_X"
+                  }
+                },
+                {
+                  "kind": "NONBLOCKING_ASSIGN",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "stats_en_wen_M"
+                  },
+                  "rhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "stats_en_wen_X"
+                  }
+                }
+              ],
+              "kind": "SEQ_BLOCK"
+            }
+          },
+          "kind": "IF_STATEMENT",
+          "then": {
+            "body": [
+              {
+                "kind": "NONBLOCKING_ASSIGN",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "val_M"
+                },
+                "rhs": {
+                  "kind": "LITERAL",
+                  "value": "1'b0"
+                }
+              }
+            ],
+            "kind": "SEQ_BLOCK"
+          }
+        },
+        "sensitivity": "posedge clk"
+      },
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {
+                "kind": "IDENTIFIER",
+                "name": "reset"
+              },
+              "else": {
+                "cond": {
+                  "kind": "IDENTIFIER",
+                  "name": "reg_en_W"
+                },
+                "else": null,
+                "kind": "IF_STATEMENT",
+                "then": {
+                  "body": [
+                    {
+                      "kind": "NONBLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "val_W"
+                      },
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "next_val_M"
+                      }
+                    },
+                    {
+                      "kind": "NONBLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "rf_wen_pending_W"
+                      },
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "rf_wen_M"
+                      }
+                    },
+                    {
+                      "kind": "NONBLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "inst_W"
+                      },
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "inst_M"
+                      }
+                    },
+                    {
+                      "kind": "NONBLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "rf_waddr_W"
+                      },
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "rf_waddr_M"
+                      }
+                    },
+                    {
+                      "kind": "NONBLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "proc2mngr_val_W"
+                      },
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "proc2mngr_val_M"
+                      }
+                    },
+                    {
+                      "kind": "NONBLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "stats_en_wen_pending_W"
+                      },
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "stats_en_wen_M"
+                      }
+                    }
+                  ],
+                  "kind": "SEQ_BLOCK"
+                }
+              },
+              "kind": "IF_STATEMENT",
+              "then": {
+                "body": [
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "val_W"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "1'b0"
+                    }
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "posedge clk"
+      }
+    ],
     "assigns": [
       {
         "lhs": {
@@ -1683,6 +3284,7 @@
         }
       }
     ],
+    "gate_primitives": [],
     "instances": [
       {
         "connections": [

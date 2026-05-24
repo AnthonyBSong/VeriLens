@@ -1,6 +1,236 @@
 [
   {
-    "always_blocks": [],
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "state"
+                },
+                "op": "==",
+                "rhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "c_state_pass"
+                }
+              },
+              "else": {
+                "body": [
+                  {
+                    "cond": {
+                      "kind": "IDENTIFIER",
+                      "name": "istream_go"
+                    },
+                    "else": {
+                      "kind": "BLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "next_state"
+                      },
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "c_state_drop"
+                      }
+                    },
+                    "kind": "IF_STATEMENT",
+                    "then": {
+                      "kind": "BLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "next_state"
+                      },
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "c_state_pass"
+                      }
+                    }
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              },
+              "kind": "IF_STATEMENT",
+              "then": {
+                "body": [
+                  {
+                    "cond": {
+                      "kind": "BINARY_OP",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "drop"
+                      },
+                      "op": "&&",
+                      "rhs": {
+                        "kind": "UNARY_OP",
+                        "op": "!",
+                        "operand": {
+                          "kind": "IDENTIFIER",
+                          "name": "istream_go"
+                        }
+                      }
+                    },
+                    "else": {
+                      "kind": "BLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "next_state"
+                      },
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "c_state_pass"
+                      }
+                    },
+                    "kind": "IF_STATEMENT",
+                    "then": {
+                      "kind": "BLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "next_state"
+                      },
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "c_state_drop"
+                      }
+                    }
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      },
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "state"
+                },
+                "op": "==",
+                "rhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "c_state_pass"
+                }
+              },
+              "else": {
+                "body": [
+                  {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "ostream_val"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "1'b0"
+                    }
+                  },
+                  {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "istream_rdy"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "1'b1"
+                    }
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              },
+              "kind": "IF_STATEMENT",
+              "then": {
+                "body": [
+                  {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "ostream_val"
+                    },
+                    "rhs": {
+                      "kind": "BINARY_OP",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "istream_val"
+                      },
+                      "op": "&&",
+                      "rhs": {
+                        "kind": "UNARY_OP",
+                        "op": "!",
+                        "operand": {
+                          "kind": "IDENTIFIER",
+                          "name": "drop"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "istream_rdy"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "ostream_rdy"
+                    }
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      },
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {
+                "kind": "IDENTIFIER",
+                "name": "reset"
+              },
+              "else": {
+                "kind": "NONBLOCKING_ASSIGN",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "state"
+                },
+                "rhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "next_state"
+                }
+              },
+              "kind": "IF_STATEMENT",
+              "then": {
+                "kind": "NONBLOCKING_ASSIGN",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "state"
+                },
+                "rhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "c_state_pass"
+                }
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "posedge clk"
+      }
+    ],
     "assigns": [
       {
         "lhs": {
@@ -31,6 +261,7 @@
         }
       }
     ],
+    "gate_primitives": [],
     "instances": [],
     "name": "lab2_proc_DropUnit",
     "net_decls": [
@@ -97,11 +328,13 @@
       },
       {
         "direction": "input",
+        "expr": "p_msg_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "istream_msg",
         "scalar": false,
-        "type": "logic"
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "input",
@@ -121,11 +354,13 @@
       },
       {
         "direction": "output",
+        "expr": "p_msg_nbits-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "ostream_msg",
         "scalar": false,
-        "type": "logic"
+        "type": "logic",
+        "unknown": true
       },
       {
         "direction": "output",

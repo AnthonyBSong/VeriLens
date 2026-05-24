@@ -436,7 +436,7 @@
     "lexeme": ";"
   },
   {
-    "type": "IDENTIFIER",
+    "type": "ALWAYS_FF",
     "lexeme": "always_ff"
   },
   {
@@ -1040,7 +1040,7 @@
     "lexeme": "wport"
   },
   {
-    "type": "IDENTIFIER",
+    "type": "ALWAYS_FF",
     "lexeme": "always_ff"
   },
   {
@@ -1760,7 +1760,7 @@
     "lexeme": ";"
   },
   {
-    "type": "IDENTIFIER",
+    "type": "ALWAYS_FF",
     "lexeme": "always_ff"
   },
   {
@@ -2476,7 +2476,7 @@
     "lexeme": ";"
   },
   {
-    "type": "IDENTIFIER",
+    "type": "ALWAYS_FF",
     "lexeme": "always_ff"
   },
   {

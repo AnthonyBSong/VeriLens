@@ -1,1 +1,625 @@
-[]
+[
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "icache_access"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "icache_reqstream_val"
+          },
+          "op": "&",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "icache_reqstream_rdy"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "icache_miss"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "icache_respstream_val"
+            },
+            "op": "&",
+            "rhs": {
+              "kind": "IDENTIFIER",
+              "name": "icache_respstream_rdy"
+            }
+          },
+          "op": "&",
+          "rhs": {
+            "kind": "UNARY_OP",
+            "op": "~",
+            "operand": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "icache_respstream_msg.test"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "0"
+              },
+              "kind": "BIT_SELECT"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "dcache_access"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "dcache_reqstream_val"
+          },
+          "op": "&",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "dcache_reqstream_rdy"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "dcache_miss"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "dcache_respstream_val"
+            },
+            "op": "&",
+            "rhs": {
+              "kind": "IDENTIFIER",
+              "name": "dcache_respstream_rdy"
+            }
+          },
+          "op": "&",
+          "rhs": {
+            "kind": "UNARY_OP",
+            "op": "~",
+            "operand": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "dcache_respstream_msg.test"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "0"
+              },
+              "kind": "BIT_SELECT"
+            }
+          }
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "proc2cache_reqstream_msg",
+            "signal": "icache_reqstream_msg"
+          },
+          {
+            "port": "proc2cache_reqstream_val",
+            "signal": "icache_reqstream_val"
+          },
+          {
+            "port": "proc2cache_reqstream_rdy",
+            "signal": "icache_reqstream_rdy"
+          },
+          {
+            "port": "proc2cache_respstream_msg",
+            "signal": "icache_respstream_msg"
+          },
+          {
+            "port": "proc2cache_respstream_val",
+            "signal": "icache_respstream_val"
+          },
+          {
+            "port": "proc2cache_respstream_rdy",
+            "signal": "icache_respstream_rdy"
+          },
+          {
+            "port": "cache2mem_reqstream_msg",
+            "signal": "imem_reqstream_msg"
+          },
+          {
+            "port": "cache2mem_reqstream_val",
+            "signal": "imem_reqstream_val"
+          },
+          {
+            "port": "cache2mem_reqstream_rdy",
+            "signal": "imem_reqstream_rdy"
+          },
+          {
+            "port": "cache2mem_respstream_msg",
+            "signal": "imem_respstream_msg"
+          },
+          {
+            "port": "cache2mem_respstream_val",
+            "signal": "imem_respstream_val"
+          },
+          {
+            "port": "cache2mem_respstream_rdy",
+            "signal": "imem_respstream_rdy"
+          }
+        ],
+        "instance": "icache",
+        "module": "lab3_mem_CacheAlt",
+        "parameters": [
+          "1"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "proc2cache_reqstream_msg",
+            "signal": "dcache_reqstream_msg"
+          },
+          {
+            "port": "proc2cache_reqstream_val",
+            "signal": "dcache_reqstream_val"
+          },
+          {
+            "port": "proc2cache_reqstream_rdy",
+            "signal": "dcache_reqstream_rdy"
+          },
+          {
+            "port": "proc2cache_respstream_msg",
+            "signal": "dcache_respstream_msg"
+          },
+          {
+            "port": "proc2cache_respstream_val",
+            "signal": "dcache_respstream_val"
+          },
+          {
+            "port": "proc2cache_respstream_rdy",
+            "signal": "dcache_respstream_rdy"
+          },
+          {
+            "port": "cache2mem_reqstream_msg",
+            "signal": "dmem_reqstream_msg"
+          },
+          {
+            "port": "cache2mem_reqstream_val",
+            "signal": "dmem_reqstream_val"
+          },
+          {
+            "port": "cache2mem_reqstream_rdy",
+            "signal": "dmem_reqstream_rdy"
+          },
+          {
+            "port": "cache2mem_respstream_msg",
+            "signal": "dmem_respstream_msg"
+          },
+          {
+            "port": "cache2mem_respstream_val",
+            "signal": "dmem_respstream_val"
+          },
+          {
+            "port": "cache2mem_respstream_rdy",
+            "signal": "dmem_respstream_rdy"
+          }
+        ],
+        "instance": "dcache",
+        "module": "lab3_mem_CacheAlt",
+        "parameters": [
+          "1"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "mngr2proc_msg",
+            "signal": "mngr2proc_msg"
+          },
+          {
+            "port": "mngr2proc_val",
+            "signal": "mngr2proc_val"
+          },
+          {
+            "port": "mngr2proc_rdy",
+            "signal": "mngr2proc_rdy"
+          },
+          {
+            "port": "proc2mngr_msg",
+            "signal": "proc2mngr_msg"
+          },
+          {
+            "port": "proc2mngr_val",
+            "signal": "proc2mngr_val"
+          },
+          {
+            "port": "proc2mngr_rdy",
+            "signal": "proc2mngr_rdy"
+          },
+          {
+            "port": "imem_reqstream_msg",
+            "signal": "icache_reqstream_msg"
+          },
+          {
+            "port": "imem_reqstream_val",
+            "signal": "icache_reqstream_val"
+          },
+          {
+            "port": "imem_reqstream_rdy",
+            "signal": "icache_reqstream_rdy"
+          },
+          {
+            "port": "imem_respstream_msg",
+            "signal": "icache_respstream_msg"
+          },
+          {
+            "port": "imem_respstream_val",
+            "signal": "icache_respstream_val"
+          },
+          {
+            "port": "imem_respstream_rdy",
+            "signal": "icache_respstream_rdy"
+          },
+          {
+            "port": "dmem_reqstream_msg",
+            "signal": "dcache_reqstream_msg"
+          },
+          {
+            "port": "dmem_reqstream_val",
+            "signal": "dcache_reqstream_val"
+          },
+          {
+            "port": "dmem_reqstream_rdy",
+            "signal": "dcache_reqstream_rdy"
+          },
+          {
+            "port": "dmem_respstream_msg",
+            "signal": "dcache_respstream_msg"
+          },
+          {
+            "port": "dmem_respstream_val",
+            "signal": "dcache_respstream_val"
+          },
+          {
+            "port": "dmem_respstream_rdy",
+            "signal": "dcache_respstream_rdy"
+          },
+          {
+            "port": "core_id",
+            "signal": "0"
+          },
+          {
+            "port": "commit_inst",
+            "signal": "commit_inst"
+          },
+          {
+            "port": "stats_en",
+            "signal": "stats_en"
+          }
+        ],
+        "instance": "proc",
+        "module": "lab2_proc_ProcAlt",
+        "parameters": [
+          "1"
+        ],
+        "resolved": false
+      }
+    ],
+    "name": "lab4_sys_SingleCoreSys",
+    "net_decls": [
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "icache_reqstream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "icache_reqstream_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "icache_respstream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "icache_respstream_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "dcache_reqstream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "dcache_reqstream_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "dcache_respstream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "dcache_respstream_rdy",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reset",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "mngr2proc_msg",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "mngr2proc_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "mngr2proc_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 31,
+        "name": "proc2mngr_msg",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "proc2mngr_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "proc2mngr_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "imem_reqstream_msg",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "imem_reqstream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "imem_reqstream_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "imem_respstream_msg",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "imem_respstream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "imem_respstream_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "dmem_reqstream_msg",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "dmem_reqstream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "dmem_reqstream_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "dmem_respstream_msg",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "dmem_respstream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "dmem_respstream_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "stats_en",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "commit_inst",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "icache_access",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "icache_miss",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "dcache_access",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "dcache_miss",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "source_file": "SingleCoreSys.v"
+  }
+]

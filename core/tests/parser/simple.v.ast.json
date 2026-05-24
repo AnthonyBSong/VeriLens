@@ -2,6 +2,7 @@
   {
     "always_blocks": [],
     "assigns": [],
+    "gate_primitives": [],
     "instances": [],
     "name": "simple",
     "net_decls": [],

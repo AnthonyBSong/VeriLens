@@ -402,6 +402,7 @@
         }
       }
     ],
+    "gate_primitives": [],
     "instances": [],
     "name": "Divider",
     "net_decls": [

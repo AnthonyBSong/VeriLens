@@ -1,1 +1,1654 @@
-[]
+[
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "imem_reqstream_msg_addr"
+        },
+        "rhs": {
+          "kind": "IDENTIFIER",
+          "name": "pc_next_F"
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "num_cores"
+        },
+        "rhs": {
+          "kind": "IDENTIFIER",
+          "name": "p_num_cores"
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "imul_req_msg"
+        },
+        "rhs": {
+          "kind": "CONCAT",
+          "parts": [
+            {
+              "kind": "IDENTIFIER",
+              "name": "op1_D"
+            },
+            {
+              "kind": "IDENTIFIER",
+              "name": "op2_D"
+            }
+          ]
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "dmem_reqstream_msg_addr"
+        },
+        "rhs": {
+          "kind": "IDENTIFIER",
+          "name": "alu_result_X"
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "dmem_result_M"
+        },
+        "rhs": {
+          "kind": "IDENTIFIER",
+          "name": "dmem_respstream_msg_data"
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "proc2mngr_data"
+        },
+        "rhs": {
+          "kind": "IDENTIFIER",
+          "name": "wb_result_W"
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "rf_wdata_W"
+        },
+        "rhs": {
+          "kind": "IDENTIFIER",
+          "name": "wb_result_W"
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "stats_en"
+        },
+        "rhs": {
+          "kind": "UNARY_OP",
+          "op": "|",
+          "operand": {
+            "kind": "IDENTIFIER",
+            "name": "stats_en_W"
+          }
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "en",
+            "signal": "reg_en_F"
+          },
+          {
+            "port": "d",
+            "signal": "pc_next_F"
+          },
+          {
+            "port": "q",
+            "signal": "pc_F"
+          }
+        ],
+        "instance": "pc_reg_F",
+        "module": "vc_EnResetReg",
+        "parameters": [
+          "32",
+          "c_reset_vector-32'd4"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "in",
+            "signal": "pc_F"
+          },
+          {
+            "port": "out",
+            "signal": "pc_plus4_F"
+          }
+        ],
+        "instance": "pc_incr_F",
+        "module": "vc_Incrementer",
+        "parameters": [
+          "32",
+          "4"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "curr_pc",
+            "signal": "pc_F"
+          },
+          {
+            "port": "branch_target",
+            "signal": "btb_target_F"
+          },
+          {
+            "port": "take_branch",
+            "signal": "take_branch_F"
+          },
+          {
+            "port": "branch_pc",
+            "signal": "pc_X"
+          },
+          {
+            "port": "branch_dest",
+            "signal": "br_target_X"
+          },
+          {
+            "port": "branch_taken",
+            "signal": "branch_taken_X"
+          }
+        ],
+        "instance": "btb",
+        "module": "lab2_proc_BranchTargetBuffer",
+        "parameters": [],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "in0",
+            "signal": "pc_plus4_F"
+          },
+          {
+            "port": "in1",
+            "signal": "btb_target_F"
+          },
+          {
+            "port": "sel",
+            "signal": "take_branch_F"
+          },
+          {
+            "port": "out",
+            "signal": "br_predict_F"
+          }
+        ],
+        "instance": "br_predict_mux_F",
+        "module": "vc_Mux2",
+        "parameters": [
+          "32"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "in0",
+            "signal": "br_predict_F"
+          },
+          {
+            "port": "in1",
+            "signal": "br_mispredict_X"
+          },
+          {
+            "port": "in2",
+            "signal": "jal_target_D"
+          },
+          {
+            "port": "in3",
+            "signal": "alu_result_X"
+          },
+          {
+            "port": "sel",
+            "signal": "pc_sel_F"
+          },
+          {
+            "port": "out",
+            "signal": "pc_next_F"
+          }
+        ],
+        "instance": "pc_sel_mux_F",
+        "module": "vc_Mux4",
+        "parameters": [
+          "32"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "en",
+            "signal": "reg_en_D"
+          },
+          {
+            "port": "d",
+            "signal": "pc_F"
+          },
+          {
+            "port": "q",
+            "signal": "pc_D"
+          }
+        ],
+        "instance": "pc_reg_D",
+        "module": "vc_EnResetReg",
+        "parameters": [
+          "32"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "en",
+            "signal": "reg_en_D"
+          },
+          {
+            "port": "d",
+            "signal": "imem_respstream_msg.data"
+          },
+          {
+            "port": "q",
+            "signal": "inst_D"
+          }
+        ],
+        "instance": "inst_D_reg",
+        "module": "vc_EnResetReg",
+        "parameters": [
+          "32",
+          "c_reset_inst"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "opcode",
+            "signal": ""
+          },
+          {
+            "port": "inst",
+            "signal": "inst_D"
+          },
+          {
+            "port": "rs1",
+            "signal": "inst_rs1_D"
+          },
+          {
+            "port": "rs2",
+            "signal": "inst_rs2_D"
+          },
+          {
+            "port": "rd",
+            "signal": "inst_rd_D"
+          },
+          {
+            "port": "funct3",
+            "signal": ""
+          },
+          {
+            "port": "funct7",
+            "signal": ""
+          },
+          {
+            "port": "csr",
+            "signal": ""
+          }
+        ],
+        "instance": "inst_unpack",
+        "module": "lab2_proc_tinyrv2_encoding_InstUnpack",
+        "parameters": [],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "imm_type",
+            "signal": "imm_type_D"
+          },
+          {
+            "port": "inst",
+            "signal": "inst_D"
+          },
+          {
+            "port": "imm",
+            "signal": "imm_D"
+          }
+        ],
+        "instance": "imm_gen_D",
+        "module": "lab2_proc_ProcDpathImmGen",
+        "parameters": [],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "rd_addr0",
+            "signal": "inst_rs1_D"
+          },
+          {
+            "port": "rd_data0",
+            "signal": "rf_rdata0_D"
+          },
+          {
+            "port": "rd_addr1",
+            "signal": "inst_rs2_D"
+          },
+          {
+            "port": "rd_data1",
+            "signal": "rf_rdata1_D"
+          },
+          {
+            "port": "wr_en",
+            "signal": "rf_wen_W"
+          },
+          {
+            "port": "wr_addr",
+            "signal": "rf_waddr_W"
+          },
+          {
+            "port": "wr_data",
+            "signal": "rf_wdata_W"
+          }
+        ],
+        "instance": "rf",
+        "module": "vc_Regfile_2r1w_zero",
+        "parameters": [],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "in0",
+            "signal": "mngr2proc_data"
+          },
+          {
+            "port": "in1",
+            "signal": "num_cores"
+          },
+          {
+            "port": "in2",
+            "signal": "core_id"
+          },
+          {
+            "port": "sel",
+            "signal": "csrr_sel_D"
+          },
+          {
+            "port": "out",
+            "signal": "csrr_data_D"
+          }
+        ],
+        "instance": "csrr_sel_mux_D",
+        "module": "vc_Mux3",
+        "parameters": [
+          "32"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "in0",
+            "signal": "rf_rdata0_D"
+          },
+          {
+            "port": "in1",
+            "signal": "ex_result_X"
+          },
+          {
+            "port": "in2",
+            "signal": "wb_result_M"
+          },
+          {
+            "port": "in3",
+            "signal": "wb_result_W"
+          },
+          {
+            "port": "sel",
+            "signal": "op1_bypass_sel_D"
+          },
+          {
+            "port": "out",
+            "signal": "op1_bypass_D"
+          }
+        ],
+        "instance": "op1_bypass_mux_D",
+        "module": "vc_Mux4",
+        "parameters": [
+          "32"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "in0",
+            "signal": "rf_rdata1_D"
+          },
+          {
+            "port": "in1",
+            "signal": "ex_result_X"
+          },
+          {
+            "port": "in2",
+            "signal": "wb_result_M"
+          },
+          {
+            "port": "in3",
+            "signal": "wb_result_W"
+          },
+          {
+            "port": "sel",
+            "signal": "op2_bypass_sel_D"
+          },
+          {
+            "port": "out",
+            "signal": "op2_bypass_D"
+          }
+        ],
+        "instance": "op2_bypass_mux_D",
+        "module": "vc_Mux4",
+        "parameters": [
+          "32"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "in0",
+            "signal": "pc_D"
+          },
+          {
+            "port": "in1",
+            "signal": "op1_bypass_D"
+          },
+          {
+            "port": "sel",
+            "signal": "op1_sel_D"
+          },
+          {
+            "port": "out",
+            "signal": "op1_D"
+          }
+        ],
+        "instance": "op1_sel_mux_D",
+        "module": "vc_Mux2",
+        "parameters": [
+          "32"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "in0",
+            "signal": "op2_bypass_D"
+          },
+          {
+            "port": "in1",
+            "signal": "imm_D"
+          },
+          {
+            "port": "in2",
+            "signal": "csrr_data_D"
+          },
+          {
+            "port": "sel",
+            "signal": "op2_sel_D"
+          },
+          {
+            "port": "out",
+            "signal": "op2_D"
+          }
+        ],
+        "instance": "op2_sel_mux_D",
+        "module": "vc_Mux3",
+        "parameters": [
+          "32"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "in0",
+            "signal": "pc_D"
+          },
+          {
+            "port": "in1",
+            "signal": "imm_D"
+          },
+          {
+            "port": "cin",
+            "signal": "1'b0"
+          },
+          {
+            "port": "out",
+            "signal": "jal_target_D"
+          },
+          {
+            "port": "cout",
+            "signal": ""
+          }
+        ],
+        "instance": "pc_plus_imm_D",
+        "module": "vc_Adder",
+        "parameters": [
+          "32"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "istream_val",
+            "signal": "imul_req_val_D"
+          },
+          {
+            "port": "istream_rdy",
+            "signal": "imul_req_rdy_D"
+          },
+          {
+            "port": "istream_msg",
+            "signal": "imul_req_msg"
+          },
+          {
+            "port": "ostream_val",
+            "signal": "imul_resp_val_X"
+          },
+          {
+            "port": "ostream_rdy",
+            "signal": "imul_resp_rdy_X"
+          },
+          {
+            "port": "ostream_msg",
+            "signal": "imul_resp_msg"
+          }
+        ],
+        "instance": "multiplier",
+        "module": "lab1_imul_IntMulAlt",
+        "parameters": [],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "en",
+            "signal": "reg_en_X"
+          },
+          {
+            "port": "d",
+            "signal": "op1_D"
+          },
+          {
+            "port": "q",
+            "signal": "op1_X"
+          }
+        ],
+        "instance": "op1_reg_X",
+        "module": "vc_EnResetReg",
+        "parameters": [
+          "32",
+          "0"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "en",
+            "signal": "reg_en_X"
+          },
+          {
+            "port": "d",
+            "signal": "op2_D"
+          },
+          {
+            "port": "q",
+            "signal": "op2_X"
+          }
+        ],
+        "instance": "op2_reg_X",
+        "module": "vc_EnResetReg",
+        "parameters": [
+          "32",
+          "0"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "en",
+            "signal": "reg_en_X"
+          },
+          {
+            "port": "d",
+            "signal": "pc_D"
+          },
+          {
+            "port": "q",
+            "signal": "pc_X"
+          }
+        ],
+        "instance": "pc_reg_X",
+        "module": "vc_EnResetReg",
+        "parameters": [
+          "32",
+          "0"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "en",
+            "signal": "reg_en_X"
+          },
+          {
+            "port": "d",
+            "signal": "jal_target_D"
+          },
+          {
+            "port": "q",
+            "signal": "br_target_X"
+          }
+        ],
+        "instance": "br_target_reg_X",
+        "module": "vc_EnResetReg",
+        "parameters": [
+          "32",
+          "0"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "in0",
+            "signal": "pc_plus4_X"
+          },
+          {
+            "port": "in1",
+            "signal": "br_target_X"
+          },
+          {
+            "port": "sel",
+            "signal": "branch_taken_X"
+          },
+          {
+            "port": "out",
+            "signal": "br_mispredict_X"
+          }
+        ],
+        "instance": "br_mispredict_mux_X",
+        "module": "vc_Mux2",
+        "parameters": [
+          "32"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "en",
+            "signal": "reg_en_X"
+          },
+          {
+            "port": "d",
+            "signal": "op2_bypass_D"
+          },
+          {
+            "port": "q",
+            "signal": "dmem_reqstream_msg_data"
+          }
+        ],
+        "instance": "dmem_write_data_reg_X",
+        "module": "vc_EnResetReg",
+        "parameters": [
+          "32",
+          "0"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "in0",
+            "signal": "op1_X"
+          },
+          {
+            "port": "in1",
+            "signal": "op2_X"
+          },
+          {
+            "port": "fn",
+            "signal": "alu_fn_X"
+          },
+          {
+            "port": "out",
+            "signal": "alu_result_X"
+          },
+          {
+            "port": "ops_eq",
+            "signal": "br_cond_eq_X"
+          },
+          {
+            "port": "ops_lt",
+            "signal": "br_cond_lt_X"
+          },
+          {
+            "port": "ops_ltu",
+            "signal": "br_cond_ltu_X"
+          }
+        ],
+        "instance": "alu",
+        "module": "lab2_proc_ProcDpathAlu",
+        "parameters": [],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "in",
+            "signal": "pc_X"
+          },
+          {
+            "port": "out",
+            "signal": "pc_plus4_X"
+          }
+        ],
+        "instance": "pc_incr_X",
+        "module": "vc_Incrementer",
+        "parameters": [
+          "32",
+          "4"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "in0",
+            "signal": "`VC_MEM_REQ_MSG_TYPE_READ"
+          },
+          {
+            "port": "in1",
+            "signal": "`VC_MEM_REQ_MSG_TYPE_WRITE"
+          },
+          {
+            "port": "sel",
+            "signal": "dmem_fn_X"
+          },
+          {
+            "port": "out",
+            "signal": "dmem_reqstream_msg_type"
+          }
+        ],
+        "instance": "dmem_type_sel_mux_X",
+        "module": "vc_Mux2",
+        "parameters": [
+          "32"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "in0",
+            "signal": "pc_plus4_X"
+          },
+          {
+            "port": "in1",
+            "signal": "alu_result_X"
+          },
+          {
+            "port": "in2",
+            "signal": "imul_resp_msg"
+          },
+          {
+            "port": "sel",
+            "signal": "ex_result_sel_X"
+          },
+          {
+            "port": "out",
+            "signal": "ex_result_X"
+          }
+        ],
+        "instance": "ex_result_sel_mux_X",
+        "module": "vc_Mux3",
+        "parameters": [
+          "32"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "en",
+            "signal": "reg_en_M"
+          },
+          {
+            "port": "d",
+            "signal": "ex_result_X"
+          },
+          {
+            "port": "q",
+            "signal": "ex_result_M"
+          }
+        ],
+        "instance": "ex_result_reg_M",
+        "module": "vc_EnResetReg",
+        "parameters": [
+          "32",
+          "0"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "in0",
+            "signal": "ex_result_M"
+          },
+          {
+            "port": "in1",
+            "signal": "dmem_result_M"
+          },
+          {
+            "port": "sel",
+            "signal": "wb_result_sel_M"
+          },
+          {
+            "port": "out",
+            "signal": "wb_result_M"
+          }
+        ],
+        "instance": "wb_result_sel_mux_M",
+        "module": "vc_Mux2",
+        "parameters": [
+          "32"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "en",
+            "signal": "reg_en_W"
+          },
+          {
+            "port": "d",
+            "signal": "wb_result_M"
+          },
+          {
+            "port": "q",
+            "signal": "wb_result_W"
+          }
+        ],
+        "instance": "wb_result_reg_W",
+        "module": "vc_EnResetReg",
+        "parameters": [
+          "32",
+          "0"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "en",
+            "signal": "stats_en_wen_W"
+          },
+          {
+            "port": "d",
+            "signal": "wb_result_W"
+          },
+          {
+            "port": "q",
+            "signal": "stats_en_W"
+          }
+        ],
+        "instance": "stats_en_reg_W",
+        "module": "vc_EnResetReg",
+        "parameters": [
+          "32",
+          "0"
+        ],
+        "resolved": false
+      }
+    ],
+    "name": "lab2_proc_ProcAltDpath",
+    "net_decls": [
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "pc_F",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "pc_next_F",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "pc_plus4_F",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "br_target_X",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "jal_target_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "pc_X",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "pc_plus4_X",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "btb_target_F",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "br_predict_F",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "br_mispredict_X",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "pc_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 4,
+        "name": "inst_rd_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 4,
+        "name": "inst_rs1_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 4,
+        "name": "inst_rs2_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "imm_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "rf_rdata0_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "rf_rdata1_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "rf_wdata_W",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "csrr_data_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "num_cores",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "op1_bypass_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "op2_bypass_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "op1_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "op2_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 63,
+        "name": "imul_req_msg",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "imul_resp_msg",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "op1_X",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "op2_X",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "alu_result_X",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "ex_result_X",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "ex_result_M",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "dmem_result_M",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "wb_result_M",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "wb_result_W",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "stats_en_W",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_num_cores"
+      },
+      {
+        "default": "32'h200",
+        "name": "c_reset_vector"
+      },
+      {
+        "default": "32'h00000000",
+        "name": "c_reset_inst"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reset",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 31,
+        "name": "imem_reqstream_msg_addr",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "imem_respstream_msg",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 31,
+        "name": "dmem_reqstream_msg_addr",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 31,
+        "name": "dmem_reqstream_msg_data",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 3,
+        "name": "dmem_reqstream_msg_type",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "dmem_respstream_msg_data",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "mngr2proc_data",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 31,
+        "name": "proc2mngr_data",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "imul_req_val_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "imul_req_rdy_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "imul_resp_val_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "imul_resp_rdy_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "imem_respstream_drop",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reg_en_F",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 1,
+        "name": "pc_sel_F",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reg_en_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 1,
+        "name": "op1_bypass_sel_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 1,
+        "name": "op2_bypass_sel_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "op1_sel_D",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 1,
+        "name": "op2_sel_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 1,
+        "name": "csrr_sel_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 2,
+        "name": "imm_type_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reg_en_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "dmem_fn_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 3,
+        "name": "alu_fn_X",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 1,
+        "name": "ex_result_sel_X",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "branch_taken_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reg_en_M",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "wb_result_sel_M",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reg_en_W",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 4,
+        "name": "rf_waddr_W",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "rf_wen_W",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "stats_en_wen_W",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "take_branch_F",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 31,
+        "name": "inst_D",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "br_cond_eq_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "br_cond_lt_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "br_cond_ltu_X",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "core_id",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "stats_en",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "source_file": "ProcAltDpath.v"
+  }
+]

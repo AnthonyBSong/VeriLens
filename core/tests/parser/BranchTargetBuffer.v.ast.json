@@ -1,1 +1,959 @@
-[]
+[
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "branch_target"
+              },
+              "rhs": {
+                "kind": "LITERAL",
+                "value": "32'b0"
+              }
+            },
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "take_branch"
+              },
+              "rhs": {
+                "kind": "LITERAL",
+                "value": "1'b1"
+              }
+            },
+            {
+              "expr": {
+                "kind": "CONCAT",
+                "parts": [
+                  {
+                    "kind": "LITERAL",
+                    "value": "2'b11"
+                  },
+                  {
+                    "kind": "IDENTIFIER",
+                    "name": "curr_pc"
+                  }
+                ]
+              },
+              "items": [
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "branch_target"
+                    },
+                    "rhs": {
+                      "base": {
+                        "kind": "IDENTIFIER",
+                        "name": "buffer"
+                      },
+                      "index": {
+                        "kind": "LITERAL",
+                        "value": "0"
+                      },
+                      "kind": "BIT_SELECT"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "CONCAT",
+                      "parts": [
+                        {
+                          "base": {
+                            "kind": "IDENTIFIER",
+                            "name": "taken"
+                          },
+                          "index": {
+                            "kind": "LITERAL",
+                            "value": "0"
+                          },
+                          "kind": "BIT_SELECT"
+                        },
+                        {
+                          "base": {
+                            "kind": "IDENTIFIER",
+                            "name": "valid"
+                          },
+                          "index": {
+                            "kind": "LITERAL",
+                            "value": "0"
+                          },
+                          "kind": "BIT_SELECT"
+                        },
+                        {
+                          "base": {
+                            "kind": "IDENTIFIER",
+                            "name": "tags"
+                          },
+                          "index": {
+                            "kind": "LITERAL",
+                            "value": "0"
+                          },
+                          "kind": "BIT_SELECT"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "branch_target"
+                    },
+                    "rhs": {
+                      "base": {
+                        "kind": "IDENTIFIER",
+                        "name": "buffer"
+                      },
+                      "index": {
+                        "kind": "LITERAL",
+                        "value": "1"
+                      },
+                      "kind": "BIT_SELECT"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "CONCAT",
+                      "parts": [
+                        {
+                          "base": {
+                            "kind": "IDENTIFIER",
+                            "name": "taken"
+                          },
+                          "index": {
+                            "kind": "LITERAL",
+                            "value": "1"
+                          },
+                          "kind": "BIT_SELECT"
+                        },
+                        {
+                          "base": {
+                            "kind": "IDENTIFIER",
+                            "name": "valid"
+                          },
+                          "index": {
+                            "kind": "LITERAL",
+                            "value": "1"
+                          },
+                          "kind": "BIT_SELECT"
+                        },
+                        {
+                          "base": {
+                            "kind": "IDENTIFIER",
+                            "name": "tags"
+                          },
+                          "index": {
+                            "kind": "LITERAL",
+                            "value": "1"
+                          },
+                          "kind": "BIT_SELECT"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "branch_target"
+                    },
+                    "rhs": {
+                      "base": {
+                        "kind": "IDENTIFIER",
+                        "name": "buffer"
+                      },
+                      "index": {
+                        "kind": "LITERAL",
+                        "value": "2"
+                      },
+                      "kind": "BIT_SELECT"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "CONCAT",
+                      "parts": [
+                        {
+                          "base": {
+                            "kind": "IDENTIFIER",
+                            "name": "taken"
+                          },
+                          "index": {
+                            "kind": "LITERAL",
+                            "value": "2"
+                          },
+                          "kind": "BIT_SELECT"
+                        },
+                        {
+                          "base": {
+                            "kind": "IDENTIFIER",
+                            "name": "valid"
+                          },
+                          "index": {
+                            "kind": "LITERAL",
+                            "value": "2"
+                          },
+                          "kind": "BIT_SELECT"
+                        },
+                        {
+                          "base": {
+                            "kind": "IDENTIFIER",
+                            "name": "tags"
+                          },
+                          "index": {
+                            "kind": "LITERAL",
+                            "value": "2"
+                          },
+                          "kind": "BIT_SELECT"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "branch_target"
+                    },
+                    "rhs": {
+                      "base": {
+                        "kind": "IDENTIFIER",
+                        "name": "buffer"
+                      },
+                      "index": {
+                        "kind": "LITERAL",
+                        "value": "3"
+                      },
+                      "kind": "BIT_SELECT"
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "CONCAT",
+                      "parts": [
+                        {
+                          "base": {
+                            "kind": "IDENTIFIER",
+                            "name": "taken"
+                          },
+                          "index": {
+                            "kind": "LITERAL",
+                            "value": "3"
+                          },
+                          "kind": "BIT_SELECT"
+                        },
+                        {
+                          "base": {
+                            "kind": "IDENTIFIER",
+                            "name": "valid"
+                          },
+                          "index": {
+                            "kind": "LITERAL",
+                            "value": "3"
+                          },
+                          "kind": "BIT_SELECT"
+                        },
+                        {
+                          "base": {
+                            "kind": "IDENTIFIER",
+                            "name": "tags"
+                          },
+                          "index": {
+                            "kind": "LITERAL",
+                            "value": "3"
+                          },
+                          "kind": "BIT_SELECT"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "take_branch"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "1'b0"
+                    }
+                  },
+                  "patterns": []
+                }
+              ],
+              "kind": "CASE_STATEMENT",
+              "variant": "case"
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      },
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {
+                "kind": "IDENTIFIER",
+                "name": "reset"
+              },
+              "else": {
+                "cond": {
+                  "kind": "IDENTIFIER",
+                  "name": "match"
+                },
+                "else": {
+                  "cond": {
+                    "kind": "IDENTIFIER",
+                    "name": "branch_taken"
+                  },
+                  "else": null,
+                  "kind": "IF_STATEMENT",
+                  "then": {
+                    "body": [
+                      {
+                        "kind": "NONBLOCKING_ASSIGN",
+                        "lhs": {
+                          "base": {
+                            "kind": "IDENTIFIER",
+                            "name": "valid"
+                          },
+                          "index": {
+                            "kind": "IDENTIFIER",
+                            "name": "curr"
+                          },
+                          "kind": "BIT_SELECT"
+                        },
+                        "rhs": {
+                          "kind": "LITERAL",
+                          "value": "1'b1"
+                        }
+                      },
+                      {
+                        "kind": "NONBLOCKING_ASSIGN",
+                        "lhs": {
+                          "base": {
+                            "kind": "IDENTIFIER",
+                            "name": "tags"
+                          },
+                          "index": {
+                            "kind": "IDENTIFIER",
+                            "name": "curr"
+                          },
+                          "kind": "BIT_SELECT"
+                        },
+                        "rhs": {
+                          "kind": "IDENTIFIER",
+                          "name": "branch_pc"
+                        }
+                      },
+                      {
+                        "kind": "NONBLOCKING_ASSIGN",
+                        "lhs": {
+                          "base": {
+                            "kind": "IDENTIFIER",
+                            "name": "taken"
+                          },
+                          "index": {
+                            "kind": "IDENTIFIER",
+                            "name": "curr"
+                          },
+                          "kind": "BIT_SELECT"
+                        },
+                        "rhs": {
+                          "kind": "LITERAL",
+                          "value": "1'b1"
+                        }
+                      },
+                      {
+                        "kind": "NONBLOCKING_ASSIGN",
+                        "lhs": {
+                          "base": {
+                            "kind": "IDENTIFIER",
+                            "name": "buffer"
+                          },
+                          "index": {
+                            "kind": "IDENTIFIER",
+                            "name": "curr"
+                          },
+                          "kind": "BIT_SELECT"
+                        },
+                        "rhs": {
+                          "kind": "IDENTIFIER",
+                          "name": "branch_dest"
+                        }
+                      },
+                      {
+                        "kind": "NONBLOCKING_ASSIGN",
+                        "lhs": {
+                          "kind": "IDENTIFIER",
+                          "name": "curr"
+                        },
+                        "rhs": {
+                          "kind": "BINARY_OP",
+                          "lhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "curr"
+                          },
+                          "op": "+",
+                          "rhs": {
+                            "kind": "LITERAL",
+                            "value": "1"
+                          }
+                        }
+                      }
+                    ],
+                    "kind": "SEQ_BLOCK"
+                  }
+                },
+                "kind": "IF_STATEMENT",
+                "then": {
+                  "expr": {
+                    "kind": "CONCAT",
+                    "parts": [
+                      {
+                        "kind": "LITERAL",
+                        "value": "1'b1"
+                      },
+                      {
+                        "kind": "IDENTIFIER",
+                        "name": "branch_pc"
+                      }
+                    ]
+                  },
+                  "items": [
+                    {
+                      "body": {
+                        "kind": "NONBLOCKING_ASSIGN",
+                        "lhs": {
+                          "base": {
+                            "kind": "IDENTIFIER",
+                            "name": "taken"
+                          },
+                          "index": {
+                            "kind": "LITERAL",
+                            "value": "0"
+                          },
+                          "kind": "BIT_SELECT"
+                        },
+                        "rhs": {
+                          "kind": "IDENTIFIER",
+                          "name": "branch_taken"
+                        }
+                      },
+                      "patterns": [
+                        {
+                          "kind": "CONCAT",
+                          "parts": [
+                            {
+                              "base": {
+                                "kind": "IDENTIFIER",
+                                "name": "valid"
+                              },
+                              "index": {
+                                "kind": "LITERAL",
+                                "value": "0"
+                              },
+                              "kind": "BIT_SELECT"
+                            },
+                            {
+                              "base": {
+                                "kind": "IDENTIFIER",
+                                "name": "tags"
+                              },
+                              "index": {
+                                "kind": "LITERAL",
+                                "value": "0"
+                              },
+                              "kind": "BIT_SELECT"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "body": {
+                        "kind": "NONBLOCKING_ASSIGN",
+                        "lhs": {
+                          "base": {
+                            "kind": "IDENTIFIER",
+                            "name": "taken"
+                          },
+                          "index": {
+                            "kind": "LITERAL",
+                            "value": "1"
+                          },
+                          "kind": "BIT_SELECT"
+                        },
+                        "rhs": {
+                          "kind": "IDENTIFIER",
+                          "name": "branch_taken"
+                        }
+                      },
+                      "patterns": [
+                        {
+                          "kind": "CONCAT",
+                          "parts": [
+                            {
+                              "base": {
+                                "kind": "IDENTIFIER",
+                                "name": "valid"
+                              },
+                              "index": {
+                                "kind": "LITERAL",
+                                "value": "1"
+                              },
+                              "kind": "BIT_SELECT"
+                            },
+                            {
+                              "base": {
+                                "kind": "IDENTIFIER",
+                                "name": "tags"
+                              },
+                              "index": {
+                                "kind": "LITERAL",
+                                "value": "1"
+                              },
+                              "kind": "BIT_SELECT"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "body": {
+                        "kind": "NONBLOCKING_ASSIGN",
+                        "lhs": {
+                          "base": {
+                            "kind": "IDENTIFIER",
+                            "name": "taken"
+                          },
+                          "index": {
+                            "kind": "LITERAL",
+                            "value": "2"
+                          },
+                          "kind": "BIT_SELECT"
+                        },
+                        "rhs": {
+                          "kind": "IDENTIFIER",
+                          "name": "branch_taken"
+                        }
+                      },
+                      "patterns": [
+                        {
+                          "kind": "CONCAT",
+                          "parts": [
+                            {
+                              "base": {
+                                "kind": "IDENTIFIER",
+                                "name": "valid"
+                              },
+                              "index": {
+                                "kind": "LITERAL",
+                                "value": "2"
+                              },
+                              "kind": "BIT_SELECT"
+                            },
+                            {
+                              "base": {
+                                "kind": "IDENTIFIER",
+                                "name": "tags"
+                              },
+                              "index": {
+                                "kind": "LITERAL",
+                                "value": "2"
+                              },
+                              "kind": "BIT_SELECT"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "body": {
+                        "kind": "NONBLOCKING_ASSIGN",
+                        "lhs": {
+                          "base": {
+                            "kind": "IDENTIFIER",
+                            "name": "taken"
+                          },
+                          "index": {
+                            "kind": "LITERAL",
+                            "value": "3"
+                          },
+                          "kind": "BIT_SELECT"
+                        },
+                        "rhs": {
+                          "kind": "IDENTIFIER",
+                          "name": "branch_taken"
+                        }
+                      },
+                      "patterns": [
+                        {
+                          "kind": "CONCAT",
+                          "parts": [
+                            {
+                              "base": {
+                                "kind": "IDENTIFIER",
+                                "name": "valid"
+                              },
+                              "index": {
+                                "kind": "LITERAL",
+                                "value": "3"
+                              },
+                              "kind": "BIT_SELECT"
+                            },
+                            {
+                              "base": {
+                                "kind": "IDENTIFIER",
+                                "name": "tags"
+                              },
+                              "index": {
+                                "kind": "LITERAL",
+                                "value": "3"
+                              },
+                              "kind": "BIT_SELECT"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "kind": "CASE_STATEMENT",
+                  "variant": "case"
+                }
+              },
+              "kind": "IF_STATEMENT",
+              "then": {
+                "body": [
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "valid"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "4'b0"
+                    }
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "taken"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "4'b0"
+                    }
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "curr"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "2'b0"
+                    }
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "posedge clk"
+      }
+    ],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "match"
+        },
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "BINARY_OP",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "branch_pc"
+                  },
+                  "op": "==",
+                  "rhs": {
+                    "base": {
+                      "kind": "IDENTIFIER",
+                      "name": "tags"
+                    },
+                    "index": {
+                      "kind": "LITERAL",
+                      "value": "0"
+                    },
+                    "kind": "BIT_SELECT"
+                  }
+                },
+                "op": "&&",
+                "rhs": {
+                  "base": {
+                    "kind": "IDENTIFIER",
+                    "name": "valid"
+                  },
+                  "index": {
+                    "kind": "LITERAL",
+                    "value": "0"
+                  },
+                  "kind": "BIT_SELECT"
+                }
+              },
+              "op": "|",
+              "rhs": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "BINARY_OP",
+                  "lhs": {
+                    "kind": "IDENTIFIER",
+                    "name": "branch_pc"
+                  },
+                  "op": "==",
+                  "rhs": {
+                    "base": {
+                      "kind": "IDENTIFIER",
+                      "name": "tags"
+                    },
+                    "index": {
+                      "kind": "LITERAL",
+                      "value": "1"
+                    },
+                    "kind": "BIT_SELECT"
+                  }
+                },
+                "op": "&&",
+                "rhs": {
+                  "base": {
+                    "kind": "IDENTIFIER",
+                    "name": "valid"
+                  },
+                  "index": {
+                    "kind": "LITERAL",
+                    "value": "1"
+                  },
+                  "kind": "BIT_SELECT"
+                }
+              }
+            },
+            "op": "|",
+            "rhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "branch_pc"
+                },
+                "op": "==",
+                "rhs": {
+                  "base": {
+                    "kind": "IDENTIFIER",
+                    "name": "tags"
+                  },
+                  "index": {
+                    "kind": "LITERAL",
+                    "value": "2"
+                  },
+                  "kind": "BIT_SELECT"
+                }
+              },
+              "op": "&&",
+              "rhs": {
+                "base": {
+                  "kind": "IDENTIFIER",
+                  "name": "valid"
+                },
+                "index": {
+                  "kind": "LITERAL",
+                  "value": "2"
+                },
+                "kind": "BIT_SELECT"
+              }
+            }
+          },
+          "op": "|",
+          "rhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "branch_pc"
+              },
+              "op": "==",
+              "rhs": {
+                "base": {
+                  "kind": "IDENTIFIER",
+                  "name": "tags"
+                },
+                "index": {
+                  "kind": "LITERAL",
+                  "value": "3"
+                },
+                "kind": "BIT_SELECT"
+              }
+            },
+            "op": "&&",
+            "rhs": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "valid"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "3"
+              },
+              "kind": "BIT_SELECT"
+            }
+          }
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [],
+    "name": "lab2_proc_BranchTargetBuffer",
+    "net_decls": [
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "tags",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "buffer",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 3,
+        "name": "valid",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 3,
+        "name": "taken",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 1,
+        "name": "curr",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "match",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reset",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "curr_pc",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 31,
+        "name": "branch_target",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "take_branch",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "branch_pc",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "branch_dest",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "branch_taken",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "source_file": "BranchTargetBuffer.v"
+  }
+]

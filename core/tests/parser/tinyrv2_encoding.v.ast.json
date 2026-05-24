@@ -2,78 +2,99 @@
   {
     "always_blocks": [],
     "assigns": [],
+    "gate_primitives": [],
     "instances": [],
     "name": "lab2_proc_tinyrv2_encoding_InstTasks",
     "net_decls": [
       {
+        "expr": "3*8-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "rs1_str",
         "scalar": false,
-        "type": "reg"
+        "type": "reg",
+        "unknown": true
       },
       {
+        "expr": "3*8-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "rs2_str",
         "scalar": false,
-        "type": "reg"
+        "type": "reg",
+        "unknown": true
       },
       {
+        "expr": "3*8-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "rd_str",
         "scalar": false,
-        "type": "reg"
+        "type": "reg",
+        "unknown": true
       },
       {
+        "expr": "9*8-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "csr_str",
         "scalar": false,
-        "type": "reg"
+        "type": "reg",
+        "unknown": true
       },
       {
+        "expr": "2*8-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "funct_str",
         "scalar": false,
-        "type": "reg"
+        "type": "reg",
+        "unknown": true
       },
       {
+        "expr": "`TINYRV2_INST_RS1_NBITS-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "rs1",
         "scalar": false,
-        "type": "logic"
+        "type": "logic",
+        "unknown": true
       },
       {
+        "expr": "`TINYRV2_INST_RS2_NBITS-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "rs2",
         "scalar": false,
-        "type": "logic"
+        "type": "logic",
+        "unknown": true
       },
       {
+        "expr": "`TINYRV2_INST_RD_NBITS-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "rd",
         "scalar": false,
-        "type": "logic"
+        "type": "logic",
+        "unknown": true
       },
       {
+        "expr": "`TINYRV2_INST_CSR_NBITS-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "csr",
         "scalar": false,
-        "type": "logic"
+        "type": "logic",
+        "unknown": true
       },
       {
+        "expr": "`TINYRV2_INST_FUNCT7_NBITS-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "funct",
         "scalar": false,
-        "type": "logic"
+        "type": "logic",
+        "unknown": true
       }
     ],
     "parameters": [],
@@ -186,6 +207,7 @@
         }
       }
     ],
+    "gate_primitives": [],
     "instances": [],
     "name": "lab2_proc_tinyrv2_encoding_InstUnpack",
     "net_decls": [],
@@ -193,67 +215,83 @@
     "ports": [
       {
         "direction": "input",
+        "expr": "`TINYRV2_INST_NBITS-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "inst",
         "scalar": false,
-        "type": "unspecified"
+        "type": "unspecified",
+        "unknown": true
       },
       {
         "direction": "output",
+        "expr": "`TINYRV2_INST_OPCODE_NBITS-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "opcode",
         "scalar": false,
-        "type": "unspecified"
+        "type": "unspecified",
+        "unknown": true
       },
       {
         "direction": "output",
+        "expr": "`TINYRV2_INST_RD_NBITS-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "rd",
         "scalar": false,
-        "type": "unspecified"
+        "type": "unspecified",
+        "unknown": true
       },
       {
         "direction": "output",
+        "expr": "`TINYRV2_INST_RS1_NBITS-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "rs1",
         "scalar": false,
-        "type": "unspecified"
+        "type": "unspecified",
+        "unknown": true
       },
       {
         "direction": "output",
+        "expr": "`TINYRV2_INST_RS2_NBITS-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "rs2",
         "scalar": false,
-        "type": "unspecified"
+        "type": "unspecified",
+        "unknown": true
       },
       {
         "direction": "output",
+        "expr": "`TINYRV2_INST_FUNCT3_NBITS-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "funct3",
         "scalar": false,
-        "type": "unspecified"
+        "type": "unspecified",
+        "unknown": true
       },
       {
         "direction": "output",
+        "expr": "`TINYRV2_INST_FUNCT7_NBITS-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "funct7",
         "scalar": false,
-        "type": "unspecified"
+        "type": "unspecified",
+        "unknown": true
       },
       {
         "direction": "output",
+        "expr": "`TINYRV2_INST_CSR_NBITS-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "csr",
         "scalar": false,
-        "type": "unspecified"
+        "type": "unspecified",
+        "unknown": true
       }
     ],
     "source_file": "tinyrv2_encoding.v"
@@ -261,6 +299,7 @@
   {
     "always_blocks": [],
     "assigns": [],
+    "gate_primitives": [],
     "instances": [
       {
         "connections": [],
@@ -292,11 +331,13 @@
       },
       {
         "direction": "input",
+        "expr": "`TINYRV2_INST_NBITS-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "inst",
         "scalar": false,
-        "type": "unspecified"
+        "type": "unspecified",
+        "unknown": true
       }
     ],
     "source_file": "tinyrv2_encoding.v"

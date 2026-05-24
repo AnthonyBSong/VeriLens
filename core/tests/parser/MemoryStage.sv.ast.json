@@ -1,1 +1,152 @@
-[]
+[
+  {
+    "always_blocks": [],
+    "assigns": [],
+    "gate_primitives": [],
+    "instances": [
+      {
+        "connections": [
+          {
+            "port": "funct3",
+            "signal": "funct3"
+          },
+          {
+            "port": "addr",
+            "signal": "alu_result"
+          },
+          {
+            "port": "store_data",
+            "signal": "rs2_val"
+          },
+          {
+            "port": "byte_en",
+            "signal": "byte_en"
+          },
+          {
+            "port": "aligned_data",
+            "signal": "aligned_data"
+          }
+        ],
+        "instance": "lsu",
+        "module": "LoadStoreUnit",
+        "parameters": [],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "we",
+            "signal": "mem_write"
+          },
+          {
+            "port": "re",
+            "signal": "mem_read"
+          },
+          {
+            "port": "funct3",
+            "signal": "funct3"
+          },
+          {
+            "port": "addr",
+            "signal": "alu_result"
+          },
+          {
+            "port": "wd",
+            "signal": "aligned_data"
+          },
+          {
+            "port": "rd",
+            "signal": "read_data"
+          }
+        ],
+        "instance": "dmem",
+        "module": "DataMemory",
+        "parameters": [
+          ".DEPTH(1024)"
+        ],
+        "resolved": false
+      }
+    ],
+    "name": "MemoryStage",
+    "net_decls": [
+      {
+        "lsb": 0,
+        "msb": 3,
+        "name": "byte_en",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "aligned_data",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "alu_result",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "rs2_val",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "mem_read",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "mem_write",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 2,
+        "name": "funct3",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 31,
+        "name": "read_data",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "source_file": "MemoryStage.sv"
+  }
+]

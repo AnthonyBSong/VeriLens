@@ -91,6 +91,71 @@ void Parser::skipBlock() {
     } while (depth > 0 && !check(TokenType::END_OF_FILE));
 }
 
+// Consume tokens until the matching end token. Used to skip function/task bodies.
+void Parser::skipUntil(TokenType end) {
+    while (!check(end) && !check(TokenType::END_OF_FILE)) consume();
+    match(end);
+}
+
+// Skip a balanced parenthesised group. Caller positions cursor at LPAREN.
+void Parser::skipParens() {
+    if (!check(TokenType::LPAREN)) return;
+    consume(); // (
+    int depth = 1;
+    while (depth > 0 && !check(TokenType::END_OF_FILE)) {
+        if      (check(TokenType::LPAREN)) depth++;
+        else if (check(TokenType::RPAREN)) depth--;
+        consume();
+    }
+}
+
+// Skip one procedural statement (used for for/while/repeat/forever bodies that
+// we don't model). Honours begin/end nesting and falls back to skipping to ';'.
+void Parser::skipStatement() {
+    if (check(TokenType::BEGIN)) { skipBlock(); return; }
+    if (check(TokenType::IF)) {
+        consume();
+        skipParens();
+        skipStatement();
+        if (match(TokenType::ELSE)) skipStatement();
+        return;
+    }
+    if (check(TokenType::CASE) || check(TokenType::CASEX) || check(TokenType::CASEZ)) {
+        consume();
+        skipParens();
+        skipUntil(TokenType::ENDCASE);
+        return;
+    }
+    if (check(TokenType::FOR) || check(TokenType::WHILE) || check(TokenType::REPEAT)) {
+        consume();
+        skipParens();
+        skipStatement();
+        return;
+    }
+    if (check(TokenType::FOREVER)) {
+        consume();
+        skipStatement();
+        return;
+    }
+    skipToSemicolon();
+    match(TokenType::SEMICOLON);
+}
+
+// typedef [enum [...] [{...}]] name; — consume from TYPEDEF through trailing ';'
+// while honouring brace nesting (typedef enum { A, B } state_t;).
+void Parser::skipTypedef() {
+    int braces = 0;
+    while (!check(TokenType::END_OF_FILE)) {
+        if      (check(TokenType::LBRACE)) braces++;
+        else if (check(TokenType::RBRACE)) braces--;
+        else if (braces == 0 && check(TokenType::SEMICOLON)) {
+            consume();
+            return;
+        }
+        consume();
+    }
+}
+
 // top level
 
 Module Parser::parseModule() {
@@ -99,56 +164,185 @@ Module Parser::parseModule() {
     Module mod("", line, col);
     parseModuleHeader(mod);
 
-    while (!check(TokenType::ENDMODULE) && !check(TokenType::END_OF_FILE)) {
-        if (check(TokenType::INPUT) || check(TokenType::OUTPUT) || check(TokenType::INOUT)) {
-            Port decl = parsePortDeclaration();
-            // Non-ANSI style: port list creates stubs, body declarations refine them.
-            // Update the stub in-place rather than appending a duplicate.
-            auto it = std::find_if(mod.ports.begin(), mod.ports.end(),
-                [&](const Port& p){ return p.name == decl.name; });
-            if (it != mod.ports.end()) *it = decl;
-            else                       mod.ports.push_back(std::move(decl));
-        } else if (check(TokenType::WIRE)    || check(TokenType::REG)    ||
-                   check(TokenType::LOGIC)   || check(TokenType::TRI)    ||
-                   check(TokenType::WAND)    || check(TokenType::WOR)    ||
-                   check(TokenType::SUPPLY0) || check(TokenType::SUPPLY1)) {
-            for (auto& d : parseNetDeclaration())
-                mod.net_decls.push_back(std::move(d));
-        } else if (check(TokenType::PARAMETER) || check(TokenType::LOCALPARAM)) {
-            mod.parameters.push_back(parseParameterDeclaration());
-        } else if (check(TokenType::ASSIGN)) {
-            for (auto& a : parseContinuousAssign())
-                mod.assigns.push_back(std::move(a));
-        } else if (check(TokenType::ALWAYS)) {
-            mod.always_blocks.push_back(parseAlwaysBlock());
-        } else if (check(TokenType::INITIAL)) {
-            consume();
-            if (check(TokenType::BEGIN)) skipBlock();
-            else { skipToSemicolon(); match(TokenType::SEMICOLON); }
-        } else if (check(TokenType::AND)    || check(TokenType::OR)     ||
-                   check(TokenType::NOT)    || check(TokenType::NAND)   ||
-                   check(TokenType::NOR)    || check(TokenType::XOR)    ||
-                   check(TokenType::XNOR)   || check(TokenType::BUF)    ||
-                   check(TokenType::BUFIF0) || check(TokenType::BUFIF1) ||
-                   check(TokenType::NOTIF0) || check(TokenType::NOTIF1)) {
-            for (auto& g : parseGatePrimitive())
-                mod.gate_primitives.push_back(std::move(g));
-        } else if (check(TokenType::IDENTIFIER)) {
-            // used to disambiguate instance vs unknown declaration
-            bool is_instance = module_names_.count(current().lexeme)
-                || peek(1).type == TokenType::HASH
-                || (peek(1).type == TokenType::IDENTIFIER
-                    && peek(2).type == TokenType::LPAREN);
-            if (is_instance)
-                mod.instances.push_back(parseInstance());
-            else { skipToSemicolon(); match(TokenType::SEMICOLON); }
-        } else {
-            consume();
-        }
-    }
+    while (!check(TokenType::ENDMODULE) && !check(TokenType::END_OF_FILE))
+        parseModuleBodyItem(mod);
 
     match(TokenType::ENDMODULE);
     return mod;
+}
+
+// Single dispatch for a module body item. Shared with parseGenerateBlock so
+// instances/assigns/always blocks inside `generate ... endgenerate` end up
+// in the module's vectors rather than being silently dropped.
+void Parser::parseModuleBodyItem(Module& mod) {
+    if (check(TokenType::INPUT) || check(TokenType::OUTPUT) || check(TokenType::INOUT)) {
+        Port decl = parsePortDeclaration();
+        // Non-ANSI style: port list creates stubs, body declarations refine them.
+        auto it = std::find_if(mod.ports.begin(), mod.ports.end(),
+            [&](const Port& p){ return p.name == decl.name; });
+        if (it != mod.ports.end()) *it = decl;
+        else                       mod.ports.push_back(std::move(decl));
+        return;
+    }
+    if (check(TokenType::WIRE)    || check(TokenType::REG)    ||
+        check(TokenType::LOGIC)   || check(TokenType::TRI)    ||
+        check(TokenType::TRI0)    || check(TokenType::TRI1)   ||
+        check(TokenType::WAND)    || check(TokenType::WOR)    ||
+        check(TokenType::SUPPLY0) || check(TokenType::SUPPLY1)) {
+        for (auto& d : parseNetDeclaration())
+            mod.net_decls.push_back(std::move(d));
+        return;
+    }
+    if (check(TokenType::PARAMETER) || check(TokenType::LOCALPARAM)) {
+        mod.parameters.push_back(parseParameterDeclaration());
+        return;
+    }
+    if (check(TokenType::ASSIGN)) {
+        for (auto& a : parseContinuousAssign())
+            mod.assigns.push_back(std::move(a));
+        return;
+    }
+    if (check(TokenType::ALWAYS)       || check(TokenType::ALWAYS_FF) ||
+        check(TokenType::ALWAYS_COMB)  || check(TokenType::ALWAYS_LATCH)) {
+        mod.always_blocks.push_back(parseAlwaysBlock());
+        return;
+    }
+    if (check(TokenType::INITIAL)) {
+        consume();
+        if (check(TokenType::BEGIN)) skipBlock();
+        else                         skipStatement();
+        return;
+    }
+    if (check(TokenType::AND)    || check(TokenType::OR)     ||
+        check(TokenType::NOT)    || check(TokenType::NAND)   ||
+        check(TokenType::NOR)    || check(TokenType::XOR)    ||
+        check(TokenType::XNOR)   || check(TokenType::BUF)    ||
+        check(TokenType::BUFIF0) || check(TokenType::BUFIF1) ||
+        check(TokenType::NOTIF0) || check(TokenType::NOTIF1)) {
+        for (auto& g : parseGatePrimitive())
+            mod.gate_primitives.push_back(std::move(g));
+        return;
+    }
+    if (check(TokenType::GENERATE)) {
+        parseGenerateBlock(mod);
+        return;
+    }
+    if (check(TokenType::GENVAR)) {
+        skipToSemicolon();
+        match(TokenType::SEMICOLON);
+        return;
+    }
+    if (check(TokenType::FUNCTION)) {
+        consume();
+        skipUntil(TokenType::ENDFUNCTION);
+        return;
+    }
+    if (check(TokenType::TASK)) {
+        consume();
+        skipUntil(TokenType::ENDTASK);
+        return;
+    }
+    if (check(TokenType::SPECIFY)) {
+        consume();
+        skipUntil(TokenType::ENDSPECIFY);
+        return;
+    }
+    if (check(TokenType::TYPEDEF)) {
+        skipTypedef();
+        return;
+    }
+    if (check(TokenType::DEFPARAM)) {
+        skipToSemicolon();
+        match(TokenType::SEMICOLON);
+        return;
+    }
+    if (check(TokenType::INTEGER) || check(TokenType::REAL) ||
+        check(TokenType::TIME)    || check(TokenType::REALTIME)) {
+        // Procedural-only declarations — not part of the structural model.
+        skipToSemicolon();
+        match(TokenType::SEMICOLON);
+        return;
+    }
+    if (check(TokenType::IDENTIFIER)) {
+        // Disambiguate instance vs typedef'd net declaration.
+        bool is_instance = module_names_.count(current().lexeme)
+            || peek(1).type == TokenType::HASH
+            || (peek(1).type == TokenType::IDENTIFIER
+                && peek(2).type == TokenType::LPAREN);
+        if (is_instance)
+            mod.instances.push_back(parseInstance());
+        else { skipToSemicolon(); match(TokenType::SEMICOLON); }
+        return;
+    }
+    // Unrecognised token: drop it to make progress instead of looping forever.
+    consume();
+}
+
+// generate ... endgenerate — extract assigns/instances/always blocks from the
+// body, shallow-skipping for/if/case headers that we don't elaborate.
+void Parser::parseGenerateBlock(Module& mod) {
+    expect(TokenType::GENERATE);
+    while (!check(TokenType::ENDGENERATE) && !check(TokenType::END_OF_FILE)) {
+        // for (...) begin [: label] ... end
+        if (check(TokenType::FOR) || check(TokenType::WHILE)) {
+            consume();
+            skipParens();
+            if (check(TokenType::BEGIN)) {
+                consume();
+                if (match(TokenType::COLON)) match(TokenType::IDENTIFIER); // : label
+                while (!check(TokenType::END) && !check(TokenType::END_OF_FILE))
+                    parseModuleBodyItem(mod);
+                match(TokenType::END);
+            } else {
+                parseModuleBodyItem(mod);
+            }
+            continue;
+        }
+        // if (...) begin ... end [else ...]
+        if (check(TokenType::IF)) {
+            consume();
+            skipParens();
+            if (check(TokenType::BEGIN)) {
+                consume();
+                if (match(TokenType::COLON)) match(TokenType::IDENTIFIER);
+                while (!check(TokenType::END) && !check(TokenType::END_OF_FILE))
+                    parseModuleBodyItem(mod);
+                match(TokenType::END);
+            } else {
+                parseModuleBodyItem(mod);
+            }
+            if (match(TokenType::ELSE)) {
+                if (check(TokenType::BEGIN)) {
+                    consume();
+                    if (match(TokenType::COLON)) match(TokenType::IDENTIFIER);
+                    while (!check(TokenType::END) && !check(TokenType::END_OF_FILE))
+                        parseModuleBodyItem(mod);
+                    match(TokenType::END);
+                } else {
+                    parseModuleBodyItem(mod);
+                }
+            }
+            continue;
+        }
+        // case (...) <expr>: begin ... end ... endcase
+        if (check(TokenType::CASE) || check(TokenType::CASEX) || check(TokenType::CASEZ)) {
+            consume();
+            skipParens();
+            skipUntil(TokenType::ENDCASE);
+            continue;
+        }
+        // bare begin block (e.g. generate begin ... end)
+        if (check(TokenType::BEGIN)) {
+            consume();
+            if (match(TokenType::COLON)) match(TokenType::IDENTIFIER);
+            while (!check(TokenType::END) && !check(TokenType::END_OF_FILE))
+                parseModuleBodyItem(mod);
+            match(TokenType::END);
+            continue;
+        }
+        parseModuleBodyItem(mod);
+    }
+    match(TokenType::ENDGENERATE);
 }
 
 // module header
@@ -272,6 +466,8 @@ std::vector<NetDecl> Parser::parseNetDeclaration() {
     else if (check(TokenType::REG))     { ntype = NetType::REG;     consume(); }
     else if (check(TokenType::LOGIC))   { ntype = NetType::LOGIC;   consume(); }
     else if (check(TokenType::TRI))     { ntype = NetType::TRI;     consume(); }
+    else if (check(TokenType::TRI0))    { ntype = NetType::TRI;     consume(); }
+    else if (check(TokenType::TRI1))    { ntype = NetType::TRI;     consume(); }
     else if (check(TokenType::WAND))    { ntype = NetType::WAND;    consume(); }
     else if (check(TokenType::WOR))     { ntype = NetType::WOR;     consume(); }
     else if (check(TokenType::SUPPLY0)) { ntype = NetType::SUPPLY0; consume(); }
@@ -470,8 +666,12 @@ std::vector<Assign> Parser::parseContinuousAssign() {
 
 AlwaysBlock Parser::parseAlwaysBlock() {
     int line = current().line, col = current().column;
-    expect(TokenType::ALWAYS);
-    std::string sensitivity = parseSensitivityList();
+    // Accept all four flavours: always, always_ff, always_comb, always_latch.
+    // The sensitivity list is only legal/required for `always` and `always_ff`;
+    // `always_comb` and `always_latch` have implicit @* sensitivity.
+    bool implicit_sens = check(TokenType::ALWAYS_COMB) || check(TokenType::ALWAYS_LATCH);
+    consume();
+    std::string sensitivity = implicit_sens ? "*" : parseSensitivityList();
     StmtPtr body = parseStatement();
     return AlwaysBlock(sensitivity, std::move(body), line, col);
 }
@@ -498,6 +698,31 @@ StmtPtr Parser::parseStatement() {
     if (check(TokenType::IF))    return parseIfStatement();
     if (check(TokenType::CASE) || check(TokenType::CASEX) || check(TokenType::CASEZ))
         return parseCaseStatement();
+    // Procedural loops are not represented in the structural AST yet but we
+    // must consume them or we corrupt the token stream for the rest of the
+    // module. Skip the header and recurse on the body so nested assignments
+    // do not leak.
+    if (check(TokenType::FOR) || check(TokenType::WHILE) || check(TokenType::REPEAT)) {
+        consume();
+        skipParens();
+        return parseStatement();
+    }
+    if (check(TokenType::FOREVER)) {
+        consume();
+        return parseStatement();
+    }
+    // Edge / delay control inside a statement (e.g. `@(posedge clk) q <= d;` or
+    // `#5 a = b;`) — skip the control and parse the inner statement.
+    if (check(TokenType::AT)) {
+        parseSensitivityList();
+        return parseStatement();
+    }
+    if (check(TokenType::HASH)) {
+        consume();
+        if (check(TokenType::LPAREN)) skipParens();
+        else                          consume();
+        return parseStatement();
+    }
     if (check(TokenType::IDENTIFIER)) {
         ExprPtr lhs = parseLValue();
         if (check(TokenType::EQ))      return parseBlockingAssign(std::move(lhs));
@@ -748,6 +973,27 @@ ExprPtr Parser::parseLValue() {
     return base;
 }
 
+// Stringify an expression for the unknown-width raw form. Keeps the original
+// shape readable in JSON without committing to a typed AST for widths.
+static std::string exprText(const ExprPtr& e) {
+    if (!e) return "";
+    switch (e->kind) {
+        case ExprKind::IDENTIFIER:
+            return static_cast<const IdentifierExpr*>(e.get())->name;
+        case ExprKind::LITERAL:
+            return static_cast<const LiteralExpr*>(e.get())->value;
+        case ExprKind::UNARY_OP: {
+            auto* n = static_cast<const UnaryOpExpr*>(e.get());
+            return n->op + exprText(n->operand);
+        }
+        case ExprKind::BINARY_OP: {
+            auto* n = static_cast<const BinaryOpExpr*>(e.get());
+            return exprText(n->lhs) + n->op + exprText(n->rhs);
+        }
+        default: return "?";
+    }
+}
+
 PortWidth Parser::parseWidth() {
     expect(TokenType::LBRACKET);
 
@@ -768,7 +1014,10 @@ PortWidth Parser::parseWidth() {
     int msb = tryInt(msb_expr);
     int lsb = tryInt(lsb_expr);
     if (msb >= 0 && lsb >= 0) return PortWidth(msb, lsb);
-    return PortWidth(0, 0); // fallback for complex widths e.g. [$clog2(N)-1:0]
+    // Parametric/complex range (e.g. [N-1:0], [$clog2(N)-1:0]). Preserve raw
+    // text and flag as unknown so the validator does not compare widths.
+    std::string raw = exprText(msb_expr) + ":" + exprText(lsb_expr);
+    return PortWidth::Unknown(raw);
 }
 
 // json serialization
@@ -896,17 +1145,32 @@ static std::string netTypeStr(NetType t) {
     }
 }
 
+// Encode a PortWidth uniformly: integer ranges expose msb/lsb/scalar; parametric
+// ranges expose unknown=true plus the raw expression text.
+static json widthToJson(const PortWidth& w) {
+    json j = {
+        {"msb",     w.msb},
+        {"lsb",     w.lsb},
+        {"scalar",  w.scalar}
+    };
+    if (w.unknown) {
+        j["unknown"] = true;
+        j["expr"]    = w.expr;
+    }
+    return j;
+}
+
 static json moduleToJson(const Module& mod) {
     json ports = json::array();
-    for (const auto& p : mod.ports)
-        ports.push_back({
+    for (const auto& p : mod.ports) {
+        json pj = {
             {"name",      p.name},
             {"direction", portDirectionStr(p.direction)},
-            {"type",      portTypeStr(p.type)},
-            {"msb",       p.width.msb},
-            {"lsb",       p.width.lsb},
-            {"scalar",    p.width.scalar}
-        });
+            {"type",      portTypeStr(p.type)}
+        };
+        pj.update(widthToJson(p.width));
+        ports.push_back(std::move(pj));
+    }
 
     json parameters = json::array();
     for (const auto& p : mod.parameters)
@@ -915,12 +1179,10 @@ static json moduleToJson(const Module& mod) {
     json net_decls = json::array();
     for (const auto& n : mod.net_decls) {
         json nd = {
-            {"name",   n.name},
-            {"type",   netTypeStr(n.net_type)},
-            {"msb",    n.width.msb},
-            {"lsb",    n.width.lsb},
-            {"scalar", n.width.scalar}
+            {"name", n.name},
+            {"type", netTypeStr(n.net_type)}
         };
+        nd.update(widthToJson(n.width));
         if (n.init) nd["init"] = exprToJson(n.init);
         net_decls.push_back(nd);
     }

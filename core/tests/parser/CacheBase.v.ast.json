@@ -1,1 +1,448 @@
-[]
+[
+  {
+    "always_blocks": [],
+    "assigns": [],
+    "gate_primitives": [],
+    "instances": [
+      {
+        "connections": [
+          {
+            "port": "proc2cache_reqstream_val",
+            "signal": "proc2cache_reqstream_val"
+          },
+          {
+            "port": "proc2cache_reqstream_rdy",
+            "signal": "proc2cache_reqstream_rdy"
+          },
+          {
+            "port": "proc2cache_respstream_val",
+            "signal": "proc2cache_respstream_val"
+          },
+          {
+            "port": "proc2cache_respstream_rdy",
+            "signal": "proc2cache_respstream_rdy"
+          },
+          {
+            "port": "cache2mem_reqstream_val",
+            "signal": "cache2mem_reqstream_val"
+          },
+          {
+            "port": "cache2mem_reqstream_rdy",
+            "signal": "cache2mem_reqstream_rdy"
+          },
+          {
+            "port": "cache2mem_respstream_val",
+            "signal": "cache2mem_respstream_val"
+          },
+          {
+            "port": "cache2mem_respstream_rdy",
+            "signal": "cache2mem_respstream_rdy"
+          }
+        ],
+        "instance": "ctrl",
+        "module": "lab3_mem_CacheBaseCtrl",
+        "parameters": [
+          ".p_num_banks(p_num_banks)"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "proc2cache_reqstream_msg",
+            "signal": "proc2cache_reqstream_msg"
+          },
+          {
+            "port": "proc2cache_respstream_msg",
+            "signal": "proc2cache_respstream_msg"
+          },
+          {
+            "port": "cache2mem_reqstream_msg",
+            "signal": "cache2mem_reqstream_msg"
+          },
+          {
+            "port": "cache2mem_respstream_msg",
+            "signal": "cache2mem_respstream_msg"
+          }
+        ],
+        "instance": "dpath",
+        "module": "lab3_mem_CacheBaseDpath",
+        "parameters": [
+          ".p_num_banks(p_num_banks)"
+        ],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "val",
+            "signal": "proc2cache_reqstream_val"
+          },
+          {
+            "port": "rdy",
+            "signal": "proc2cache_reqstream_rdy"
+          },
+          {
+            "port": "msg",
+            "signal": "proc2cache_reqstream_msg"
+          }
+        ],
+        "instance": "proc2cache_reqstream_msg_trace",
+        "module": "vc_MemReqMsg4BTrace",
+        "parameters": [],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "val",
+            "signal": "proc2cache_respstream_val"
+          },
+          {
+            "port": "rdy",
+            "signal": "proc2cache_respstream_val"
+          },
+          {
+            "port": "msg",
+            "signal": "proc2cache_respstream_msg"
+          }
+        ],
+        "instance": "proc2cache_respstream_trace",
+        "module": "vc_MemRespMsg4BTrace",
+        "parameters": [],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "val",
+            "signal": "cache2mem_reqstream_val"
+          },
+          {
+            "port": "rdy",
+            "signal": "cache2mem_reqstream_rdy"
+          },
+          {
+            "port": "msg",
+            "signal": "cache2mem_reqstream_msg"
+          }
+        ],
+        "instance": "cache2mem_reqstream_msg_trace",
+        "module": "vc_MemReqMsg16BTrace",
+        "parameters": [],
+        "resolved": false
+      },
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "val",
+            "signal": "cache2mem_respstream_val"
+          },
+          {
+            "port": "rdy",
+            "signal": "cache2mem_respstream_rdy"
+          },
+          {
+            "port": "msg",
+            "signal": "cache2mem_respstream_msg"
+          }
+        ],
+        "instance": "cache2mem_respstream_msg_trace",
+        "module": "vc_MemRespMsg16BTrace",
+        "parameters": [],
+        "resolved": false
+      }
+    ],
+    "name": "lab3_mem_CacheBase",
+    "net_decls": [
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "cachereq_en",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "memresp_en",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "write_data_mux_sel",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "tag_array_ren",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "tag_array_wen",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "data_array_ren",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "data_array_wen",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "refill",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "read_data_zero_mux_sel",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "read_data_reg_en",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "evict_addr_reg_en",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "memreq_addr_mux_sel",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 3,
+        "name": "cacheresp_type",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 3,
+        "name": "memreq_type",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "hit",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 3,
+        "name": "cachereq_type",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 3,
+        "name": "index",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 0,
+        "name": "tag_match",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "expr": "`VC_TRACE_NBITS-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "str",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      }
+    ],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_num_banks"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reset",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "proc2cache_reqstream_msg",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "proc2cache_reqstream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "proc2cache_reqstream_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "proc2cache_respstream_msg",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "proc2cache_respstream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "proc2cache_respstream_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "cache2mem_reqstream_msg",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "cache2mem_reqstream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "cache2mem_reqstream_rdy",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "cache2mem_respstream_msg",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "cache2mem_respstream_val",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 0,
+        "name": "cache2mem_respstream_rdy",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "source_file": "CacheBase.v"
+  }
+]

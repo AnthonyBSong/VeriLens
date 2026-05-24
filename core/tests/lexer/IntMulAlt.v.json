@@ -2216,11 +2216,11 @@
     "lexeme": ";"
   },
   {
-    "type": "IDENTIFIER",
+    "type": "TYPEDEF",
     "lexeme": "typedef"
   },
   {
-    "type": "IDENTIFIER",
+    "type": "ENUM",
     "lexeme": "enum"
   },
   {
@@ -2308,7 +2308,7 @@
     "lexeme": ";"
   },
   {
-    "type": "IDENTIFIER",
+    "type": "ALWAYS_FF",
     "lexeme": "always_ff"
   },
   {
@@ -2488,7 +2488,7 @@
     "lexeme": ";"
   },
   {
-    "type": "IDENTIFIER",
+    "type": "ALWAYS_COMB",
     "lexeme": "always_comb"
   },
   {
@@ -2908,7 +2908,7 @@
     "lexeme": "endfunction"
   },
   {
-    "type": "IDENTIFIER",
+    "type": "ALWAYS_COMB",
     "lexeme": "always_comb"
   },
   {
@@ -3292,72 +3292,48 @@
     "lexeme": "("
   },
   {
-    "type": "APOSTROPHE",
-    "lexeme": "'"
-  },
-  {
-    "type": "IDENTIFIER",
-    "lexeme": "x"
+    "type": "INTEGER_LITERAL",
+    "lexeme": "'x"
   },
   {
     "type": "COMMA",
     "lexeme": ","
   },
   {
-    "type": "APOSTROPHE",
-    "lexeme": "'"
-  },
-  {
-    "type": "IDENTIFIER",
-    "lexeme": "x"
+    "type": "INTEGER_LITERAL",
+    "lexeme": "'x"
   },
   {
     "type": "COMMA",
     "lexeme": ","
   },
   {
-    "type": "APOSTROPHE",
-    "lexeme": "'"
-  },
-  {
-    "type": "IDENTIFIER",
-    "lexeme": "x"
+    "type": "INTEGER_LITERAL",
+    "lexeme": "'x"
   },
   {
     "type": "COMMA",
     "lexeme": ","
   },
   {
-    "type": "APOSTROPHE",
-    "lexeme": "'"
-  },
-  {
-    "type": "IDENTIFIER",
-    "lexeme": "x"
+    "type": "INTEGER_LITERAL",
+    "lexeme": "'x"
   },
   {
     "type": "COMMA",
     "lexeme": ","
   },
   {
-    "type": "APOSTROPHE",
-    "lexeme": "'"
-  },
-  {
-    "type": "IDENTIFIER",
-    "lexeme": "x"
+    "type": "INTEGER_LITERAL",
+    "lexeme": "'x"
   },
   {
     "type": "COMMA",
     "lexeme": ","
   },
   {
-    "type": "APOSTROPHE",
-    "lexeme": "'"
-  },
-  {
-    "type": "IDENTIFIER",
-    "lexeme": "x"
+    "type": "INTEGER_LITERAL",
+    "lexeme": "'x"
   },
   {
     "type": "RPAREN",

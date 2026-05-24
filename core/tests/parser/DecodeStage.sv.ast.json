@@ -129,6 +129,7 @@
         }
       }
     ],
+    "gate_primitives": [],
     "instances": [
       {
         "connections": [

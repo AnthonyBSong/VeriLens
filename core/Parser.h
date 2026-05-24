@@ -40,6 +40,10 @@ private:
     void skipToSemicolon();
     void skipToEndmodule();
     void skipBlock();
+    void skipUntil(TokenType end);           // consume tokens up to and including `end`
+    void skipStatement();                    // skip one statement (recursive on begin/end)
+    void skipParens();                       // current must be LPAREN; skips balanced parens
+    void skipTypedef();                      // current must be TYPEDEF; consume through ';'
 
     // Top level
     Module parseModule();
@@ -59,6 +63,8 @@ private:
     std::vector<GatePrimitive> parseGatePrimitive(); // and/or/not/... [name] (...);
     std::vector<Assign> parseContinuousAssign();  // assign a = x [, b = y, ...];
     AlwaysBlock parseAlwaysBlock();
+    void        parseGenerateBlock(Module& mod);    // generate ... endgenerate
+    void        parseModuleBodyItem(Module& mod);   // single body item dispatch
 
 
     // Always block internals  (needed for FSM detection)

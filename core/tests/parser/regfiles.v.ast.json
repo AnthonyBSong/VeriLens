@@ -1,1 +1,993 @@
-[]
+[
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "cond": {
+            "kind": "IDENTIFIER",
+            "name": "write_en"
+          },
+          "else": null,
+          "kind": "IF_STATEMENT",
+          "then": {
+            "kind": "NONBLOCKING_ASSIGN",
+            "lhs": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "rfile"
+              },
+              "index": {
+                "kind": "IDENTIFIER",
+                "name": "write_addr"
+              },
+              "kind": "BIT_SELECT"
+            },
+            "rhs": {
+              "kind": "IDENTIFIER",
+              "name": "write_data"
+            }
+          }
+        },
+        "sensitivity": "posedge clk"
+      }
+    ],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "read_data"
+        },
+        "rhs": {
+          "base": {
+            "kind": "IDENTIFIER",
+            "name": "rfile"
+          },
+          "index": {
+            "kind": "IDENTIFIER",
+            "name": "read_addr"
+          },
+          "kind": "BIT_SELECT"
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [],
+    "name": "vc_Regfile_1r1w",
+    "net_decls": [
+      {
+        "expr": "p_data_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "rfile",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      }
+    ],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_data_nbits"
+      },
+      {
+        "default": "2",
+        "name": "p_num_entries"
+      },
+      {
+        "default": "$clog2(p_num_entries)",
+        "name": "c_addr_nbits"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reset",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "expr": "c_addr_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "read_addr",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "output",
+        "expr": "p_data_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "read_data",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "write_en",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "expr": "c_addr_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "write_addr",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "input",
+        "expr": "p_data_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "write_data",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      }
+    ],
+    "source_file": "regfiles.v"
+  },
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "cond": {
+            "kind": "IDENTIFIER",
+            "name": "reset"
+          },
+          "else": {
+            "cond": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "write_en"
+              },
+              "op": "&&",
+              "rhs": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "base": {
+                    "kind": "IDENTIFIER",
+                    "name": "i"
+                  },
+                  "kind": "PART_SELECT",
+                  "lsb": {
+                    "kind": "LITERAL",
+                    "value": "0"
+                  },
+                  "msb": {
+                    "kind": "BINARY_OP",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "c_addr_nbits"
+                    },
+                    "op": "-",
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "1"
+                    }
+                  }
+                },
+                "op": "==",
+                "rhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "write_addr"
+                }
+              }
+            },
+            "else": null,
+            "kind": "IF_STATEMENT",
+            "then": {
+              "kind": "NONBLOCKING_ASSIGN",
+              "lhs": {
+                "base": {
+                  "kind": "IDENTIFIER",
+                  "name": "rfile"
+                },
+                "index": {
+                  "kind": "IDENTIFIER",
+                  "name": "i"
+                },
+                "kind": "BIT_SELECT"
+              },
+              "rhs": {
+                "kind": "IDENTIFIER",
+                "name": "write_data"
+              }
+            }
+          },
+          "kind": "IF_STATEMENT",
+          "then": {
+            "kind": "NONBLOCKING_ASSIGN",
+            "lhs": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "rfile"
+              },
+              "index": {
+                "kind": "IDENTIFIER",
+                "name": "i"
+              },
+              "kind": "BIT_SELECT"
+            },
+            "rhs": {
+              "kind": "IDENTIFIER",
+              "name": "p_reset_value"
+            }
+          }
+        },
+        "sensitivity": "posedge clk"
+      }
+    ],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "read_data"
+        },
+        "rhs": {
+          "base": {
+            "kind": "IDENTIFIER",
+            "name": "rfile"
+          },
+          "index": {
+            "kind": "IDENTIFIER",
+            "name": "read_addr"
+          },
+          "kind": "BIT_SELECT"
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [],
+    "name": "vc_ResetRegfile_1r1w",
+    "net_decls": [
+      {
+        "expr": "p_data_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "rfile",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      }
+    ],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_data_nbits"
+      },
+      {
+        "default": "2",
+        "name": "p_num_entries"
+      },
+      {
+        "default": "0",
+        "name": "p_reset_value"
+      },
+      {
+        "default": "$clog2(p_num_entries)",
+        "name": "c_addr_nbits"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reset",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "expr": "c_addr_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "read_addr",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "output",
+        "expr": "p_data_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "read_data",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "write_en",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "expr": "c_addr_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "write_addr",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "input",
+        "expr": "p_data_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "write_data",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      }
+    ],
+    "source_file": "regfiles.v"
+  },
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "cond": {
+            "kind": "IDENTIFIER",
+            "name": "write_en"
+          },
+          "else": null,
+          "kind": "IF_STATEMENT",
+          "then": {
+            "kind": "NONBLOCKING_ASSIGN",
+            "lhs": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "rfile"
+              },
+              "index": {
+                "kind": "IDENTIFIER",
+                "name": "write_addr"
+              },
+              "kind": "BIT_SELECT"
+            },
+            "rhs": {
+              "kind": "IDENTIFIER",
+              "name": "write_data"
+            }
+          }
+        },
+        "sensitivity": "posedge clk"
+      }
+    ],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "read_data0"
+        },
+        "rhs": {
+          "base": {
+            "kind": "IDENTIFIER",
+            "name": "rfile"
+          },
+          "index": {
+            "kind": "IDENTIFIER",
+            "name": "read_addr0"
+          },
+          "kind": "BIT_SELECT"
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "read_data1"
+        },
+        "rhs": {
+          "base": {
+            "kind": "IDENTIFIER",
+            "name": "rfile"
+          },
+          "index": {
+            "kind": "IDENTIFIER",
+            "name": "read_addr1"
+          },
+          "kind": "BIT_SELECT"
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [],
+    "name": "vc_Regfile_2r1w",
+    "net_decls": [
+      {
+        "expr": "p_data_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "rfile",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      }
+    ],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_data_nbits"
+      },
+      {
+        "default": "2",
+        "name": "p_num_entries"
+      },
+      {
+        "default": "$clog2(p_num_entries)",
+        "name": "c_addr_nbits"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reset",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "expr": "c_addr_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "read_addr0",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "output",
+        "expr": "p_data_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "read_data0",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "input",
+        "expr": "c_addr_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "read_addr1",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "output",
+        "expr": "p_data_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "read_data1",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "write_en",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "expr": "c_addr_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "write_addr",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "input",
+        "expr": "p_data_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "write_data",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      }
+    ],
+    "source_file": "regfiles.v"
+  },
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {
+                "kind": "IDENTIFIER",
+                "name": "write_en0"
+              },
+              "else": null,
+              "kind": "IF_STATEMENT",
+              "then": {
+                "kind": "NONBLOCKING_ASSIGN",
+                "lhs": {
+                  "base": {
+                    "kind": "IDENTIFIER",
+                    "name": "rfile"
+                  },
+                  "index": {
+                    "kind": "IDENTIFIER",
+                    "name": "write_addr0"
+                  },
+                  "kind": "BIT_SELECT"
+                },
+                "rhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "write_data0"
+                }
+              }
+            },
+            {
+              "cond": {
+                "kind": "IDENTIFIER",
+                "name": "write_en1"
+              },
+              "else": null,
+              "kind": "IF_STATEMENT",
+              "then": {
+                "kind": "NONBLOCKING_ASSIGN",
+                "lhs": {
+                  "base": {
+                    "kind": "IDENTIFIER",
+                    "name": "rfile"
+                  },
+                  "index": {
+                    "kind": "IDENTIFIER",
+                    "name": "write_addr1"
+                  },
+                  "kind": "BIT_SELECT"
+                },
+                "rhs": {
+                  "kind": "IDENTIFIER",
+                  "name": "write_data1"
+                }
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "posedge clk"
+      }
+    ],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "read_data0"
+        },
+        "rhs": {
+          "base": {
+            "kind": "IDENTIFIER",
+            "name": "rfile"
+          },
+          "index": {
+            "kind": "IDENTIFIER",
+            "name": "read_addr0"
+          },
+          "kind": "BIT_SELECT"
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "read_data1"
+        },
+        "rhs": {
+          "base": {
+            "kind": "IDENTIFIER",
+            "name": "rfile"
+          },
+          "index": {
+            "kind": "IDENTIFIER",
+            "name": "read_addr1"
+          },
+          "kind": "BIT_SELECT"
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [],
+    "name": "vc_Regfile_2r2w",
+    "net_decls": [
+      {
+        "expr": "p_data_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "rfile",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      }
+    ],
+    "parameters": [
+      {
+        "default": "1",
+        "name": "p_data_nbits"
+      },
+      {
+        "default": "2",
+        "name": "p_num_entries"
+      },
+      {
+        "default": "$clog2(p_num_entries)",
+        "name": "c_addr_nbits"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reset",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "expr": "c_addr_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "read_addr0",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "output",
+        "expr": "p_data_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "read_data0",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "input",
+        "expr": "c_addr_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "read_addr1",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "output",
+        "expr": "p_data_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "read_data1",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "write_en0",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "expr": "c_addr_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "write_addr0",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "input",
+        "expr": "p_data_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "write_data0",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "write_en1",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "expr": "c_addr_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "write_addr1",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "input",
+        "expr": "p_data_nbits-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "write_data1",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      }
+    ],
+    "source_file": "regfiles.v"
+  },
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "rd_data0"
+        },
+        "rhs": {
+          "cond": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "rd_addr0"
+            },
+            "op": "==",
+            "rhs": {
+              "kind": "LITERAL",
+              "value": "5'd0"
+            }
+          },
+          "else": {
+            "kind": "IDENTIFIER",
+            "name": "rf_read_data0"
+          },
+          "kind": "CONDITIONAL",
+          "then": {
+            "kind": "LITERAL",
+            "value": "32'd0"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "rd_data1"
+        },
+        "rhs": {
+          "cond": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "rd_addr1"
+            },
+            "op": "==",
+            "rhs": {
+              "kind": "LITERAL",
+              "value": "5'd0"
+            }
+          },
+          "else": {
+            "kind": "IDENTIFIER",
+            "name": "rf_read_data1"
+          },
+          "kind": "CONDITIONAL",
+          "then": {
+            "kind": "LITERAL",
+            "value": "32'd0"
+          }
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [
+      {
+        "connections": [
+          {
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "port": "reset",
+            "signal": "reset"
+          },
+          {
+            "port": "read_addr0",
+            "signal": "rd_addr0"
+          },
+          {
+            "port": "read_data0",
+            "signal": "rf_read_data0"
+          },
+          {
+            "port": "read_addr1",
+            "signal": "rd_addr1"
+          },
+          {
+            "port": "read_data1",
+            "signal": "rf_read_data1"
+          },
+          {
+            "port": "write_en",
+            "signal": "wr_en"
+          },
+          {
+            "port": "write_addr",
+            "signal": "wr_addr"
+          },
+          {
+            "port": "write_data",
+            "signal": "wr_data"
+          }
+        ],
+        "instance": "rfile",
+        "module": "vc_Regfile_2r1w",
+        "parameters": [
+          ".p_data_nbits(32)",
+          ".p_num_entries(32)"
+        ],
+        "resolved": true
+      }
+    ],
+    "name": "vc_Regfile_2r1w_zero",
+    "net_decls": [
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "rf_read_data0",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "lsb": 0,
+        "msb": 31,
+        "name": "rf_read_data1",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "reset",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 4,
+        "name": "rd_addr0",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 31,
+        "name": "rd_data0",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 4,
+        "name": "rd_addr1",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "lsb": 0,
+        "msb": 31,
+        "name": "rd_data1",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 0,
+        "name": "wr_en",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 4,
+        "name": "wr_addr",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "wr_data",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "source_file": "regfiles.v"
+  }
+]
