@@ -180,12 +180,15 @@ Module Parser::parseModule() {
 // in the module's vectors rather than being silently dropped.
 void Parser::parseModuleBodyItem(Module& mod) {
     if (check(TokenType::INPUT) || check(TokenType::OUTPUT) || check(TokenType::INOUT)) {
-        Port decl = parsePortDeclaration();
         // Non-ANSI style: port list creates stubs, body declarations refine them.
-        auto it = std::find_if(mod.ports.begin(), mod.ports.end(),
-            [&](const Port& p){ return p.name == decl.name; });
-        if (it != mod.ports.end()) *it = decl;
-        else                       mod.ports.push_back(std::move(decl));
+        // One declaration may name several ports (output reg [3:0] q1, q2, q3;)
+        // so we update or insert each name independently.
+        for (auto& decl : parsePortDeclaration()) {
+            auto it = std::find_if(mod.ports.begin(), mod.ports.end(),
+                [&](const Port& p){ return p.name == decl.name; });
+            if (it != mod.ports.end()) *it = decl;
+            else                       mod.ports.push_back(std::move(decl));
+        }
         return;
     }
     if (check(TokenType::WIRE)    || check(TokenType::REG)    ||
@@ -198,7 +201,8 @@ void Parser::parseModuleBodyItem(Module& mod) {
         return;
     }
     if (check(TokenType::PARAMETER) || check(TokenType::LOCALPARAM)) {
-        mod.parameters.push_back(parseParameterDeclaration());
+        for (auto& p : parseParameterDeclaration())
+            mod.parameters.push_back(std::move(p));
         return;
     }
     if (check(TokenType::ASSIGN)) {
@@ -367,7 +371,8 @@ void Parser::parseParameterList(Module& mod) {
     if (!check(TokenType::RPAREN)) {
         do {
             if (check(TokenType::PARAMETER) || check(TokenType::LOCALPARAM)) {
-                mod.parameters.push_back(parseParameterDeclaration());
+                for (auto& p : parseParameterDeclaration())
+                    mod.parameters.push_back(std::move(p));
             } else {
                 std::string val;
                 while (!check(TokenType::COMMA) && !check(TokenType::RPAREN) &&
@@ -451,7 +456,7 @@ void Parser::parsePortList(Module& mod) {
 
 // module body items
 
-Port Parser::parsePortDeclaration() {
+std::vector<Port> Parser::parsePortDeclaration() {
     int line = current().line, col = current().column;
 
     PortDirection dir = PortDirection::INPUT;
@@ -469,9 +474,17 @@ Port Parser::parsePortDeclaration() {
     PortWidth width;
     if (check(TokenType::LBRACKET)) width = parseWidth();
 
-    std::string name = expect(TokenType::IDENTIFIER).lexeme;
+    // One direction/type/width can declare multiple comma-separated ports:
+    //   output reg [3:0] q1, q2, q3;
+    std::vector<Port> ports;
+    do {
+        int pline = current().line, pcol = current().column;
+        std::string name = expect(TokenType::IDENTIFIER).lexeme;
+        ports.push_back(Port(dir, ptype, width, name, pline, pcol));
+    } while (match(TokenType::COMMA));
+
     expect(TokenType::SEMICOLON);
-    return Port(dir, ptype, width, name, line, col);
+    return ports;
 }
 
 std::vector<NetDecl> Parser::parseNetDeclaration() {
@@ -514,7 +527,7 @@ std::vector<NetDecl> Parser::parseNetDeclaration() {
     return decls;
 }
 
-Parameter Parser::parseParameterDeclaration() {
+std::vector<Parameter> Parser::parseParameterDeclaration() {
     consume(); // PARAMETER or LOCALPARAM
 
     // Skip optional type prefix.  Verilog/SV allow several shapes between the
@@ -547,24 +560,39 @@ Parameter Parser::parseParameterDeclaration() {
         }
     }
 
-    std::string name = expect(TokenType::IDENTIFIER).lexeme;
-    std::string default_val;
-    if (match(TokenType::EQ)) {
-        int depth = 0;
-        while (!check(TokenType::END_OF_FILE)) {
-            if (check(TokenType::LPAREN)) {
-                depth++;
-            } else if (check(TokenType::RPAREN)) {
-                if (depth == 0) break;
-                depth--;
-            } else if (depth == 0 && (check(TokenType::SEMICOLON) || check(TokenType::COMMA))) {
-                break;
+    // One `parameter` keyword can introduce several comma-separated names:
+    //   parameter A = 1, B = 2, C = 3;
+    // But in a header parameter list  #(parameter A = 1, parameter B = 2)
+    // the comma belongs to the outer list, not to us — so we only continue
+    // when the comma is followed by another IDENTIFIER (a bare continuation).
+    std::vector<Parameter> params;
+    while (true) {
+        std::string name = expect(TokenType::IDENTIFIER).lexeme;
+        std::string default_val;
+        if (match(TokenType::EQ)) {
+            int depth = 0;
+            while (!check(TokenType::END_OF_FILE)) {
+                if (check(TokenType::LPAREN)) {
+                    depth++;
+                } else if (check(TokenType::RPAREN)) {
+                    if (depth == 0) break;
+                    depth--;
+                } else if (depth == 0 &&
+                           (check(TokenType::SEMICOLON) || check(TokenType::COMMA))) {
+                    break;
+                }
+                default_val += consume().lexeme;
             }
-            default_val += consume().lexeme;
         }
+        params.emplace_back(name, default_val);
+
+        if (!check(TokenType::COMMA))                       break;
+        if (peek(1).type != TokenType::IDENTIFIER)          break;
+        consume(); // ,
     }
+
     match(TokenType::SEMICOLON);
-    return Parameter(name, default_val);
+    return params;
 }
 
 Instance Parser::parseInstance() {
