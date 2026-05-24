@@ -16,6 +16,7 @@
       }
     ],
     "assigns": [],
+    "gate_primitives": [],
     "instances": [],
     "name": "dff",
     "net_decls": [],

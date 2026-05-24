@@ -57,6 +57,7 @@
         }
       }
     ],
+    "gate_primitives": [],
     "instances": [
       {
         "connections": [
@@ -133,10 +134,42 @@
     "net_decls": [
       {"lsb": 0, "msb": 0, "name": "mem_n_we", "scalar": true, "type": "wire"},
       {"lsb": 0, "msb": 0, "name": "mem_nm1_we", "scalar": true, "type": "wire"},
-      {"lsb": 0, "msb": 0, "name": "mem_n_raddr", "scalar": false, "type": "wire"},
-      {"lsb": 0, "msb": 0, "name": "mem_nm1_raddr", "scalar": false, "type": "wire"},
-      {"lsb": 0, "msb": 0, "name": "mem_n_waddr", "scalar": false, "type": "wire"},
-      {"lsb": 0, "msb": 0, "name": "mem_nm1_waddr", "scalar": false, "type": "wire"},
+      {
+        "expr": "$clog2call?-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "mem_n_raddr",
+        "scalar": false,
+        "type": "wire",
+        "unknown": true
+      },
+      {
+        "expr": "$clog2call?-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "mem_nm1_raddr",
+        "scalar": false,
+        "type": "wire",
+        "unknown": true
+      },
+      {
+        "expr": "$clog2call?-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "mem_n_waddr",
+        "scalar": false,
+        "type": "wire",
+        "unknown": true
+      },
+      {
+        "expr": "$clog2call?-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "mem_nm1_waddr",
+        "scalar": false,
+        "type": "wire",
+        "unknown": true
+      },
       {"lsb": 0, "msb": 0, "name": "ctrl_at_bottom", "scalar": true, "type": "wire"},
       {"lsb": 0, "msb": 0, "name": "ctrl_at_top", "scalar": true, "type": "wire"},
       {"lsb": 0, "msb": 0, "name": "ctrl_calc_en", "scalar": true, "type": "wire"},
@@ -146,10 +179,26 @@
       {"lsb": 0, "msb": 17, "name": "u_to_mem_nm1", "scalar": false, "type": "wire"},
       {"lsb": 0, "msb": 17, "name": "u_next", "scalar": false, "type": "wire"},
       {"lsb": 0, "msb": 0, "name": "mem_n_we_muxed", "scalar": true, "type": "wire"},
-      {"lsb": 0, "msb": 0, "name": "mem_n_waddr_muxed", "scalar": false, "type": "wire"},
+      {
+        "expr": "$clog2call?-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "mem_n_waddr_muxed",
+        "scalar": false,
+        "type": "wire",
+        "unknown": true
+      },
       {"lsb": 0, "msb": 17, "name": "mem_n_wdata_muxed", "scalar": false, "type": "wire"},
       {"lsb": 0, "msb": 0, "name": "mem_nm1_we_muxed", "scalar": true, "type": "wire"},
-      {"lsb": 0, "msb": 0, "name": "mem_nm1_waddr_muxed", "scalar": false, "type": "wire"},
+      {
+        "expr": "$clog2call?-1:0",
+        "lsb": 0,
+        "msb": 0,
+        "name": "mem_nm1_waddr_muxed",
+        "scalar": false,
+        "type": "wire",
+        "unknown": true
+      },
       {"lsb": 0, "msb": 17, "name": "mem_nm1_wdata_muxed", "scalar": false, "type": "wire"}
     ],
     "parameters": [{"default": "30", "name": "NUM_ROWS"}],
@@ -184,11 +233,13 @@
       },
       {
         "direction": "input",
+        "expr": "$clog2call?-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "mem_n_waddr_ovrd",
         "scalar": false,
-        "type": "unspecified"
+        "type": "unspecified",
+        "unknown": true
       },
       {
         "direction": "input",
@@ -208,11 +259,13 @@
       },
       {
         "direction": "input",
+        "expr": "$clog2call?-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "mem_nm1_waddr_ovrd",
         "scalar": false,
-        "type": "unspecified"
+        "type": "unspecified",
+        "unknown": true
       },
       {
         "direction": "input",

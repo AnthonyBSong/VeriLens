@@ -39,9 +39,9 @@ public:
         seen.clear();
         for (const auto& n  : net_decls) { if (!seen.insert(n.name).second)          ctx.error("duplicate net '" + n.name + "'", n.line, n.column);              n.validate(ctx);  }
         seen.clear();
-        // Returns false for complex widths we couldn't parse (stored as non-scalar 0:0).
+        // Skip width comparisons for parametric ranges we couldn't reduce to ints.
         auto isKnownWidth = [](const PortWidth& w) {
-            return w.scalar || (w.msb != 0 || w.lsb != 0);
+            return !w.unknown;
         };
         // Look up a signal name in the current module's port/net table.
         auto signalWidth = [&](const std::string& sig) -> const PortWidth* {
@@ -100,6 +100,14 @@ public:
         }
         for (const auto& a  : assigns)       a.validate(ctx);
         for (const auto& ab : always_blocks) ab.validate(ctx);
+
+        // Gate primitive instance names share the same namespace as module instances.
+        for (const auto& g : gate_primitives) {
+            if (!g.instance_name.empty() && !seen.insert(g.instance_name).second)
+                ctx.error("duplicate gate instance '" + g.instance_name + "'",
+                          g.line, g.column);
+        }
+
         return errors;
     }
 };

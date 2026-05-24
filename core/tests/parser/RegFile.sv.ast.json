@@ -31,6 +31,7 @@
       }
     ],
     "assigns": [{"lhs": {"kind": "IDENTIFIER", "name": "rd2"}, "rhs": {"kind": "IDENTIFIER", "name": "rd1"}}],
+    "gate_primitives": [],
     "instances": [],
     "name": "RegFile",
     "net_decls": [],

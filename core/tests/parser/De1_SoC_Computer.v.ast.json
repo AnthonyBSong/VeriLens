@@ -5,6 +5,7 @@
       {"lhs": {"kind": "IDENTIFIER", "name": "HEX4"}, "rhs": {"kind": "LITERAL", "value": "7'b1111111"}},
       {"lhs": {"kind": "IDENTIFIER", "name": "HEX5"}, "rhs": {"kind": "LITERAL", "value": "7'b1111111"}}
     ],
+    "gate_primitives": [],
     "instances": [
       {
         "connections": [{"port": "", "signal": "HEX0"}, {"port": "", "signal": "hex3_hex0[3:0]"}],

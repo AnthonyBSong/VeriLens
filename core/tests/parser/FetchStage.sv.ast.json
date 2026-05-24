@@ -1,1 +1,82 @@
-[]
+[
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {"kind": "IDENTIFIER", "name": "rst"},
+              "else": {
+                "cond": {"kind": "IDENTIFIER", "name": "branch_taken"},
+                "else": {
+                  "cond": {"kind": "UNARY_OP", "op": "!", "operand": {"kind": "IDENTIFIER", "name": "stall"}},
+                  "else": null,
+                  "kind": "IF_STATEMENT",
+                  "then": {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "pc_reg"},
+                    "rhs": {
+                      "kind": "BINARY_OP",
+                      "lhs": {"kind": "IDENTIFIER", "name": "pc_reg"},
+                      "op": "+",
+                      "rhs": {"kind": "LITERAL", "value": "32'd4"}
+                    }
+                  }
+                },
+                "kind": "IF_STATEMENT",
+                "then": {
+                  "kind": "NONBLOCKING_ASSIGN",
+                  "lhs": {"kind": "IDENTIFIER", "name": "pc_reg"},
+                  "rhs": {"kind": "IDENTIFIER", "name": "branch_target"}
+                }
+              },
+              "kind": "IF_STATEMENT",
+              "then": {
+                "kind": "NONBLOCKING_ASSIGN",
+                "lhs": {"kind": "IDENTIFIER", "name": "pc_reg"},
+                "rhs": {"kind": "LITERAL", "value": "32'b0"}
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "posedge clk"
+      }
+    ],
+    "assigns": [{"lhs": {"kind": "IDENTIFIER", "name": "pc"}, "rhs": {"kind": "IDENTIFIER", "name": "pc_reg"}}],
+    "gate_primitives": [],
+    "instances": [
+      {
+        "connections": [
+          {"port": "clk", "signal": "clk"},
+          {"port": "addr", "signal": "pc_reg"},
+          {"port": "instr", "signal": "instr"}
+        ],
+        "instance": "imem",
+        "module": "InstrMemory",
+        "parameters": [".DEPTH(1024)"],
+        "resolved": false
+      }
+    ],
+    "name": "FetchStage",
+    "net_decls": [{"lsb": 0, "msb": 31, "name": "pc_reg", "scalar": false, "type": "logic"}],
+    "parameters": [],
+    "ports": [
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "clk", "scalar": true, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "rst", "scalar": true, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "stall", "scalar": true, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "branch_taken", "scalar": true, "type": "logic"},
+      {
+        "direction": "input",
+        "lsb": 0,
+        "msb": 31,
+        "name": "branch_target",
+        "scalar": false,
+        "type": "logic"
+      },
+      {"direction": "output", "lsb": 0, "msb": 31, "name": "pc", "scalar": false, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 31, "name": "instr", "scalar": false, "type": "logic"}
+    ],
+    "source_file": "FetchStage.sv"
+  }
+]

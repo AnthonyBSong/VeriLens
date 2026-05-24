@@ -59,6 +59,7 @@
       }
     ],
     "assigns": [],
+    "gate_primitives": [],
     "instances": [],
     "name": "traffic_light",
     "net_decls": [],

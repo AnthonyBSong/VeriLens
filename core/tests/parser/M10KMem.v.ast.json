@@ -21,6 +21,7 @@
       }
     ],
     "assigns": [],
+    "gate_primitives": [],
     "instances": [],
     "name": "M10KMem",
     "net_decls": [],
@@ -30,19 +31,23 @@
       {"direction": "input", "lsb": 0, "msb": 0, "name": "we", "scalar": true, "type": "unspecified"},
       {
         "direction": "input",
+        "expr": "$clog2call?-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "write_address",
         "scalar": false,
-        "type": "unspecified"
+        "type": "unspecified",
+        "unknown": true
       },
       {
         "direction": "input",
+        "expr": "$clog2call?-1:0",
         "lsb": 0,
         "msb": 0,
         "name": "read_address",
         "scalar": false,
-        "type": "unspecified"
+        "type": "unspecified",
+        "unknown": true
       },
       {"direction": "input", "lsb": 0, "msb": 17, "name": "d", "scalar": false, "type": "unspecified"},
       {"direction": "output", "lsb": 0, "msb": 17, "name": "q", "scalar": false, "type": "reg"}

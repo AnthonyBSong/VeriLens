@@ -47,6 +47,9 @@ enum class TokenType {
 
     // --- Procedural Blocks ---
     ALWAYS,
+    ALWAYS_FF,
+    ALWAYS_COMB,
+    ALWAYS_LATCH,
     INITIAL,
     BEGIN,
     END,
@@ -122,6 +125,13 @@ enum class TokenType {
     SPECIFY,
     ENDSPECIFY,
     SPECPARAM,
+
+    // --- SystemVerilog Type Constructs ---
+    TYPEDEF,
+    ENUM,
+    STRUCT,
+    UNION,
+    PACKED,
 
     // --- Arithmetic Operators ---
     PLUS,               // +
@@ -222,6 +232,9 @@ inline std::string toString(TokenType t) {
         case TokenType::LOCALPARAM:             return "LOCALPARAM";
         case TokenType::DEFPARAM:               return "DEFPARAM";
         case TokenType::ALWAYS:                 return "ALWAYS";
+        case TokenType::ALWAYS_FF:              return "ALWAYS_FF";
+        case TokenType::ALWAYS_COMB:            return "ALWAYS_COMB";
+        case TokenType::ALWAYS_LATCH:           return "ALWAYS_LATCH";
         case TokenType::INITIAL:                return "INITIAL";
         case TokenType::BEGIN:                  return "BEGIN";
         case TokenType::END:                    return "END";
@@ -279,6 +292,11 @@ inline std::string toString(TokenType t) {
         case TokenType::SPECIFY:                return "SPECIFY";
         case TokenType::ENDSPECIFY:             return "ENDSPECIFY";
         case TokenType::SPECPARAM:              return "SPECPARAM";
+        case TokenType::TYPEDEF:                return "TYPEDEF";
+        case TokenType::ENUM:                   return "ENUM";
+        case TokenType::STRUCT:                 return "STRUCT";
+        case TokenType::UNION:                  return "UNION";
+        case TokenType::PACKED:                 return "PACKED";
         case TokenType::PLUS:                   return "PLUS";
         case TokenType::MINUS:                  return "MINUS";
         case TokenType::STAR:                   return "STAR";

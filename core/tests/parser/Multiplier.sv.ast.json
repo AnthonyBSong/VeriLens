@@ -126,6 +126,7 @@
       }
     ],
     "assigns": [],
+    "gate_primitives": [],
     "instances": [],
     "name": "Multiplier",
     "net_decls": [

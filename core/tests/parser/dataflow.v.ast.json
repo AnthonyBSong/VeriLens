@@ -12,6 +12,7 @@
         }
       }
     ],
+    "gate_primitives": [],
     "instances": [],
     "name": "adder",
     "net_decls": [],

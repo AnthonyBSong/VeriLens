@@ -16,7 +16,9 @@ KEYWORD_TYPES = {
     "reg": "REG", "logic": "LOGIC", "integer": "INTEGER", "real": "REAL",
     "time": "TIME", "realtime": "REALTIME",
     "parameter": "PARAMETER", "localparam": "LOCALPARAM", "defparam": "DEFPARAM",
-    "always": "ALWAYS", "initial": "INITIAL", "begin": "BEGIN", "end": "END",
+    "always": "ALWAYS", "always_ff": "ALWAYS_FF", "always_comb": "ALWAYS_COMB",
+    "always_latch": "ALWAYS_LATCH",
+    "initial": "INITIAL", "begin": "BEGIN", "end": "END",
     "if": "IF", "else": "ELSE", "case": "CASE", "casex": "CASEX",
     "casez": "CASEZ", "endcase": "ENDCASE", "default": "DEFAULT",
     "for": "FOR", "while": "WHILE", "repeat": "REPEAT", "forever": "FOREVER",
@@ -33,6 +35,8 @@ KEYWORD_TYPES = {
     "highz0": "HIGHZ0", "highz1": "HIGHZ1", "pull0": "PULL0", "pull1": "PULL1",
     "signed": "SIGNED", "unsigned": "UNSIGNED",
     "specify": "SPECIFY", "endspecify": "ENDSPECIFY", "specparam": "SPECPARAM",
+    "typedef": "TYPEDEF", "enum": "ENUM", "struct": "STRUCT", "union": "UNION",
+    "packed": "PACKED",
 }
 
 THREE_MAP = {
@@ -112,6 +116,14 @@ def tokenize(src):
             while j < n and (src[j].isalnum() or src[j] == '_'): j += 1
             word = src[i:j]
             tokens.append({"type": KEYWORD_TYPES.get(word, "IDENTIFIER"), "lexeme": word})
+            i = j; continue
+        # Unsized literal: 'b1010, 'h1F, '0, '1, 'x, 'z
+        if src[i] == "'" and i + 1 < n and (
+            src[i+1].lower() in "bodhxz" or src[i+1] in "01"
+        ):
+            j = i + 2
+            while j < n and (src[j].isalnum() or src[j] == '_'): j += 1
+            tokens.append({"type": "INTEGER_LITERAL", "lexeme": src[i:j]})
             i = j; continue
         if src[i:i+3] in THREE_MAP:
             tokens.append({"type": THREE_MAP[src[i:i+3]], "lexeme": src[i:i+3]}); i += 3

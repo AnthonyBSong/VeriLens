@@ -230,6 +230,7 @@
       }
     ],
     "assigns": [],
+    "gate_primitives": [],
     "instances": [],
     "name": "ControlUnit",
     "net_decls": [],

@@ -12,6 +12,7 @@
         }
       }
     ],
+    "gate_primitives": [],
     "instances": [],
     "name": "and_gate",
     "net_decls": [{"lsb": 0, "msb": 0, "name": "y", "scalar": true, "type": "wire"}],

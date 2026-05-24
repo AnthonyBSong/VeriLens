@@ -139,6 +139,7 @@
       }
     ],
     "assigns": [],
+    "gate_primitives": [],
     "instances": [],
     "name": "ForwardingUnit",
     "net_decls": [],

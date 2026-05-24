@@ -1,0 +1,28 @@
+[
+  {
+    "always_blocks": [],
+    "assigns": [],
+    "gate_primitives": [
+      {"instance": "g1", "ports": ["t1", "a", "b"], "type": "and"},
+      {"instance": "g2", "ports": ["t2", "a", "b"], "type": "or"},
+      {"instance": "g3", "ports": ["y1", "t1", "t2"], "type": "nand"},
+      {"instance": "g4", "ports": ["y2", "t1", "t2"], "type": "nand"},
+      {"instance": "", "ports": ["y3", "a"], "type": "not"}
+    ],
+    "instances": [],
+    "name": "gate_demo",
+    "net_decls": [
+      {"lsb": 0, "msb": 0, "name": "t1", "scalar": true, "type": "wire"},
+      {"lsb": 0, "msb": 0, "name": "t2", "scalar": true, "type": "wire"}
+    ],
+    "parameters": [],
+    "ports": [
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "a", "scalar": true, "type": "unspecified"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "b", "scalar": true, "type": "unspecified"},
+      {"direction": "output", "lsb": 0, "msb": 0, "name": "y1", "scalar": true, "type": "unspecified"},
+      {"direction": "output", "lsb": 0, "msb": 0, "name": "y2", "scalar": true, "type": "unspecified"},
+      {"direction": "output", "lsb": 0, "msb": 0, "name": "y3", "scalar": true, "type": "unspecified"}
+    ],
+    "source_file": "gate_primitives.v"
+  }
+]

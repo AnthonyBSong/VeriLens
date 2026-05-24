@@ -1,1 +1,223 @@
-[]
+[
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "expr": {"kind": "IDENTIFIER", "name": "funct3"},
+              "items": [
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "rd"},
+                    "rhs": {
+                      "kind": "CONCAT",
+                      "parts": [
+                        {
+                          "count": {"kind": "LITERAL", "value": "24"},
+                          "kind": "REPLICATION",
+                          "value": {
+                            "base": {"kind": "IDENTIFIER", "name": "raw"},
+                            "index": {"kind": "LITERAL", "value": "7"},
+                            "kind": "BIT_SELECT"
+                          }
+                        },
+                        {
+                          "base": {"kind": "IDENTIFIER", "name": "raw"},
+                          "kind": "PART_SELECT",
+                          "lsb": {"kind": "LITERAL", "value": "0"},
+                          "msb": {"kind": "LITERAL", "value": "7"}
+                        }
+                      ]
+                    }
+                  },
+                  "patterns": [{"kind": "LITERAL", "value": "3'b000"}]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "rd"},
+                    "rhs": {
+                      "kind": "CONCAT",
+                      "parts": [
+                        {
+                          "count": {"kind": "LITERAL", "value": "16"},
+                          "kind": "REPLICATION",
+                          "value": {
+                            "base": {"kind": "IDENTIFIER", "name": "raw"},
+                            "index": {"kind": "LITERAL", "value": "15"},
+                            "kind": "BIT_SELECT"
+                          }
+                        },
+                        {
+                          "base": {"kind": "IDENTIFIER", "name": "raw"},
+                          "kind": "PART_SELECT",
+                          "lsb": {"kind": "LITERAL", "value": "0"},
+                          "msb": {"kind": "LITERAL", "value": "15"}
+                        }
+                      ]
+                    }
+                  },
+                  "patterns": [{"kind": "LITERAL", "value": "3'b001"}]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "rd"},
+                    "rhs": {"kind": "IDENTIFIER", "name": "raw"}
+                  },
+                  "patterns": [{"kind": "LITERAL", "value": "3'b010"}]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "rd"},
+                    "rhs": {
+                      "kind": "CONCAT",
+                      "parts": [
+                        {"kind": "LITERAL", "value": "24'b0"},
+                        {
+                          "base": {"kind": "IDENTIFIER", "name": "raw"},
+                          "kind": "PART_SELECT",
+                          "lsb": {"kind": "LITERAL", "value": "0"},
+                          "msb": {"kind": "LITERAL", "value": "7"}
+                        }
+                      ]
+                    }
+                  },
+                  "patterns": [{"kind": "LITERAL", "value": "3'b100"}]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "rd"},
+                    "rhs": {
+                      "kind": "CONCAT",
+                      "parts": [
+                        {"kind": "LITERAL", "value": "16'b0"},
+                        {
+                          "base": {"kind": "IDENTIFIER", "name": "raw"},
+                          "kind": "PART_SELECT",
+                          "lsb": {"kind": "LITERAL", "value": "0"},
+                          "msb": {"kind": "LITERAL", "value": "15"}
+                        }
+                      ]
+                    }
+                  },
+                  "patterns": [{"kind": "LITERAL", "value": "3'b101"}]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "rd"},
+                    "rhs": {"kind": "IDENTIFIER", "name": "raw"}
+                  },
+                  "patterns": []
+                }
+              ],
+              "kind": "CASE_STATEMENT",
+              "variant": "case"
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "*"
+      },
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {"kind": "IDENTIFIER", "name": "we"},
+              "else": null,
+              "kind": "IF_STATEMENT",
+              "then": {
+                "body": [
+                  {
+                    "expr": {"kind": "IDENTIFIER", "name": "funct3"},
+                    "items": [
+                      {"body": null, "patterns": [{"kind": "LITERAL", "value": "3'b000"}]},
+                      {"body": null, "patterns": [{"kind": "LITERAL", "value": "3'b001"}]},
+                      {
+                        "body": {
+                          "kind": "NONBLOCKING_ASSIGN",
+                          "lhs": {
+                            "base": {"kind": "IDENTIFIER", "name": "mem"},
+                            "index": {
+                              "base": {"kind": "IDENTIFIER", "name": "addr"},
+                              "kind": "PART_SELECT",
+                              "lsb": {"kind": "LITERAL", "value": "2"},
+                              "msb": {"kind": "LITERAL", "value": "31"}
+                            },
+                            "kind": "BIT_SELECT"
+                          },
+                          "rhs": {"kind": "IDENTIFIER", "name": "wd"}
+                        },
+                        "patterns": [{"kind": "LITERAL", "value": "3'b010"}]
+                      },
+                      {
+                        "body": {
+                          "kind": "NONBLOCKING_ASSIGN",
+                          "lhs": {
+                            "base": {"kind": "IDENTIFIER", "name": "mem"},
+                            "index": {
+                              "base": {"kind": "IDENTIFIER", "name": "addr"},
+                              "kind": "PART_SELECT",
+                              "lsb": {"kind": "LITERAL", "value": "2"},
+                              "msb": {"kind": "LITERAL", "value": "31"}
+                            },
+                            "kind": "BIT_SELECT"
+                          },
+                          "rhs": {"kind": "IDENTIFIER", "name": "wd"}
+                        },
+                        "patterns": []
+                      }
+                    ],
+                    "kind": "CASE_STATEMENT",
+                    "variant": "case"
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "sensitivity": "posedge clk"
+      }
+    ],
+    "assigns": [
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "raw"},
+        "rhs": {
+          "base": {"kind": "IDENTIFIER", "name": "mem"},
+          "index": {
+            "base": {"kind": "IDENTIFIER", "name": "addr"},
+            "kind": "PART_SELECT",
+            "lsb": {"kind": "LITERAL", "value": "2"},
+            "msb": {"kind": "LITERAL", "value": "31"}
+          },
+          "kind": "BIT_SELECT"
+        }
+      }
+    ],
+    "gate_primitives": [],
+    "instances": [],
+    "name": "DataMemory",
+    "net_decls": [
+      {"lsb": 0, "msb": 31, "name": "mem", "scalar": false, "type": "logic"},
+      {"lsb": 0, "msb": 31, "name": "raw", "scalar": false, "type": "logic"}
+    ],
+    "parameters": [{"default": "1024", "name": "DEPTH"}],
+    "ports": [
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "clk", "scalar": true, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "we", "scalar": true, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 0, "name": "re", "scalar": true, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 2, "name": "funct3", "scalar": false, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 31, "name": "addr", "scalar": false, "type": "logic"},
+      {"direction": "input", "lsb": 0, "msb": 31, "name": "wd", "scalar": false, "type": "logic"},
+      {"direction": "output", "lsb": 0, "msb": 31, "name": "rd", "scalar": false, "type": "logic"}
+    ],
+    "source_file": "DataMemory.sv"
+  }
+]

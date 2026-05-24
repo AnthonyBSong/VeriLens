@@ -75,6 +75,7 @@
       }
     ],
     "assigns": [],
+    "gate_primitives": [],
     "instances": [],
     "name": "PipelineReg_MEM_WB",
     "net_decls": [],

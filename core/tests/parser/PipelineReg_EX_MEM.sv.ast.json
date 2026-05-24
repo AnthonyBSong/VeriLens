@@ -105,6 +105,7 @@
       }
     ],
     "assigns": [],
+    "gate_primitives": [],
     "instances": [],
     "name": "PipelineReg_EX_MEM",
     "net_decls": [],

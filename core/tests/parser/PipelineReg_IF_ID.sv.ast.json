@@ -55,6 +55,7 @@
       }
     ],
     "assigns": [],
+    "gate_primitives": [],
     "instances": [],
     "name": "PipelineReg_IF_ID",
     "net_decls": [],
