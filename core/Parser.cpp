@@ -72,7 +72,11 @@ bool Parser::match(TokenType type) {
 // error recovery
 
 void Parser::skipToSemicolon() {
-    while (!check(TokenType::SEMICOLON) && !check(TokenType::END_OF_FILE))
+    // Stop at SEMICOLON (the normal terminator) or at module/file boundaries so
+    // a malformed declaration cannot accidentally swallow the rest of a module.
+    while (!check(TokenType::SEMICOLON)  &&
+           !check(TokenType::ENDMODULE)  &&
+           !check(TokenType::END_OF_FILE))
         consume();
 }
 
@@ -351,7 +355,10 @@ void Parser::parseModuleHeader(Module& mod) {
     mod.name = expect(TokenType::IDENTIFIER).lexeme;
     if (match(TokenType::HASH))
         parseParameterList(mod);
-    parsePortList(mod);
+    // Port list is optional: both `module foo;` and `module foo(a,b);` are legal.
+    // Without parens the module has no external ports.
+    if (check(TokenType::LPAREN))
+        parsePortList(mod);
     expect(TokenType::SEMICOLON);
 }
 
@@ -402,9 +409,18 @@ void Parser::parsePortList(Module& mod) {
 
             if (check(TokenType::SIGNED)) consume();
 
-            // User-defined type: two consecutive IDENTIFIERs — first is the typedef name.
-            if (check(TokenType::IDENTIFIER) && peek(1).type == TokenType::IDENTIFIER)
+            // User-defined type. Two shapes:
+            //   1) Plain typedef:        IDENTIFIER IDENTIFIER             (type name)
+            //   2) Package-scoped type:  IDENTIFIER :: IDENTIFIER IDENTIFIER
+            // In both cases the trailing IDENTIFIER is the port name.
+            if (check(TokenType::IDENTIFIER)               &&
+                peek(1).type == TokenType::COLON_COLON     &&
+                peek(2).type == TokenType::IDENTIFIER      &&
+                peek(3).type == TokenType::IDENTIFIER) {
+                consume(); consume(); consume(); // pkg :: type
+            } else if (check(TokenType::IDENTIFIER) && peek(1).type == TokenType::IDENTIFIER) {
                 consume();
+            }
 
             curWidth = PortWidth();
             if (check(TokenType::LBRACKET)) curWidth = parseWidth();
@@ -500,6 +516,37 @@ std::vector<NetDecl> Parser::parseNetDeclaration() {
 
 Parameter Parser::parseParameterDeclaration() {
     consume(); // PARAMETER or LOCALPARAM
+
+    // Skip optional type prefix.  Verilog/SV allow several shapes between the
+    // `parameter` keyword and the name:
+    //   parameter signed NAME = ...
+    //   parameter int NAME = ...           (SV built-in types — `int`, `bit`, etc. lex as IDENTIFIER)
+    //   parameter logic [WIDTH-1:0] NAME = ...
+    //   parameter MY_TYPE_T NAME = ...     (user typedef)
+    // The actual name is the IDENTIFIER directly followed by `=`, `,`, `;`, or `)`.
+    auto isTypeKeyword = [](TokenType t) {
+        return t == TokenType::SIGNED   || t == TokenType::UNSIGNED ||
+               t == TokenType::LOGIC    || t == TokenType::REG      ||
+               t == TokenType::WIRE     || t == TokenType::INTEGER  ||
+               t == TokenType::REAL     || t == TokenType::TIME     ||
+               t == TokenType::REALTIME;
+    };
+    while (isTypeKeyword(current().type)) consume();
+    // User typedef name: leading IDENTIFIER followed by another IDENTIFIER.
+    if (current().type == TokenType::IDENTIFIER &&
+        peek(1).type    == TokenType::IDENTIFIER)
+        consume();
+    // Optional packed range [msb:lsb] — possibly multiple dimensions.
+    while (check(TokenType::LBRACKET)) {
+        consume();
+        int depth = 1;
+        while (depth > 0 && !check(TokenType::END_OF_FILE)) {
+            if      (check(TokenType::LBRACKET)) depth++;
+            else if (check(TokenType::RBRACKET)) depth--;
+            consume();
+        }
+    }
+
     std::string name = expect(TokenType::IDENTIFIER).lexeme;
     std::string default_val;
     if (match(TokenType::EQ)) {
@@ -554,7 +601,10 @@ Instance Parser::parseInstance() {
         int pline = current().line, pcol = current().column;
         if (match(TokenType::DOT)) {
             if (match(TokenType::STAR)) {
-                // .* wildcard — connect all matching ports implicitly, skip
+                // .* wildcard — connect all matching ports implicitly. Flag the
+                // instance so the validator doesn't complain about every output
+                // looking disconnected.
+                inst.wildcard = true;
             } else {
             std::string port_name = expect(TokenType::IDENTIFIER).lexeme;
             expect(TokenType::LPAREN);
@@ -1196,6 +1246,7 @@ static json moduleToJson(const Module& mod) {
             {"module",      inst.module_name},
             {"instance",    inst.instance_name},
             {"resolved",    inst.resolved},
+            {"wildcard",    inst.wildcard},
             {"parameters",  inst.parameters},
             {"connections", connections}
         });

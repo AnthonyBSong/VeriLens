@@ -179,7 +179,8 @@
         "parameters": [
           "1"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -245,7 +246,8 @@
         "parameters": [
           "1"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -347,7 +349,8 @@
         "parameters": [
           "1"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       }
     ],
     "name": "lab4_sys_SingleCoreSys",

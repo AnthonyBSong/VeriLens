@@ -903,7 +903,8 @@
           ".p_num_entries(16)",
           ".p_reset_value(0)"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -943,7 +944,8 @@
           ".p_num_entries(16)",
           ".p_reset_value(0)"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       }
     ],
     "name": "lab3_mem_CacheBaseCtrl",

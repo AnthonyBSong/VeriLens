@@ -111,7 +111,8 @@
         "parameters": [
           ".DEPTH(1024)"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       }
     ],
     "name": "FetchStage",

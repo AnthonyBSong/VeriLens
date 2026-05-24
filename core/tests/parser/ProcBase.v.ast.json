@@ -151,7 +151,8 @@
           "$bits(mem_req_4B_t)",
           "2"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -197,7 +198,8 @@
         "parameters": [
           "$bits(mem_resp_4B_t)"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -245,7 +247,8 @@
           "$bits(mem_req_4B_t)",
           "1"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -293,7 +296,8 @@
           "32",
           "1"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -349,7 +353,8 @@
         "instance": "ctrl",
         "module": "lab2_proc_ProcBaseCtrl",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": true
       },
       {
         "connections": [
@@ -391,7 +396,8 @@
         "parameters": [
           ".p_num_cores(p_num_cores)"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": true
       },
       {
         "connections": [
@@ -419,7 +425,8 @@
         "instance": "imem_reqstream_trace",
         "module": "vc_MemReqMsg4BTrace",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -447,7 +454,8 @@
         "instance": "dmem_reqstream_trace",
         "module": "vc_MemReqMsg4BTrace",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -475,7 +483,8 @@
         "instance": "imem_respstream_trace",
         "module": "vc_MemRespMsg4BTrace",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -503,7 +512,8 @@
         "instance": "dmem_respstream_trace",
         "module": "vc_MemRespMsg4BTrace",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       }
     ],
     "name": "lab2_proc_ProcBase",

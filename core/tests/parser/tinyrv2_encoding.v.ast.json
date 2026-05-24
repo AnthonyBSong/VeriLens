@@ -306,7 +306,8 @@
         "instance": "tinyrv2",
         "module": "lab2_proc_tinyrv2_encoding_InstTasks",
         "parameters": [],
-        "resolved": true
+        "resolved": true,
+        "wildcard": false
       }
     ],
     "name": "lab2_proc_tinyrv2_encoding_InstTrace",

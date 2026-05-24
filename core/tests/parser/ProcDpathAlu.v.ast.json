@@ -508,7 +508,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       }
     ],
     "name": "lab2_proc_ProcDpathAlu",

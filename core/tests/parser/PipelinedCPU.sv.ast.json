@@ -30,7 +30,8 @@
         "instance": "hazard",
         "module": "HazardDetect",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -70,7 +71,8 @@
         "instance": "fwd",
         "module": "ForwardingUnit",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -106,7 +108,8 @@
         "instance": "fetch",
         "module": "FetchStage",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -146,7 +149,8 @@
         "instance": "if_id",
         "module": "PipelineReg_IF_ID",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -250,7 +254,8 @@
         "instance": "decode",
         "module": "DecodeStage",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -390,7 +395,8 @@
         "instance": "id_ex",
         "module": "PipelineReg_ID_EX",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -478,7 +484,8 @@
         "instance": "execute",
         "module": "ExecuteStage",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -558,7 +565,8 @@
         "instance": "ex_mem",
         "module": "PipelineReg_EX_MEM",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -594,7 +602,8 @@
         "instance": "memory",
         "module": "MemoryStage",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -650,7 +659,8 @@
         "instance": "mem_wb",
         "module": "PipelineReg_MEM_WB",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -674,7 +684,8 @@
         "instance": "writeback",
         "module": "WritebackStage",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       }
     ],
     "name": "PipelinedCPU",

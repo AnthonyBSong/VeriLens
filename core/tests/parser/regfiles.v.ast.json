@@ -893,7 +893,8 @@
           ".p_data_nbits(32)",
           ".p_num_entries(32)"
         ],
-        "resolved": true
+        "resolved": true,
+        "wildcard": false
       }
     ],
     "name": "vc_Regfile_2r1w_zero",

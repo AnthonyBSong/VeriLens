@@ -127,7 +127,8 @@
           "32",
           "c_reset_vector-32'd4"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -146,7 +147,8 @@
           "32",
           "4"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -186,7 +188,8 @@
         "instance": "btb",
         "module": "lab2_proc_BranchTargetBuffer",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -212,7 +215,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -246,7 +250,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -276,7 +281,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -307,7 +313,8 @@
           "32",
           "c_reset_inst"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -347,7 +354,8 @@
         "instance": "inst_unpack",
         "module": "lab2_proc_tinyrv2_encoding_InstUnpack",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -367,7 +375,8 @@
         "instance": "imm_gen_D",
         "module": "lab2_proc_ProcDpathImmGen",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -411,7 +420,8 @@
         "instance": "rf",
         "module": "vc_Regfile_2r1w_zero",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -441,7 +451,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -475,7 +486,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -509,7 +521,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -535,7 +548,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -565,7 +579,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -595,7 +610,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -635,7 +651,8 @@
         "instance": "multiplier",
         "module": "lab1_imul_IntMulAlt",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -666,7 +683,8 @@
           "32",
           "0"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -697,7 +715,8 @@
           "32",
           "0"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -728,7 +747,8 @@
           "32",
           "0"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -759,7 +779,8 @@
           "32",
           "0"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -785,7 +806,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -816,7 +838,8 @@
           "32",
           "0"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -852,7 +875,8 @@
         "instance": "alu",
         "module": "lab2_proc_ProcDpathAlu",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -871,7 +895,8 @@
           "32",
           "4"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -897,7 +922,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -927,7 +953,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -958,7 +985,8 @@
           "32",
           "0"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -984,7 +1012,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -1015,7 +1044,8 @@
           "32",
           "0"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -1046,7 +1076,8 @@
           "32",
           "0"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       }
     ],
     "name": "lab2_proc_ProcAltDpath",

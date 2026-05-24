@@ -247,7 +247,8 @@
         "parameters": [
           "8"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -277,7 +278,8 @@
         "parameters": [
           "4"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -307,7 +309,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -337,7 +340,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -367,7 +371,8 @@
         "parameters": [
           "128"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -393,7 +398,8 @@
         "parameters": [
           "128"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -409,7 +415,8 @@
         "instance": "wben_dec",
         "module": "lab3_mem_Wben_Dec",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -435,7 +442,8 @@
         "parameters": [
           "16"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -478,7 +486,8 @@
           ".p_data_nbits(24-c_bank_bits)",
           ".p_num_entries(16)"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -525,7 +534,8 @@
           ".p_data_nbits(128)",
           ".p_num_entries(16)"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -547,7 +557,8 @@
         "parameters": [
           "24-c_bank_bits"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -574,7 +585,8 @@
           "p_num_banks",
           "4"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -604,7 +616,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -631,7 +644,8 @@
           "p_num_banks",
           "4"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -657,7 +671,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -683,7 +698,8 @@
         "parameters": [
           "128"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -713,7 +729,8 @@
         "parameters": [
           "128"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -747,7 +764,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       }
     ],
     "name": "lab3_mem_CacheBaseDpath",

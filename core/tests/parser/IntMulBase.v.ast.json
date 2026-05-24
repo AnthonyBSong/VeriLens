@@ -98,7 +98,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -124,7 +125,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -147,7 +149,8 @@
           "32",
           "1"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -173,7 +176,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -199,7 +203,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -222,7 +227,8 @@
           "32",
           "1"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -248,7 +254,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -278,7 +285,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -300,7 +308,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -326,7 +335,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       }
     ],
     "name": "lab1_imul_IntMulBaseDpath",
@@ -824,7 +834,8 @@
           "0",
           "31"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       }
     ],
     "name": "lab1_imul_IntMulBaseCtrl",
@@ -983,14 +994,16 @@
         "instance": "ctrl",
         "module": "lab1_imul_IntMulBaseCtrl",
         "parameters": [],
-        "resolved": true
+        "resolved": true,
+        "wildcard": true
       },
       {
         "connections": [],
         "instance": "dpath",
         "module": "lab1_imul_IntMulBaseDpath",
         "parameters": [],
-        "resolved": true
+        "resolved": true,
+        "wildcard": true
       }
     ],
     "name": "lab1_imul_IntMulBase",

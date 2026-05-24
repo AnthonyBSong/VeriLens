@@ -3056,7 +3056,8 @@
         "instance": "inst_unpack",
         "module": "lab2_proc_tinyrv2_encoding_InstUnpack",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       }
     ],
     "name": "lab2_proc_ProcBaseCtrl",

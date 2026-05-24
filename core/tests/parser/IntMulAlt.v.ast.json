@@ -116,7 +116,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -142,7 +143,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -158,7 +160,8 @@
         "instance": "encoder",
         "module": "lab1_imul_PriorityEncoder",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -178,7 +181,8 @@
         "instance": "b_shift",
         "module": "lab1_imul_EncodedRightShifter",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -204,7 +208,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -230,7 +235,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -250,7 +256,8 @@
         "instance": "a_shift",
         "module": "lab1_imul_EncodedLeftShifter",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -276,7 +283,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -306,7 +314,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -328,7 +337,8 @@
         "parameters": [
           "32"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       }
     ],
     "name": "lab1_imul_IntMulAltDpath",
@@ -902,14 +912,16 @@
         "instance": "ctrl",
         "module": "lab1_imul_IntMulAltCtrl",
         "parameters": [],
-        "resolved": true
+        "resolved": true,
+        "wildcard": true
       },
       {
         "connections": [],
         "instance": "dpath",
         "module": "lab1_imul_IntMulAltDpath",
         "parameters": [],
-        "resolved": true
+        "resolved": true,
+        "wildcard": true
       }
     ],
     "name": "lab1_imul_IntMulAlt",

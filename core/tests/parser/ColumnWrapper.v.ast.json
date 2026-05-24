@@ -181,7 +181,8 @@
         "parameters": [
           "NUM_ROWS"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -247,7 +248,8 @@
         "parameters": [
           "NUM_ROWS"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -281,7 +283,8 @@
         "parameters": [
           "NUM_ROWS"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -315,7 +318,8 @@
         "parameters": [
           "NUM_ROWS"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       }
     ],
     "name": "ColumnWrapper",

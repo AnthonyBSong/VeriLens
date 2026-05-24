@@ -169,7 +169,8 @@
         "instance": "rf",
         "module": "RegFile",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -189,7 +190,8 @@
         "instance": "ie",
         "module": "ImmExtend",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -245,7 +247,8 @@
         "instance": "cu",
         "module": "ControlUnit",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       }
     ],
     "name": "DecodeStage",

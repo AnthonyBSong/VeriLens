@@ -44,7 +44,8 @@
         "parameters": [
           ".p_num_banks(p_num_banks)"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": true
       },
       {
         "connections": [
@@ -70,7 +71,8 @@
         "parameters": [
           ".p_num_banks(p_num_banks)"
         ],
-        "resolved": false
+        "resolved": false,
+        "wildcard": true
       },
       {
         "connections": [
@@ -98,7 +100,8 @@
         "instance": "proc2cache_reqstream_msg_trace",
         "module": "vc_MemReqMsg4BTrace",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -126,7 +129,8 @@
         "instance": "proc2cache_respstream_trace",
         "module": "vc_MemRespMsg4BTrace",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -154,7 +158,8 @@
         "instance": "cache2mem_reqstream_msg_trace",
         "module": "vc_MemReqMsg16BTrace",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -182,7 +187,8 @@
         "instance": "cache2mem_respstream_msg_trace",
         "module": "vc_MemRespMsg16BTrace",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       }
     ],
     "name": "lab3_mem_CacheBase",

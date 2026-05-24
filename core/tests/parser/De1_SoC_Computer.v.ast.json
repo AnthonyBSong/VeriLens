@@ -39,7 +39,8 @@
         "instance": "Digit0",
         "module": "HexDigit",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -55,7 +56,8 @@
         "instance": "Digit1",
         "module": "HexDigit",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -71,7 +73,8 @@
         "instance": "Digit2",
         "module": "HexDigit",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -87,7 +90,8 @@
         "instance": "Digit3",
         "module": "HexDigit",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -139,7 +143,8 @@
         "instance": "DUT",
         "module": "Mandelbrot_v2",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       },
       {
         "connections": [
@@ -519,7 +524,8 @@
         "instance": "The_System",
         "module": "Computer_System",
         "parameters": [],
-        "resolved": false
+        "resolved": false,
+        "wildcard": false
       }
     ],
     "name": "DE1_SoC_Computer",
