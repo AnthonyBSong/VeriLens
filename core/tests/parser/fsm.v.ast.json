@@ -55,20 +55,48 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 6,
         "sensitivity": "posedge clk"
       }
     ],
     "assigns": [],
+    "end_line": 17,
     "gate_primitives": [],
     "instances": [],
+    "line": 1,
     "name": "traffic_light",
     "net_decls": [],
     "parameters": [],
     "ports": [
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "clk", "scalar": true, "type": "unspecified"},
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "rst", "scalar": true, "type": "unspecified"},
-      {"direction": "output", "lsb": 0, "msb": 1, "name": "state", "scalar": false, "type": "reg"}
+      {
+        "direction": "input",
+        "line": 2,
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "line": 3,
+        "lsb": 0,
+        "msb": 0,
+        "name": "rst",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "line": 4,
+        "lsb": 0,
+        "msb": 1,
+        "name": "state",
+        "scalar": false,
+        "type": "reg"
+      }
     ],
+    "pragmas": [],
     "source_file": "fsm.v"
   }
 ]

@@ -2,15 +2,26 @@
   {
     "always_blocks": [],
     "assigns": [],
+    "end_line": 5,
     "gate_primitives": [],
     "instances": [],
+    "line": 1,
     "name": "counter",
     "net_decls": [],
     "parameters": [],
     "ports": [
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "clk", "scalar": true, "type": "unspecified"},
-      {"direction": "output", "lsb": 0, "msb": 7, "name": "q", "scalar": false, "type": "reg"}
+      {
+        "direction": "input",
+        "line": 2,
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {"direction": "output", "line": 3, "lsb": 0, "msb": 7, "name": "q", "scalar": false, "type": "reg"}
     ],
+    "pragmas": [],
     "source_file": "module_no_content.v"
   }
 ]

@@ -16,20 +16,48 @@
             "kind": "BIT_SELECT"
           }
         },
+        "line": 10,
         "sensitivity": "posedge clk"
       }
     ],
     "assigns": [],
+    "end_line": 12,
     "gate_primitives": [],
     "instances": [],
+    "line": 2,
     "name": "InstrMemory",
-    "net_decls": [{"lsb": 0, "msb": 31, "name": "mem", "scalar": false, "type": "logic"}],
+    "net_decls": [{"line": 9, "lsb": 0, "msb": 31, "name": "mem", "scalar": false, "type": "logic"}],
     "parameters": [{"default": "1024", "name": "DEPTH"}],
     "ports": [
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "clk", "scalar": true, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 31, "name": "addr", "scalar": false, "type": "logic"},
-      {"direction": "output", "lsb": 0, "msb": 31, "name": "instr", "scalar": false, "type": "logic"}
+      {
+        "direction": "input",
+        "line": 5,
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 6,
+        "lsb": 0,
+        "msb": 31,
+        "name": "addr",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 7,
+        "lsb": 0,
+        "msb": 31,
+        "name": "instr",
+        "scalar": false,
+        "type": "logic"
+      }
     ],
+    "pragmas": [],
     "source_file": "InstrMemory.sv"
   }
 ]

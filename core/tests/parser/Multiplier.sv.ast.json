@@ -122,28 +122,88 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 15,
         "sensitivity": "posedge clk"
       }
     ],
     "assigns": [],
+    "end_line": 31,
     "gate_primitives": [],
     "instances": [],
+    "line": 2,
     "name": "Multiplier",
     "net_decls": [
-      {"lsb": 0, "msb": 63, "name": "acc", "scalar": false, "type": "logic"},
-      {"lsb": 0, "msb": 31, "name": "shifter", "scalar": false, "type": "logic"},
-      {"lsb": 0, "msb": 5, "name": "count", "scalar": false, "type": "logic"}
+      {"line": 11, "lsb": 0, "msb": 63, "name": "acc", "scalar": false, "type": "logic"},
+      {"line": 12, "lsb": 0, "msb": 31, "name": "shifter", "scalar": false, "type": "logic"},
+      {"line": 13, "lsb": 0, "msb": 5, "name": "count", "scalar": false, "type": "logic"}
     ],
     "parameters": [],
     "ports": [
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "clk", "scalar": true, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "rst", "scalar": true, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "start", "scalar": true, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 31, "name": "a", "scalar": false, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 31, "name": "b", "scalar": false, "type": "logic"},
-      {"direction": "output", "lsb": 0, "msb": 63, "name": "product", "scalar": false, "type": "logic"},
-      {"direction": "output", "lsb": 0, "msb": 0, "name": "done", "scalar": true, "type": "logic"}
+      {
+        "direction": "input",
+        "line": 3,
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 4,
+        "lsb": 0,
+        "msb": 0,
+        "name": "rst",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 5,
+        "lsb": 0,
+        "msb": 0,
+        "name": "start",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 6,
+        "lsb": 0,
+        "msb": 31,
+        "name": "a",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 7,
+        "lsb": 0,
+        "msb": 31,
+        "name": "b",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 8,
+        "lsb": 0,
+        "msb": 63,
+        "name": "product",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 9,
+        "lsb": 0,
+        "msb": 0,
+        "name": "done",
+        "scalar": true,
+        "type": "logic"
+      }
     ],
+    "pragmas": [],
     "source_file": "Multiplier.sv"
   }
 ]

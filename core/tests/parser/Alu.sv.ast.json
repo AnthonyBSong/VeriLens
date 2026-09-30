@@ -192,12 +192,14 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 9,
         "sensitivity": "*"
       }
     ],
     "assigns": [
       {
         "lhs": {"kind": "IDENTIFIER", "name": "zero"},
+        "line": 24,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {"kind": "IDENTIFIER", "name": "result"},
@@ -206,18 +208,61 @@
         }
       }
     ],
+    "end_line": 25,
     "gate_primitives": [],
     "instances": [],
+    "line": 2,
     "name": "Alu",
     "net_decls": [],
     "parameters": [],
     "ports": [
-      {"direction": "input", "lsb": 0, "msb": 31, "name": "a", "scalar": false, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 31, "name": "b", "scalar": false, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 3, "name": "op", "scalar": false, "type": "logic"},
-      {"direction": "output", "lsb": 0, "msb": 31, "name": "result", "scalar": false, "type": "logic"},
-      {"direction": "output", "lsb": 0, "msb": 0, "name": "zero", "scalar": true, "type": "logic"}
+      {
+        "direction": "input",
+        "line": 3,
+        "lsb": 0,
+        "msb": 31,
+        "name": "a",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 4,
+        "lsb": 0,
+        "msb": 31,
+        "name": "b",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 5,
+        "lsb": 0,
+        "msb": 3,
+        "name": "op",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 6,
+        "lsb": 0,
+        "msb": 31,
+        "name": "result",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 7,
+        "lsb": 0,
+        "msb": 0,
+        "name": "zero",
+        "scalar": true,
+        "type": "logic"
+      }
     ],
+    "pragmas": [],
     "source_file": "Alu.sv"
   }
 ]

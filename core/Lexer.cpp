@@ -32,7 +32,22 @@ std::vector<Token> Lexer::tokenize() {
 
         // single-line comment
         if (current_char == '/' && peek() == '/') {
-            while (current_char != '\n' && current_char != '\0') advance();
+            int cline = line;
+            std::string text;
+            while (current_char != '\n' && current_char != '\0') text += advance();
+            // pragma: "// verilens: top"  -> words after the colon
+            size_t i = 2;
+            while (i < text.size() && isspace((unsigned char)text[i])) i++;
+            const std::string tag = "verilens:";
+            if (text.compare(i, tag.size(), tag) == 0) {
+                std::string word;
+                for (size_t k = i + tag.size(); k <= text.size(); k++) {
+                    if (k == text.size() || isspace((unsigned char)text[k])) {
+                        if (!word.empty()) pragmas_.emplace_back(cline, word);
+                        word.clear();
+                    } else word += text[k];
+                }
+            }
             continue;
         }
 

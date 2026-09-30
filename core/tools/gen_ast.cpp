@@ -58,7 +58,9 @@ int main(int argc, char* argv[]) {
         try {
             Lexer lexer(src);
             Parser parser(lexer.tokenize());
-            linker.addModules(parser.parse(), path.filename().string());
+            auto mods = parser.parse();
+            attachPragmas(mods, lexer.pragmas());
+            linker.addModules(std::move(mods), path.filename().string());
         } catch (const std::exception& e) {
             std::cerr << "Error parsing " << path.filename() << ": " << e.what() << "\n";
         }

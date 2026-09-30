@@ -189,20 +189,48 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 7,
         "sensitivity": "*"
       }
     ],
     "assigns": [],
+    "end_line": 17,
     "gate_primitives": [],
     "instances": [],
+    "line": 2,
     "name": "ImmExtend",
     "net_decls": [],
     "parameters": [],
     "ports": [
-      {"direction": "input", "lsb": 0, "msb": 31, "name": "instr", "scalar": false, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 2, "name": "sel", "scalar": false, "type": "logic"},
-      {"direction": "output", "lsb": 0, "msb": 31, "name": "imm", "scalar": false, "type": "logic"}
+      {
+        "direction": "input",
+        "line": 3,
+        "lsb": 0,
+        "msb": 31,
+        "name": "instr",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 4,
+        "lsb": 0,
+        "msb": 2,
+        "name": "sel",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 5,
+        "lsb": 0,
+        "msb": 31,
+        "name": "imm",
+        "scalar": false,
+        "type": "logic"
+      }
     ],
+    "pragmas": [],
     "source_file": "ImmExtend.sv"
   }
 ]
