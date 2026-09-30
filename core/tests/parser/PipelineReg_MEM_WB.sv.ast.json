@@ -134,18 +134,22 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 16,
         "sensitivity": "posedge clk"
       }
     ],
     "assigns": [],
+    "end_line": 26,
     "gate_primitives": [],
     "instances": [],
+    "line": 2,
     "name": "PipelineReg_MEM_WB",
     "net_decls": [],
     "parameters": [],
     "ports": [
       {
         "direction": "input",
+        "line": 3,
         "lsb": 0,
         "msb": 0,
         "name": "clk",
@@ -154,6 +158,7 @@
       },
       {
         "direction": "input",
+        "line": 4,
         "lsb": 0,
         "msb": 0,
         "name": "rst",
@@ -162,6 +167,7 @@
       },
       {
         "direction": "input",
+        "line": 5,
         "lsb": 0,
         "msb": 31,
         "name": "mem_alu_result",
@@ -170,6 +176,7 @@
       },
       {
         "direction": "input",
+        "line": 6,
         "lsb": 0,
         "msb": 31,
         "name": "mem_read_data",
@@ -178,6 +185,7 @@
       },
       {
         "direction": "input",
+        "line": 7,
         "lsb": 0,
         "msb": 4,
         "name": "mem_rd",
@@ -186,6 +194,7 @@
       },
       {
         "direction": "input",
+        "line": 8,
         "lsb": 0,
         "msb": 0,
         "name": "mem_reg_write",
@@ -194,6 +203,7 @@
       },
       {
         "direction": "input",
+        "line": 9,
         "lsb": 0,
         "msb": 0,
         "name": "mem_mem_to_reg",
@@ -202,6 +212,7 @@
       },
       {
         "direction": "output",
+        "line": 10,
         "lsb": 0,
         "msb": 31,
         "name": "wb_alu_result",
@@ -210,6 +221,7 @@
       },
       {
         "direction": "output",
+        "line": 11,
         "lsb": 0,
         "msb": 31,
         "name": "wb_read_data",
@@ -218,6 +230,7 @@
       },
       {
         "direction": "output",
+        "line": 12,
         "lsb": 0,
         "msb": 4,
         "name": "wb_rd",
@@ -226,6 +239,7 @@
       },
       {
         "direction": "output",
+        "line": 13,
         "lsb": 0,
         "msb": 0,
         "name": "wb_reg_write",
@@ -234,6 +248,7 @@
       },
       {
         "direction": "output",
+        "line": 14,
         "lsb": 0,
         "msb": 0,
         "name": "wb_mem_to_reg",
@@ -241,6 +256,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "PipelineReg_MEM_WB.sv"
   }
 ]

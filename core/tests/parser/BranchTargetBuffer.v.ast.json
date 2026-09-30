@@ -302,6 +302,7 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 34,
         "sensitivity": "*"
       },
       {
@@ -681,6 +682,7 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 54,
         "sensitivity": "posedge clk"
       }
     ],
@@ -690,6 +692,7 @@
           "kind": "IDENTIFIER",
           "name": "match"
         },
+        "line": 48,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -840,11 +843,14 @@
         }
       }
     ],
+    "end_line": 75,
     "gate_primitives": [],
     "instances": [],
+    "line": 8,
     "name": "lab2_proc_BranchTargetBuffer",
     "net_decls": [
       {
+        "line": 25,
         "lsb": 0,
         "msb": 31,
         "name": "tags",
@@ -852,6 +858,7 @@
         "type": "logic"
       },
       {
+        "line": 26,
         "lsb": 0,
         "msb": 31,
         "name": "buffer",
@@ -859,6 +866,7 @@
         "type": "logic"
       },
       {
+        "line": 27,
         "lsb": 0,
         "msb": 3,
         "name": "valid",
@@ -866,6 +874,7 @@
         "type": "logic"
       },
       {
+        "line": 28,
         "lsb": 0,
         "msb": 3,
         "name": "taken",
@@ -873,6 +882,7 @@
         "type": "logic"
       },
       {
+        "line": 31,
         "lsb": 0,
         "msb": 1,
         "name": "curr",
@@ -880,6 +890,7 @@
         "type": "logic"
       },
       {
+        "line": 47,
         "lsb": 0,
         "msb": 0,
         "name": "match",
@@ -891,6 +902,7 @@
     "ports": [
       {
         "direction": "input",
+        "line": 10,
         "lsb": 0,
         "msb": 0,
         "name": "clk",
@@ -899,6 +911,7 @@
       },
       {
         "direction": "input",
+        "line": 11,
         "lsb": 0,
         "msb": 0,
         "name": "reset",
@@ -907,6 +920,7 @@
       },
       {
         "direction": "input",
+        "line": 14,
         "lsb": 0,
         "msb": 31,
         "name": "curr_pc",
@@ -915,6 +929,7 @@
       },
       {
         "direction": "output",
+        "line": 15,
         "lsb": 0,
         "msb": 31,
         "name": "branch_target",
@@ -923,6 +938,7 @@
       },
       {
         "direction": "output",
+        "line": 16,
         "lsb": 0,
         "msb": 0,
         "name": "take_branch",
@@ -931,6 +947,7 @@
       },
       {
         "direction": "input",
+        "line": 19,
         "lsb": 0,
         "msb": 31,
         "name": "branch_pc",
@@ -939,6 +956,7 @@
       },
       {
         "direction": "input",
+        "line": 20,
         "lsb": 0,
         "msb": 31,
         "name": "branch_dest",
@@ -947,6 +965,7 @@
       },
       {
         "direction": "input",
+        "line": 21,
         "lsb": 0,
         "msb": 0,
         "name": "branch_taken",
@@ -954,6 +973,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "BranchTargetBuffer.v"
   }
 ]

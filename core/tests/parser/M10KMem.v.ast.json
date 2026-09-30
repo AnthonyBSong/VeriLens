@@ -26,12 +26,15 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 13,
         "sensitivity": "posedge clk"
       }
     ],
     "assigns": [],
+    "end_line": 17,
     "gate_primitives": [],
     "instances": [],
+    "line": 3,
     "name": "M10KMem",
     "net_decls": [],
     "parameters": [
@@ -43,6 +46,7 @@
     "ports": [
       {
         "direction": "input",
+        "line": 6,
         "lsb": 0,
         "msb": 0,
         "name": "clk",
@@ -51,6 +55,7 @@
       },
       {
         "direction": "input",
+        "line": 7,
         "lsb": 0,
         "msb": 0,
         "name": "we",
@@ -60,6 +65,7 @@
       {
         "direction": "input",
         "expr": "$clog2call?-1:0",
+        "line": 8,
         "lsb": 0,
         "msb": 0,
         "name": "write_address",
@@ -70,6 +76,7 @@
       {
         "direction": "input",
         "expr": "$clog2call?-1:0",
+        "line": 9,
         "lsb": 0,
         "msb": 0,
         "name": "read_address",
@@ -79,6 +86,7 @@
       },
       {
         "direction": "input",
+        "line": 10,
         "lsb": 0,
         "msb": 17,
         "name": "d",
@@ -87,6 +95,7 @@
       },
       {
         "direction": "output",
+        "line": 11,
         "lsb": 0,
         "msb": 17,
         "name": "q",
@@ -94,6 +103,7 @@
         "type": "reg"
       }
     ],
+    "pragmas": [],
     "source_file": "M10KMem.v"
   }
 ]

@@ -18,18 +18,22 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 6,
         "sensitivity": "posedge clk"
       }
     ],
     "assigns": [],
+    "end_line": 9,
     "gate_primitives": [],
     "instances": [],
+    "line": 1,
     "name": "dff",
     "net_decls": [],
     "parameters": [],
     "ports": [
       {
         "direction": "input",
+        "line": 2,
         "lsb": 0,
         "msb": 0,
         "name": "clk",
@@ -38,6 +42,7 @@
       },
       {
         "direction": "input",
+        "line": 3,
         "lsb": 0,
         "msb": 0,
         "name": "d",
@@ -46,6 +51,7 @@
       },
       {
         "direction": "output",
+        "line": 4,
         "lsb": 0,
         "msb": 0,
         "name": "q",
@@ -53,6 +59,7 @@
         "type": "reg"
       }
     ],
+    "pragmas": [],
     "source_file": "always_block.v"
   }
 ]

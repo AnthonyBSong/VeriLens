@@ -2,32 +2,54 @@
   {
     "always_blocks": [],
     "assigns": [],
+    "end_line": 153,
     "gate_primitives": [],
     "instances": [
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_mem_read"
+            },
             "port": "id_ex_mem_read",
             "signal": "ex_mem_read"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_rd"
+            },
             "port": "id_ex_rd",
             "signal": "ex_rd"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_rs1"
+            },
             "port": "if_id_rs1",
             "signal": "id_rs1"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_rs2"
+            },
             "port": "if_id_rs2",
             "signal": "id_rs2"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "stall"
+            },
             "port": "stall",
             "signal": "stall"
           }
         ],
         "instance": "hazard",
+        "line": 46,
         "module": "HazardDetect",
         "parameters": [],
         "resolved": false,
@@ -36,39 +58,72 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mem_rd"
+            },
             "port": "ex_mem_rd",
             "signal": "mem_rd"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "wb_rd"
+            },
             "port": "mem_wb_rd",
             "signal": "wb_rd"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mem_reg_write"
+            },
             "port": "ex_mem_reg_write",
             "signal": "mem_reg_write"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "wb_reg_write"
+            },
             "port": "mem_wb_reg_write",
             "signal": "wb_reg_write"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_rs1"
+            },
             "port": "id_ex_rs1",
             "signal": "ex_rs1"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_rs2"
+            },
             "port": "id_ex_rs2",
             "signal": "ex_rs2"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "fwd_a"
+            },
             "port": "fwd_a",
             "signal": "fwd_a"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "fwd_b"
+            },
             "port": "fwd_b",
             "signal": "fwd_b"
           }
         ],
         "instance": "fwd",
+        "line": 54,
         "module": "ForwardingUnit",
         "parameters": [],
         "resolved": false,
@@ -77,35 +132,64 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "rst"
+            },
             "port": "rst",
             "signal": "rst"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "stall"
+            },
             "port": "stall",
             "signal": "stall"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_branch_taken"
+            },
             "port": "branch_taken",
             "signal": "ex_branch_taken"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_branch_target"
+            },
             "port": "branch_target",
             "signal": "ex_branch_target"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "if_pc"
+            },
             "port": "pc",
             "signal": "if_pc"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "if_instr"
+            },
             "port": "instr",
             "signal": "if_instr"
           }
         ],
         "instance": "fetch",
+        "line": 65,
         "module": "FetchStage",
         "parameters": [],
         "resolved": false,
@@ -114,39 +198,72 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "rst"
+            },
             "port": "rst",
             "signal": "rst"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "stall"
+            },
             "port": "stall",
             "signal": "stall"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_branch_taken"
+            },
             "port": "flush",
             "signal": "ex_branch_taken"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "if_pc"
+            },
             "port": "if_pc",
             "signal": "if_pc"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "if_instr"
+            },
             "port": "if_instr",
             "signal": "if_instr"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_pc"
+            },
             "port": "id_pc",
             "signal": "id_pc"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_instr"
+            },
             "port": "id_instr",
             "signal": "id_instr"
           }
         ],
         "instance": "if_id",
+        "line": 75,
         "module": "PipelineReg_IF_ID",
         "parameters": [],
         "resolved": false,
@@ -155,103 +272,200 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "rst"
+            },
             "port": "rst",
             "signal": "rst"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_instr"
+            },
             "port": "instr",
             "signal": "id_instr"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "wb_data"
+            },
             "port": "wb_wd",
             "signal": "wb_data"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "wb_rd"
+            },
             "port": "wb_rd",
             "signal": "wb_rd"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "wb_reg_write"
+            },
             "port": "wb_we",
             "signal": "wb_reg_write"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_rs1_val"
+            },
             "port": "rs1_val",
             "signal": "id_rs1_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_rs2_val"
+            },
             "port": "rs2_val",
             "signal": "id_rs2_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_imm"
+            },
             "port": "imm",
             "signal": "id_imm"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_rs1"
+            },
             "port": "rs1",
             "signal": "id_rs1"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_rs2"
+            },
             "port": "rs2",
             "signal": "id_rs2"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_rd"
+            },
             "port": "rd",
             "signal": "id_rd"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_opcode"
+            },
             "port": "opcode",
             "signal": "id_opcode"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_funct3"
+            },
             "port": "funct3",
             "signal": "id_funct3"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_funct7"
+            },
             "port": "funct7",
             "signal": "id_funct7"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_reg_write"
+            },
             "port": "reg_write",
             "signal": "id_reg_write"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_mem_read"
+            },
             "port": "mem_read",
             "signal": "id_mem_read"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_mem_write"
+            },
             "port": "mem_write",
             "signal": "id_mem_write"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_mem_to_reg"
+            },
             "port": "mem_to_reg",
             "signal": "id_mem_to_reg"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_alu_src"
+            },
             "port": "alu_src",
             "signal": "id_alu_src"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_branch"
+            },
             "port": "branch",
             "signal": "id_branch"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_jump"
+            },
             "port": "jump",
             "signal": "id_jump"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_alu_op"
+            },
             "port": "alu_op",
             "signal": "id_alu_op"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_imm_sel"
+            },
             "port": "imm_sel",
             "signal": "id_imm_sel"
           }
         ],
         "instance": "decode",
+        "line": 82,
         "module": "DecodeStage",
         "parameters": [],
         "resolved": false,
@@ -260,139 +474,272 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "rst"
+            },
             "port": "rst",
             "signal": "rst"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "stall"
+            },
             "port": "flush",
             "signal": "stall"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_pc"
+            },
             "port": "id_pc",
             "signal": "id_pc"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_rs1_val"
+            },
             "port": "id_rs1_val",
             "signal": "id_rs1_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_rs2_val"
+            },
             "port": "id_rs2_val",
             "signal": "id_rs2_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_imm"
+            },
             "port": "id_imm",
             "signal": "id_imm"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_rs1"
+            },
             "port": "id_rs1",
             "signal": "id_rs1"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_rs2"
+            },
             "port": "id_rs2",
             "signal": "id_rs2"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_rd"
+            },
             "port": "id_rd",
             "signal": "id_rd"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_alu_op"
+            },
             "port": "id_alu_op",
             "signal": "id_alu_op"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_alu_src"
+            },
             "port": "id_alu_src",
             "signal": "id_alu_src"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_mem_read"
+            },
             "port": "id_mem_read",
             "signal": "id_mem_read"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_mem_write"
+            },
             "port": "id_mem_write",
             "signal": "id_mem_write"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_reg_write"
+            },
             "port": "id_reg_write",
             "signal": "id_reg_write"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_mem_to_reg"
+            },
             "port": "id_mem_to_reg",
             "signal": "id_mem_to_reg"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_branch"
+            },
             "port": "id_branch",
             "signal": "id_branch"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "id_jump"
+            },
             "port": "id_jump",
             "signal": "id_jump"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_pc"
+            },
             "port": "ex_pc",
             "signal": "ex_pc"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_rs1_val"
+            },
             "port": "ex_rs1_val",
             "signal": "ex_rs1_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_rs2_val"
+            },
             "port": "ex_rs2_val",
             "signal": "ex_rs2_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_imm"
+            },
             "port": "ex_imm",
             "signal": "ex_imm"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_rs1"
+            },
             "port": "ex_rs1",
             "signal": "ex_rs1"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_rs2"
+            },
             "port": "ex_rs2",
             "signal": "ex_rs2"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_rd"
+            },
             "port": "ex_rd",
             "signal": "ex_rd"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_alu_op"
+            },
             "port": "ex_alu_op",
             "signal": "ex_alu_op"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_alu_src"
+            },
             "port": "ex_alu_src",
             "signal": "ex_alu_src"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_mem_read"
+            },
             "port": "ex_mem_read",
             "signal": "ex_mem_read"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_mem_write"
+            },
             "port": "ex_mem_write",
             "signal": "ex_mem_write"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_reg_write"
+            },
             "port": "ex_reg_write",
             "signal": "ex_reg_write"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_mem_to_reg"
+            },
             "port": "ex_mem_to_reg",
             "signal": "ex_mem_to_reg"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_branch"
+            },
             "port": "ex_branch",
             "signal": "ex_branch"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_jump"
+            },
             "port": "ex_jump",
             "signal": "ex_jump"
           }
         ],
         "instance": "id_ex",
+        "line": 94,
         "module": "PipelineReg_ID_EX",
         "parameters": [],
         "resolved": false,
@@ -401,87 +748,179 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_pc"
+            },
             "port": "pc",
             "signal": "ex_pc"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_rs1_val"
+            },
             "port": "rs1_val",
             "signal": "ex_rs1_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_rs2_val"
+            },
             "port": "rs2_val",
             "signal": "ex_rs2_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_imm"
+            },
             "port": "imm",
             "signal": "ex_imm"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_rs1"
+            },
             "port": "rs1",
             "signal": "ex_rs1"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_rs2"
+            },
             "port": "rs2",
             "signal": "ex_rs2"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_alu_op"
+            },
             "port": "alu_op",
             "signal": "ex_alu_op"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_alu_src"
+            },
             "port": "alu_src",
             "signal": "ex_alu_src"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_branch"
+            },
             "port": "branch",
             "signal": "ex_branch"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_jump"
+            },
             "port": "jump",
             "signal": "ex_jump"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mem_alu_result"
+            },
             "port": "fwd_mem_val",
             "signal": "mem_alu_result"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "wb_data"
+            },
             "port": "fwd_wb_val",
             "signal": "wb_data"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "fwd_a"
+            },
             "port": "fwd_a",
             "signal": "fwd_a"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "fwd_b"
+            },
             "port": "fwd_b",
             "signal": "fwd_b"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "ex_imm"
+              },
+              "kind": "PART_SELECT",
+              "lsb": {
+                "kind": "LITERAL",
+                "value": "0"
+              },
+              "msb": {
+                "kind": "LITERAL",
+                "value": "2"
+              }
+            },
             "port": "funct3",
             "signal": "ex_imm[2:0]"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_alu_result"
+            },
             "port": "alu_result",
             "signal": "ex_alu_result"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_rs2_out"
+            },
             "port": "rs2_out",
             "signal": "ex_rs2_out"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_zero"
+            },
             "port": "zero",
             "signal": "ex_zero"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_branch_taken"
+            },
             "port": "branch_taken",
             "signal": "ex_branch_taken"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_branch_target"
+            },
             "port": "branch_target",
             "signal": "ex_branch_target"
           }
         ],
         "instance": "execute",
+        "line": 110,
         "module": "ExecuteStage",
         "parameters": [],
         "resolved": false,
@@ -490,79 +929,152 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "rst"
+            },
             "port": "rst",
             "signal": "rst"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_alu_result"
+            },
             "port": "ex_alu_result",
             "signal": "ex_alu_result"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_rs2_out"
+            },
             "port": "ex_rs2_val",
             "signal": "ex_rs2_out"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_rd"
+            },
             "port": "ex_rd",
             "signal": "ex_rd"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_mem_read"
+            },
             "port": "ex_mem_read",
             "signal": "ex_mem_read"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_mem_write"
+            },
             "port": "ex_mem_write",
             "signal": "ex_mem_write"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_reg_write"
+            },
             "port": "ex_reg_write",
             "signal": "ex_reg_write"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_mem_to_reg"
+            },
             "port": "ex_mem_to_reg",
             "signal": "ex_mem_to_reg"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_zero"
+            },
             "port": "ex_zero",
             "signal": "ex_zero"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mem_alu_result"
+            },
             "port": "mem_alu_result",
             "signal": "mem_alu_result"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mem_rs2_val"
+            },
             "port": "mem_rs2_val",
             "signal": "mem_rs2_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mem_rd"
+            },
             "port": "mem_rd",
             "signal": "mem_rd"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mem_mem_read"
+            },
             "port": "mem_mem_read",
             "signal": "mem_mem_read"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mem_mem_write"
+            },
             "port": "mem_mem_write",
             "signal": "mem_mem_write"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mem_reg_write"
+            },
             "port": "mem_reg_write",
             "signal": "mem_reg_write"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mem_mem_to_reg"
+            },
             "port": "mem_mem_to_reg",
             "signal": "mem_mem_to_reg"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mem_zero"
+            },
             "port": "mem_zero",
             "signal": "mem_zero"
           }
         ],
         "instance": "ex_mem",
+        "line": 122,
         "module": "PipelineReg_EX_MEM",
         "parameters": [],
         "resolved": false,
@@ -571,35 +1083,64 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mem_alu_result"
+            },
             "port": "alu_result",
             "signal": "mem_alu_result"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mem_rs2_val"
+            },
             "port": "rs2_val",
             "signal": "mem_rs2_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mem_mem_read"
+            },
             "port": "mem_read",
             "signal": "mem_mem_read"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mem_mem_write"
+            },
             "port": "mem_write",
             "signal": "mem_mem_write"
           },
           {
+            "expr": {
+              "kind": "LITERAL",
+              "value": "3'b010"
+            },
             "port": "funct3",
             "signal": "3'b010"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mem_read_data"
+            },
             "port": "read_data",
             "signal": "mem_read_data"
           }
         ],
         "instance": "memory",
+        "line": 132,
         "module": "MemoryStage",
         "parameters": [],
         "resolved": false,
@@ -608,55 +1149,104 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "rst"
+            },
             "port": "rst",
             "signal": "rst"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mem_alu_result"
+            },
             "port": "mem_alu_result",
             "signal": "mem_alu_result"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mem_read_data"
+            },
             "port": "mem_read_data",
             "signal": "mem_read_data"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mem_rd"
+            },
             "port": "mem_rd",
             "signal": "mem_rd"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mem_reg_write"
+            },
             "port": "mem_reg_write",
             "signal": "mem_reg_write"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mem_mem_to_reg"
+            },
             "port": "mem_mem_to_reg",
             "signal": "mem_mem_to_reg"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "wb_alu_result"
+            },
             "port": "wb_alu_result",
             "signal": "wb_alu_result"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "wb_read_data"
+            },
             "port": "wb_read_data",
             "signal": "wb_read_data"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "wb_rd"
+            },
             "port": "wb_rd",
             "signal": "wb_rd"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "wb_reg_write"
+            },
             "port": "wb_reg_write",
             "signal": "wb_reg_write"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "wb_mem_to_reg"
+            },
             "port": "wb_mem_to_reg",
             "signal": "wb_mem_to_reg"
           }
         ],
         "instance": "mem_wb",
+        "line": 139,
         "module": "PipelineReg_MEM_WB",
         "parameters": [],
         "resolved": false,
@@ -665,32 +1255,51 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "wb_alu_result"
+            },
             "port": "alu_result",
             "signal": "wb_alu_result"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "wb_read_data"
+            },
             "port": "read_data",
             "signal": "wb_read_data"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "wb_mem_to_reg"
+            },
             "port": "mem_to_reg",
             "signal": "wb_mem_to_reg"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "wb_data"
+            },
             "port": "wb_data",
             "signal": "wb_data"
           }
         ],
         "instance": "writeback",
+        "line": 147,
         "module": "WritebackStage",
         "parameters": [],
         "resolved": false,
         "wildcard": false
       }
     ],
+    "line": 3,
     "name": "PipelinedCPU",
     "net_decls": [
       {
+        "line": 8,
         "lsb": 0,
         "msb": 31,
         "name": "if_pc",
@@ -698,6 +1307,7 @@
         "type": "logic"
       },
       {
+        "line": 8,
         "lsb": 0,
         "msb": 31,
         "name": "if_instr",
@@ -705,6 +1315,7 @@
         "type": "logic"
       },
       {
+        "line": 10,
         "lsb": 0,
         "msb": 31,
         "name": "id_pc",
@@ -712,6 +1323,7 @@
         "type": "logic"
       },
       {
+        "line": 10,
         "lsb": 0,
         "msb": 31,
         "name": "id_instr",
@@ -719,6 +1331,7 @@
         "type": "logic"
       },
       {
+        "line": 12,
         "lsb": 0,
         "msb": 31,
         "name": "id_rs1_val",
@@ -726,6 +1339,7 @@
         "type": "logic"
       },
       {
+        "line": 12,
         "lsb": 0,
         "msb": 31,
         "name": "id_rs2_val",
@@ -733,6 +1347,7 @@
         "type": "logic"
       },
       {
+        "line": 12,
         "lsb": 0,
         "msb": 31,
         "name": "id_imm",
@@ -740,6 +1355,7 @@
         "type": "logic"
       },
       {
+        "line": 13,
         "lsb": 0,
         "msb": 4,
         "name": "id_rs1",
@@ -747,6 +1363,7 @@
         "type": "logic"
       },
       {
+        "line": 13,
         "lsb": 0,
         "msb": 4,
         "name": "id_rs2",
@@ -754,6 +1371,7 @@
         "type": "logic"
       },
       {
+        "line": 13,
         "lsb": 0,
         "msb": 4,
         "name": "id_rd",
@@ -761,6 +1379,7 @@
         "type": "logic"
       },
       {
+        "line": 14,
         "lsb": 0,
         "msb": 6,
         "name": "id_opcode",
@@ -768,6 +1387,7 @@
         "type": "logic"
       },
       {
+        "line": 14,
         "lsb": 0,
         "msb": 6,
         "name": "id_funct7",
@@ -775,6 +1395,7 @@
         "type": "logic"
       },
       {
+        "line": 15,
         "lsb": 0,
         "msb": 2,
         "name": "id_funct3",
@@ -782,6 +1403,7 @@
         "type": "logic"
       },
       {
+        "line": 16,
         "lsb": 0,
         "msb": 0,
         "name": "id_reg_write",
@@ -789,6 +1411,7 @@
         "type": "logic"
       },
       {
+        "line": 16,
         "lsb": 0,
         "msb": 0,
         "name": "id_mem_read",
@@ -796,6 +1419,7 @@
         "type": "logic"
       },
       {
+        "line": 16,
         "lsb": 0,
         "msb": 0,
         "name": "id_mem_write",
@@ -803,6 +1427,7 @@
         "type": "logic"
       },
       {
+        "line": 17,
         "lsb": 0,
         "msb": 0,
         "name": "id_mem_to_reg",
@@ -810,6 +1435,7 @@
         "type": "logic"
       },
       {
+        "line": 17,
         "lsb": 0,
         "msb": 0,
         "name": "id_alu_src",
@@ -817,6 +1443,7 @@
         "type": "logic"
       },
       {
+        "line": 17,
         "lsb": 0,
         "msb": 0,
         "name": "id_branch",
@@ -824,6 +1451,7 @@
         "type": "logic"
       },
       {
+        "line": 17,
         "lsb": 0,
         "msb": 0,
         "name": "id_jump",
@@ -831,6 +1459,7 @@
         "type": "logic"
       },
       {
+        "line": 18,
         "lsb": 0,
         "msb": 3,
         "name": "id_alu_op",
@@ -838,6 +1467,7 @@
         "type": "logic"
       },
       {
+        "line": 19,
         "lsb": 0,
         "msb": 2,
         "name": "id_imm_sel",
@@ -845,6 +1475,7 @@
         "type": "logic"
       },
       {
+        "line": 21,
         "lsb": 0,
         "msb": 31,
         "name": "ex_pc",
@@ -852,6 +1483,7 @@
         "type": "logic"
       },
       {
+        "line": 21,
         "lsb": 0,
         "msb": 31,
         "name": "ex_rs1_val",
@@ -859,6 +1491,7 @@
         "type": "logic"
       },
       {
+        "line": 21,
         "lsb": 0,
         "msb": 31,
         "name": "ex_rs2_val",
@@ -866,6 +1499,7 @@
         "type": "logic"
       },
       {
+        "line": 21,
         "lsb": 0,
         "msb": 31,
         "name": "ex_imm",
@@ -873,6 +1507,7 @@
         "type": "logic"
       },
       {
+        "line": 22,
         "lsb": 0,
         "msb": 4,
         "name": "ex_rs1",
@@ -880,6 +1515,7 @@
         "type": "logic"
       },
       {
+        "line": 22,
         "lsb": 0,
         "msb": 4,
         "name": "ex_rs2",
@@ -887,6 +1523,7 @@
         "type": "logic"
       },
       {
+        "line": 22,
         "lsb": 0,
         "msb": 4,
         "name": "ex_rd",
@@ -894,6 +1531,7 @@
         "type": "logic"
       },
       {
+        "line": 23,
         "lsb": 0,
         "msb": 3,
         "name": "ex_alu_op",
@@ -901,6 +1539,7 @@
         "type": "logic"
       },
       {
+        "line": 24,
         "lsb": 0,
         "msb": 0,
         "name": "ex_alu_src",
@@ -908,6 +1547,7 @@
         "type": "logic"
       },
       {
+        "line": 24,
         "lsb": 0,
         "msb": 0,
         "name": "ex_mem_read",
@@ -915,6 +1555,7 @@
         "type": "logic"
       },
       {
+        "line": 24,
         "lsb": 0,
         "msb": 0,
         "name": "ex_mem_write",
@@ -922,6 +1563,7 @@
         "type": "logic"
       },
       {
+        "line": 25,
         "lsb": 0,
         "msb": 0,
         "name": "ex_reg_write",
@@ -929,6 +1571,7 @@
         "type": "logic"
       },
       {
+        "line": 25,
         "lsb": 0,
         "msb": 0,
         "name": "ex_mem_to_reg",
@@ -936,6 +1579,7 @@
         "type": "logic"
       },
       {
+        "line": 25,
         "lsb": 0,
         "msb": 0,
         "name": "ex_branch",
@@ -943,6 +1587,7 @@
         "type": "logic"
       },
       {
+        "line": 25,
         "lsb": 0,
         "msb": 0,
         "name": "ex_jump",
@@ -950,6 +1595,7 @@
         "type": "logic"
       },
       {
+        "line": 27,
         "lsb": 0,
         "msb": 31,
         "name": "ex_alu_result",
@@ -957,6 +1603,7 @@
         "type": "logic"
       },
       {
+        "line": 27,
         "lsb": 0,
         "msb": 31,
         "name": "ex_rs2_out",
@@ -964,6 +1611,7 @@
         "type": "logic"
       },
       {
+        "line": 28,
         "lsb": 0,
         "msb": 0,
         "name": "ex_zero",
@@ -971,6 +1619,7 @@
         "type": "logic"
       },
       {
+        "line": 28,
         "lsb": 0,
         "msb": 0,
         "name": "ex_branch_taken",
@@ -978,6 +1627,7 @@
         "type": "logic"
       },
       {
+        "line": 29,
         "lsb": 0,
         "msb": 31,
         "name": "ex_branch_target",
@@ -985,6 +1635,7 @@
         "type": "logic"
       },
       {
+        "line": 31,
         "lsb": 0,
         "msb": 31,
         "name": "mem_alu_result",
@@ -992,6 +1643,7 @@
         "type": "logic"
       },
       {
+        "line": 31,
         "lsb": 0,
         "msb": 31,
         "name": "mem_rs2_val",
@@ -999,6 +1651,7 @@
         "type": "logic"
       },
       {
+        "line": 32,
         "lsb": 0,
         "msb": 4,
         "name": "mem_rd",
@@ -1006,6 +1659,7 @@
         "type": "logic"
       },
       {
+        "line": 33,
         "lsb": 0,
         "msb": 0,
         "name": "mem_mem_read",
@@ -1013,6 +1667,7 @@
         "type": "logic"
       },
       {
+        "line": 33,
         "lsb": 0,
         "msb": 0,
         "name": "mem_mem_write",
@@ -1020,6 +1675,7 @@
         "type": "logic"
       },
       {
+        "line": 33,
         "lsb": 0,
         "msb": 0,
         "name": "mem_reg_write",
@@ -1027,6 +1683,7 @@
         "type": "logic"
       },
       {
+        "line": 33,
         "lsb": 0,
         "msb": 0,
         "name": "mem_mem_to_reg",
@@ -1034,6 +1691,7 @@
         "type": "logic"
       },
       {
+        "line": 33,
         "lsb": 0,
         "msb": 0,
         "name": "mem_zero",
@@ -1041,6 +1699,7 @@
         "type": "logic"
       },
       {
+        "line": 35,
         "lsb": 0,
         "msb": 31,
         "name": "mem_read_data",
@@ -1048,6 +1707,7 @@
         "type": "logic"
       },
       {
+        "line": 37,
         "lsb": 0,
         "msb": 31,
         "name": "wb_alu_result",
@@ -1055,6 +1715,7 @@
         "type": "logic"
       },
       {
+        "line": 37,
         "lsb": 0,
         "msb": 31,
         "name": "wb_read_data",
@@ -1062,6 +1723,7 @@
         "type": "logic"
       },
       {
+        "line": 38,
         "lsb": 0,
         "msb": 4,
         "name": "wb_rd",
@@ -1069,6 +1731,7 @@
         "type": "logic"
       },
       {
+        "line": 39,
         "lsb": 0,
         "msb": 0,
         "name": "wb_reg_write",
@@ -1076,6 +1739,7 @@
         "type": "logic"
       },
       {
+        "line": 39,
         "lsb": 0,
         "msb": 0,
         "name": "wb_mem_to_reg",
@@ -1083,6 +1747,7 @@
         "type": "logic"
       },
       {
+        "line": 41,
         "lsb": 0,
         "msb": 31,
         "name": "wb_data",
@@ -1090,6 +1755,7 @@
         "type": "logic"
       },
       {
+        "line": 43,
         "lsb": 0,
         "msb": 0,
         "name": "stall",
@@ -1097,6 +1763,7 @@
         "type": "logic"
       },
       {
+        "line": 44,
         "lsb": 0,
         "msb": 1,
         "name": "fwd_a",
@@ -1104,6 +1771,7 @@
         "type": "logic"
       },
       {
+        "line": 44,
         "lsb": 0,
         "msb": 1,
         "name": "fwd_b",
@@ -1115,6 +1783,7 @@
     "ports": [
       {
         "direction": "input",
+        "line": 4,
         "lsb": 0,
         "msb": 0,
         "name": "clk",
@@ -1123,6 +1792,7 @@
       },
       {
         "direction": "input",
+        "line": 5,
         "lsb": 0,
         "msb": 0,
         "name": "rst",
@@ -1130,6 +1800,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "PipelinedCPU.sv"
   }
 ]

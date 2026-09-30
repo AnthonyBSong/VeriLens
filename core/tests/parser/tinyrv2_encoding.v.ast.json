@@ -2,12 +2,15 @@
   {
     "always_blocks": [],
     "assigns": [],
+    "end_line": 360,
     "gate_primitives": [],
     "instances": [],
+    "line": 139,
     "name": "lab2_proc_tinyrv2_encoding_InstTasks",
     "net_decls": [
       {
         "expr": "3*8-1:0",
+        "line": 191,
         "lsb": 0,
         "msb": 0,
         "name": "rs1_str",
@@ -17,6 +20,7 @@
       },
       {
         "expr": "3*8-1:0",
+        "line": 192,
         "lsb": 0,
         "msb": 0,
         "name": "rs2_str",
@@ -26,6 +30,7 @@
       },
       {
         "expr": "3*8-1:0",
+        "line": 193,
         "lsb": 0,
         "msb": 0,
         "name": "rd_str",
@@ -35,6 +40,7 @@
       },
       {
         "expr": "9*8-1:0",
+        "line": 194,
         "lsb": 0,
         "msb": 0,
         "name": "csr_str",
@@ -44,6 +50,7 @@
       },
       {
         "expr": "2*8-1:0",
+        "line": 195,
         "lsb": 0,
         "msb": 0,
         "name": "funct_str",
@@ -53,6 +60,7 @@
       },
       {
         "expr": "`TINYRV2_INST_RS1_NBITS-1:0",
+        "line": 197,
         "lsb": 0,
         "msb": 0,
         "name": "rs1",
@@ -62,6 +70,7 @@
       },
       {
         "expr": "`TINYRV2_INST_RS2_NBITS-1:0",
+        "line": 198,
         "lsb": 0,
         "msb": 0,
         "name": "rs2",
@@ -71,6 +80,7 @@
       },
       {
         "expr": "`TINYRV2_INST_RD_NBITS-1:0",
+        "line": 199,
         "lsb": 0,
         "msb": 0,
         "name": "rd",
@@ -80,6 +90,7 @@
       },
       {
         "expr": "`TINYRV2_INST_CSR_NBITS-1:0",
+        "line": 200,
         "lsb": 0,
         "msb": 0,
         "name": "csr",
@@ -89,6 +100,7 @@
       },
       {
         "expr": "`TINYRV2_INST_FUNCT7_NBITS-1:0",
+        "line": 201,
         "lsb": 0,
         "msb": 0,
         "name": "funct",
@@ -99,6 +111,7 @@
     ],
     "parameters": [],
     "ports": [],
+    "pragmas": [],
     "source_file": "tinyrv2_encoding.v"
   },
   {
@@ -109,6 +122,7 @@
           "kind": "IDENTIFIER",
           "name": "opcode"
         },
+        "line": 383,
         "rhs": {
           "base": {
             "kind": "IDENTIFIER",
@@ -126,6 +140,7 @@
           "kind": "IDENTIFIER",
           "name": "rd"
         },
+        "line": 384,
         "rhs": {
           "base": {
             "kind": "IDENTIFIER",
@@ -143,6 +158,7 @@
           "kind": "IDENTIFIER",
           "name": "rs1"
         },
+        "line": 385,
         "rhs": {
           "base": {
             "kind": "IDENTIFIER",
@@ -160,6 +176,7 @@
           "kind": "IDENTIFIER",
           "name": "rs2"
         },
+        "line": 386,
         "rhs": {
           "base": {
             "kind": "IDENTIFIER",
@@ -177,6 +194,7 @@
           "kind": "IDENTIFIER",
           "name": "funct3"
         },
+        "line": 387,
         "rhs": {
           "base": {
             "kind": "IDENTIFIER",
@@ -194,6 +212,7 @@
           "kind": "IDENTIFIER",
           "name": "csr"
         },
+        "line": 388,
         "rhs": {
           "base": {
             "kind": "IDENTIFIER",
@@ -207,8 +226,10 @@
         }
       }
     ],
+    "end_line": 390,
     "gate_primitives": [],
     "instances": [],
+    "line": 366,
     "name": "lab2_proc_tinyrv2_encoding_InstUnpack",
     "net_decls": [],
     "parameters": [],
@@ -216,6 +237,7 @@
       {
         "direction": "input",
         "expr": "`TINYRV2_INST_NBITS-1:0",
+        "line": 370,
         "lsb": 0,
         "msb": 0,
         "name": "inst",
@@ -226,6 +248,7 @@
       {
         "direction": "output",
         "expr": "`TINYRV2_INST_OPCODE_NBITS-1:0",
+        "line": 374,
         "lsb": 0,
         "msb": 0,
         "name": "opcode",
@@ -236,6 +259,7 @@
       {
         "direction": "output",
         "expr": "`TINYRV2_INST_RD_NBITS-1:0",
+        "line": 375,
         "lsb": 0,
         "msb": 0,
         "name": "rd",
@@ -246,6 +270,7 @@
       {
         "direction": "output",
         "expr": "`TINYRV2_INST_RS1_NBITS-1:0",
+        "line": 376,
         "lsb": 0,
         "msb": 0,
         "name": "rs1",
@@ -256,6 +281,7 @@
       {
         "direction": "output",
         "expr": "`TINYRV2_INST_RS2_NBITS-1:0",
+        "line": 377,
         "lsb": 0,
         "msb": 0,
         "name": "rs2",
@@ -266,6 +292,7 @@
       {
         "direction": "output",
         "expr": "`TINYRV2_INST_FUNCT3_NBITS-1:0",
+        "line": 378,
         "lsb": 0,
         "msb": 0,
         "name": "funct3",
@@ -276,6 +303,7 @@
       {
         "direction": "output",
         "expr": "`TINYRV2_INST_FUNCT7_NBITS-1:0",
+        "line": 379,
         "lsb": 0,
         "msb": 0,
         "name": "funct7",
@@ -286,6 +314,7 @@
       {
         "direction": "output",
         "expr": "`TINYRV2_INST_CSR_NBITS-1:0",
+        "line": 380,
         "lsb": 0,
         "msb": 0,
         "name": "csr",
@@ -294,28 +323,33 @@
         "unknown": true
       }
     ],
+    "pragmas": [],
     "source_file": "tinyrv2_encoding.v"
   },
   {
     "always_blocks": [],
     "assigns": [],
+    "end_line": 415,
     "gate_primitives": [],
     "instances": [
       {
         "connections": [],
         "instance": "tinyrv2",
+        "line": 405,
         "module": "lab2_proc_tinyrv2_encoding_InstTasks",
         "parameters": [],
         "resolved": true,
         "wildcard": false
       }
     ],
+    "line": 398,
     "name": "lab2_proc_tinyrv2_encoding_InstTrace",
     "net_decls": [],
     "parameters": [],
     "ports": [
       {
         "direction": "input",
+        "line": 400,
         "lsb": 0,
         "msb": 0,
         "name": "clk",
@@ -324,6 +358,7 @@
       },
       {
         "direction": "input",
+        "line": 401,
         "lsb": 0,
         "msb": 0,
         "name": "reset",
@@ -333,6 +368,7 @@
       {
         "direction": "input",
         "expr": "`TINYRV2_INST_NBITS-1:0",
+        "line": 402,
         "lsb": 0,
         "msb": 0,
         "name": "inst",
@@ -341,6 +377,7 @@
         "unknown": true
       }
     ],
+    "pragmas": [],
     "source_file": "tinyrv2_encoding.v"
   }
 ]

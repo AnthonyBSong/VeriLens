@@ -2,14 +2,18 @@
 #include <string>
 #include <vector>
 #include "Node.h"
+#include "Expression.h"
 
 class PortConnection : public Node {
 public:
     std::string port_name;   // named: .clk(sys_clk) -> "clk"; positional: empty
     std::string signal;      // connected signal or expression, raw text
+    ExprPtr     expr;        // parsed form of `signal`; nullptr if it did not parse as an expression
 
-    PortConnection(const std::string& port_name, const std::string& signal, int line, int column)
-        : Node(NodeKind::PORT_CONNECTION, line, column), port_name(port_name), signal(signal) {}
+    PortConnection(const std::string& port_name, const std::string& signal, int line, int column,
+                   ExprPtr expr = nullptr)
+        : Node(NodeKind::PORT_CONNECTION, line, column), port_name(port_name), signal(signal),
+          expr(std::move(expr)) {}
 };
 
 class Instance : public Node {

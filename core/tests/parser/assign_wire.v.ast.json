@@ -7,6 +7,7 @@
           "kind": "IDENTIFIER",
           "name": "y"
         },
+        "line": 8,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -21,11 +22,14 @@
         }
       }
     ],
+    "end_line": 9,
     "gate_primitives": [],
     "instances": [],
+    "line": 1,
     "name": "and_gate",
     "net_decls": [
       {
+        "line": 6,
         "lsb": 0,
         "msb": 0,
         "name": "y",
@@ -37,6 +41,7 @@
     "ports": [
       {
         "direction": "input",
+        "line": 2,
         "lsb": 0,
         "msb": 0,
         "name": "a",
@@ -45,6 +50,7 @@
       },
       {
         "direction": "input",
+        "line": 3,
         "lsb": 0,
         "msb": 0,
         "name": "b",
@@ -53,6 +59,7 @@
       },
       {
         "direction": "output",
+        "line": 4,
         "lsb": 0,
         "msb": 0,
         "name": "y",
@@ -60,6 +67,7 @@
         "type": "unspecified"
       }
     ],
+    "pragmas": [],
     "source_file": "assign_wire.v"
   }
 ]

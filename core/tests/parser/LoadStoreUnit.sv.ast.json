@@ -226,18 +226,22 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 9,
         "sensitivity": "*"
       }
     ],
     "assigns": [],
+    "end_line": 17,
     "gate_primitives": [],
     "instances": [],
+    "line": 2,
     "name": "LoadStoreUnit",
     "net_decls": [],
     "parameters": [],
     "ports": [
       {
         "direction": "input",
+        "line": 3,
         "lsb": 0,
         "msb": 2,
         "name": "funct3",
@@ -246,6 +250,7 @@
       },
       {
         "direction": "input",
+        "line": 4,
         "lsb": 0,
         "msb": 31,
         "name": "addr",
@@ -254,6 +259,7 @@
       },
       {
         "direction": "input",
+        "line": 5,
         "lsb": 0,
         "msb": 31,
         "name": "store_data",
@@ -262,6 +268,7 @@
       },
       {
         "direction": "output",
+        "line": 6,
         "lsb": 0,
         "msb": 3,
         "name": "byte_en",
@@ -270,6 +277,7 @@
       },
       {
         "direction": "output",
+        "line": 7,
         "lsb": 0,
         "msb": 31,
         "name": "aligned_data",
@@ -277,6 +285,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "LoadStoreUnit.sv"
   }
 ]

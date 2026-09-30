@@ -7,6 +7,7 @@
           "kind": "IDENTIFIER",
           "name": "HEX4"
         },
+        "line": 367,
         "rhs": {
           "kind": "LITERAL",
           "value": "7'b1111111"
@@ -17,26 +18,48 @@
           "kind": "IDENTIFIER",
           "name": "HEX5"
         },
+        "line": 368,
         "rhs": {
           "kind": "LITERAL",
           "value": "7'b1111111"
         }
       }
     ],
+    "end_line": 627,
     "gate_primitives": [],
     "instances": [
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HEX0"
+            },
             "port": "",
             "signal": "HEX0"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "hex3_hex0"
+              },
+              "kind": "PART_SELECT",
+              "lsb": {
+                "kind": "LITERAL",
+                "value": "0"
+              },
+              "msb": {
+                "kind": "LITERAL",
+                "value": "3"
+              }
+            },
             "port": "",
             "signal": "hex3_hex0[3:0]"
           }
         ],
         "instance": "Digit0",
+        "line": 370,
         "module": "HexDigit",
         "parameters": [],
         "resolved": false,
@@ -45,15 +68,35 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HEX1"
+            },
             "port": "",
             "signal": "HEX1"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "hex3_hex0"
+              },
+              "kind": "PART_SELECT",
+              "lsb": {
+                "kind": "LITERAL",
+                "value": "4"
+              },
+              "msb": {
+                "kind": "LITERAL",
+                "value": "7"
+              }
+            },
             "port": "",
             "signal": "hex3_hex0[7:4]"
           }
         ],
         "instance": "Digit1",
+        "line": 371,
         "module": "HexDigit",
         "parameters": [],
         "resolved": false,
@@ -62,15 +105,35 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HEX2"
+            },
             "port": "",
             "signal": "HEX2"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "hex3_hex0"
+              },
+              "kind": "PART_SELECT",
+              "lsb": {
+                "kind": "LITERAL",
+                "value": "8"
+              },
+              "msb": {
+                "kind": "LITERAL",
+                "value": "11"
+              }
+            },
             "port": "",
             "signal": "hex3_hex0[11:8]"
           }
         ],
         "instance": "Digit2",
+        "line": 372,
         "module": "HexDigit",
         "parameters": [],
         "resolved": false,
@@ -79,15 +142,35 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HEX3"
+            },
             "port": "",
             "signal": "HEX3"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "hex3_hex0"
+              },
+              "kind": "PART_SELECT",
+              "lsb": {
+                "kind": "LITERAL",
+                "value": "12"
+              },
+              "msb": {
+                "kind": "LITERAL",
+                "value": "15"
+              }
+            },
             "port": "",
             "signal": "hex3_hex0[15:12]"
           }
         ],
         "instance": "Digit3",
+        "line": 373,
         "module": "HexDigit",
         "parameters": [],
         "resolved": false,
@@ -96,51 +179,107 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "m10k_pll"
+            },
             "port": "clk",
             "signal": "m10k_pll"
           },
           {
+            "expr": {
+              "kind": "UNARY_OP",
+              "op": "~",
+              "operand": {
+                "base": {
+                  "kind": "IDENTIFIER",
+                  "name": "KEY"
+                },
+                "index": {
+                  "kind": "LITERAL",
+                  "value": "0"
+                },
+                "kind": "BIT_SELECT"
+              }
+            },
             "port": "rst",
             "signal": "~KEY[0]"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "vga_pll"
+            },
             "port": "vga_clk",
             "signal": "vga_pll"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "VGA_HS"
+            },
             "port": "hsync",
             "signal": "VGA_HS"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "VGA_VS"
+            },
             "port": "vsync",
             "signal": "VGA_VS"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "VGA_R"
+            },
             "port": "red",
             "signal": "VGA_R"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "VGA_G"
+            },
             "port": "green",
             "signal": "VGA_G"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "VGA_B"
+            },
             "port": "blue",
             "signal": "VGA_B"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "VGA_SYNC_N"
+            },
             "port": "sync",
             "signal": "VGA_SYNC_N"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "VGA_CLK"
+            },
             "port": "vga_clk_out",
             "signal": "VGA_CLK"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "VGA_BLANK_N"
+            },
             "port": "blank",
             "signal": "VGA_BLANK_N"
           }
         ],
         "instance": "DUT",
+        "line": 401,
         "module": "Mandelbrot_v2",
         "parameters": [],
         "resolved": false,
@@ -149,388 +288,960 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "CLOCK_50"
+            },
             "port": "system_pll_ref_clk_clk",
             "signal": "CLOCK_50"
           },
           {
+            "expr": {
+              "kind": "LITERAL",
+              "value": "1'b0"
+            },
             "port": "system_pll_ref_reset_reset",
             "signal": "1'b0"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "vga_pll"
+            },
             "port": "vga_pll_clk",
             "signal": "vga_pll"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "m10k_pll"
+            },
             "port": "m10k_pll_clk",
             "signal": "m10k_pll"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pio_horizontal_control_export"
+            },
             "port": "pio_horizontal_control_export",
             "signal": "pio_horizontal_control_export"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pio_vertical_control_export"
+            },
             "port": "pio_vertical_control_export",
             "signal": "pio_vertical_control_export"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pio_zoom_control_export"
+            },
             "port": "pio_zoom_control_export",
             "signal": "pio_zoom_control_export"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "FPGA_I2C_SCLK"
+            },
             "port": "av_config_SCLK",
             "signal": "FPGA_I2C_SCLK"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "FPGA_I2C_SDAT"
+            },
             "port": "av_config_SDAT",
             "signal": "FPGA_I2C_SDAT"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "CLOCK3_50"
+            },
             "port": "audio_pll_ref_clk_clk",
             "signal": "CLOCK3_50"
           },
           {
+            "expr": {
+              "kind": "LITERAL",
+              "value": "1'b0"
+            },
             "port": "audio_pll_ref_reset_reset",
             "signal": "1'b0"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "AUD_XCK"
+            },
             "port": "audio_clk_clk",
             "signal": "AUD_XCK"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "AUD_ADCDAT"
+            },
             "port": "audio_ADCDAT",
             "signal": "AUD_ADCDAT"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "AUD_ADCLRCK"
+            },
             "port": "audio_ADCLRCK",
             "signal": "AUD_ADCLRCK"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "AUD_BCLK"
+            },
             "port": "audio_BCLK",
             "signal": "AUD_BCLK"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "AUD_DACDAT"
+            },
             "port": "audio_DACDAT",
             "signal": "AUD_DACDAT"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "AUD_DACLRCK"
+            },
             "port": "audio_DACLRCK",
             "signal": "AUD_DACLRCK"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "SW"
+            },
             "port": "slider_switches_export",
             "signal": "SW"
           },
           {
+            "expr": {
+              "kind": "UNARY_OP",
+              "op": "~",
+              "operand": {
+                "base": {
+                  "kind": "IDENTIFIER",
+                  "name": "KEY"
+                },
+                "kind": "PART_SELECT",
+                "lsb": {
+                  "kind": "LITERAL",
+                  "value": "0"
+                },
+                "msb": {
+                  "kind": "LITERAL",
+                  "value": "3"
+                }
+              }
+            },
             "port": "pushbuttons_export",
             "signal": "~KEY[3:0]"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "LEDR"
+            },
             "port": "leds_export",
             "signal": "LEDR"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "DRAM_CLK"
+            },
             "port": "sdram_clk_clk",
             "signal": "DRAM_CLK"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_DDR3_ADDR"
+            },
             "port": "memory_mem_a",
             "signal": "HPS_DDR3_ADDR"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_DDR3_BA"
+            },
             "port": "memory_mem_ba",
             "signal": "HPS_DDR3_BA"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_DDR3_CK_P"
+            },
             "port": "memory_mem_ck",
             "signal": "HPS_DDR3_CK_P"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_DDR3_CK_N"
+            },
             "port": "memory_mem_ck_n",
             "signal": "HPS_DDR3_CK_N"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_DDR3_CKE"
+            },
             "port": "memory_mem_cke",
             "signal": "HPS_DDR3_CKE"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_DDR3_CS_N"
+            },
             "port": "memory_mem_cs_n",
             "signal": "HPS_DDR3_CS_N"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_DDR3_RAS_N"
+            },
             "port": "memory_mem_ras_n",
             "signal": "HPS_DDR3_RAS_N"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_DDR3_CAS_N"
+            },
             "port": "memory_mem_cas_n",
             "signal": "HPS_DDR3_CAS_N"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_DDR3_WE_N"
+            },
             "port": "memory_mem_we_n",
             "signal": "HPS_DDR3_WE_N"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_DDR3_RESET_N"
+            },
             "port": "memory_mem_reset_n",
             "signal": "HPS_DDR3_RESET_N"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_DDR3_DQ"
+            },
             "port": "memory_mem_dq",
             "signal": "HPS_DDR3_DQ"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_DDR3_DQS_P"
+            },
             "port": "memory_mem_dqs",
             "signal": "HPS_DDR3_DQS_P"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_DDR3_DQS_N"
+            },
             "port": "memory_mem_dqs_n",
             "signal": "HPS_DDR3_DQS_N"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_DDR3_ODT"
+            },
             "port": "memory_mem_odt",
             "signal": "HPS_DDR3_ODT"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_DDR3_DM"
+            },
             "port": "memory_mem_dm",
             "signal": "HPS_DDR3_DM"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_DDR3_RZQ"
+            },
             "port": "memory_oct_rzqin",
             "signal": "HPS_DDR3_RZQ"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_ENET_INT_N"
+            },
             "port": "hps_io_hps_io_gpio_inst_GPIO35",
             "signal": "HPS_ENET_INT_N"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_ENET_GTX_CLK"
+            },
             "port": "hps_io_hps_io_emac1_inst_TX_CLK",
             "signal": "HPS_ENET_GTX_CLK"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "HPS_ENET_TX_DATA"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "0"
+              },
+              "kind": "BIT_SELECT"
+            },
             "port": "hps_io_hps_io_emac1_inst_TXD0",
             "signal": "HPS_ENET_TX_DATA[0]"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "HPS_ENET_TX_DATA"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "1"
+              },
+              "kind": "BIT_SELECT"
+            },
             "port": "hps_io_hps_io_emac1_inst_TXD1",
             "signal": "HPS_ENET_TX_DATA[1]"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "HPS_ENET_TX_DATA"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "2"
+              },
+              "kind": "BIT_SELECT"
+            },
             "port": "hps_io_hps_io_emac1_inst_TXD2",
             "signal": "HPS_ENET_TX_DATA[2]"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "HPS_ENET_TX_DATA"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "3"
+              },
+              "kind": "BIT_SELECT"
+            },
             "port": "hps_io_hps_io_emac1_inst_TXD3",
             "signal": "HPS_ENET_TX_DATA[3]"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "HPS_ENET_RX_DATA"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "0"
+              },
+              "kind": "BIT_SELECT"
+            },
             "port": "hps_io_hps_io_emac1_inst_RXD0",
             "signal": "HPS_ENET_RX_DATA[0]"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_ENET_MDIO"
+            },
             "port": "hps_io_hps_io_emac1_inst_MDIO",
             "signal": "HPS_ENET_MDIO"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_ENET_MDC"
+            },
             "port": "hps_io_hps_io_emac1_inst_MDC",
             "signal": "HPS_ENET_MDC"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_ENET_RX_DV"
+            },
             "port": "hps_io_hps_io_emac1_inst_RX_CTL",
             "signal": "HPS_ENET_RX_DV"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_ENET_TX_EN"
+            },
             "port": "hps_io_hps_io_emac1_inst_TX_CTL",
             "signal": "HPS_ENET_TX_EN"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_ENET_RX_CLK"
+            },
             "port": "hps_io_hps_io_emac1_inst_RX_CLK",
             "signal": "HPS_ENET_RX_CLK"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "HPS_ENET_RX_DATA"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "1"
+              },
+              "kind": "BIT_SELECT"
+            },
             "port": "hps_io_hps_io_emac1_inst_RXD1",
             "signal": "HPS_ENET_RX_DATA[1]"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "HPS_ENET_RX_DATA"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "2"
+              },
+              "kind": "BIT_SELECT"
+            },
             "port": "hps_io_hps_io_emac1_inst_RXD2",
             "signal": "HPS_ENET_RX_DATA[2]"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "HPS_ENET_RX_DATA"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "3"
+              },
+              "kind": "BIT_SELECT"
+            },
             "port": "hps_io_hps_io_emac1_inst_RXD3",
             "signal": "HPS_ENET_RX_DATA[3]"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "HPS_FLASH_DATA"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "0"
+              },
+              "kind": "BIT_SELECT"
+            },
             "port": "hps_io_hps_io_qspi_inst_IO0",
             "signal": "HPS_FLASH_DATA[0]"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "HPS_FLASH_DATA"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "1"
+              },
+              "kind": "BIT_SELECT"
+            },
             "port": "hps_io_hps_io_qspi_inst_IO1",
             "signal": "HPS_FLASH_DATA[1]"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "HPS_FLASH_DATA"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "2"
+              },
+              "kind": "BIT_SELECT"
+            },
             "port": "hps_io_hps_io_qspi_inst_IO2",
             "signal": "HPS_FLASH_DATA[2]"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "HPS_FLASH_DATA"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "3"
+              },
+              "kind": "BIT_SELECT"
+            },
             "port": "hps_io_hps_io_qspi_inst_IO3",
             "signal": "HPS_FLASH_DATA[3]"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_FLASH_NCSO"
+            },
             "port": "hps_io_hps_io_qspi_inst_SS0",
             "signal": "HPS_FLASH_NCSO"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_FLASH_DCLK"
+            },
             "port": "hps_io_hps_io_qspi_inst_CLK",
             "signal": "HPS_FLASH_DCLK"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_GSENSOR_INT"
+            },
             "port": "hps_io_hps_io_gpio_inst_GPIO61",
             "signal": "HPS_GSENSOR_INT"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "HPS_GPIO"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "0"
+              },
+              "kind": "BIT_SELECT"
+            },
             "port": "hps_io_hps_io_gpio_inst_GPIO40",
             "signal": "HPS_GPIO[0]"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "HPS_GPIO"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "1"
+              },
+              "kind": "BIT_SELECT"
+            },
             "port": "hps_io_hps_io_gpio_inst_GPIO41",
             "signal": "HPS_GPIO[1]"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_I2C_CONTROL"
+            },
             "port": "hps_io_hps_io_gpio_inst_GPIO48",
             "signal": "HPS_I2C_CONTROL"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_I2C1_SDAT"
+            },
             "port": "hps_io_hps_io_i2c0_inst_SDA",
             "signal": "HPS_I2C1_SDAT"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_I2C1_SCLK"
+            },
             "port": "hps_io_hps_io_i2c0_inst_SCL",
             "signal": "HPS_I2C1_SCLK"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_I2C2_SDAT"
+            },
             "port": "hps_io_hps_io_i2c1_inst_SDA",
             "signal": "HPS_I2C2_SDAT"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_I2C2_SCLK"
+            },
             "port": "hps_io_hps_io_i2c1_inst_SCL",
             "signal": "HPS_I2C2_SCLK"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_KEY"
+            },
             "port": "hps_io_hps_io_gpio_inst_GPIO54",
             "signal": "HPS_KEY"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_LED"
+            },
             "port": "hps_io_hps_io_gpio_inst_GPIO53",
             "signal": "HPS_LED"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_SD_CMD"
+            },
             "port": "hps_io_hps_io_sdio_inst_CMD",
             "signal": "HPS_SD_CMD"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "HPS_SD_DATA"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "0"
+              },
+              "kind": "BIT_SELECT"
+            },
             "port": "hps_io_hps_io_sdio_inst_D0",
             "signal": "HPS_SD_DATA[0]"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "HPS_SD_DATA"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "1"
+              },
+              "kind": "BIT_SELECT"
+            },
             "port": "hps_io_hps_io_sdio_inst_D1",
             "signal": "HPS_SD_DATA[1]"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_SD_CLK"
+            },
             "port": "hps_io_hps_io_sdio_inst_CLK",
             "signal": "HPS_SD_CLK"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "HPS_SD_DATA"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "2"
+              },
+              "kind": "BIT_SELECT"
+            },
             "port": "hps_io_hps_io_sdio_inst_D2",
             "signal": "HPS_SD_DATA[2]"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "HPS_SD_DATA"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "3"
+              },
+              "kind": "BIT_SELECT"
+            },
             "port": "hps_io_hps_io_sdio_inst_D3",
             "signal": "HPS_SD_DATA[3]"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_SPIM_CLK"
+            },
             "port": "hps_io_hps_io_spim1_inst_CLK",
             "signal": "HPS_SPIM_CLK"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_SPIM_MOSI"
+            },
             "port": "hps_io_hps_io_spim1_inst_MOSI",
             "signal": "HPS_SPIM_MOSI"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_SPIM_MISO"
+            },
             "port": "hps_io_hps_io_spim1_inst_MISO",
             "signal": "HPS_SPIM_MISO"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_SPIM_SS"
+            },
             "port": "hps_io_hps_io_spim1_inst_SS0",
             "signal": "HPS_SPIM_SS"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_UART_RX"
+            },
             "port": "hps_io_hps_io_uart0_inst_RX",
             "signal": "HPS_UART_RX"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_UART_TX"
+            },
             "port": "hps_io_hps_io_uart0_inst_TX",
             "signal": "HPS_UART_TX"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_CONV_USB_N"
+            },
             "port": "hps_io_hps_io_gpio_inst_GPIO09",
             "signal": "HPS_CONV_USB_N"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "HPS_USB_DATA"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "0"
+              },
+              "kind": "BIT_SELECT"
+            },
             "port": "hps_io_hps_io_usb1_inst_D0",
             "signal": "HPS_USB_DATA[0]"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "HPS_USB_DATA"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "1"
+              },
+              "kind": "BIT_SELECT"
+            },
             "port": "hps_io_hps_io_usb1_inst_D1",
             "signal": "HPS_USB_DATA[1]"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "HPS_USB_DATA"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "2"
+              },
+              "kind": "BIT_SELECT"
+            },
             "port": "hps_io_hps_io_usb1_inst_D2",
             "signal": "HPS_USB_DATA[2]"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "HPS_USB_DATA"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "3"
+              },
+              "kind": "BIT_SELECT"
+            },
             "port": "hps_io_hps_io_usb1_inst_D3",
             "signal": "HPS_USB_DATA[3]"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "HPS_USB_DATA"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "4"
+              },
+              "kind": "BIT_SELECT"
+            },
             "port": "hps_io_hps_io_usb1_inst_D4",
             "signal": "HPS_USB_DATA[4]"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "HPS_USB_DATA"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "5"
+              },
+              "kind": "BIT_SELECT"
+            },
             "port": "hps_io_hps_io_usb1_inst_D5",
             "signal": "HPS_USB_DATA[5]"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "HPS_USB_DATA"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "6"
+              },
+              "kind": "BIT_SELECT"
+            },
             "port": "hps_io_hps_io_usb1_inst_D6",
             "signal": "HPS_USB_DATA[6]"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "HPS_USB_DATA"
+              },
+              "index": {
+                "kind": "LITERAL",
+                "value": "7"
+              },
+              "kind": "BIT_SELECT"
+            },
             "port": "hps_io_hps_io_usb1_inst_D7",
             "signal": "HPS_USB_DATA[7]"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_USB_CLKOUT"
+            },
             "port": "hps_io_hps_io_usb1_inst_CLK",
             "signal": "HPS_USB_CLKOUT"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_USB_STP"
+            },
             "port": "hps_io_hps_io_usb1_inst_STP",
             "signal": "HPS_USB_STP"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_USB_DIR"
+            },
             "port": "hps_io_hps_io_usb1_inst_DIR",
             "signal": "HPS_USB_DIR"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "HPS_USB_NXT"
+            },
             "port": "hps_io_hps_io_usb1_inst_NXT",
             "signal": "HPS_USB_NXT"
           }
         ],
         "instance": "The_System",
+        "line": 429,
         "module": "Computer_System",
         "parameters": [],
         "resolved": false,
         "wildcard": false
       }
     ],
+    "line": 3,
     "name": "DE1_SoC_Computer",
     "net_decls": [
       {
+        "line": 360,
         "lsb": 0,
         "msb": 15,
         "name": "hex3_hex0",
@@ -538,6 +1249,7 @@
         "type": "wire"
       },
       {
+        "line": 375,
         "lsb": 0,
         "msb": 0,
         "name": "vga_pll",
@@ -545,6 +1257,7 @@
         "type": "wire"
       },
       {
+        "line": 376,
         "lsb": 0,
         "msb": 0,
         "name": "m10k_pll",
@@ -552,6 +1265,7 @@
         "type": "wire"
       },
       {
+        "line": 425,
         "lsb": 0,
         "msb": 31,
         "name": "pio_horizontal_control_export",
@@ -559,6 +1273,7 @@
         "type": "wire"
       },
       {
+        "line": 426,
         "lsb": 0,
         "msb": 31,
         "name": "pio_vertical_control_export",
@@ -566,6 +1281,7 @@
         "type": "wire"
       },
       {
+        "line": 427,
         "lsb": 0,
         "msb": 1,
         "name": "pio_zoom_control_export",
@@ -577,6 +1293,7 @@
     "ports": [
       {
         "direction": "input",
+        "line": 189,
         "lsb": 0,
         "msb": 0,
         "name": "CLOCK_50",
@@ -585,6 +1302,7 @@
       },
       {
         "direction": "input",
+        "line": 190,
         "lsb": 0,
         "msb": 0,
         "name": "CLOCK2_50",
@@ -593,6 +1311,7 @@
       },
       {
         "direction": "input",
+        "line": 191,
         "lsb": 0,
         "msb": 0,
         "name": "CLOCK3_50",
@@ -601,6 +1320,7 @@
       },
       {
         "direction": "input",
+        "line": 192,
         "lsb": 0,
         "msb": 0,
         "name": "CLOCK4_50",
@@ -609,6 +1329,7 @@
       },
       {
         "direction": "inout",
+        "line": 195,
         "lsb": 0,
         "msb": 0,
         "name": "ADC_CS_N",
@@ -617,6 +1338,7 @@
       },
       {
         "direction": "output",
+        "line": 196,
         "lsb": 0,
         "msb": 0,
         "name": "ADC_DIN",
@@ -625,6 +1347,7 @@
       },
       {
         "direction": "input",
+        "line": 197,
         "lsb": 0,
         "msb": 0,
         "name": "ADC_DOUT",
@@ -633,6 +1356,7 @@
       },
       {
         "direction": "output",
+        "line": 198,
         "lsb": 0,
         "msb": 0,
         "name": "ADC_SCLK",
@@ -641,6 +1365,7 @@
       },
       {
         "direction": "input",
+        "line": 201,
         "lsb": 0,
         "msb": 0,
         "name": "AUD_ADCDAT",
@@ -649,6 +1374,7 @@
       },
       {
         "direction": "inout",
+        "line": 202,
         "lsb": 0,
         "msb": 0,
         "name": "AUD_ADCLRCK",
@@ -657,6 +1383,7 @@
       },
       {
         "direction": "inout",
+        "line": 203,
         "lsb": 0,
         "msb": 0,
         "name": "AUD_BCLK",
@@ -665,6 +1392,7 @@
       },
       {
         "direction": "output",
+        "line": 204,
         "lsb": 0,
         "msb": 0,
         "name": "AUD_DACDAT",
@@ -673,6 +1401,7 @@
       },
       {
         "direction": "inout",
+        "line": 205,
         "lsb": 0,
         "msb": 0,
         "name": "AUD_DACLRCK",
@@ -681,6 +1410,7 @@
       },
       {
         "direction": "output",
+        "line": 206,
         "lsb": 0,
         "msb": 0,
         "name": "AUD_XCK",
@@ -689,6 +1419,7 @@
       },
       {
         "direction": "output",
+        "line": 209,
         "lsb": 0,
         "msb": 12,
         "name": "DRAM_ADDR",
@@ -697,6 +1428,7 @@
       },
       {
         "direction": "output",
+        "line": 210,
         "lsb": 0,
         "msb": 1,
         "name": "DRAM_BA",
@@ -705,6 +1437,7 @@
       },
       {
         "direction": "output",
+        "line": 211,
         "lsb": 0,
         "msb": 0,
         "name": "DRAM_CAS_N",
@@ -713,6 +1446,7 @@
       },
       {
         "direction": "output",
+        "line": 212,
         "lsb": 0,
         "msb": 0,
         "name": "DRAM_CKE",
@@ -721,6 +1455,7 @@
       },
       {
         "direction": "output",
+        "line": 213,
         "lsb": 0,
         "msb": 0,
         "name": "DRAM_CLK",
@@ -729,6 +1464,7 @@
       },
       {
         "direction": "output",
+        "line": 214,
         "lsb": 0,
         "msb": 0,
         "name": "DRAM_CS_N",
@@ -737,6 +1473,7 @@
       },
       {
         "direction": "inout",
+        "line": 215,
         "lsb": 0,
         "msb": 15,
         "name": "DRAM_DQ",
@@ -745,6 +1482,7 @@
       },
       {
         "direction": "output",
+        "line": 216,
         "lsb": 0,
         "msb": 0,
         "name": "DRAM_LDQM",
@@ -753,6 +1491,7 @@
       },
       {
         "direction": "output",
+        "line": 217,
         "lsb": 0,
         "msb": 0,
         "name": "DRAM_RAS_N",
@@ -761,6 +1500,7 @@
       },
       {
         "direction": "output",
+        "line": 218,
         "lsb": 0,
         "msb": 0,
         "name": "DRAM_UDQM",
@@ -769,6 +1509,7 @@
       },
       {
         "direction": "output",
+        "line": 219,
         "lsb": 0,
         "msb": 0,
         "name": "DRAM_WE_N",
@@ -777,6 +1518,7 @@
       },
       {
         "direction": "output",
+        "line": 222,
         "lsb": 0,
         "msb": 0,
         "name": "FPGA_I2C_SCLK",
@@ -785,6 +1527,7 @@
       },
       {
         "direction": "inout",
+        "line": 223,
         "lsb": 0,
         "msb": 0,
         "name": "FPGA_I2C_SDAT",
@@ -793,6 +1536,7 @@
       },
       {
         "direction": "inout",
+        "line": 226,
         "lsb": 0,
         "msb": 35,
         "name": "GPIO_0",
@@ -801,6 +1545,7 @@
       },
       {
         "direction": "inout",
+        "line": 227,
         "lsb": 0,
         "msb": 35,
         "name": "GPIO_1",
@@ -809,6 +1554,7 @@
       },
       {
         "direction": "output",
+        "line": 230,
         "lsb": 0,
         "msb": 6,
         "name": "HEX0",
@@ -817,6 +1563,7 @@
       },
       {
         "direction": "output",
+        "line": 231,
         "lsb": 0,
         "msb": 6,
         "name": "HEX1",
@@ -825,6 +1572,7 @@
       },
       {
         "direction": "output",
+        "line": 232,
         "lsb": 0,
         "msb": 6,
         "name": "HEX2",
@@ -833,6 +1581,7 @@
       },
       {
         "direction": "output",
+        "line": 233,
         "lsb": 0,
         "msb": 6,
         "name": "HEX3",
@@ -841,6 +1590,7 @@
       },
       {
         "direction": "output",
+        "line": 234,
         "lsb": 0,
         "msb": 6,
         "name": "HEX4",
@@ -849,6 +1599,7 @@
       },
       {
         "direction": "output",
+        "line": 235,
         "lsb": 0,
         "msb": 6,
         "name": "HEX5",
@@ -857,6 +1608,7 @@
       },
       {
         "direction": "input",
+        "line": 238,
         "lsb": 0,
         "msb": 0,
         "name": "IRDA_RXD",
@@ -865,6 +1617,7 @@
       },
       {
         "direction": "output",
+        "line": 239,
         "lsb": 0,
         "msb": 0,
         "name": "IRDA_TXD",
@@ -873,6 +1626,7 @@
       },
       {
         "direction": "input",
+        "line": 242,
         "lsb": 0,
         "msb": 3,
         "name": "KEY",
@@ -881,6 +1635,7 @@
       },
       {
         "direction": "output",
+        "line": 245,
         "lsb": 0,
         "msb": 9,
         "name": "LEDR",
@@ -889,6 +1644,7 @@
       },
       {
         "direction": "inout",
+        "line": 248,
         "lsb": 0,
         "msb": 0,
         "name": "PS2_CLK",
@@ -897,6 +1653,7 @@
       },
       {
         "direction": "inout",
+        "line": 249,
         "lsb": 0,
         "msb": 0,
         "name": "PS2_DAT",
@@ -905,6 +1662,7 @@
       },
       {
         "direction": "inout",
+        "line": 251,
         "lsb": 0,
         "msb": 0,
         "name": "PS2_CLK2",
@@ -913,6 +1671,7 @@
       },
       {
         "direction": "inout",
+        "line": 252,
         "lsb": 0,
         "msb": 0,
         "name": "PS2_DAT2",
@@ -921,6 +1680,7 @@
       },
       {
         "direction": "input",
+        "line": 255,
         "lsb": 0,
         "msb": 9,
         "name": "SW",
@@ -929,6 +1689,7 @@
       },
       {
         "direction": "input",
+        "line": 258,
         "lsb": 0,
         "msb": 0,
         "name": "TD_CLK27",
@@ -937,6 +1698,7 @@
       },
       {
         "direction": "input",
+        "line": 259,
         "lsb": 0,
         "msb": 7,
         "name": "TD_DATA",
@@ -945,6 +1707,7 @@
       },
       {
         "direction": "input",
+        "line": 260,
         "lsb": 0,
         "msb": 0,
         "name": "TD_HS",
@@ -953,6 +1716,7 @@
       },
       {
         "direction": "output",
+        "line": 261,
         "lsb": 0,
         "msb": 0,
         "name": "TD_RESET_N",
@@ -961,6 +1725,7 @@
       },
       {
         "direction": "input",
+        "line": 262,
         "lsb": 0,
         "msb": 0,
         "name": "TD_VS",
@@ -969,6 +1734,7 @@
       },
       {
         "direction": "output",
+        "line": 265,
         "lsb": 0,
         "msb": 7,
         "name": "VGA_B",
@@ -977,6 +1743,7 @@
       },
       {
         "direction": "output",
+        "line": 266,
         "lsb": 0,
         "msb": 0,
         "name": "VGA_BLANK_N",
@@ -985,6 +1752,7 @@
       },
       {
         "direction": "output",
+        "line": 267,
         "lsb": 0,
         "msb": 0,
         "name": "VGA_CLK",
@@ -993,6 +1761,7 @@
       },
       {
         "direction": "output",
+        "line": 268,
         "lsb": 0,
         "msb": 7,
         "name": "VGA_G",
@@ -1001,6 +1770,7 @@
       },
       {
         "direction": "output",
+        "line": 269,
         "lsb": 0,
         "msb": 0,
         "name": "VGA_HS",
@@ -1009,6 +1779,7 @@
       },
       {
         "direction": "output",
+        "line": 270,
         "lsb": 0,
         "msb": 7,
         "name": "VGA_R",
@@ -1017,6 +1788,7 @@
       },
       {
         "direction": "output",
+        "line": 271,
         "lsb": 0,
         "msb": 0,
         "name": "VGA_SYNC_N",
@@ -1025,6 +1797,7 @@
       },
       {
         "direction": "output",
+        "line": 272,
         "lsb": 0,
         "msb": 0,
         "name": "VGA_VS",
@@ -1033,6 +1806,7 @@
       },
       {
         "direction": "output",
+        "line": 281,
         "lsb": 0,
         "msb": 14,
         "name": "HPS_DDR3_ADDR",
@@ -1041,6 +1815,7 @@
       },
       {
         "direction": "output",
+        "line": 282,
         "lsb": 0,
         "msb": 2,
         "name": "HPS_DDR3_BA",
@@ -1049,6 +1824,7 @@
       },
       {
         "direction": "output",
+        "line": 283,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_DDR3_CAS_N",
@@ -1057,6 +1833,7 @@
       },
       {
         "direction": "output",
+        "line": 284,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_DDR3_CKE",
@@ -1065,6 +1842,7 @@
       },
       {
         "direction": "output",
+        "line": 285,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_DDR3_CK_N",
@@ -1073,6 +1851,7 @@
       },
       {
         "direction": "output",
+        "line": 286,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_DDR3_CK_P",
@@ -1081,6 +1860,7 @@
       },
       {
         "direction": "output",
+        "line": 287,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_DDR3_CS_N",
@@ -1089,6 +1869,7 @@
       },
       {
         "direction": "output",
+        "line": 288,
         "lsb": 0,
         "msb": 3,
         "name": "HPS_DDR3_DM",
@@ -1097,6 +1878,7 @@
       },
       {
         "direction": "inout",
+        "line": 289,
         "lsb": 0,
         "msb": 31,
         "name": "HPS_DDR3_DQ",
@@ -1105,6 +1887,7 @@
       },
       {
         "direction": "inout",
+        "line": 290,
         "lsb": 0,
         "msb": 3,
         "name": "HPS_DDR3_DQS_N",
@@ -1113,6 +1896,7 @@
       },
       {
         "direction": "inout",
+        "line": 291,
         "lsb": 0,
         "msb": 3,
         "name": "HPS_DDR3_DQS_P",
@@ -1121,6 +1905,7 @@
       },
       {
         "direction": "output",
+        "line": 292,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_DDR3_ODT",
@@ -1129,6 +1914,7 @@
       },
       {
         "direction": "output",
+        "line": 293,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_DDR3_RAS_N",
@@ -1137,6 +1923,7 @@
       },
       {
         "direction": "output",
+        "line": 294,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_DDR3_RESET_N",
@@ -1145,6 +1932,7 @@
       },
       {
         "direction": "input",
+        "line": 295,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_DDR3_RZQ",
@@ -1153,6 +1941,7 @@
       },
       {
         "direction": "output",
+        "line": 296,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_DDR3_WE_N",
@@ -1161,6 +1950,7 @@
       },
       {
         "direction": "output",
+        "line": 299,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_ENET_GTX_CLK",
@@ -1169,6 +1959,7 @@
       },
       {
         "direction": "inout",
+        "line": 300,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_ENET_INT_N",
@@ -1177,6 +1968,7 @@
       },
       {
         "direction": "output",
+        "line": 301,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_ENET_MDC",
@@ -1185,6 +1977,7 @@
       },
       {
         "direction": "inout",
+        "line": 302,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_ENET_MDIO",
@@ -1193,6 +1986,7 @@
       },
       {
         "direction": "input",
+        "line": 303,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_ENET_RX_CLK",
@@ -1201,6 +1995,7 @@
       },
       {
         "direction": "input",
+        "line": 304,
         "lsb": 0,
         "msb": 3,
         "name": "HPS_ENET_RX_DATA",
@@ -1209,6 +2004,7 @@
       },
       {
         "direction": "input",
+        "line": 305,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_ENET_RX_DV",
@@ -1217,6 +2013,7 @@
       },
       {
         "direction": "output",
+        "line": 306,
         "lsb": 0,
         "msb": 3,
         "name": "HPS_ENET_TX_DATA",
@@ -1225,6 +2022,7 @@
       },
       {
         "direction": "output",
+        "line": 307,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_ENET_TX_EN",
@@ -1233,6 +2031,7 @@
       },
       {
         "direction": "inout",
+        "line": 310,
         "lsb": 0,
         "msb": 3,
         "name": "HPS_FLASH_DATA",
@@ -1241,6 +2040,7 @@
       },
       {
         "direction": "output",
+        "line": 311,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_FLASH_DCLK",
@@ -1249,6 +2049,7 @@
       },
       {
         "direction": "output",
+        "line": 312,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_FLASH_NCSO",
@@ -1257,6 +2058,7 @@
       },
       {
         "direction": "inout",
+        "line": 315,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_GSENSOR_INT",
@@ -1265,6 +2067,7 @@
       },
       {
         "direction": "inout",
+        "line": 318,
         "lsb": 0,
         "msb": 1,
         "name": "HPS_GPIO",
@@ -1273,6 +2076,7 @@
       },
       {
         "direction": "inout",
+        "line": 321,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_I2C_CONTROL",
@@ -1281,6 +2085,7 @@
       },
       {
         "direction": "inout",
+        "line": 322,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_I2C1_SCLK",
@@ -1289,6 +2094,7 @@
       },
       {
         "direction": "inout",
+        "line": 323,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_I2C1_SDAT",
@@ -1297,6 +2103,7 @@
       },
       {
         "direction": "inout",
+        "line": 324,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_I2C2_SCLK",
@@ -1305,6 +2112,7 @@
       },
       {
         "direction": "inout",
+        "line": 325,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_I2C2_SDAT",
@@ -1313,6 +2121,7 @@
       },
       {
         "direction": "inout",
+        "line": 328,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_KEY",
@@ -1321,6 +2130,7 @@
       },
       {
         "direction": "inout",
+        "line": 331,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_LED",
@@ -1329,6 +2139,7 @@
       },
       {
         "direction": "output",
+        "line": 334,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_SD_CLK",
@@ -1337,6 +2148,7 @@
       },
       {
         "direction": "inout",
+        "line": 335,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_SD_CMD",
@@ -1345,6 +2157,7 @@
       },
       {
         "direction": "inout",
+        "line": 336,
         "lsb": 0,
         "msb": 3,
         "name": "HPS_SD_DATA",
@@ -1353,6 +2166,7 @@
       },
       {
         "direction": "output",
+        "line": 339,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_SPIM_CLK",
@@ -1361,6 +2175,7 @@
       },
       {
         "direction": "input",
+        "line": 340,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_SPIM_MISO",
@@ -1369,6 +2184,7 @@
       },
       {
         "direction": "output",
+        "line": 341,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_SPIM_MOSI",
@@ -1377,6 +2193,7 @@
       },
       {
         "direction": "inout",
+        "line": 342,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_SPIM_SS",
@@ -1385,6 +2202,7 @@
       },
       {
         "direction": "input",
+        "line": 345,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_UART_RX",
@@ -1393,6 +2211,7 @@
       },
       {
         "direction": "output",
+        "line": 346,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_UART_TX",
@@ -1401,6 +2220,7 @@
       },
       {
         "direction": "inout",
+        "line": 349,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_CONV_USB_N",
@@ -1409,6 +2229,7 @@
       },
       {
         "direction": "input",
+        "line": 350,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_USB_CLKOUT",
@@ -1417,6 +2238,7 @@
       },
       {
         "direction": "inout",
+        "line": 351,
         "lsb": 0,
         "msb": 7,
         "name": "HPS_USB_DATA",
@@ -1425,6 +2247,7 @@
       },
       {
         "direction": "input",
+        "line": 352,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_USB_DIR",
@@ -1433,6 +2256,7 @@
       },
       {
         "direction": "input",
+        "line": 353,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_USB_NXT",
@@ -1441,6 +2265,7 @@
       },
       {
         "direction": "output",
+        "line": 354,
         "lsb": 0,
         "msb": 0,
         "name": "HPS_USB_STP",
@@ -1448,6 +2273,7 @@
         "type": "unspecified"
       }
     ],
+    "pragmas": [],
     "source_file": "De1_SoC_Computer.v"
   }
 ]

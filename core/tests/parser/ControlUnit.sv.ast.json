@@ -453,18 +453,22 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 16,
         "sensitivity": "*"
       }
     ],
     "assigns": [],
+    "end_line": 31,
     "gate_primitives": [],
     "instances": [],
+    "line": 2,
     "name": "ControlUnit",
     "net_decls": [],
     "parameters": [],
     "ports": [
       {
         "direction": "input",
+        "line": 3,
         "lsb": 0,
         "msb": 6,
         "name": "opcode",
@@ -473,6 +477,7 @@
       },
       {
         "direction": "input",
+        "line": 4,
         "lsb": 0,
         "msb": 2,
         "name": "funct3",
@@ -481,6 +486,7 @@
       },
       {
         "direction": "input",
+        "line": 5,
         "lsb": 0,
         "msb": 6,
         "name": "funct7",
@@ -489,6 +495,7 @@
       },
       {
         "direction": "output",
+        "line": 6,
         "lsb": 0,
         "msb": 0,
         "name": "reg_write",
@@ -497,6 +504,7 @@
       },
       {
         "direction": "output",
+        "line": 7,
         "lsb": 0,
         "msb": 0,
         "name": "mem_read",
@@ -505,6 +513,7 @@
       },
       {
         "direction": "output",
+        "line": 8,
         "lsb": 0,
         "msb": 0,
         "name": "mem_write",
@@ -513,6 +522,7 @@
       },
       {
         "direction": "output",
+        "line": 9,
         "lsb": 0,
         "msb": 0,
         "name": "mem_to_reg",
@@ -521,6 +531,7 @@
       },
       {
         "direction": "output",
+        "line": 10,
         "lsb": 0,
         "msb": 0,
         "name": "alu_src",
@@ -529,6 +540,7 @@
       },
       {
         "direction": "output",
+        "line": 11,
         "lsb": 0,
         "msb": 0,
         "name": "branch",
@@ -537,6 +549,7 @@
       },
       {
         "direction": "output",
+        "line": 12,
         "lsb": 0,
         "msb": 0,
         "name": "jump",
@@ -545,6 +558,7 @@
       },
       {
         "direction": "output",
+        "line": 13,
         "lsb": 0,
         "msb": 3,
         "name": "alu_op",
@@ -553,6 +567,7 @@
       },
       {
         "direction": "output",
+        "line": 14,
         "lsb": 0,
         "msb": 2,
         "name": "imm_sel",
@@ -560,6 +575,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "ControlUnit.sv"
   }
 ]

@@ -13,6 +13,12 @@
 // Serialize a module list to a JSON string (used by gen_ast after linking).
 std::string modulesToJSON(const std::vector<Module>& modules);
 
+// Attach `// verilens: <word>` pragmas (from Lexer::pragmas()) to modules: a pragma
+// inside a module body belongs to that module; one above a module belongs to the
+// next module that starts after it.
+void attachPragmas(std::vector<Module>& modules,
+                   const std::vector<std::pair<int, std::string>>& pragmas);
+
 class Parser {
 public:
     explicit Parser(const std::vector<Token>& tokens);
@@ -60,6 +66,7 @@ private:
     std::vector<NetDecl>   parseNetDeclaration();        // wire / reg / logic ...
     std::vector<Parameter> parseParameterDeclaration();  // parameter / localparam
     Instance    parseInstance();              // ModName #() instName (...)
+    ExprPtr     tryParseConnectionExpr(bool positional); // non-consuming; see Parser.cpp
     std::vector<GatePrimitive> parseGatePrimitive(); // and/or/not/... [name] (...);
     std::vector<Assign> parseContinuousAssign();  // assign a = x [, b = y, ...];
     AlwaysBlock parseAlwaysBlock();

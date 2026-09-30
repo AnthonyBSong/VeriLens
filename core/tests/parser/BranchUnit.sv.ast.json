@@ -269,6 +269,7 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 13,
         "sensitivity": "*"
       }
     ],
@@ -278,6 +279,7 @@
           "kind": "IDENTIFIER",
           "name": "target"
         },
+        "line": 12,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -292,14 +294,17 @@
         }
       }
     ],
+    "end_line": 27,
     "gate_primitives": [],
     "instances": [],
+    "line": 2,
     "name": "BranchUnit",
     "net_decls": [],
     "parameters": [],
     "ports": [
       {
         "direction": "input",
+        "line": 3,
         "lsb": 0,
         "msb": 31,
         "name": "pc",
@@ -308,6 +313,7 @@
       },
       {
         "direction": "input",
+        "line": 4,
         "lsb": 0,
         "msb": 31,
         "name": "rs1",
@@ -316,6 +322,7 @@
       },
       {
         "direction": "input",
+        "line": 5,
         "lsb": 0,
         "msb": 31,
         "name": "rs2",
@@ -324,6 +331,7 @@
       },
       {
         "direction": "input",
+        "line": 6,
         "lsb": 0,
         "msb": 31,
         "name": "imm",
@@ -332,6 +340,7 @@
       },
       {
         "direction": "input",
+        "line": 7,
         "lsb": 0,
         "msb": 2,
         "name": "funct3",
@@ -340,6 +349,7 @@
       },
       {
         "direction": "input",
+        "line": 8,
         "lsb": 0,
         "msb": 0,
         "name": "branch",
@@ -348,6 +358,7 @@
       },
       {
         "direction": "output",
+        "line": 9,
         "lsb": 0,
         "msb": 31,
         "name": "target",
@@ -356,6 +367,7 @@
       },
       {
         "direction": "output",
+        "line": 10,
         "lsb": 0,
         "msb": 0,
         "name": "taken",
@@ -363,6 +375,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "BranchUnit.sv"
   }
 ]

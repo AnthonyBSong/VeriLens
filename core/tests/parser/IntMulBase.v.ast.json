@@ -7,6 +7,7 @@
           "kind": "IDENTIFIER",
           "name": "istream_msg_a"
         },
+        "line": 36,
         "rhs": {
           "base": {
             "kind": "IDENTIFIER",
@@ -28,6 +29,7 @@
           "kind": "IDENTIFIER",
           "name": "istream_msg_b"
         },
+        "line": 39,
         "rhs": {
           "base": {
             "kind": "IDENTIFIER",
@@ -49,6 +51,7 @@
           "kind": "IDENTIFIER",
           "name": "b_lsb"
         },
+        "line": 97,
         "rhs": {
           "base": {
             "kind": "IDENTIFIER",
@@ -66,34 +69,53 @@
           "kind": "IDENTIFIER",
           "name": "ostream_msg"
         },
+        "line": 153,
         "rhs": {
           "kind": "IDENTIFIER",
           "name": "result_reg_out"
         }
       }
     ],
+    "end_line": 155,
     "gate_primitives": [],
     "instances": [
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "a_mux_sel"
+            },
             "port": "sel",
             "signal": "a_mux_sel"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "a_shift_out"
+            },
             "port": "in0",
             "signal": "a_shift_out"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "istream_msg_a"
+            },
             "port": "in1",
             "signal": "istream_msg_a"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "a_mux_out"
+            },
             "port": "out",
             "signal": "a_mux_out"
           }
         ],
         "instance": "a_mux",
+        "line": 45,
         "module": "vc_Mux2",
         "parameters": [
           "32"
@@ -104,23 +126,40 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "a_mux_out"
+            },
             "port": "d",
             "signal": "a_mux_out"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "a_reg_out"
+            },
             "port": "q",
             "signal": "a_reg_out"
           }
         ],
         "instance": "a_reg",
+        "line": 56,
         "module": "vc_ResetReg",
         "parameters": [
           "32"
@@ -131,19 +170,32 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "a_reg_out"
+            },
             "port": "in",
             "signal": "a_reg_out"
           },
           {
+            "expr": {
+              "kind": "LITERAL",
+              "value": "1'b1"
+            },
             "port": "shamt",
             "signal": "1'b1"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "a_shift_out"
+            },
             "port": "out",
             "signal": "a_shift_out"
           }
         ],
         "instance": "a_shift",
+        "line": 66,
         "module": "vc_LeftLogicalShifter",
         "parameters": [
           "32",
@@ -155,23 +207,40 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "b_mux_sel"
+            },
             "port": "sel",
             "signal": "b_mux_sel"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "b_shift_out"
+            },
             "port": "in0",
             "signal": "b_shift_out"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "istream_msg_b"
+            },
             "port": "in1",
             "signal": "istream_msg_b"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "b_mux_out"
+            },
             "port": "out",
             "signal": "b_mux_out"
           }
         ],
         "instance": "b_mux",
+        "line": 77,
         "module": "vc_Mux2",
         "parameters": [
           "32"
@@ -182,23 +251,40 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "b_mux_out"
+            },
             "port": "d",
             "signal": "b_mux_out"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "b_reg_out"
+            },
             "port": "q",
             "signal": "b_reg_out"
           }
         ],
         "instance": "b_reg",
+        "line": 88,
         "module": "vc_ResetReg",
         "parameters": [
           "32"
@@ -209,19 +295,32 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "b_reg_out"
+            },
             "port": "in",
             "signal": "b_reg_out"
           },
           {
+            "expr": {
+              "kind": "LITERAL",
+              "value": "1'b1"
+            },
             "port": "shamt",
             "signal": "1'b1"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "b_shift_out"
+            },
             "port": "out",
             "signal": "b_shift_out"
           }
         ],
         "instance": "b_shift",
+        "line": 101,
         "module": "vc_RightLogicalShifter",
         "parameters": [
           "32",
@@ -233,23 +332,40 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "result_mux_sel"
+            },
             "port": "sel",
             "signal": "result_mux_sel"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "add_mux_out"
+            },
             "port": "in0",
             "signal": "add_mux_out"
           },
           {
+            "expr": {
+              "kind": "LITERAL",
+              "value": "32'b0"
+            },
             "port": "in1",
             "signal": "32'b0"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "result_mux_out"
+            },
             "port": "out",
             "signal": "result_mux_out"
           }
         ],
         "instance": "result_mux",
+        "line": 112,
         "module": "vc_Mux2",
         "parameters": [
           "32"
@@ -260,27 +376,48 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "result_en"
+            },
             "port": "en",
             "signal": "result_en"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "result_mux_out"
+            },
             "port": "d",
             "signal": "result_mux_out"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "result_reg_out"
+            },
             "port": "q",
             "signal": "result_reg_out"
           }
         ],
         "instance": "result_reg",
+        "line": 123,
         "module": "vc_EnReg",
         "parameters": [
           "32"
@@ -291,19 +428,32 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "a_reg_out"
+            },
             "port": "in0",
             "signal": "a_reg_out"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "result_reg_out"
+            },
             "port": "in1",
             "signal": "result_reg_out"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "adder_out"
+            },
             "port": "out",
             "signal": "adder_out"
           }
         ],
         "instance": "adder",
+        "line": 135,
         "module": "vc_SimpleAdder",
         "parameters": [
           "32"
@@ -314,23 +464,40 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "add_mux_sel"
+            },
             "port": "sel",
             "signal": "add_mux_sel"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "adder_out"
+            },
             "port": "in0",
             "signal": "adder_out"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "result_reg_out"
+            },
             "port": "in1",
             "signal": "result_reg_out"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "add_mux_out"
+            },
             "port": "out",
             "signal": "add_mux_out"
           }
         ],
         "instance": "adder_mux",
+        "line": 144,
         "module": "vc_Mux2",
         "parameters": [
           "32"
@@ -339,9 +506,11 @@
         "wildcard": false
       }
     ],
+    "line": 14,
     "name": "lab1_imul_IntMulBaseDpath",
     "net_decls": [
       {
+        "line": 35,
         "lsb": 0,
         "msb": 31,
         "name": "istream_msg_a",
@@ -349,6 +518,7 @@
         "type": "logic"
       },
       {
+        "line": 38,
         "lsb": 0,
         "msb": 31,
         "name": "istream_msg_b",
@@ -356,6 +526,7 @@
         "type": "logic"
       },
       {
+        "line": 42,
         "lsb": 0,
         "msb": 31,
         "name": "a_shift_out",
@@ -363,6 +534,7 @@
         "type": "logic"
       },
       {
+        "line": 43,
         "lsb": 0,
         "msb": 31,
         "name": "a_mux_out",
@@ -370,6 +542,7 @@
         "type": "logic"
       },
       {
+        "line": 54,
         "lsb": 0,
         "msb": 31,
         "name": "a_reg_out",
@@ -377,6 +550,7 @@
         "type": "logic"
       },
       {
+        "line": 74,
         "lsb": 0,
         "msb": 31,
         "name": "b_shift_out",
@@ -384,6 +558,7 @@
         "type": "logic"
       },
       {
+        "line": 75,
         "lsb": 0,
         "msb": 31,
         "name": "b_mux_out",
@@ -391,6 +566,7 @@
         "type": "logic"
       },
       {
+        "line": 86,
         "lsb": 0,
         "msb": 31,
         "name": "b_reg_out",
@@ -398,6 +574,7 @@
         "type": "logic"
       },
       {
+        "line": 109,
         "lsb": 0,
         "msb": 31,
         "name": "add_mux_out",
@@ -405,6 +582,7 @@
         "type": "logic"
       },
       {
+        "line": 110,
         "lsb": 0,
         "msb": 31,
         "name": "result_mux_out",
@@ -412,6 +590,7 @@
         "type": "logic"
       },
       {
+        "line": 121,
         "lsb": 0,
         "msb": 31,
         "name": "result_reg_out",
@@ -419,6 +598,7 @@
         "type": "logic"
       },
       {
+        "line": 133,
         "lsb": 0,
         "msb": 31,
         "name": "adder_out",
@@ -430,6 +610,7 @@
     "ports": [
       {
         "direction": "input",
+        "line": 16,
         "lsb": 0,
         "msb": 0,
         "name": "clk",
@@ -438,6 +619,7 @@
       },
       {
         "direction": "input",
+        "line": 17,
         "lsb": 0,
         "msb": 0,
         "name": "reset",
@@ -446,6 +628,7 @@
       },
       {
         "direction": "input",
+        "line": 20,
         "lsb": 0,
         "msb": 63,
         "name": "istream_msg",
@@ -454,6 +637,7 @@
       },
       {
         "direction": "output",
+        "line": 21,
         "lsb": 0,
         "msb": 31,
         "name": "ostream_msg",
@@ -462,6 +646,7 @@
       },
       {
         "direction": "input",
+        "line": 24,
         "lsb": 0,
         "msb": 0,
         "name": "a_mux_sel",
@@ -470,6 +655,7 @@
       },
       {
         "direction": "input",
+        "line": 25,
         "lsb": 0,
         "msb": 0,
         "name": "b_mux_sel",
@@ -478,6 +664,7 @@
       },
       {
         "direction": "input",
+        "line": 26,
         "lsb": 0,
         "msb": 0,
         "name": "result_mux_sel",
@@ -486,6 +673,7 @@
       },
       {
         "direction": "input",
+        "line": 27,
         "lsb": 0,
         "msb": 0,
         "name": "add_mux_sel",
@@ -494,6 +682,7 @@
       },
       {
         "direction": "input",
+        "line": 28,
         "lsb": 0,
         "msb": 0,
         "name": "result_en",
@@ -502,6 +691,7 @@
       },
       {
         "direction": "output",
+        "line": 31,
         "lsb": 0,
         "msb": 0,
         "name": "b_lsb",
@@ -509,6 +699,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "IntMulBase.v"
   },
   {
@@ -558,6 +749,7 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 191,
         "sensitivity": "posedge clk"
       },
       {
@@ -682,6 +874,7 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 210,
         "sensitivity": "*"
       },
       {
@@ -739,6 +932,7 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 264,
         "sensitivity": "*"
       }
     ],
@@ -748,6 +942,7 @@
           "kind": "IDENTIFIER",
           "name": "req_go"
         },
+        "line": 206,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -766,6 +961,7 @@
           "kind": "IDENTIFIER",
           "name": "resp_go"
         },
+        "line": 207,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -784,50 +980,85 @@
           "kind": "IDENTIFIER",
           "name": "do_add"
         },
+        "line": 262,
         "rhs": {
           "kind": "IDENTIFIER",
           "name": "b_lsb"
         }
       }
     ],
+    "end_line": 278,
     "gate_primitives": [],
     "instances": [
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "req_go"
+            },
             "port": "clear",
             "signal": "req_go"
           },
           {
+            "expr": {
+              "kind": "LITERAL",
+              "value": "1'b1"
+            },
             "port": "increment",
             "signal": "1'b1"
           },
           {
+            "expr": {
+              "kind": "LITERAL",
+              "value": "1'b0"
+            },
             "port": "decrement",
             "signal": "1'b0"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "count"
+            },
             "port": "count",
             "signal": "count"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "_count_is_zero"
+            },
             "port": "count_is_zero",
             "signal": "_count_is_zero"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "calc_done"
+            },
             "port": "count_is_max",
             "signal": "calc_done"
           }
         ],
         "instance": "counter",
+        "line": 225,
         "module": "vc_BasicCounter",
         "parameters": [
           "5",
@@ -838,9 +1069,11 @@
         "wildcard": false
       }
     ],
+    "line": 157,
     "name": "lab1_imul_IntMulBaseCtrl",
     "net_decls": [
       {
+        "line": 202,
         "lsb": 0,
         "msb": 0,
         "name": "req_go",
@@ -848,6 +1081,7 @@
         "type": "logic"
       },
       {
+        "line": 203,
         "lsb": 0,
         "msb": 0,
         "name": "resp_go",
@@ -855,6 +1089,7 @@
         "type": "logic"
       },
       {
+        "line": 204,
         "lsb": 0,
         "msb": 0,
         "name": "calc_done",
@@ -862,6 +1097,7 @@
         "type": "logic"
       },
       {
+        "line": 222,
         "lsb": 0,
         "msb": 4,
         "name": "count",
@@ -869,6 +1105,7 @@
         "type": "logic"
       },
       {
+        "line": 223,
         "lsb": 0,
         "msb": 0,
         "name": "_count_is_zero",
@@ -876,6 +1113,7 @@
         "type": "logic"
       },
       {
+        "line": 261,
         "lsb": 0,
         "msb": 0,
         "name": "do_add",
@@ -887,6 +1125,7 @@
     "ports": [
       {
         "direction": "input",
+        "line": 159,
         "lsb": 0,
         "msb": 0,
         "name": "clk",
@@ -895,6 +1134,7 @@
       },
       {
         "direction": "input",
+        "line": 160,
         "lsb": 0,
         "msb": 0,
         "name": "reset",
@@ -903,6 +1143,7 @@
       },
       {
         "direction": "input",
+        "line": 163,
         "lsb": 0,
         "msb": 0,
         "name": "istream_val",
@@ -911,6 +1152,7 @@
       },
       {
         "direction": "output",
+        "line": 164,
         "lsb": 0,
         "msb": 0,
         "name": "istream_rdy",
@@ -919,6 +1161,7 @@
       },
       {
         "direction": "output",
+        "line": 165,
         "lsb": 0,
         "msb": 0,
         "name": "ostream_val",
@@ -927,6 +1170,7 @@
       },
       {
         "direction": "input",
+        "line": 166,
         "lsb": 0,
         "msb": 0,
         "name": "ostream_rdy",
@@ -935,6 +1179,7 @@
       },
       {
         "direction": "output",
+        "line": 169,
         "lsb": 0,
         "msb": 0,
         "name": "a_mux_sel",
@@ -943,6 +1188,7 @@
       },
       {
         "direction": "output",
+        "line": 170,
         "lsb": 0,
         "msb": 0,
         "name": "b_mux_sel",
@@ -951,6 +1197,7 @@
       },
       {
         "direction": "output",
+        "line": 171,
         "lsb": 0,
         "msb": 0,
         "name": "result_mux_sel",
@@ -959,6 +1206,7 @@
       },
       {
         "direction": "output",
+        "line": 172,
         "lsb": 0,
         "msb": 0,
         "name": "add_mux_sel",
@@ -967,6 +1215,7 @@
       },
       {
         "direction": "output",
+        "line": 173,
         "lsb": 0,
         "msb": 0,
         "name": "result_en",
@@ -975,6 +1224,7 @@
       },
       {
         "direction": "input",
+        "line": 176,
         "lsb": 0,
         "msb": 0,
         "name": "b_lsb",
@@ -982,16 +1232,19 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "IntMulBase.v"
   },
   {
     "always_blocks": [],
     "assigns": [],
+    "end_line": 374,
     "gate_primitives": [],
     "instances": [
       {
         "connections": [],
         "instance": "ctrl",
+        "line": 310,
         "module": "lab1_imul_IntMulBaseCtrl",
         "parameters": [],
         "resolved": true,
@@ -1000,15 +1253,18 @@
       {
         "connections": [],
         "instance": "dpath",
+        "line": 315,
         "module": "lab1_imul_IntMulBaseDpath",
         "parameters": [],
         "resolved": true,
         "wildcard": true
       }
     ],
+    "line": 284,
     "name": "lab1_imul_IntMulBase",
     "net_decls": [
       {
+        "line": 300,
         "lsb": 0,
         "msb": 0,
         "name": "a_mux_sel",
@@ -1016,6 +1272,7 @@
         "type": "logic"
       },
       {
+        "line": 301,
         "lsb": 0,
         "msb": 0,
         "name": "b_mux_sel",
@@ -1023,6 +1280,7 @@
         "type": "logic"
       },
       {
+        "line": 302,
         "lsb": 0,
         "msb": 0,
         "name": "result_mux_sel",
@@ -1030,6 +1288,7 @@
         "type": "logic"
       },
       {
+        "line": 303,
         "lsb": 0,
         "msb": 0,
         "name": "add_mux_sel",
@@ -1037,6 +1296,7 @@
         "type": "logic"
       },
       {
+        "line": 304,
         "lsb": 0,
         "msb": 0,
         "name": "result_en",
@@ -1044,6 +1304,7 @@
         "type": "logic"
       },
       {
+        "line": 308,
         "lsb": 0,
         "msb": 0,
         "name": "b_lsb",
@@ -1055,6 +1316,7 @@
     "ports": [
       {
         "direction": "input",
+        "line": 286,
         "lsb": 0,
         "msb": 0,
         "name": "clk",
@@ -1063,6 +1325,7 @@
       },
       {
         "direction": "input",
+        "line": 287,
         "lsb": 0,
         "msb": 0,
         "name": "reset",
@@ -1071,6 +1334,7 @@
       },
       {
         "direction": "input",
+        "line": 289,
         "lsb": 0,
         "msb": 0,
         "name": "istream_val",
@@ -1079,6 +1343,7 @@
       },
       {
         "direction": "output",
+        "line": 290,
         "lsb": 0,
         "msb": 0,
         "name": "istream_rdy",
@@ -1087,6 +1352,7 @@
       },
       {
         "direction": "input",
+        "line": 291,
         "lsb": 0,
         "msb": 63,
         "name": "istream_msg",
@@ -1095,6 +1361,7 @@
       },
       {
         "direction": "output",
+        "line": 293,
         "lsb": 0,
         "msb": 0,
         "name": "ostream_val",
@@ -1103,6 +1370,7 @@
       },
       {
         "direction": "input",
+        "line": 294,
         "lsb": 0,
         "msb": 0,
         "name": "ostream_rdy",
@@ -1111,6 +1379,7 @@
       },
       {
         "direction": "output",
+        "line": 295,
         "lsb": 0,
         "msb": 31,
         "name": "ostream_msg",
@@ -1118,6 +1387,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "IntMulBase.v"
   }
 ]

@@ -7,6 +7,7 @@
           "kind": "IDENTIFIER",
           "name": "imem_reqstream_msg_addr"
         },
+        "line": 99,
         "rhs": {
           "kind": "IDENTIFIER",
           "name": "pc_next_F"
@@ -17,6 +18,7 @@
           "kind": "IDENTIFIER",
           "name": "num_cores"
         },
+        "line": 238,
         "rhs": {
           "kind": "IDENTIFIER",
           "name": "p_num_cores"
@@ -27,6 +29,7 @@
           "kind": "IDENTIFIER",
           "name": "imul_req_msg"
         },
+        "line": 311,
         "rhs": {
           "kind": "CONCAT",
           "parts": [
@@ -46,6 +49,7 @@
           "kind": "IDENTIFIER",
           "name": "dmem_reqstream_msg_addr"
         },
+        "line": 427,
         "rhs": {
           "kind": "IDENTIFIER",
           "name": "alu_result_X"
@@ -56,6 +60,7 @@
           "kind": "IDENTIFIER",
           "name": "dmem_result_M"
         },
+        "line": 447,
         "rhs": {
           "kind": "IDENTIFIER",
           "name": "dmem_respstream_msg_data"
@@ -66,6 +71,7 @@
           "kind": "IDENTIFIER",
           "name": "proc2mngr_data"
         },
+        "line": 472,
         "rhs": {
           "kind": "IDENTIFIER",
           "name": "wb_result_W"
@@ -76,6 +82,7 @@
           "kind": "IDENTIFIER",
           "name": "rf_wdata_W"
         },
+        "line": 474,
         "rhs": {
           "kind": "IDENTIFIER",
           "name": "wb_result_W"
@@ -86,6 +93,7 @@
           "kind": "IDENTIFIER",
           "name": "stats_en"
         },
+        "line": 482,
         "rhs": {
           "kind": "UNARY_OP",
           "op": "|",
@@ -96,32 +104,54 @@
         }
       }
     ],
+    "end_line": 493,
     "gate_primitives": [],
     "instances": [
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reg_en_F"
+            },
             "port": "en",
             "signal": "reg_en_F"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pc_next_F"
+            },
             "port": "d",
             "signal": "pc_next_F"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pc_F"
+            },
             "port": "q",
             "signal": "pc_F"
           }
         ],
         "instance": "pc_reg_F",
+        "line": 111,
         "module": "vc_EnResetReg",
         "parameters": [
           "32",
@@ -133,15 +163,24 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pc_F"
+            },
             "port": "in",
             "signal": "pc_F"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pc_plus4_F"
+            },
             "port": "out",
             "signal": "pc_plus4_F"
           }
         ],
         "instance": "pc_incr_F",
+        "line": 120,
         "module": "vc_Incrementer",
         "parameters": [
           "32",
@@ -153,39 +192,72 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pc_F"
+            },
             "port": "curr_pc",
             "signal": "pc_F"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "btb_target_F"
+            },
             "port": "branch_target",
             "signal": "btb_target_F"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "take_branch_F"
+            },
             "port": "take_branch",
             "signal": "take_branch_F"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pc_X"
+            },
             "port": "branch_pc",
             "signal": "pc_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "br_target_X"
+            },
             "port": "branch_dest",
             "signal": "br_target_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "branch_taken_X"
+            },
             "port": "branch_taken",
             "signal": "branch_taken_X"
           }
         ],
         "instance": "btb",
+        "line": 133,
         "module": "lab2_proc_BranchTargetBuffer",
         "parameters": [],
         "resolved": false,
@@ -194,23 +266,40 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pc_plus4_F"
+            },
             "port": "in0",
             "signal": "pc_plus4_F"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "btb_target_F"
+            },
             "port": "in1",
             "signal": "btb_target_F"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "take_branch_F"
+            },
             "port": "sel",
             "signal": "take_branch_F"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "br_predict_F"
+            },
             "port": "out",
             "signal": "br_predict_F"
           }
         ],
         "instance": "br_predict_mux_F",
+        "line": 150,
         "module": "vc_Mux2",
         "parameters": [
           "32"
@@ -221,31 +310,56 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "br_predict_F"
+            },
             "port": "in0",
             "signal": "br_predict_F"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "br_mispredict_X"
+            },
             "port": "in1",
             "signal": "br_mispredict_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "jal_target_D"
+            },
             "port": "in2",
             "signal": "jal_target_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "alu_result_X"
+            },
             "port": "in3",
             "signal": "alu_result_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pc_sel_F"
+            },
             "port": "sel",
             "signal": "pc_sel_F"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pc_next_F"
+            },
             "port": "out",
             "signal": "pc_next_F"
           }
         ],
         "instance": "pc_sel_mux_F",
+        "line": 161,
         "module": "vc_Mux4",
         "parameters": [
           "32"
@@ -256,27 +370,48 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reg_en_D"
+            },
             "port": "en",
             "signal": "reg_en_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pc_F"
+            },
             "port": "d",
             "signal": "pc_F"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pc_D"
+            },
             "port": "q",
             "signal": "pc_D"
           }
         ],
         "instance": "pc_reg_D",
+        "line": 181,
         "module": "vc_EnResetReg",
         "parameters": [
           "32"
@@ -287,27 +422,48 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reg_en_D"
+            },
             "port": "en",
             "signal": "reg_en_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "imem_respstream_msg.data"
+            },
             "port": "d",
             "signal": "imem_respstream_msg.data"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "inst_D"
+            },
             "port": "q",
             "signal": "inst_D"
           }
         ],
         "instance": "inst_D_reg",
+        "line": 190,
         "module": "vc_EnResetReg",
         "parameters": [
           "32",
@@ -319,39 +475,60 @@
       {
         "connections": [
           {
+            "expr": null,
             "port": "opcode",
             "signal": ""
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "inst_D"
+            },
             "port": "inst",
             "signal": "inst_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "inst_rs1_D"
+            },
             "port": "rs1",
             "signal": "inst_rs1_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "inst_rs2_D"
+            },
             "port": "rs2",
             "signal": "inst_rs2_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "inst_rd_D"
+            },
             "port": "rd",
             "signal": "inst_rd_D"
           },
           {
+            "expr": null,
             "port": "funct3",
             "signal": ""
           },
           {
+            "expr": null,
             "port": "funct7",
             "signal": ""
           },
           {
+            "expr": null,
             "port": "csr",
             "signal": ""
           }
         ],
         "instance": "inst_unpack",
+        "line": 199,
         "module": "lab2_proc_tinyrv2_encoding_InstUnpack",
         "parameters": [],
         "resolved": false,
@@ -360,19 +537,32 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "imm_type_D"
+            },
             "port": "imm_type",
             "signal": "imm_type_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "inst_D"
+            },
             "port": "inst",
             "signal": "inst_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "imm_D"
+            },
             "port": "imm",
             "signal": "imm_D"
           }
         ],
         "instance": "imm_gen_D",
+        "line": 211,
         "module": "lab2_proc_ProcDpathImmGen",
         "parameters": [],
         "resolved": false,
@@ -381,43 +571,80 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "inst_rs1_D"
+            },
             "port": "rd_addr0",
             "signal": "inst_rs1_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "rf_rdata0_D"
+            },
             "port": "rd_data0",
             "signal": "rf_rdata0_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "inst_rs2_D"
+            },
             "port": "rd_addr1",
             "signal": "inst_rs2_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "rf_rdata1_D"
+            },
             "port": "rd_data1",
             "signal": "rf_rdata1_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "rf_wen_W"
+            },
             "port": "wr_en",
             "signal": "rf_wen_W"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "rf_waddr_W"
+            },
             "port": "wr_addr",
             "signal": "rf_waddr_W"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "rf_wdata_W"
+            },
             "port": "wr_data",
             "signal": "rf_wdata_W"
           }
         ],
         "instance": "rf",
+        "line": 222,
         "module": "vc_Regfile_2r1w_zero",
         "parameters": [],
         "resolved": false,
@@ -426,27 +653,48 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mngr2proc_data"
+            },
             "port": "in0",
             "signal": "mngr2proc_data"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "num_cores"
+            },
             "port": "in1",
             "signal": "num_cores"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "core_id"
+            },
             "port": "in2",
             "signal": "core_id"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "csrr_sel_D"
+            },
             "port": "sel",
             "signal": "csrr_sel_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "csrr_data_D"
+            },
             "port": "out",
             "signal": "csrr_data_D"
           }
         ],
         "instance": "csrr_sel_mux_D",
+        "line": 241,
         "module": "vc_Mux3",
         "parameters": [
           "32"
@@ -457,31 +705,56 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "rf_rdata0_D"
+            },
             "port": "in0",
             "signal": "rf_rdata0_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_result_X"
+            },
             "port": "in1",
             "signal": "ex_result_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "wb_result_M"
+            },
             "port": "in2",
             "signal": "wb_result_M"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "wb_result_W"
+            },
             "port": "in3",
             "signal": "wb_result_W"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "op1_bypass_sel_D"
+            },
             "port": "sel",
             "signal": "op1_bypass_sel_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "op1_bypass_D"
+            },
             "port": "out",
             "signal": "op1_bypass_D"
           }
         ],
         "instance": "op1_bypass_mux_D",
+        "line": 254,
         "module": "vc_Mux4",
         "parameters": [
           "32"
@@ -492,31 +765,56 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "rf_rdata1_D"
+            },
             "port": "in0",
             "signal": "rf_rdata1_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_result_X"
+            },
             "port": "in1",
             "signal": "ex_result_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "wb_result_M"
+            },
             "port": "in2",
             "signal": "wb_result_M"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "wb_result_W"
+            },
             "port": "in3",
             "signal": "wb_result_W"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "op2_bypass_sel_D"
+            },
             "port": "sel",
             "signal": "op2_bypass_sel_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "op2_bypass_D"
+            },
             "port": "out",
             "signal": "op2_bypass_D"
           }
         ],
         "instance": "op2_bypass_mux_D",
+        "line": 265,
         "module": "vc_Mux4",
         "parameters": [
           "32"
@@ -527,23 +825,40 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pc_D"
+            },
             "port": "in0",
             "signal": "pc_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "op1_bypass_D"
+            },
             "port": "in1",
             "signal": "op1_bypass_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "op1_sel_D"
+            },
             "port": "sel",
             "signal": "op1_sel_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "op1_D"
+            },
             "port": "out",
             "signal": "op1_D"
           }
         ],
         "instance": "op1_sel_mux_D",
+        "line": 280,
         "module": "vc_Mux2",
         "parameters": [
           "32"
@@ -554,27 +869,48 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "op2_bypass_D"
+            },
             "port": "in0",
             "signal": "op2_bypass_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "imm_D"
+            },
             "port": "in1",
             "signal": "imm_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "csrr_data_D"
+            },
             "port": "in2",
             "signal": "csrr_data_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "op2_sel_D"
+            },
             "port": "sel",
             "signal": "op2_sel_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "op2_D"
+            },
             "port": "out",
             "signal": "op2_D"
           }
         ],
         "instance": "op2_sel_mux_D",
+        "line": 291,
         "module": "vc_Mux3",
         "parameters": [
           "32"
@@ -585,27 +921,45 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pc_D"
+            },
             "port": "in0",
             "signal": "pc_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "imm_D"
+            },
             "port": "in1",
             "signal": "imm_D"
           },
           {
+            "expr": {
+              "kind": "LITERAL",
+              "value": "1'b0"
+            },
             "port": "cin",
             "signal": "1'b0"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "jal_target_D"
+            },
             "port": "out",
             "signal": "jal_target_D"
           },
           {
+            "expr": null,
             "port": "cout",
             "signal": ""
           }
         ],
         "instance": "pc_plus_imm_D",
+        "line": 300,
         "module": "vc_Adder",
         "parameters": [
           "32"
@@ -616,39 +970,72 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "imul_req_val_D"
+            },
             "port": "istream_val",
             "signal": "imul_req_val_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "imul_req_rdy_D"
+            },
             "port": "istream_rdy",
             "signal": "imul_req_rdy_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "imul_req_msg"
+            },
             "port": "istream_msg",
             "signal": "imul_req_msg"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "imul_resp_val_X"
+            },
             "port": "ostream_val",
             "signal": "imul_resp_val_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "imul_resp_rdy_X"
+            },
             "port": "ostream_rdy",
             "signal": "imul_resp_rdy_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "imul_resp_msg"
+            },
             "port": "ostream_msg",
             "signal": "imul_resp_msg"
           }
         ],
         "instance": "multiplier",
+        "line": 316,
         "module": "lab1_imul_IntMulAlt",
         "parameters": [],
         "resolved": false,
@@ -657,27 +1044,48 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reg_en_X"
+            },
             "port": "en",
             "signal": "reg_en_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "op1_D"
+            },
             "port": "d",
             "signal": "op1_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "op1_X"
+            },
             "port": "q",
             "signal": "op1_X"
           }
         ],
         "instance": "op1_reg_X",
+        "line": 337,
         "module": "vc_EnResetReg",
         "parameters": [
           "32",
@@ -689,27 +1097,48 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reg_en_X"
+            },
             "port": "en",
             "signal": "reg_en_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "op2_D"
+            },
             "port": "d",
             "signal": "op2_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "op2_X"
+            },
             "port": "q",
             "signal": "op2_X"
           }
         ],
         "instance": "op2_reg_X",
+        "line": 346,
         "module": "vc_EnResetReg",
         "parameters": [
           "32",
@@ -721,27 +1150,48 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reg_en_X"
+            },
             "port": "en",
             "signal": "reg_en_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pc_D"
+            },
             "port": "d",
             "signal": "pc_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pc_X"
+            },
             "port": "q",
             "signal": "pc_X"
           }
         ],
         "instance": "pc_reg_X",
+        "line": 355,
         "module": "vc_EnResetReg",
         "parameters": [
           "32",
@@ -753,27 +1203,48 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reg_en_X"
+            },
             "port": "en",
             "signal": "reg_en_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "jal_target_D"
+            },
             "port": "d",
             "signal": "jal_target_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "br_target_X"
+            },
             "port": "q",
             "signal": "br_target_X"
           }
         ],
         "instance": "br_target_reg_X",
+        "line": 364,
         "module": "vc_EnResetReg",
         "parameters": [
           "32",
@@ -785,23 +1256,40 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pc_plus4_X"
+            },
             "port": "in0",
             "signal": "pc_plus4_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "br_target_X"
+            },
             "port": "in1",
             "signal": "br_target_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "branch_taken_X"
+            },
             "port": "sel",
             "signal": "branch_taken_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "br_mispredict_X"
+            },
             "port": "out",
             "signal": "br_mispredict_X"
           }
         ],
         "instance": "br_mispredict_mux_X",
+        "line": 373,
         "module": "vc_Mux2",
         "parameters": [
           "32"
@@ -812,27 +1300,48 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reg_en_X"
+            },
             "port": "en",
             "signal": "reg_en_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "op2_bypass_D"
+            },
             "port": "d",
             "signal": "op2_bypass_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "dmem_reqstream_msg_data"
+            },
             "port": "q",
             "signal": "dmem_reqstream_msg_data"
           }
         ],
         "instance": "dmem_write_data_reg_X",
+        "line": 381,
         "module": "vc_EnResetReg",
         "parameters": [
           "32",
@@ -844,35 +1353,64 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "op1_X"
+            },
             "port": "in0",
             "signal": "op1_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "op2_X"
+            },
             "port": "in1",
             "signal": "op2_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "alu_fn_X"
+            },
             "port": "fn",
             "signal": "alu_fn_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "alu_result_X"
+            },
             "port": "out",
             "signal": "alu_result_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "br_cond_eq_X"
+            },
             "port": "ops_eq",
             "signal": "br_cond_eq_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "br_cond_lt_X"
+            },
             "port": "ops_lt",
             "signal": "br_cond_lt_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "br_cond_ltu_X"
+            },
             "port": "ops_ltu",
             "signal": "br_cond_ltu_X"
           }
         ],
         "instance": "alu",
+        "line": 393,
         "module": "lab2_proc_ProcDpathAlu",
         "parameters": [],
         "resolved": false,
@@ -881,15 +1419,24 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pc_X"
+            },
             "port": "in",
             "signal": "pc_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pc_plus4_X"
+            },
             "port": "out",
             "signal": "pc_plus4_X"
           }
         ],
         "instance": "pc_incr_X",
+        "line": 404,
         "module": "vc_Incrementer",
         "parameters": [
           "32",
@@ -901,23 +1448,40 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "LITERAL",
+              "value": "`VC_MEM_REQ_MSG_TYPE_READ"
+            },
             "port": "in0",
             "signal": "`VC_MEM_REQ_MSG_TYPE_READ"
           },
           {
+            "expr": {
+              "kind": "LITERAL",
+              "value": "`VC_MEM_REQ_MSG_TYPE_WRITE"
+            },
             "port": "in1",
             "signal": "`VC_MEM_REQ_MSG_TYPE_WRITE"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "dmem_fn_X"
+            },
             "port": "sel",
             "signal": "dmem_fn_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "dmem_reqstream_msg_type"
+            },
             "port": "out",
             "signal": "dmem_reqstream_msg_type"
           }
         ],
         "instance": "dmem_type_sel_mux_X",
+        "line": 410,
         "module": "vc_Mux2",
         "parameters": [
           "32"
@@ -928,27 +1492,48 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pc_plus4_X"
+            },
             "port": "in0",
             "signal": "pc_plus4_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "alu_result_X"
+            },
             "port": "in1",
             "signal": "alu_result_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "imul_resp_msg"
+            },
             "port": "in2",
             "signal": "imul_resp_msg"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_result_sel_X"
+            },
             "port": "sel",
             "signal": "ex_result_sel_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_result_X"
+            },
             "port": "out",
             "signal": "ex_result_X"
           }
         ],
         "instance": "ex_result_sel_mux_X",
+        "line": 418,
         "module": "vc_Mux3",
         "parameters": [
           "32"
@@ -959,27 +1544,48 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reg_en_M"
+            },
             "port": "en",
             "signal": "reg_en_M"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_result_X"
+            },
             "port": "d",
             "signal": "ex_result_X"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_result_M"
+            },
             "port": "q",
             "signal": "ex_result_M"
           }
         ],
         "instance": "ex_result_reg_M",
+        "line": 435,
         "module": "vc_EnResetReg",
         "parameters": [
           "32",
@@ -991,23 +1597,40 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ex_result_M"
+            },
             "port": "in0",
             "signal": "ex_result_M"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "dmem_result_M"
+            },
             "port": "in1",
             "signal": "dmem_result_M"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "wb_result_sel_M"
+            },
             "port": "sel",
             "signal": "wb_result_sel_M"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "wb_result_M"
+            },
             "port": "out",
             "signal": "wb_result_M"
           }
         ],
         "instance": "wb_result_sel_mux_M",
+        "line": 449,
         "module": "vc_Mux2",
         "parameters": [
           "32"
@@ -1018,27 +1641,48 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reg_en_W"
+            },
             "port": "en",
             "signal": "reg_en_W"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "wb_result_M"
+            },
             "port": "d",
             "signal": "wb_result_M"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "wb_result_W"
+            },
             "port": "q",
             "signal": "wb_result_W"
           }
         ],
         "instance": "wb_result_reg_W",
+        "line": 463,
         "module": "vc_EnResetReg",
         "parameters": [
           "32",
@@ -1050,27 +1694,48 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "stats_en_wen_W"
+            },
             "port": "en",
             "signal": "stats_en_wen_W"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "wb_result_W"
+            },
             "port": "d",
             "signal": "wb_result_W"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "stats_en_W"
+            },
             "port": "q",
             "signal": "stats_en_W"
           }
         ],
         "instance": "stats_en_reg_W",
+        "line": 484,
         "module": "vc_EnResetReg",
         "parameters": [
           "32",
@@ -1080,9 +1745,11 @@
         "wildcard": false
       }
     ],
+    "line": 20,
     "name": "lab2_proc_ProcAltDpath",
     "net_decls": [
       {
+        "line": 105,
         "lsb": 0,
         "msb": 31,
         "name": "pc_F",
@@ -1090,6 +1757,7 @@
         "type": "logic"
       },
       {
+        "line": 106,
         "lsb": 0,
         "msb": 31,
         "name": "pc_next_F",
@@ -1097,6 +1765,7 @@
         "type": "logic"
       },
       {
+        "line": 107,
         "lsb": 0,
         "msb": 31,
         "name": "pc_plus4_F",
@@ -1104,6 +1773,7 @@
         "type": "logic"
       },
       {
+        "line": 108,
         "lsb": 0,
         "msb": 31,
         "name": "br_target_X",
@@ -1111,6 +1781,7 @@
         "type": "logic"
       },
       {
+        "line": 109,
         "lsb": 0,
         "msb": 31,
         "name": "jal_target_D",
@@ -1118,6 +1789,7 @@
         "type": "logic"
       },
       {
+        "line": 127,
         "lsb": 0,
         "msb": 31,
         "name": "pc_X",
@@ -1125,6 +1797,7 @@
         "type": "logic"
       },
       {
+        "line": 128,
         "lsb": 0,
         "msb": 31,
         "name": "pc_plus4_X",
@@ -1132,6 +1805,7 @@
         "type": "logic"
       },
       {
+        "line": 131,
         "lsb": 0,
         "msb": 31,
         "name": "btb_target_F",
@@ -1139,6 +1813,7 @@
         "type": "logic"
       },
       {
+        "line": 148,
         "lsb": 0,
         "msb": 31,
         "name": "br_predict_F",
@@ -1146,6 +1821,7 @@
         "type": "logic"
       },
       {
+        "line": 159,
         "lsb": 0,
         "msb": 31,
         "name": "br_mispredict_X",
@@ -1153,6 +1829,7 @@
         "type": "logic"
       },
       {
+        "line": 175,
         "lsb": 0,
         "msb": 31,
         "name": "pc_D",
@@ -1160,6 +1837,7 @@
         "type": "logic"
       },
       {
+        "line": 176,
         "lsb": 0,
         "msb": 4,
         "name": "inst_rd_D",
@@ -1167,6 +1845,7 @@
         "type": "logic"
       },
       {
+        "line": 177,
         "lsb": 0,
         "msb": 4,
         "name": "inst_rs1_D",
@@ -1174,6 +1853,7 @@
         "type": "logic"
       },
       {
+        "line": 178,
         "lsb": 0,
         "msb": 4,
         "name": "inst_rs2_D",
@@ -1181,6 +1861,7 @@
         "type": "logic"
       },
       {
+        "line": 179,
         "lsb": 0,
         "msb": 31,
         "name": "imm_D",
@@ -1188,6 +1869,7 @@
         "type": "logic"
       },
       {
+        "line": 218,
         "lsb": 0,
         "msb": 31,
         "name": "rf_rdata0_D",
@@ -1195,6 +1877,7 @@
         "type": "logic"
       },
       {
+        "line": 219,
         "lsb": 0,
         "msb": 31,
         "name": "rf_rdata1_D",
@@ -1202,6 +1885,7 @@
         "type": "logic"
       },
       {
+        "line": 220,
         "lsb": 0,
         "msb": 31,
         "name": "rf_wdata_W",
@@ -1209,6 +1893,7 @@
         "type": "logic"
       },
       {
+        "line": 235,
         "lsb": 0,
         "msb": 31,
         "name": "csrr_data_D",
@@ -1216,6 +1901,7 @@
         "type": "logic"
       },
       {
+        "line": 237,
         "lsb": 0,
         "msb": 31,
         "name": "num_cores",
@@ -1223,6 +1909,7 @@
         "type": "logic"
       },
       {
+        "line": 250,
         "lsb": 0,
         "msb": 31,
         "name": "op1_bypass_D",
@@ -1230,6 +1917,7 @@
         "type": "logic"
       },
       {
+        "line": 251,
         "lsb": 0,
         "msb": 31,
         "name": "op2_bypass_D",
@@ -1237,6 +1925,7 @@
         "type": "logic"
       },
       {
+        "line": 275,
         "lsb": 0,
         "msb": 31,
         "name": "op1_D",
@@ -1244,6 +1933,7 @@
         "type": "logic"
       },
       {
+        "line": 276,
         "lsb": 0,
         "msb": 31,
         "name": "op2_D",
@@ -1251,6 +1941,7 @@
         "type": "logic"
       },
       {
+        "line": 309,
         "lsb": 0,
         "msb": 63,
         "name": "imul_req_msg",
@@ -1258,6 +1949,7 @@
         "type": "logic"
       },
       {
+        "line": 310,
         "lsb": 0,
         "msb": 31,
         "name": "imul_resp_msg",
@@ -1265,6 +1957,7 @@
         "type": "logic"
       },
       {
+        "line": 334,
         "lsb": 0,
         "msb": 31,
         "name": "op1_X",
@@ -1272,6 +1965,7 @@
         "type": "logic"
       },
       {
+        "line": 335,
         "lsb": 0,
         "msb": 31,
         "name": "op2_X",
@@ -1279,6 +1973,7 @@
         "type": "logic"
       },
       {
+        "line": 390,
         "lsb": 0,
         "msb": 31,
         "name": "alu_result_X",
@@ -1286,6 +1981,7 @@
         "type": "logic"
       },
       {
+        "line": 391,
         "lsb": 0,
         "msb": 31,
         "name": "ex_result_X",
@@ -1293,6 +1989,7 @@
         "type": "logic"
       },
       {
+        "line": 433,
         "lsb": 0,
         "msb": 31,
         "name": "ex_result_M",
@@ -1300,6 +1997,7 @@
         "type": "logic"
       },
       {
+        "line": 444,
         "lsb": 0,
         "msb": 31,
         "name": "dmem_result_M",
@@ -1307,6 +2005,7 @@
         "type": "logic"
       },
       {
+        "line": 445,
         "lsb": 0,
         "msb": 31,
         "name": "wb_result_M",
@@ -1314,6 +2013,7 @@
         "type": "logic"
       },
       {
+        "line": 461,
         "lsb": 0,
         "msb": 31,
         "name": "wb_result_W",
@@ -1321,6 +2021,7 @@
         "type": "logic"
       },
       {
+        "line": 480,
         "lsb": 0,
         "msb": 31,
         "name": "stats_en_W",
@@ -1345,6 +2046,7 @@
     "ports": [
       {
         "direction": "input",
+        "line": 25,
         "lsb": 0,
         "msb": 0,
         "name": "clk",
@@ -1353,6 +2055,7 @@
       },
       {
         "direction": "input",
+        "line": 26,
         "lsb": 0,
         "msb": 0,
         "name": "reset",
@@ -1361,6 +2064,7 @@
       },
       {
         "direction": "output",
+        "line": 30,
         "lsb": 0,
         "msb": 31,
         "name": "imem_reqstream_msg_addr",
@@ -1369,6 +2073,7 @@
       },
       {
         "direction": "input",
+        "line": 31,
         "lsb": 0,
         "msb": 0,
         "name": "imem_respstream_msg",
@@ -1377,6 +2082,7 @@
       },
       {
         "direction": "output",
+        "line": 35,
         "lsb": 0,
         "msb": 31,
         "name": "dmem_reqstream_msg_addr",
@@ -1385,6 +2091,7 @@
       },
       {
         "direction": "output",
+        "line": 36,
         "lsb": 0,
         "msb": 31,
         "name": "dmem_reqstream_msg_data",
@@ -1393,6 +2100,7 @@
       },
       {
         "direction": "output",
+        "line": 37,
         "lsb": 0,
         "msb": 3,
         "name": "dmem_reqstream_msg_type",
@@ -1401,6 +2109,7 @@
       },
       {
         "direction": "input",
+        "line": 38,
         "lsb": 0,
         "msb": 31,
         "name": "dmem_respstream_msg_data",
@@ -1409,6 +2118,7 @@
       },
       {
         "direction": "input",
+        "line": 42,
         "lsb": 0,
         "msb": 31,
         "name": "mngr2proc_data",
@@ -1417,6 +2127,7 @@
       },
       {
         "direction": "output",
+        "line": 43,
         "lsb": 0,
         "msb": 31,
         "name": "proc2mngr_data",
@@ -1425,6 +2136,7 @@
       },
       {
         "direction": "input",
+        "line": 46,
         "lsb": 0,
         "msb": 0,
         "name": "imul_req_val_D",
@@ -1433,6 +2145,7 @@
       },
       {
         "direction": "output",
+        "line": 47,
         "lsb": 0,
         "msb": 0,
         "name": "imul_req_rdy_D",
@@ -1441,6 +2154,7 @@
       },
       {
         "direction": "output",
+        "line": 48,
         "lsb": 0,
         "msb": 0,
         "name": "imul_resp_val_X",
@@ -1449,6 +2163,7 @@
       },
       {
         "direction": "input",
+        "line": 49,
         "lsb": 0,
         "msb": 0,
         "name": "imul_resp_rdy_X",
@@ -1457,6 +2172,7 @@
       },
       {
         "direction": "input",
+        "line": 53,
         "lsb": 0,
         "msb": 0,
         "name": "imem_respstream_drop",
@@ -1465,6 +2181,7 @@
       },
       {
         "direction": "input",
+        "line": 55,
         "lsb": 0,
         "msb": 0,
         "name": "reg_en_F",
@@ -1473,6 +2190,7 @@
       },
       {
         "direction": "input",
+        "line": 56,
         "lsb": 0,
         "msb": 1,
         "name": "pc_sel_F",
@@ -1481,6 +2199,7 @@
       },
       {
         "direction": "input",
+        "line": 58,
         "lsb": 0,
         "msb": 0,
         "name": "reg_en_D",
@@ -1489,6 +2208,7 @@
       },
       {
         "direction": "input",
+        "line": 59,
         "lsb": 0,
         "msb": 1,
         "name": "op1_bypass_sel_D",
@@ -1497,6 +2217,7 @@
       },
       {
         "direction": "input",
+        "line": 60,
         "lsb": 0,
         "msb": 1,
         "name": "op2_bypass_sel_D",
@@ -1505,6 +2226,7 @@
       },
       {
         "direction": "input",
+        "line": 61,
         "lsb": 0,
         "msb": 0,
         "name": "op1_sel_D",
@@ -1513,6 +2235,7 @@
       },
       {
         "direction": "input",
+        "line": 62,
         "lsb": 0,
         "msb": 1,
         "name": "op2_sel_D",
@@ -1521,6 +2244,7 @@
       },
       {
         "direction": "input",
+        "line": 63,
         "lsb": 0,
         "msb": 1,
         "name": "csrr_sel_D",
@@ -1529,6 +2253,7 @@
       },
       {
         "direction": "input",
+        "line": 64,
         "lsb": 0,
         "msb": 2,
         "name": "imm_type_D",
@@ -1537,6 +2262,7 @@
       },
       {
         "direction": "input",
+        "line": 66,
         "lsb": 0,
         "msb": 0,
         "name": "reg_en_X",
@@ -1545,6 +2271,7 @@
       },
       {
         "direction": "input",
+        "line": 67,
         "lsb": 0,
         "msb": 0,
         "name": "dmem_fn_X",
@@ -1553,6 +2280,7 @@
       },
       {
         "direction": "input",
+        "line": 68,
         "lsb": 0,
         "msb": 3,
         "name": "alu_fn_X",
@@ -1561,6 +2289,7 @@
       },
       {
         "direction": "input",
+        "line": 69,
         "lsb": 0,
         "msb": 1,
         "name": "ex_result_sel_X",
@@ -1569,6 +2298,7 @@
       },
       {
         "direction": "input",
+        "line": 70,
         "lsb": 0,
         "msb": 0,
         "name": "branch_taken_X",
@@ -1577,6 +2307,7 @@
       },
       {
         "direction": "input",
+        "line": 72,
         "lsb": 0,
         "msb": 0,
         "name": "reg_en_M",
@@ -1585,6 +2316,7 @@
       },
       {
         "direction": "input",
+        "line": 73,
         "lsb": 0,
         "msb": 0,
         "name": "wb_result_sel_M",
@@ -1593,6 +2325,7 @@
       },
       {
         "direction": "input",
+        "line": 75,
         "lsb": 0,
         "msb": 0,
         "name": "reg_en_W",
@@ -1601,6 +2334,7 @@
       },
       {
         "direction": "input",
+        "line": 76,
         "lsb": 0,
         "msb": 4,
         "name": "rf_waddr_W",
@@ -1609,6 +2343,7 @@
       },
       {
         "direction": "input",
+        "line": 77,
         "lsb": 0,
         "msb": 0,
         "name": "rf_wen_W",
@@ -1617,6 +2352,7 @@
       },
       {
         "direction": "input",
+        "line": 78,
         "lsb": 0,
         "msb": 0,
         "name": "stats_en_wen_W",
@@ -1625,6 +2361,7 @@
       },
       {
         "direction": "output",
+        "line": 82,
         "lsb": 0,
         "msb": 0,
         "name": "take_branch_F",
@@ -1633,6 +2370,7 @@
       },
       {
         "direction": "output",
+        "line": 83,
         "lsb": 0,
         "msb": 31,
         "name": "inst_D",
@@ -1641,6 +2379,7 @@
       },
       {
         "direction": "output",
+        "line": 84,
         "lsb": 0,
         "msb": 0,
         "name": "br_cond_eq_X",
@@ -1649,6 +2388,7 @@
       },
       {
         "direction": "output",
+        "line": 85,
         "lsb": 0,
         "msb": 0,
         "name": "br_cond_lt_X",
@@ -1657,6 +2397,7 @@
       },
       {
         "direction": "output",
+        "line": 86,
         "lsb": 0,
         "msb": 0,
         "name": "br_cond_ltu_X",
@@ -1665,6 +2406,7 @@
       },
       {
         "direction": "input",
+        "line": 90,
         "lsb": 0,
         "msb": 31,
         "name": "core_id",
@@ -1673,6 +2415,7 @@
       },
       {
         "direction": "output",
+        "line": 91,
         "lsb": 0,
         "msb": 0,
         "name": "stats_en",
@@ -1680,6 +2423,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "ProcAltDpath.v"
   }
 ]
