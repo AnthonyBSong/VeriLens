@@ -63,7 +63,7 @@
         "instance": "imem",
         "line": 14,
         "module": "InstrMemory",
-        "parameters": [".DEPTH(1024)"],
+        "parameters": [{"name": "DEPTH", "value": "1024"}],
         "resolved": false,
         "wildcard": false
       }

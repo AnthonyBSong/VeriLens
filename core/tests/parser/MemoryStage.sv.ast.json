@@ -37,7 +37,7 @@
         "instance": "dmem",
         "line": 22,
         "module": "DataMemory",
-        "parameters": [".DEPTH(1024)"],
+        "parameters": [{"name": "DEPTH", "value": "1024"}],
         "resolved": false,
         "wildcard": false
       }

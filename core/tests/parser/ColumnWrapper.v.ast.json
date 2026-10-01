@@ -112,7 +112,7 @@
         "instance": "ctrl_unit",
         "line": 55,
         "module": "NodeColumnCtrl",
-        "parameters": ["NUM_ROWS"],
+        "parameters": [{"name": "", "value": "NUM_ROWS"}],
         "resolved": false,
         "wildcard": false
       },
@@ -152,7 +152,7 @@
         "instance": "dpath",
         "line": 73,
         "module": "NodeColumnDpath",
-        "parameters": ["NUM_ROWS"],
+        "parameters": [{"name": "", "value": "NUM_ROWS"}],
         "resolved": false,
         "wildcard": false
       },
@@ -180,7 +180,7 @@
         "instance": "mem_n",
         "line": 102,
         "module": "M10KMem",
-        "parameters": ["NUM_ROWS"],
+        "parameters": [{"name": "", "value": "NUM_ROWS"}],
         "resolved": false,
         "wildcard": false
       },
@@ -212,7 +212,7 @@
         "instance": "mem_nm1",
         "line": 120,
         "module": "M10KMem",
-        "parameters": ["NUM_ROWS"],
+        "parameters": [{"name": "", "value": "NUM_ROWS"}],
         "resolved": false,
         "wildcard": false
       }

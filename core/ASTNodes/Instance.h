@@ -16,11 +16,18 @@ public:
           expr(std::move(expr)) {}
 };
 
+// Parameter override in an instantiation: `.WIDTH(32)` -> {"WIDTH","32"};
+// positional `#(32)` -> {"", "32"}. Values are raw text.
+struct ParamOverride {
+    std::string name;
+    std::string value;
+};
+
 class Instance : public Node {
 public:
     std::string                  module_name;
     std::string                  instance_name;
-    std::vector<std::string>     parameters;   // raw parameter overrides e.g. "NUM_ROWS"
+    std::vector<ParamOverride>   parameters;   // parameter overrides in source order
     std::vector<PortConnection>  connections;
     bool                         resolved = false; // set by Linker::link()
     bool                         wildcard = false; // true if `.*` wildcard was used
