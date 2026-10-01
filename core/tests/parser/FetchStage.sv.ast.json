@@ -125,7 +125,10 @@
         "line": 14,
         "module": "InstrMemory",
         "parameters": [
-          ".DEPTH(1024)"
+          {
+            "name": "DEPTH",
+            "value": "1024"
+          }
         ],
         "resolved": false,
         "wildcard": false

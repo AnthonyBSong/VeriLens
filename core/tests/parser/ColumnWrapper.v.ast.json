@@ -235,7 +235,10 @@
         "line": 55,
         "module": "NodeColumnCtrl",
         "parameters": [
-          "NUM_ROWS"
+          {
+            "name": "",
+            "value": "NUM_ROWS"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -359,7 +362,10 @@
         "line": 73,
         "module": "NodeColumnDpath",
         "parameters": [
-          "NUM_ROWS"
+          {
+            "name": "",
+            "value": "NUM_ROWS"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -419,7 +425,10 @@
         "line": 102,
         "module": "M10KMem",
         "parameters": [
-          "NUM_ROWS"
+          {
+            "name": "",
+            "value": "NUM_ROWS"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -479,7 +488,10 @@
         "line": 120,
         "module": "M10KMem",
         "parameters": [
-          "NUM_ROWS"
+          {
+            "name": "",
+            "value": "NUM_ROWS"
+          }
         ],
         "resolved": false,
         "wildcard": false

@@ -272,7 +272,10 @@
         "line": 63,
         "module": "vc_EnReg",
         "parameters": [
-          "8"
+          {
+            "name": "",
+            "value": "8"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -324,7 +327,10 @@
         "line": 72,
         "module": "vc_EnReg",
         "parameters": [
-          "4"
+          {
+            "name": "",
+            "value": "4"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -376,7 +382,10 @@
         "line": 83,
         "module": "vc_EnReg",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -428,7 +437,10 @@
         "line": 94,
         "module": "vc_EnReg",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -480,7 +492,10 @@
         "line": 107,
         "module": "vc_EnReg",
         "parameters": [
-          "128"
+          {
+            "name": "",
+            "value": "128"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -531,7 +546,10 @@
         "line": 120,
         "module": "vc_Mux2",
         "parameters": [
-          "128"
+          {
+            "name": "",
+            "value": "128"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -601,7 +619,10 @@
         "line": 140,
         "module": "vc_Mux2",
         "parameters": [
-          "16"
+          {
+            "name": "",
+            "value": "16"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -677,8 +698,14 @@
         "line": 161,
         "module": "vc_CombinationalBitSRAM_1rw",
         "parameters": [
-          ".p_data_nbits(24-c_bank_bits)",
-          ".p_num_entries(16)"
+          {
+            "name": "p_data_nbits",
+            "value": "24-c_bank_bits"
+          },
+          {
+            "name": "p_num_entries",
+            "value": "16"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -762,8 +789,14 @@
         "line": 185,
         "module": "vc_CombinationalSRAM_1rw",
         "parameters": [
-          ".p_data_nbits(128)",
-          ".p_num_entries(16)"
+          {
+            "name": "p_data_nbits",
+            "value": "128"
+          },
+          {
+            "name": "p_num_entries",
+            "value": "16"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -799,7 +832,10 @@
         "line": 208,
         "module": "vc_EqComparator",
         "parameters": [
-          "24-c_bank_bits"
+          {
+            "name": "",
+            "value": "24-c_bank_bits"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -843,8 +879,14 @@
         "line": 219,
         "module": "lab3_mem_Mkaddr",
         "parameters": [
-          "p_num_banks",
-          "4"
+          {
+            "name": "",
+            "value": "p_num_banks"
+          },
+          {
+            "name": "",
+            "value": "4"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -896,7 +938,10 @@
         "line": 231,
         "module": "vc_EnReg",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -940,8 +985,14 @@
         "line": 243,
         "module": "lab3_mem_Mkaddr",
         "parameters": [
-          "p_num_banks",
-          "4"
+          {
+            "name": "",
+            "value": "p_num_banks"
+          },
+          {
+            "name": "",
+            "value": "4"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -985,7 +1036,10 @@
         "line": 255,
         "module": "vc_Mux2",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -1029,7 +1083,10 @@
         "line": 267,
         "module": "vc_Mux2",
         "parameters": [
-          "128"
+          {
+            "name": "",
+            "value": "128"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -1081,7 +1138,10 @@
         "line": 279,
         "module": "vc_EnReg",
         "parameters": [
-          "128"
+          {
+            "name": "",
+            "value": "128"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -1185,7 +1245,10 @@
         "line": 292,
         "module": "vc_Mux4",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false

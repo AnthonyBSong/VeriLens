@@ -118,7 +118,10 @@
         "line": 45,
         "module": "vc_Mux2",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -162,7 +165,10 @@
         "line": 56,
         "module": "vc_ResetReg",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -198,8 +204,14 @@
         "line": 66,
         "module": "vc_LeftLogicalShifter",
         "parameters": [
-          "32",
-          "1"
+          {
+            "name": "",
+            "value": "32"
+          },
+          {
+            "name": "",
+            "value": "1"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -243,7 +255,10 @@
         "line": 77,
         "module": "vc_Mux2",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -287,7 +302,10 @@
         "line": 88,
         "module": "vc_ResetReg",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -323,8 +341,14 @@
         "line": 101,
         "module": "vc_RightLogicalShifter",
         "parameters": [
-          "32",
-          "1"
+          {
+            "name": "",
+            "value": "32"
+          },
+          {
+            "name": "",
+            "value": "1"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -368,7 +392,10 @@
         "line": 112,
         "module": "vc_Mux2",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -420,7 +447,10 @@
         "line": 123,
         "module": "vc_EnReg",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -456,7 +486,10 @@
         "line": 135,
         "module": "vc_SimpleAdder",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -500,7 +533,10 @@
         "line": 144,
         "module": "vc_Mux2",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -1061,9 +1097,18 @@
         "line": 225,
         "module": "vc_BasicCounter",
         "parameters": [
-          "5",
-          "0",
-          "31"
+          {
+            "name": "",
+            "value": "5"
+          },
+          {
+            "name": "",
+            "value": "0"
+          },
+          {
+            "name": "",
+            "value": "31"
+          }
         ],
         "resolved": false,
         "wildcard": false

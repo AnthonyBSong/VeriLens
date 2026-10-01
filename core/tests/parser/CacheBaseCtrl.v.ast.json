@@ -941,9 +941,18 @@
         "line": 230,
         "module": "vc_ResetRegfile_1r1w",
         "parameters": [
-          ".p_data_nbits(1)",
-          ".p_num_entries(16)",
-          ".p_reset_value(0)"
+          {
+            "name": "p_data_nbits",
+            "value": "1"
+          },
+          {
+            "name": "p_num_entries",
+            "value": "16"
+          },
+          {
+            "name": "p_reset_value",
+            "value": "0"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -1011,9 +1020,18 @@
         "line": 251,
         "module": "vc_ResetRegfile_1r1w",
         "parameters": [
-          ".p_data_nbits(1)",
-          ".p_num_entries(16)",
-          ".p_reset_value(0)"
+          {
+            "name": "p_data_nbits",
+            "value": "1"
+          },
+          {
+            "name": "p_num_entries",
+            "value": "16"
+          },
+          {
+            "name": "p_reset_value",
+            "value": "0"
+          }
         ],
         "resolved": false,
         "wildcard": false

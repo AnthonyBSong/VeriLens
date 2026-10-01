@@ -239,7 +239,10 @@
         "line": 75,
         "module": "lab3_mem_CacheAlt",
         "parameters": [
-          "1"
+          {
+            "name": "",
+            "value": "1"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -363,7 +366,10 @@
         "line": 109,
         "module": "lab3_mem_CacheAlt",
         "parameters": [
-          "1"
+          {
+            "name": "",
+            "value": "1"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -559,7 +565,10 @@
         "line": 134,
         "module": "lab2_proc_ProcAlt",
         "parameters": [
-          "1"
+          {
+            "name": "",
+            "value": "1"
+          }
         ],
         "resolved": false,
         "wildcard": false

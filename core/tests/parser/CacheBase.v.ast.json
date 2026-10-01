@@ -76,7 +76,10 @@
         "line": 80,
         "module": "lab3_mem_CacheBaseCtrl",
         "parameters": [
-          ".p_num_banks(p_num_banks)"
+          {
+            "name": "p_num_banks",
+            "value": "p_num_banks"
+          }
         ],
         "resolved": false,
         "wildcard": true
@@ -120,7 +123,10 @@
         "line": 109,
         "module": "lab3_mem_CacheBaseDpath",
         "parameters": [
-          ".p_num_banks(p_num_banks)"
+          {
+            "name": "p_num_banks",
+            "value": "p_num_banks"
+          }
         ],
         "resolved": false,
         "wildcard": true

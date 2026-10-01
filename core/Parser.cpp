@@ -636,7 +636,11 @@ Instance Parser::parseInstance() {
     if (match(TokenType::HASH)) {
         expect(TokenType::LPAREN);
         while (!check(TokenType::RPAREN) && !check(TokenType::END_OF_FILE)) {
-            std::string param;
+            ParamOverride po;
+            // named form: .NAME( value )
+            bool named = check(TokenType::DOT) && peek(1).type == TokenType::IDENTIFIER &&
+                         peek(2).type == TokenType::LPAREN;
+            if (named) { consume(); po.name = consume().lexeme; consume(); }
             int depth = 0;
             while (!check(TokenType::END_OF_FILE)) {
                 if (check(TokenType::LPAREN)) {
@@ -647,9 +651,10 @@ Instance Parser::parseInstance() {
                 } else if (depth == 0 && check(TokenType::COMMA)) {
                     break;
                 }
-                param += consume().lexeme;
+                po.value += consume().lexeme;
             }
-            inst.parameters.push_back(param);
+            if (named) expect(TokenType::RPAREN);
+            inst.parameters.push_back(po);
             if (!match(TokenType::COMMA)) break;
         }
         expect(TokenType::RPAREN);
@@ -1304,6 +1309,9 @@ static json moduleToJson(const Module& mod) {
 
     json instances = json::array();
     for (const auto& inst : mod.instances) {
+        json params = json::array();
+        for (const auto& po : inst.parameters)
+            params.push_back({ {"name", po.name}, {"value", po.value} });
         json connections = json::array();
         for (const auto& c : inst.connections)
             connections.push_back({ {"port", c.port_name}, {"signal", c.signal},
@@ -1314,7 +1322,7 @@ static json moduleToJson(const Module& mod) {
             {"line",        inst.line},
             {"resolved",    inst.resolved},
             {"wildcard",    inst.wildcard},
-            {"parameters",  inst.parameters},
+            {"parameters",  params},
             {"connections", connections}
         });
     }

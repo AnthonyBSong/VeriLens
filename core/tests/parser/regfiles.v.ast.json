@@ -991,8 +991,14 @@
         "line": 320,
         "module": "vc_Regfile_2r1w",
         "parameters": [
-          ".p_data_nbits(32)",
-          ".p_num_entries(32)"
+          {
+            "name": "p_data_nbits",
+            "value": "32"
+          },
+          {
+            "name": "p_num_entries",
+            "value": "32"
+          }
         ],
         "resolved": true,
         "wildcard": false

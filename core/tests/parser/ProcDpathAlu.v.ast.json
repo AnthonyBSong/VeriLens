@@ -523,7 +523,10 @@
         "line": 44,
         "module": "vc_EqComparator",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false

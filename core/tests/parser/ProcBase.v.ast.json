@@ -195,9 +195,18 @@
         "line": 88,
         "module": "vc_Queue",
         "parameters": [
-          "`VC_QUEUE_BYPASS",
-          "$bits(mem_req_4B_t)",
-          "2"
+          {
+            "name": "",
+            "value": "`VC_QUEUE_BYPASS"
+          },
+          {
+            "name": "",
+            "value": "$bits(mem_req_4B_t)"
+          },
+          {
+            "name": "",
+            "value": "2"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -281,7 +290,10 @@
         "line": 112,
         "module": "lab2_proc_DropUnit",
         "parameters": [
-          "$bits(mem_resp_4B_t)"
+          {
+            "name": "",
+            "value": "$bits(mem_resp_4B_t)"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -365,9 +377,18 @@
         "line": 147,
         "module": "vc_Queue",
         "parameters": [
-          "`VC_QUEUE_BYPASS",
-          "$bits(mem_req_4B_t)",
-          "1"
+          {
+            "name": "",
+            "value": "`VC_QUEUE_BYPASS"
+          },
+          {
+            "name": "",
+            "value": "$bits(mem_req_4B_t)"
+          },
+          {
+            "name": "",
+            "value": "1"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -451,9 +472,18 @@
         "line": 171,
         "module": "vc_Queue",
         "parameters": [
-          "`VC_QUEUE_BYPASS",
-          "32",
-          "1"
+          {
+            "name": "",
+            "value": "`VC_QUEUE_BYPASS"
+          },
+          {
+            "name": "",
+            "value": "32"
+          },
+          {
+            "name": "",
+            "value": "1"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -635,7 +665,10 @@
         "line": 266,
         "module": "lab2_proc_ProcBaseDpath",
         "parameters": [
-          ".p_num_cores(p_num_cores)"
+          {
+            "name": "p_num_cores",
+            "value": "p_num_cores"
+          }
         ],
         "resolved": false,
         "wildcard": true

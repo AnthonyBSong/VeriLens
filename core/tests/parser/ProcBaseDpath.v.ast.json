@@ -154,8 +154,14 @@
         "line": 106,
         "module": "vc_EnResetReg",
         "parameters": [
-          "32",
-          "c_reset_vector-32'd4"
+          {
+            "name": "",
+            "value": "32"
+          },
+          {
+            "name": "",
+            "value": "c_reset_vector-32'd4"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -183,8 +189,14 @@
         "line": 115,
         "module": "vc_Incrementer",
         "parameters": [
-          "32",
-          "4"
+          {
+            "name": "",
+            "value": "32"
+          },
+          {
+            "name": "",
+            "value": "4"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -244,7 +256,10 @@
         "line": 121,
         "module": "vc_Mux4",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -296,7 +311,10 @@
         "line": 141,
         "module": "vc_EnResetReg",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -348,8 +366,14 @@
         "line": 150,
         "module": "vc_EnResetReg",
         "parameters": [
-          "32",
-          "c_reset_inst"
+          {
+            "name": "",
+            "value": "32"
+          },
+          {
+            "name": "",
+            "value": "c_reset_inst"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -579,7 +603,10 @@
         "line": 204,
         "module": "vc_Mux3",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -623,7 +650,10 @@
         "line": 215,
         "module": "vc_Mux2",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -675,7 +705,10 @@
         "line": 226,
         "module": "vc_Mux3",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -724,7 +757,10 @@
         "line": 235,
         "module": "vc_Adder",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -850,8 +886,14 @@
         "line": 274,
         "module": "vc_EnResetReg",
         "parameters": [
-          "32",
-          "0"
+          {
+            "name": "",
+            "value": "32"
+          },
+          {
+            "name": "",
+            "value": "0"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -903,8 +945,14 @@
         "line": 283,
         "module": "vc_EnResetReg",
         "parameters": [
-          "32",
-          "0"
+          {
+            "name": "",
+            "value": "32"
+          },
+          {
+            "name": "",
+            "value": "0"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -956,8 +1004,14 @@
         "line": 292,
         "module": "vc_EnResetReg",
         "parameters": [
-          "32",
-          "0"
+          {
+            "name": "",
+            "value": "32"
+          },
+          {
+            "name": "",
+            "value": "0"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -1009,8 +1063,14 @@
         "line": 301,
         "module": "vc_EnResetReg",
         "parameters": [
-          "32",
-          "0"
+          {
+            "name": "",
+            "value": "32"
+          },
+          {
+            "name": "",
+            "value": "0"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -1062,8 +1122,14 @@
         "line": 310,
         "module": "vc_EnResetReg",
         "parameters": [
-          "32",
-          "0"
+          {
+            "name": "",
+            "value": "32"
+          },
+          {
+            "name": "",
+            "value": "0"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -1157,8 +1223,14 @@
         "line": 333,
         "module": "vc_Incrementer",
         "parameters": [
-          "32",
-          "4"
+          {
+            "name": "",
+            "value": "32"
+          },
+          {
+            "name": "",
+            "value": "4"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -1202,7 +1274,10 @@
         "line": 339,
         "module": "vc_Mux2",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -1254,7 +1329,10 @@
         "line": 347,
         "module": "vc_Mux3",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -1306,8 +1384,14 @@
         "line": 364,
         "module": "vc_EnResetReg",
         "parameters": [
-          "32",
-          "0"
+          {
+            "name": "",
+            "value": "32"
+          },
+          {
+            "name": "",
+            "value": "0"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -1351,7 +1435,10 @@
         "line": 378,
         "module": "vc_Mux2",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -1403,8 +1490,14 @@
         "line": 392,
         "module": "vc_EnResetReg",
         "parameters": [
-          "32",
-          "0"
+          {
+            "name": "",
+            "value": "32"
+          },
+          {
+            "name": "",
+            "value": "0"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -1456,8 +1549,14 @@
         "line": 413,
         "module": "vc_EnResetReg",
         "parameters": [
-          "32",
-          "0"
+          {
+            "name": "",
+            "value": "32"
+          },
+          {
+            "name": "",
+            "value": "0"
+          }
         ],
         "resolved": false,
         "wildcard": false
