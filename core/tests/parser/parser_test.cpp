@@ -28,8 +28,10 @@ static std::string parse_file(const path& file) {
     std::string src((std::istreambuf_iterator<char>(f)), {});
     Lexer lexer(src);
     Parser parser(lexer.tokenize());
+    auto mods = parser.parse();
+    attachPragmas(mods, lexer.pragmas());
     Linker linker;
-    linker.addModules(parser.parse(), file.filename().string());
+    linker.addModules(std::move(mods), file.filename().string());
     linker.link();
     return modulesToJSON(linker.modules());
 }

@@ -7,6 +7,7 @@
           "kind": "IDENTIFIER",
           "name": "y"
         },
+        "line": 6,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -21,14 +22,17 @@
         }
       }
     ],
+    "end_line": 7,
     "gate_primitives": [],
     "instances": [],
+    "line": 1,
     "name": "adder",
     "net_decls": [],
     "parameters": [],
     "ports": [
       {
         "direction": "input",
+        "line": 2,
         "lsb": 0,
         "msb": 7,
         "name": "a",
@@ -37,6 +41,7 @@
       },
       {
         "direction": "input",
+        "line": 3,
         "lsb": 0,
         "msb": 7,
         "name": "b",
@@ -45,6 +50,7 @@
       },
       {
         "direction": "output",
+        "line": 4,
         "lsb": 0,
         "msb": 7,
         "name": "y",
@@ -52,6 +58,7 @@
         "type": "unspecified"
       }
     ],
+    "pragmas": [],
     "source_file": "dataflow.v"
   }
 ]

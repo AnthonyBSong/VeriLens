@@ -362,18 +362,22 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 37,
         "sensitivity": "posedge clk"
       }
     ],
     "assigns": [],
+    "end_line": 52,
     "gate_primitives": [],
     "instances": [],
+    "line": 2,
     "name": "PipelineReg_ID_EX",
     "net_decls": [],
     "parameters": [],
     "ports": [
       {
         "direction": "input",
+        "line": 3,
         "lsb": 0,
         "msb": 0,
         "name": "clk",
@@ -382,6 +386,7 @@
       },
       {
         "direction": "input",
+        "line": 4,
         "lsb": 0,
         "msb": 0,
         "name": "rst",
@@ -390,6 +395,7 @@
       },
       {
         "direction": "input",
+        "line": 5,
         "lsb": 0,
         "msb": 0,
         "name": "flush",
@@ -398,6 +404,7 @@
       },
       {
         "direction": "input",
+        "line": 6,
         "lsb": 0,
         "msb": 31,
         "name": "id_pc",
@@ -406,6 +413,7 @@
       },
       {
         "direction": "input",
+        "line": 7,
         "lsb": 0,
         "msb": 31,
         "name": "id_rs1_val",
@@ -414,6 +422,7 @@
       },
       {
         "direction": "input",
+        "line": 8,
         "lsb": 0,
         "msb": 31,
         "name": "id_rs2_val",
@@ -422,6 +431,7 @@
       },
       {
         "direction": "input",
+        "line": 9,
         "lsb": 0,
         "msb": 31,
         "name": "id_imm",
@@ -430,6 +440,7 @@
       },
       {
         "direction": "input",
+        "line": 10,
         "lsb": 0,
         "msb": 4,
         "name": "id_rs1",
@@ -438,6 +449,7 @@
       },
       {
         "direction": "input",
+        "line": 11,
         "lsb": 0,
         "msb": 4,
         "name": "id_rs2",
@@ -446,6 +458,7 @@
       },
       {
         "direction": "input",
+        "line": 12,
         "lsb": 0,
         "msb": 4,
         "name": "id_rd",
@@ -454,6 +467,7 @@
       },
       {
         "direction": "input",
+        "line": 13,
         "lsb": 0,
         "msb": 3,
         "name": "id_alu_op",
@@ -462,6 +476,7 @@
       },
       {
         "direction": "input",
+        "line": 14,
         "lsb": 0,
         "msb": 0,
         "name": "id_alu_src",
@@ -470,6 +485,7 @@
       },
       {
         "direction": "input",
+        "line": 15,
         "lsb": 0,
         "msb": 0,
         "name": "id_mem_read",
@@ -478,6 +494,7 @@
       },
       {
         "direction": "input",
+        "line": 16,
         "lsb": 0,
         "msb": 0,
         "name": "id_mem_write",
@@ -486,6 +503,7 @@
       },
       {
         "direction": "input",
+        "line": 17,
         "lsb": 0,
         "msb": 0,
         "name": "id_reg_write",
@@ -494,6 +512,7 @@
       },
       {
         "direction": "input",
+        "line": 18,
         "lsb": 0,
         "msb": 0,
         "name": "id_mem_to_reg",
@@ -502,6 +521,7 @@
       },
       {
         "direction": "input",
+        "line": 19,
         "lsb": 0,
         "msb": 0,
         "name": "id_branch",
@@ -510,6 +530,7 @@
       },
       {
         "direction": "input",
+        "line": 20,
         "lsb": 0,
         "msb": 0,
         "name": "id_jump",
@@ -518,6 +539,7 @@
       },
       {
         "direction": "output",
+        "line": 21,
         "lsb": 0,
         "msb": 31,
         "name": "ex_pc",
@@ -526,6 +548,7 @@
       },
       {
         "direction": "output",
+        "line": 22,
         "lsb": 0,
         "msb": 31,
         "name": "ex_rs1_val",
@@ -534,6 +557,7 @@
       },
       {
         "direction": "output",
+        "line": 23,
         "lsb": 0,
         "msb": 31,
         "name": "ex_rs2_val",
@@ -542,6 +566,7 @@
       },
       {
         "direction": "output",
+        "line": 24,
         "lsb": 0,
         "msb": 31,
         "name": "ex_imm",
@@ -550,6 +575,7 @@
       },
       {
         "direction": "output",
+        "line": 25,
         "lsb": 0,
         "msb": 4,
         "name": "ex_rs1",
@@ -558,6 +584,7 @@
       },
       {
         "direction": "output",
+        "line": 26,
         "lsb": 0,
         "msb": 4,
         "name": "ex_rs2",
@@ -566,6 +593,7 @@
       },
       {
         "direction": "output",
+        "line": 27,
         "lsb": 0,
         "msb": 4,
         "name": "ex_rd",
@@ -574,6 +602,7 @@
       },
       {
         "direction": "output",
+        "line": 28,
         "lsb": 0,
         "msb": 3,
         "name": "ex_alu_op",
@@ -582,6 +611,7 @@
       },
       {
         "direction": "output",
+        "line": 29,
         "lsb": 0,
         "msb": 0,
         "name": "ex_alu_src",
@@ -590,6 +620,7 @@
       },
       {
         "direction": "output",
+        "line": 30,
         "lsb": 0,
         "msb": 0,
         "name": "ex_mem_read",
@@ -598,6 +629,7 @@
       },
       {
         "direction": "output",
+        "line": 31,
         "lsb": 0,
         "msb": 0,
         "name": "ex_mem_write",
@@ -606,6 +638,7 @@
       },
       {
         "direction": "output",
+        "line": 32,
         "lsb": 0,
         "msb": 0,
         "name": "ex_reg_write",
@@ -614,6 +647,7 @@
       },
       {
         "direction": "output",
+        "line": 33,
         "lsb": 0,
         "msb": 0,
         "name": "ex_mem_to_reg",
@@ -622,6 +656,7 @@
       },
       {
         "direction": "output",
+        "line": 34,
         "lsb": 0,
         "msb": 0,
         "name": "ex_branch",
@@ -630,6 +665,7 @@
       },
       {
         "direction": "output",
+        "line": 35,
         "lsb": 0,
         "msb": 0,
         "name": "ex_jump",
@@ -637,6 +673,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "PipelineReg_ID_EX.sv"
   }
 ]

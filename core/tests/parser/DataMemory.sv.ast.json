@@ -234,6 +234,7 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 17,
         "sensitivity": "*"
       },
       {
@@ -352,6 +353,7 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 28,
         "sensitivity": "posedge clk"
       }
     ],
@@ -361,6 +363,7 @@
           "kind": "IDENTIFIER",
           "name": "raw"
         },
+        "line": 15,
         "rhs": {
           "base": {
             "kind": "IDENTIFIER",
@@ -385,11 +388,14 @@
         }
       }
     ],
+    "end_line": 38,
     "gate_primitives": [],
     "instances": [],
+    "line": 2,
     "name": "DataMemory",
     "net_decls": [
       {
+        "line": 13,
         "lsb": 0,
         "msb": 31,
         "name": "mem",
@@ -397,6 +403,7 @@
         "type": "logic"
       },
       {
+        "line": 14,
         "lsb": 0,
         "msb": 31,
         "name": "raw",
@@ -413,6 +420,7 @@
     "ports": [
       {
         "direction": "input",
+        "line": 5,
         "lsb": 0,
         "msb": 0,
         "name": "clk",
@@ -421,6 +429,7 @@
       },
       {
         "direction": "input",
+        "line": 6,
         "lsb": 0,
         "msb": 0,
         "name": "we",
@@ -429,6 +438,7 @@
       },
       {
         "direction": "input",
+        "line": 7,
         "lsb": 0,
         "msb": 0,
         "name": "re",
@@ -437,6 +447,7 @@
       },
       {
         "direction": "input",
+        "line": 8,
         "lsb": 0,
         "msb": 2,
         "name": "funct3",
@@ -445,6 +456,7 @@
       },
       {
         "direction": "input",
+        "line": 9,
         "lsb": 0,
         "msb": 31,
         "name": "addr",
@@ -453,6 +465,7 @@
       },
       {
         "direction": "input",
+        "line": 10,
         "lsb": 0,
         "msb": 31,
         "name": "wd",
@@ -461,6 +474,7 @@
       },
       {
         "direction": "output",
+        "line": 11,
         "lsb": 0,
         "msb": 31,
         "name": "rd",
@@ -468,6 +482,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "DataMemory.sv"
   }
 ]

@@ -419,6 +419,7 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 21,
         "sensitivity": "*"
       }
     ],
@@ -428,6 +429,7 @@
           "kind": "IDENTIFIER",
           "name": "ops_lt"
         },
+        "line": 51,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -472,6 +474,7 @@
           "kind": "IDENTIFIER",
           "name": "ops_ltu"
         },
+        "line": 52,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -486,38 +489,57 @@
         }
       }
     ],
+    "end_line": 54,
     "gate_primitives": [],
     "instances": [
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "in0"
+            },
             "port": "in0",
             "signal": "in0"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "in1"
+            },
             "port": "in1",
             "signal": "in1"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "ops_eq"
+            },
             "port": "out",
             "signal": "ops_eq"
           }
         ],
         "instance": "cond_eq_comp",
+        "line": 44,
         "module": "vc_EqComparator",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false
       }
     ],
+    "line": 10,
     "name": "lab2_proc_ProcDpathAlu",
     "net_decls": [],
     "parameters": [],
     "ports": [
       {
         "direction": "input",
+        "line": 12,
         "lsb": 0,
         "msb": 31,
         "name": "in0",
@@ -526,6 +548,7 @@
       },
       {
         "direction": "input",
+        "line": 13,
         "lsb": 0,
         "msb": 31,
         "name": "in1",
@@ -534,6 +557,7 @@
       },
       {
         "direction": "input",
+        "line": 14,
         "lsb": 0,
         "msb": 3,
         "name": "fn",
@@ -542,6 +566,7 @@
       },
       {
         "direction": "output",
+        "line": 15,
         "lsb": 0,
         "msb": 31,
         "name": "out",
@@ -550,6 +575,7 @@
       },
       {
         "direction": "output",
+        "line": 16,
         "lsb": 0,
         "msb": 0,
         "name": "ops_eq",
@@ -558,6 +584,7 @@
       },
       {
         "direction": "output",
+        "line": 17,
         "lsb": 0,
         "msb": 0,
         "name": "ops_lt",
@@ -566,6 +593,7 @@
       },
       {
         "direction": "output",
+        "line": 18,
         "lsb": 0,
         "msb": 0,
         "name": "ops_ltu",
@@ -573,6 +601,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "ProcDpathAlu.v"
   }
 ]

@@ -7,6 +7,7 @@
           "kind": "IDENTIFIER",
           "name": "wb_data"
         },
+        "line": 8,
         "rhs": {
           "cond": {
             "kind": "IDENTIFIER",
@@ -24,14 +25,17 @@
         }
       }
     ],
+    "end_line": 9,
     "gate_primitives": [],
     "instances": [],
+    "line": 2,
     "name": "WritebackStage",
     "net_decls": [],
     "parameters": [],
     "ports": [
       {
         "direction": "input",
+        "line": 3,
         "lsb": 0,
         "msb": 31,
         "name": "alu_result",
@@ -40,6 +44,7 @@
       },
       {
         "direction": "input",
+        "line": 4,
         "lsb": 0,
         "msb": 31,
         "name": "read_data",
@@ -48,6 +53,7 @@
       },
       {
         "direction": "input",
+        "line": 5,
         "lsb": 0,
         "msb": 0,
         "name": "mem_to_reg",
@@ -56,6 +62,7 @@
       },
       {
         "direction": "output",
+        "line": 6,
         "lsb": 0,
         "msb": 31,
         "name": "wb_data",
@@ -63,6 +70,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "WritebackStage.sv"
   }
 ]

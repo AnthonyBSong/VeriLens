@@ -74,6 +74,7 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 20,
         "sensitivity": "posedge clk"
       }
     ],
@@ -83,41 +84,61 @@
           "kind": "IDENTIFIER",
           "name": "pc"
         },
+        "line": 12,
         "rhs": {
           "kind": "IDENTIFIER",
           "name": "pc_reg"
         }
       }
     ],
+    "end_line": 28,
     "gate_primitives": [],
     "instances": [
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pc_reg"
+            },
             "port": "addr",
             "signal": "pc_reg"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "instr"
+            },
             "port": "instr",
             "signal": "instr"
           }
         ],
         "instance": "imem",
+        "line": 14,
         "module": "InstrMemory",
         "parameters": [
-          ".DEPTH(1024)"
+          {
+            "name": "DEPTH",
+            "value": "1024"
+          }
         ],
         "resolved": false,
         "wildcard": false
       }
     ],
+    "line": 2,
     "name": "FetchStage",
     "net_decls": [
       {
+        "line": 11,
         "lsb": 0,
         "msb": 31,
         "name": "pc_reg",
@@ -129,6 +150,7 @@
     "ports": [
       {
         "direction": "input",
+        "line": 3,
         "lsb": 0,
         "msb": 0,
         "name": "clk",
@@ -137,6 +159,7 @@
       },
       {
         "direction": "input",
+        "line": 4,
         "lsb": 0,
         "msb": 0,
         "name": "rst",
@@ -145,6 +168,7 @@
       },
       {
         "direction": "input",
+        "line": 5,
         "lsb": 0,
         "msb": 0,
         "name": "stall",
@@ -153,6 +177,7 @@
       },
       {
         "direction": "input",
+        "line": 6,
         "lsb": 0,
         "msb": 0,
         "name": "branch_taken",
@@ -161,6 +186,7 @@
       },
       {
         "direction": "input",
+        "line": 7,
         "lsb": 0,
         "msb": 31,
         "name": "branch_target",
@@ -169,6 +195,7 @@
       },
       {
         "direction": "output",
+        "line": 8,
         "lsb": 0,
         "msb": 31,
         "name": "pc",
@@ -177,6 +204,7 @@
       },
       {
         "direction": "output",
+        "line": 9,
         "lsb": 0,
         "msb": 31,
         "name": "instr",
@@ -184,6 +212,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "FetchStage.sv"
   }
 ]

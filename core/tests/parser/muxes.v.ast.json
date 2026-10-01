@@ -76,12 +76,15 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 21,
         "sensitivity": "*"
       }
     ],
     "assigns": [],
+    "end_line": 30,
     "gate_primitives": [],
     "instances": [],
+    "line": 12,
     "name": "vc_Mux2",
     "net_decls": [],
     "parameters": [
@@ -94,6 +97,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 16,
         "lsb": 0,
         "msb": 0,
         "name": "in0",
@@ -104,6 +108,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 16,
         "lsb": 0,
         "msb": 0,
         "name": "in1",
@@ -113,6 +118,7 @@
       },
       {
         "direction": "input",
+        "line": 17,
         "lsb": 0,
         "msb": 0,
         "name": "sel",
@@ -122,6 +128,7 @@
       {
         "direction": "output",
         "expr": "p_nbits-1:0",
+        "line": 18,
         "lsb": 0,
         "msb": 0,
         "name": "out",
@@ -130,6 +137,7 @@
         "unknown": true
       }
     ],
+    "pragmas": [],
     "source_file": "muxes.v"
   },
   {
@@ -228,12 +236,15 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 45,
         "sensitivity": "*"
       }
     ],
     "assigns": [],
+    "end_line": 55,
     "gate_primitives": [],
     "instances": [],
+    "line": 36,
     "name": "vc_Mux3",
     "net_decls": [],
     "parameters": [
@@ -246,6 +257,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 40,
         "lsb": 0,
         "msb": 0,
         "name": "in0",
@@ -256,6 +268,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 40,
         "lsb": 0,
         "msb": 0,
         "name": "in1",
@@ -266,6 +279,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 40,
         "lsb": 0,
         "msb": 0,
         "name": "in2",
@@ -275,6 +289,7 @@
       },
       {
         "direction": "input",
+        "line": 41,
         "lsb": 0,
         "msb": 1,
         "name": "sel",
@@ -284,6 +299,7 @@
       {
         "direction": "output",
         "expr": "p_nbits-1:0",
+        "line": 42,
         "lsb": 0,
         "msb": 0,
         "name": "out",
@@ -292,6 +308,7 @@
         "unknown": true
       }
     ],
+    "pragmas": [],
     "source_file": "muxes.v"
   },
   {
@@ -409,12 +426,15 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 70,
         "sensitivity": "*"
       }
     ],
     "assigns": [],
+    "end_line": 81,
     "gate_primitives": [],
     "instances": [],
+    "line": 61,
     "name": "vc_Mux4",
     "net_decls": [],
     "parameters": [
@@ -427,6 +447,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 65,
         "lsb": 0,
         "msb": 0,
         "name": "in0",
@@ -437,6 +458,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 65,
         "lsb": 0,
         "msb": 0,
         "name": "in1",
@@ -447,6 +469,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 65,
         "lsb": 0,
         "msb": 0,
         "name": "in2",
@@ -457,6 +480,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 65,
         "lsb": 0,
         "msb": 0,
         "name": "in3",
@@ -466,6 +490,7 @@
       },
       {
         "direction": "input",
+        "line": 66,
         "lsb": 0,
         "msb": 1,
         "name": "sel",
@@ -475,6 +500,7 @@
       {
         "direction": "output",
         "expr": "p_nbits-1:0",
+        "line": 67,
         "lsb": 0,
         "msb": 0,
         "name": "out",
@@ -483,6 +509,7 @@
         "unknown": true
       }
     ],
+    "pragmas": [],
     "source_file": "muxes.v"
   },
   {
@@ -619,12 +646,15 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 96,
         "sensitivity": "*"
       }
     ],
     "assigns": [],
+    "end_line": 108,
     "gate_primitives": [],
     "instances": [],
+    "line": 87,
     "name": "vc_Mux5",
     "net_decls": [],
     "parameters": [
@@ -637,6 +667,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 91,
         "lsb": 0,
         "msb": 0,
         "name": "in0",
@@ -647,6 +678,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 91,
         "lsb": 0,
         "msb": 0,
         "name": "in1",
@@ -657,6 +689,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 91,
         "lsb": 0,
         "msb": 0,
         "name": "in2",
@@ -667,6 +700,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 91,
         "lsb": 0,
         "msb": 0,
         "name": "in3",
@@ -677,6 +711,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 91,
         "lsb": 0,
         "msb": 0,
         "name": "in4",
@@ -686,6 +721,7 @@
       },
       {
         "direction": "input",
+        "line": 92,
         "lsb": 0,
         "msb": 2,
         "name": "sel",
@@ -695,6 +731,7 @@
       {
         "direction": "output",
         "expr": "p_nbits-1:0",
+        "line": 93,
         "lsb": 0,
         "msb": 0,
         "name": "out",
@@ -703,6 +740,7 @@
         "unknown": true
       }
     ],
+    "pragmas": [],
     "source_file": "muxes.v"
   },
   {
@@ -858,12 +896,15 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 123,
         "sensitivity": "*"
       }
     ],
     "assigns": [],
+    "end_line": 136,
     "gate_primitives": [],
     "instances": [],
+    "line": 114,
     "name": "vc_Mux6",
     "net_decls": [],
     "parameters": [
@@ -876,6 +917,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 118,
         "lsb": 0,
         "msb": 0,
         "name": "in0",
@@ -886,6 +928,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 118,
         "lsb": 0,
         "msb": 0,
         "name": "in1",
@@ -896,6 +939,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 118,
         "lsb": 0,
         "msb": 0,
         "name": "in2",
@@ -906,6 +950,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 118,
         "lsb": 0,
         "msb": 0,
         "name": "in3",
@@ -916,6 +961,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 118,
         "lsb": 0,
         "msb": 0,
         "name": "in4",
@@ -926,6 +972,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 118,
         "lsb": 0,
         "msb": 0,
         "name": "in5",
@@ -935,6 +982,7 @@
       },
       {
         "direction": "input",
+        "line": 119,
         "lsb": 0,
         "msb": 2,
         "name": "sel",
@@ -944,6 +992,7 @@
       {
         "direction": "output",
         "expr": "p_nbits-1:0",
+        "line": 120,
         "lsb": 0,
         "msb": 0,
         "name": "out",
@@ -952,6 +1001,7 @@
         "unknown": true
       }
     ],
+    "pragmas": [],
     "source_file": "muxes.v"
   },
   {
@@ -1126,12 +1176,15 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 151,
         "sensitivity": "*"
       }
     ],
     "assigns": [],
+    "end_line": 165,
     "gate_primitives": [],
     "instances": [],
+    "line": 142,
     "name": "vc_Mux7",
     "net_decls": [],
     "parameters": [
@@ -1144,6 +1197,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 146,
         "lsb": 0,
         "msb": 0,
         "name": "in0",
@@ -1154,6 +1208,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 146,
         "lsb": 0,
         "msb": 0,
         "name": "in1",
@@ -1164,6 +1219,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 146,
         "lsb": 0,
         "msb": 0,
         "name": "in2",
@@ -1174,6 +1230,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 146,
         "lsb": 0,
         "msb": 0,
         "name": "in3",
@@ -1184,6 +1241,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 146,
         "lsb": 0,
         "msb": 0,
         "name": "in4",
@@ -1194,6 +1252,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 146,
         "lsb": 0,
         "msb": 0,
         "name": "in5",
@@ -1204,6 +1263,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 146,
         "lsb": 0,
         "msb": 0,
         "name": "in6",
@@ -1213,6 +1273,7 @@
       },
       {
         "direction": "input",
+        "line": 147,
         "lsb": 0,
         "msb": 2,
         "name": "sel",
@@ -1222,6 +1283,7 @@
       {
         "direction": "output",
         "expr": "p_nbits-1:0",
+        "line": 148,
         "lsb": 0,
         "msb": 0,
         "name": "out",
@@ -1230,6 +1292,7 @@
         "unknown": true
       }
     ],
+    "pragmas": [],
     "source_file": "muxes.v"
   },
   {
@@ -1423,12 +1486,15 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 180,
         "sensitivity": "*"
       }
     ],
     "assigns": [],
+    "end_line": 195,
     "gate_primitives": [],
     "instances": [],
+    "line": 171,
     "name": "vc_Mux8",
     "net_decls": [],
     "parameters": [
@@ -1441,6 +1507,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 175,
         "lsb": 0,
         "msb": 0,
         "name": "in0",
@@ -1451,6 +1518,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 175,
         "lsb": 0,
         "msb": 0,
         "name": "in1",
@@ -1461,6 +1529,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 175,
         "lsb": 0,
         "msb": 0,
         "name": "in2",
@@ -1471,6 +1540,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 175,
         "lsb": 0,
         "msb": 0,
         "name": "in3",
@@ -1481,6 +1551,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 175,
         "lsb": 0,
         "msb": 0,
         "name": "in4",
@@ -1491,6 +1562,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 175,
         "lsb": 0,
         "msb": 0,
         "name": "in5",
@@ -1501,6 +1573,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 175,
         "lsb": 0,
         "msb": 0,
         "name": "in6",
@@ -1511,6 +1584,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 175,
         "lsb": 0,
         "msb": 0,
         "name": "in7",
@@ -1520,6 +1594,7 @@
       },
       {
         "direction": "input",
+        "line": 176,
         "lsb": 0,
         "msb": 2,
         "name": "sel",
@@ -1529,6 +1604,7 @@
       {
         "direction": "output",
         "expr": "p_nbits-1:0",
+        "line": 177,
         "lsb": 0,
         "msb": 0,
         "name": "out",
@@ -1537,6 +1613,7 @@
         "unknown": true
       }
     ],
+    "pragmas": [],
     "source_file": "muxes.v"
   }
 ]

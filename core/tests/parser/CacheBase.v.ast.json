@@ -2,47 +2,84 @@
   {
     "always_blocks": [],
     "assigns": [],
+    "end_line": 242,
     "gate_primitives": [],
     "instances": [
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "proc2cache_reqstream_val"
+            },
             "port": "proc2cache_reqstream_val",
             "signal": "proc2cache_reqstream_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "proc2cache_reqstream_rdy"
+            },
             "port": "proc2cache_reqstream_rdy",
             "signal": "proc2cache_reqstream_rdy"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "proc2cache_respstream_val"
+            },
             "port": "proc2cache_respstream_val",
             "signal": "proc2cache_respstream_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "proc2cache_respstream_rdy"
+            },
             "port": "proc2cache_respstream_rdy",
             "signal": "proc2cache_respstream_rdy"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "cache2mem_reqstream_val"
+            },
             "port": "cache2mem_reqstream_val",
             "signal": "cache2mem_reqstream_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "cache2mem_reqstream_rdy"
+            },
             "port": "cache2mem_reqstream_rdy",
             "signal": "cache2mem_reqstream_rdy"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "cache2mem_respstream_val"
+            },
             "port": "cache2mem_respstream_val",
             "signal": "cache2mem_respstream_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "cache2mem_respstream_rdy"
+            },
             "port": "cache2mem_respstream_rdy",
             "signal": "cache2mem_respstream_rdy"
           }
         ],
         "instance": "ctrl",
+        "line": 80,
         "module": "lab3_mem_CacheBaseCtrl",
         "parameters": [
-          ".p_num_banks(p_num_banks)"
+          {
+            "name": "p_num_banks",
+            "value": "p_num_banks"
+          }
         ],
         "resolved": false,
         "wildcard": true
@@ -50,26 +87,46 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "proc2cache_reqstream_msg"
+            },
             "port": "proc2cache_reqstream_msg",
             "signal": "proc2cache_reqstream_msg"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "proc2cache_respstream_msg"
+            },
             "port": "proc2cache_respstream_msg",
             "signal": "proc2cache_respstream_msg"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "cache2mem_reqstream_msg"
+            },
             "port": "cache2mem_reqstream_msg",
             "signal": "cache2mem_reqstream_msg"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "cache2mem_respstream_msg"
+            },
             "port": "cache2mem_respstream_msg",
             "signal": "cache2mem_respstream_msg"
           }
         ],
         "instance": "dpath",
+        "line": 109,
         "module": "lab3_mem_CacheBaseDpath",
         "parameters": [
-          ".p_num_banks(p_num_banks)"
+          {
+            "name": "p_num_banks",
+            "value": "p_num_banks"
+          }
         ],
         "resolved": false,
         "wildcard": true
@@ -77,27 +134,48 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "proc2cache_reqstream_val"
+            },
             "port": "val",
             "signal": "proc2cache_reqstream_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "proc2cache_reqstream_rdy"
+            },
             "port": "rdy",
             "signal": "proc2cache_reqstream_rdy"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "proc2cache_reqstream_msg"
+            },
             "port": "msg",
             "signal": "proc2cache_reqstream_msg"
           }
         ],
         "instance": "proc2cache_reqstream_msg_trace",
+        "line": 204,
         "module": "vc_MemReqMsg4BTrace",
         "parameters": [],
         "resolved": false,
@@ -106,27 +184,48 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "proc2cache_respstream_val"
+            },
             "port": "val",
             "signal": "proc2cache_respstream_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "proc2cache_respstream_val"
+            },
             "port": "rdy",
             "signal": "proc2cache_respstream_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "proc2cache_respstream_msg"
+            },
             "port": "msg",
             "signal": "proc2cache_respstream_msg"
           }
         ],
         "instance": "proc2cache_respstream_trace",
+        "line": 213,
         "module": "vc_MemRespMsg4BTrace",
         "parameters": [],
         "resolved": false,
@@ -135,27 +234,48 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "cache2mem_reqstream_val"
+            },
             "port": "val",
             "signal": "cache2mem_reqstream_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "cache2mem_reqstream_rdy"
+            },
             "port": "rdy",
             "signal": "cache2mem_reqstream_rdy"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "cache2mem_reqstream_msg"
+            },
             "port": "msg",
             "signal": "cache2mem_reqstream_msg"
           }
         ],
         "instance": "cache2mem_reqstream_msg_trace",
+        "line": 222,
         "module": "vc_MemReqMsg16BTrace",
         "parameters": [],
         "resolved": false,
@@ -164,36 +284,59 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "cache2mem_respstream_val"
+            },
             "port": "val",
             "signal": "cache2mem_respstream_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "cache2mem_respstream_rdy"
+            },
             "port": "rdy",
             "signal": "cache2mem_respstream_rdy"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "cache2mem_respstream_msg"
+            },
             "port": "msg",
             "signal": "cache2mem_respstream_msg"
           }
         ],
         "instance": "cache2mem_respstream_msg_trace",
+        "line": 231,
         "module": "vc_MemRespMsg16BTrace",
         "parameters": [],
         "resolved": false,
         "wildcard": false
       }
     ],
+    "line": 25,
     "name": "lab3_mem_CacheBase",
     "net_decls": [
       {
+        "line": 55,
         "lsb": 0,
         "msb": 0,
         "name": "cachereq_en",
@@ -201,6 +344,7 @@
         "type": "logic"
       },
       {
+        "line": 56,
         "lsb": 0,
         "msb": 0,
         "name": "memresp_en",
@@ -208,6 +352,7 @@
         "type": "logic"
       },
       {
+        "line": 57,
         "lsb": 0,
         "msb": 0,
         "name": "write_data_mux_sel",
@@ -215,6 +360,7 @@
         "type": "logic"
       },
       {
+        "line": 58,
         "lsb": 0,
         "msb": 0,
         "name": "tag_array_ren",
@@ -222,6 +368,7 @@
         "type": "logic"
       },
       {
+        "line": 59,
         "lsb": 0,
         "msb": 0,
         "name": "tag_array_wen",
@@ -229,6 +376,7 @@
         "type": "logic"
       },
       {
+        "line": 60,
         "lsb": 0,
         "msb": 0,
         "name": "data_array_ren",
@@ -236,6 +384,7 @@
         "type": "logic"
       },
       {
+        "line": 61,
         "lsb": 0,
         "msb": 0,
         "name": "data_array_wen",
@@ -243,6 +392,7 @@
         "type": "logic"
       },
       {
+        "line": 62,
         "lsb": 0,
         "msb": 0,
         "name": "refill",
@@ -250,6 +400,7 @@
         "type": "logic"
       },
       {
+        "line": 63,
         "lsb": 0,
         "msb": 0,
         "name": "read_data_zero_mux_sel",
@@ -257,6 +408,7 @@
         "type": "logic"
       },
       {
+        "line": 64,
         "lsb": 0,
         "msb": 0,
         "name": "read_data_reg_en",
@@ -264,6 +416,7 @@
         "type": "logic"
       },
       {
+        "line": 65,
         "lsb": 0,
         "msb": 0,
         "name": "evict_addr_reg_en",
@@ -271,6 +424,7 @@
         "type": "logic"
       },
       {
+        "line": 66,
         "lsb": 0,
         "msb": 0,
         "name": "memreq_addr_mux_sel",
@@ -278,6 +432,7 @@
         "type": "logic"
       },
       {
+        "line": 67,
         "lsb": 0,
         "msb": 3,
         "name": "cacheresp_type",
@@ -285,6 +440,7 @@
         "type": "logic"
       },
       {
+        "line": 68,
         "lsb": 0,
         "msb": 3,
         "name": "memreq_type",
@@ -292,6 +448,7 @@
         "type": "logic"
       },
       {
+        "line": 69,
         "lsb": 0,
         "msb": 0,
         "name": "hit",
@@ -299,6 +456,7 @@
         "type": "logic"
       },
       {
+        "line": 72,
         "lsb": 0,
         "msb": 3,
         "name": "cachereq_type",
@@ -306,6 +464,7 @@
         "type": "logic"
       },
       {
+        "line": 73,
         "lsb": 0,
         "msb": 3,
         "name": "index",
@@ -313,6 +472,7 @@
         "type": "logic"
       },
       {
+        "line": 74,
         "lsb": 0,
         "msb": 0,
         "name": "tag_match",
@@ -321,6 +481,7 @@
       },
       {
         "expr": "`VC_TRACE_NBITS-1:0",
+        "line": 140,
         "lsb": 0,
         "msb": 0,
         "name": "str",
@@ -338,6 +499,7 @@
     "ports": [
       {
         "direction": "input",
+        "line": 30,
         "lsb": 0,
         "msb": 0,
         "name": "clk",
@@ -346,6 +508,7 @@
       },
       {
         "direction": "input",
+        "line": 31,
         "lsb": 0,
         "msb": 0,
         "name": "reset",
@@ -354,6 +517,7 @@
       },
       {
         "direction": "input",
+        "line": 35,
         "lsb": 0,
         "msb": 0,
         "name": "proc2cache_reqstream_msg",
@@ -362,6 +526,7 @@
       },
       {
         "direction": "input",
+        "line": 36,
         "lsb": 0,
         "msb": 0,
         "name": "proc2cache_reqstream_val",
@@ -370,6 +535,7 @@
       },
       {
         "direction": "output",
+        "line": 37,
         "lsb": 0,
         "msb": 0,
         "name": "proc2cache_reqstream_rdy",
@@ -378,6 +544,7 @@
       },
       {
         "direction": "output",
+        "line": 39,
         "lsb": 0,
         "msb": 0,
         "name": "proc2cache_respstream_msg",
@@ -386,6 +553,7 @@
       },
       {
         "direction": "output",
+        "line": 40,
         "lsb": 0,
         "msb": 0,
         "name": "proc2cache_respstream_val",
@@ -394,6 +562,7 @@
       },
       {
         "direction": "input",
+        "line": 41,
         "lsb": 0,
         "msb": 0,
         "name": "proc2cache_respstream_rdy",
@@ -402,6 +571,7 @@
       },
       {
         "direction": "output",
+        "line": 45,
         "lsb": 0,
         "msb": 0,
         "name": "cache2mem_reqstream_msg",
@@ -410,6 +580,7 @@
       },
       {
         "direction": "output",
+        "line": 46,
         "lsb": 0,
         "msb": 0,
         "name": "cache2mem_reqstream_val",
@@ -418,6 +589,7 @@
       },
       {
         "direction": "input",
+        "line": 47,
         "lsb": 0,
         "msb": 0,
         "name": "cache2mem_reqstream_rdy",
@@ -426,6 +598,7 @@
       },
       {
         "direction": "input",
+        "line": 49,
         "lsb": 0,
         "msb": 0,
         "name": "cache2mem_respstream_msg",
@@ -434,6 +607,7 @@
       },
       {
         "direction": "input",
+        "line": 50,
         "lsb": 0,
         "msb": 0,
         "name": "cache2mem_respstream_val",
@@ -442,6 +616,7 @@
       },
       {
         "direction": "output",
+        "line": 51,
         "lsb": 0,
         "msb": 0,
         "name": "cache2mem_respstream_rdy",
@@ -449,6 +624,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "CacheBase.v"
   }
 ]

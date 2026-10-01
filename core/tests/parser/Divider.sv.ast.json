@@ -379,6 +379,7 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 19,
         "sensitivity": "posedge clk"
       }
     ],
@@ -388,6 +389,7 @@
           "kind": "IDENTIFIER",
           "name": "div_by_zero"
         },
+        "line": 17,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -402,11 +404,14 @@
         }
       }
     ],
+    "end_line": 40,
     "gate_primitives": [],
     "instances": [],
+    "line": 2,
     "name": "Divider",
     "net_decls": [
       {
+        "line": 13,
         "lsb": 0,
         "msb": 63,
         "name": "partial",
@@ -414,6 +419,7 @@
         "type": "logic"
       },
       {
+        "line": 14,
         "lsb": 0,
         "msb": 31,
         "name": "q_shift",
@@ -421,6 +427,7 @@
         "type": "logic"
       },
       {
+        "line": 15,
         "lsb": 0,
         "msb": 5,
         "name": "count",
@@ -432,6 +439,7 @@
     "ports": [
       {
         "direction": "input",
+        "line": 3,
         "lsb": 0,
         "msb": 0,
         "name": "clk",
@@ -440,6 +448,7 @@
       },
       {
         "direction": "input",
+        "line": 4,
         "lsb": 0,
         "msb": 0,
         "name": "rst",
@@ -448,6 +457,7 @@
       },
       {
         "direction": "input",
+        "line": 5,
         "lsb": 0,
         "msb": 0,
         "name": "start",
@@ -456,6 +466,7 @@
       },
       {
         "direction": "input",
+        "line": 6,
         "lsb": 0,
         "msb": 31,
         "name": "dividend",
@@ -464,6 +475,7 @@
       },
       {
         "direction": "input",
+        "line": 7,
         "lsb": 0,
         "msb": 31,
         "name": "divisor",
@@ -472,6 +484,7 @@
       },
       {
         "direction": "output",
+        "line": 8,
         "lsb": 0,
         "msb": 31,
         "name": "quotient",
@@ -480,6 +493,7 @@
       },
       {
         "direction": "output",
+        "line": 9,
         "lsb": 0,
         "msb": 31,
         "name": "remainder",
@@ -488,6 +502,7 @@
       },
       {
         "direction": "output",
+        "line": 10,
         "lsb": 0,
         "msb": 0,
         "name": "done",
@@ -496,6 +511,7 @@
       },
       {
         "direction": "output",
+        "line": 11,
         "lsb": 0,
         "msb": 0,
         "name": "div_by_zero",
@@ -503,6 +519,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "Divider.sv"
   }
 ]

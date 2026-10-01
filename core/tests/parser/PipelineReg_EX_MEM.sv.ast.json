@@ -200,18 +200,22 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 22,
         "sensitivity": "posedge clk"
       }
     ],
     "assigns": [],
+    "end_line": 34,
     "gate_primitives": [],
     "instances": [],
+    "line": 2,
     "name": "PipelineReg_EX_MEM",
     "net_decls": [],
     "parameters": [],
     "ports": [
       {
         "direction": "input",
+        "line": 3,
         "lsb": 0,
         "msb": 0,
         "name": "clk",
@@ -220,6 +224,7 @@
       },
       {
         "direction": "input",
+        "line": 4,
         "lsb": 0,
         "msb": 0,
         "name": "rst",
@@ -228,6 +233,7 @@
       },
       {
         "direction": "input",
+        "line": 5,
         "lsb": 0,
         "msb": 31,
         "name": "ex_alu_result",
@@ -236,6 +242,7 @@
       },
       {
         "direction": "input",
+        "line": 6,
         "lsb": 0,
         "msb": 31,
         "name": "ex_rs2_val",
@@ -244,6 +251,7 @@
       },
       {
         "direction": "input",
+        "line": 7,
         "lsb": 0,
         "msb": 4,
         "name": "ex_rd",
@@ -252,6 +260,7 @@
       },
       {
         "direction": "input",
+        "line": 8,
         "lsb": 0,
         "msb": 0,
         "name": "ex_mem_read",
@@ -260,6 +269,7 @@
       },
       {
         "direction": "input",
+        "line": 9,
         "lsb": 0,
         "msb": 0,
         "name": "ex_mem_write",
@@ -268,6 +278,7 @@
       },
       {
         "direction": "input",
+        "line": 10,
         "lsb": 0,
         "msb": 0,
         "name": "ex_reg_write",
@@ -276,6 +287,7 @@
       },
       {
         "direction": "input",
+        "line": 11,
         "lsb": 0,
         "msb": 0,
         "name": "ex_mem_to_reg",
@@ -284,6 +296,7 @@
       },
       {
         "direction": "input",
+        "line": 12,
         "lsb": 0,
         "msb": 0,
         "name": "ex_zero",
@@ -292,6 +305,7 @@
       },
       {
         "direction": "output",
+        "line": 13,
         "lsb": 0,
         "msb": 31,
         "name": "mem_alu_result",
@@ -300,6 +314,7 @@
       },
       {
         "direction": "output",
+        "line": 14,
         "lsb": 0,
         "msb": 31,
         "name": "mem_rs2_val",
@@ -308,6 +323,7 @@
       },
       {
         "direction": "output",
+        "line": 15,
         "lsb": 0,
         "msb": 4,
         "name": "mem_rd",
@@ -316,6 +332,7 @@
       },
       {
         "direction": "output",
+        "line": 16,
         "lsb": 0,
         "msb": 0,
         "name": "mem_mem_read",
@@ -324,6 +341,7 @@
       },
       {
         "direction": "output",
+        "line": 17,
         "lsb": 0,
         "msb": 0,
         "name": "mem_mem_write",
@@ -332,6 +350,7 @@
       },
       {
         "direction": "output",
+        "line": 18,
         "lsb": 0,
         "msb": 0,
         "name": "mem_reg_write",
@@ -340,6 +359,7 @@
       },
       {
         "direction": "output",
+        "line": 19,
         "lsb": 0,
         "msb": 0,
         "name": "mem_mem_to_reg",
@@ -348,6 +368,7 @@
       },
       {
         "direction": "output",
+        "line": 20,
         "lsb": 0,
         "msb": 0,
         "name": "mem_zero",
@@ -355,6 +376,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "PipelineReg_EX_MEM.sv"
   }
 ]

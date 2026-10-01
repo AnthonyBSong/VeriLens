@@ -16,6 +16,7 @@
             }
           ]
         },
+        "line": 26,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -62,8 +63,10 @@
         }
       }
     ],
+    "end_line": 28,
     "gate_primitives": [],
     "instances": [],
+    "line": 12,
     "name": "vc_Adder",
     "net_decls": [],
     "parameters": [
@@ -76,6 +79,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 16,
         "lsb": 0,
         "msb": 0,
         "name": "in0",
@@ -86,6 +90,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 17,
         "lsb": 0,
         "msb": 0,
         "name": "in1",
@@ -95,6 +100,7 @@
       },
       {
         "direction": "input",
+        "line": 18,
         "lsb": 0,
         "msb": 0,
         "name": "cin",
@@ -104,6 +110,7 @@
       {
         "direction": "output",
         "expr": "p_nbits-1:0",
+        "line": 19,
         "lsb": 0,
         "msb": 0,
         "name": "out",
@@ -113,6 +120,7 @@
       },
       {
         "direction": "output",
+        "line": 20,
         "lsb": 0,
         "msb": 0,
         "name": "cout",
@@ -120,6 +128,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "arithmetic.v"
   },
   {
@@ -130,6 +139,7 @@
           "kind": "IDENTIFIER",
           "name": "out"
         },
+        "line": 39,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -144,8 +154,10 @@
         }
       }
     ],
+    "end_line": 41,
     "gate_primitives": [],
     "instances": [],
+    "line": 30,
     "name": "vc_SimpleAdder",
     "net_decls": [],
     "parameters": [
@@ -158,6 +170,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 34,
         "lsb": 0,
         "msb": 0,
         "name": "in0",
@@ -168,6 +181,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 35,
         "lsb": 0,
         "msb": 0,
         "name": "in1",
@@ -178,6 +192,7 @@
       {
         "direction": "output",
         "expr": "p_nbits-1:0",
+        "line": 36,
         "lsb": 0,
         "msb": 0,
         "name": "out",
@@ -186,6 +201,7 @@
         "unknown": true
       }
     ],
+    "pragmas": [],
     "source_file": "arithmetic.v"
   },
   {
@@ -196,6 +212,7 @@
           "kind": "IDENTIFIER",
           "name": "out"
         },
+        "line": 56,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -210,8 +227,10 @@
         }
       }
     ],
+    "end_line": 58,
     "gate_primitives": [],
     "instances": [],
+    "line": 47,
     "name": "vc_Subtractor",
     "net_decls": [],
     "parameters": [
@@ -224,6 +243,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 51,
         "lsb": 0,
         "msb": 0,
         "name": "in0",
@@ -234,6 +254,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 52,
         "lsb": 0,
         "msb": 0,
         "name": "in1",
@@ -244,6 +265,7 @@
       {
         "direction": "output",
         "expr": "p_nbits-1:0",
+        "line": 53,
         "lsb": 0,
         "msb": 0,
         "name": "out",
@@ -252,6 +274,7 @@
         "unknown": true
       }
     ],
+    "pragmas": [],
     "source_file": "arithmetic.v"
   },
   {
@@ -262,6 +285,7 @@
           "kind": "IDENTIFIER",
           "name": "out"
         },
+        "line": 73,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -276,8 +300,10 @@
         }
       }
     ],
+    "end_line": 75,
     "gate_primitives": [],
     "instances": [],
+    "line": 64,
     "name": "vc_Incrementer",
     "net_decls": [],
     "parameters": [
@@ -294,6 +320,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 69,
         "lsb": 0,
         "msb": 0,
         "name": "in",
@@ -304,6 +331,7 @@
       {
         "direction": "output",
         "expr": "p_nbits-1:0",
+        "line": 70,
         "lsb": 0,
         "msb": 0,
         "name": "out",
@@ -312,6 +340,7 @@
         "unknown": true
       }
     ],
+    "pragmas": [],
     "source_file": "arithmetic.v"
   },
   {
@@ -322,6 +351,7 @@
           "kind": "IDENTIFIER",
           "name": "out"
         },
+        "line": 90,
         "rhs": {
           "kind": "CONCAT",
           "parts": [
@@ -352,8 +382,10 @@
         }
       }
     ],
+    "end_line": 92,
     "gate_primitives": [],
     "instances": [],
+    "line": 81,
     "name": "vc_ZeroExtender",
     "net_decls": [],
     "parameters": [
@@ -370,6 +402,7 @@
       {
         "direction": "input",
         "expr": "p_in_nbits-1:0",
+        "line": 86,
         "lsb": 0,
         "msb": 0,
         "name": "in",
@@ -380,6 +413,7 @@
       {
         "direction": "output",
         "expr": "p_out_nbits-1:0",
+        "line": 87,
         "lsb": 0,
         "msb": 0,
         "name": "out",
@@ -388,6 +422,7 @@
         "unknown": true
       }
     ],
+    "pragmas": [],
     "source_file": "arithmetic.v"
   },
   {
@@ -398,6 +433,7 @@
           "kind": "IDENTIFIER",
           "name": "out"
         },
+        "line": 108,
         "rhs": {
           "kind": "CONCAT",
           "parts": [
@@ -443,8 +479,10 @@
         }
       }
     ],
+    "end_line": 110,
     "gate_primitives": [],
     "instances": [],
+    "line": 98,
     "name": "vc_SignExtender",
     "net_decls": [],
     "parameters": [
@@ -461,6 +499,7 @@
       {
         "direction": "input",
         "expr": "p_in_nbits-1:0",
+        "line": 104,
         "lsb": 0,
         "msb": 0,
         "name": "in",
@@ -471,6 +510,7 @@
       {
         "direction": "output",
         "expr": "p_out_nbits-1:0",
+        "line": 105,
         "lsb": 0,
         "msb": 0,
         "name": "out",
@@ -479,6 +519,7 @@
         "unknown": true
       }
     ],
+    "pragmas": [],
     "source_file": "arithmetic.v"
   },
   {
@@ -489,6 +530,7 @@
           "kind": "IDENTIFIER",
           "name": "out"
         },
+        "line": 124,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -510,8 +552,10 @@
         }
       }
     ],
+    "end_line": 126,
     "gate_primitives": [],
     "instances": [],
+    "line": 116,
     "name": "vc_ZeroComparator",
     "net_decls": [],
     "parameters": [
@@ -524,6 +568,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 120,
         "lsb": 0,
         "msb": 0,
         "name": "in",
@@ -533,6 +578,7 @@
       },
       {
         "direction": "output",
+        "line": 121,
         "lsb": 0,
         "msb": 0,
         "name": "out",
@@ -540,6 +586,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "arithmetic.v"
   },
   {
@@ -550,6 +597,7 @@
           "kind": "IDENTIFIER",
           "name": "out"
         },
+        "line": 141,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -564,8 +612,10 @@
         }
       }
     ],
+    "end_line": 143,
     "gate_primitives": [],
     "instances": [],
+    "line": 132,
     "name": "vc_EqComparator",
     "net_decls": [],
     "parameters": [
@@ -578,6 +628,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 136,
         "lsb": 0,
         "msb": 0,
         "name": "in0",
@@ -588,6 +639,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 137,
         "lsb": 0,
         "msb": 0,
         "name": "in1",
@@ -597,6 +649,7 @@
       },
       {
         "direction": "output",
+        "line": 138,
         "lsb": 0,
         "msb": 0,
         "name": "out",
@@ -604,6 +657,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "arithmetic.v"
   },
   {
@@ -614,6 +668,7 @@
           "kind": "IDENTIFIER",
           "name": "out"
         },
+        "line": 158,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -628,8 +683,10 @@
         }
       }
     ],
+    "end_line": 160,
     "gate_primitives": [],
     "instances": [],
+    "line": 149,
     "name": "vc_LtComparator",
     "net_decls": [],
     "parameters": [
@@ -642,6 +699,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 153,
         "lsb": 0,
         "msb": 0,
         "name": "in0",
@@ -652,6 +710,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 154,
         "lsb": 0,
         "msb": 0,
         "name": "in1",
@@ -661,6 +720,7 @@
       },
       {
         "direction": "output",
+        "line": 155,
         "lsb": 0,
         "msb": 0,
         "name": "out",
@@ -668,6 +728,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "arithmetic.v"
   },
   {
@@ -678,6 +739,7 @@
           "kind": "IDENTIFIER",
           "name": "out"
         },
+        "line": 175,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -692,8 +754,10 @@
         }
       }
     ],
+    "end_line": 177,
     "gate_primitives": [],
     "instances": [],
+    "line": 166,
     "name": "vc_GtComparator",
     "net_decls": [],
     "parameters": [
@@ -706,6 +770,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 170,
         "lsb": 0,
         "msb": 0,
         "name": "in0",
@@ -716,6 +781,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 171,
         "lsb": 0,
         "msb": 0,
         "name": "in1",
@@ -725,6 +791,7 @@
       },
       {
         "direction": "output",
+        "line": 172,
         "lsb": 0,
         "msb": 0,
         "name": "out",
@@ -732,6 +799,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "arithmetic.v"
   },
   {
@@ -742,6 +810,7 @@
           "kind": "IDENTIFIER",
           "name": "out"
         },
+        "line": 193,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -756,8 +825,10 @@
         }
       }
     ],
+    "end_line": 195,
     "gate_primitives": [],
     "instances": [],
+    "line": 183,
     "name": "vc_LeftLogicalShifter",
     "net_decls": [],
     "parameters": [
@@ -774,6 +845,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 188,
         "lsb": 0,
         "msb": 0,
         "name": "in",
@@ -784,6 +856,7 @@
       {
         "direction": "input",
         "expr": "p_shamt_nbits-1:0",
+        "line": 189,
         "lsb": 0,
         "msb": 0,
         "name": "shamt",
@@ -794,6 +867,7 @@
       {
         "direction": "output",
         "expr": "p_nbits-1:0",
+        "line": 190,
         "lsb": 0,
         "msb": 0,
         "name": "out",
@@ -802,6 +876,7 @@
         "unknown": true
       }
     ],
+    "pragmas": [],
     "source_file": "arithmetic.v"
   },
   {
@@ -812,6 +887,7 @@
           "kind": "IDENTIFIER",
           "name": "out"
         },
+        "line": 211,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -826,8 +902,10 @@
         }
       }
     ],
+    "end_line": 213,
     "gate_primitives": [],
     "instances": [],
+    "line": 201,
     "name": "vc_RightLogicalShifter",
     "net_decls": [],
     "parameters": [
@@ -844,6 +922,7 @@
       {
         "direction": "input",
         "expr": "p_nbits-1:0",
+        "line": 206,
         "lsb": 0,
         "msb": 0,
         "name": "in",
@@ -854,6 +933,7 @@
       {
         "direction": "input",
         "expr": "p_shamt_nbits-1:0",
+        "line": 207,
         "lsb": 0,
         "msb": 0,
         "name": "shamt",
@@ -864,6 +944,7 @@
       {
         "direction": "output",
         "expr": "p_nbits-1:0",
+        "line": 208,
         "lsb": 0,
         "msb": 0,
         "name": "out",
@@ -872,6 +953,7 @@
         "unknown": true
       }
     ],
+    "pragmas": [],
     "source_file": "arithmetic.v"
   }
 ]

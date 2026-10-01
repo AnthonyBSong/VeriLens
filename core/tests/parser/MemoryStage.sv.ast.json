@@ -2,32 +2,54 @@
   {
     "always_blocks": [],
     "assigns": [],
+    "end_line": 31,
     "gate_primitives": [],
     "instances": [
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "funct3"
+            },
             "port": "funct3",
             "signal": "funct3"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "alu_result"
+            },
             "port": "addr",
             "signal": "alu_result"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "rs2_val"
+            },
             "port": "store_data",
             "signal": "rs2_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "byte_en"
+            },
             "port": "byte_en",
             "signal": "byte_en"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "aligned_data"
+            },
             "port": "aligned_data",
             "signal": "aligned_data"
           }
         ],
         "instance": "lsu",
+        "line": 14,
         "module": "LoadStoreUnit",
         "parameters": [],
         "resolved": false,
@@ -36,46 +58,80 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mem_write"
+            },
             "port": "we",
             "signal": "mem_write"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mem_read"
+            },
             "port": "re",
             "signal": "mem_read"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "funct3"
+            },
             "port": "funct3",
             "signal": "funct3"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "alu_result"
+            },
             "port": "addr",
             "signal": "alu_result"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "aligned_data"
+            },
             "port": "wd",
             "signal": "aligned_data"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "read_data"
+            },
             "port": "rd",
             "signal": "read_data"
           }
         ],
         "instance": "dmem",
+        "line": 22,
         "module": "DataMemory",
         "parameters": [
-          ".DEPTH(1024)"
+          {
+            "name": "DEPTH",
+            "value": "1024"
+          }
         ],
         "resolved": false,
         "wildcard": false
       }
     ],
+    "line": 2,
     "name": "MemoryStage",
     "net_decls": [
       {
+        "line": 11,
         "lsb": 0,
         "msb": 3,
         "name": "byte_en",
@@ -83,6 +139,7 @@
         "type": "logic"
       },
       {
+        "line": 12,
         "lsb": 0,
         "msb": 31,
         "name": "aligned_data",
@@ -94,6 +151,7 @@
     "ports": [
       {
         "direction": "input",
+        "line": 3,
         "lsb": 0,
         "msb": 0,
         "name": "clk",
@@ -102,6 +160,7 @@
       },
       {
         "direction": "input",
+        "line": 4,
         "lsb": 0,
         "msb": 31,
         "name": "alu_result",
@@ -110,6 +169,7 @@
       },
       {
         "direction": "input",
+        "line": 5,
         "lsb": 0,
         "msb": 31,
         "name": "rs2_val",
@@ -118,6 +178,7 @@
       },
       {
         "direction": "input",
+        "line": 6,
         "lsb": 0,
         "msb": 0,
         "name": "mem_read",
@@ -126,6 +187,7 @@
       },
       {
         "direction": "input",
+        "line": 7,
         "lsb": 0,
         "msb": 0,
         "name": "mem_write",
@@ -134,6 +196,7 @@
       },
       {
         "direction": "input",
+        "line": 8,
         "lsb": 0,
         "msb": 2,
         "name": "funct3",
@@ -142,6 +205,7 @@
       },
       {
         "direction": "output",
+        "line": 9,
         "lsb": 0,
         "msb": 31,
         "name": "read_data",
@@ -149,6 +213,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "MemoryStage.sv"
   }
 ]

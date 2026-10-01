@@ -7,6 +7,7 @@
           "kind": "IDENTIFIER",
           "name": "icache_access"
         },
+        "line": 180,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -25,6 +26,7 @@
           "kind": "IDENTIFIER",
           "name": "icache_miss"
         },
+        "line": 181,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -62,6 +64,7 @@
           "kind": "IDENTIFIER",
           "name": "dcache_access"
         },
+        "line": 182,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -80,6 +83,7 @@
           "kind": "IDENTIFIER",
           "name": "dcache_miss"
         },
+        "line": 183,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -113,71 +117,132 @@
         }
       }
     ],
+    "end_line": 204,
     "gate_primitives": [],
     "instances": [
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "icache_reqstream_msg"
+            },
             "port": "proc2cache_reqstream_msg",
             "signal": "icache_reqstream_msg"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "icache_reqstream_val"
+            },
             "port": "proc2cache_reqstream_val",
             "signal": "icache_reqstream_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "icache_reqstream_rdy"
+            },
             "port": "proc2cache_reqstream_rdy",
             "signal": "icache_reqstream_rdy"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "icache_respstream_msg"
+            },
             "port": "proc2cache_respstream_msg",
             "signal": "icache_respstream_msg"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "icache_respstream_val"
+            },
             "port": "proc2cache_respstream_val",
             "signal": "icache_respstream_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "icache_respstream_rdy"
+            },
             "port": "proc2cache_respstream_rdy",
             "signal": "icache_respstream_rdy"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "imem_reqstream_msg"
+            },
             "port": "cache2mem_reqstream_msg",
             "signal": "imem_reqstream_msg"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "imem_reqstream_val"
+            },
             "port": "cache2mem_reqstream_val",
             "signal": "imem_reqstream_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "imem_reqstream_rdy"
+            },
             "port": "cache2mem_reqstream_rdy",
             "signal": "imem_reqstream_rdy"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "imem_respstream_msg"
+            },
             "port": "cache2mem_respstream_msg",
             "signal": "imem_respstream_msg"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "imem_respstream_val"
+            },
             "port": "cache2mem_respstream_val",
             "signal": "imem_respstream_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "imem_respstream_rdy"
+            },
             "port": "cache2mem_respstream_rdy",
             "signal": "imem_respstream_rdy"
           }
         ],
         "instance": "icache",
+        "line": 75,
         "module": "lab3_mem_CacheAlt",
         "parameters": [
-          "1"
+          {
+            "name": "",
+            "value": "1"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -185,66 +250,126 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "dcache_reqstream_msg"
+            },
             "port": "proc2cache_reqstream_msg",
             "signal": "dcache_reqstream_msg"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "dcache_reqstream_val"
+            },
             "port": "proc2cache_reqstream_val",
             "signal": "dcache_reqstream_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "dcache_reqstream_rdy"
+            },
             "port": "proc2cache_reqstream_rdy",
             "signal": "dcache_reqstream_rdy"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "dcache_respstream_msg"
+            },
             "port": "proc2cache_respstream_msg",
             "signal": "dcache_respstream_msg"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "dcache_respstream_val"
+            },
             "port": "proc2cache_respstream_val",
             "signal": "dcache_respstream_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "dcache_respstream_rdy"
+            },
             "port": "proc2cache_respstream_rdy",
             "signal": "dcache_respstream_rdy"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "dmem_reqstream_msg"
+            },
             "port": "cache2mem_reqstream_msg",
             "signal": "dmem_reqstream_msg"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "dmem_reqstream_val"
+            },
             "port": "cache2mem_reqstream_val",
             "signal": "dmem_reqstream_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "dmem_reqstream_rdy"
+            },
             "port": "cache2mem_reqstream_rdy",
             "signal": "dmem_reqstream_rdy"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "dmem_respstream_msg"
+            },
             "port": "cache2mem_respstream_msg",
             "signal": "dmem_respstream_msg"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "dmem_respstream_val"
+            },
             "port": "cache2mem_respstream_val",
             "signal": "dmem_respstream_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "dmem_respstream_rdy"
+            },
             "port": "cache2mem_respstream_rdy",
             "signal": "dmem_respstream_rdy"
           }
         ],
         "instance": "dcache",
+        "line": 109,
         "module": "lab3_mem_CacheAlt",
         "parameters": [
-          "1"
+          {
+            "name": "",
+            "value": "1"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -252,110 +377,208 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mngr2proc_msg"
+            },
             "port": "mngr2proc_msg",
             "signal": "mngr2proc_msg"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mngr2proc_val"
+            },
             "port": "mngr2proc_val",
             "signal": "mngr2proc_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mngr2proc_rdy"
+            },
             "port": "mngr2proc_rdy",
             "signal": "mngr2proc_rdy"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "proc2mngr_msg"
+            },
             "port": "proc2mngr_msg",
             "signal": "proc2mngr_msg"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "proc2mngr_val"
+            },
             "port": "proc2mngr_val",
             "signal": "proc2mngr_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "proc2mngr_rdy"
+            },
             "port": "proc2mngr_rdy",
             "signal": "proc2mngr_rdy"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "icache_reqstream_msg"
+            },
             "port": "imem_reqstream_msg",
             "signal": "icache_reqstream_msg"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "icache_reqstream_val"
+            },
             "port": "imem_reqstream_val",
             "signal": "icache_reqstream_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "icache_reqstream_rdy"
+            },
             "port": "imem_reqstream_rdy",
             "signal": "icache_reqstream_rdy"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "icache_respstream_msg"
+            },
             "port": "imem_respstream_msg",
             "signal": "icache_respstream_msg"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "icache_respstream_val"
+            },
             "port": "imem_respstream_val",
             "signal": "icache_respstream_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "icache_respstream_rdy"
+            },
             "port": "imem_respstream_rdy",
             "signal": "icache_respstream_rdy"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "dcache_reqstream_msg"
+            },
             "port": "dmem_reqstream_msg",
             "signal": "dcache_reqstream_msg"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "dcache_reqstream_val"
+            },
             "port": "dmem_reqstream_val",
             "signal": "dcache_reqstream_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "dcache_reqstream_rdy"
+            },
             "port": "dmem_reqstream_rdy",
             "signal": "dcache_reqstream_rdy"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "dcache_respstream_msg"
+            },
             "port": "dmem_respstream_msg",
             "signal": "dcache_respstream_msg"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "dcache_respstream_val"
+            },
             "port": "dmem_respstream_val",
             "signal": "dcache_respstream_val"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "dcache_respstream_rdy"
+            },
             "port": "dmem_respstream_rdy",
             "signal": "dcache_respstream_rdy"
           },
           {
+            "expr": {
+              "kind": "LITERAL",
+              "value": "0"
+            },
             "port": "core_id",
             "signal": "0"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "commit_inst"
+            },
             "port": "commit_inst",
             "signal": "commit_inst"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "stats_en"
+            },
             "port": "stats_en",
             "signal": "stats_en"
           }
         ],
         "instance": "proc",
+        "line": 134,
         "module": "lab2_proc_ProcAlt",
         "parameters": [
-          "1"
+          {
+            "name": "",
+            "value": "1"
+          }
         ],
         "resolved": false,
         "wildcard": false
       }
     ],
+    "line": 14,
     "name": "lab4_sys_SingleCoreSys",
     "net_decls": [
       {
+        "line": 67,
         "lsb": 0,
         "msb": 0,
         "name": "icache_reqstream_val",
@@ -363,6 +586,7 @@
         "type": "logic"
       },
       {
+        "line": 68,
         "lsb": 0,
         "msb": 0,
         "name": "icache_reqstream_rdy",
@@ -370,6 +594,7 @@
         "type": "logic"
       },
       {
+        "line": 72,
         "lsb": 0,
         "msb": 0,
         "name": "icache_respstream_val",
@@ -377,6 +602,7 @@
         "type": "logic"
       },
       {
+        "line": 73,
         "lsb": 0,
         "msb": 0,
         "name": "icache_respstream_rdy",
@@ -384,6 +610,7 @@
         "type": "logic"
       },
       {
+        "line": 101,
         "lsb": 0,
         "msb": 0,
         "name": "dcache_reqstream_val",
@@ -391,6 +618,7 @@
         "type": "logic"
       },
       {
+        "line": 102,
         "lsb": 0,
         "msb": 0,
         "name": "dcache_reqstream_rdy",
@@ -398,6 +626,7 @@
         "type": "logic"
       },
       {
+        "line": 106,
         "lsb": 0,
         "msb": 0,
         "name": "dcache_respstream_val",
@@ -405,6 +634,7 @@
         "type": "logic"
       },
       {
+        "line": 107,
         "lsb": 0,
         "msb": 0,
         "name": "dcache_respstream_rdy",
@@ -416,6 +646,7 @@
     "ports": [
       {
         "direction": "input",
+        "line": 16,
         "lsb": 0,
         "msb": 0,
         "name": "clk",
@@ -424,6 +655,7 @@
       },
       {
         "direction": "input",
+        "line": 17,
         "lsb": 0,
         "msb": 0,
         "name": "reset",
@@ -432,6 +664,7 @@
       },
       {
         "direction": "input",
+        "line": 21,
         "lsb": 0,
         "msb": 31,
         "name": "mngr2proc_msg",
@@ -440,6 +673,7 @@
       },
       {
         "direction": "input",
+        "line": 22,
         "lsb": 0,
         "msb": 0,
         "name": "mngr2proc_val",
@@ -448,6 +682,7 @@
       },
       {
         "direction": "output",
+        "line": 23,
         "lsb": 0,
         "msb": 0,
         "name": "mngr2proc_rdy",
@@ -456,6 +691,7 @@
       },
       {
         "direction": "output",
+        "line": 27,
         "lsb": 0,
         "msb": 31,
         "name": "proc2mngr_msg",
@@ -464,6 +700,7 @@
       },
       {
         "direction": "output",
+        "line": 28,
         "lsb": 0,
         "msb": 0,
         "name": "proc2mngr_val",
@@ -472,6 +709,7 @@
       },
       {
         "direction": "input",
+        "line": 29,
         "lsb": 0,
         "msb": 0,
         "name": "proc2mngr_rdy",
@@ -480,6 +718,7 @@
       },
       {
         "direction": "output",
+        "line": 33,
         "lsb": 0,
         "msb": 0,
         "name": "imem_reqstream_msg",
@@ -488,6 +727,7 @@
       },
       {
         "direction": "output",
+        "line": 34,
         "lsb": 0,
         "msb": 0,
         "name": "imem_reqstream_val",
@@ -496,6 +736,7 @@
       },
       {
         "direction": "input",
+        "line": 35,
         "lsb": 0,
         "msb": 0,
         "name": "imem_reqstream_rdy",
@@ -504,6 +745,7 @@
       },
       {
         "direction": "input",
+        "line": 39,
         "lsb": 0,
         "msb": 0,
         "name": "imem_respstream_msg",
@@ -512,6 +754,7 @@
       },
       {
         "direction": "input",
+        "line": 40,
         "lsb": 0,
         "msb": 0,
         "name": "imem_respstream_val",
@@ -520,6 +763,7 @@
       },
       {
         "direction": "output",
+        "line": 41,
         "lsb": 0,
         "msb": 0,
         "name": "imem_respstream_rdy",
@@ -528,6 +772,7 @@
       },
       {
         "direction": "output",
+        "line": 45,
         "lsb": 0,
         "msb": 0,
         "name": "dmem_reqstream_msg",
@@ -536,6 +781,7 @@
       },
       {
         "direction": "output",
+        "line": 46,
         "lsb": 0,
         "msb": 0,
         "name": "dmem_reqstream_val",
@@ -544,6 +790,7 @@
       },
       {
         "direction": "input",
+        "line": 47,
         "lsb": 0,
         "msb": 0,
         "name": "dmem_reqstream_rdy",
@@ -552,6 +799,7 @@
       },
       {
         "direction": "input",
+        "line": 51,
         "lsb": 0,
         "msb": 0,
         "name": "dmem_respstream_msg",
@@ -560,6 +808,7 @@
       },
       {
         "direction": "input",
+        "line": 52,
         "lsb": 0,
         "msb": 0,
         "name": "dmem_respstream_val",
@@ -568,6 +817,7 @@
       },
       {
         "direction": "output",
+        "line": 53,
         "lsb": 0,
         "msb": 0,
         "name": "dmem_respstream_rdy",
@@ -576,6 +826,7 @@
       },
       {
         "direction": "output",
+        "line": 57,
         "lsb": 0,
         "msb": 0,
         "name": "stats_en",
@@ -584,6 +835,7 @@
       },
       {
         "direction": "output",
+        "line": 58,
         "lsb": 0,
         "msb": 0,
         "name": "commit_inst",
@@ -592,6 +844,7 @@
       },
       {
         "direction": "output",
+        "line": 59,
         "lsb": 0,
         "msb": 0,
         "name": "icache_access",
@@ -600,6 +853,7 @@
       },
       {
         "direction": "output",
+        "line": 60,
         "lsb": 0,
         "msb": 0,
         "name": "icache_miss",
@@ -608,6 +862,7 @@
       },
       {
         "direction": "output",
+        "line": 61,
         "lsb": 0,
         "msb": 0,
         "name": "dcache_access",
@@ -616,6 +871,7 @@
       },
       {
         "direction": "output",
+        "line": 62,
         "lsb": 0,
         "msb": 0,
         "name": "dcache_miss",
@@ -623,6 +879,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "SingleCoreSys.v"
   }
 ]

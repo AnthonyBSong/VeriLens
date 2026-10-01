@@ -2,9 +2,11 @@
   {
     "always_blocks": [],
     "assigns": [],
+    "end_line": 8,
     "gate_primitives": [
       {
         "instance": "g1",
+        "line": 4,
         "ports": [
           "t1",
           "a",
@@ -14,6 +16,7 @@
       },
       {
         "instance": "g2",
+        "line": 5,
         "ports": [
           "t2",
           "a",
@@ -23,6 +26,7 @@
       },
       {
         "instance": "g3",
+        "line": 6,
         "ports": [
           "y1",
           "t1",
@@ -32,6 +36,7 @@
       },
       {
         "instance": "g4",
+        "line": 6,
         "ports": [
           "y2",
           "t1",
@@ -41,6 +46,7 @@
       },
       {
         "instance": "",
+        "line": 7,
         "ports": [
           "y3",
           "a"
@@ -49,9 +55,11 @@
       }
     ],
     "instances": [],
+    "line": 2,
     "name": "gate_demo",
     "net_decls": [
       {
+        "line": 3,
         "lsb": 0,
         "msb": 0,
         "name": "t1",
@@ -59,6 +67,7 @@
         "type": "wire"
       },
       {
+        "line": 3,
         "lsb": 0,
         "msb": 0,
         "name": "t2",
@@ -70,6 +79,7 @@
     "ports": [
       {
         "direction": "input",
+        "line": 2,
         "lsb": 0,
         "msb": 0,
         "name": "a",
@@ -78,6 +88,7 @@
       },
       {
         "direction": "input",
+        "line": 2,
         "lsb": 0,
         "msb": 0,
         "name": "b",
@@ -86,6 +97,7 @@
       },
       {
         "direction": "output",
+        "line": 2,
         "lsb": 0,
         "msb": 0,
         "name": "y1",
@@ -94,6 +106,7 @@
       },
       {
         "direction": "output",
+        "line": 2,
         "lsb": 0,
         "msb": 0,
         "name": "y2",
@@ -102,6 +115,7 @@
       },
       {
         "direction": "output",
+        "line": 2,
         "lsb": 0,
         "msb": 0,
         "name": "y3",
@@ -109,6 +123,7 @@
         "type": "unspecified"
       }
     ],
+    "pragmas": [],
     "source_file": "gate_primitives.v"
   }
 ]

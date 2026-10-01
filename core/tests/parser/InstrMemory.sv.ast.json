@@ -31,15 +31,19 @@
             "kind": "BIT_SELECT"
           }
         },
+        "line": 10,
         "sensitivity": "posedge clk"
       }
     ],
     "assigns": [],
+    "end_line": 12,
     "gate_primitives": [],
     "instances": [],
+    "line": 2,
     "name": "InstrMemory",
     "net_decls": [
       {
+        "line": 9,
         "lsb": 0,
         "msb": 31,
         "name": "mem",
@@ -56,6 +60,7 @@
     "ports": [
       {
         "direction": "input",
+        "line": 5,
         "lsb": 0,
         "msb": 0,
         "name": "clk",
@@ -64,6 +69,7 @@
       },
       {
         "direction": "input",
+        "line": 6,
         "lsb": 0,
         "msb": 31,
         "name": "addr",
@@ -72,6 +78,7 @@
       },
       {
         "direction": "output",
+        "line": 7,
         "lsb": 0,
         "msb": 31,
         "name": "instr",
@@ -79,6 +86,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "InstrMemory.sv"
   }
 ]

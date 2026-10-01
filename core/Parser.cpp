@@ -171,8 +171,21 @@ Module Parser::parseModule() {
     while (!check(TokenType::ENDMODULE) && !check(TokenType::END_OF_FILE))
         parseModuleBodyItem(mod);
 
+    mod.end_line = current().line;
     match(TokenType::ENDMODULE);
     return mod;
+}
+
+void attachPragmas(std::vector<Module>& modules,
+                   const std::vector<std::pair<int, std::string>>& pragmas) {
+    for (const auto& [pline, word] : pragmas) {
+        Module* target = nullptr;
+        for (auto& m : modules) {
+            if (m.line <= pline && pline <= m.end_line) { target = &m; break; }
+            if (m.line > pline && (!target || m.line < target->line)) target = &m;
+        }
+        if (target) target->pragmas.push_back(word);
+    }
 }
 
 // Single dispatch for a module body item. Shared with parseGenerateBlock so
@@ -595,6 +608,26 @@ std::vector<Parameter> Parser::parseParameterDeclaration() {
     return params;
 }
 
+// Parse the signal of a port connection as an expression without consuming it:
+// pos_ is always restored so the caller can still collect the raw text. Returns
+// nullptr when the text is not a plain expression (e.g. `'{...}` patterns) or
+// the expression does not span the whole connection.
+ExprPtr Parser::tryParseConnectionExpr(bool positional) {
+    size_t start = pos_;
+    ExprPtr expr;
+    if (!check(TokenType::RPAREN) && !(positional && check(TokenType::COMMA))) {
+        try {
+            expr = parseExpression();
+            bool at_end = check(TokenType::RPAREN) || (positional && check(TokenType::COMMA));
+            if (!at_end) expr = nullptr;
+        } catch (const std::exception&) {
+            expr = nullptr;
+        }
+    }
+    pos_ = start;
+    return expr;
+}
+
 Instance Parser::parseInstance() {
     int line = current().line, col = current().column;
     std::string module_name = consume().lexeme;
@@ -603,7 +636,11 @@ Instance Parser::parseInstance() {
     if (match(TokenType::HASH)) {
         expect(TokenType::LPAREN);
         while (!check(TokenType::RPAREN) && !check(TokenType::END_OF_FILE)) {
-            std::string param;
+            ParamOverride po;
+            // named form: .NAME( value )
+            bool named = check(TokenType::DOT) && peek(1).type == TokenType::IDENTIFIER &&
+                         peek(2).type == TokenType::LPAREN;
+            if (named) { consume(); po.name = consume().lexeme; consume(); }
             int depth = 0;
             while (!check(TokenType::END_OF_FILE)) {
                 if (check(TokenType::LPAREN)) {
@@ -614,9 +651,10 @@ Instance Parser::parseInstance() {
                 } else if (depth == 0 && check(TokenType::COMMA)) {
                     break;
                 }
-                param += consume().lexeme;
+                po.value += consume().lexeme;
             }
-            inst.parameters.push_back(param);
+            if (named) expect(TokenType::RPAREN);
+            inst.parameters.push_back(po);
             if (!match(TokenType::COMMA)) break;
         }
         expect(TokenType::RPAREN);
@@ -636,18 +674,20 @@ Instance Parser::parseInstance() {
             } else {
             std::string port_name = expect(TokenType::IDENTIFIER).lexeme;
             expect(TokenType::LPAREN);
+            ExprPtr expr = tryParseConnectionExpr(/*positional=*/false);
             std::string signal;
             while (!check(TokenType::RPAREN) && !check(TokenType::END_OF_FILE))
                 signal += consume().lexeme;
             expect(TokenType::RPAREN);
-            inst.connections.push_back(PortConnection(port_name, signal, pline, pcol));
+            inst.connections.push_back(PortConnection(port_name, signal, pline, pcol, std::move(expr)));
             }
         } else {
+            ExprPtr expr = tryParseConnectionExpr(/*positional=*/true);
             std::string signal;
             while (!check(TokenType::COMMA) && !check(TokenType::RPAREN) &&
                    !check(TokenType::END_OF_FILE))
                 signal += consume().lexeme;
-            inst.connections.push_back(PortConnection("", signal, pline, pcol));
+            inst.connections.push_back(PortConnection("", signal, pline, pcol, std::move(expr)));
         }
         if (!match(TokenType::COMMA)) break;
     }
@@ -1243,6 +1283,7 @@ static json moduleToJson(const Module& mod) {
     for (const auto& p : mod.ports) {
         json pj = {
             {"name",      p.name},
+            {"line",      p.line},
             {"direction", portDirectionStr(p.direction)},
             {"type",      portTypeStr(p.type)}
         };
@@ -1258,6 +1299,7 @@ static json moduleToJson(const Module& mod) {
     for (const auto& n : mod.net_decls) {
         json nd = {
             {"name", n.name},
+            {"line", n.line},
             {"type", netTypeStr(n.net_type)}
         };
         nd.update(widthToJson(n.width));
@@ -1267,15 +1309,20 @@ static json moduleToJson(const Module& mod) {
 
     json instances = json::array();
     for (const auto& inst : mod.instances) {
+        json params = json::array();
+        for (const auto& po : inst.parameters)
+            params.push_back({ {"name", po.name}, {"value", po.value} });
         json connections = json::array();
         for (const auto& c : inst.connections)
-            connections.push_back({ {"port", c.port_name}, {"signal", c.signal} });
+            connections.push_back({ {"port", c.port_name}, {"signal", c.signal},
+                                    {"expr", exprToJson(c.expr)} });
         instances.push_back({
             {"module",      inst.module_name},
             {"instance",    inst.instance_name},
+            {"line",        inst.line},
             {"resolved",    inst.resolved},
             {"wildcard",    inst.wildcard},
-            {"parameters",  inst.parameters},
+            {"parameters",  params},
             {"connections", connections}
         });
     }
@@ -1285,16 +1332,18 @@ static json moduleToJson(const Module& mod) {
         gate_primitives.push_back({
             {"type",     g.gate_type},
             {"instance", g.instance_name},
+            {"line",     g.line},
             {"ports",    g.ports}
         });
 
     json assigns = json::array();
     for (const auto& a : mod.assigns)
-        assigns.push_back({ {"lhs", exprToJson(a.lhs)}, {"rhs", exprToJson(a.rhs)} });
+        assigns.push_back({ {"line", a.line}, {"lhs", exprToJson(a.lhs)}, {"rhs", exprToJson(a.rhs)} });
 
     json always_blocks = json::array();
     for (const auto& ab : mod.always_blocks)
         always_blocks.push_back({
+            {"line",        ab.line},
             {"sensitivity", ab.sensitivity},
             {"body",        stmtToJson(ab.body)}
         });
@@ -1302,6 +1351,9 @@ static json moduleToJson(const Module& mod) {
     return {
         {"name",             mod.name},
         {"source_file",      mod.source_file},
+        {"line",             mod.line},
+        {"end_line",         mod.end_line},
+        {"pragmas",          mod.pragmas},
         {"parameters",       parameters},
         {"ports",            ports},
         {"net_decls",        net_decls},

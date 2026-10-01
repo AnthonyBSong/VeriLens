@@ -88,18 +88,22 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 12,
         "sensitivity": "posedge clk"
       }
     ],
     "assigns": [],
+    "end_line": 21,
     "gate_primitives": [],
     "instances": [],
+    "line": 2,
     "name": "PipelineReg_IF_ID",
     "net_decls": [],
     "parameters": [],
     "ports": [
       {
         "direction": "input",
+        "line": 3,
         "lsb": 0,
         "msb": 0,
         "name": "clk",
@@ -108,6 +112,7 @@
       },
       {
         "direction": "input",
+        "line": 4,
         "lsb": 0,
         "msb": 0,
         "name": "rst",
@@ -116,6 +121,7 @@
       },
       {
         "direction": "input",
+        "line": 5,
         "lsb": 0,
         "msb": 0,
         "name": "stall",
@@ -124,6 +130,7 @@
       },
       {
         "direction": "input",
+        "line": 6,
         "lsb": 0,
         "msb": 0,
         "name": "flush",
@@ -132,6 +139,7 @@
       },
       {
         "direction": "input",
+        "line": 7,
         "lsb": 0,
         "msb": 31,
         "name": "if_pc",
@@ -140,6 +148,7 @@
       },
       {
         "direction": "input",
+        "line": 8,
         "lsb": 0,
         "msb": 31,
         "name": "if_instr",
@@ -148,6 +157,7 @@
       },
       {
         "direction": "output",
+        "line": 9,
         "lsb": 0,
         "msb": 31,
         "name": "id_pc",
@@ -156,6 +166,7 @@
       },
       {
         "direction": "output",
+        "line": 10,
         "lsb": 0,
         "msb": 31,
         "name": "id_instr",
@@ -163,6 +174,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "PipelineReg_IF_ID.sv"
   }
 ]

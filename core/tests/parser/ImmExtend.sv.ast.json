@@ -379,18 +379,22 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 7,
         "sensitivity": "*"
       }
     ],
     "assigns": [],
+    "end_line": 17,
     "gate_primitives": [],
     "instances": [],
+    "line": 2,
     "name": "ImmExtend",
     "net_decls": [],
     "parameters": [],
     "ports": [
       {
         "direction": "input",
+        "line": 3,
         "lsb": 0,
         "msb": 31,
         "name": "instr",
@@ -399,6 +403,7 @@
       },
       {
         "direction": "input",
+        "line": 4,
         "lsb": 0,
         "msb": 2,
         "name": "sel",
@@ -407,6 +412,7 @@
       },
       {
         "direction": "output",
+        "line": 5,
         "lsb": 0,
         "msb": 31,
         "name": "imm",
@@ -414,6 +420,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "ImmExtend.sv"
   }
 ]

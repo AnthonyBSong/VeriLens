@@ -62,6 +62,7 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 303,
         "sensitivity": "*"
       },
       {
@@ -125,6 +126,7 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 312,
         "sensitivity": "*"
       }
     ],
@@ -134,6 +136,7 @@
           "kind": "IDENTIFIER",
           "name": "offset"
         },
+        "line": 153,
         "rhs": {
           "base": {
             "kind": "IDENTIFIER",
@@ -155,6 +158,7 @@
           "kind": "IDENTIFIER",
           "name": "index"
         },
+        "line": 154,
         "rhs": {
           "base": {
             "kind": "IDENTIFIER",
@@ -192,6 +196,7 @@
           "kind": "IDENTIFIER",
           "name": "tag"
         },
+        "line": 155,
         "rhs": {
           "base": {
             "kind": "IDENTIFIER",
@@ -217,35 +222,60 @@
         }
       }
     ],
+    "end_line": 320,
     "gate_primitives": [],
     "instances": [
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "proc2cache_reqstream_msg.opaque"
+            },
             "port": "d",
             "signal": "proc2cache_reqstream_msg.opaque"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "cachereq_opaque"
+            },
             "port": "q",
             "signal": "cachereq_opaque"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "cachereq_en"
+            },
             "port": "en",
             "signal": "cachereq_en"
           }
         ],
         "instance": "cachereq_opaque_reg",
+        "line": 63,
         "module": "vc_EnReg",
         "parameters": [
-          "8"
+          {
+            "name": "",
+            "value": "8"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -253,30 +283,54 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "proc2cache_reqstream_msg.type_"
+            },
             "port": "d",
             "signal": "proc2cache_reqstream_msg.type_"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "cachereq_type"
+            },
             "port": "q",
             "signal": "cachereq_type"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "cachereq_en"
+            },
             "port": "en",
             "signal": "cachereq_en"
           }
         ],
         "instance": "cachereq_type_reg",
+        "line": 72,
         "module": "vc_EnReg",
         "parameters": [
-          "4"
+          {
+            "name": "",
+            "value": "4"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -284,30 +338,54 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "proc2cache_reqstream_msg.addr"
+            },
             "port": "d",
             "signal": "proc2cache_reqstream_msg.addr"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "cachereq_addr"
+            },
             "port": "q",
             "signal": "cachereq_addr"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "cachereq_en"
+            },
             "port": "en",
             "signal": "cachereq_en"
           }
         ],
         "instance": "cachereq_addr_reg",
+        "line": 83,
         "module": "vc_EnReg",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -315,30 +393,54 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "proc2cache_reqstream_msg.data"
+            },
             "port": "d",
             "signal": "proc2cache_reqstream_msg.data"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "cachereq_data"
+            },
             "port": "q",
             "signal": "cachereq_data"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "cachereq_en"
+            },
             "port": "en",
             "signal": "cachereq_en"
           }
         ],
         "instance": "cachereq_data_reg",
+        "line": 94,
         "module": "vc_EnReg",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -346,30 +448,54 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "cache2mem_respstream_msg.data"
+            },
             "port": "d",
             "signal": "cache2mem_respstream_msg.data"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "memresp_data"
+            },
             "port": "q",
             "signal": "memresp_data"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "memresp_en"
+            },
             "port": "en",
             "signal": "memresp_en"
           }
         ],
         "instance": "memresp_data_reg",
+        "line": 107,
         "module": "vc_EnReg",
         "parameters": [
-          "128"
+          {
+            "name": "",
+            "value": "128"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -377,26 +503,53 @@
       {
         "connections": [
           {
+            "expr": {
+              "count": {
+                "kind": "LITERAL",
+                "value": "4"
+              },
+              "kind": "REPLICATION",
+              "value": {
+                "kind": "IDENTIFIER",
+                "name": "cachereq_data"
+              }
+            },
             "port": "in0",
             "signal": "{4{cachereq_data}}"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "memresp_data"
+            },
             "port": "in1",
             "signal": "memresp_data"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "write_data_mux_sel"
+            },
             "port": "sel",
             "signal": "write_data_mux_sel"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "data_array_write_data"
+            },
             "port": "out",
             "signal": "data_array_write_data"
           }
         ],
         "instance": "write_data_mux",
+        "line": 120,
         "module": "vc_Mux2",
         "parameters": [
-          "128"
+          {
+            "name": "",
+            "value": "128"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -404,15 +557,24 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "cachereq_addr"
+            },
             "port": "addr",
             "signal": "cachereq_addr"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "cache_write_wb_en"
+            },
             "port": "wb_en",
             "signal": "cache_write_wb_en"
           }
         ],
         "instance": "wben_dec",
+        "line": 131,
         "module": "lab3_mem_Wben_Dec",
         "parameters": [],
         "resolved": false,
@@ -421,26 +583,46 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "cache_write_wb_en"
+            },
             "port": "in0",
             "signal": "cache_write_wb_en"
           },
           {
+            "expr": {
+              "kind": "LITERAL",
+              "value": "16'hffff"
+            },
             "port": "in1",
             "signal": "16'hffff"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "refill"
+            },
             "port": "sel",
             "signal": "refill"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "data_array_wb_en"
+            },
             "port": "out",
             "signal": "data_array_wb_en"
           }
         ],
         "instance": "wben_mux",
+        "line": 140,
         "module": "vc_Mux2",
         "parameters": [
-          "16"
+          {
+            "name": "",
+            "value": "16"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -448,43 +630,82 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "tag_array_ren"
+            },
             "port": "read_en",
             "signal": "tag_array_ren"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "index"
+            },
             "port": "read_addr",
             "signal": "index"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "tag_array_read_data"
+            },
             "port": "read_data",
             "signal": "tag_array_read_data"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "tag_array_wen"
+            },
             "port": "write_en",
             "signal": "tag_array_wen"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "index"
+            },
             "port": "write_addr",
             "signal": "index"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "tag"
+            },
             "port": "write_data",
             "signal": "tag"
           }
         ],
         "instance": "tag_array",
+        "line": 161,
         "module": "vc_CombinationalBitSRAM_1rw",
         "parameters": [
-          ".p_data_nbits(24-c_bank_bits)",
-          ".p_num_entries(16)"
+          {
+            "name": "p_data_nbits",
+            "value": "24-c_bank_bits"
+          },
+          {
+            "name": "p_num_entries",
+            "value": "16"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -492,47 +713,90 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "data_array_ren"
+            },
             "port": "read_en",
             "signal": "data_array_ren"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "index"
+            },
             "port": "read_addr",
             "signal": "index"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "data_array_read_data"
+            },
             "port": "read_data",
             "signal": "data_array_read_data"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "data_array_wen"
+            },
             "port": "write_en",
             "signal": "data_array_wen"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "data_array_wb_en"
+            },
             "port": "write_byte_en",
             "signal": "data_array_wb_en"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "index"
+            },
             "port": "write_addr",
             "signal": "index"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "data_array_write_data"
+            },
             "port": "write_data",
             "signal": "data_array_write_data"
           }
         ],
         "instance": "data_array",
+        "line": 185,
         "module": "vc_CombinationalSRAM_1rw",
         "parameters": [
-          ".p_data_nbits(128)",
-          ".p_num_entries(16)"
+          {
+            "name": "p_data_nbits",
+            "value": "128"
+          },
+          {
+            "name": "p_num_entries",
+            "value": "16"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -540,22 +804,38 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "tag"
+            },
             "port": "in0",
             "signal": "tag"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "tag_array_read_data"
+            },
             "port": "in1",
             "signal": "tag_array_read_data"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "tag_match"
+            },
             "port": "out",
             "signal": "tag_match"
           }
         ],
         "instance": "tag_comparator",
+        "line": 208,
         "module": "vc_EqComparator",
         "parameters": [
-          "24-c_bank_bits"
+          {
+            "name": "",
+            "value": "24-c_bank_bits"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -563,27 +843,50 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "tag_array_read_data"
+            },
             "port": "tag",
             "signal": "tag_array_read_data"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "index"
+            },
             "port": "index",
             "signal": "index"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "cachereq_addr"
+            },
             "port": "cachereq_addr",
             "signal": "cachereq_addr"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "evict_mkaddr_addr"
+            },
             "port": "memreq_addr",
             "signal": "evict_mkaddr_addr"
           }
         ],
         "instance": "evict_mkaddr",
+        "line": 219,
         "module": "lab3_mem_Mkaddr",
         "parameters": [
-          "p_num_banks",
-          "4"
+          {
+            "name": "",
+            "value": "p_num_banks"
+          },
+          {
+            "name": "",
+            "value": "4"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -591,30 +894,54 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "evict_mkaddr_addr"
+            },
             "port": "d",
             "signal": "evict_mkaddr_addr"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "evict_addr"
+            },
             "port": "q",
             "signal": "evict_addr"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "evict_addr_reg_en"
+            },
             "port": "en",
             "signal": "evict_addr_reg_en"
           }
         ],
         "instance": "evict_addr_reg",
+        "line": 231,
         "module": "vc_EnReg",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -622,27 +949,50 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "tag"
+            },
             "port": "tag",
             "signal": "tag"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "index"
+            },
             "port": "index",
             "signal": "index"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "cachereq_addr"
+            },
             "port": "cachereq_addr",
             "signal": "cachereq_addr"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "curr_addr"
+            },
             "port": "memreq_addr",
             "signal": "curr_addr"
           }
         ],
         "instance": "curr_mkaddr",
+        "line": 243,
         "module": "lab3_mem_Mkaddr",
         "parameters": [
-          "p_num_banks",
-          "4"
+          {
+            "name": "",
+            "value": "p_num_banks"
+          },
+          {
+            "name": "",
+            "value": "4"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -650,26 +1000,46 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "evict_addr"
+            },
             "port": "in0",
             "signal": "evict_addr"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "curr_addr"
+            },
             "port": "in1",
             "signal": "curr_addr"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "memreq_addr_mux_sel"
+            },
             "port": "sel",
             "signal": "memreq_addr_mux_sel"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "memreq_addr"
+            },
             "port": "out",
             "signal": "memreq_addr"
           }
         ],
         "instance": "memreq_addr_mux",
+        "line": 255,
         "module": "vc_Mux2",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -677,26 +1047,46 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "data_array_read_data"
+            },
             "port": "in0",
             "signal": "data_array_read_data"
           },
           {
+            "expr": {
+              "kind": "LITERAL",
+              "value": "128'b0"
+            },
             "port": "in1",
             "signal": "128'b0"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "read_data_zero_mux_sel"
+            },
             "port": "sel",
             "signal": "read_data_zero_mux_sel"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "read_data_mux_data"
+            },
             "port": "out",
             "signal": "read_data_mux_data"
           }
         ],
         "instance": "read_data_zero_mux",
+        "line": 267,
         "module": "vc_Mux2",
         "parameters": [
-          "128"
+          {
+            "name": "",
+            "value": "128"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -704,30 +1094,54 @@
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "read_data_mux_data"
+            },
             "port": "d",
             "signal": "read_data_mux_data"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "memreq_data"
+            },
             "port": "q",
             "signal": "memreq_data"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "read_data_reg_en"
+            },
             "port": "en",
             "signal": "read_data_reg_en"
           }
         ],
         "instance": "read_data_reg",
+        "line": 279,
         "module": "vc_EnReg",
         "parameters": [
-          "128"
+          {
+            "name": "",
+            "value": "128"
+          }
         ],
         "resolved": false,
         "wildcard": false
@@ -735,42 +1149,116 @@
       {
         "connections": [
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "memreq_data"
+              },
+              "kind": "PART_SELECT",
+              "lsb": {
+                "kind": "LITERAL",
+                "value": "0"
+              },
+              "msb": {
+                "kind": "LITERAL",
+                "value": "31"
+              }
+            },
             "port": "in0",
             "signal": "memreq_data[31:0]"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "memreq_data"
+              },
+              "kind": "PART_SELECT",
+              "lsb": {
+                "kind": "LITERAL",
+                "value": "32"
+              },
+              "msb": {
+                "kind": "LITERAL",
+                "value": "63"
+              }
+            },
             "port": "in1",
             "signal": "memreq_data[63:32]"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "memreq_data"
+              },
+              "kind": "PART_SELECT",
+              "lsb": {
+                "kind": "LITERAL",
+                "value": "64"
+              },
+              "msb": {
+                "kind": "LITERAL",
+                "value": "95"
+              }
+            },
             "port": "in2",
             "signal": "memreq_data[95:64]"
           },
           {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "memreq_data"
+              },
+              "kind": "PART_SELECT",
+              "lsb": {
+                "kind": "LITERAL",
+                "value": "96"
+              },
+              "msb": {
+                "kind": "LITERAL",
+                "value": "127"
+              }
+            },
             "port": "in3",
             "signal": "memreq_data[127:96]"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "offset"
+            },
             "port": "sel",
             "signal": "offset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "cacheresp_data"
+            },
             "port": "out",
             "signal": "cacheresp_data"
           }
         ],
         "instance": "cache_data_mux",
+        "line": 292,
         "module": "vc_Mux4",
         "parameters": [
-          "32"
+          {
+            "name": "",
+            "value": "32"
+          }
         ],
         "resolved": false,
         "wildcard": false
       }
     ],
+    "line": 16,
     "name": "lab3_mem_CacheBaseDpath",
     "net_decls": [
       {
+        "line": 61,
         "lsb": 0,
         "msb": 7,
         "name": "cachereq_opaque",
@@ -778,6 +1266,7 @@
         "type": "logic"
       },
       {
+        "line": 81,
         "lsb": 0,
         "msb": 31,
         "name": "cachereq_addr",
@@ -785,6 +1274,7 @@
         "type": "logic"
       },
       {
+        "line": 92,
         "lsb": 0,
         "msb": 31,
         "name": "cachereq_data",
@@ -792,6 +1282,7 @@
         "type": "logic"
       },
       {
+        "line": 105,
         "lsb": 0,
         "msb": 127,
         "name": "memresp_data",
@@ -799,6 +1290,7 @@
         "type": "logic"
       },
       {
+        "line": 118,
         "lsb": 0,
         "msb": 127,
         "name": "data_array_write_data",
@@ -806,6 +1298,7 @@
         "type": "logic"
       },
       {
+        "line": 130,
         "lsb": 0,
         "msb": 15,
         "name": "cache_write_wb_en",
@@ -813,6 +1306,7 @@
         "type": "logic"
       },
       {
+        "line": 139,
         "lsb": 0,
         "msb": 15,
         "name": "data_array_wb_en",
@@ -820,6 +1314,7 @@
         "type": "logic"
       },
       {
+        "line": 150,
         "lsb": 0,
         "msb": 1,
         "name": "offset",
@@ -828,6 +1323,7 @@
       },
       {
         "expr": "23-c_bank_bits:0",
+        "line": 151,
         "lsb": 0,
         "msb": 0,
         "name": "tag",
@@ -837,6 +1333,7 @@
       },
       {
         "expr": "23-c_bank_bits:0",
+        "line": 159,
         "lsb": 0,
         "msb": 0,
         "name": "tag_array_read_data",
@@ -845,6 +1342,7 @@
         "unknown": true
       },
       {
+        "line": 183,
         "lsb": 0,
         "msb": 127,
         "name": "data_array_read_data",
@@ -852,6 +1350,7 @@
         "type": "logic"
       },
       {
+        "line": 217,
         "lsb": 0,
         "msb": 31,
         "name": "evict_mkaddr_addr",
@@ -859,6 +1358,7 @@
         "type": "logic"
       },
       {
+        "line": 229,
         "lsb": 0,
         "msb": 31,
         "name": "evict_addr",
@@ -866,6 +1366,7 @@
         "type": "logic"
       },
       {
+        "line": 241,
         "lsb": 0,
         "msb": 31,
         "name": "curr_addr",
@@ -873,6 +1374,7 @@
         "type": "logic"
       },
       {
+        "line": 253,
         "lsb": 0,
         "msb": 31,
         "name": "memreq_addr",
@@ -880,6 +1382,7 @@
         "type": "logic"
       },
       {
+        "line": 265,
         "lsb": 0,
         "msb": 127,
         "name": "read_data_mux_data",
@@ -887,6 +1390,7 @@
         "type": "logic"
       },
       {
+        "line": 277,
         "lsb": 0,
         "msb": 127,
         "name": "memreq_data",
@@ -894,6 +1398,7 @@
         "type": "logic"
       },
       {
+        "line": 290,
         "lsb": 0,
         "msb": 31,
         "name": "cacheresp_data",
@@ -914,6 +1419,7 @@
     "ports": [
       {
         "direction": "input",
+        "line": 21,
         "lsb": 0,
         "msb": 0,
         "name": "clk",
@@ -922,6 +1428,7 @@
       },
       {
         "direction": "input",
+        "line": 22,
         "lsb": 0,
         "msb": 0,
         "name": "reset",
@@ -930,6 +1437,7 @@
       },
       {
         "direction": "input",
+        "line": 26,
         "lsb": 0,
         "msb": 0,
         "name": "proc2cache_reqstream_msg",
@@ -938,6 +1446,7 @@
       },
       {
         "direction": "output",
+        "line": 27,
         "lsb": 0,
         "msb": 0,
         "name": "proc2cache_respstream_msg",
@@ -946,6 +1455,7 @@
       },
       {
         "direction": "output",
+        "line": 31,
         "lsb": 0,
         "msb": 0,
         "name": "cache2mem_reqstream_msg",
@@ -954,6 +1464,7 @@
       },
       {
         "direction": "input",
+        "line": 32,
         "lsb": 0,
         "msb": 0,
         "name": "cache2mem_respstream_msg",
@@ -962,6 +1473,7 @@
       },
       {
         "direction": "output",
+        "line": 35,
         "lsb": 0,
         "msb": 3,
         "name": "cachereq_type",
@@ -970,6 +1482,7 @@
       },
       {
         "direction": "output",
+        "line": 36,
         "lsb": 0,
         "msb": 3,
         "name": "index",
@@ -978,6 +1491,7 @@
       },
       {
         "direction": "output",
+        "line": 37,
         "lsb": 0,
         "msb": 0,
         "name": "tag_match",
@@ -986,6 +1500,7 @@
       },
       {
         "direction": "input",
+        "line": 40,
         "lsb": 0,
         "msb": 0,
         "name": "cachereq_en",
@@ -994,6 +1509,7 @@
       },
       {
         "direction": "input",
+        "line": 41,
         "lsb": 0,
         "msb": 0,
         "name": "memresp_en",
@@ -1002,6 +1518,7 @@
       },
       {
         "direction": "input",
+        "line": 42,
         "lsb": 0,
         "msb": 0,
         "name": "write_data_mux_sel",
@@ -1010,6 +1527,7 @@
       },
       {
         "direction": "input",
+        "line": 43,
         "lsb": 0,
         "msb": 0,
         "name": "tag_array_ren",
@@ -1018,6 +1536,7 @@
       },
       {
         "direction": "input",
+        "line": 44,
         "lsb": 0,
         "msb": 0,
         "name": "tag_array_wen",
@@ -1026,6 +1545,7 @@
       },
       {
         "direction": "input",
+        "line": 45,
         "lsb": 0,
         "msb": 0,
         "name": "data_array_ren",
@@ -1034,6 +1554,7 @@
       },
       {
         "direction": "input",
+        "line": 46,
         "lsb": 0,
         "msb": 0,
         "name": "data_array_wen",
@@ -1042,6 +1563,7 @@
       },
       {
         "direction": "input",
+        "line": 47,
         "lsb": 0,
         "msb": 0,
         "name": "refill",
@@ -1050,6 +1572,7 @@
       },
       {
         "direction": "input",
+        "line": 48,
         "lsb": 0,
         "msb": 0,
         "name": "read_data_zero_mux_sel",
@@ -1058,6 +1581,7 @@
       },
       {
         "direction": "input",
+        "line": 49,
         "lsb": 0,
         "msb": 0,
         "name": "read_data_reg_en",
@@ -1066,6 +1590,7 @@
       },
       {
         "direction": "input",
+        "line": 50,
         "lsb": 0,
         "msb": 0,
         "name": "evict_addr_reg_en",
@@ -1074,6 +1599,7 @@
       },
       {
         "direction": "input",
+        "line": 51,
         "lsb": 0,
         "msb": 0,
         "name": "memreq_addr_mux_sel",
@@ -1082,6 +1608,7 @@
       },
       {
         "direction": "input",
+        "line": 52,
         "lsb": 0,
         "msb": 3,
         "name": "cacheresp_type",
@@ -1090,6 +1617,7 @@
       },
       {
         "direction": "input",
+        "line": 53,
         "lsb": 0,
         "msb": 3,
         "name": "memreq_type",
@@ -1098,6 +1626,7 @@
       },
       {
         "direction": "input",
+        "line": 54,
         "lsb": 0,
         "msb": 0,
         "name": "hit",
@@ -1105,6 +1634,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "CacheBaseDpath.v"
   }
 ]

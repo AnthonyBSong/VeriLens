@@ -44,6 +44,7 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 160,
         "sensitivity": "posedge clk"
       },
       {
@@ -99,6 +100,7 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 176,
         "sensitivity": "*"
       },
       {
@@ -144,6 +146,7 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 221,
         "sensitivity": "posedge clk"
       },
       {
@@ -454,6 +457,7 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 381,
         "sensitivity": "*"
       },
       {
@@ -681,6 +685,7 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 432,
         "sensitivity": "*"
       },
       {
@@ -766,6 +771,7 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 452,
         "sensitivity": "*"
       },
       {
@@ -937,6 +943,7 @@
             "kind": "SEQ_BLOCK"
           }
         },
+        "line": 567,
         "sensitivity": "posedge clk"
       },
       {
@@ -1242,6 +1249,7 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 588,
         "sensitivity": "*"
       },
       {
@@ -1369,6 +1377,7 @@
             "kind": "SEQ_BLOCK"
           }
         },
+        "line": 679,
         "sensitivity": "posedge clk"
       },
       {
@@ -1479,6 +1488,7 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 726,
         "sensitivity": "posedge clk"
       }
     ],
@@ -1488,6 +1498,7 @@
           "kind": "IDENTIFIER",
           "name": "reg_en_F"
         },
+        "line": 156,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -1510,6 +1521,7 @@
           "kind": "IDENTIFIER",
           "name": "ostall_F"
         },
+        "line": 187,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -1532,6 +1544,7 @@
           "kind": "IDENTIFIER",
           "name": "stall_F"
         },
+        "line": 191,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -1582,6 +1595,7 @@
           "kind": "IDENTIFIER",
           "name": "squash_F"
         },
+        "line": 192,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -1608,6 +1622,7 @@
           "kind": "IDENTIFIER",
           "name": "imem_respstream_drop"
         },
+        "line": 196,
         "rhs": {
           "kind": "IDENTIFIER",
           "name": "squash_F"
@@ -1618,6 +1633,7 @@
           "kind": "IDENTIFIER",
           "name": "imem_reqstream_val"
         },
+        "line": 203,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -1652,6 +1668,7 @@
           "kind": "IDENTIFIER",
           "name": "imem_respstream_rdy"
         },
+        "line": 204,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -1674,6 +1691,7 @@
           "kind": "IDENTIFIER",
           "name": "next_val_F"
         },
+        "line": 209,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -1708,6 +1726,7 @@
           "kind": "IDENTIFIER",
           "name": "reg_en_D"
         },
+        "line": 217,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -1730,6 +1749,7 @@
           "kind": "IDENTIFIER",
           "name": "rf_waddr_D"
         },
+        "line": 428,
         "rhs": {
           "kind": "IDENTIFIER",
           "name": "inst_rd_D"
@@ -1740,6 +1760,7 @@
           "kind": "IDENTIFIER",
           "name": "mngr2proc_rdy"
         },
+        "line": 465,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -1770,6 +1791,7 @@
           "kind": "IDENTIFIER",
           "name": "ostall_mngr2proc_D"
         },
+        "line": 468,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -1800,6 +1822,7 @@
           "kind": "IDENTIFIER",
           "name": "ostall_waddr_X_rs1_D"
         },
+        "line": 473,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -1858,6 +1881,7 @@
           "kind": "IDENTIFIER",
           "name": "ostall_waddr_M_rs1_D"
         },
+        "line": 480,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -1916,6 +1940,7 @@
           "kind": "IDENTIFIER",
           "name": "ostall_waddr_W_rs1_D"
         },
+        "line": 487,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -1974,6 +1999,7 @@
           "kind": "IDENTIFIER",
           "name": "ostall_waddr_X_rs2_D"
         },
+        "line": 494,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2032,6 +2058,7 @@
           "kind": "IDENTIFIER",
           "name": "ostall_waddr_M_rs2_D"
         },
+        "line": 501,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2090,6 +2117,7 @@
           "kind": "IDENTIFIER",
           "name": "ostall_waddr_W_rs2_D"
         },
+        "line": 508,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2148,6 +2176,7 @@
           "kind": "IDENTIFIER",
           "name": "ostall_mul_not_rdy"
         },
+        "line": 514,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2178,6 +2207,7 @@
           "kind": "IDENTIFIER",
           "name": "ostall_raw_hazard_D"
         },
+        "line": 519,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2228,6 +2258,7 @@
           "kind": "IDENTIFIER",
           "name": "ostall_D"
         },
+        "line": 525,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2262,6 +2293,7 @@
           "kind": "IDENTIFIER",
           "name": "osquash_D"
         },
+        "line": 530,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2292,6 +2324,7 @@
           "kind": "IDENTIFIER",
           "name": "stall_D"
         },
+        "line": 534,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2334,6 +2367,7 @@
           "kind": "IDENTIFIER",
           "name": "squash_D"
         },
+        "line": 535,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2352,6 +2386,7 @@
           "kind": "IDENTIFIER",
           "name": "next_val_D"
         },
+        "line": 540,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2386,6 +2421,7 @@
           "kind": "IDENTIFIER",
           "name": "imul_req_val_D"
         },
+        "line": 543,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2460,6 +2496,7 @@
           "kind": "IDENTIFIER",
           "name": "reg_en_X"
         },
+        "line": 553,
         "rhs": {
           "kind": "UNARY_OP",
           "op": "!",
@@ -2474,6 +2511,7 @@
           "kind": "IDENTIFIER",
           "name": "ostall_dmem_not_rdy"
         },
+        "line": 628,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2512,6 +2550,7 @@
           "kind": "IDENTIFIER",
           "name": "ostall_mul_not_val"
         },
+        "line": 633,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2542,6 +2581,7 @@
           "kind": "IDENTIFIER",
           "name": "ostall_X"
         },
+        "line": 636,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2560,6 +2600,7 @@
           "kind": "IDENTIFIER",
           "name": "osquash_X"
         },
+        "line": 641,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2590,6 +2631,7 @@
           "kind": "IDENTIFIER",
           "name": "stall_X"
         },
+        "line": 645,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2624,6 +2666,7 @@
           "kind": "IDENTIFIER",
           "name": "dmem_reqstream_val"
         },
+        "line": 649,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2662,6 +2705,7 @@
           "kind": "IDENTIFIER",
           "name": "imul_resp_rdy_X"
         },
+        "line": 652,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2692,6 +2736,7 @@
           "kind": "IDENTIFIER",
           "name": "next_val_X"
         },
+        "line": 657,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2714,6 +2759,7 @@
           "kind": "IDENTIFIER",
           "name": "dmem_fn_X"
         },
+        "line": 660,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2732,6 +2778,7 @@
           "kind": "IDENTIFIER",
           "name": "reg_en_M"
         },
+        "line": 668,
         "rhs": {
           "kind": "UNARY_OP",
           "op": "!",
@@ -2746,6 +2793,7 @@
           "kind": "IDENTIFIER",
           "name": "ostall_M"
         },
+        "line": 696,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2784,6 +2832,7 @@
           "kind": "IDENTIFIER",
           "name": "stall_M"
         },
+        "line": 700,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2810,6 +2859,7 @@
           "kind": "IDENTIFIER",
           "name": "dmem_respstream_rdy"
         },
+        "line": 704,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2848,6 +2898,7 @@
           "kind": "IDENTIFIER",
           "name": "next_val_M"
         },
+        "line": 709,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2870,6 +2921,7 @@
           "kind": "IDENTIFIER",
           "name": "reg_en_W"
         },
+        "line": 717,
         "rhs": {
           "kind": "UNARY_OP",
           "op": "!",
@@ -2884,6 +2936,7 @@
           "kind": "IDENTIFIER",
           "name": "rf_wen_W"
         },
+        "line": 742,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2902,6 +2955,7 @@
           "kind": "IDENTIFIER",
           "name": "stats_en_wen_W"
         },
+        "line": 743,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2920,6 +2974,7 @@
           "kind": "IDENTIFIER",
           "name": "ostall_W"
         },
+        "line": 747,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2950,6 +3005,7 @@
           "kind": "IDENTIFIER",
           "name": "stall_W"
         },
+        "line": 751,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2968,6 +3024,7 @@
           "kind": "IDENTIFIER",
           "name": "proc2mngr_val"
         },
+        "line": 755,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -2998,6 +3055,7 @@
           "kind": "IDENTIFIER",
           "name": "commit_inst"
         },
+        "line": 757,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {
@@ -3016,53 +3074,80 @@
         }
       }
     ],
+    "end_line": 759,
     "gate_primitives": [],
     "instances": [
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "inst_D"
+            },
             "port": "inst",
             "signal": "inst_D"
           },
           {
+            "expr": null,
             "port": "opcode",
             "signal": ""
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "inst_rd_D"
+            },
             "port": "rd",
             "signal": "inst_rd_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "inst_rs1_D"
+            },
             "port": "rs1",
             "signal": "inst_rs1_D"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "inst_rs2_D"
+            },
             "port": "rs2",
             "signal": "inst_rs2_D"
           },
           {
+            "expr": null,
             "port": "funct3",
             "signal": ""
           },
           {
+            "expr": null,
             "port": "funct7",
             "signal": ""
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "inst_csr_D"
+            },
             "port": "csr",
             "signal": "inst_csr_D"
           }
         ],
         "instance": "inst_unpack",
+        "line": 235,
         "module": "lab2_proc_tinyrv2_encoding_InstUnpack",
         "parameters": [],
         "resolved": false,
         "wildcard": false
       }
     ],
+    "line": 12,
     "name": "lab2_proc_ProcBaseCtrl",
     "net_decls": [
       {
+        "line": 102,
         "lsb": 0,
         "msb": 0,
         "name": "val_F",
@@ -3070,6 +3155,7 @@
         "type": "logic"
       },
       {
+        "line": 103,
         "lsb": 0,
         "msb": 0,
         "name": "val_D",
@@ -3077,6 +3163,7 @@
         "type": "logic"
       },
       {
+        "line": 104,
         "lsb": 0,
         "msb": 0,
         "name": "val_X",
@@ -3084,6 +3171,7 @@
         "type": "logic"
       },
       {
+        "line": 105,
         "lsb": 0,
         "msb": 0,
         "name": "val_M",
@@ -3091,6 +3179,7 @@
         "type": "logic"
       },
       {
+        "line": 106,
         "lsb": 0,
         "msb": 0,
         "name": "val_W",
@@ -3098,6 +3187,7 @@
         "type": "logic"
       },
       {
+        "line": 118,
         "lsb": 0,
         "msb": 0,
         "name": "ostall_F",
@@ -3105,6 +3195,7 @@
         "type": "logic"
       },
       {
+        "line": 119,
         "lsb": 0,
         "msb": 0,
         "name": "ostall_D",
@@ -3112,6 +3203,7 @@
         "type": "logic"
       },
       {
+        "line": 120,
         "lsb": 0,
         "msb": 0,
         "name": "ostall_X",
@@ -3119,6 +3211,7 @@
         "type": "logic"
       },
       {
+        "line": 121,
         "lsb": 0,
         "msb": 0,
         "name": "ostall_M",
@@ -3126,6 +3219,7 @@
         "type": "logic"
       },
       {
+        "line": 122,
         "lsb": 0,
         "msb": 0,
         "name": "ostall_W",
@@ -3133,6 +3227,7 @@
         "type": "logic"
       },
       {
+        "line": 128,
         "lsb": 0,
         "msb": 0,
         "name": "stall_F",
@@ -3140,6 +3235,7 @@
         "type": "logic"
       },
       {
+        "line": 129,
         "lsb": 0,
         "msb": 0,
         "name": "stall_D",
@@ -3147,6 +3243,7 @@
         "type": "logic"
       },
       {
+        "line": 130,
         "lsb": 0,
         "msb": 0,
         "name": "stall_X",
@@ -3154,6 +3251,7 @@
         "type": "logic"
       },
       {
+        "line": 131,
         "lsb": 0,
         "msb": 0,
         "name": "stall_M",
@@ -3161,6 +3259,7 @@
         "type": "logic"
       },
       {
+        "line": 132,
         "lsb": 0,
         "msb": 0,
         "name": "stall_W",
@@ -3168,6 +3267,7 @@
         "type": "logic"
       },
       {
+        "line": 139,
         "lsb": 0,
         "msb": 0,
         "name": "osquash_D",
@@ -3175,6 +3275,7 @@
         "type": "logic"
       },
       {
+        "line": 140,
         "lsb": 0,
         "msb": 0,
         "name": "osquash_X",
@@ -3182,6 +3283,7 @@
         "type": "logic"
       },
       {
+        "line": 147,
         "lsb": 0,
         "msb": 0,
         "name": "squash_F",
@@ -3189,6 +3291,7 @@
         "type": "logic"
       },
       {
+        "line": 148,
         "lsb": 0,
         "msb": 0,
         "name": "squash_D",
@@ -3196,6 +3299,7 @@
         "type": "logic"
       },
       {
+        "line": 169,
         "lsb": 0,
         "msb": 0,
         "name": "pc_redirect_D",
@@ -3203,6 +3307,7 @@
         "type": "logic"
       },
       {
+        "line": 170,
         "lsb": 0,
         "msb": 0,
         "name": "pc_redirect_X",
@@ -3210,6 +3315,7 @@
         "type": "logic"
       },
       {
+        "line": 171,
         "lsb": 0,
         "msb": 1,
         "name": "pc_sel_D",
@@ -3217,6 +3323,7 @@
         "type": "logic"
       },
       {
+        "line": 172,
         "lsb": 0,
         "msb": 1,
         "name": "pc_sel_X",
@@ -3224,6 +3331,7 @@
         "type": "logic"
       },
       {
+        "line": 208,
         "lsb": 0,
         "msb": 0,
         "name": "next_val_F",
@@ -3231,6 +3339,7 @@
         "type": "logic"
       },
       {
+        "line": 230,
         "lsb": 0,
         "msb": 4,
         "name": "inst_rd_D",
@@ -3238,6 +3347,7 @@
         "type": "logic"
       },
       {
+        "line": 231,
         "lsb": 0,
         "msb": 4,
         "name": "inst_rs1_D",
@@ -3245,6 +3355,7 @@
         "type": "logic"
       },
       {
+        "line": 232,
         "lsb": 0,
         "msb": 4,
         "name": "inst_rs2_D",
@@ -3252,6 +3363,7 @@
         "type": "logic"
       },
       {
+        "line": 233,
         "lsb": 0,
         "msb": 11,
         "name": "inst_csr_D",
@@ -3259,6 +3371,7 @@
         "type": "logic"
       },
       {
+        "line": 326,
         "lsb": 0,
         "msb": 0,
         "name": "inst_val_D",
@@ -3266,6 +3379,7 @@
         "type": "logic"
       },
       {
+        "line": 327,
         "lsb": 0,
         "msb": 0,
         "name": "mul_D",
@@ -3273,6 +3387,7 @@
         "type": "logic"
       },
       {
+        "line": 328,
         "lsb": 0,
         "msb": 2,
         "name": "br_type_D",
@@ -3280,6 +3395,7 @@
         "type": "logic"
       },
       {
+        "line": 329,
         "lsb": 0,
         "msb": 0,
         "name": "rs1_en_D",
@@ -3287,6 +3403,7 @@
         "type": "logic"
       },
       {
+        "line": 330,
         "lsb": 0,
         "msb": 0,
         "name": "rs2_en_D",
@@ -3294,6 +3411,7 @@
         "type": "logic"
       },
       {
+        "line": 331,
         "lsb": 0,
         "msb": 3,
         "name": "alu_fn_D",
@@ -3301,6 +3419,7 @@
         "type": "logic"
       },
       {
+        "line": 332,
         "lsb": 0,
         "msb": 1,
         "name": "ex_result_sel_D",
@@ -3308,6 +3427,7 @@
         "type": "logic"
       },
       {
+        "line": 333,
         "lsb": 0,
         "msb": 1,
         "name": "dmem_type_D",
@@ -3315,6 +3435,7 @@
         "type": "logic"
       },
       {
+        "line": 334,
         "lsb": 0,
         "msb": 0,
         "name": "wb_result_sel_D",
@@ -3322,6 +3443,7 @@
         "type": "logic"
       },
       {
+        "line": 335,
         "lsb": 0,
         "msb": 0,
         "name": "rf_wen_D",
@@ -3329,6 +3451,7 @@
         "type": "logic"
       },
       {
+        "line": 336,
         "lsb": 0,
         "msb": 0,
         "name": "csrr_D",
@@ -3336,6 +3459,7 @@
         "type": "logic"
       },
       {
+        "line": 337,
         "lsb": 0,
         "msb": 0,
         "name": "csrw_D",
@@ -3343,6 +3467,7 @@
         "type": "logic"
       },
       {
+        "line": 338,
         "lsb": 0,
         "msb": 0,
         "name": "proc2mngr_val_D",
@@ -3350,6 +3475,7 @@
         "type": "logic"
       },
       {
+        "line": 339,
         "lsb": 0,
         "msb": 0,
         "name": "mngr2proc_rdy_D",
@@ -3357,6 +3483,7 @@
         "type": "logic"
       },
       {
+        "line": 340,
         "lsb": 0,
         "msb": 0,
         "name": "stats_en_wen_D",
@@ -3364,6 +3491,7 @@
         "type": "logic"
       },
       {
+        "line": 427,
         "lsb": 0,
         "msb": 4,
         "name": "rf_waddr_D",
@@ -3371,6 +3499,7 @@
         "type": "logic"
       },
       {
+        "line": 467,
         "lsb": 0,
         "msb": 0,
         "name": "ostall_mngr2proc_D",
@@ -3378,6 +3507,7 @@
         "type": "logic"
       },
       {
+        "line": 472,
         "lsb": 0,
         "msb": 0,
         "name": "ostall_waddr_X_rs1_D",
@@ -3385,6 +3515,7 @@
         "type": "logic"
       },
       {
+        "line": 479,
         "lsb": 0,
         "msb": 0,
         "name": "ostall_waddr_M_rs1_D",
@@ -3392,6 +3523,7 @@
         "type": "logic"
       },
       {
+        "line": 486,
         "lsb": 0,
         "msb": 0,
         "name": "ostall_waddr_W_rs1_D",
@@ -3399,6 +3531,7 @@
         "type": "logic"
       },
       {
+        "line": 493,
         "lsb": 0,
         "msb": 0,
         "name": "ostall_waddr_X_rs2_D",
@@ -3406,6 +3539,7 @@
         "type": "logic"
       },
       {
+        "line": 500,
         "lsb": 0,
         "msb": 0,
         "name": "ostall_waddr_M_rs2_D",
@@ -3413,6 +3547,7 @@
         "type": "logic"
       },
       {
+        "line": 507,
         "lsb": 0,
         "msb": 0,
         "name": "ostall_waddr_W_rs2_D",
@@ -3420,6 +3555,7 @@
         "type": "logic"
       },
       {
+        "line": 513,
         "lsb": 0,
         "msb": 0,
         "name": "ostall_mul_not_rdy",
@@ -3427,6 +3563,7 @@
         "type": "logic"
       },
       {
+        "line": 518,
         "lsb": 0,
         "msb": 0,
         "name": "ostall_raw_hazard_D",
@@ -3434,6 +3571,7 @@
         "type": "logic"
       },
       {
+        "line": 539,
         "lsb": 0,
         "msb": 0,
         "name": "next_val_D",
@@ -3441,6 +3579,7 @@
         "type": "logic"
       },
       {
+        "line": 555,
         "lsb": 0,
         "msb": 31,
         "name": "inst_X",
@@ -3448,6 +3587,7 @@
         "type": "logic"
       },
       {
+        "line": 556,
         "lsb": 0,
         "msb": 0,
         "name": "mul_X",
@@ -3455,6 +3595,7 @@
         "type": "logic"
       },
       {
+        "line": 557,
         "lsb": 0,
         "msb": 1,
         "name": "dmem_type_X",
@@ -3462,6 +3603,7 @@
         "type": "logic"
       },
       {
+        "line": 558,
         "lsb": 0,
         "msb": 0,
         "name": "wb_result_sel_X",
@@ -3469,6 +3611,7 @@
         "type": "logic"
       },
       {
+        "line": 559,
         "lsb": 0,
         "msb": 0,
         "name": "rf_wen_X",
@@ -3476,6 +3619,7 @@
         "type": "logic"
       },
       {
+        "line": 560,
         "lsb": 0,
         "msb": 4,
         "name": "rf_waddr_X",
@@ -3483,6 +3627,7 @@
         "type": "logic"
       },
       {
+        "line": 561,
         "lsb": 0,
         "msb": 0,
         "name": "proc2mngr_val_X",
@@ -3490,6 +3635,7 @@
         "type": "logic"
       },
       {
+        "line": 562,
         "lsb": 0,
         "msb": 0,
         "name": "stats_en_wen_X",
@@ -3497,6 +3643,7 @@
         "type": "logic"
       },
       {
+        "line": 563,
         "lsb": 0,
         "msb": 2,
         "name": "br_type_X",
@@ -3504,6 +3651,7 @@
         "type": "logic"
       },
       {
+        "line": 627,
         "lsb": 0,
         "msb": 0,
         "name": "ostall_dmem_not_rdy",
@@ -3511,6 +3659,7 @@
         "type": "logic"
       },
       {
+        "line": 632,
         "lsb": 0,
         "msb": 0,
         "name": "ostall_mul_not_val",
@@ -3518,6 +3667,7 @@
         "type": "logic"
       },
       {
+        "line": 656,
         "lsb": 0,
         "msb": 0,
         "name": "next_val_X",
@@ -3525,6 +3675,7 @@
         "type": "logic"
       },
       {
+        "line": 670,
         "lsb": 0,
         "msb": 31,
         "name": "inst_M",
@@ -3532,6 +3683,7 @@
         "type": "logic"
       },
       {
+        "line": 671,
         "lsb": 0,
         "msb": 1,
         "name": "dmem_type_M",
@@ -3539,6 +3691,7 @@
         "type": "logic"
       },
       {
+        "line": 672,
         "lsb": 0,
         "msb": 0,
         "name": "rf_wen_M",
@@ -3546,6 +3699,7 @@
         "type": "logic"
       },
       {
+        "line": 673,
         "lsb": 0,
         "msb": 4,
         "name": "rf_waddr_M",
@@ -3553,6 +3707,7 @@
         "type": "logic"
       },
       {
+        "line": 674,
         "lsb": 0,
         "msb": 0,
         "name": "proc2mngr_val_M",
@@ -3560,6 +3715,7 @@
         "type": "logic"
       },
       {
+        "line": 675,
         "lsb": 0,
         "msb": 0,
         "name": "stats_en_wen_M",
@@ -3567,6 +3723,7 @@
         "type": "logic"
       },
       {
+        "line": 708,
         "lsb": 0,
         "msb": 0,
         "name": "next_val_M",
@@ -3574,6 +3731,7 @@
         "type": "logic"
       },
       {
+        "line": 719,
         "lsb": 0,
         "msb": 31,
         "name": "inst_W",
@@ -3581,6 +3739,7 @@
         "type": "logic"
       },
       {
+        "line": 720,
         "lsb": 0,
         "msb": 0,
         "name": "proc2mngr_val_W",
@@ -3588,6 +3747,7 @@
         "type": "logic"
       },
       {
+        "line": 721,
         "lsb": 0,
         "msb": 0,
         "name": "rf_wen_pending_W",
@@ -3595,6 +3755,7 @@
         "type": "logic"
       },
       {
+        "line": 722,
         "lsb": 0,
         "msb": 0,
         "name": "stats_en_wen_pending_W",
@@ -3803,6 +3964,7 @@
     "ports": [
       {
         "direction": "input",
+        "line": 14,
         "lsb": 0,
         "msb": 0,
         "name": "clk",
@@ -3811,6 +3973,7 @@
       },
       {
         "direction": "input",
+        "line": 15,
         "lsb": 0,
         "msb": 0,
         "name": "reset",
@@ -3819,6 +3982,7 @@
       },
       {
         "direction": "output",
+        "line": 19,
         "lsb": 0,
         "msb": 0,
         "name": "imem_reqstream_val",
@@ -3827,6 +3991,7 @@
       },
       {
         "direction": "input",
+        "line": 20,
         "lsb": 0,
         "msb": 0,
         "name": "imem_reqstream_rdy",
@@ -3835,6 +4000,7 @@
       },
       {
         "direction": "input",
+        "line": 21,
         "lsb": 0,
         "msb": 0,
         "name": "imem_respstream_val",
@@ -3843,6 +4009,7 @@
       },
       {
         "direction": "output",
+        "line": 22,
         "lsb": 0,
         "msb": 0,
         "name": "imem_respstream_rdy",
@@ -3851,6 +4018,7 @@
       },
       {
         "direction": "output",
+        "line": 23,
         "lsb": 0,
         "msb": 0,
         "name": "imem_respstream_drop",
@@ -3859,6 +4027,7 @@
       },
       {
         "direction": "output",
+        "line": 27,
         "lsb": 0,
         "msb": 0,
         "name": "dmem_reqstream_val",
@@ -3867,6 +4036,7 @@
       },
       {
         "direction": "input",
+        "line": 28,
         "lsb": 0,
         "msb": 0,
         "name": "dmem_reqstream_rdy",
@@ -3875,6 +4045,7 @@
       },
       {
         "direction": "input",
+        "line": 29,
         "lsb": 0,
         "msb": 0,
         "name": "dmem_respstream_val",
@@ -3883,6 +4054,7 @@
       },
       {
         "direction": "output",
+        "line": 30,
         "lsb": 0,
         "msb": 0,
         "name": "dmem_respstream_rdy",
@@ -3891,6 +4063,7 @@
       },
       {
         "direction": "input",
+        "line": 34,
         "lsb": 0,
         "msb": 0,
         "name": "mngr2proc_val",
@@ -3899,6 +4072,7 @@
       },
       {
         "direction": "output",
+        "line": 35,
         "lsb": 0,
         "msb": 0,
         "name": "mngr2proc_rdy",
@@ -3907,6 +4081,7 @@
       },
       {
         "direction": "output",
+        "line": 36,
         "lsb": 0,
         "msb": 0,
         "name": "proc2mngr_val",
@@ -3915,6 +4090,7 @@
       },
       {
         "direction": "input",
+        "line": 37,
         "lsb": 0,
         "msb": 0,
         "name": "proc2mngr_rdy",
@@ -3923,6 +4099,7 @@
       },
       {
         "direction": "output",
+        "line": 40,
         "lsb": 0,
         "msb": 0,
         "name": "imul_req_val_D",
@@ -3931,6 +4108,7 @@
       },
       {
         "direction": "input",
+        "line": 41,
         "lsb": 0,
         "msb": 0,
         "name": "imul_req_rdy_D",
@@ -3939,6 +4117,7 @@
       },
       {
         "direction": "input",
+        "line": 42,
         "lsb": 0,
         "msb": 0,
         "name": "imul_resp_val_X",
@@ -3947,6 +4126,7 @@
       },
       {
         "direction": "output",
+        "line": 43,
         "lsb": 0,
         "msb": 0,
         "name": "imul_resp_rdy_X",
@@ -3955,6 +4135,7 @@
       },
       {
         "direction": "output",
+        "line": 47,
         "lsb": 0,
         "msb": 0,
         "name": "reg_en_F",
@@ -3963,6 +4144,7 @@
       },
       {
         "direction": "output",
+        "line": 48,
         "lsb": 0,
         "msb": 1,
         "name": "pc_sel_F",
@@ -3971,6 +4153,7 @@
       },
       {
         "direction": "output",
+        "line": 50,
         "lsb": 0,
         "msb": 0,
         "name": "reg_en_D",
@@ -3979,6 +4162,7 @@
       },
       {
         "direction": "output",
+        "line": 51,
         "lsb": 0,
         "msb": 0,
         "name": "op1_sel_D",
@@ -3987,6 +4171,7 @@
       },
       {
         "direction": "output",
+        "line": 52,
         "lsb": 0,
         "msb": 1,
         "name": "op2_sel_D",
@@ -3995,6 +4180,7 @@
       },
       {
         "direction": "output",
+        "line": 53,
         "lsb": 0,
         "msb": 1,
         "name": "csrr_sel_D",
@@ -4003,6 +4189,7 @@
       },
       {
         "direction": "output",
+        "line": 54,
         "lsb": 0,
         "msb": 2,
         "name": "imm_type_D",
@@ -4011,6 +4198,7 @@
       },
       {
         "direction": "output",
+        "line": 56,
         "lsb": 0,
         "msb": 0,
         "name": "reg_en_X",
@@ -4019,6 +4207,7 @@
       },
       {
         "direction": "output",
+        "line": 57,
         "lsb": 0,
         "msb": 0,
         "name": "dmem_fn_X",
@@ -4027,6 +4216,7 @@
       },
       {
         "direction": "output",
+        "line": 58,
         "lsb": 0,
         "msb": 3,
         "name": "alu_fn_X",
@@ -4035,6 +4225,7 @@
       },
       {
         "direction": "output",
+        "line": 59,
         "lsb": 0,
         "msb": 1,
         "name": "ex_result_sel_X",
@@ -4043,6 +4234,7 @@
       },
       {
         "direction": "output",
+        "line": 61,
         "lsb": 0,
         "msb": 0,
         "name": "reg_en_M",
@@ -4051,6 +4243,7 @@
       },
       {
         "direction": "output",
+        "line": 62,
         "lsb": 0,
         "msb": 0,
         "name": "wb_result_sel_M",
@@ -4059,6 +4252,7 @@
       },
       {
         "direction": "output",
+        "line": 64,
         "lsb": 0,
         "msb": 0,
         "name": "reg_en_W",
@@ -4067,6 +4261,7 @@
       },
       {
         "direction": "output",
+        "line": 65,
         "lsb": 0,
         "msb": 4,
         "name": "rf_waddr_W",
@@ -4075,6 +4270,7 @@
       },
       {
         "direction": "output",
+        "line": 66,
         "lsb": 0,
         "msb": 0,
         "name": "rf_wen_W",
@@ -4083,6 +4279,7 @@
       },
       {
         "direction": "output",
+        "line": 67,
         "lsb": 0,
         "msb": 0,
         "name": "stats_en_wen_W",
@@ -4091,6 +4288,7 @@
       },
       {
         "direction": "input",
+        "line": 71,
         "lsb": 0,
         "msb": 31,
         "name": "inst_D",
@@ -4099,6 +4297,7 @@
       },
       {
         "direction": "input",
+        "line": 72,
         "lsb": 0,
         "msb": 0,
         "name": "br_cond_eq_X",
@@ -4107,6 +4306,7 @@
       },
       {
         "direction": "input",
+        "line": 73,
         "lsb": 0,
         "msb": 0,
         "name": "br_cond_lt_X",
@@ -4115,6 +4315,7 @@
       },
       {
         "direction": "input",
+        "line": 74,
         "lsb": 0,
         "msb": 0,
         "name": "br_cond_ltu_X",
@@ -4123,6 +4324,7 @@
       },
       {
         "direction": "output",
+        "line": 78,
         "lsb": 0,
         "msb": 0,
         "name": "commit_inst",
@@ -4130,6 +4332,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "ProcBaseCtrl.v"
   }
 ]

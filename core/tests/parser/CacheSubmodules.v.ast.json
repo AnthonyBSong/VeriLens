@@ -118,18 +118,22 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 13,
         "sensitivity": "*"
       }
     ],
     "assigns": [],
+    "end_line": 23,
     "gate_primitives": [],
     "instances": [],
+    "line": 8,
     "name": "lab3_mem_Wben_Dec",
     "net_decls": [],
     "parameters": [],
     "ports": [
       {
         "direction": "input",
+        "line": 10,
         "lsb": 0,
         "msb": 31,
         "name": "addr",
@@ -138,6 +142,7 @@
       },
       {
         "direction": "output",
+        "line": 11,
         "lsb": 0,
         "msb": 15,
         "name": "wb_en",
@@ -145,6 +150,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "CacheSubmodules.v"
   },
   {
@@ -155,6 +161,7 @@
           "kind": "IDENTIFIER",
           "name": "bank"
         },
+        "line": 41,
         "rhs": {
           "base": {
             "kind": "IDENTIFIER",
@@ -184,6 +191,7 @@
           "kind": "IDENTIFIER",
           "name": "memreq_addr"
         },
+        "line": 42,
         "rhs": {
           "kind": "CONCAT",
           "parts": [
@@ -211,6 +219,7 @@
           "kind": "IDENTIFIER",
           "name": "memreq_addr"
         },
+        "line": 44,
         "rhs": {
           "kind": "CONCAT",
           "parts": [
@@ -230,12 +239,15 @@
         }
       }
     ],
+    "end_line": 46,
     "gate_primitives": [],
     "instances": [],
+    "line": 25,
     "name": "lab3_mem_Mkaddr",
     "net_decls": [
       {
         "expr": "c_bank_bits-1:0",
+        "line": 40,
         "lsb": 0,
         "msb": 0,
         "name": "bank",
@@ -262,6 +274,7 @@
       {
         "direction": "input",
         "expr": "27-index_width-c_bank_bits:0",
+        "line": 33,
         "lsb": 0,
         "msb": 0,
         "name": "tag",
@@ -272,6 +285,7 @@
       {
         "direction": "input",
         "expr": "index_width-1:0",
+        "line": 34,
         "lsb": 0,
         "msb": 0,
         "name": "index",
@@ -281,6 +295,7 @@
       },
       {
         "direction": "input",
+        "line": 35,
         "lsb": 0,
         "msb": 31,
         "name": "cachereq_addr",
@@ -289,6 +304,7 @@
       },
       {
         "direction": "output",
+        "line": 36,
         "lsb": 0,
         "msb": 31,
         "name": "memreq_addr",
@@ -296,6 +312,7 @@
         "type": "unspecified"
       }
     ],
+    "pragmas": [],
     "source_file": "CacheSubmodules.v"
   }
 ]

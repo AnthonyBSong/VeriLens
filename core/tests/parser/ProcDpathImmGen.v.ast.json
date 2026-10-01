@@ -435,18 +435,22 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 16,
         "sensitivity": "*"
       }
     ],
     "assigns": [],
+    "end_line": 39,
     "gate_primitives": [],
     "instances": [],
+    "line": 9,
     "name": "lab2_proc_ProcDpathImmGen",
     "net_decls": [],
     "parameters": [],
     "ports": [
       {
         "direction": "input",
+        "line": 11,
         "lsb": 0,
         "msb": 2,
         "name": "imm_type",
@@ -455,6 +459,7 @@
       },
       {
         "direction": "input",
+        "line": 12,
         "lsb": 0,
         "msb": 31,
         "name": "inst",
@@ -463,6 +468,7 @@
       },
       {
         "direction": "output",
+        "line": 13,
         "lsb": 0,
         "msb": 31,
         "name": "imm",
@@ -470,6 +476,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "ProcDpathImmGen.v"
   }
 ]

@@ -28,6 +28,7 @@
             }
           }
         },
+        "line": 43,
         "sensitivity": "posedge clk"
       }
     ],
@@ -37,6 +38,7 @@
           "kind": "IDENTIFIER",
           "name": "read_data"
         },
+        "line": 39,
         "rhs": {
           "base": {
             "kind": "IDENTIFIER",
@@ -50,12 +52,15 @@
         }
       }
     ],
+    "end_line": 66,
     "gate_primitives": [],
     "instances": [],
+    "line": 12,
     "name": "vc_Regfile_1r1w",
     "net_decls": [
       {
         "expr": "p_data_nbits-1:0",
+        "line": 35,
         "lsb": 0,
         "msb": 0,
         "name": "rfile",
@@ -81,6 +86,7 @@
     "ports": [
       {
         "direction": "input",
+        "line": 20,
         "lsb": 0,
         "msb": 0,
         "name": "clk",
@@ -89,6 +95,7 @@
       },
       {
         "direction": "input",
+        "line": 21,
         "lsb": 0,
         "msb": 0,
         "name": "reset",
@@ -98,6 +105,7 @@
       {
         "direction": "input",
         "expr": "c_addr_nbits-1:0",
+        "line": 25,
         "lsb": 0,
         "msb": 0,
         "name": "read_addr",
@@ -108,6 +116,7 @@
       {
         "direction": "output",
         "expr": "p_data_nbits-1:0",
+        "line": 26,
         "lsb": 0,
         "msb": 0,
         "name": "read_data",
@@ -117,6 +126,7 @@
       },
       {
         "direction": "input",
+        "line": 30,
         "lsb": 0,
         "msb": 0,
         "name": "write_en",
@@ -126,6 +136,7 @@
       {
         "direction": "input",
         "expr": "c_addr_nbits-1:0",
+        "line": 31,
         "lsb": 0,
         "msb": 0,
         "name": "write_addr",
@@ -136,6 +147,7 @@
       {
         "direction": "input",
         "expr": "p_data_nbits-1:0",
+        "line": 32,
         "lsb": 0,
         "msb": 0,
         "name": "write_data",
@@ -144,6 +156,7 @@
         "unknown": true
       }
     ],
+    "pragmas": [],
     "source_file": "regfiles.v"
   },
   {
@@ -235,6 +248,7 @@
             }
           }
         },
+        "line": 109,
         "sensitivity": "posedge clk"
       }
     ],
@@ -244,6 +258,7 @@
           "kind": "IDENTIFIER",
           "name": "read_data"
         },
+        "line": 100,
         "rhs": {
           "base": {
             "kind": "IDENTIFIER",
@@ -257,12 +272,15 @@
         }
       }
     ],
+    "end_line": 136,
     "gate_primitives": [],
     "instances": [],
+    "line": 72,
     "name": "vc_ResetRegfile_1r1w",
     "net_decls": [
       {
         "expr": "p_data_nbits-1:0",
+        "line": 96,
         "lsb": 0,
         "msb": 0,
         "name": "rfile",
@@ -292,6 +310,7 @@
     "ports": [
       {
         "direction": "input",
+        "line": 81,
         "lsb": 0,
         "msb": 0,
         "name": "clk",
@@ -300,6 +319,7 @@
       },
       {
         "direction": "input",
+        "line": 82,
         "lsb": 0,
         "msb": 0,
         "name": "reset",
@@ -309,6 +329,7 @@
       {
         "direction": "input",
         "expr": "c_addr_nbits-1:0",
+        "line": 86,
         "lsb": 0,
         "msb": 0,
         "name": "read_addr",
@@ -319,6 +340,7 @@
       {
         "direction": "output",
         "expr": "p_data_nbits-1:0",
+        "line": 87,
         "lsb": 0,
         "msb": 0,
         "name": "read_data",
@@ -328,6 +350,7 @@
       },
       {
         "direction": "input",
+        "line": 91,
         "lsb": 0,
         "msb": 0,
         "name": "write_en",
@@ -337,6 +360,7 @@
       {
         "direction": "input",
         "expr": "c_addr_nbits-1:0",
+        "line": 92,
         "lsb": 0,
         "msb": 0,
         "name": "write_addr",
@@ -347,6 +371,7 @@
       {
         "direction": "input",
         "expr": "p_data_nbits-1:0",
+        "line": 93,
         "lsb": 0,
         "msb": 0,
         "name": "write_data",
@@ -355,6 +380,7 @@
         "unknown": true
       }
     ],
+    "pragmas": [],
     "source_file": "regfiles.v"
   },
   {
@@ -386,6 +412,7 @@
             }
           }
         },
+        "line": 179,
         "sensitivity": "posedge clk"
       }
     ],
@@ -395,6 +422,7 @@
           "kind": "IDENTIFIER",
           "name": "read_data0"
         },
+        "line": 174,
         "rhs": {
           "base": {
             "kind": "IDENTIFIER",
@@ -412,6 +440,7 @@
           "kind": "IDENTIFIER",
           "name": "read_data1"
         },
+        "line": 175,
         "rhs": {
           "base": {
             "kind": "IDENTIFIER",
@@ -425,12 +454,15 @@
         }
       }
     ],
+    "end_line": 202,
     "gate_primitives": [],
     "instances": [],
+    "line": 142,
     "name": "vc_Regfile_2r1w",
     "net_decls": [
       {
         "expr": "p_data_nbits-1:0",
+        "line": 170,
         "lsb": 0,
         "msb": 0,
         "name": "rfile",
@@ -456,6 +488,7 @@
     "ports": [
       {
         "direction": "input",
+        "line": 150,
         "lsb": 0,
         "msb": 0,
         "name": "clk",
@@ -464,6 +497,7 @@
       },
       {
         "direction": "input",
+        "line": 151,
         "lsb": 0,
         "msb": 0,
         "name": "reset",
@@ -473,6 +507,7 @@
       {
         "direction": "input",
         "expr": "c_addr_nbits-1:0",
+        "line": 155,
         "lsb": 0,
         "msb": 0,
         "name": "read_addr0",
@@ -483,6 +518,7 @@
       {
         "direction": "output",
         "expr": "p_data_nbits-1:0",
+        "line": 156,
         "lsb": 0,
         "msb": 0,
         "name": "read_data0",
@@ -493,6 +529,7 @@
       {
         "direction": "input",
         "expr": "c_addr_nbits-1:0",
+        "line": 160,
         "lsb": 0,
         "msb": 0,
         "name": "read_addr1",
@@ -503,6 +540,7 @@
       {
         "direction": "output",
         "expr": "p_data_nbits-1:0",
+        "line": 161,
         "lsb": 0,
         "msb": 0,
         "name": "read_data1",
@@ -512,6 +550,7 @@
       },
       {
         "direction": "input",
+        "line": 165,
         "lsb": 0,
         "msb": 0,
         "name": "write_en",
@@ -521,6 +560,7 @@
       {
         "direction": "input",
         "expr": "c_addr_nbits-1:0",
+        "line": 166,
         "lsb": 0,
         "msb": 0,
         "name": "write_addr",
@@ -531,6 +571,7 @@
       {
         "direction": "input",
         "expr": "p_data_nbits-1:0",
+        "line": 167,
         "lsb": 0,
         "msb": 0,
         "name": "write_data",
@@ -539,6 +580,7 @@
         "unknown": true
       }
     ],
+    "pragmas": [],
     "source_file": "regfiles.v"
   },
   {
@@ -601,6 +643,7 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 251,
         "sensitivity": "posedge clk"
       }
     ],
@@ -610,6 +653,7 @@
           "kind": "IDENTIFIER",
           "name": "read_data0"
         },
+        "line": 246,
         "rhs": {
           "base": {
             "kind": "IDENTIFIER",
@@ -627,6 +671,7 @@
           "kind": "IDENTIFIER",
           "name": "read_data1"
         },
+        "line": 247,
         "rhs": {
           "base": {
             "kind": "IDENTIFIER",
@@ -640,12 +685,15 @@
         }
       }
     ],
+    "end_line": 292,
     "gate_primitives": [],
     "instances": [],
+    "line": 208,
     "name": "vc_Regfile_2r2w",
     "net_decls": [
       {
         "expr": "p_data_nbits-1:0",
+        "line": 242,
         "lsb": 0,
         "msb": 0,
         "name": "rfile",
@@ -671,6 +719,7 @@
     "ports": [
       {
         "direction": "input",
+        "line": 216,
         "lsb": 0,
         "msb": 0,
         "name": "clk",
@@ -679,6 +728,7 @@
       },
       {
         "direction": "input",
+        "line": 217,
         "lsb": 0,
         "msb": 0,
         "name": "reset",
@@ -688,6 +738,7 @@
       {
         "direction": "input",
         "expr": "c_addr_nbits-1:0",
+        "line": 221,
         "lsb": 0,
         "msb": 0,
         "name": "read_addr0",
@@ -698,6 +749,7 @@
       {
         "direction": "output",
         "expr": "p_data_nbits-1:0",
+        "line": 222,
         "lsb": 0,
         "msb": 0,
         "name": "read_data0",
@@ -708,6 +760,7 @@
       {
         "direction": "input",
         "expr": "c_addr_nbits-1:0",
+        "line": 226,
         "lsb": 0,
         "msb": 0,
         "name": "read_addr1",
@@ -718,6 +771,7 @@
       {
         "direction": "output",
         "expr": "p_data_nbits-1:0",
+        "line": 227,
         "lsb": 0,
         "msb": 0,
         "name": "read_data1",
@@ -727,6 +781,7 @@
       },
       {
         "direction": "input",
+        "line": 231,
         "lsb": 0,
         "msb": 0,
         "name": "write_en0",
@@ -736,6 +791,7 @@
       {
         "direction": "input",
         "expr": "c_addr_nbits-1:0",
+        "line": 232,
         "lsb": 0,
         "msb": 0,
         "name": "write_addr0",
@@ -746,6 +802,7 @@
       {
         "direction": "input",
         "expr": "p_data_nbits-1:0",
+        "line": 233,
         "lsb": 0,
         "msb": 0,
         "name": "write_data0",
@@ -755,6 +812,7 @@
       },
       {
         "direction": "input",
+        "line": 237,
         "lsb": 0,
         "msb": 0,
         "name": "write_en1",
@@ -764,6 +822,7 @@
       {
         "direction": "input",
         "expr": "c_addr_nbits-1:0",
+        "line": 238,
         "lsb": 0,
         "msb": 0,
         "name": "write_addr1",
@@ -774,6 +833,7 @@
       {
         "direction": "input",
         "expr": "p_data_nbits-1:0",
+        "line": 239,
         "lsb": 0,
         "msb": 0,
         "name": "write_data1",
@@ -782,6 +842,7 @@
         "unknown": true
       }
     ],
+    "pragmas": [],
     "source_file": "regfiles.v"
   },
   {
@@ -792,6 +853,7 @@
           "kind": "IDENTIFIER",
           "name": "rd_data0"
         },
+        "line": 339,
         "rhs": {
           "cond": {
             "kind": "BINARY_OP",
@@ -821,6 +883,7 @@
           "kind": "IDENTIFIER",
           "name": "rd_data1"
         },
+        "line": 340,
         "rhs": {
           "cond": {
             "kind": "BINARY_OP",
@@ -846,60 +909,106 @@
         }
       }
     ],
+    "end_line": 342,
     "gate_primitives": [],
     "instances": [
       {
         "connections": [
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
             "port": "clk",
             "signal": "clk"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "reset"
+            },
             "port": "reset",
             "signal": "reset"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "rd_addr0"
+            },
             "port": "read_addr0",
             "signal": "rd_addr0"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "rf_read_data0"
+            },
             "port": "read_data0",
             "signal": "rf_read_data0"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "rd_addr1"
+            },
             "port": "read_addr1",
             "signal": "rd_addr1"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "rf_read_data1"
+            },
             "port": "read_data1",
             "signal": "rf_read_data1"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "wr_en"
+            },
             "port": "write_en",
             "signal": "wr_en"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "wr_addr"
+            },
             "port": "write_addr",
             "signal": "wr_addr"
           },
           {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "wr_data"
+            },
             "port": "write_data",
             "signal": "wr_data"
           }
         ],
         "instance": "rfile",
+        "line": 320,
         "module": "vc_Regfile_2r1w",
         "parameters": [
-          ".p_data_nbits(32)",
-          ".p_num_entries(32)"
+          {
+            "name": "p_data_nbits",
+            "value": "32"
+          },
+          {
+            "name": "p_num_entries",
+            "value": "32"
+          }
         ],
         "resolved": true,
         "wildcard": false
       }
     ],
+    "line": 298,
     "name": "vc_Regfile_2r1w_zero",
     "net_decls": [
       {
+        "line": 317,
         "lsb": 0,
         "msb": 31,
         "name": "rf_read_data0",
@@ -907,6 +1016,7 @@
         "type": "logic"
       },
       {
+        "line": 318,
         "lsb": 0,
         "msb": 31,
         "name": "rf_read_data1",
@@ -918,6 +1028,7 @@
     "ports": [
       {
         "direction": "input",
+        "line": 300,
         "lsb": 0,
         "msb": 0,
         "name": "clk",
@@ -926,6 +1037,7 @@
       },
       {
         "direction": "input",
+        "line": 301,
         "lsb": 0,
         "msb": 0,
         "name": "reset",
@@ -934,6 +1046,7 @@
       },
       {
         "direction": "input",
+        "line": 303,
         "lsb": 0,
         "msb": 4,
         "name": "rd_addr0",
@@ -942,6 +1055,7 @@
       },
       {
         "direction": "output",
+        "line": 304,
         "lsb": 0,
         "msb": 31,
         "name": "rd_data0",
@@ -950,6 +1064,7 @@
       },
       {
         "direction": "input",
+        "line": 306,
         "lsb": 0,
         "msb": 4,
         "name": "rd_addr1",
@@ -958,6 +1073,7 @@
       },
       {
         "direction": "output",
+        "line": 307,
         "lsb": 0,
         "msb": 31,
         "name": "rd_data1",
@@ -966,6 +1082,7 @@
       },
       {
         "direction": "input",
+        "line": 309,
         "lsb": 0,
         "msb": 0,
         "name": "wr_en",
@@ -974,6 +1091,7 @@
       },
       {
         "direction": "input",
+        "line": 310,
         "lsb": 0,
         "msb": 4,
         "name": "wr_addr",
@@ -982,6 +1100,7 @@
       },
       {
         "direction": "input",
+        "line": 311,
         "lsb": 0,
         "msb": 31,
         "name": "wr_data",
@@ -989,6 +1108,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "regfiles.v"
   }
 ]
