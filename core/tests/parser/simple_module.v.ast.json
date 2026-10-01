@@ -2,15 +2,34 @@
   {
     "always_blocks": [],
     "assigns": [],
+    "end_line": 4,
     "gate_primitives": [],
     "instances": [],
+    "line": 1,
     "name": "counter",
     "net_decls": [],
     "parameters": [],
     "ports": [
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "clk", "scalar": true, "type": "unspecified"},
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "reset", "scalar": true, "type": "unspecified"}
+      {
+        "direction": "input",
+        "line": 2,
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "line": 3,
+        "lsb": 0,
+        "msb": 0,
+        "name": "reset",
+        "scalar": true,
+        "type": "unspecified"
+      }
     ],
+    "pragmas": [],
     "source_file": "simple_module.v"
   }
 ]

@@ -4,6 +4,7 @@
     "assigns": [
       {
         "lhs": {"kind": "IDENTIFIER", "name": "y"},
+        "line": 6,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {"kind": "IDENTIFIER", "name": "a"},
@@ -12,16 +13,43 @@
         }
       }
     ],
+    "end_line": 7,
     "gate_primitives": [],
     "instances": [],
+    "line": 1,
     "name": "adder",
     "net_decls": [],
     "parameters": [],
     "ports": [
-      {"direction": "input", "lsb": 0, "msb": 7, "name": "a", "scalar": false, "type": "unspecified"},
-      {"direction": "input", "lsb": 0, "msb": 7, "name": "b", "scalar": false, "type": "unspecified"},
-      {"direction": "output", "lsb": 0, "msb": 7, "name": "y", "scalar": false, "type": "unspecified"}
+      {
+        "direction": "input",
+        "line": 2,
+        "lsb": 0,
+        "msb": 7,
+        "name": "a",
+        "scalar": false,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "line": 3,
+        "lsb": 0,
+        "msb": 7,
+        "name": "b",
+        "scalar": false,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "line": 4,
+        "lsb": 0,
+        "msb": 7,
+        "name": "y",
+        "scalar": false,
+        "type": "unspecified"
+      }
     ],
+    "pragmas": [],
     "source_file": "dataflow.v"
   }
 ]

@@ -27,25 +27,91 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 15,
         "sensitivity": "posedge clk"
       }
     ],
-    "assigns": [{"lhs": {"kind": "IDENTIFIER", "name": "rd2"}, "rhs": {"kind": "IDENTIFIER", "name": "rd1"}}],
+    "assigns": [
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "rd2"},
+        "line": 19,
+        "rhs": {"kind": "IDENTIFIER", "name": "rd1"}
+      }
+    ],
+    "end_line": 20,
     "gate_primitives": [],
     "instances": [],
+    "line": 3,
     "name": "RegFile",
     "net_decls": [],
     "parameters": [],
     "ports": [
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "clk", "scalar": true, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "we", "scalar": true, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 4, "name": "rs1", "scalar": false, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 4, "name": "rs2", "scalar": false, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 4, "name": "rd", "scalar": false, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 31, "name": "wd", "scalar": false, "type": "logic"},
-      {"direction": "output", "lsb": 0, "msb": 31, "name": "rd1", "scalar": false, "type": "logic"},
-      {"direction": "output", "lsb": 0, "msb": 31, "name": "rd2", "scalar": false, "type": "logic"}
+      {
+        "direction": "input",
+        "line": 4,
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {"direction": "input", "line": 5, "lsb": 0, "msb": 0, "name": "we", "scalar": true, "type": "logic"},
+      {
+        "direction": "input",
+        "line": 6,
+        "lsb": 0,
+        "msb": 4,
+        "name": "rs1",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 7,
+        "lsb": 0,
+        "msb": 4,
+        "name": "rs2",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 8,
+        "lsb": 0,
+        "msb": 4,
+        "name": "rd",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 9,
+        "lsb": 0,
+        "msb": 31,
+        "name": "wd",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 10,
+        "lsb": 0,
+        "msb": 31,
+        "name": "rd1",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 11,
+        "lsb": 0,
+        "msb": 31,
+        "name": "rd2",
+        "scalar": false,
+        "type": "logic"
+      }
     ],
+    "pragmas": [],
     "source_file": "RegFile.sv"
   }
 ]

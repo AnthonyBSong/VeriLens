@@ -122,6 +122,7 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 17,
         "sensitivity": "*"
       },
       {
@@ -183,12 +184,14 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 28,
         "sensitivity": "posedge clk"
       }
     ],
     "assigns": [
       {
         "lhs": {"kind": "IDENTIFIER", "name": "raw"},
+        "line": 15,
         "rhs": {
           "base": {"kind": "IDENTIFIER", "name": "mem"},
           "index": {
@@ -201,23 +204,66 @@
         }
       }
     ],
+    "end_line": 38,
     "gate_primitives": [],
     "instances": [],
+    "line": 2,
     "name": "DataMemory",
     "net_decls": [
-      {"lsb": 0, "msb": 31, "name": "mem", "scalar": false, "type": "logic"},
-      {"lsb": 0, "msb": 31, "name": "raw", "scalar": false, "type": "logic"}
+      {"line": 13, "lsb": 0, "msb": 31, "name": "mem", "scalar": false, "type": "logic"},
+      {"line": 14, "lsb": 0, "msb": 31, "name": "raw", "scalar": false, "type": "logic"}
     ],
     "parameters": [{"default": "1024", "name": "DEPTH"}],
     "ports": [
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "clk", "scalar": true, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "we", "scalar": true, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "re", "scalar": true, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 2, "name": "funct3", "scalar": false, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 31, "name": "addr", "scalar": false, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 31, "name": "wd", "scalar": false, "type": "logic"},
-      {"direction": "output", "lsb": 0, "msb": 31, "name": "rd", "scalar": false, "type": "logic"}
+      {
+        "direction": "input",
+        "line": 5,
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {"direction": "input", "line": 6, "lsb": 0, "msb": 0, "name": "we", "scalar": true, "type": "logic"},
+      {"direction": "input", "line": 7, "lsb": 0, "msb": 0, "name": "re", "scalar": true, "type": "logic"},
+      {
+        "direction": "input",
+        "line": 8,
+        "lsb": 0,
+        "msb": 2,
+        "name": "funct3",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 9,
+        "lsb": 0,
+        "msb": 31,
+        "name": "addr",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 10,
+        "lsb": 0,
+        "msb": 31,
+        "name": "wd",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 11,
+        "lsb": 0,
+        "msb": 31,
+        "name": "rd",
+        "scalar": false,
+        "type": "logic"
+      }
     ],
+    "pragmas": [],
     "source_file": "DataMemory.sv"
   }
 ]

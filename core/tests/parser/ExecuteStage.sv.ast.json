@@ -79,26 +79,30 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 26,
         "sensitivity": "*"
       }
     ],
     "assigns": [
       {
         "lhs": {"kind": "IDENTIFIER", "name": "rs2_out"},
+        "line": 40,
         "rhs": {"kind": "IDENTIFIER", "name": "op_b_pre"}
       }
     ],
+    "end_line": 60,
     "gate_primitives": [],
     "instances": [
       {
         "connections": [
-          {"port": "a", "signal": "op_a"},
-          {"port": "b", "signal": "op_b"},
-          {"port": "op", "signal": "alu_op"},
-          {"port": "result", "signal": "alu_result"},
-          {"port": "zero", "signal": "zero"}
+          {"expr": {"kind": "IDENTIFIER", "name": "op_a"}, "port": "a", "signal": "op_a"},
+          {"expr": {"kind": "IDENTIFIER", "name": "op_b"}, "port": "b", "signal": "op_b"},
+          {"expr": {"kind": "IDENTIFIER", "name": "alu_op"}, "port": "op", "signal": "alu_op"},
+          {"expr": {"kind": "IDENTIFIER", "name": "alu_result"}, "port": "result", "signal": "alu_result"},
+          {"expr": {"kind": "IDENTIFIER", "name": "zero"}, "port": "zero", "signal": "zero"}
         ],
         "instance": "alu",
+        "line": 42,
         "module": "Alu",
         "parameters": [],
         "resolved": false,
@@ -106,51 +110,210 @@
       },
       {
         "connections": [
-          {"port": "pc", "signal": "pc"},
-          {"port": "rs1", "signal": "op_a"},
-          {"port": "rs2", "signal": "op_b_pre"},
-          {"port": "imm", "signal": "imm"},
-          {"port": "funct3", "signal": "funct3"},
-          {"port": "branch", "signal": "branch"},
-          {"port": "target", "signal": "branch_target"},
-          {"port": "taken", "signal": "branch_taken"}
+          {"expr": {"kind": "IDENTIFIER", "name": "pc"}, "port": "pc", "signal": "pc"},
+          {"expr": {"kind": "IDENTIFIER", "name": "op_a"}, "port": "rs1", "signal": "op_a"},
+          {"expr": {"kind": "IDENTIFIER", "name": "op_b_pre"}, "port": "rs2", "signal": "op_b_pre"},
+          {"expr": {"kind": "IDENTIFIER", "name": "imm"}, "port": "imm", "signal": "imm"},
+          {"expr": {"kind": "IDENTIFIER", "name": "funct3"}, "port": "funct3", "signal": "funct3"},
+          {"expr": {"kind": "IDENTIFIER", "name": "branch"}, "port": "branch", "signal": "branch"},
+          {
+            "expr": {"kind": "IDENTIFIER", "name": "branch_target"},
+            "port": "target",
+            "signal": "branch_target"
+          },
+          {"expr": {"kind": "IDENTIFIER", "name": "branch_taken"}, "port": "taken", "signal": "branch_taken"}
         ],
         "instance": "bu",
+        "line": 50,
         "module": "BranchUnit",
         "parameters": [],
         "resolved": false,
         "wildcard": false
       }
     ],
+    "line": 2,
     "name": "ExecuteStage",
     "net_decls": [
-      {"lsb": 0, "msb": 31, "name": "op_a", "scalar": false, "type": "logic"},
-      {"lsb": 0, "msb": 31, "name": "op_b_pre", "scalar": false, "type": "logic"},
-      {"lsb": 0, "msb": 31, "name": "op_b", "scalar": false, "type": "logic"}
+      {"line": 24, "lsb": 0, "msb": 31, "name": "op_a", "scalar": false, "type": "logic"},
+      {"line": 24, "lsb": 0, "msb": 31, "name": "op_b_pre", "scalar": false, "type": "logic"},
+      {"line": 24, "lsb": 0, "msb": 31, "name": "op_b", "scalar": false, "type": "logic"}
     ],
     "parameters": [],
     "ports": [
-      {"direction": "input", "lsb": 0, "msb": 31, "name": "pc", "scalar": false, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 31, "name": "rs1_val", "scalar": false, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 31, "name": "rs2_val", "scalar": false, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 31, "name": "imm", "scalar": false, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 4, "name": "rs1", "scalar": false, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 4, "name": "rs2", "scalar": false, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 3, "name": "alu_op", "scalar": false, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "alu_src", "scalar": true, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "branch", "scalar": true, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "jump", "scalar": true, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 31, "name": "fwd_mem_val", "scalar": false, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 31, "name": "fwd_wb_val", "scalar": false, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 1, "name": "fwd_a", "scalar": false, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 1, "name": "fwd_b", "scalar": false, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 2, "name": "funct3", "scalar": false, "type": "logic"},
-      {"direction": "output", "lsb": 0, "msb": 31, "name": "alu_result", "scalar": false, "type": "logic"},
-      {"direction": "output", "lsb": 0, "msb": 31, "name": "rs2_out", "scalar": false, "type": "logic"},
-      {"direction": "output", "lsb": 0, "msb": 0, "name": "zero", "scalar": true, "type": "logic"},
-      {"direction": "output", "lsb": 0, "msb": 0, "name": "branch_taken", "scalar": true, "type": "logic"},
+      {
+        "direction": "input",
+        "line": 3,
+        "lsb": 0,
+        "msb": 31,
+        "name": "pc",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 4,
+        "lsb": 0,
+        "msb": 31,
+        "name": "rs1_val",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 5,
+        "lsb": 0,
+        "msb": 31,
+        "name": "rs2_val",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 6,
+        "lsb": 0,
+        "msb": 31,
+        "name": "imm",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 7,
+        "lsb": 0,
+        "msb": 4,
+        "name": "rs1",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 8,
+        "lsb": 0,
+        "msb": 4,
+        "name": "rs2",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 9,
+        "lsb": 0,
+        "msb": 3,
+        "name": "alu_op",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 10,
+        "lsb": 0,
+        "msb": 0,
+        "name": "alu_src",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 11,
+        "lsb": 0,
+        "msb": 0,
+        "name": "branch",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 12,
+        "lsb": 0,
+        "msb": 0,
+        "name": "jump",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 13,
+        "lsb": 0,
+        "msb": 31,
+        "name": "fwd_mem_val",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 14,
+        "lsb": 0,
+        "msb": 31,
+        "name": "fwd_wb_val",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 15,
+        "lsb": 0,
+        "msb": 1,
+        "name": "fwd_a",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 16,
+        "lsb": 0,
+        "msb": 1,
+        "name": "fwd_b",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 17,
+        "lsb": 0,
+        "msb": 2,
+        "name": "funct3",
+        "scalar": false,
+        "type": "logic"
+      },
       {
         "direction": "output",
+        "line": 18,
+        "lsb": 0,
+        "msb": 31,
+        "name": "alu_result",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 19,
+        "lsb": 0,
+        "msb": 31,
+        "name": "rs2_out",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 20,
+        "lsb": 0,
+        "msb": 0,
+        "name": "zero",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 21,
+        "lsb": 0,
+        "msb": 0,
+        "name": "branch_taken",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 22,
         "lsb": 0,
         "msb": 31,
         "name": "branch_target",
@@ -158,6 +321,7 @@
         "type": "logic"
       }
     ],
+    "pragmas": [],
     "source_file": "ExecuteStage.sv"
   }
 ]

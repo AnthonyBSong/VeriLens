@@ -4,6 +4,7 @@
     "assigns": [
       {
         "lhs": {"kind": "IDENTIFIER", "name": "wb_data"},
+        "line": 8,
         "rhs": {
           "cond": {"kind": "IDENTIFIER", "name": "mem_to_reg"},
           "else": {"kind": "IDENTIFIER", "name": "alu_result"},
@@ -12,17 +13,52 @@
         }
       }
     ],
+    "end_line": 9,
     "gate_primitives": [],
     "instances": [],
+    "line": 2,
     "name": "WritebackStage",
     "net_decls": [],
     "parameters": [],
     "ports": [
-      {"direction": "input", "lsb": 0, "msb": 31, "name": "alu_result", "scalar": false, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 31, "name": "read_data", "scalar": false, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "mem_to_reg", "scalar": true, "type": "logic"},
-      {"direction": "output", "lsb": 0, "msb": 31, "name": "wb_data", "scalar": false, "type": "logic"}
+      {
+        "direction": "input",
+        "line": 3,
+        "lsb": 0,
+        "msb": 31,
+        "name": "alu_result",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 4,
+        "lsb": 0,
+        "msb": 31,
+        "name": "read_data",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 5,
+        "lsb": 0,
+        "msb": 0,
+        "name": "mem_to_reg",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 6,
+        "lsb": 0,
+        "msb": 31,
+        "name": "wb_data",
+        "scalar": false,
+        "type": "logic"
+      }
     ],
+    "pragmas": [],
     "source_file": "WritebackStage.sv"
   }
 ]

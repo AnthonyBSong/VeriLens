@@ -207,12 +207,14 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 19,
         "sensitivity": "posedge clk"
       }
     ],
     "assigns": [
       {
         "lhs": {"kind": "IDENTIFIER", "name": "div_by_zero"},
+        "line": 17,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {"kind": "IDENTIFIER", "name": "divisor"},
@@ -221,26 +223,101 @@
         }
       }
     ],
+    "end_line": 40,
     "gate_primitives": [],
     "instances": [],
+    "line": 2,
     "name": "Divider",
     "net_decls": [
-      {"lsb": 0, "msb": 63, "name": "partial", "scalar": false, "type": "logic"},
-      {"lsb": 0, "msb": 31, "name": "q_shift", "scalar": false, "type": "logic"},
-      {"lsb": 0, "msb": 5, "name": "count", "scalar": false, "type": "logic"}
+      {"line": 13, "lsb": 0, "msb": 63, "name": "partial", "scalar": false, "type": "logic"},
+      {"line": 14, "lsb": 0, "msb": 31, "name": "q_shift", "scalar": false, "type": "logic"},
+      {"line": 15, "lsb": 0, "msb": 5, "name": "count", "scalar": false, "type": "logic"}
     ],
     "parameters": [],
     "ports": [
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "clk", "scalar": true, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "rst", "scalar": true, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "start", "scalar": true, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 31, "name": "dividend", "scalar": false, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 31, "name": "divisor", "scalar": false, "type": "logic"},
-      {"direction": "output", "lsb": 0, "msb": 31, "name": "quotient", "scalar": false, "type": "logic"},
-      {"direction": "output", "lsb": 0, "msb": 31, "name": "remainder", "scalar": false, "type": "logic"},
-      {"direction": "output", "lsb": 0, "msb": 0, "name": "done", "scalar": true, "type": "logic"},
-      {"direction": "output", "lsb": 0, "msb": 0, "name": "div_by_zero", "scalar": true, "type": "logic"}
+      {
+        "direction": "input",
+        "line": 3,
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 4,
+        "lsb": 0,
+        "msb": 0,
+        "name": "rst",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 5,
+        "lsb": 0,
+        "msb": 0,
+        "name": "start",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 6,
+        "lsb": 0,
+        "msb": 31,
+        "name": "dividend",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 7,
+        "lsb": 0,
+        "msb": 31,
+        "name": "divisor",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 8,
+        "lsb": 0,
+        "msb": 31,
+        "name": "quotient",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 9,
+        "lsb": 0,
+        "msb": 31,
+        "name": "remainder",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 10,
+        "lsb": 0,
+        "msb": 0,
+        "name": "done",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 11,
+        "lsb": 0,
+        "msb": 0,
+        "name": "div_by_zero",
+        "scalar": true,
+        "type": "logic"
+      }
     ],
+    "pragmas": [],
     "source_file": "Divider.sv"
   }
 ]

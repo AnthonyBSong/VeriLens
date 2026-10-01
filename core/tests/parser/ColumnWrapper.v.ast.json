@@ -4,6 +4,7 @@
     "assigns": [
       {
         "lhs": {"kind": "IDENTIFIER", "name": "mem_n_we_muxed"},
+        "line": 97,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {"kind": "IDENTIFIER", "name": "mem_n_we_ovrd"},
@@ -13,6 +14,7 @@
       },
       {
         "lhs": {"kind": "IDENTIFIER", "name": "mem_n_waddr_muxed"},
+        "line": 98,
         "rhs": {
           "cond": {"kind": "IDENTIFIER", "name": "mem_n_we_ovrd"},
           "else": {"kind": "IDENTIFIER", "name": "mem_n_waddr"},
@@ -22,6 +24,7 @@
       },
       {
         "lhs": {"kind": "IDENTIFIER", "name": "mem_n_wdata_muxed"},
+        "line": 99,
         "rhs": {
           "cond": {"kind": "IDENTIFIER", "name": "mem_n_we_ovrd"},
           "else": {"kind": "IDENTIFIER", "name": "u_to_mem_n"},
@@ -31,6 +34,7 @@
       },
       {
         "lhs": {"kind": "IDENTIFIER", "name": "mem_nm1_we_muxed"},
+        "line": 115,
         "rhs": {
           "kind": "BINARY_OP",
           "lhs": {"kind": "IDENTIFIER", "name": "mem_nm1_we_ovrd"},
@@ -40,6 +44,7 @@
       },
       {
         "lhs": {"kind": "IDENTIFIER", "name": "mem_nm1_waddr_muxed"},
+        "line": 116,
         "rhs": {
           "cond": {"kind": "IDENTIFIER", "name": "mem_nm1_we_ovrd"},
           "else": {"kind": "IDENTIFIER", "name": "mem_nm1_waddr"},
@@ -49,6 +54,7 @@
       },
       {
         "lhs": {"kind": "IDENTIFIER", "name": "mem_nm1_wdata_muxed"},
+        "line": 117,
         "rhs": {
           "cond": {"kind": "IDENTIFIER", "name": "mem_nm1_we_ovrd"},
           "else": {"kind": "IDENTIFIER", "name": "u_to_mem_nm1"},
@@ -57,89 +63,168 @@
         }
       }
     ],
+    "end_line": 129,
     "gate_primitives": [],
     "instances": [
       {
         "connections": [
-          {"port": "clk", "signal": "clk"},
-          {"port": "rst", "signal": "rst"},
-          {"port": "start", "signal": "start"},
-          {"port": "mem_n_we", "signal": "mem_n_we"},
-          {"port": "mem_nm1_we", "signal": "mem_nm1_we"},
-          {"port": "mem_n_raddr", "signal": "mem_n_raddr"},
-          {"port": "mem_nm1_raddr", "signal": "mem_nm1_raddr"},
-          {"port": "mem_n_waddr", "signal": "mem_n_waddr"},
-          {"port": "mem_nm1_waddr", "signal": "mem_nm1_waddr"},
-          {"port": "ctrl_at_bottom", "signal": "ctrl_at_bottom"},
-          {"port": "ctrl_at_top", "signal": "ctrl_at_top"},
-          {"port": "ctrl_calc_en", "signal": "ctrl_calc_en"}
+          {"expr": {"kind": "IDENTIFIER", "name": "clk"}, "port": "clk", "signal": "clk"},
+          {"expr": {"kind": "IDENTIFIER", "name": "rst"}, "port": "rst", "signal": "rst"},
+          {"expr": {"kind": "IDENTIFIER", "name": "start"}, "port": "start", "signal": "start"},
+          {"expr": {"kind": "IDENTIFIER", "name": "mem_n_we"}, "port": "mem_n_we", "signal": "mem_n_we"},
+          {"expr": {"kind": "IDENTIFIER", "name": "mem_nm1_we"}, "port": "mem_nm1_we", "signal": "mem_nm1_we"},
+          {
+            "expr": {"kind": "IDENTIFIER", "name": "mem_n_raddr"},
+            "port": "mem_n_raddr",
+            "signal": "mem_n_raddr"
+          },
+          {
+            "expr": {"kind": "IDENTIFIER", "name": "mem_nm1_raddr"},
+            "port": "mem_nm1_raddr",
+            "signal": "mem_nm1_raddr"
+          },
+          {
+            "expr": {"kind": "IDENTIFIER", "name": "mem_n_waddr"},
+            "port": "mem_n_waddr",
+            "signal": "mem_n_waddr"
+          },
+          {
+            "expr": {"kind": "IDENTIFIER", "name": "mem_nm1_waddr"},
+            "port": "mem_nm1_waddr",
+            "signal": "mem_nm1_waddr"
+          },
+          {
+            "expr": {"kind": "IDENTIFIER", "name": "ctrl_at_bottom"},
+            "port": "ctrl_at_bottom",
+            "signal": "ctrl_at_bottom"
+          },
+          {
+            "expr": {"kind": "IDENTIFIER", "name": "ctrl_at_top"},
+            "port": "ctrl_at_top",
+            "signal": "ctrl_at_top"
+          },
+          {
+            "expr": {"kind": "IDENTIFIER", "name": "ctrl_calc_en"},
+            "port": "ctrl_calc_en",
+            "signal": "ctrl_calc_en"
+          }
         ],
         "instance": "ctrl_unit",
+        "line": 55,
         "module": "NodeColumnCtrl",
-        "parameters": ["NUM_ROWS"],
+        "parameters": [{"name": "", "value": "NUM_ROWS"}],
         "resolved": false,
         "wildcard": false
       },
       {
         "connections": [
-          {"port": "clk", "signal": "clk"},
-          {"port": "rst", "signal": "rst"},
-          {"port": "rho", "signal": "rho"},
-          {"port": "u_left", "signal": "u_left"},
-          {"port": "u_right", "signal": "u_right"},
-          {"port": "u_up", "signal": "u_up"},
-          {"port": "u_prev", "signal": "u_prev"},
-          {"port": "ctrl_at_bottom", "signal": "ctrl_at_bottom"},
-          {"port": "ctrl_at_top", "signal": "ctrl_at_top"},
-          {"port": "ctrl_calc_en", "signal": "ctrl_calc_en"},
-          {"port": "u_next", "signal": "u_next"},
-          {"port": "u_center", "signal": "u_center"},
-          {"port": "u_to_mem_n", "signal": "u_to_mem_n"},
-          {"port": "u_to_mem_nm1", "signal": "u_to_mem_nm1"}
+          {"expr": {"kind": "IDENTIFIER", "name": "clk"}, "port": "clk", "signal": "clk"},
+          {"expr": {"kind": "IDENTIFIER", "name": "rst"}, "port": "rst", "signal": "rst"},
+          {"expr": {"kind": "IDENTIFIER", "name": "rho"}, "port": "rho", "signal": "rho"},
+          {"expr": {"kind": "IDENTIFIER", "name": "u_left"}, "port": "u_left", "signal": "u_left"},
+          {"expr": {"kind": "IDENTIFIER", "name": "u_right"}, "port": "u_right", "signal": "u_right"},
+          {"expr": {"kind": "IDENTIFIER", "name": "u_up"}, "port": "u_up", "signal": "u_up"},
+          {"expr": {"kind": "IDENTIFIER", "name": "u_prev"}, "port": "u_prev", "signal": "u_prev"},
+          {
+            "expr": {"kind": "IDENTIFIER", "name": "ctrl_at_bottom"},
+            "port": "ctrl_at_bottom",
+            "signal": "ctrl_at_bottom"
+          },
+          {
+            "expr": {"kind": "IDENTIFIER", "name": "ctrl_at_top"},
+            "port": "ctrl_at_top",
+            "signal": "ctrl_at_top"
+          },
+          {
+            "expr": {"kind": "IDENTIFIER", "name": "ctrl_calc_en"},
+            "port": "ctrl_calc_en",
+            "signal": "ctrl_calc_en"
+          },
+          {"expr": {"kind": "IDENTIFIER", "name": "u_next"}, "port": "u_next", "signal": "u_next"},
+          {"expr": {"kind": "IDENTIFIER", "name": "u_center"}, "port": "u_center", "signal": "u_center"},
+          {"expr": {"kind": "IDENTIFIER", "name": "u_to_mem_n"}, "port": "u_to_mem_n", "signal": "u_to_mem_n"},
+          {
+            "expr": {"kind": "IDENTIFIER", "name": "u_to_mem_nm1"},
+            "port": "u_to_mem_nm1",
+            "signal": "u_to_mem_nm1"
+          }
         ],
         "instance": "dpath",
+        "line": 73,
         "module": "NodeColumnDpath",
-        "parameters": ["NUM_ROWS"],
+        "parameters": [{"name": "", "value": "NUM_ROWS"}],
         "resolved": false,
         "wildcard": false
       },
       {
         "connections": [
-          {"port": "clk", "signal": "clk"},
-          {"port": "we", "signal": "mem_n_we_muxed"},
-          {"port": "write_address", "signal": "mem_n_waddr_muxed"},
-          {"port": "read_address", "signal": "mem_n_raddr"},
-          {"port": "d", "signal": "mem_n_wdata_muxed"},
-          {"port": "q", "signal": "u_up"}
+          {"expr": {"kind": "IDENTIFIER", "name": "clk"}, "port": "clk", "signal": "clk"},
+          {"expr": {"kind": "IDENTIFIER", "name": "mem_n_we_muxed"}, "port": "we", "signal": "mem_n_we_muxed"},
+          {
+            "expr": {"kind": "IDENTIFIER", "name": "mem_n_waddr_muxed"},
+            "port": "write_address",
+            "signal": "mem_n_waddr_muxed"
+          },
+          {
+            "expr": {"kind": "IDENTIFIER", "name": "mem_n_raddr"},
+            "port": "read_address",
+            "signal": "mem_n_raddr"
+          },
+          {
+            "expr": {"kind": "IDENTIFIER", "name": "mem_n_wdata_muxed"},
+            "port": "d",
+            "signal": "mem_n_wdata_muxed"
+          },
+          {"expr": {"kind": "IDENTIFIER", "name": "u_up"}, "port": "q", "signal": "u_up"}
         ],
         "instance": "mem_n",
+        "line": 102,
         "module": "M10KMem",
-        "parameters": ["NUM_ROWS"],
+        "parameters": [{"name": "", "value": "NUM_ROWS"}],
         "resolved": false,
         "wildcard": false
       },
       {
         "connections": [
-          {"port": "clk", "signal": "clk"},
-          {"port": "we", "signal": "mem_nm1_we_muxed"},
-          {"port": "write_address", "signal": "mem_nm1_waddr_muxed"},
-          {"port": "read_address", "signal": "mem_nm1_raddr"},
-          {"port": "d", "signal": "mem_nm1_wdata_muxed"},
-          {"port": "q", "signal": "u_prev"}
+          {"expr": {"kind": "IDENTIFIER", "name": "clk"}, "port": "clk", "signal": "clk"},
+          {
+            "expr": {"kind": "IDENTIFIER", "name": "mem_nm1_we_muxed"},
+            "port": "we",
+            "signal": "mem_nm1_we_muxed"
+          },
+          {
+            "expr": {"kind": "IDENTIFIER", "name": "mem_nm1_waddr_muxed"},
+            "port": "write_address",
+            "signal": "mem_nm1_waddr_muxed"
+          },
+          {
+            "expr": {"kind": "IDENTIFIER", "name": "mem_nm1_raddr"},
+            "port": "read_address",
+            "signal": "mem_nm1_raddr"
+          },
+          {
+            "expr": {"kind": "IDENTIFIER", "name": "mem_nm1_wdata_muxed"},
+            "port": "d",
+            "signal": "mem_nm1_wdata_muxed"
+          },
+          {"expr": {"kind": "IDENTIFIER", "name": "u_prev"}, "port": "q", "signal": "u_prev"}
         ],
         "instance": "mem_nm1",
+        "line": 120,
         "module": "M10KMem",
-        "parameters": ["NUM_ROWS"],
+        "parameters": [{"name": "", "value": "NUM_ROWS"}],
         "resolved": false,
         "wildcard": false
       }
     ],
+    "line": 13,
     "name": "ColumnWrapper",
     "net_decls": [
-      {"lsb": 0, "msb": 0, "name": "mem_n_we", "scalar": true, "type": "wire"},
-      {"lsb": 0, "msb": 0, "name": "mem_nm1_we", "scalar": true, "type": "wire"},
+      {"line": 36, "lsb": 0, "msb": 0, "name": "mem_n_we", "scalar": true, "type": "wire"},
+      {"line": 37, "lsb": 0, "msb": 0, "name": "mem_nm1_we", "scalar": true, "type": "wire"},
       {
         "expr": "$clog2call?-1:0",
+        "line": 38,
         "lsb": 0,
         "msb": 0,
         "name": "mem_n_raddr",
@@ -149,6 +234,7 @@
       },
       {
         "expr": "$clog2call?-1:0",
+        "line": 39,
         "lsb": 0,
         "msb": 0,
         "name": "mem_nm1_raddr",
@@ -158,6 +244,7 @@
       },
       {
         "expr": "$clog2call?-1:0",
+        "line": 40,
         "lsb": 0,
         "msb": 0,
         "name": "mem_n_waddr",
@@ -167,6 +254,7 @@
       },
       {
         "expr": "$clog2call?-1:0",
+        "line": 41,
         "lsb": 0,
         "msb": 0,
         "name": "mem_nm1_waddr",
@@ -174,17 +262,18 @@
         "type": "wire",
         "unknown": true
       },
-      {"lsb": 0, "msb": 0, "name": "ctrl_at_bottom", "scalar": true, "type": "wire"},
-      {"lsb": 0, "msb": 0, "name": "ctrl_at_top", "scalar": true, "type": "wire"},
-      {"lsb": 0, "msb": 0, "name": "ctrl_calc_en", "scalar": true, "type": "wire"},
-      {"lsb": 0, "msb": 17, "name": "u_up", "scalar": false, "type": "wire"},
-      {"lsb": 0, "msb": 17, "name": "u_prev", "scalar": false, "type": "wire"},
-      {"lsb": 0, "msb": 17, "name": "u_to_mem_n", "scalar": false, "type": "wire"},
-      {"lsb": 0, "msb": 17, "name": "u_to_mem_nm1", "scalar": false, "type": "wire"},
-      {"lsb": 0, "msb": 17, "name": "u_next", "scalar": false, "type": "wire"},
-      {"lsb": 0, "msb": 0, "name": "mem_n_we_muxed", "scalar": true, "type": "wire"},
+      {"line": 43, "lsb": 0, "msb": 0, "name": "ctrl_at_bottom", "scalar": true, "type": "wire"},
+      {"line": 44, "lsb": 0, "msb": 0, "name": "ctrl_at_top", "scalar": true, "type": "wire"},
+      {"line": 45, "lsb": 0, "msb": 0, "name": "ctrl_calc_en", "scalar": true, "type": "wire"},
+      {"line": 47, "lsb": 0, "msb": 17, "name": "u_up", "scalar": false, "type": "wire"},
+      {"line": 48, "lsb": 0, "msb": 17, "name": "u_prev", "scalar": false, "type": "wire"},
+      {"line": 50, "lsb": 0, "msb": 17, "name": "u_to_mem_n", "scalar": false, "type": "wire"},
+      {"line": 51, "lsb": 0, "msb": 17, "name": "u_to_mem_nm1", "scalar": false, "type": "wire"},
+      {"line": 52, "lsb": 0, "msb": 17, "name": "u_next", "scalar": false, "type": "wire"},
+      {"line": 93, "lsb": 0, "msb": 0, "name": "mem_n_we_muxed", "scalar": true, "type": "wire"},
       {
         "expr": "$clog2call?-1:0",
+        "line": 94,
         "lsb": 0,
         "msb": 0,
         "name": "mem_n_waddr_muxed",
@@ -192,10 +281,11 @@
         "type": "wire",
         "unknown": true
       },
-      {"lsb": 0, "msb": 17, "name": "mem_n_wdata_muxed", "scalar": false, "type": "wire"},
-      {"lsb": 0, "msb": 0, "name": "mem_nm1_we_muxed", "scalar": true, "type": "wire"},
+      {"line": 95, "lsb": 0, "msb": 17, "name": "mem_n_wdata_muxed", "scalar": false, "type": "wire"},
+      {"line": 111, "lsb": 0, "msb": 0, "name": "mem_nm1_we_muxed", "scalar": true, "type": "wire"},
       {
         "expr": "$clog2call?-1:0",
+        "line": 112,
         "lsb": 0,
         "msb": 0,
         "name": "mem_nm1_waddr_muxed",
@@ -203,16 +293,49 @@
         "type": "wire",
         "unknown": true
       },
-      {"lsb": 0, "msb": 17, "name": "mem_nm1_wdata_muxed", "scalar": false, "type": "wire"}
+      {"line": 113, "lsb": 0, "msb": 17, "name": "mem_nm1_wdata_muxed", "scalar": false, "type": "wire"}
     ],
     "parameters": [{"default": "30", "name": "NUM_ROWS"}],
     "ports": [
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "clk", "scalar": true, "type": "unspecified"},
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "rst", "scalar": true, "type": "unspecified"},
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "start", "scalar": true, "type": "unspecified"},
-      {"direction": "input", "lsb": 0, "msb": 17, "name": "rho", "scalar": false, "type": "unspecified"},
       {
         "direction": "input",
+        "line": 16,
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "line": 17,
+        "lsb": 0,
+        "msb": 0,
+        "name": "rst",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "line": 18,
+        "lsb": 0,
+        "msb": 0,
+        "name": "start",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "line": 20,
+        "lsb": 0,
+        "msb": 17,
+        "name": "rho",
+        "scalar": false,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "line": 21,
         "lsb": 0,
         "msb": 17,
         "name": "u_left",
@@ -221,6 +344,7 @@
       },
       {
         "direction": "input",
+        "line": 22,
         "lsb": 0,
         "msb": 17,
         "name": "u_right",
@@ -229,6 +353,7 @@
       },
       {
         "direction": "input",
+        "line": 25,
         "lsb": 0,
         "msb": 0,
         "name": "mem_n_we_ovrd",
@@ -238,6 +363,7 @@
       {
         "direction": "input",
         "expr": "$clog2call?-1:0",
+        "line": 26,
         "lsb": 0,
         "msb": 0,
         "name": "mem_n_waddr_ovrd",
@@ -247,6 +373,7 @@
       },
       {
         "direction": "input",
+        "line": 27,
         "lsb": 0,
         "msb": 17,
         "name": "mem_n_wdata_ovrd",
@@ -255,6 +382,7 @@
       },
       {
         "direction": "input",
+        "line": 28,
         "lsb": 0,
         "msb": 0,
         "name": "mem_nm1_we_ovrd",
@@ -264,6 +392,7 @@
       {
         "direction": "input",
         "expr": "$clog2call?-1:0",
+        "line": 29,
         "lsb": 0,
         "msb": 0,
         "name": "mem_nm1_waddr_ovrd",
@@ -273,6 +402,7 @@
       },
       {
         "direction": "input",
+        "line": 30,
         "lsb": 0,
         "msb": 17,
         "name": "mem_nm1_wdata_ovrd",
@@ -281,6 +411,7 @@
       },
       {
         "direction": "output",
+        "line": 33,
         "lsb": 0,
         "msb": 17,
         "name": "u_center",
@@ -288,6 +419,7 @@
         "type": "unspecified"
       }
     ],
+    "pragmas": [],
     "source_file": "ColumnWrapper.v"
   }
 ]

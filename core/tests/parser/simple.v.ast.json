@@ -2,16 +2,43 @@
   {
     "always_blocks": [],
     "assigns": [],
+    "end_line": 5,
     "gate_primitives": [],
     "instances": [],
+    "line": 1,
     "name": "simple",
     "net_decls": [],
     "parameters": [],
     "ports": [
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "clk", "scalar": true, "type": "unspecified"},
-      {"direction": "input", "lsb": 0, "msb": 0, "name": "rst", "scalar": true, "type": "unspecified"},
-      {"direction": "output", "lsb": 0, "msb": 0, "name": "out", "scalar": true, "type": "unspecified"}
+      {
+        "direction": "input",
+        "line": 2,
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "line": 3,
+        "lsb": 0,
+        "msb": 0,
+        "name": "rst",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "line": 4,
+        "lsb": 0,
+        "msb": 0,
+        "name": "out",
+        "scalar": true,
+        "type": "unspecified"
+      }
     ],
+    "pragmas": [],
     "source_file": "simple.v"
   }
 ]

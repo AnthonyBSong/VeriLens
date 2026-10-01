@@ -226,29 +226,129 @@
           ],
           "kind": "SEQ_BLOCK"
         },
+        "line": 16,
         "sensitivity": "*"
       }
     ],
     "assigns": [],
+    "end_line": 31,
     "gate_primitives": [],
     "instances": [],
+    "line": 2,
     "name": "ControlUnit",
     "net_decls": [],
     "parameters": [],
     "ports": [
-      {"direction": "input", "lsb": 0, "msb": 6, "name": "opcode", "scalar": false, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 2, "name": "funct3", "scalar": false, "type": "logic"},
-      {"direction": "input", "lsb": 0, "msb": 6, "name": "funct7", "scalar": false, "type": "logic"},
-      {"direction": "output", "lsb": 0, "msb": 0, "name": "reg_write", "scalar": true, "type": "logic"},
-      {"direction": "output", "lsb": 0, "msb": 0, "name": "mem_read", "scalar": true, "type": "logic"},
-      {"direction": "output", "lsb": 0, "msb": 0, "name": "mem_write", "scalar": true, "type": "logic"},
-      {"direction": "output", "lsb": 0, "msb": 0, "name": "mem_to_reg", "scalar": true, "type": "logic"},
-      {"direction": "output", "lsb": 0, "msb": 0, "name": "alu_src", "scalar": true, "type": "logic"},
-      {"direction": "output", "lsb": 0, "msb": 0, "name": "branch", "scalar": true, "type": "logic"},
-      {"direction": "output", "lsb": 0, "msb": 0, "name": "jump", "scalar": true, "type": "logic"},
-      {"direction": "output", "lsb": 0, "msb": 3, "name": "alu_op", "scalar": false, "type": "logic"},
-      {"direction": "output", "lsb": 0, "msb": 2, "name": "imm_sel", "scalar": false, "type": "logic"}
+      {
+        "direction": "input",
+        "line": 3,
+        "lsb": 0,
+        "msb": 6,
+        "name": "opcode",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 4,
+        "lsb": 0,
+        "msb": 2,
+        "name": "funct3",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 5,
+        "lsb": 0,
+        "msb": 6,
+        "name": "funct7",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 6,
+        "lsb": 0,
+        "msb": 0,
+        "name": "reg_write",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 7,
+        "lsb": 0,
+        "msb": 0,
+        "name": "mem_read",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 8,
+        "lsb": 0,
+        "msb": 0,
+        "name": "mem_write",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 9,
+        "lsb": 0,
+        "msb": 0,
+        "name": "mem_to_reg",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 10,
+        "lsb": 0,
+        "msb": 0,
+        "name": "alu_src",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 11,
+        "lsb": 0,
+        "msb": 0,
+        "name": "branch",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 12,
+        "lsb": 0,
+        "msb": 0,
+        "name": "jump",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 13,
+        "lsb": 0,
+        "msb": 3,
+        "name": "alu_op",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 14,
+        "lsb": 0,
+        "msb": 2,
+        "name": "imm_sel",
+        "scalar": false,
+        "type": "logic"
+      }
     ],
+    "pragmas": [],
     "source_file": "ControlUnit.sv"
   }
 ]
