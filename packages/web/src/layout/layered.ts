@@ -196,11 +196,93 @@ export function layered(input: LayeredInput, channelUsage: ChannelUsage): Layere
     n.x = n.kind === 'in' ? layerX[l] + layerW[l] - n.w : n.kind === 'out' ? layerX[l] : layerX[l] + (layerW[l] - n.w) / 2;
   }
 
-  // 6. y placement: stack nodes in layer order
+  // 6. y placement: initial stacking, then priority alignment sweeps toward neighbour ports
   const gap = input.nodeGap;
   for (const l of layers) { let y = 0; for (const id of l) { const n = nodes.get(id)!; n.y = y; y += n.h + gap; } }
+  const anchorY = (n: GNode, side: 'west' | 'east'): number => {
+    const ps = Object.values(n.ports).filter((p) => p.side === side);
+    return ps.length ? ps.reduce((s, p) => s + p.y, 0) / ps.length : n.h / 2;
+  };
+  const desiredY = (id: string, nb: string[], down: boolean): number | undefined => {
+    if (!nb.length) return undefined;
+    const n = nodes.get(id)!;
+    const ys = nb.map((m) => { const mn = nodes.get(m)!; return mn.y + anchorY(mn, down ? 'east' : 'west'); });
+    ys.sort((a, b) => a - b);
+    const med = ys.length % 2 ? ys[(ys.length - 1) / 2] : (ys[ys.length / 2 - 1] + ys[ys.length / 2]) / 2;
+    return med - anchorY(n, down ? 'west' : 'east');
+  };
+  const placeLayer = (l: string[], desired: Map<string, number>, nb: Map<string, string[]>) => {
+    // priority: nodes with more connections are placed first at their desired y; others slot around them
+    const prio = [...l].sort((a, b) => (nb.get(b)?.length ?? 0) - (nb.get(a)?.length ?? 0) || l.indexOf(a) - l.indexOf(b));
+    const placed = new Set<string>();
+    for (const id of prio) {
+      const i = l.indexOf(id);
+      const n = nodes.get(id)!;
+      let lo = -Infinity, hi = Infinity;
+      let need = 0;
+      for (let k = i - 1; k >= 0; k--) { const m = nodes.get(l[k])!; if (placed.has(l[k])) { lo = m.y + m.h + gap + need; break; } need += m.h + gap; }
+      need = 0;
+      for (let k = i + 1; k < l.length; k++) { const m = nodes.get(l[k])!; if (placed.has(l[k])) { hi = m.y - gap - need - n.h; break; } need += m.h + gap; }
+      const want = desired.get(id) ?? n.y;
+      n.y = Math.min(hi, Math.max(lo, want));
+      placed.add(id);
+    }
+  };
+  for (let iter = 0; iter < 3; iter++) {
+    for (let l = 1; l < L; l++) {
+      const desired = new Map<string, number>();
+      for (const id of layers[l]) { const d = desiredY(id, predsO.get(id) ?? [], true); if (d !== undefined) desired.set(id, d); }
+      placeLayer(layers[l], desired, predsO);
+    }
+    for (let l = L - 2; l >= 0; l--) {
+      const desired = new Map<string, number>();
+      for (const id of layers[l]) { const d = desiredY(id, succs.get(id) ?? [], false); if (d !== undefined) desired.set(id, d); }
+      placeLayer(layers[l], desired, succs);
+    }
+  }
+  straightenDummies(layers, nodes, predsO, succs, gap);
   normalize(nodes);
   return { nodes, layers, channels, feedback, droppedRules, forward, dummies };
+}
+
+/**
+ * Long-edge lanes (dummies), boundary terminals and constants follow their
+ * neighbours' y when a free band exists there, even if barycenter ordering put
+ * them elsewhere. Cells never move; a lane landing inside a cell snaps to just
+ * outside it. Layer order is then re-derived from y so routing stays consistent.
+ */
+function straightenDummies(layers: string[][], nodes: Map<string, GNode>, preds: Map<string, string[]>, succs: Map<string, string[]>, gap: number) {
+  const movable = (m: GNode) => !!m.dummy || m.kind !== 'cell';
+  const centerOf = (id: string) => { const m = nodes.get(id)!; return m.y + m.h / 2; };
+  // pass 0 sweeps left->right following predecessors (lanes run straight from their source);
+  // pass 1 sweeps right->left for source-side movables (input terminals, constants) following successors
+  for (let pass = 0; pass < 2; pass++) {
+    const order = pass === 0 ? layers : [...layers].reverse();
+    for (const l of order) {
+      const cells = l.map((id) => nodes.get(id)!).filter((m) => !movable(m));
+      for (const id of l) {
+        const d = nodes.get(id)!;
+        if (!movable(d)) continue;
+        const ps = preds.get(id) ?? [];
+        const nb = pass === 0 ? ps : (ps.length ? [] : succs.get(id) ?? []);
+        if (!nb.length) continue;
+        let y = nb.reduce((s, m) => s + centerOf(m), 0) / nb.length - d.h / 2;
+        for (const r of cells) {
+          if (y + d.h > r.y - gap / 2 && y < r.y + r.h + gap / 2) { y = Math.abs(y - r.y) < Math.abs(y - (r.y + r.h)) ? r.y - gap / 2 - d.h : r.y + r.h + gap / 2; }
+        }
+        d.y = y;
+      }
+      l.sort((a, b) => nodes.get(a)!.y - nodes.get(b)!.y || l.indexOf(a) - l.indexOf(b));
+      // stack movable nodes so they do not overlap each other (cells stay put)
+      let cursor = -Infinity;
+      for (const id of l) {
+        const m = nodes.get(id)!;
+        if (!movable(m)) { cursor = m.y + m.h + gap / 2; continue; }
+        m.y = Math.max(m.y, cursor);
+        cursor = m.y + m.h + (m.dummy ? gap / 2 : gap / 2);
+      }
+    }
+  }
 }
 
 /** Shift all nodes so the minimum y is 0. x is left untouched. */
