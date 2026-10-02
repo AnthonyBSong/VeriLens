@@ -1,0 +1,95 @@
+#!/usr/bin/env bash
+# VeriLens launcher: Verilog/SystemVerilog in, interactive schematic out.
+#
+#   ./verilens <file.v|file.sv|dir> [more inputs...] [options]
+#
+#   -l, --layout FILE   YAML layout rules (see packages/web/docs/FORMATS.md)
+#   -t, --top NAME      top module (default: `// verilens: top` pragma, else the unique root)
+#   -o, --out FILE      output HTML (default: ./<first input name>.verilens.html)
+#       --dev           run the Vite dev server with these inputs preloaded instead of building HTML
+#       --port N        dev server port (default 5173)
+#       --no-open       do not open a browser
+#       --rebuild       force rebuilding the core and the viewer bundle
+#
+# Examples:
+#   ./verilens rtl/ -l layout.yaml                 # build rtl.verilens.html and open it
+#   ./verilens core/tests/examples/ProcBase.v --dev
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+WEB="$ROOT/packages/web"
+GEN="$ROOT/build/core/tools/gen_ast"
+
+inputs=(); layout=""; top=""; out=""; dev=0; port=5173; open=1; rebuild=0
+usage() { sed -n '2,20p' "$0" | sed 's/^# \{0,1\}//'; exit "${1:-0}"; }
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -l|--layout) layout="$2"; shift 2 ;;
+    -t|--top)    top="$2"; shift 2 ;;
+    -o|--out)    out="$2"; shift 2 ;;
+    --dev)       dev=1; shift ;;
+    --port)      port="$2"; shift 2 ;;
+    --no-open)   open=0; shift ;;
+    --rebuild)   rebuild=1; shift ;;
+    -h|--help)   usage 0 ;;
+    -*)          echo "unknown option: $1" >&2; usage 1 ;;
+    *)           inputs+=("$1"); shift ;;
+  esac
+done
+[[ ${#inputs[@]} -gt 0 ]] || { echo "error: no Verilog inputs given" >&2; usage 1; }
+for f in "${inputs[@]}"; do [[ -e "$f" ]] || { echo "error: input not found: $f" >&2; exit 1; }; done
+[[ -z "$layout" || -f "$layout" ]] || { echo "error: layout file not found: $layout" >&2; exit 1; }
+
+# 1. core binary
+if [[ $rebuild -eq 1 || ! -x "$GEN" ]]; then
+  echo ">> building core (cmake)"
+  cmake -S "$ROOT" -B "$ROOT/build" >/dev/null
+  cmake --build "$ROOT/build" --target gen_ast >/dev/null
+fi
+# 2. viewer dependencies
+if [[ ! -d "$WEB/node_modules" ]]; then
+  echo ">> installing viewer dependencies (npm install)"
+  (cd "$WEB" && npm install --no-audit --no-fund >/dev/null)
+fi
+
+# 3. parse: absolute paths so the launcher works from any cwd
+abs=(); for f in "${inputs[@]}"; do abs+=("$(cd "$(dirname "$f")" && pwd)/$(basename "$f")"); done
+name="$(basename "${inputs[0]}")"; name="${name%.*}"
+if [[ -z "$out" ]]; then out="$PWD/$name.verilens.html"; fi
+ast="${out%.html}.ast.json"; [[ "$ast" == "$out" ]] && ast="$out.ast.json"
+# dev mode keeps its scratch AST inside the package (gitignored) instead of the cwd
+[[ $dev -eq 1 ]] && ast="$WEB/.verilens/$name.ast.json"
+mkdir -p "$(dirname "$out")" "$(dirname "$ast")"
+echo ">> gen_ast ${inputs[*]} -> $ast"
+set +e; "$GEN" "${abs[@]}" > "$ast"; status=$?; set -e
+case $status in
+  0) ;;
+  2) echo ">> validator reported errors (see above); continuing with the structural model" >&2 ;;
+  *) echo "error: gen_ast failed (exit $status)" >&2; exit $status ;;
+esac
+[[ -s "$ast" ]] || { echo "error: gen_ast produced no output" >&2; exit 1; }
+layout_abs=""; [[ -n "$layout" ]] && layout_abs="$(cd "$(dirname "$layout")" && pwd)/$(basename "$layout")"
+
+# 4a. dev server with the session preloaded (edit the YAML, then Apply / Reload in the Layout tab)
+if [[ $dev -eq 1 ]]; then
+  export VERILENS_SESSION_AST="$ast" VERILENS_SESSION_LAYOUT="$layout_abs" VERILENS_SESSION_TOP="$top" VERILENS_SESSION_NAME="$name"
+  echo ">> dev server on http://localhost:$port (session: $name)"
+  cd "$WEB"
+  if [[ $open -eq 1 ]]; then exec npx vite --port "$port" --strictPort --open; else exec npx vite --port "$port" --strictPort; fi
+fi
+
+# 4b. self-contained HTML
+if [[ $rebuild -eq 1 || ! -f "$WEB/dist/index.html" ]]; then
+  echo ">> building viewer bundle (npm run build)"
+  (cd "$WEB" && npm run build >/dev/null)
+fi
+args=("$ast"); [[ -n "$layout_abs" ]] && args+=("$layout_abs")
+[[ -n "$top" ]] && args+=(--top "$top")
+(cd "$WEB" && node scripts/build-html.mjs "${args[@]}" -o "$out")
+if [[ $open -eq 1 ]]; then
+  case "$(uname -s)" in
+    Darwin) open "$out" ;;
+    Linux)  xdg-open "$out" >/dev/null 2>&1 || echo "open $out in a browser" ;;
+    *)      echo "open $out in a browser" ;;
+  esac
+fi

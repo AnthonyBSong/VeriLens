@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import type { Design, InstancePath } from '../model/design';
 import { allInstancePaths, moduleAt, pathKey } from '../model/design';
 import { applyLayoutText, focusModule, locateInstance, setLayoutText, setUi, useStore } from '../state/store';
-import { SAMPLE_LAYOUT, SAMPLE_CONFLICT_LAYOUT } from '../app/io';
+import { SAMPLE_LAYOUT, SAMPLE_CONFLICT_LAYOUT, reloadSession } from '../app/io';
 
 export function Sidebar() {
   const tab = useStore((s) => s.sidebarTab);
@@ -87,6 +87,7 @@ function LayoutEditor() {
         <button onClick={() => { setLayoutText(SAMPLE_LAYOUT); applyLayoutText(SAMPLE_LAYOUT); }}>Sample</button>
         <button onClick={() => { setLayoutText(SAMPLE_CONFLICT_LAYOUT); applyLayoutText(SAMPLE_CONFLICT_LAYOUT); }}>Conflicting</button>
         <button onClick={() => { setLayoutText(''); applyLayoutText(''); }}>Clear</button>
+        <button onClick={() => void reloadSession().then((ok) => { if (!ok) alert('No launcher session: start with ./verilens <inputs> --dev'); })} title="Re-read the design and layout file given to ./verilens --dev">Reload files</button>
       </div>
       <textarea spellCheck={false} value={text} onChange={(e) => setLayoutText(e.target.value)} placeholder={'version: 1\nscopes:\n  - scope: top\n    constraints: []'} data-testid="layout-text" />
       <div className="status-line">{errors.length ? `${errors.length} error(s): rules rejected, previous layout kept` : file ? `${file.scopes.length} scope(s) active` : 'no rules: automatic layout'}</div>
