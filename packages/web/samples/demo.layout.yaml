@@ -1,0 +1,66 @@
+# Layout rules for the demo design (see docs/FORMATS.md for semantics).
+version: 1
+
+defaults:
+  direction: right
+  nodeGap: 32
+  layerGap: 80
+  routing: orthogonal
+
+scopes:
+  - scope: top
+    constraints:
+      - id: input-before-compute
+        kind: leftOf
+        a: input_fifo
+        b: compute
+        gap: 80
+        strength: required
+
+      - id: compute-before-output
+        kind: leftOf
+        a: compute
+        b: output_fifo
+        gap: 80
+        strength: required
+
+      - id: datapath-alignment
+        kind: alignY
+        nodes: [input_fifo, compute, output_fifo]
+        strength: preferred
+        weight: 10
+
+      - id: controller-above-compute
+        kind: above
+        a: controller
+        b: compute
+        gap: 40
+        strength: preferred
+        weight: 5
+
+    ports:
+      - node: compute
+        side: west
+        order: [data_in, valid_in, start, mode, coeff_sel, ready_in, clk, rst_n]
+      - node: compute
+        side: east
+        order: [data_out, valid_out, ready_out, done]
+
+    frames:
+      - node: compute
+        width: 640
+        height: 420
+
+  - scope: top/compute
+    constraints:
+      - id: pe-chain
+        kind: leftOf
+        a: pe0
+        b: pe1
+        gap: 60
+        strength: required
+      - id: pe-row
+        kind: alignY
+        nodes: [pe0, pe1]
+        strength: preferred
+        weight: 3
