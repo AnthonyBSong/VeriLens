@@ -1,0 +1,43 @@
+# Deliberately broken layout rules: every problem here produces a diagnostic.
+version: 1
+
+scopes:
+  - scope: top
+    constraints:
+      - id: a-left-of-b
+        kind: leftOf
+        a: input_fifo
+        b: compute
+        strength: required
+      - id: b-left-of-a          # cycle with a-left-of-b
+        kind: leftOf
+        a: compute
+        b: input_fifo
+        strength: required
+      - id: a-left-of-b          # duplicate id
+        kind: above
+        a: controller
+        b: compute
+      - id: ghost
+        kind: leftOf
+        a: nonexistent_block    # unknown node
+        b: compute
+      - id: fancy
+        kind: sameRow           # unsupported kind
+        nodes: [compute, output_fifo]
+      - id: negative-gap
+        kind: above
+        a: controller
+        b: output_fifo
+        gap: -10                # invalid value
+    ports:
+      - node: compute
+        side: east
+        order: [data_out, no_such_port]   # unknown port
+    frames:
+      - node: controller        # not an expandable... actually it is; width invalid
+        width: 0
+        height: 100
+
+  - scope: top/does_not_exist   # unknown scope path
+    constraints: []
