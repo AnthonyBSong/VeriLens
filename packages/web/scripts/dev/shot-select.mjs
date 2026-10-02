@@ -1,0 +1,15 @@
+import { chromium } from '@playwright/test';
+const out = new URL('../../test-results/shots/', import.meta.url).pathname; await import('node:fs').then((fs) => fs.mkdirSync(out, { recursive: true }));
+const browser = await chromium.launch({ channel: 'chrome' });
+const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
+await page.goto('http://localhost:4173/?sample=layout');
+await page.waitForSelector('.module-view[data-scope="top"] .cell[data-path="top/compute"]');
+await page.click('[data-toggle="top/compute"]');
+await page.waitForSelector('svg[data-nested="top/compute"] .module-view');
+await page.locator('.module-view[data-scope="top"] .wire[data-net="fifo_data"] .hit').dispatchEvent('click');
+await page.getByRole('button', { name: 'Fit selection' }).click();
+await page.waitForTimeout(300);
+await page.mouse.move(700, 450); await page.mouse.wheel(0, 250);
+await page.waitForTimeout(300);
+await page.screenshot({ path: out + 'select-net.png' });
+await browser.close();
