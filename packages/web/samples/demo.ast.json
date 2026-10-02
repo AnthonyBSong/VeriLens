@@ -1,0 +1,2394 @@
+[
+  {
+    "always_blocks": [],
+    "assigns": [],
+    "end_line": 47,
+    "gate_primitives": [],
+    "instances": [
+      {
+        "connections": [
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "rst_n"
+            },
+            "port": "rst_n",
+            "signal": "rst_n"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "in_data"
+            },
+            "port": "wr_data",
+            "signal": "in_data"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "in_valid"
+            },
+            "port": "wr_valid",
+            "signal": "in_valid"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "in_ready"
+            },
+            "port": "wr_ready",
+            "signal": "in_ready"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "fifo_data"
+            },
+            "port": "rd_data",
+            "signal": "fifo_data"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "fifo_valid"
+            },
+            "port": "rd_valid",
+            "signal": "fifo_valid"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "fifo_ready"
+            },
+            "port": "rd_ready",
+            "signal": "fifo_ready"
+          }
+        ],
+        "instance": "input_fifo",
+        "line": 23,
+        "module": "input_fifo",
+        "parameters": [
+          {
+            "name": "DEPTH",
+            "value": "4"
+          }
+        ],
+        "resolved": true,
+        "wildcard": false
+      },
+      {
+        "connections": [
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "rst_n"
+            },
+            "port": "rst_n",
+            "signal": "rst_n"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "fifo_valid"
+            },
+            "port": "data_valid",
+            "signal": "fifo_valid"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "done"
+            },
+            "port": "done",
+            "signal": "done"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "result_ready"
+            },
+            "port": "out_ready",
+            "signal": "result_ready"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "start"
+            },
+            "port": "start",
+            "signal": "start"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mode"
+            },
+            "port": "mode",
+            "signal": "mode"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "coeff_sel"
+            },
+            "port": "coeff_sel",
+            "signal": "coeff_sel"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "busy"
+            },
+            "port": "busy",
+            "signal": "busy"
+          }
+        ],
+        "instance": "controller",
+        "line": 29,
+        "module": "controller",
+        "parameters": [],
+        "resolved": true,
+        "wildcard": false
+      },
+      {
+        "connections": [
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "rst_n"
+            },
+            "port": "rst_n",
+            "signal": "rst_n"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "fifo_data"
+            },
+            "port": "data_in",
+            "signal": "fifo_data"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "fifo_valid"
+            },
+            "port": "valid_in",
+            "signal": "fifo_valid"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "fifo_ready"
+            },
+            "port": "ready_out",
+            "signal": "fifo_ready"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "start"
+            },
+            "port": "start",
+            "signal": "start"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "mode"
+            },
+            "port": "mode",
+            "signal": "mode"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "coeff_sel"
+            },
+            "port": "coeff_sel",
+            "signal": "coeff_sel"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "result"
+            },
+            "port": "data_out",
+            "signal": "result"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "result_valid"
+            },
+            "port": "valid_out",
+            "signal": "result_valid"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "result_ready"
+            },
+            "port": "ready_in",
+            "signal": "result_ready"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "done"
+            },
+            "port": "done",
+            "signal": "done"
+          }
+        ],
+        "instance": "compute",
+        "line": 35,
+        "module": "compute",
+        "parameters": [],
+        "resolved": true,
+        "wildcard": false
+      },
+      {
+        "connections": [
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "rst_n"
+            },
+            "port": "rst_n",
+            "signal": "rst_n"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "result"
+            },
+            "port": "wr_data",
+            "signal": "result"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "result_valid"
+            },
+            "port": "wr_valid",
+            "signal": "result_valid"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "result_ready"
+            },
+            "port": "wr_ready",
+            "signal": "result_ready"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "out_data"
+            },
+            "port": "rd_data",
+            "signal": "out_data"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "out_valid"
+            },
+            "port": "rd_valid",
+            "signal": "out_valid"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "out_ready"
+            },
+            "port": "rd_ready",
+            "signal": "out_ready"
+          }
+        ],
+        "instance": "output_fifo",
+        "line": 42,
+        "module": "output_fifo",
+        "parameters": [
+          {
+            "name": "DEPTH",
+            "value": "2"
+          }
+        ],
+        "resolved": true,
+        "wildcard": false
+      }
+    ],
+    "line": 5,
+    "name": "top",
+    "net_decls": [
+      {
+        "line": 16,
+        "lsb": 0,
+        "msb": 31,
+        "name": "fifo_data",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "line": 17,
+        "lsb": 0,
+        "msb": 0,
+        "name": "fifo_valid",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "line": 17,
+        "lsb": 0,
+        "msb": 0,
+        "name": "fifo_ready",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "line": 18,
+        "lsb": 0,
+        "msb": 31,
+        "name": "result",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "line": 19,
+        "lsb": 0,
+        "msb": 0,
+        "name": "result_valid",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "line": 19,
+        "lsb": 0,
+        "msb": 0,
+        "name": "result_ready",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "line": 20,
+        "lsb": 0,
+        "msb": 0,
+        "name": "start",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "line": 20,
+        "lsb": 0,
+        "msb": 0,
+        "name": "done",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "line": 20,
+        "lsb": 0,
+        "msb": 0,
+        "name": "mode",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "line": 21,
+        "lsb": 0,
+        "msb": 3,
+        "name": "coeff_sel",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "line": 6,
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 7,
+        "lsb": 0,
+        "msb": 0,
+        "name": "rst_n",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 8,
+        "lsb": 0,
+        "msb": 31,
+        "name": "in_data",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 9,
+        "lsb": 0,
+        "msb": 0,
+        "name": "in_valid",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 10,
+        "lsb": 0,
+        "msb": 0,
+        "name": "in_ready",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 11,
+        "lsb": 0,
+        "msb": 31,
+        "name": "out_data",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 12,
+        "lsb": 0,
+        "msb": 0,
+        "name": "out_valid",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 13,
+        "lsb": 0,
+        "msb": 0,
+        "name": "out_ready",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 14,
+        "lsb": 0,
+        "msb": 0,
+        "name": "busy",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "pragmas": [
+      "top"
+    ],
+    "source_file": "demo.sv"
+  },
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {
+                "kind": "UNARY_OP",
+                "op": "!",
+                "operand": {
+                  "kind": "IDENTIFIER",
+                  "name": "rst_n"
+                }
+              },
+              "else": {
+                "body": [
+                  {
+                    "cond": {
+                      "kind": "IDENTIFIER",
+                      "name": "push"
+                    },
+                    "else": null,
+                    "kind": "IF_STATEMENT",
+                    "then": {
+                      "body": [
+                        {
+                          "kind": "NONBLOCKING_ASSIGN",
+                          "lhs": {
+                            "base": {
+                              "kind": "IDENTIFIER",
+                              "name": "mem"
+                            },
+                            "index": {
+                              "kind": "IDENTIFIER",
+                              "name": "wr_ptr"
+                            },
+                            "kind": "BIT_SELECT"
+                          },
+                          "rhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "wr_data"
+                          }
+                        },
+                        {
+                          "kind": "NONBLOCKING_ASSIGN",
+                          "lhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "wr_ptr"
+                          },
+                          "rhs": {
+                            "kind": "BINARY_OP",
+                            "lhs": {
+                              "kind": "IDENTIFIER",
+                              "name": "wr_ptr"
+                            },
+                            "op": "+",
+                            "rhs": {
+                              "kind": "LITERAL",
+                              "value": "1"
+                            }
+                          }
+                        }
+                      ],
+                      "kind": "SEQ_BLOCK"
+                    }
+                  },
+                  {
+                    "cond": {
+                      "kind": "IDENTIFIER",
+                      "name": "pop"
+                    },
+                    "else": null,
+                    "kind": "IF_STATEMENT",
+                    "then": {
+                      "kind": "NONBLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "rd_ptr"
+                      },
+                      "rhs": {
+                        "kind": "BINARY_OP",
+                        "lhs": {
+                          "kind": "IDENTIFIER",
+                          "name": "rd_ptr"
+                        },
+                        "op": "+",
+                        "rhs": {
+                          "kind": "LITERAL",
+                          "value": "1"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "count"
+                    },
+                    "rhs": {
+                      "kind": "BINARY_OP",
+                      "lhs": {
+                        "kind": "BINARY_OP",
+                        "lhs": {
+                          "kind": "IDENTIFIER",
+                          "name": "count"
+                        },
+                        "op": "+",
+                        "rhs": {
+                          "kind": "IDENTIFIER",
+                          "name": "push"
+                        }
+                      },
+                      "op": "-",
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "pop"
+                      }
+                    }
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              },
+              "kind": "IF_STATEMENT",
+              "then": {
+                "body": [
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "wr_ptr"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "0"
+                    }
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "rd_ptr"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "0"
+                    }
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "count"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "0"
+                    }
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "line": 69,
+        "sensitivity": "posedge clk or negedge rst_n"
+      }
+    ],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "push"
+        },
+        "line": 63,
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "wr_valid"
+          },
+          "op": "&",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "wr_ready"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "pop"
+        },
+        "line": 64,
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "rd_valid"
+          },
+          "op": "&",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "rd_ready"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "wr_ready"
+        },
+        "line": 65,
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "count"
+          },
+          "op": "!=",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "DEPTH"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "rd_valid"
+        },
+        "line": 66,
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "count"
+          },
+          "op": "!=",
+          "rhs": {
+            "kind": "LITERAL",
+            "value": "0"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "rd_data"
+        },
+        "line": 67,
+        "rhs": {
+          "base": {
+            "kind": "IDENTIFIER",
+            "name": "mem"
+          },
+          "index": {
+            "kind": "IDENTIFIER",
+            "name": "rd_ptr"
+          },
+          "kind": "BIT_SELECT"
+        }
+      }
+    ],
+    "end_line": 78,
+    "gate_primitives": [],
+    "instances": [],
+    "line": 49,
+    "name": "input_fifo",
+    "net_decls": [
+      {
+        "line": 59,
+        "lsb": 0,
+        "msb": 31,
+        "name": "mem",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "line": 60,
+        "lsb": 0,
+        "msb": 2,
+        "name": "wr_ptr",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "line": 60,
+        "lsb": 0,
+        "msb": 2,
+        "name": "rd_ptr",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "line": 60,
+        "lsb": 0,
+        "msb": 2,
+        "name": "count",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "line": 61,
+        "lsb": 0,
+        "msb": 0,
+        "name": "push",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "line": 61,
+        "lsb": 0,
+        "msb": 0,
+        "name": "pop",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "parameters": [
+      {
+        "default": "4",
+        "name": "DEPTH"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "line": 50,
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 51,
+        "lsb": 0,
+        "msb": 0,
+        "name": "rst_n",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 52,
+        "lsb": 0,
+        "msb": 31,
+        "name": "wr_data",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 53,
+        "lsb": 0,
+        "msb": 0,
+        "name": "wr_valid",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 54,
+        "lsb": 0,
+        "msb": 0,
+        "name": "wr_ready",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 55,
+        "lsb": 0,
+        "msb": 31,
+        "name": "rd_data",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 56,
+        "lsb": 0,
+        "msb": 0,
+        "name": "rd_valid",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 57,
+        "lsb": 0,
+        "msb": 0,
+        "name": "rd_ready",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "pragmas": [],
+    "source_file": "demo.sv"
+  },
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {
+                "kind": "UNARY_OP",
+                "op": "!",
+                "operand": {
+                  "kind": "IDENTIFIER",
+                  "name": "rst_n"
+                }
+              },
+              "else": {
+                "body": [
+                  {
+                    "cond": {
+                      "kind": "BINARY_OP",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "wr_valid"
+                      },
+                      "op": "&",
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "wr_ready"
+                      }
+                    },
+                    "else": {
+                      "cond": {
+                        "kind": "IDENTIFIER",
+                        "name": "rd_ready"
+                      },
+                      "else": null,
+                      "kind": "IF_STATEMENT",
+                      "then": {
+                        "kind": "NONBLOCKING_ASSIGN",
+                        "lhs": {
+                          "kind": "IDENTIFIER",
+                          "name": "full"
+                        },
+                        "rhs": {
+                          "kind": "LITERAL",
+                          "value": "1'b0"
+                        }
+                      }
+                    },
+                    "kind": "IF_STATEMENT",
+                    "then": {
+                      "body": [
+                        {
+                          "kind": "NONBLOCKING_ASSIGN",
+                          "lhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "buffer"
+                          },
+                          "rhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "wr_data"
+                          }
+                        },
+                        {
+                          "kind": "NONBLOCKING_ASSIGN",
+                          "lhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "full"
+                          },
+                          "rhs": {
+                            "kind": "LITERAL",
+                            "value": "1'b1"
+                          }
+                        }
+                      ],
+                      "kind": "SEQ_BLOCK"
+                    }
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              },
+              "kind": "IF_STATEMENT",
+              "then": {
+                "body": [
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "full"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "1'b0"
+                    }
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "line": 97,
+        "sensitivity": "posedge clk or negedge rst_n"
+      }
+    ],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "wr_ready"
+        },
+        "line": 93,
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "UNARY_OP",
+            "op": "!",
+            "operand": {
+              "kind": "IDENTIFIER",
+              "name": "full"
+            }
+          },
+          "op": "|",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "rd_ready"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "rd_valid"
+        },
+        "line": 94,
+        "rhs": {
+          "kind": "IDENTIFIER",
+          "name": "full"
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "rd_data"
+        },
+        "line": 95,
+        "rhs": {
+          "kind": "IDENTIFIER",
+          "name": "buffer"
+        }
+      }
+    ],
+    "end_line": 105,
+    "gate_primitives": [],
+    "instances": [],
+    "line": 80,
+    "name": "output_fifo",
+    "net_decls": [
+      {
+        "line": 90,
+        "lsb": 0,
+        "msb": 31,
+        "name": "buffer",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "line": 91,
+        "lsb": 0,
+        "msb": 0,
+        "name": "full",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "parameters": [
+      {
+        "default": "2",
+        "name": "DEPTH"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "line": 81,
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 82,
+        "lsb": 0,
+        "msb": 0,
+        "name": "rst_n",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 83,
+        "lsb": 0,
+        "msb": 31,
+        "name": "wr_data",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 84,
+        "lsb": 0,
+        "msb": 0,
+        "name": "wr_valid",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 85,
+        "lsb": 0,
+        "msb": 0,
+        "name": "wr_ready",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 86,
+        "lsb": 0,
+        "msb": 31,
+        "name": "rd_data",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 87,
+        "lsb": 0,
+        "msb": 0,
+        "name": "rd_valid",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 88,
+        "lsb": 0,
+        "msb": 0,
+        "name": "rd_ready",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "pragmas": [],
+    "source_file": "demo.sv"
+  },
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "next_state"
+              },
+              "rhs": {
+                "kind": "IDENTIFIER",
+                "name": "state"
+              }
+            },
+            {
+              "expr": {
+                "kind": "IDENTIFIER",
+                "name": "state"
+              },
+              "items": [
+                {
+                  "body": {
+                    "cond": {
+                      "kind": "IDENTIFIER",
+                      "name": "data_valid"
+                    },
+                    "else": null,
+                    "kind": "IF_STATEMENT",
+                    "then": {
+                      "kind": "BLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "next_state"
+                      },
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "RUN"
+                      }
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "IDLE"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "cond": {
+                      "kind": "IDENTIFIER",
+                      "name": "done"
+                    },
+                    "else": null,
+                    "kind": "IF_STATEMENT",
+                    "then": {
+                      "kind": "BLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "next_state"
+                      },
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "DRAIN"
+                      }
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "RUN"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "cond": {
+                      "kind": "IDENTIFIER",
+                      "name": "out_ready"
+                    },
+                    "else": null,
+                    "kind": "IF_STATEMENT",
+                    "then": {
+                      "kind": "BLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "next_state"
+                      },
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "IDLE"
+                      }
+                    }
+                  },
+                  "patterns": [
+                    {
+                      "kind": "IDENTIFIER",
+                      "name": "DRAIN"
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "next_state"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "IDLE"
+                    }
+                  },
+                  "patterns": []
+                }
+              ],
+              "kind": "CASE_STATEMENT",
+              "variant": "case"
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "line": 125,
+        "sensitivity": "*"
+      },
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {
+                "kind": "UNARY_OP",
+                "op": "!",
+                "operand": {
+                  "kind": "IDENTIFIER",
+                  "name": "rst_n"
+                }
+              },
+              "else": {
+                "body": [
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "state"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "next_state"
+                    }
+                  },
+                  {
+                    "cond": {
+                      "kind": "IDENTIFIER",
+                      "name": "done"
+                    },
+                    "else": null,
+                    "kind": "IF_STATEMENT",
+                    "then": {
+                      "kind": "NONBLOCKING_ASSIGN",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "coeff_sel"
+                      },
+                      "rhs": {
+                        "kind": "BINARY_OP",
+                        "lhs": {
+                          "kind": "IDENTIFIER",
+                          "name": "coeff_sel"
+                        },
+                        "op": "+",
+                        "rhs": {
+                          "kind": "LITERAL",
+                          "value": "4'd1"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              },
+              "kind": "IF_STATEMENT",
+              "then": {
+                "body": [
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "state"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "IDLE"
+                    }
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "coeff_sel"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "4'd0"
+                    }
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "line": 135,
+        "sensitivity": "posedge clk or negedge rst_n"
+      }
+    ],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "start"
+        },
+        "line": 121,
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "IDENTIFIER",
+              "name": "state"
+            },
+            "op": "==",
+            "rhs": {
+              "kind": "IDENTIFIER",
+              "name": "IDLE"
+            }
+          },
+          "op": "&",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "data_valid"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "busy"
+        },
+        "line": 122,
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "state"
+          },
+          "op": "!=",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "IDLE"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "mode"
+        },
+        "line": 123,
+        "rhs": {
+          "base": {
+            "kind": "IDENTIFIER",
+            "name": "coeff_sel"
+          },
+          "index": {
+            "kind": "LITERAL",
+            "value": "3"
+          },
+          "kind": "BIT_SELECT"
+        }
+      }
+    ],
+    "end_line": 144,
+    "gate_primitives": [],
+    "instances": [],
+    "line": 107,
+    "name": "controller",
+    "net_decls": [
+      {
+        "line": 119,
+        "lsb": 0,
+        "msb": 1,
+        "name": "state",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "line": 119,
+        "lsb": 0,
+        "msb": 1,
+        "name": "next_state",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "parameters": [
+      {
+        "default": "2'd0",
+        "name": "IDLE"
+      },
+      {
+        "default": "2'd1",
+        "name": "RUN"
+      },
+      {
+        "default": "2'd2",
+        "name": "DRAIN"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "line": 108,
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 109,
+        "lsb": 0,
+        "msb": 0,
+        "name": "rst_n",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 110,
+        "lsb": 0,
+        "msb": 0,
+        "name": "data_valid",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 111,
+        "lsb": 0,
+        "msb": 0,
+        "name": "done",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 112,
+        "lsb": 0,
+        "msb": 0,
+        "name": "out_ready",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 113,
+        "lsb": 0,
+        "msb": 0,
+        "name": "start",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 114,
+        "lsb": 0,
+        "msb": 0,
+        "name": "mode",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 115,
+        "lsb": 0,
+        "msb": 3,
+        "name": "coeff_sel",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 116,
+        "lsb": 0,
+        "msb": 0,
+        "name": "busy",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "pragmas": [],
+    "source_file": "demo.sv"
+  },
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {
+                "kind": "UNARY_OP",
+                "op": "!",
+                "operand": {
+                  "kind": "IDENTIFIER",
+                  "name": "rst_n"
+                }
+              },
+              "else": {
+                "body": [
+                  {
+                    "cond": {
+                      "kind": "IDENTIFIER",
+                      "name": "pe1_valid"
+                    },
+                    "else": null,
+                    "kind": "IF_STATEMENT",
+                    "then": {
+                      "body": [
+                        {
+                          "kind": "NONBLOCKING_ASSIGN",
+                          "lhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "acc"
+                          },
+                          "rhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "mux_out"
+                          }
+                        },
+                        {
+                          "kind": "NONBLOCKING_ASSIGN",
+                          "lhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "data_out"
+                          },
+                          "rhs": {
+                            "kind": "IDENTIFIER",
+                            "name": "mux_out"
+                          }
+                        }
+                      ],
+                      "kind": "SEQ_BLOCK"
+                    }
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "valid_out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "pe1_valid"
+                    }
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "done"
+                    },
+                    "rhs": {
+                      "kind": "BINARY_OP",
+                      "lhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "pe1_valid"
+                      },
+                      "op": "&",
+                      "rhs": {
+                        "kind": "IDENTIFIER",
+                        "name": "ready_in"
+                      }
+                    }
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              },
+              "kind": "IF_STATEMENT",
+              "then": {
+                "body": [
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "acc"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "32'd0"
+                    }
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "data_out"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "32'd0"
+                    }
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "valid_out"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "1'b0"
+                    }
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "done"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "1'b0"
+                    }
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "line": 182,
+        "sensitivity": "posedge clk or negedge rst_n"
+      }
+    ],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "coeff"
+        },
+        "line": 164,
+        "rhs": {
+          "kind": "CONCAT",
+          "parts": [
+            {
+              "kind": "LITERAL",
+              "value": "12'd0"
+            },
+            {
+              "kind": "IDENTIFIER",
+              "name": "coeff_sel"
+            }
+          ]
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "ready_out"
+        },
+        "line": 165,
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "ready_in"
+          },
+          "op": "|",
+          "rhs": {
+            "kind": "UNARY_OP",
+            "op": "~",
+            "operand": {
+              "kind": "IDENTIFIER",
+              "name": "valid_out"
+            }
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "sum"
+        },
+        "line": 179,
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "pe1_out"
+          },
+          "op": "+",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "acc"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "mux_out"
+        },
+        "line": 180,
+        "rhs": {
+          "cond": {
+            "kind": "IDENTIFIER",
+            "name": "mode"
+          },
+          "else": {
+            "kind": "IDENTIFIER",
+            "name": "pe1_out"
+          },
+          "kind": "CONDITIONAL",
+          "then": {
+            "kind": "IDENTIFIER",
+            "name": "sum"
+          }
+        }
+      }
+    ],
+    "end_line": 197,
+    "gate_primitives": [],
+    "instances": [
+      {
+        "connections": [
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "rst_n"
+            },
+            "port": "rst_n",
+            "signal": "rst_n"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "data_in"
+            },
+            "port": "a",
+            "signal": "data_in"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "coeff"
+            },
+            "port": "b",
+            "signal": "coeff"
+          },
+          {
+            "expr": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "IDENTIFIER",
+                "name": "valid_in"
+              },
+              "op": "&",
+              "rhs": {
+                "kind": "IDENTIFIER",
+                "name": "start"
+              }
+            },
+            "port": "valid_in",
+            "signal": "valid_in&start"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pe0_out"
+            },
+            "port": "y",
+            "signal": "pe0_out"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pe0_valid"
+            },
+            "port": "valid_out",
+            "signal": "pe0_valid"
+          }
+        ],
+        "instance": "pe0",
+        "line": 167,
+        "module": "pe",
+        "parameters": [
+          {
+            "name": "WIDTH",
+            "value": "32"
+          }
+        ],
+        "resolved": true,
+        "wildcard": false
+      },
+      {
+        "connections": [
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "clk"
+            },
+            "port": "clk",
+            "signal": "clk"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "rst_n"
+            },
+            "port": "rst_n",
+            "signal": "rst_n"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pe0_out"
+            },
+            "port": "a",
+            "signal": "pe0_out"
+          },
+          {
+            "expr": {
+              "base": {
+                "kind": "IDENTIFIER",
+                "name": "acc"
+              },
+              "kind": "PART_SELECT",
+              "lsb": {
+                "kind": "LITERAL",
+                "value": "0"
+              },
+              "msb": {
+                "kind": "LITERAL",
+                "value": "15"
+              }
+            },
+            "port": "b",
+            "signal": "acc[15:0]"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pe0_valid"
+            },
+            "port": "valid_in",
+            "signal": "pe0_valid"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pe1_out"
+            },
+            "port": "y",
+            "signal": "pe1_out"
+          },
+          {
+            "expr": {
+              "kind": "IDENTIFIER",
+              "name": "pe1_valid"
+            },
+            "port": "valid_out",
+            "signal": "pe1_valid"
+          }
+        ],
+        "instance": "pe1",
+        "line": 173,
+        "module": "pe",
+        "parameters": [
+          {
+            "name": "WIDTH",
+            "value": "32"
+          }
+        ],
+        "resolved": true,
+        "wildcard": false
+      }
+    ],
+    "line": 146,
+    "name": "compute",
+    "net_decls": [
+      {
+        "line": 160,
+        "lsb": 0,
+        "msb": 31,
+        "name": "pe0_out",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "line": 160,
+        "lsb": 0,
+        "msb": 31,
+        "name": "pe1_out",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "line": 160,
+        "lsb": 0,
+        "msb": 31,
+        "name": "sum",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "line": 160,
+        "lsb": 0,
+        "msb": 31,
+        "name": "acc",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "line": 160,
+        "lsb": 0,
+        "msb": 31,
+        "name": "mux_out",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "line": 161,
+        "lsb": 0,
+        "msb": 15,
+        "name": "coeff",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "line": 162,
+        "lsb": 0,
+        "msb": 0,
+        "name": "pe0_valid",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "line": 162,
+        "lsb": 0,
+        "msb": 0,
+        "name": "pe1_valid",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "line": 147,
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 148,
+        "lsb": 0,
+        "msb": 0,
+        "name": "rst_n",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 149,
+        "lsb": 0,
+        "msb": 31,
+        "name": "data_in",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 150,
+        "lsb": 0,
+        "msb": 0,
+        "name": "valid_in",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 151,
+        "lsb": 0,
+        "msb": 0,
+        "name": "ready_out",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 152,
+        "lsb": 0,
+        "msb": 0,
+        "name": "start",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 153,
+        "lsb": 0,
+        "msb": 0,
+        "name": "mode",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 154,
+        "lsb": 0,
+        "msb": 3,
+        "name": "coeff_sel",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 155,
+        "lsb": 0,
+        "msb": 31,
+        "name": "data_out",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 156,
+        "lsb": 0,
+        "msb": 0,
+        "name": "valid_out",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 157,
+        "lsb": 0,
+        "msb": 0,
+        "name": "ready_in",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 158,
+        "lsb": 0,
+        "msb": 0,
+        "name": "done",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "pragmas": [],
+    "source_file": "demo.sv"
+  },
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {
+                "kind": "UNARY_OP",
+                "op": "!",
+                "operand": {
+                  "kind": "IDENTIFIER",
+                  "name": "rst_n"
+                }
+              },
+              "else": {
+                "body": [
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "y"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "shifted"
+                    }
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "valid_out"
+                    },
+                    "rhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "valid_in"
+                    }
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              },
+              "kind": "IF_STATEMENT",
+              "then": {
+                "body": [
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "y"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "'0"
+                    }
+                  },
+                  {
+                    "kind": "NONBLOCKING_ASSIGN",
+                    "lhs": {
+                      "kind": "IDENTIFIER",
+                      "name": "valid_out"
+                    },
+                    "rhs": {
+                      "kind": "LITERAL",
+                      "value": "1'b0"
+                    }
+                  }
+                ],
+                "kind": "SEQ_BLOCK"
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "line": 213,
+        "sensitivity": "posedge clk or negedge rst_n"
+      }
+    ],
+    "assigns": [
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "product"
+        },
+        "line": 210,
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "a"
+          },
+          "op": "*",
+          "rhs": {
+            "kind": "IDENTIFIER",
+            "name": "b"
+          }
+        }
+      },
+      {
+        "lhs": {
+          "kind": "IDENTIFIER",
+          "name": "shifted"
+        },
+        "line": 211,
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "IDENTIFIER",
+            "name": "product"
+          },
+          "op": ">>",
+          "rhs": {
+            "kind": "LITERAL",
+            "value": "4"
+          }
+        }
+      }
+    ],
+    "end_line": 222,
+    "gate_primitives": [],
+    "instances": [],
+    "line": 199,
+    "name": "pe",
+    "net_decls": [
+      {
+        "expr": "WIDTH-1:0",
+        "line": 208,
+        "lsb": 0,
+        "msb": 0,
+        "name": "product",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "expr": "WIDTH-1:0",
+        "line": 208,
+        "lsb": 0,
+        "msb": 0,
+        "name": "shifted",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      }
+    ],
+    "parameters": [
+      {
+        "default": "32",
+        "name": "WIDTH"
+      }
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "line": 200,
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 201,
+        "lsb": 0,
+        "msb": 0,
+        "name": "rst_n",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "expr": "WIDTH-1:0",
+        "line": 202,
+        "lsb": 0,
+        "msb": 0,
+        "name": "a",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "input",
+        "line": 203,
+        "lsb": 0,
+        "msb": 15,
+        "name": "b",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 204,
+        "lsb": 0,
+        "msb": 0,
+        "name": "valid_in",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "expr": "WIDTH-1:0",
+        "line": 205,
+        "lsb": 0,
+        "msb": 0,
+        "name": "y",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "direction": "output",
+        "line": 206,
+        "lsb": 0,
+        "msb": 0,
+        "name": "valid_out",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "pragmas": [],
+    "source_file": "demo.sv"
+  }
+]
