@@ -143,6 +143,49 @@ function lower(ctx: Ctx, e: VlExpr | null, line?: number): Segment[] {
   }
 }
 
+function identsOf(e: VlExpr | null | undefined, out: string[]) {
+  if (!e) return;
+  switch (e.kind) {
+    case 'IDENTIFIER': out.push(baseIdent(e.name)); break;
+    case 'LITERAL': break;
+    case 'UNARY_OP': identsOf(e.operand, out); break;
+    case 'BINARY_OP': identsOf(e.lhs, out); identsOf(e.rhs, out); break;
+    case 'CONDITIONAL': identsOf(e.cond, out); identsOf(e.then, out); identsOf(e.else, out); break;
+    case 'CONCAT': e.parts.forEach((p) => identsOf(p, out)); break;
+    case 'REPLICATION': identsOf(e.count, out); identsOf(e.value, out); break;
+    case 'BIT_SELECT': identsOf(e.base, out); identsOf(e.index, out); break;
+    case 'PART_SELECT': identsOf(e.base, out); identsOf(e.msb, out); identsOf(e.lsb, out); break;
+  }
+}
+
+function lhsBase(e: VlExpr): string | undefined {
+  if (e.kind === 'IDENTIFIER') return baseIdent(e.name);
+  if (e.kind === 'BIT_SELECT' || e.kind === 'PART_SELECT') return lhsBase(e.base);
+  return undefined;
+}
+
+function walkStmt(s: VlStmt | null, reads: string[], writes: string[]) {
+  if (!s) return;
+  switch (s.kind) {
+    case 'SEQ_BLOCK': s.body.forEach((b) => walkStmt(b, reads, writes)); break;
+    case 'BLOCKING_ASSIGN':
+    case 'NONBLOCKING_ASSIGN': {
+      identsOf(s.rhs, reads);
+      if (s.lhs.kind === 'CONCAT') s.lhs.parts.forEach((p) => { const b = lhsBase(p); if (b) writes.push(b); });
+      else { const b = lhsBase(s.lhs); if (b) writes.push(b); }
+      if (s.lhs.kind === 'BIT_SELECT') identsOf(s.lhs.index, reads);
+      break;
+    }
+    case 'IF_STATEMENT': identsOf(s.cond, reads); walkStmt(s.then, reads, writes); walkStmt(s.else, reads, writes); break;
+    case 'CASE_STATEMENT':
+      identsOf(s.expr, reads);
+      s.items.forEach((it) => { it.patterns.forEach((p) => identsOf(p, reads)); walkStmt(it.body, reads, writes); });
+      break;
+  }
+}
+
+const uniq = (xs: string[]) => [...new Set(xs)];
+
 function convertModule(vm: VlModule, all: Map<string, VlModule>): ModuleDef {
   const ctx: Ctx = { mod: vm, nets: new Map(), params: new Set(vm.parameters.map((p) => p.name)), cells: [], counter: 0, file: vm.source_file };
   const ports: PortDef[] = vm.ports.map((p) => ({ name: p.name, direction: p.direction, ...widthOf(p) }));
@@ -181,6 +224,43 @@ function convertModule(vm: VlModule, all: Map<string, VlModule>): ModuleDef {
     // gate ports are raw text in the core output; identifiers map to nets, anything else is kept as an opaque const
     g.ports.forEach((sig, i) => { connections[gports[i].name] = /^[A-Za-z_][\w$.]*$/.test(sig) ? [netRef(ctx, sig)] : [{ const: sig }]; });
     ctx.cells.push({ id, kind: 'primitive', type: g.type, label: g.type, ports: gports, connections, source: { file: vm.source_file, line: g.line } });
+  });
+
+  for (const a of vm.assigns) {
+    const lhs = lower(ctx, a.lhs, a.line);
+    const rhs = lower(ctx, a.rhs, a.line);
+    const last = ctx.cells[ctx.cells.length - 1];
+    const r0 = rhs[0];
+    const ly = last?.connections.Y?.[0];
+    const producedByCell = rhs.length === 1 && r0 && 'net' in r0 && r0.net.startsWith('$') && last?.kind === 'primitive' && ly && 'net' in ly && ly.net === r0.net;
+    if (producedByCell) {
+      // retarget the operator's output straight onto the assigned nets
+      ctx.nets.delete(r0.net);
+      last.connections.Y = lhs;
+    } else {
+      const y = tempNet(ctx, 'buf');
+      ctx.nets.delete(y);
+      const id = `$buf_${ctx.counter}`;
+      ctx.cells.push({ id, kind: 'primitive', type: 'buf', label: '=', ports: [{ name: 'A', direction: 'input', width: null }, { name: 'Y', direction: 'output', width: null }], connections: { A: rhs, Y: lhs }, source: { file: vm.source_file, line: a.line } });
+    }
+  }
+
+  vm.always_blocks.forEach((ab, i) => {
+    const reads: string[] = []; const writes: string[] = [];
+    const seq = /\b(posedge|negedge)\b/.test(ab.sensitivity);
+    const sens = uniq(ab.sensitivity.replace(/\b(posedge|negedge|or)\b/g, ' ').split(/[\s,]+/).filter((t) => /^[A-Za-z_]/.test(t)));
+    walkStmt(ab.body, reads, writes);
+    const w = uniq(writes);
+    // a signal the block both reads and writes is its own state (hold/feedback), not an input
+    const r = uniq([...(seq ? sens : []), ...reads]).filter((n) => !w.includes(n));
+    const inputs = r.filter((n) => !ctx.params.has(n));
+    const ports: PortDef[] = [...inputs.map((n) => ({ name: n, direction: 'input' as const, width: null })), ...w.map((n) => ({ name: n, direction: 'output' as const, width: null }))];
+    const connections: Record<string, Segment[]> = {};
+    for (const n of [...inputs, ...w]) connections[n] = [netRef(ctx, n)];
+    ctx.cells.push({
+      id: `$always_${i + 1}`, kind: 'primitive', type: 'process', label: seq ? 'always_ff' : (ab.sensitivity === '*' ? 'always_comb' : `always @(${ab.sensitivity})`),
+      ports, connections, source: { file: vm.source_file, line: ab.line }, attrs: { seq, sensitivity: ab.sensitivity },
+    });
   });
 
   const params: Record<string, string> = {};
