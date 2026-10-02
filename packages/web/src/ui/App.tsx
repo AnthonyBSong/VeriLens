@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import { bootFromEmbedded, loadSample } from '../app/io';
-import { fitDesign, focusModule, select, useStore } from '../state/store';
+import { bootFromEmbedded, fetchSession, loadSample, loadSession } from '../app/io';
+import { fitDesign, focusModule, select, setDesignError, useStore } from '../state/store';
 import { Canvas } from './Canvas';
 import { Inspector } from './Inspector';
 import { Sidebar } from './Sidebar';
@@ -11,13 +11,20 @@ export function App() {
   const leftOpen = useStore((s) => s.leftOpen);
   const rightOpen = useStore((s) => s.rightOpen);
   useEffect(() => {
-    if (!bootFromEmbedded()) {
-      const params = new URLSearchParams(location.search);
-      const which = params.get('sample');
-      loadSample(which === 'layout' || which === 'conflict' ? which : 'auto');
+    const params = new URLSearchParams(location.search);
+    const boot = async () => {
+      if (bootFromEmbedded()) return;
+      const session = params.get('sample') ? null : await fetchSession();
+      if (session) {
+        try { loadSession(session); } catch (e) { setDesignError(`session: ${(e as Error).message}`); }
+      } else {
+        const which = params.get('sample');
+        loadSample(which === 'layout' || which === 'conflict' ? which : 'auto');
+      }
       const focus = params.get('focus');
       if (focus) focusModule(focus.split('/'), false);
-    }
+    };
+    void boot();
     const onKey = (e: KeyboardEvent) => {
       if ((e.target as HTMLElement)?.tagName === 'INPUT' || (e.target as HTMLElement)?.tagName === 'TEXTAREA') return;
       if (e.key === 'Escape') select(null);
