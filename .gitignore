@@ -27,5 +27,6 @@ core/tests/parser/*.png
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-# dependencies are installed per package (npm install), never committed
-node_modules/
+# VeriLens launcher outputs
+*.verilens.html
+*.verilens.ast.json

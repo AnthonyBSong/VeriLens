@@ -35,6 +35,30 @@ export async function openFile(file: File) {
 
 const DATA_ID = 'verilens-data';
 
+export interface Session { ast: unknown; layoutText: string; top?: string; name: string; layoutPath?: string }
+
+/** Dev server only: the launcher (`./verilens --dev`) serves the generated AST + layout here. */
+export async function fetchSession(): Promise<Session | null> {
+  try {
+    const r = await fetch('/__verilens/session.json', { cache: 'no-store' });
+    if (!r.ok) return null;
+    return (await r.json()) as Session;
+  } catch { return null; }
+}
+
+export function loadSession(s: Session) {
+  const design = isVerilensAst(s.ast) ? validateDesign(fromVerilensAst(s.ast, { top: s.top })) : validateDesign(s.top ? { ...(s.ast as object), top: s.top } : s.ast);
+  setLayoutText(s.layoutText ?? '');
+  loadDesign(design, s.name);
+}
+
+/** Re-read the launcher session (picks up edits to the layout file on disk). */
+export async function reloadSession(): Promise<boolean> {
+  const s = await fetchSession();
+  if (!s) return false;
+  try { loadSession(s); return true; } catch (e) { setDesignError((e as Error).message); return false; }
+}
+
 /** On boot: a self-contained export embeds design + rules in a JSON script tag. */
 export function bootFromEmbedded(): boolean {
   const el = document.getElementById(DATA_ID);
