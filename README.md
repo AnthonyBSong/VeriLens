@@ -2,7 +2,7 @@
 
 # VeriLens
 
-**VeriLens** is an open-source hardware RTL visualization tool that turns Verilog and SystemVerilog projects into interactive, explorable hardware diagrams.
+**VeriLens** is an open-source hardware visualization tool that turns Verilog and SystemVerilog projects into interactive, explorable hardware diagrams.
 
 Unlike simple static schematic generators, VeriLens is designed as a **project-aware hardware comprehension tool**. It analyzes an entire Verilog/SystemVerilog codebase, extracts structural hierarchy and connectivity, validates the design model, and renders zoomable diagrams that help users understand how modules, signals, and subsystems fit together.
 
@@ -102,6 +102,20 @@ The C++ core outputs a JSON structural netlist. This JSON format is the interfac
 `packages/renderer` is the shared rendering package used by all frontends. Diagram rendering logic is written once and reused across the VSCode extension, CLI, and website.
 
 The VSCode extension and CLI invoke the compiled `core` binary through `child_process`. For the website, `core` can either be compiled to WebAssembly using Emscripten for a fully client-side experience, or called from a backend server for larger projects and heavier analysis.
+
+## Viewer quick start
+
+One launcher does everything: build the core if needed, parse your sources, and open the interactive schematic.
+
+```bash
+./verilens path/to/rtl/                      # directory, or one or more .v/.sv files
+./verilens rtl/ -l layout.yaml               # with layout rules (packages/web/docs/FORMATS.md)
+./verilens rtl/ -t my_top -o out/design.html # choose the top module and the output file
+./verilens rtl/ -l layout.yaml --dev         # dev server with your files preloaded; edit the YAML,
+                                             # then "Reload files" in the Layout tab
+```
+
+Without `--dev` it writes `<name>.verilens.html` (self-contained, shareable) plus `<name>.verilens.ast.json` and opens the HTML. Mark the module to open first with a `// verilens: top` comment or `-t`. `./verilens --help` lists all options. Bare `npm run dev` inside `packages/web` shows only the bundled demo.
 
 ## Installation
 
