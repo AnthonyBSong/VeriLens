@@ -71,7 +71,13 @@ export function layered(input: LayeredInput, channelUsage: ChannelUsage): Layere
   const forward: GEdge[] = [];
   const feedback: GEdge[] = [];
   const seenPair = new Set<string>();
-  for (const e of input.edges) {
+  // Heavier bundles are inserted first so that, when two nodes feed each other,
+  // the thinner direction is the one that becomes feedback. Stable on ties.
+  const pairWeight = new Map<string, number>();
+  for (const e of input.edges) { const k = e.from + '\u0000' + e.to; pairWeight.set(k, (pairWeight.get(k) ?? 0) + 1); }
+  const ordered = input.edges.map((e, i) => ({ e, i, w: pairWeight.get(e.from + '\u0000' + e.to)! }))
+    .sort((a, b) => b.w - a.w || a.i - b.i).map((x) => x.e);
+  for (const e of ordered) {
     const key = e.from + '\u0000' + e.to;
     if (e.from === e.to) { feedback.push(e); continue; }
     if (seenPair.has(key)) { (adj.get(e.from)?.has(e.to) ? forward : feedback).push(e); continue; }

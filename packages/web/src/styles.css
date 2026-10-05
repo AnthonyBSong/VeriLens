@@ -150,6 +150,7 @@ code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 11px; }
 .kv > span:first-child { color: var(--muted); }
 table.ports { width: 100%; border-collapse: collapse; margin-top: 6px; }
 table.ports th, table.ports td { text-align: left; padding: 2px 4px; border-bottom: 1px solid #eef0f3; vertical-align: top; overflow-wrap: anywhere; }
+table.ports td:nth-child(2), table.ports td:nth-child(3) { white-space: nowrap; }
 table.ports th { color: var(--muted); font-weight: 500; }
 .endpoints { margin: 0; padding-left: 14px; }
 

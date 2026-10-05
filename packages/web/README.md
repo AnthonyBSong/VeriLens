@@ -36,6 +36,20 @@ Or use **Open…** in the toolbar to load `*.ast.json` / `*.design.json` and
 `*.yaml`, edit the rules in the **Layout** tab, **Apply**, and finish with
 **Export HTML**.
 
+## Real example: the 5-stage processor from the core tests
+
+```sh
+cd core/tests/examples
+../../../verilens ProcBase.v ProcBaseDpath.v ProcBaseCtrl.v DropUnit.v ProcDpathAlu.v ProcDpathImmGen.v \
+  IntMulAlt.v Lookahead.v muxes.v arithmetic.v regfiles.v tinyrv2_encoding.v -l ProcBase.layout.yaml
+```
+
+`ProcBase.v` carries the `// verilens: top` pragma; `ProcBase.layout.yaml` puts
+the control unit before and above the datapath, gives both a readable frame,
+orders the datapath ports, and pins the pipeline stage order inside `dpath`.
+The `vc_*` library cells that are not part of the examples render as black
+boxes.
+
 ## Workflow: plan, then finalize
 
 1. **Plan.** Load the project. The *Modules* tab lists every module definition;

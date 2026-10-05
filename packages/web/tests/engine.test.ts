@@ -80,6 +80,17 @@ describe('automatic layered layout', () => {
     expect(bl.diagnostics.some((d) => d.message.includes('black box'))).toBe(true);
   });
 
+  test('mutual feedback breaks the cycle on the thinner bundle', () => {
+    // a drives b with 3 nets, b drives a with 1: a must come first, the single net is feedback
+    const port = (name: string, direction: 'input' | 'output') => ({ name, direction, width: 1 });
+    const d: Design = { version: 1, top: 't', modules: { t: { name: 't', ports: [], nets: ['n1', 'n2', 'n3', 'fb'].map((id) => ({ id, width: 1 })), cells: [
+      { id: 'b', kind: 'primitive', type: 'box', ports: [port('i1', 'input'), port('i2', 'input'), port('i3', 'input'), port('o', 'output')], connections: { i1: [{ net: 'n1' }], i2: [{ net: 'n2' }], i3: [{ net: 'n3' }], o: [{ net: 'fb' }] } },
+      { id: 'a', kind: 'primitive', type: 'box', ports: [port('i', 'input'), port('o1', 'output'), port('o2', 'output'), port('o3', 'output')], connections: { i: [{ net: 'fb' }], o1: [{ net: 'n1' }], o2: [{ net: 'n2' }], o3: [{ net: 'n3' }] } },
+    ] } } };
+    const l = layoutModule(d, ['t'], d.modules.t, null);
+    expect(l.nodes.a.layer).toBeLessThan(l.nodes.b.layer);
+  });
+
   test('repeated instances of one module get identical, independent layouts', () => {
     const a = lay(['top', 'compute', 'pe0'], demoYaml), b = lay(['top', 'compute', 'pe1'], demoYaml);
     expect(a.scope).toBe('top/compute/pe0'); expect(b.scope).toBe('top/compute/pe1');
