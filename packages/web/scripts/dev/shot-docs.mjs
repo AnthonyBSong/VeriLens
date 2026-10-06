@@ -1,0 +1,27 @@
+// Screenshots used by the documentation site (gh-pages).
+import { chromium } from '@playwright/test';
+import { mkdirSync } from 'node:fs';
+const out = process.argv[2]; mkdirSync(out, { recursive: true });
+const browser = await chromium.launch({ channel: 'chrome' });
+const page = await browser.newPage({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2 });
+const ready = () => page.waitForSelector('.module-view[data-scope="top"] .cell[data-path="top/compute"]');
+await page.goto('http://localhost:4173/?sample=layout'); await ready(); await page.waitForTimeout(300);
+await page.screenshot({ path: out + '/overview.png' });
+await page.click('[data-toggle="top/compute"]'); await page.waitForSelector('svg[data-nested="top/compute"] .module-view');
+await page.locator('.module-view[data-scope="top"] .wire[data-net="fifo_data"] .hit').dispatchEvent('click');
+await page.getByRole('button', { name: 'Fit selection' }).click(); await page.waitForTimeout(300);
+await page.mouse.move(700, 450); await page.mouse.wheel(0, 250); await page.waitForTimeout(300);
+await page.screenshot({ path: out + '/expand-highlight.png' });
+await page.goto('http://localhost:4173/?sample=layout&focus=top/compute'); await page.waitForSelector('.module-view[data-scope="top/compute"] .cell'); await page.waitForTimeout(300);
+await page.screenshot({ path: out + '/focus-compute.png' });
+await page.goto('http://localhost:4173/?sample=layout&focus=top/controller'); await page.waitForSelector('.module-view[data-scope="top/controller"] .cell'); await page.waitForTimeout(300);
+await page.screenshot({ path: out + '/focus-controller.png', clip: { x: 250, y: 60, width: 870, height: 560 } });
+await page.goto('http://localhost:4173/?sample=conflict'); await ready(); await page.waitForTimeout(300);
+await page.locator('.tabs button', { hasText: /^layout$/ }).click(); await page.waitForTimeout(200);
+await page.screenshot({ path: out + '/conflict-diagnostics.png' });
+await page.goto('file:///Users/song/Projects/VeriLens/out/ProcBase.verilens.html'); await page.waitForSelector('.module-view .cell'); await page.waitForTimeout(400);
+await page.screenshot({ path: out + '/procbase-top.png' });
+await page.click('[data-toggle="lab2_proc_ProcBase/dpath"]'); await page.waitForSelector('svg[data-nested="lab2_proc_ProcBase/dpath"] .module-view'); await page.waitForTimeout(300);
+await page.screenshot({ path: out + '/procbase-expanded.png' });
+console.log('done');
+await browser.close();
