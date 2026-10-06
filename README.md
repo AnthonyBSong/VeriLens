@@ -4,8 +4,6 @@
 [![ci](https://github.com/AnthonyBSong/VeriLens/actions/workflows/ci.yml/badge.svg)](https://github.com/AnthonyBSong/VeriLens/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/AnthonyBSong/VeriLens/branch/main/graph/badge.svg)](https://codecov.io/gh/AnthonyBSong/VeriLens)
 
-Documentation: https://anthonybsong.github.io/VeriLens/
-
 # VeriLens
 
 **VeriLens** is an open-source hardware visualization tool that turns Verilog and SystemVerilog projects into interactive, explorable hardware diagrams.
