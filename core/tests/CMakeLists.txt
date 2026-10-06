@@ -1,4 +1,4 @@
-find_package(GTest REQUIRED PATHS /opt/homebrew/lib/cmake/GTest NO_DEFAULT_PATH)
+find_package(GTest REQUIRED HINTS /opt/homebrew/lib/cmake/GTest)
 find_package(nlohmann_json REQUIRED)
 include(GoogleTest)
 

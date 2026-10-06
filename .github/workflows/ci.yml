@@ -1,0 +1,54 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  core:
+    name: core (C++)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y cmake libgtest-dev nlohmann-json3-dev gcovr
+      - name: Configure
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS=--coverage
+      - name: Build
+        run: cmake --build build --parallel
+      - name: Test
+        run: ctest --test-dir build --output-on-failure
+      - name: Coverage report
+        run: gcovr --root . --filter 'core/' --exclude 'core/tests/' --exclude 'core/tools/' --xml-pretty -o coverage-core.xml
+      - uses: codecov/codecov-action@v5
+        with:
+          files: coverage-core.xml
+          flags: core
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+  web:
+    name: viewer (TypeScript)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: packages/web/package-lock.json
+      - run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Unit tests with coverage
+        run: npm test -- --coverage
+      - name: Browser tests (builds the bundle, uses the runner's Google Chrome)
+        run: npm run test:e2e
+      - uses: codecov/codecov-action@v5
+        with:
+          files: packages/web/coverage/lcov.info
+          flags: web
+          token: ${{ secrets.CODECOV_TOKEN }}

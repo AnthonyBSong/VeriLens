@@ -30,3 +30,7 @@ core/tests/parser/*.png
 # VeriLens launcher outputs
 *.verilens.html
 *.verilens.ast.json
+
+# coverage reports
+packages/web/coverage/
+coverage-core.xml
