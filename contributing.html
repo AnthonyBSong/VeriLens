@@ -44,7 +44,7 @@ cd ../packages/web &amp;&amp; npm install &amp;&amp; npm test &amp;&amp; npm run
   </ul>
 
   <h2>This site</h2>
-  <p>The documentation is hand-written HTML on the <code>gh-pages</code> branch with no build step. <code>assets/site.js</code> adds the shell (navigation, table of contents, pager) around each page's <code>&lt;main&gt;</code>. The live demo under <code>demo/</code> is the viewer's single-file build with a sample design embedded; regenerate it with <code>npm run build</code> and copy <code>dist/index.html</code>. The screenshots come from <code>packages/web/scripts/dev/shot-docs.mjs</code> run against <code>npm run preview</code>.</p>
+  <p>The documentation is hand-written HTML on the <code>gh-pages</code> branch with no build step. <code>assets/site.js</code> adds the logo header, the page links and the footer around each page's <code>&lt;main&gt;</code>; add new pages to its <code>PAGES</code> list. The live demo under <code>demo/</code> is the viewer's single-file build with a sample design embedded; regenerate it with <code>npm run build</code> and copy <code>dist/index.html</code>. The screenshots come from <code>packages/web/scripts/dev/shot-docs.mjs</code> run against <code>npm run preview</code>.</p>
 </main>
 <script src="assets/site.js"></script>
 </body>
