@@ -24,24 +24,6 @@
     <div class="card"><h3>One command</h3><p><code>./verilens rtl/ -l layout.yaml</code> builds what is missing, parses your sources and opens a self-contained HTML file you can send to anyone.</p><a class="more" href="quickstart.html">Quick start →</a></div>
   </div>
 
-  <h2>What you get</h2>
-  <ul>
-    <li><b>Schematic, not graph soup.</b> Layered left-to-right flow, orthogonal wires, junction dots only where a net really branches, bus widths and net names on the wires, familiar gate symbols, and labelled boxes for everything else.</li>
-    <li><b>Hierarchy that stays readable.</b> A tree on the left, breadcrumbs on the canvas, <code>[+]</code>/<code>[−]</code> on every instance, and <em>Focus module</em> to open any instance full-size with a <em>Back</em> that restores your previous view.</li>
-    <li><b>Real connectivity.</b> Clicking a net colors its driver and sinks and follows the net up into the parent and down into expanded children. Nothing is inferred from names; black boxes, constants, unconnected ports and multiply-driven nets are shown as such.</li>
-    <li><b>Predictable interactions.</b> Nothing on the canvas can be dragged or edited. Pan from the background, zoom at the pointer, fit design or selection. Geometry changes only when you load a design, apply a layout file, or press <em>Re-layout</em>.</li>
-  </ul>
-
-  <h2>How it fits together</h2>
-<pre><code>Verilog / SystemVerilog  ──gen_ast (C++)──▶  AST JSON  ──adapter──▶  normalized design
-                                                                            │
-                                            layout.yaml (optional) ─────────┤
-                                                                            ▼
-                                         layered layout → constraints → routing → SVG viewer
-                                                                            │
-                                                              Export HTML / ./verilens -o</code></pre>
-  <p>The viewer keeps four things strictly apart: the <em>design</em> (what exists), the <em>layout rules</em> (how to arrange it), the <em>computed geometry</em>, and <em>UI state</em>. Layout rules never change connectivity.</p>
-
   <h2>Status</h2>
   <p>VeriLens is an early, working tool. The parser handles the structural subset of Verilog-2005 and common SystemVerilog (<code>always_ff</code>/<code>always_comb</code>, ANSI ports, parameters, generate regions, gate primitives). It is not a full SystemVerilog front end. Layout quality is heuristic and documented as such.</p>
 </main>
