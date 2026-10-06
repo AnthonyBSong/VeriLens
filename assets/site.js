@@ -4,7 +4,7 @@
     ['index.html', 'Overview'],
     ['installation.html', 'Installation'],
     ['quickstart.html', 'Quick start'],
-    ['navigation.html', 'Navigating the viewer'],
+    ['navigation.html', 'Navigating the Viewer'],
     ['layout-dsl.html', 'Layout DSL'],
     ['formats.html', 'Input formats'],
     ['launcher.html', 'Launcher'],
@@ -22,7 +22,6 @@
   header.innerHTML = `<a href="index.html"><img src="assets/img/logo.png" alt="VeriLens"></a>` +
     `<nav class="site-nav">` + PAGES.map(([href, label]) =>
       `<a href="${href}" class="${href === here ? 'active' : ''}">${label}</a>`).join('') +
-    `<a href="demo/index.html?sample=layout" target="_blank" rel="noopener">Live demo ↗</a>` +
     `<a href="${REPO}" target="_blank" rel="noopener">GitHub ↗</a></nav>`;
   main.prepend(header);
 
