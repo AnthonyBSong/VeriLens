@@ -45,7 +45,7 @@ vcpkg install
 cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake"
 cmake --build build
 cd packages\web; npm install</code></pre>
-  <div class="note">The <code>./verilens</code> launcher is a Bash script. On Windows run it from Git Bash or WSL, or call the two underlying steps directly: <code>build\core\tools\gen_ast</code> and <code>node packages\web\scripts\build-html.mjs</code> (see <a href="launcher.html">Launcher</a>).</div>
+  <div class="note">The <code>./verilens</code> launcher is a Bash script. On Windows run it from Git Bash or WSL, or call the two underlying steps directly: <code>build\core\tools\gen_ast</code> and <code>node packages\web\scripts\build-html.mjs</code> (see <a href="quickstart.html">Quick start</a>).</div>
 
   <h2>Check the installation</h2>
 <pre><code>cd build &amp;&amp; ctest                # core: 167 tests
@@ -54,7 +54,7 @@ npm run test:e2e                  # viewer: browser tests (needs Chrome)
 ./verilens --help                 # from the repository root</code></pre>
 
   <h2>Nothing to install: take the guided tour</h2>
-  <p>The <a href="navigation.html#guided-tour">guided tour</a> on this site embeds the built viewer with a sample design. It is the same single HTML file that <code>./verilens</code> produces for your own projects.</p>
+  <p>The <a href="quickstart.html#guided-tour">guided tour</a> on this site embeds the built viewer with a sample design. It is the same single HTML file that <code>./verilens</code> produces for your own projects.</p>
 </main>
 <script src="assets/site.js"></script>
 </body>

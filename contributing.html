@@ -29,7 +29,7 @@ cd ../packages/web &amp;&amp; npm install &amp;&amp; npm test &amp;&amp; npm run
     <li><code>npm run dev</code> serves the bundled demo at <code>http://localhost:5173</code>; add <code>?sample=conflict</code> or <code>?focus=top/compute</code> to jump to a state.</li>
     <li>Changes to <code>layered.ts</code>, <code>constraints.ts</code>, <code>router.ts</code> or <code>store.ts</code> need a test in <code>packages/web/tests/</code> (vitest) or <code>packages/web/e2e/</code> (Playwright, uses the installed Google Chrome).</li>
     <li>Never re-parse Verilog text in the viewer. Everything you need is in the adapter's <code>Design</code>; if it is missing, extend the core and the contract instead.</li>
-    <li>Keep the <a href="architecture.html#viewer-invariants">eight invariants</a>. In particular: no drag handlers, no layout triggered by selection or expansion, no node moved after routing, and no net or port hidden to make a picture cleaner.</li>
+    <li>Keep the <a href="https://github.com/AnthonyBSong/VeriLens/blob/main/CLAUDE.md" target="_blank" rel="noopener">eight invariants</a>. In particular: no drag handlers, no layout triggered by selection or expansion, no node moved after routing, and no net or port hidden to make a picture cleaner.</li>
     <li>If you touch <code>samples/demo/demo.sv</code>, rebuild the samples with <code>npm run gen:samples</code>.</li>
   </ul>
 

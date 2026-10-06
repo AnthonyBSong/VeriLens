@@ -9,7 +9,7 @@
 <body>
 <main>
   <h1>Quick start</h1>
-  <p class="lead">From a folder of Verilog to an interactive schematic in one command, then a short tour of the planning loop.</p>
+  <p class="lead">From a folder of Verilog to an interactive schematic in one command, a guided tour of the viewer, then the planning loop.</p>
 
   <h2>1. Mark the top module</h2>
   <p>Add a comment above the module you want to open first:</p>
@@ -20,18 +20,50 @@ module top ( ... );</code></pre>
   <h2>2. Run the launcher</h2>
 <pre><code>./verilens path/to/rtl/                # a directory, or any list of .v / .sv files
 ./verilens rtl/ -l layout.yaml         # with layout rules
-./verilens rtl/ -t my_top -o out.html  # choose the top and the output file</code></pre>
+./verilens rtl/ -t my_top -o out.html  # choose the top and the output file
+./verilens --help                      # also: --dev, --port N, --no-open, --rebuild</code></pre>
   <p>The launcher builds <code>gen_ast</code> and the viewer bundle if they are missing, parses your sources, writes <code>&lt;name&gt;.verilens.html</code> next to a <code>&lt;name&gt;.verilens.ast.json</code>, and opens the HTML in your browser. The HTML is self-contained: send it to a colleague and it works offline.</p>
   <div class="note">Parser warnings (for example an identifier that is not declared, or a width mismatch) are printed but do not stop the run. Modules that are instantiated but not found in your inputs are drawn as dashed black boxes.</div>
 
-  <h2>3. Look around</h2>
+  <h2 id="guided-tour">3. Guided tour</h2>
+  <p>The frame below is the viewer with the demo design loaded. Press <em>Start tour</em>; each step boxes one part of the interface and performs the action for you. You can also use the viewer directly.</p>
+  <div class="tour" id="tour">
+    <div class="bar">
+      <button id="tour-prev">◀</button>
+      <button id="tour-next" class="primary">Start tour ▶</button>
+      <span class="step" id="tour-step"></span>
+      <span style="flex:1"></span>
+      <button id="tour-reset">Reset viewer</button>
+    </div>
+    <div class="text" id="tour-text"><b>Ready</b>Press <em>Start tour</em>. Steps go through the toolbar, the hierarchy tree, module expansion, net highlighting, the inspector, the layout editor and the diagnostics.</div>
+    <div class="blocked" id="tour-blocked">This page is being viewed from a local file, so the browser does not let the tour reach into the frame. Serve the folder over HTTP or use the hosted site; the viewer itself still works below.</div>
+    <iframe id="tour-frame" src="demo/index.html?sample=layout" title="VeriLens guided tour"></iframe>
+  </div>
+
+  <h3>Mouse and keyboard</h3>
+  <table>
+    <tr><th>Action</th><th>Effect</th></tr>
+    <tr><td>Drag on empty canvas</td><td>Pan. Dragging on a component, port or wire does nothing: nothing on the canvas is movable or editable.</td></tr>
+    <tr><td>Mouse wheel</td><td>Zoom around the pointer.</td></tr>
+    <tr><td>Click a component</td><td>Select it: red fill; its drivers turn green, its sinks blue, cells that are both turn yellow (feedback). The inspector shows details.</td></tr>
+    <tr><td>Click a wire or a boundary terminal</td><td>Select the net: orange highlight everywhere the net is visible, including inside expanded children and in the parent.</td></tr>
+    <tr><td>Click <code>[+]</code> / <code>[−]</code></td><td>Expand or collapse that instance in place. Never starts a pan.</td></tr>
+    <tr><td>Click empty canvas</td><td>Clear the selection.</td></tr>
+    <tr><td><kbd>Esc</kbd></td><td>Clear the selection.</td></tr>
+    <tr><td><kbd>f</kbd></td><td>Fit the whole schematic (same as <em>Fit design</em>).</td></tr>
+    <tr><td>Touch drag</td><td>Pans only from the background, like the mouse.</td></tr>
+  </table>
+
+  <h3>Reading the schematic</h3>
   <ul>
-    <li>Drag the background to pan, use the mouse wheel to zoom around the pointer, press <kbd>f</kbd> or <em>Fit design</em> to see everything.</li>
-    <li>Click a module box to inspect it; its drivers turn green and its sinks blue.</li>
-    <li>Click a wire to highlight the whole net, including inside expanded children and up in the parent.</li>
-    <li>Press <code>[+]</code> in a module header to see its contents in place; <em>Focus module</em> opens it full-size, <em>Back</em> returns.</li>
+    <li><b>Module instances</b> are blue boxes with a header: the <code>[+]</code> toggle, the instance name, and the module name on the right. Collapsed boxes show the module name in the middle. Dashed grey boxes are black boxes: modules that were instantiated but not found in the inputs.</li>
+    <li><b>Primitives</b> use schematic symbols where one exists (and/or/xor/not, mux, +, −, ×, =, &lt;, shifts), a register symbol for <code>always_ff</code> blocks, and a labelled box for <code>always_comb</code> and anything unknown.</li>
+    <li><b>Ports</b> are small square pins on the box edge with their name and <code>[n:0]</code> width inside. A hollow red circle marks an unconnected input.</li>
+    <li><b>Wires</b> are thin for single bits and thicker for buses. The net name (and width) sits at the driver end; <code>[3:0]</code> labels at a sink mean only that slice is connected. A filled dot is a branch; a plain crossing is not a connection.</li>
+    <li><b>Boundary terminals</b> are the module's own ports: pentagon flags on the left (inputs) and right (outputs).</li>
+    <li><b>Constants</b> are small yellow boxes with the literal text.</li>
+    <li><b>Feedback</b> wires (signals flowing right-to-left) run below the drawing and come back up next to their sink.</li>
   </ul>
-  <p>The <a href="navigation.html">Navigating the viewer</a> page walks through every button interactively.</p>
 
   <h2>4. Plan the layout (optional)</h2>
   <p>Start the dev server with your files preloaded:</p>
@@ -43,6 +75,79 @@ module top ( ... );</code></pre>
 <pre><code>cd core/tests/examples
 ../../../verilens ProcBase.v ProcBaseDpath.v ProcBaseCtrl.v DropUnit.v ProcDpathAlu.v ProcDpathImmGen.v \
   IntMulAlt.v Lookahead.v muxes.v arithmetic.v regfiles.v tinyrv2_encoding.v -l ProcBase.layout.yaml</code></pre>
+<script>
+// ---- guided tour (same-origin iframe). Every step draws an orange box around one region of the viewer.
+const SRC = 'demo/index.html?sample=layout';
+const frame = document.getElementById('tour-frame');
+const STEPS = [
+  { sel: '.toolbar', title: 'Toolbar', text: 'Open files, load samples, go back, fit, re-layout, search, export, and toggle the side panels.' },
+  { sel: '.sidebar.left', title: 'Hierarchy tree', text: 'The instance tree. Click a row to select the instance; hover a row and press ⤢ to focus it.' },
+  { sel: '.module-view[data-scope="top"] .cell[data-path="top/compute"]', title: 'Module boxes', text: 'Each instance is a box with a fixed frame.', act: (d) => click(d, '.cell[data-path="top/compute"]') },
+  { sel: '.module-view[data-scope="top"] .cell[data-path="top/compute"]', title: 'Expand in place', text: 'The [+] in the header shows the module\'s contents inside its frame.', act: (d) => { if (!d.querySelector('svg[data-nested="top/compute"]')) click(d, '[data-toggle="top/compute"]'); } },
+  { sel: null, title: 'Net highlighting', text: 'Clicking a wire selects the net. The highlight follows the net into the expanded compute module.', act: (d) => click(d, '.module-view[data-scope="top"] .wire[data-net="fifo_data"] .hit') },
+  { sel: '.sidebar.right', title: 'Inspector', text: 'For a net: width, drivers, sinks, and the same net in other scopes. For a cell: path, source line, parameters, ports with their nets.' },
+  { sel: '.sidebar.left', title: 'Layout tab', text: 'Edit the YAML layout rules and press Apply. Rejected files keep the previous layout and list every error with its scope and rule id.', act: (d) => { const b = d.querySelectorAll('.tabs button')[2]; if (b) b.click(); } },
+  { sel: '.statusbar', title: 'Status and diagnostics', text: 'Selection, focus, and a diagnostics counter. Click it for the drawer with layout errors, relaxed preferred rules and black boxes.', act: (d) => { const b = d.querySelector('.diag-btn'); if (b && !d.querySelector('[data-testid=diagnostics]')) b.click(); } },
+];
+const text = document.getElementById('tour-text');
+const nextBtn = document.getElementById('tour-next');
+let step = -1;
+let timer = null;
+function doc() { try { return frame.contentDocument || frame.contentWindow.document; } catch { return null; } }
+function click(d, sel) { const el = d.querySelector(sel); if (el) el.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: frame.contentWindow })); }
+function box(d, el) {
+  let b = d.getElementById('tour-box');
+  if (!b) {
+    b = d.createElement('div'); b.id = 'tour-box';
+    b.style.cssText = 'position:fixed;pointer-events:none;border:3px solid #e8710a;border-radius:4px;box-shadow:0 0 0 4px rgba(232,113,10,0.2);z-index:99999;display:none';
+    d.body.appendChild(b);
+  }
+  if (!el) { b.style.display = 'none'; return; }
+  const r = el.getBoundingClientRect();
+  const w = d.documentElement.clientWidth, h = d.documentElement.clientHeight;
+  // keep the box inside the frame so regions on an edge (toolbar, side panels) show all four sides
+  const x1 = Math.max(3, r.left - 4), y1 = Math.max(3, r.top - 4), x2 = Math.min(w - 3, r.right + 4), y2 = Math.min(h - 3, r.bottom + 4);
+  Object.assign(b.style, { display: 'block', left: x1 + 'px', top: y1 + 'px', width: (x2 - x1 - 6) + 'px', height: (y2 - y1 - 6) + 'px' });
+}
+function ready(d) { return d && d.querySelector('.module-view[data-scope="top"] .cell'); }
+function reload(cb) {
+  clearInterval(timer);
+  frame.addEventListener('load', () => { const t = setInterval(() => { const d = doc(); if (ready(d)) { clearInterval(t); cb(d); } }, 100); }, { once: true });
+  frame.src = SRC;
+}
+function run(d, i) { try { if (STEPS[i].act) STEPS[i].act(d); } catch (e) { /* viewer still loading */ } }
+function show(n) {
+  step = n;
+  clearInterval(timer);
+  const d = doc();
+  if (!d) { document.getElementById('tour-blocked').style.display = 'block'; return; }
+  if (n < 0) {
+    box(d, null);
+    text.innerHTML = '<b>Ready</b>Press <em>Start tour</em>.';
+    document.getElementById('tour-step').textContent = '';
+    nextBtn.textContent = 'Start tour ▶';
+    return;
+  }
+  const s = STEPS[n];
+  const track = () => box(d, s.sel && d.querySelector(s.sel));
+  track(); timer = setInterval(track, 150);   // follows the box while the viewer pans or zooms
+  text.innerHTML = `<b>${n + 1}. ${s.title}</b>${s.text}`;
+  document.getElementById('tour-step').textContent = `step ${n + 1} of ${STEPS.length}`;
+  nextBtn.textContent = n === STEPS.length - 1 ? 'Finish' : 'Next ▶';
+}
+nextBtn.onclick = () => {
+  if (step >= STEPS.length - 1) { reload((d) => show(-1)); return; }
+  const d = doc(); if (!d) { show(-1); return; }
+  const n = step + 1; run(d, n); setTimeout(() => show(n), 150);
+};
+// Back replays the tour from a fresh viewer up to the previous step, so the picture matches the text.
+document.getElementById('tour-prev').onclick = () => {
+  const n = step - 1;
+  reload((d) => { for (let i = 0; i <= n; i++) run(d, i); setTimeout(() => show(n), 150); });
+};
+document.getElementById('tour-reset').onclick = () => reload((d) => show(-1));
+frame.addEventListener('load', () => { if (!doc()) document.getElementById('tour-blocked').style.display = 'block'; });
+</script>
 </main>
 <script src="assets/site.js"></script>
 </body>

@@ -4,12 +4,8 @@
     ['index.html', 'Overview'],
     ['installation.html', 'Installation'],
     ['quickstart.html', 'Quick start'],
-    ['navigation.html', 'Navigating the Viewer'],
     ['layout-dsl.html', 'Layout DSL'],
-    ['formats.html', 'Input formats'],
-    ['launcher.html', 'Launcher'],
     ['examples.html', 'Examples'],
-    ['architecture.html', 'Architecture'],
     ['contributing.html', 'Contributing'],
   ];
   const REPO = 'https://github.com/AnthonyBSong/VeriLens';

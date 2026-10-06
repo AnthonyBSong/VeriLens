@@ -14,14 +14,14 @@
     <a href="https://codecov.io/gh/AnthonyBSong/VeriLens"><img src="https://codecov.io/gh/AnthonyBSong/VeriLens/branch/main/graph/badge.svg" alt="codecov"></a>
   </p>
   <p class="lead">VeriLens is an interactive RTL schematic viewer. Point it at a Verilog or SystemVerilog project and get a zoomable, hierarchical schematic: modules as boxes you can expand in place, nets you can trace across module boundaries, and a small YAML file to say how things should be arranged.</p>
-  <p><a href="installation.html"><b>Install →</b></a> &nbsp;·&nbsp; <a href="quickstart.html">Quick start</a> &nbsp;·&nbsp; <a href="navigation.html#guided-tour">Guided tour</a></p>
-  <figure><a href="navigation.html#guided-tour"><img class="shot" src="assets/img/overview.png" alt="VeriLens viewer showing the demo design"></a></figure>
+  <p><a href="installation.html"><b>Install →</b></a> &nbsp;·&nbsp; <a href="quickstart.html">Quick start</a> &nbsp;·&nbsp; <a href="quickstart.html#guided-tour">Guided tour</a></p>
+  <figure><a href="quickstart.html#guided-tour"><img class="shot" src="assets/img/overview.png" alt="VeriLens viewer showing the demo design"></a></figure>
 
   <div class="cards">
-    <div class="card"><h3>Whole-project analysis</h3><p>A C++ core lexes, parses and links every file you give it, resolves instances across files, and emits a structural JSON model. No regular-expression parsing.</p><a class="more" href="formats.html">Input formats →</a></div>
-    <div class="card"><h3>Expand without reflow</h3><p>Each module gets a fixed frame. Clicking <code>[+]</code> renders its contents inside that frame; nothing around it moves, and the camera stays put.</p><a class="more" href="navigation.html">Navigating the viewer →</a></div>
+    <div class="card"><h3>Whole-project analysis</h3><p>A C++ core lexes, parses and links every file you give it, resolves instances across files, and emits a structural JSON model. No regular-expression parsing.</p><a class="more" href="quickstart.html">Quick start →</a></div>
+    <div class="card"><h3>Expand without reflow</h3><p>Each module gets a fixed frame. Clicking <code>[+]</code> renders its contents inside that frame; nothing around it moves, and the camera stays put.</p><a class="more" href="quickstart.html#guided-tour">Guided tour →</a></div>
     <div class="card"><h3>Layout you can version</h3><p>A small YAML DSL expresses <code>leftOf</code>, <code>above</code>, <code>alignY</code>, port order and frame sizes per module instance, with required and preferred strengths and clear diagnostics.</p><a class="more" href="layout-dsl.html">Layout DSL →</a></div>
-    <div class="card"><h3>One command</h3><p><code>./verilens rtl/ -l layout.yaml</code> builds what is missing, parses your sources and opens a self-contained HTML file you can send to anyone.</p><a class="more" href="launcher.html">Launcher →</a></div>
+    <div class="card"><h3>One command</h3><p><code>./verilens rtl/ -l layout.yaml</code> builds what is missing, parses your sources and opens a self-contained HTML file you can send to anyone.</p><a class="more" href="quickstart.html">Quick start →</a></div>
   </div>
 
   <h2>What you get</h2>
@@ -40,10 +40,10 @@
                                          layered layout → constraints → routing → SVG viewer
                                                                             │
                                                               Export HTML / ./verilens -o</code></pre>
-  <p>The viewer keeps four things strictly apart: the <em>design</em> (what exists), the <em>layout rules</em> (how to arrange it), the <em>computed geometry</em>, and <em>UI state</em>. Layout rules never change connectivity. Read more in <a href="architecture.html">Architecture and invariants</a>.</p>
+  <p>The viewer keeps four things strictly apart: the <em>design</em> (what exists), the <em>layout rules</em> (how to arrange it), the <em>computed geometry</em>, and <em>UI state</em>. Layout rules never change connectivity.</p>
 
   <h2>Status</h2>
-  <p>VeriLens is an early, working tool. The parser handles the structural subset of Verilog-2005 and common SystemVerilog (<code>always_ff</code>/<code>always_comb</code>, ANSI ports, parameters, generate regions, gate primitives). It is not a full SystemVerilog front end; see <a href="formats.html#limits">Limits</a>. Layout quality is heuristic and documented as such.</p>
+  <p>VeriLens is an early, working tool. The parser handles the structural subset of Verilog-2005 and common SystemVerilog (<code>always_ff</code>/<code>always_comb</code>, ANSI ports, parameters, generate regions, gate primitives). It is not a full SystemVerilog front end. Layout quality is heuristic and documented as such.</p>
 </main>
 <script src="assets/site.js"></script>
 </body>
