@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VeriLens · Layout DSL</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<main>
+  <h1>Layout DSL (YAML, version 1)</h1>
+  <p class="lead">A small, versioned YAML file that says how a design should be arranged without touching what it is. Three constraint kinds, two per-node tweaks, a defaults block. Everything else is automatic.</p>
+
+  <h2>Shape of a file</h2>
+<pre><code>version: 1
+
+defaults:               # optional
+  nodeGap: 32           # vertical gap between nodes in a layer (world units)
+  layerGap: 80          # minimum horizontal gap between layers
+  direction: right      # the only value accepted today
+  routing: orthogonal   # the only value accepted today
+
+scopes:                 # one entry per module *instance* you want to influence
+  - scope: top/compute          # hierarchical instance path, starting at the top module
+    constraints: [ ... ]
+    ports:       [ ... ]
+    frames:      [ ... ]</code></pre>
+  <p>Everything is addressed by <b>instance path</b>, not module name: <code>top/compute</code> and a second instance <code>top/compute2</code> are separate scopes even if both are the same module. Node names inside a scope are the <b>immediate children</b> of that instance's module: instance names such as <code>pe0</code>, or generated operator cells such as <code>$add_5</code> (visible in the inspector). <code>module:</code> is accepted as an alias for <code>scope:</code>.</p>
+
+  <h2>Constraints</h2>
+<pre><code>constraints:
+  - id: pe-chain                 # ids are unique within a scope
+    kind: leftOf                 # right(a) + gap &lt;= left(b)
+    a: pe0
+    b: pe1
+    gap: 60                      # world units, default 0
+    strength: required           # required | preferred (default required)
+
+  - id: ctl-up
+    kind: above                  # bottom(a) + gap &lt;= top(b)
+    a: controller
+    b: compute
+    gap: 40
+    strength: preferred
+    weight: 5                    # preferred rules are applied heaviest first
+
+  - id: row
+    kind: alignY                 # equal vertical centers
+    nodes: [input_fifo, compute, output_fifo]
+    strength: preferred
+    weight: 10</code></pre>
+  <table>
+    <tr><th>Kind</th><th>Meaning</th><th>Notes</th></tr>
+    <tr><td><code>leftOf</code></td><td>right edge of <code>a</code> plus <code>gap</code> is at or before the left edge of <code>b</code></td><td>Also feeds the layering step: a required <code>leftOf</code> against the signal flow turns the conflicting wire into a feedback route instead of failing. There is no <code>rightOf</code>; swap <code>a</code> and <code>b</code>.</td></tr>
+    <tr><td><code>above</code></td><td>bottom edge of <code>a</code> plus <code>gap</code> is at or above the top edge of <code>b</code></td><td>Solved by pushing <code>b</code> down or, if that breaks another rule, pulling <code>a</code> up. No <code>below</code>; swap <code>a</code> and <code>b</code>.</td></tr>
+    <tr><td><code>alignY</code></td><td>all listed nodes share one vertical center</td><td>Two or more distinct nodes. Nodes in the same layer cannot share a center without overlapping, so the rule is reported as relaxed.</td></tr>
+  </table>
+
+  <h3>Required versus preferred</h3>
+  <ul>
+    <li><b>Required</b> rules must hold. If they cannot, that scope's layout fails: the status bar turns red, the diagnostics drawer names the scope and the rule id, and the previous valid layout stays on screen. Nothing is silently dropped.</li>
+    <li><b>Preferred</b> rules are tried heaviest <code>weight</code> first and kept only if they break neither a required rule nor a heavier preferred rule that is already satisfied. Each one still violated afterwards is reported as a warning with the remaining distance in world units.</li>
+  </ul>
+
+  <h2>Port order</h2>
+<pre><code>ports:
+  - node: compute
+    side: west                   # west | east | north | south
+    order: [data_in, valid_in, start, mode]     # top-to-bottom on west/east, left-to-right on north/south</code></pre>
+  <p>Unlisted ports follow in declaration order. By default inputs sit on the west side and outputs on the east; listing a port under another side moves it there.</p>
+
+  <h2>Frames</h2>
+<pre><code>frames:
+  - node: compute
+    width: 640                   # includes the header and the internal viewport
+    height: 420</code></pre>
+  <p>Only expandable module instances take a frame. The frame is allocated at layout time and never grows: when expanded, the child's schematic is scaled to fit inside it. A large interior in a small frame will be too small to read inline; that is what <em>Focus module</em> is for. The default frame is 260 × 170.</p>
+
+  <h2>Validation</h2>
+  <p>A file is validated against the loaded design when applied, and every problem is reported at once with its scope and the rule ids involved:</p>
+  <ul>
+    <li>unknown scope path, unknown node, unknown port</li>
+    <li>duplicate constraint ids, unsupported kinds (<code>sameRow</code>, <code>rightOf</code>, …), unknown keys</li>
+    <li>invalid values: negative gaps, non-positive weights or frame sizes, bad strength</li>
+    <li>cycles among required <code>leftOf</code> rules or among required <code>above</code> rules</li>
+    <li>a required <code>alignY</code> that contradicts a required <code>above</code> on the same nodes</li>
+    <li>frames on nodes that are not expandable instances</li>
+  </ul>
+  <p>Any error rejects the whole file; nothing is applied partially. The bundled <em>Conflicting</em> sample triggers one of each.</p>
+  <figure><img class="shot" src="assets/img/conflict-diagnostics.png" alt="Layout tab showing validation errors for the conflicting sample"><figcaption>The Layout tab after applying the conflicting sample: every error names the scope and constraint id, and the automatic layout stays on the canvas.</figcaption></figure>
+
+  <h2>How rules are applied</h2>
+  <ol>
+    <li>Automatic layered layout computes a candidate (required <code>leftOf</code> rules already influence which layer each node lands in).</li>
+    <li>Required rules are iterated to a fixed point by nudging: layers shift right for <code>leftOf</code> gaps, nodes move vertically for <code>above</code> and <code>alignY</code>. Non-overlap is maintained.</li>
+    <li>Preferred rules are tried in weight order and kept or reverted.</li>
+    <li>Wires are routed against the final geometry, never before.</li>
+    <li>Everything is verified again and reported.</li>
+  </ol>
+  <p>Rules only reach the immediate children of a scope. You cannot relate <code>top/compute/pe0</code> to <code>top/output_fifo</code> because each module is laid out in its own coordinate system.</p>
+
+  <h2>A worked example</h2>
+  <p>The rule file shipped with the demo. It fixes the datapath order and spacing, keeps the three datapath blocks on one row, puts the controller above the compute block, gives <code>compute</code> a frame big enough to read inline, and orders its ports to match the data flow.</p>
+<pre><code>version: 1
+defaults: { nodeGap: 32, layerGap: 80 }
+scopes:
+  - scope: top
+    constraints:
+      - { id: input-before-compute,    kind: leftOf, a: input_fifo, b: compute,     gap: 80, strength: required }
+      - { id: compute-before-output,   kind: leftOf, a: compute,    b: output_fifo, gap: 80, strength: required }
+      - { id: datapath-alignment,      kind: alignY, nodes: [input_fifo, compute, output_fifo], strength: preferred, weight: 10 }
+      - { id: controller-above-compute, kind: above, a: controller, b: compute,     gap: 40, strength: preferred, weight: 5 }
+    ports:
+      - { node: compute, side: west, order: [data_in, valid_in, start, mode, coeff_sel, ready_in, clk, rst_n] }
+      - { node: compute, side: east, order: [data_out, valid_out, ready_out, done] }
+    frames:
+      - { node: compute, width: 640, height: 420 }
+  - scope: top/compute
+    constraints:
+      - { id: pe-chain, kind: leftOf, a: pe0, b: pe1, gap: 60, strength: required }
+      - { id: pe-row,   kind: alignY, nodes: [pe0, pe1], strength: preferred, weight: 3 }</code></pre>
+  <p>The <a href="examples.html#procbase">ProcBase example</a> has a second, larger rule file.</p>
+</main>
+<script src="assets/site.js"></script>
+</body>
+</html>

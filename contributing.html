@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VeriLens · Contributing</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<main>
+  <h1>Contributing</h1>
+  <p class="lead">VeriLens is MIT licensed and developed on GitHub at <a href="https://github.com/AnthonyBSong/VeriLens" target="_blank" rel="noopener">AnthonyBSong/VeriLens</a>. Bug reports with a small <code>.sv</code> file that reproduces the problem are the most useful thing you can send.</p>
+
+  <h2>Set up</h2>
+  <p>Follow <a href="installation.html">Installation</a>, then make sure both test suites pass before you change anything:</p>
+<pre><code>cmake -S . -B build &amp;&amp; cmake --build build
+cd build &amp;&amp; ctest
+cd ../packages/web &amp;&amp; npm install &amp;&amp; npm test &amp;&amp; npm run test:e2e</code></pre>
+
+  <h2>Working on the core</h2>
+  <ul>
+    <li>Parser tests live in <code>core/tests/parser</code> and compare against JSON goldens (<code>*.ast.json</code>). When you change the JSON shape on purpose, regenerate them with <code>python3 core/tests/parser/gen_golden.py</code> and review the diff.</li>
+    <li>Add a lexer, parser or validator test for every new construct. A failing input file is a good first commit for a bug report.</li>
+    <li>The core stays a structural extractor. Features that do not change what a schematic shows (expression evaluation, elaboration, simulation) are out of scope.</li>
+  </ul>
+
+  <h2>Working on the viewer</h2>
+  <ul>
+    <li><code>npm run dev</code> serves the bundled demo at <code>http://localhost:5173</code>; add <code>?sample=conflict</code> or <code>?focus=top/compute</code> to jump to a state.</li>
+    <li>Changes to <code>layered.ts</code>, <code>constraints.ts</code>, <code>router.ts</code> or <code>store.ts</code> need a test in <code>packages/web/tests/</code> (vitest) or <code>packages/web/e2e/</code> (Playwright, uses the installed Google Chrome).</li>
+    <li>Never re-parse Verilog text in the viewer. Everything you need is in the adapter's <code>Design</code>; if it is missing, extend the core and the contract instead.</li>
+    <li>Keep the <a href="architecture.html#viewer-invariants">eight invariants</a>. In particular: no drag handlers, no layout triggered by selection or expansion, no node moved after routing, and no net or port hidden to make a picture cleaner.</li>
+    <li>If you touch <code>samples/demo/demo.sv</code>, rebuild the samples with <code>npm run gen:samples</code>.</li>
+  </ul>
+
+  <h2>Layout rules for real designs</h2>
+  <p>A good contribution that needs no code is a <code>layout.yaml</code> for a public design, together with the command line that renders it. The <code>ProcBase.layout.yaml</code> in <code>core/tests/examples</code> is the reference; see <a href="examples.html">Examples</a>.</p>
+
+  <h2>Pull requests</h2>
+  <ul>
+    <li>One topic per PR. Describe what the schematic looked like before and after when the change is visual; a screenshot from <em>Export HTML</em> is ideal.</li>
+    <li>Run both test suites. CI does not yet gate merges, so the author is the gate.</li>
+    <li>Keep the docs in step: <code>README.md</code>, <code>packages/web/README.md</code>, <code>packages/web/docs/FORMATS.md</code>, and this site (the <code>gh-pages</code> branch is plain HTML; edit the page and push).</li>
+  </ul>
+
+  <h2>This site</h2>
+  <p>The documentation is hand-written HTML on the <code>gh-pages</code> branch with no build step. <code>assets/site.js</code> adds the shell (navigation, table of contents, pager) around each page's <code>&lt;main&gt;</code>. The live demo under <code>demo/</code> is the viewer's single-file build with a sample design embedded; regenerate it with <code>npm run build</code> and copy <code>dist/index.html</code>. The screenshots come from <code>packages/web/scripts/dev/shot-docs.mjs</code> run against <code>npm run preview</code>.</p>
+</main>
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VeriLens · Examples</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<main>
+  <h1>Examples</h1>
+  <p class="lead">Two designs ship with the repository: a small streaming accelerator used by the tests and the docs, and a five-stage processor from the parser test suite.</p>
+
+  <h2 id="demo">Demo: streaming accelerator</h2>
+  <p>Source: <code>packages/web/samples/demo/demo.sv</code>. A <code>top</code> with an input FIFO, a controller, a <code>compute</code> block (two instances of a processing-element module, an accumulator, a mux, an adder) and an output FIFO. It has buses, fanout (clock and reset), feedback (ready/valid back-pressure and the accumulator loop), constants and a struct-free, parser-friendly style.</p>
+  <p>Open it: <a href="demo/index.html?sample=auto" target="_blank" rel="noopener">automatic layout</a> · <a href="demo/index.html?sample=layout" target="_blank" rel="noopener">with layout rules</a> · <a href="demo/index.html?sample=conflict" target="_blank" rel="noopener">with the conflicting rule file</a></p>
+  <figure><img class="shot" src="assets/img/overview.png" alt="Demo top level with layout rules"><figcaption>Top level with <code>demo.layout.yaml</code>: datapath on one row with fixed gaps, controller above compute, a 640×420 frame for compute.</figcaption></figure>
+  <figure><img class="shot" src="assets/img/expand-highlight.png" alt="compute expanded in place with the fifo_data net highlighted"><figcaption><code>compute</code> expanded in place; the <code>fifo_data</code> net is selected and the highlight continues into <code>data_in</code> inside the frame.</figcaption></figure>
+  <figure><img class="shot" src="assets/img/focus-compute.png" alt="compute focused as the main schematic"><figcaption><em>Focus module</em> on <code>compute</code>: the two PEs, the adder and mux, the <code>always_ff</code> register block, and feedback lanes below.</figcaption></figure>
+  <figure><img class="shot" src="assets/img/focus-controller.png" alt="controller focused"><figcaption>The controller: comparators, gates, an <code>always_comb</code> next-state block and an <code>always_ff</code> state register, with the 2-bit <code>state</code> bus drawn thicker.</figcaption></figure>
+
+  <h2 id="procbase">ProcBase: a five-stage TinyRV2 processor</h2>
+  <p>Source: <code>core/tests/examples/ProcBase.v</code> and its dependencies, from a course processor lab. <code>ProcBase.v</code> carries the <code>// verilens: top</code> pragma, and <code>ProcBase.layout.yaml</code> next to it puts the control unit before and above the datapath, gives both a readable frame, orders the datapath ports, and pins the pipeline stage order inside <code>dpath</code>.</p>
+<pre><code>cd core/tests/examples
+../../../verilens ProcBase.v ProcBaseDpath.v ProcBaseCtrl.v DropUnit.v ProcDpathAlu.v ProcDpathImmGen.v \
+  IntMulAlt.v Lookahead.v muxes.v arithmetic.v regfiles.v tinyrv2_encoding.v -l ProcBase.layout.yaml</code></pre>
+  <p>Twelve files, 22 modules. Six <code>vc_*</code> library cells (queues, enable registers, trace modules) are not part of the examples and render as dashed black boxes. <a href="demo/procbase.html" target="_blank" rel="noopener">Open the generated page ↗</a></p>
+  <figure><img class="shot" src="assets/img/procbase-top.png" alt="ProcBase top level"><figcaption>Top level: <code>ctrl</code> above and left of <code>dpath</code>, queues and the instruction drop unit around them, black boxes dashed.</figcaption></figure>
+  <figure><img class="shot" src="assets/img/procbase-expanded.png" alt="ProcBase with dpath expanded"><figcaption><code>dpath</code> expanded in its 960×560 frame: fetch, decode, execute, memory and writeback left to right; the surrounding boxes have not moved.</figcaption></figure>
+  <p>Things worth clicking: the <code>inst_D</code> bus from the datapath back to the controller (a feedback route), the <code>multiplier</code> instance three levels deep (<code>dpath → multiplier → …</code>), and the diagnostics drawer, which reports two multiply-driven nets caused by struct-field assigns in the original source.</p>
+
+  <h2>Writing your own layout file</h2>
+  <p>Start from automatic layout, open the <em>Layout</em> tab, and add rules one at a time. Required rules are for things that must hold (stage order, a block that must sit left of another); preferred rules are for taste (rows, something above something else). The <a href="layout-dsl.html">DSL page</a> has the full semantics and the demo rule file; <code>core/tests/examples/ProcBase.layout.yaml</code> is the larger example.</p>
+</main>
+<script src="assets/site.js"></script>
+</body>
+</html>

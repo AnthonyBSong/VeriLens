@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VeriLens · Installation</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<main>
+  <h1>Installation</h1>
+  <p class="lead">Two parts: the C++ core (<code>gen_ast</code>) that parses your HDL, and the viewer (Node.js). The <code>./verilens</code> launcher builds both on first use, so this page is mostly about getting the prerequisites in place.</p>
+
+  <h2>Prerequisites</h2>
+  <table>
+    <tr><th>Tool</th><th>Used for</th><th>Notes</th></tr>
+    <tr><td>CMake ≥ 3.20 and a C++17 compiler</td><td>building <code>gen_ast</code> and the core tests</td><td>Apple clang, GCC or MSVC</td></tr>
+    <tr><td>nlohmann-json</td><td>JSON output of the core</td><td>installed by the per-OS steps below</td></tr>
+    <tr><td>GoogleTest</td><td>core unit tests only</td><td>optional if you never run <code>ctest</code></td></tr>
+    <tr><td>Node.js ≥ 20 and npm</td><td>viewer build, tests, launcher</td><td>developed with Node 24</td></tr>
+    <tr><td>Google Chrome</td><td>browser end-to-end tests only</td><td>Playwright uses the installed Chrome; no download needed</td></tr>
+  </table>
+
+  <h2>macOS</h2>
+<pre><code>git clone https://github.com/AnthonyBSong/VeriLens
+cd VeriLens
+brew bundle                 # cmake, googletest, nlohmann-json
+cmake -S . -B build &amp;&amp; cmake --build build
+cd packages/web &amp;&amp; npm install</code></pre>
+
+  <h2>Linux</h2>
+  <p>With Nix (any distribution):</p>
+<pre><code>nix-shell                   # drops you into a shell with all dependencies
+cmake -S . -B build &amp;&amp; cmake --build build
+cd packages/web &amp;&amp; npm install</code></pre>
+  <p>Without Nix:</p>
+<pre><code># Debian / Ubuntu
+sudo apt install cmake libgtest-dev nlohmann-json3-dev nodejs npm
+# Arch
+sudo pacman -S cmake gtest nlohmann-json nodejs npm</code></pre>
+
+  <h2>Windows</h2>
+<pre><code>winget import -i winget-packages.json
+vcpkg install
+cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake"
+cmake --build build
+cd packages\web; npm install</code></pre>
+  <div class="note">The <code>./verilens</code> launcher is a Bash script. On Windows run it from Git Bash or WSL, or call the two underlying steps directly: <code>build\core\tools\gen_ast</code> and <code>node packages\web\scripts\build-html.mjs</code> (see <a href="launcher.html">Launcher</a>).</div>
+
+  <h2>Check the installation</h2>
+<pre><code>cd build &amp;&amp; ctest                # core: 167 tests
+cd ../packages/web &amp;&amp; npm test    # viewer: unit tests
+npm run test:e2e                  # viewer: browser tests (needs Chrome)
+./verilens --help                 # from the repository root</code></pre>
+
+  <h2>Nothing to install: use the demo</h2>
+  <p>The <a href="demo/index.html?sample=layout" target="_blank" rel="noopener">live demo</a> on this site is the built viewer with a sample design embedded. It is the same single HTML file that <code>./verilens</code> produces for your own projects.</p>
+</main>
+<script src="assets/site.js"></script>
+</body>
+</html>

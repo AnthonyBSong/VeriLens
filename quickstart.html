@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VeriLens · Quick start</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<main>
+  <h1>Quick start</h1>
+  <p class="lead">From a folder of Verilog to an interactive schematic in one command, then a short tour of the planning loop.</p>
+
+  <h2>1. Mark the top module</h2>
+  <p>Add a comment above the module you want to open first:</p>
+<pre><code>// verilens: top
+module top ( ... );</code></pre>
+  <p>Without it, VeriLens picks the one module nothing else instantiates. If there are several, the first wins and the <em>Modules</em> tab lets you switch. You can also pass <code>-t name</code> to the launcher.</p>
+
+  <h2>2. Run the launcher</h2>
+<pre><code>./verilens path/to/rtl/                # a directory, or any list of .v / .sv files
+./verilens rtl/ -l layout.yaml         # with layout rules
+./verilens rtl/ -t my_top -o out.html  # choose the top and the output file</code></pre>
+  <p>The launcher builds <code>gen_ast</code> and the viewer bundle if they are missing, parses your sources, writes <code>&lt;name&gt;.verilens.html</code> next to a <code>&lt;name&gt;.verilens.ast.json</code>, and opens the HTML in your browser. The HTML is self-contained: send it to a colleague and it works offline.</p>
+  <div class="note">Parser warnings (for example an identifier that is not declared, or a width mismatch) are printed but do not stop the run. Modules that are instantiated but not found in your inputs are drawn as dashed black boxes.</div>
+
+  <h2>3. Look around</h2>
+  <ul>
+    <li>Drag the background to pan, use the mouse wheel to zoom around the pointer, press <kbd>f</kbd> or <em>Fit design</em> to see everything.</li>
+    <li>Click a module box to inspect it; its drivers turn green and its sinks blue.</li>
+    <li>Click a wire to highlight the whole net, including inside expanded children and up in the parent.</li>
+    <li>Press <code>[+]</code> in a module header to see its contents in place; <em>Focus module</em> opens it full-size, <em>Back</em> returns.</li>
+  </ul>
+  <p>The <a href="navigation.html">Navigating the viewer</a> page walks through every button interactively.</p>
+
+  <h2>4. Plan the layout (optional)</h2>
+  <p>Start the dev server with your files preloaded:</p>
+<pre><code>./verilens rtl/ -l layout.yaml --dev</code></pre>
+  <p>Open the <em>Layout</em> tab, edit the rules, press <em>Apply</em>. Rules that cannot hold are listed with the scope and rule id, and the previous layout stays on screen. Edit the YAML file on disk and press <em>Reload files</em> to re-read it. When it looks right, <em>Export HTML</em> writes the final page with the rules embedded. The DSL is documented in <a href="layout-dsl.html">Layout DSL</a>.</p>
+
+  <h2>5. A complete example</h2>
+  <p>The repository ships a five-stage processor in <code>core/tests/examples</code>. This is the exact command behind the <a href="examples.html#procbase">ProcBase example</a>:</p>
+<pre><code>cd core/tests/examples
+../../../verilens ProcBase.v ProcBaseDpath.v ProcBaseCtrl.v DropUnit.v ProcDpathAlu.v ProcDpathImmGen.v \
+  IntMulAlt.v Lookahead.v muxes.v arithmetic.v regfiles.v tinyrv2_encoding.v -l ProcBase.layout.yaml</code></pre>
+</main>
+<script src="assets/site.js"></script>
+</body>
+</html>

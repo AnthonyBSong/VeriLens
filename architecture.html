@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VeriLens · Architecture and invariants</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<main>
+  <h1>Architecture and invariants</h1>
+  <p class="lead">VeriLens is two programs with one JSON contract between them: a C++ structural extractor (<code>core/</code>) and a TypeScript/React/SVG viewer (<code>packages/web/</code>). This page describes the pipeline and the rules the viewer never breaks.</p>
+
+  <h2>Pipeline</h2>
+<pre><code>Verilog / SystemVerilog
+   │
+   ▼  core/Lexer.cpp
+tokens
+   │
+   ▼  core/Parser.cpp            two-pass: collect module names, then full parse
+structural AST                   modules, ports, nets, instances, assigns, always blocks
+   │
+   ▼  core/Linker.cpp            project-wide symbol table; marks instances resolved / unresolved
+   │
+   ▼  core/Validator.cpp         port counts, widths, dangling required ports
+   │
+   ▼  core/tools/gen_ast.cpp     emits an array of modules as JSON
+   │
+   ▼  packages/web/src/model/adapters/verilens.ts
+Design                           what exists (model/design.ts)
+   │
+   ├── LayoutFile (layout/dsl.ts)          how to arrange it, from YAML
+   ▼
+layout/engine.ts                 validate → layered → constraints → route → verify
+ModuleLayout (layout/types.ts)   computed geometry
+   │
+   ▼
+ui/                              SVG rendering; UI state in state/store.ts</code></pre>
+
+  <h2>The core is a structural extractor</h2>
+  <p>It is not a compiler. The parser keeps what a schematic needs: module declarations with ports, directions and widths; instantiations with their port connections; net declarations; <code>assign</code> statements with full expression trees; and <code>always</code> blocks with sensitivity lists and statement trees. Everything else is skipped.</p>
+  <p>Instantiations and net declarations share the <code>IDENTIFIER IDENTIFIER</code> shape, so the parser runs a light first pass to collect module names, and uses look-ahead (<code>#(</code> or <code>IDENTIFIER (</code>) for modules defined in other files. The linker then resolves every instance against the whole project. Unresolved instances are kept in the output with <code>resolved: false</code> so the viewer can draw them as black boxes.</p>
+
+  <h2>The contract</h2>
+  <p><code>gen_ast</code> emits an array of modules; the shape is defined by <code>moduleToJson</code> in <code>core/Parser.cpp</code>, and golden files in <code>core/tests/parser/*.ast.json</code> pin it down. The viewer reads it through a single adapter. Instance connections carry a parsed <code>expr</code> tree, so the viewer never re-parses Verilog text and contains no regular-expression parsing. A <code>// verilens: top</code> comment marks the top module. The field reference lives on the <a href="formats.html">Input formats</a> page.</p>
+
+  <h2>Viewer invariants</h2>
+  <p>These are the rules the viewer is built around. Tests in <code>packages/web/tests/</code> and <code>packages/web/e2e/</code> guard them.</p>
+  <ol>
+    <li><b>Data, rules, geometry and UI state are separate.</b> <code>Design</code> is what exists. <code>LayoutFile</code> is how to arrange it. <code>ModuleLayout</code> is computed geometry. UI state lives in the store. Layout rules never change connectivity, layout code never mutates the design, and no fake circuit edges are added to the design to express layout wishes.</li>
+    <li><b>Geometry changes only on</b> design load, applying a layout file, or an explicit <em>Re-layout</em>. Selection, highlighting, camera and module expansion never trigger layout.</li>
+    <li><b>Expansion moves nothing.</b> Every expandable instance owns a fixed frame from the parent's layout. Expanded contents render in a clipped nested <code>&lt;svg&gt;</code> under the header, in the child's own coordinates, scaled to fit. Siblings, the frame, port anchors, external routes and the camera stay identical. Layouts are cached per instance path, so collapse and re-expand give the same picture. Large interiors are read with <em>Focus module</em>, not by growing frames.</li>
+    <li><b>Nothing is draggable.</b> Components, ports and wires have no drag or edit handlers. Panning starts only on the background.</li>
+    <li><b>Wires are routed after all node movement.</b> The engine runs validate → layered candidate → constraint solve → route → verify. A node is never moved after routing. Junction dots mean a branch; crossings get no dot.</li>
+    <li><b>Layout jobs are versioned.</b> A result is applied only if it is still the newest for its scope key, so a slow layout can never overwrite a newer one.</li>
+    <li><b>Deterministic.</b> Same design plus same rules gives an identical layout. No randomness, stable iteration order.</li>
+    <li><b>Honest rendering.</b> Undriven or multiply-driven nets, unconnected ports, black boxes, constants and implicit nets are shown or reported, never repaired or hidden.</li>
+  </ol>
+
+  <h2>Layout engine in one paragraph</h2>
+  <p><code>layered.ts</code> assigns components to left-to-right layers from the connectivity (breaking feedback cycles on the thinner bundle) and orders them to reduce crossings. <code>constraints.ts</code> then applies the rules from the layout file: required rules must hold or the layout is rejected with a diagnostic; preferred rules are satisfied when they do not conflict. <code>router.ts</code> draws orthogonal wires over the final positions. <code>engine.ts</code> verifies the result against the invariants before the store accepts it. See the <a href="layout-dsl.html">Layout DSL</a> for the rule vocabulary.</p>
+
+  <h2>Repository map</h2>
+  <table>
+    <tr><th>Path</th><th>Contents</th></tr>
+    <tr><td><code>core/</code></td><td>Lexer, Parser, AST nodes, Linker, Validator; <code>tools/gen_ast.cpp</code></td></tr>
+    <tr><td><code>core/tests/</code></td><td>GoogleTest suites for lexer, parser (with JSON goldens) and validator; <code>examples/</code> holds the 5-stage processor used in the docs</td></tr>
+    <tr><td><code>packages/web/src/model</code></td><td><code>design.ts</code> and the <code>adapters/</code> that build it</td></tr>
+    <tr><td><code>packages/web/src/layout</code></td><td><code>dsl.ts</code>, <code>engine.ts</code>, <code>layered.ts</code>, <code>constraints.ts</code>, <code>router.ts</code>, <code>jobs.ts</code>, <code>symbols.ts</code>, <code>types.ts</code></td></tr>
+    <tr><td><code>packages/web/src/state</code></td><td><code>store.ts</code>, all UI state</td></tr>
+    <tr><td><code>packages/web/src/ui</code></td><td>React components and the SVG renderer</td></tr>
+    <tr><td><code>packages/web/scripts</code></td><td><code>build-html.mjs</code> (single-file export), <code>gen-samples.mjs</code></td></tr>
+    <tr><td><code>verilens</code></td><td>The launcher script at the repo root</td></tr>
+  </table>
+</main>
+<script src="assets/site.js"></script>
+</body>
+</html>

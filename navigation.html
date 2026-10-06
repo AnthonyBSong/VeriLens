@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VeriLens · Navigating the viewer</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<main>
+  <h1>Navigating the viewer</h1>
+  <p class="lead">Two ways to learn the interface: an annotated map you can click, and a guided tour that drives the real viewer step by step.</p>
+
+  <h2>Interactive map</h2>
+  <p>Click any region of the mock-up, or one of the chips below it, to read what it does.</p>
+
+  <div class="chips" id="chips"></div>
+
+  <div class="uimap" id="uimap">
+    <div class="row">
+      <div class="region tb" data-k="toolbar" style="flex:1">
+        <span class="badge">1</span>
+        <b style="color:#2f5fa8">VeriLens</b>
+        <span class="b" data-k="open">Open…</span>
+        <span class="b" data-k="samples">Samples… ▾</span>
+        <span class="b" data-k="back">◀ Back</span>
+        <span class="b" data-k="fit">Fit design</span>
+        <span class="b" data-k="fit">Fit selection</span>
+        <span class="b" data-k="relayout">Re-layout</span>
+        <span class="in" data-k="search">search instance path or net</span>
+        <span style="flex:1"></span>
+        <span class="b" data-k="export">Export HTML</span>
+        <span class="b" data-k="panels">⫷</span><span class="b" data-k="panels">⫸</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="region side" data-k="hierarchy">
+        <span class="badge">2</span>
+        <div class="tabs"><div data-k="hierarchy">Hierarchy</div><div data-k="modules">Modules</div><div data-k="layout">Layout</div></div>
+        <ul>
+          <li>▾ <b>top</b> <span style="color:#6b7280">top</span></li>
+          <li class="sub">· input_fifo <span>input_fifo</span></li>
+          <li class="sub">· controller <span>controller</span></li>
+          <li class="sub">▾ compute <span>compute</span></li>
+          <li class="sub" style="padding-left:28px">· pe0 <span>pe</span></li>
+          <li class="sub" style="padding-left:28px">· pe1 <span>pe</span></li>
+          <li class="sub">· output_fifo <span>output_fifo</span></li>
+        </ul>
+      </div>
+      <div class="region canvas" data-k="canvas">
+        <span class="badge" style="top:8px;right:8px">3</span>
+        <div class="crumbs" data-k="breadcrumbs">top <span style="color:#6b7280">/</span> <b>compute</b></div>
+        <div class="term" data-k="terminals" style="left:14px;top:120px">data_in [31:0]</div>
+        <div class="term" data-k="terminals" style="left:14px;top:160px">clk</div>
+        <div class="wire" data-k="wires" style="left:70px;top:131px;width:60px;height:2px"></div>
+        <div class="wire" data-k="wires" style="left:70px;top:170px;width:220px;height:1px"></div>
+        <div class="wire" data-k="wires" style="left:129px;top:131px;width:1px;height:60px"></div>
+        <div class="wire" data-k="wires" style="left:129px;top:190px;width:140px;height:2px"></div>
+        <div class="dot" data-k="wires" style="left:127px;top:168px"></div>
+        <div class="mod" data-k="module" style="left:130px;top:70px;width:150px;height:90px">
+          <div class="hd"><span class="tg" data-k="toggle">+</span> pe0 <span style="flex:1"></span><span style="font-weight:400;color:#6b7280">pe</span></div>
+          <div class="pin" data-k="ports" style="left:-3px;top:40px"></div>
+          <div class="pin" data-k="ports" style="left:-3px;top:62px"></div>
+          <div class="pin" data-k="ports" style="right:-3px;top:50px"></div>
+          <div style="position:absolute;left:6px;top:36px;font-size:9px;color:#374151">a [31:0]</div>
+          <div style="position:absolute;left:6px;top:58px;font-size:9px;color:#374151">clk</div>
+        </div>
+        <div class="mod" data-k="module" style="left:270px;top:150px;width:150px;height:90px;background:#f6c7c7;border-color:#c0392b">
+          <div class="hd"><span class="tg" data-k="toggle">−</span> pe1 <span style="flex:1"></span><span style="font-weight:400;color:#6b7280">pe</span></div>
+          <div data-k="expanded" style="position:absolute;left:3px;right:3px;top:19px;bottom:3px;background:#fff;border:1px solid #c9d2e0"></div>
+        </div>
+        <div class="wire hl" data-k="highlight" style="left:280px;top:190px;width:1px;height:1px"></div>
+        <div class="wire" data-k="feedback" style="left:300px;top:240px;width:1px;height:40px"></div>
+        <div class="wire" data-k="feedback" style="left:110px;top:280px;width:191px;height:1px"></div>
+        <div class="wire" data-k="feedback" style="left:110px;top:150px;width:1px;height:130px"></div>
+        <div style="position:absolute;left:20px;top:220px;font-size:9px;border:1px solid #a08a2e;background:#fffbe6;padding:0 3px" data-k="consts">12'd0</div>
+      </div>
+      <div class="region insp" data-k="inspector">
+        <span class="badge">4</span>
+        <b>pe1</b>
+        <div class="kv"><span>path</span><span>top/compute/pe1</span></div>
+        <div class="kv"><span>kind</span><span>instance of pe</span></div>
+        <div class="kv"><span>source</span><span>demo.sv:201</span></div>
+        <div style="margin:6px 0"><span class="b" style="border:1px solid #c9d1da;border-radius:3px;padding:0 5px" data-k="focus">Focus module</span> <span class="b" style="border:1px solid #c9d1da;border-radius:3px;padding:0 5px">Collapse</span></div>
+        <div class="kv"><span>port</span><span>dir</span><span>net</span></div>
+        <div class="kv"><span>a</span><span>input</span><span style="color:#2f5fa8;text-decoration:underline">pe0_out</span></div>
+        <div class="kv"><span>y</span><span>output</span><span style="color:#2f5fa8;text-decoration:underline">pe1_out</span></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="region sb" data-k="status" style="flex:1">
+        <span class="badge" style="top:4px;right:4px">5</span>
+        <span>cell top/compute/pe1</span><span>focus: top/compute</span><span class="grow"></span><span data-k="diagnostics" style="color:#8a5a00">0 errors · 1 warnings · 0 info</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="explain" id="explain">
+    <h3>Pick a region</h3>
+    <p class="hint">Hover or click the mock-up above. Numbers mark the five areas: toolbar, left panel, canvas, inspector, status bar.</p>
+  </div>
+
+  <h2>Mouse and keyboard</h2>
+  <table>
+    <tr><th>Action</th><th>Effect</th></tr>
+    <tr><td>Drag on empty canvas</td><td>Pan. Dragging on a component, port or wire does nothing: nothing on the canvas is movable or editable.</td></tr>
+    <tr><td>Mouse wheel</td><td>Zoom around the pointer.</td></tr>
+    <tr><td>Click a component</td><td>Select it: red fill; its drivers turn green, its sinks blue, cells that are both turn yellow (feedback). The inspector shows details.</td></tr>
+    <tr><td>Click a wire or a boundary terminal</td><td>Select the net: orange highlight everywhere the net is visible, including inside expanded children and in the parent.</td></tr>
+    <tr><td>Click <code>[+]</code> / <code>[−]</code></td><td>Expand or collapse that instance in place. Never starts a pan.</td></tr>
+    <tr><td>Click empty canvas</td><td>Clear the selection.</td></tr>
+    <tr><td><kbd>Esc</kbd></td><td>Clear the selection.</td></tr>
+    <tr><td><kbd>f</kbd></td><td>Fit the whole schematic (same as <em>Fit design</em>).</td></tr>
+    <tr><td>Touch drag</td><td>Pans only from the background, like the mouse.</td></tr>
+  </table>
+
+  <h2>Reading the schematic</h2>
+  <ul>
+    <li><b>Module instances</b> are blue boxes with a header: the <code>[+]</code> toggle, the instance name, and the module name on the right. Collapsed boxes show the module name in the middle. Dashed grey boxes are black boxes: modules that were instantiated but not found in the inputs.</li>
+    <li><b>Primitives</b> use schematic symbols where one exists (and/or/xor/not, mux, +, −, ×, =, &lt;, shifts), a register symbol for <code>always_ff</code> blocks, and a labelled box for <code>always_comb</code> and anything unknown.</li>
+    <li><b>Ports</b> are small square pins on the box edge with their name and <code>[n:0]</code> width inside. A hollow red circle marks an unconnected input.</li>
+    <li><b>Wires</b> are thin for single bits and thicker for buses. The net name (and width) sits at the driver end; <code>[3:0]</code> labels at a sink mean only that slice is connected. A filled dot is a branch; a plain crossing is not a connection.</li>
+    <li><b>Boundary terminals</b> are the module's own ports: pentagon flags on the left (inputs) and right (outputs).</li>
+    <li><b>Constants</b> are small yellow boxes with the literal text.</li>
+    <li><b>Feedback</b> wires (signals flowing right-to-left) run below the drawing and come back up next to their sink.</li>
+  </ul>
+
+  <h2 id="live-tour">Guided tour on the live viewer</h2>
+  <p>The frame below is the real viewer with the demo design. Each step highlights a part of the interface and performs the action for you. You can also use the viewer directly inside the frame.</p>
+  <div class="tour" id="tour">
+    <div class="bar">
+      <button id="tour-prev">◀</button>
+      <button id="tour-next" class="primary">Start tour ▶</button>
+      <span class="step" id="tour-step"></span>
+      <span style="flex:1"></span>
+      <button id="tour-reset">Reset viewer</button>
+      <a href="demo/index.html?sample=layout" target="_blank" rel="noopener" style="font-size:13px">Open in a new tab ↗</a>
+    </div>
+    <div class="text" id="tour-text"><b>Ready</b>Press <em>Start tour</em>. Steps go through the toolbar, the hierarchy tree, module expansion, net highlighting, the inspector, the layout editor and the diagnostics.</div>
+    <div class="blocked" id="tour-blocked">This page is being viewed from a local file, so the browser does not let the tour reach into the frame. Serve the folder over HTTP or use the hosted site; the viewer itself still works below.</div>
+    <iframe id="tour-frame" src="demo/index.html?sample=layout" title="VeriLens live demo"></iframe>
+  </div>
+
+<script>
+// ---- interactive map
+const EXPLAIN = {
+  toolbar: ['Toolbar', 'Global actions. Left to right: Open…, Samples, Back, Fit design, Fit selection, Re-layout, the search box, the design name, Export HTML, and the two panel toggles. Hover each button in the mock-up for details.'],
+  open: ['Open…', 'Loads a file from disk: a <code>*.ast.json</code> produced by <code>gen_ast</code>, a normalized <code>*.design.json</code>, or a <code>*.yaml</code> layout file (which is applied immediately).'],
+  samples: ['Samples', 'Three variants of the bundled demo: automatic layout, with layout rules, and with a deliberately broken rule file so you can see the diagnostics.'],
+  back: ['Back', 'Restores the previous main view after <em>Focus module</em>, including the camera position. Disabled when there is nothing to go back to.'],
+  fit: ['Fit design / Fit selection', 'Fit design frames the whole focused module (also <kbd>f</kbd>). Fit selection zooms to the selected cell or the extent of the selected net.'],
+  relayout: ['Re-layout', 'The only explicit way to recompute geometry from the current rules. Selection, camera and expansion never trigger a layout on their own.'],
+  search: ['Search', 'Type part of a hierarchical instance path (<code>compute/pe1</code>) or a net name. Enter takes the first match; the dropdown lists up to twelve. Instances are selected in their parent module, nets in the module that declares them.'],
+  export: ['Export HTML', 'Downloads one self-contained HTML file with the design and the current layout rules embedded. Opening it gives this same viewer, offline. The launcher produces the same file from the command line.'],
+  panels: ['Panel toggles', 'Hide or show the left panel and the inspector to give the canvas the full width.'],
+  hierarchy: ['Hierarchy tab', 'The instance tree from the top module down. Click a row to select that instance in its parent module (the view switches to the parent if needed); the ⤢ icon that appears on hover opens it as the main schematic. The bold row is the current focus, the pink row the selection.'],
+  modules: ['Modules tab', 'Every module definition in the design with its instance count, cell count and port count. Clicking opens the first instance of that module. Useful for planning each module\'s layout one at a time.'],
+  layout: ['Layout tab', 'A YAML editor for the layout rules. <em>Apply</em> validates against the loaded design and recomputes; errors are listed with scope and rule ids and the previous layout stays. <em>Sample</em> and <em>Conflicting</em> load the two bundled rule files, <em>Clear</em> returns to automatic layout, <em>Reload files</em> re-reads the design and YAML given to <code>./verilens --dev</code>.'],
+  canvas: ['Canvas', 'The schematic of the focused module. Drag the background to pan, wheel to zoom at the pointer. Only the camera moves; components, ports and wires are never draggable.'],
+  breadcrumbs: ['Breadcrumbs', 'The instance path of the focused module. Each segment is a link that focuses that ancestor.'],
+  module: ['Module box', 'An instance of a module. Blue fill, the instance name in the header, the module name on the right. Click to select: the box turns red, drivers green, sinks blue, both yellow. Dashed grey boxes are black boxes.'],
+  toggle: ['[+] / [−] toggle', 'Expands or collapses the instance in place. The box keeps its exact size and port positions, siblings and external wires do not move, and the camera stays. Collapse and re-expand shows the identical internal view.'],
+  expanded: ['Expanded content', 'The child\'s own schematic, fitted into the frame below the header, with its own boundary terminals. For a large interior that is too small to read inline, use <em>Focus module</em>.'],
+  ports: ['Port pins', 'Small squares on the box edge, labelled inside with name and width. Inputs on the west side, outputs on the east; the layout file can reorder them. A hollow red circle marks an unconnected input.'],
+  wires: ['Wires and junctions', 'Thin for 1-bit nets, thick for buses, net name at the driver. A filled dot means the net branches there; two wires simply crossing are not connected. Click a wire to select its net.'],
+  highlight: ['Net highlight', 'A selected net is drawn in orange everywhere it is visible, following real connectivity through expanded children and up into the parent. The inspector lists the same net in each scope.'],
+  terminals: ['Boundary terminals', 'The focused module\'s own ports: inputs as flags on the left, outputs on the right, with name and width. Clicking one selects its net.'],
+  feedback: ['Feedback routes', 'Signals that flow right-to-left (back-pressure, loops, status back to a controller) drop below the drawing and come back up beside their sink, so the main flow stays left-to-right.'],
+  consts: ['Constants', 'Literal values connected to a port are drawn as small yellow boxes with the literal text, never hidden.'],
+  inspector: ['Inspector', 'Details for the current selection. For a cell: path, kind, source file and line, parameters, and a port table whose nets are clickable. For a net: width, drivers, sinks, and the same net in other scopes. With nothing selected: the focused module\'s ports and layout statistics.'],
+  focus: ['Focus module', 'Opens the selected instance as the main schematic with its own camera and breadcrumbs. <em>Back</em> restores the previous view.'],
+  status: ['Status bar', 'What is selected, which module is focused, and a diagnostics counter.'],
+  diagnostics: ['Diagnostics', 'Click the counter to open the drawer: layout-file errors, required rules that could not be satisfied, preferred rules that were relaxed (with the amount), multiply-driven nets, black boxes. Errors turn the counter red.'],
+};
+const CHIP_ORDER = ['toolbar','open','samples','back','fit','relayout','search','export','panels','hierarchy','modules','layout','canvas','breadcrumbs','module','toggle','expanded','ports','wires','highlight','terminals','feedback','consts','inspector','focus','status','diagnostics'];
+const explain = document.getElementById('explain');
+const chips = document.getElementById('chips');
+let activeKey = null;
+function show(k) {
+  if (!EXPLAIN[k]) return;
+  activeKey = k;
+  explain.innerHTML = `<h3>${EXPLAIN[k][0]}</h3><p>${EXPLAIN[k][1]}</p>`;
+  document.querySelectorAll('#uimap [data-k], #chips button').forEach((el) => el.classList.toggle('active', el.dataset.k === k));
+}
+CHIP_ORDER.forEach((k) => { const b = document.createElement('button'); b.dataset.k = k; b.textContent = EXPLAIN[k][0]; b.onclick = () => show(k); chips.appendChild(b); });
+document.querySelectorAll('#uimap [data-k]').forEach((el) => {
+  el.addEventListener('mouseenter', (e) => { e.stopPropagation(); show(el.dataset.k); });
+  el.addEventListener('click', (e) => { e.stopPropagation(); show(el.dataset.k); });
+});
+
+// ---- live tour (same-origin iframe)
+const frame = document.getElementById('tour-frame');
+const STEPS = [
+  { sel: '.toolbar', title: 'Toolbar', text: 'Open files, load samples, go back, fit, re-layout, search, export, and toggle the side panels.' },
+  { sel: '.sidebar.left', title: 'Hierarchy tree', text: 'The instance tree. Click a row to select the instance; hover a row and press ⤢ to focus it.' },
+  { sel: '.module-view[data-scope="top"] .cell[data-path="top/compute"]', title: 'Module boxes', text: 'Each instance is a box with a fixed frame. Click it to select it; drivers turn green, sinks blue.', act: (d) => click(d, '.cell[data-path="top/compute"]') },
+  { sel: '[data-toggle="top/compute"]', title: 'Expand in place', text: 'The [+] in the header shows the module\'s contents inside its frame. Nothing around it moves and the camera stays put.', act: (d) => { if (!d.querySelector('svg[data-nested="top/compute"]')) click(d, '[data-toggle="top/compute"]'); } },
+  { sel: '.module-view[data-scope="top"] .wire[data-net="fifo_data"]', title: 'Net highlighting', text: 'Clicking a wire selects the net. The highlight follows the net into the expanded compute module (data_in) because that is real connectivity, not a name match.', act: (d) => click(d, '.module-view[data-scope="top"] .wire[data-net="fifo_data"] .hit') },
+  { sel: '.sidebar.right', title: 'Inspector', text: 'For a net: width, drivers, sinks, and the same net in other scopes. For a cell: path, source line, parameters, ports with their nets.' },
+  { sel: '.breadcrumbs', title: 'Focus and breadcrumbs', text: 'Focus module opens an instance as the main schematic; breadcrumbs show where you are and Back restores the previous view and camera.', act: (d) => { click(d, '.cell[data-path="top/compute"]'); const b = [...d.querySelectorAll('button')].find((x) => x.textContent === 'Focus module'); if (b) b.click(); } },
+  { sel: '.tabs button:nth-child(3)', title: 'Layout tab', text: 'Edit the YAML layout rules and press Apply. Rejected files keep the previous layout and list every error with its scope and rule id.', act: (d) => { const b = d.querySelectorAll('.tabs button')[2]; if (b) b.click(); } },
+  { sel: '.statusbar', title: 'Status and diagnostics', text: 'Selection, focus, and a diagnostics counter. Click it for the drawer with layout errors, relaxed preferred rules and black boxes.', act: (d) => { const b = d.querySelector('.diag-btn'); if (b && !d.querySelector('[data-testid=diagnostics]')) b.click(); } },
+];
+let step = -1;
+function doc() { try { return frame.contentDocument || frame.contentWindow.document; } catch { return null; } }
+function click(d, sel) { const el = d.querySelector(sel); if (el) el.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: frame.contentWindow })); }
+function ensureStyle(d) {
+  if (d.getElementById('tour-style')) return;
+  const s = d.createElement('style'); s.id = 'tour-style';
+  s.textContent = '.tour-hl{outline:3px solid #e8710a !important;outline-offset:3px;box-shadow:0 0 0 6px rgba(232,113,10,0.18);transition:outline 0.2s} svg .tour-hl{outline:none}';
+  d.head.appendChild(s);
+}
+function render() {
+  const d = doc();
+  const text = document.getElementById('tour-text');
+  if (!d) { document.getElementById('tour-blocked').style.display = 'block'; return; }
+  ensureStyle(d);
+  d.querySelectorAll('.tour-hl').forEach((el) => el.classList.remove('tour-hl'));
+  if (step < 0) { text.innerHTML = '<b>Ready</b>Press <em>Start tour</em>.'; document.getElementById('tour-step').textContent = ''; document.getElementById('tour-next').textContent = 'Start tour ▶'; return; }
+  const s = STEPS[step];
+  try { if (s.act) s.act(d); } catch (e) { /* viewer may still be loading */ }
+  setTimeout(() => { const el = d.querySelector(s.sel); if (el) { el.classList.add('tour-hl'); if (el.scrollIntoView && !el.closest('svg')) el.scrollIntoView({ block: 'nearest' }); } }, 150);
+  text.innerHTML = `<b>${step + 1}. ${s.title}</b>${s.text}`;
+  document.getElementById('tour-step').textContent = `step ${step + 1} of ${STEPS.length}`;
+  document.getElementById('tour-next').textContent = step === STEPS.length - 1 ? 'Finish' : 'Next ▶';
+}
+document.getElementById('tour-next').onclick = () => { step = step >= STEPS.length - 1 ? -1 : step + 1; if (step === -1) { frame.src = 'demo/index.html?sample=layout'; } render(); };
+document.getElementById('tour-prev').onclick = () => { step = Math.max(-1, step - 1); render(); };
+document.getElementById('tour-reset').onclick = () => { step = -1; frame.src = 'demo/index.html?sample=layout'; setTimeout(render, 600); };
+frame.addEventListener('load', () => { if (!doc()) document.getElementById('tour-blocked').style.display = 'block'; });
+</script>
+</main>
+<script src="assets/site.js"></script>
+</body>
+</html>

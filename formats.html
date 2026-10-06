@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VeriLens · Input formats</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<main>
+  <h1>Input formats</h1>
+  <p class="lead">The viewer accepts the core's AST JSON or a normalized design JSON, plus an optional YAML layout file. This page documents the first two; the layout file has <a href="layout-dsl.html">its own page</a>.</p>
+
+  <h2>From Verilog to the viewer</h2>
+<pre><code>cmake -S . -B build &amp;&amp; cmake --build build
+./build/core/tools/gen_ast path/to/project &gt; project.ast.json     # a file, several files or a directory</code></pre>
+  <p><code>gen_ast</code> scans directories recursively for <code>.v</code> and <code>.sv</code>, parses every file with its own lexer and parser, links instances across files, runs the connectivity validator, and prints one JSON array of modules. Diagnostics go to stderr so stdout stays clean; validation errors set exit code 2 but the JSON is still complete. Open the file with <em>Open…</em>, or let <a href="launcher.html"><code>./verilens</code></a> do all of it.</p>
+
+  <h2>What the core extracts</h2>
+  <ul>
+    <li>Module declarations: name, source file and line, parameters, ports with direction and width (parametric widths keep their text).</li>
+    <li>Instances: module name, instance name, parameter overrides as <code>{name, value}</code>, and every port connection both as raw text and as a parsed expression tree.</li>
+    <li>Net declarations, continuous assigns with full expression trees, always blocks with sensitivity list and statement tree, gate primitives, generate regions (flattened).</li>
+    <li>A <code>resolved</code> flag per instance: false when the module is not among the inputs (library cells, missing files).</li>
+    <li><code>// verilens: top</code> comments, attached to the module they precede or sit in.</li>
+  </ul>
+
+  <h2>How the adapter builds the design model</h2>
+  <table>
+    <tr><th>Verilog construct</th><th>In the viewer</th></tr>
+    <tr><td>module ports and nets</td><td>ports and nets with widths; struct member access <code>bus.field</code> maps to the net <code>bus</code></td></tr>
+    <tr><td>instance with named, positional or <code>.*</code> connections</td><td>instance cell; positional ports resolved through the target definition</td></tr>
+    <tr><td>connection expression (<code>{a, 2'b0}</code>, <code>x[3:0]</code>)</td><td>a list of bit-level segments, from the core's parsed tree</td></tr>
+    <tr><td><code>assign y = a + b</code></td><td>one primitive cell per operator; nested operators use generated <code>$…</code> nets</td></tr>
+    <tr><td><code>assign y = a</code>, <code>assign y = 8'd0</code></td><td>a <code>buf</code> cell</td></tr>
+    <tr><td><code>a[i]</code> with a non-constant index</td><td><code>bitsel</code> / <code>partsel</code> cell</td></tr>
+    <tr><td><code>{N{a}}</code></td><td><code>repl</code> cell</td></tr>
+    <tr><td>gate primitive <code>and g(y, a, b)</code></td><td>primitive cell with ports <code>Y, A1, A2…</code></td></tr>
+    <tr><td><code>always</code> block</td><td>one <code>process</code> cell: inputs are the signals read (plus clock and reset), outputs the signals written; a signal both read and written is state, not an input; <code>always_ff</code> gets the register symbol</td></tr>
+    <tr><td>parameter used as an identifier</td><td>a constant</td></tr>
+    <tr><td>unresolved instance</td><td>black box with the connected ports, direction unknown</td></tr>
+  </table>
+
+  <h2>Normalized design JSON</h2>
+  <p>The viewer's own format, produced by the adapter and accepted directly by <em>Open…</em>. Hand-written or produced by another front end, it goes through the same validation.</p>
+<pre><code>{
+  "version": 1,
+  "top": "top",
+  "modules": {
+    "top": {
+      "name": "top",
+      "source": { "file": "demo.sv", "line": 5 },
+      "ports": [
+        { "name": "clk",  "direction": "input",  "width": 1 },
+        { "name": "data", "direction": "output", "width": null, "widthExpr": "W-1:0", "net": "data" }
+      ],
+      "nets": [ { "id": "clk", "width": 1 }, { "id": "$add_5", "width": null } ],
+      "cells": [
+        { "id": "compute", "kind": "instance", "module": "compute", "resolved": true,
+          "params": { "DEPTH": "4" },
+          "connections": {
+            "clk":   [ { "net": "clk" } ],
+            "b":     [ { "net": "acc", "msb": 15, "lsb": 0 } ],
+            "coeff": [ { "const": "12'd0" }, { "net": "coeff_sel" } ],
+            "dbg":   []
+          } },
+        { "id": "$mux_6", "kind": "primitive", "type": "mux",
+          "ports": [ { "name": "S", "direction": "input", "width": null },
+                     { "name": "1", "direction": "input", "width": null },
+                     { "name": "0", "direction": "input", "width": null },
+                     { "name": "Y", "direction": "output", "width": null } ],
+          "connections": { "S": [{ "net": "mode" }], "1": [{ "net": "sum" }], "0": [{ "net": "pe1_out" }], "Y": [{ "net": "mux_out" }] } }
+      ]
+    }
+  }
+}</code></pre>
+  <ul>
+    <li>A connection is an ordered list of <b>segments</b>, msb first; several segments form a concatenation; a segment is either a net (optionally sliced with <code>msb</code>/<code>lsb</code>) or a constant.</li>
+    <li>A module port's <code>net</code> is the internal net bound to it (defaults to the port name). This is the only link across a hierarchy boundary; nothing is matched by name.</li>
+    <li>Instances take their port list from the module definition; unresolved instances (<code>resolved: false</code>) list the ports they connect. Primitives list their own ports.</li>
+    <li>Drivers and sinks are derived from directions: outputs and module inputs drive, inputs and module outputs sink, <code>inout</code> counts as both. Undriven and multiply-driven nets are reported, never repaired.</li>
+    <li>Known primitive types get symbols: <code>and nand or nor xor xnor not buf mux add sub mul div mod pow neg eq ne lt le gt ge shl shr sshl sshr process</code>. Anything else is a labelled box.</li>
+  </ul>
+
+  <h2 id="limits">Limits</h2>
+  <ul>
+    <li>The core is a structural extractor, not a compiler: no elaboration, no type checking beyond width comparison, no evaluation of parameters or generate conditions.</li>
+    <li>Not supported: interfaces, packages, user-defined types (identifiers of unknown types become implicit nets), functions and tasks (skipped), full SystemVerilog.</li>
+    <li>Always blocks are one cell each; no register or mux inference inside them, no FSM view yet.</li>
+    <li>Struct fields collapse to their base net, so several field assigns look like multiple drivers of one net.</li>
+    <li>Yosys JSON is not supported; the core parser is the ingestion path.</li>
+  </ul>
+</main>
+<script src="assets/site.js"></script>
+</body>
+</html>
