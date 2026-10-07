@@ -136,6 +136,10 @@ static std::string tokenTypeToString(TokenType t) {
         case TokenType::GREATER_GREATER:   return "GREATER_GREATER";
         case TokenType::LESS_LESS_LESS:    return "LESS_LESS_LESS";
         case TokenType::GREATER_GREATER_GREATER: return "GREATER_GREATER_GREATER";
+        case TokenType::PLUS_COLON:        return "PLUS_COLON";
+        case TokenType::MINUS_COLON:       return "MINUS_COLON";
+        case TokenType::EQ_EQ_QUESTION:    return "EQ_EQ_QUESTION";
+        case TokenType::BANG_EQ_QUESTION:  return "BANG_EQ_QUESTION";
         case TokenType::EQ:                return "EQ";
         case TokenType::QUESTION:          return "QUESTION";
         case TokenType::COLON:             return "COLON";

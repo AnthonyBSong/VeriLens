@@ -42,13 +42,14 @@ KEYWORD_TYPES = {
 THREE_MAP = {
     "===": "EQ_EQ_EQ", "!==": "BANG_EQ_EQ",
     "<<<": "LESS_LESS_LESS", ">>>": "GREATER_GREATER_GREATER",
+    "==?": "EQ_EQ_QUESTION", "!=?": "BANG_EQ_QUESTION",
 }
 TWO_MAP = {
     "==": "EQ_EQ", "!=": "BANG_EQ", "<=": "LESS_EQ", ">=": "GREATER_EQ",
     "<<": "LESS_LESS", ">>": "GREATER_GREATER", "**": "STAR_STAR",
     "&&": "AMP_AMP", "||": "PIPE_PIPE",
     "~&": "TILDE_AMP", "~|": "TILDE_PIPE", "~^": "TILDE_CARET", "^~": "TILDE_CARET",
-    "::": "COLON_COLON",
+    "::": "COLON_COLON", "+:": "PLUS_COLON", "-:": "MINUS_COLON",
 }
 ONE_MAP = {
     '+': "PLUS", '-': "MINUS", '*': "STAR", '/': "SLASH", '%': "PERCENT",
@@ -102,7 +103,8 @@ def tokenize(src):
                 base_off = 2 if signed_lit else 1
                 if j+base_off < n and src[j+base_off].lower() in 'bodh':
                     k = j + base_off + 1
-                    while k < n and (src[k].isalnum() or src[k] == '_'): k += 1
+                    base = src[j+base_off].lower()
+                    while k < n and (src[k].isalnum() or src[k] == '_' or (src[k] == '?' and base != 'd')): k += 1
                     tokens.append({"type": "INTEGER_LITERAL", "lexeme": src[i:k]})
                     i = k; continue
             # Real with fraction
@@ -137,7 +139,8 @@ def tokenize(src):
             src[i+1].lower() in "bodhxz" or src[i+1] in "01"
         ):
             j = i + 2
-            while j < n and (src[j].isalnum() or src[j] == '_'): j += 1
+            is_base = src[i+1].lower() in "boh"
+            while j < n and (src[j].isalnum() or src[j] == '_' or (is_base and src[j] == '?')): j += 1
             tokens.append({"type": "INTEGER_LITERAL", "lexeme": src[i:j]})
             i = j; continue
         if src[i:i+3] in THREE_MAP:

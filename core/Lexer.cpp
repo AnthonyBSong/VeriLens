@@ -109,7 +109,7 @@ std::vector<Token> Lexer::tokenize() {
                     lexeme += advance();                     // '
                     if (signed_lit) lexeme += advance();     // s
                     lexeme += advance();                     // base specifier
-                    while (isalnum(current_char) || current_char == '_')
+                    while (isalnum(current_char) || current_char == '_' || (current_char == '?' && base != 'd'))
                         lexeme += advance();
                     tokens.push_back({TokenType::INTEGER_LITERAL, lexeme, tok_line, tok_col});
                     continue;
@@ -166,7 +166,7 @@ std::vector<Token> Lexer::tokenize() {
             if (is_base || is_unsized) {
                 std::string lexeme(1, advance()); // '
                 lexeme += advance();              // base/value char
-                while (isalnum(current_char) || current_char == '_') lexeme += advance();
+                while (isalnum(current_char) || current_char == '_' || (is_base && nxl != 'd' && current_char == '?')) lexeme += advance();
                 tokens.push_back({TokenType::INTEGER_LITERAL, lexeme, tok_line, tok_col});
                 continue;
             }
@@ -183,6 +183,8 @@ std::vector<Token> Lexer::tokenize() {
             if (lexeme == "!" && nx == '=' && peek() == '=') { lexeme += advance(); lexeme += advance(); tokens.push_back({TokenType::BANG_EQ_EQ,             lexeme, tok_line, tok_col}); continue; }
             if (lexeme == "<" && nx == '<' && peek() == '<') { lexeme += advance(); lexeme += advance(); tokens.push_back({TokenType::LESS_LESS_LESS,          lexeme, tok_line, tok_col}); continue; }
             if (lexeme == ">" && nx == '>' && peek() == '>') { lexeme += advance(); lexeme += advance(); tokens.push_back({TokenType::GREATER_GREATER_GREATER, lexeme, tok_line, tok_col}); continue; }
+            if (lexeme == "=" && nx == '=' && peek() == '?') { lexeme += advance(); lexeme += advance(); tokens.push_back({TokenType::EQ_EQ_QUESTION,         lexeme, tok_line, tok_col}); continue; }
+            if (lexeme == "!" && nx == '=' && peek() == '?') { lexeme += advance(); lexeme += advance(); tokens.push_back({TokenType::BANG_EQ_QUESTION,       lexeme, tok_line, tok_col}); continue; }
 
             // two-char operators
             if (lexeme == "=" && nx == '=') { lexeme += advance(); tokens.push_back({TokenType::EQ_EQ,           lexeme, tok_line, tok_col}); continue; }
@@ -199,6 +201,8 @@ std::vector<Token> Lexer::tokenize() {
             if (lexeme == "~" && nx == '^') { lexeme += advance(); tokens.push_back({TokenType::TILDE_CARET,     lexeme, tok_line, tok_col}); continue; }
             if (lexeme == "^" && nx == '~') { lexeme += advance(); tokens.push_back({TokenType::TILDE_CARET,     lexeme, tok_line, tok_col}); continue; }
             if (lexeme == ":" && nx == ':') { lexeme += advance(); tokens.push_back({TokenType::COLON_COLON,     lexeme, tok_line, tok_col}); continue; }
+            if (lexeme == "+" && nx == ':') { lexeme += advance(); tokens.push_back({TokenType::PLUS_COLON,      lexeme, tok_line, tok_col}); continue; }
+            if (lexeme == "-" && nx == ':') { lexeme += advance(); tokens.push_back({TokenType::MINUS_COLON,     lexeme, tok_line, tok_col}); continue; }
 
             // single-char
             static const std::unordered_map<char, TokenType> SINGLE = {
