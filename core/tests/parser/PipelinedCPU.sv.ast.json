@@ -523,6 +523,7 @@
       {"line": 44, "lsb": 0, "msb": 1, "name": "fwd_a", "scalar": false, "type": "logic"},
       {"line": 44, "lsb": 0, "msb": 1, "name": "fwd_b", "scalar": false, "type": "logic"}
     ],
+    "notes": [],
     "parameters": [],
     "ports": [
       {

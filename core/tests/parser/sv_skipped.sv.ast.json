@@ -1,0 +1,137 @@
+[
+  {
+    "always_blocks": [],
+    "assigns": [
+      {"lhs": {"kind": "IDENTIFIER", "name": "y"}, "line": 10, "rhs": {"kind": "IDENTIFIER", "name": "a"}}
+    ],
+    "end_line": 11,
+    "gate_primitives": [],
+    "instances": [],
+    "line": 9,
+    "name": "sv_skipped_leaf",
+    "net_decls": [],
+    "notes": [],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "inout",
+        "expr": "sv_bus_if.slv",
+        "line": 9,
+        "lsb": 0,
+        "msb": 0,
+        "name": "s",
+        "scalar": false,
+        "type": "unspecified",
+        "unknown": true
+      },
+      {
+        "direction": "inout",
+        "expr": "sv_bus_if",
+        "line": 9,
+        "lsb": 0,
+        "msb": 0,
+        "name": "t",
+        "scalar": false,
+        "type": "unspecified",
+        "unknown": true
+      },
+      {"direction": "input", "line": 9, "lsb": 0, "msb": 0, "name": "a", "scalar": true, "type": "logic"},
+      {"direction": "output", "line": 9, "lsb": 0, "msb": 0, "name": "y", "scalar": true, "type": "logic"}
+    ],
+    "pragmas": [],
+    "source_file": "sv_skipped.sv"
+  },
+  {
+    "always_blocks": [{"body": null, "line": 49, "sensitivity": "posedge clk"}],
+    "assigns": [
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "z"},
+        "line": 53,
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {"kind": "IDENTIFIER", "name": "f"},
+          "op": "call",
+          "rhs": {"kind": "CONCAT", "parts": [{"kind": "IDENTIFIER", "name": "a"}]}
+        }
+      }
+    ],
+    "end_line": 54,
+    "gate_primitives": [],
+    "instances": [
+      {
+        "connections": [{"expr": {"kind": "IDENTIFIER", "name": "clk"}, "port": "clk", "signal": "clk"}],
+        "instance": "bus",
+        "line": 51,
+        "module": "sv_bus_if",
+        "parameters": [],
+        "resolved": false,
+        "wildcard": false
+      },
+      {
+        "connections": [
+          {"expr": {"kind": "IDENTIFIER", "name": "bus"}, "port": "s", "signal": "bus"},
+          {"expr": {"kind": "IDENTIFIER", "name": "bus"}, "port": "t", "signal": "bus"},
+          {"expr": {"kind": "IDENTIFIER", "name": "a"}, "port": "a", "signal": "a"},
+          {"expr": {"kind": "IDENTIFIER", "name": "y"}, "port": "y", "signal": "y"}
+        ],
+        "instance": "u_leaf",
+        "line": 52,
+        "module": "sv_skipped_leaf",
+        "parameters": [],
+        "resolved": true,
+        "wildcard": false
+      }
+    ],
+    "line": 13,
+    "name": "sv_skipped",
+    "net_decls": [{"line": 16, "lsb": 0, "msb": 7, "name": "mem", "scalar": false, "type": "logic"}],
+    "notes": [
+      {"line": 17, "message": "skipped: event declaration", "severity": "warning"},
+      {"line": 18, "message": "skipped: real declaration (not structural)", "severity": "warning"},
+      {"line": 19, "message": "skipped: time declaration (not structural)", "severity": "warning"},
+      {"line": 22, "message": "skipped: initial block (not structural)", "severity": "warning"},
+      {"line": 25, "message": "skipped: final block (not structural)", "severity": "warning"},
+      {
+        "line": 27,
+        "message": "skipped: function 'f' body (calls are shown as a cell)",
+        "severity": "warning"
+      },
+      {"line": 30, "message": "skipped: task 't' body (calls are shown as a cell)", "severity": "warning"},
+      {"line": 33, "message": "skipped: specify block", "severity": "warning"},
+      {"line": 39, "message": "skipped: covergroup", "severity": "warning"}
+    ],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "line": 13,
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {"direction": "input", "line": 13, "lsb": 0, "msb": 0, "name": "a", "scalar": true, "type": "logic"},
+      {
+        "direction": "output",
+        "line": 13,
+        "lsb": 0,
+        "msb": 0,
+        "name": "y",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 13,
+        "lsb": 0,
+        "msb": 0,
+        "name": "z",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "pragmas": [],
+    "source_file": "sv_skipped.sv"
+  }
+]

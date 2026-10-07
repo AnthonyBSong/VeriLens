@@ -62,6 +62,7 @@
     "line": 2,
     "name": "PipelineReg_IF_ID",
     "net_decls": [],
+    "notes": [],
     "parameters": [],
     "ports": [
       {

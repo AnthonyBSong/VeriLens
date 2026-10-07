@@ -1,0 +1,401 @@
+[
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "expr": {"kind": "IDENTIFIER", "name": "sel"},
+              "items": [
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "cnt"},
+                    "rhs": {"kind": "LITERAL", "value": "4'd1"}
+                  },
+                  "patterns": [{"kind": "LITERAL", "value": "4'b1???"}]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "cnt"},
+                    "rhs": {"kind": "LITERAL", "value": "4'd2"}
+                  },
+                  "patterns": [{"kind": "LITERAL", "value": "4'b01?0"}]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "cnt"},
+                    "rhs": {"kind": "LITERAL", "value": "4'd0"}
+                  },
+                  "patterns": []
+                }
+              ],
+              "kind": "CASE_STATEMENT",
+              "variant": "casez"
+            },
+            {
+              "cond": {
+                "base": {"kind": "IDENTIFIER", "name": "a"},
+                "index": {"kind": "LITERAL", "value": "0"},
+                "kind": "BIT_SELECT"
+              },
+              "else": null,
+              "kind": "IF_STATEMENT",
+              "then": {
+                "kind": "BLOCKING_ASSIGN",
+                "lhs": {"kind": "IDENTIFIER", "name": "cnt"},
+                "rhs": {"kind": "LITERAL", "value": "4'd3"}
+              }
+            },
+            {
+              "expr": {"kind": "IDENTIFIER", "name": "sel"},
+              "items": [
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "cnt"},
+                    "rhs": {"kind": "LITERAL", "value": "4'd4"}
+                  },
+                  "patterns": [
+                    {
+                      "kind": "BINARY_OP",
+                      "lhs": {"kind": "LITERAL", "value": "0"},
+                      "op": ":",
+                      "rhs": {"kind": "LITERAL", "value": "1"}
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "cnt"},
+                    "rhs": {"kind": "LITERAL", "value": "4'd5"}
+                  },
+                  "patterns": [
+                    {"kind": "LITERAL", "value": "2"},
+                    {
+                      "kind": "BINARY_OP",
+                      "lhs": {"kind": "LITERAL", "value": "3"},
+                      "op": ":",
+                      "rhs": {"kind": "LITERAL", "value": "3"}
+                    }
+                  ]
+                },
+                {"body": null, "patterns": []}
+              ],
+              "kind": "CASE_STATEMENT",
+              "variant": "case"
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "line": 21,
+        "sensitivity": "*"
+      },
+      {
+        "body": {
+          "body": [
+            {
+              "kind": "NONBLOCKING_ASSIGN",
+              "lhs": {
+                "base": {"kind": "IDENTIFIER", "name": "mem"},
+                "index": {"kind": "LITERAL", "value": "0"},
+                "kind": "BIT_SELECT"
+              },
+              "rhs": {
+                "kind": "BINARY_OP",
+                "lhs": {"kind": "IDENTIFIER", "name": "inc"},
+                "op": "call",
+                "rhs": {"kind": "CONCAT", "parts": [{"kind": "IDENTIFIER", "name": "b"}]}
+              }
+            },
+            {
+              "kind": "NONBLOCKING_ASSIGN",
+              "lhs": {
+                "base": {
+                  "base": {"kind": "IDENTIFIER", "name": "mem"},
+                  "index": {"kind": "LITERAL", "value": "1"},
+                  "kind": "BIT_SELECT"
+                },
+                "kind": "PART_SELECT",
+                "lsb": {"kind": "LITERAL", "value": "0"},
+                "msb": {"kind": "LITERAL", "value": "3"}
+              },
+              "rhs": {"kind": "LITERAL", "value": "4'd1"}
+            },
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "cnt"},
+              "rhs": {
+                "kind": "BINARY_OP",
+                "lhs": {"kind": "IDENTIFIER", "name": "cnt"},
+                "op": "+",
+                "rhs": {"kind": "LITERAL", "value": "1"}
+              }
+            },
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "cnt"},
+              "rhs": {
+                "kind": "BINARY_OP",
+                "lhs": {"kind": "IDENTIFIER", "name": "cnt"},
+                "op": "+",
+                "rhs": {"kind": "LITERAL", "value": "1"}
+              }
+            },
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "cnt"},
+              "rhs": {
+                "kind": "BINARY_OP",
+                "lhs": {"kind": "IDENTIFIER", "name": "cnt"},
+                "op": "<<",
+                "rhs": {"kind": "LITERAL", "value": "1"}
+              }
+            },
+            {
+              "kind": "NONBLOCKING_ASSIGN",
+              "lhs": {
+                "kind": "CONCAT",
+                "parts": [{"kind": "IDENTIFIER", "name": "y"}, {"kind": "IDENTIFIER", "name": "z"}]
+              },
+              "rhs": {
+                "kind": "CONCAT",
+                "parts": [{"kind": "LITERAL", "value": "1'b0"}, {"kind": "IDENTIFIER", "name": "a"}]
+              }
+            },
+            {
+              "kind": "NONBLOCKING_ASSIGN",
+              "lhs": {
+                "base": {"kind": "IDENTIFIER", "name": "mem"},
+                "index": {"kind": "IDENTIFIER", "name": "i"},
+                "kind": "BIT_SELECT"
+              },
+              "rhs": {"kind": "LITERAL", "value": "8'd0"}
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "line": 35,
+        "sensitivity": "posedge clk"
+      }
+    ],
+    "assigns": [
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "y"},
+        "line": 17,
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "BINARY_OP",
+                "lhs": {"kind": "IDENTIFIER", "name": "a"},
+                "op": "inside",
+                "rhs": {
+                  "kind": "CONCAT",
+                  "parts": [
+                    {"kind": "LITERAL", "value": "8'd1"},
+                    {
+                      "kind": "BINARY_OP",
+                      "lhs": {"kind": "LITERAL", "value": "8'd4"},
+                      "op": ":",
+                      "rhs": {"kind": "LITERAL", "value": "8'd7"}
+                    }
+                  ]
+                }
+              },
+              "op": "|",
+              "rhs": {
+                "kind": "BINARY_OP",
+                "lhs": {"kind": "IDENTIFIER", "name": "a"},
+                "op": "==?",
+                "rhs": {"kind": "LITERAL", "value": "8'b1???_0000"}
+              }
+            },
+            "op": "|",
+            "rhs": {
+              "kind": "BINARY_OP",
+              "lhs": {"kind": "IDENTIFIER", "name": "a"},
+              "op": "!=?",
+              "rhs": {"kind": "LITERAL", "value": "8'b0"}
+            }
+          },
+          "op": "|",
+          "rhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "BINARY_OP",
+              "lhs": {"kind": "IDENTIFIER", "name": "a"},
+              "op": "**",
+              "rhs": {"kind": "LITERAL", "value": "2"}
+            },
+            "op": "==",
+            "rhs": {"kind": "LITERAL", "value": "4"}
+          }
+        }
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "z"},
+        "line": 18,
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "BINARY_OP",
+                "lhs": {
+                  "kind": "BINARY_OP",
+                  "lhs": {
+                    "kind": "BINARY_OP",
+                    "lhs": {
+                      "kind": "BINARY_OP",
+                      "lhs": {
+                        "kind": "BINARY_OP",
+                        "lhs": {
+                          "kind": "BINARY_OP",
+                          "lhs": {"kind": "IDENTIFIER", "name": "inc"},
+                          "op": "call",
+                          "rhs": {"kind": "CONCAT", "parts": [{"kind": "IDENTIFIER", "name": "a"}]}
+                        },
+                        "op": "+",
+                        "rhs": {"kind": "IDENTIFIER", "name": "b"}
+                      },
+                      "op": "+",
+                      "rhs": {"kind": "IDENTIFIER", "name": "a"}
+                    },
+                    "op": "+",
+                    "rhs": {"kind": "IDENTIFIER", "name": "b"}
+                  },
+                  "op": "+",
+                  "rhs": {
+                    "kind": "BINARY_OP",
+                    "lhs": {"kind": "IDENTIFIER", "name": "$clog2"},
+                    "op": "call",
+                    "rhs": {"kind": "CONCAT", "parts": [{"kind": "LITERAL", "value": "8"}]}
+                  }
+                },
+                "op": "+",
+                "rhs": {
+                  "base": {"kind": "IDENTIFIER", "name": "a"},
+                  "kind": "PART_SELECT",
+                  "lsb": {"kind": "LITERAL", "value": "2"},
+                  "msb": {"kind": "LITERAL", "value": "3"}
+                }
+              },
+              "op": "+",
+              "rhs": {
+                "base": {"kind": "IDENTIFIER", "name": "b"},
+                "kind": "PART_SELECT",
+                "lsb": {"kind": "LITERAL", "value": "0"},
+                "msb": {"kind": "LITERAL", "value": "3"}
+              }
+            },
+            "op": "+",
+            "rhs": {
+              "base": {"kind": "IDENTIFIER", "name": "a"},
+              "kind": "PART_SELECT",
+              "lsb": null,
+              "msb": {
+                "kind": "BINARY_OP",
+                "lhs": {"kind": "IDENTIFIER", "name": "sel"},
+                "op": "+:",
+                "rhs": {"kind": "LITERAL", "value": "2"}
+              }
+            }
+          },
+          "op": "+",
+          "rhs": {
+            "base": {
+              "base": {"kind": "IDENTIFIER", "name": "mem"},
+              "index": {"kind": "LITERAL", "value": "1"},
+              "kind": "BIT_SELECT"
+            },
+            "index": {"kind": "LITERAL", "value": "2"},
+            "kind": "BIT_SELECT"
+          }
+        }
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "pat"},
+        "line": 19,
+        "rhs": {
+          "kind": "CONCAT",
+          "parts": [{"kind": "LITERAL", "value": "4'd1"}, {"kind": "LITERAL", "value": "4'd2"}]
+        }
+      }
+    ],
+    "end_line": 44,
+    "gate_primitives": [],
+    "instances": [],
+    "line": 2,
+    "name": "sv_expressions",
+    "net_decls": [{"line": 15, "lsb": 0, "msb": 7, "name": "mem", "scalar": false, "type": "reg"}],
+    "notes": [
+      {
+        "line": 11,
+        "message": "skipped: function 'inc' body (calls are shown as a cell)",
+        "severity": "warning"
+      }
+    ],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "line": 3,
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {"direction": "input", "line": 4, "lsb": 0, "msb": 7, "name": "a", "scalar": false, "type": "logic"},
+      {"direction": "input", "line": 4, "lsb": 0, "msb": 7, "name": "b", "scalar": false, "type": "logic"},
+      {
+        "direction": "input",
+        "line": 5,
+        "lsb": 0,
+        "msb": 3,
+        "name": "sel",
+        "scalar": false,
+        "type": "logic"
+      },
+      {"direction": "output", "line": 6, "lsb": 0, "msb": 0, "name": "y", "scalar": true, "type": "logic"},
+      {
+        "direction": "output",
+        "line": 7,
+        "lsb": 0,
+        "msb": 7,
+        "name": "z",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 8,
+        "lsb": 0,
+        "msb": 7,
+        "name": "pat",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 9,
+        "lsb": 0,
+        "msb": 3,
+        "name": "cnt",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "pragmas": [],
+    "source_file": "sv_expressions.sv"
+  }
+]

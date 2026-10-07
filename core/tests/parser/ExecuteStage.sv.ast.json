@@ -138,6 +138,7 @@
       {"line": 24, "lsb": 0, "msb": 31, "name": "op_b_pre", "scalar": false, "type": "logic"},
       {"line": 24, "lsb": 0, "msb": 31, "name": "op_b", "scalar": false, "type": "logic"}
     ],
+    "notes": [],
     "parameters": [],
     "ports": [
       {

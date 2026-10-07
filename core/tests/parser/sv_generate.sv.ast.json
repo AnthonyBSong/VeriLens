@@ -1,0 +1,322 @@
+[
+  {
+    "always_blocks": [],
+    "assigns": [
+      {"lhs": {"kind": "IDENTIFIER", "name": "o"}, "line": 3, "rhs": {"kind": "IDENTIFIER", "name": "i"}}
+    ],
+    "end_line": 4,
+    "gate_primitives": [],
+    "instances": [],
+    "line": 2,
+    "name": "sv_gen_leaf",
+    "net_decls": [],
+    "notes": [],
+    "parameters": [{"default": "1", "name": "W"}, {"default": "2", "name": "D"}],
+    "ports": [
+      {
+        "direction": "input",
+        "line": 2,
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {"direction": "input", "line": 2, "lsb": 0, "msb": 0, "name": "i", "scalar": true, "type": "logic"},
+      {"direction": "output", "line": 2, "lsb": 0, "msb": 0, "name": "o", "scalar": true, "type": "logic"}
+    ],
+    "pragmas": [],
+    "source_file": "sv_generate.sv"
+  },
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "d1"},
+        "line": 27,
+        "rhs": {
+          "base": {"kind": "IDENTIFIER", "name": "a"},
+          "index": {"kind": "LITERAL", "value": "0"},
+          "kind": "BIT_SELECT"
+        }
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "d1"},
+        "line": 29,
+        "rhs": {
+          "base": {"kind": "IDENTIFIER", "name": "a"},
+          "index": {"kind": "LITERAL", "value": "1"},
+          "kind": "BIT_SELECT"
+        }
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "d1"},
+        "line": 31,
+        "rhs": {
+          "base": {"kind": "IDENTIFIER", "name": "a"},
+          "index": {"kind": "LITERAL", "value": "2"},
+          "kind": "BIT_SELECT"
+        }
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "d2"},
+        "line": 35,
+        "rhs": {
+          "base": {"kind": "IDENTIFIER", "name": "a"},
+          "index": {"kind": "LITERAL", "value": "0"},
+          "kind": "BIT_SELECT"
+        }
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "d2"},
+        "line": 36,
+        "rhs": {
+          "base": {"kind": "IDENTIFIER", "name": "a"},
+          "index": {"kind": "LITERAL", "value": "1"},
+          "kind": "BIT_SELECT"
+        }
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "d2"},
+        "line": 37,
+        "rhs": {"kind": "LITERAL", "value": "1'b0"}
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "d3"},
+        "line": 44,
+        "rhs": {
+          "base": {"kind": "IDENTIFIER", "name": "a"},
+          "index": {"kind": "IDENTIFIER", "name": "i"},
+          "kind": "BIT_SELECT"
+        }
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "d3"},
+        "line": 48,
+        "rhs": {
+          "base": {"kind": "IDENTIFIER", "name": "a"},
+          "index": {"kind": "LITERAL", "value": "3"},
+          "kind": "BIT_SELECT"
+        }
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "w_delay"},
+        "line": 49,
+        "rhs": {
+          "base": {"kind": "IDENTIFIER", "name": "a"},
+          "index": {"kind": "LITERAL", "value": "0"},
+          "kind": "BIT_SELECT"
+        }
+      }
+    ],
+    "end_line": 50,
+    "gate_primitives": [{"array": "3:0", "instance": "b_arr", "line": 17, "ports": ["g", "a"], "type": "buf"}],
+    "instances": [
+      {
+        "array": "3:0",
+        "connections": [
+          {"expr": {"kind": "IDENTIFIER", "name": "clk"}, "port": "clk", "signal": "clk"},
+          {"expr": {"kind": "IDENTIFIER", "name": "a"}, "port": "i", "signal": "a"},
+          {"expr": {"kind": "IDENTIFIER", "name": "y"}, "port": "o", "signal": "y"}
+        ],
+        "instance": "u_arr",
+        "line": 16,
+        "module": "sv_gen_leaf",
+        "parameters": [],
+        "resolved": true,
+        "wildcard": false
+      },
+      {
+        "connections": [
+          {
+            "expr": {
+              "base": {"kind": "IDENTIFIER", "name": "a"},
+              "index": {"kind": "LITERAL", "value": "0"},
+              "kind": "BIT_SELECT"
+            },
+            "port": "i",
+            "signal": "a[0]"
+          },
+          {
+            "expr": {
+              "base": {"kind": "IDENTIFIER", "name": "z"},
+              "index": {"kind": "LITERAL", "value": "0"},
+              "kind": "BIT_SELECT"
+            },
+            "port": "o",
+            "signal": "z[0]"
+          }
+        ],
+        "instance": "u_in",
+        "line": 18,
+        "module": "sv_inner",
+        "parameters": [],
+        "resolved": true,
+        "wildcard": false
+      },
+      {
+        "connections": [
+          {"expr": {"kind": "IDENTIFIER", "name": "clk"}, "port": "clk", "signal": "clk"},
+          {
+            "expr": {
+              "base": {"kind": "IDENTIFIER", "name": "a"},
+              "index": {"kind": "LITERAL", "value": "1"},
+              "kind": "BIT_SELECT"
+            },
+            "port": "i",
+            "signal": "a[1]"
+          },
+          {
+            "expr": {
+              "base": {"kind": "IDENTIFIER", "name": "z"},
+              "index": {"kind": "LITERAL", "value": "1"},
+              "kind": "BIT_SELECT"
+            },
+            "port": "o",
+            "signal": "z[1]"
+          }
+        ],
+        "instance": "u_dp",
+        "line": 19,
+        "module": "sv_gen_leaf",
+        "parameters": [{"name": "D", "value": "6"}, {"name": "W", "value": "4"}],
+        "resolved": true,
+        "wildcard": false
+      },
+      {
+        "connections": [
+          {"expr": {"kind": "IDENTIFIER", "name": "clk"}, "port": "clk", "signal": "clk"},
+          {
+            "expr": {
+              "base": {"kind": "IDENTIFIER", "name": "a"},
+              "index": {"kind": "IDENTIFIER", "name": "k"},
+              "kind": "BIT_SELECT"
+            },
+            "port": "i",
+            "signal": "a[k]"
+          },
+          {
+            "expr": {
+              "base": {"kind": "IDENTIFIER", "name": "z"},
+              "index": {"kind": "IDENTIFIER", "name": "k"},
+              "kind": "BIT_SELECT"
+            },
+            "port": "o",
+            "signal": "z[k]"
+          }
+        ],
+        "instance": "u_k",
+        "line": 24,
+        "module": "sv_gen_leaf",
+        "parameters": [],
+        "resolved": true,
+        "wildcard": false
+      }
+    ],
+    "line": 6,
+    "name": "sv_generate",
+    "net_decls": [{"line": 49, "lsb": 0, "msb": 0, "name": "w_delay", "scalar": true, "type": "wire"}],
+    "notes": [],
+    "parameters": [{"default": "1", "name": "P"}],
+    "ports": [
+      {
+        "direction": "input",
+        "line": 7,
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {"direction": "input", "line": 8, "lsb": 0, "msb": 3, "name": "a", "scalar": false, "type": "logic"},
+      {
+        "direction": "output",
+        "line": 9,
+        "lsb": 0,
+        "msb": 3,
+        "name": "y",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 9,
+        "lsb": 0,
+        "msb": 3,
+        "name": "z",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 9,
+        "lsb": 0,
+        "msb": 3,
+        "name": "g",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 10,
+        "lsb": 0,
+        "msb": 0,
+        "name": "d1",
+        "scalar": true,
+        "type": "wire"
+      },
+      {
+        "direction": "output",
+        "line": 10,
+        "lsb": 0,
+        "msb": 0,
+        "name": "d2",
+        "scalar": true,
+        "type": "wire"
+      },
+      {
+        "direction": "output",
+        "line": 10,
+        "lsb": 0,
+        "msb": 0,
+        "name": "d3",
+        "scalar": true,
+        "type": "wire"
+      }
+    ],
+    "pragmas": [],
+    "source_file": "sv_generate.sv"
+  },
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "o"},
+        "line": 13,
+        "rhs": {"kind": "UNARY_OP", "op": "~", "operand": {"kind": "IDENTIFIER", "name": "i"}}
+      }
+    ],
+    "end_line": 14,
+    "gate_primitives": [],
+    "instances": [],
+    "line": 12,
+    "name": "sv_inner",
+    "net_decls": [],
+    "notes": [],
+    "parameters": [],
+    "ports": [
+      {"direction": "input", "line": 12, "lsb": 0, "msb": 0, "name": "i", "scalar": true, "type": "logic"},
+      {
+        "direction": "output",
+        "line": 12,
+        "lsb": 0,
+        "msb": 0,
+        "name": "o",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "pragmas": [],
+    "source_file": "sv_generate.sv"
+  }
+]

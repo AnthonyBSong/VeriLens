@@ -112,6 +112,7 @@
     "line": 2,
     "name": "PipelineReg_EX_MEM",
     "net_decls": [],
+    "notes": [],
     "parameters": [],
     "ports": [
       {

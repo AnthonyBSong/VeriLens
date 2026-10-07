@@ -187,6 +187,7 @@
     "line": 2,
     "name": "PipelineReg_ID_EX",
     "net_decls": [],
+    "notes": [],
     "parameters": [],
     "ports": [
       {

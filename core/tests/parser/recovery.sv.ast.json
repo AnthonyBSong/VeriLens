@@ -1,0 +1,98 @@
+[
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "kind": "NONBLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "v"},
+              "rhs": {"kind": "IDENTIFIER", "name": "a"}
+            },
+            {
+              "kind": "NONBLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "v"},
+              "rhs": {"kind": "IDENTIFIER", "name": "b"}
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "line": 6,
+        "sensitivity": "posedge clk"
+      },
+      {
+        "body": {
+          "body": [
+            {
+              "expr": {
+                "kind": "CONCAT",
+                "parts": [{"kind": "IDENTIFIER", "name": "a"}, {"kind": "IDENTIFIER", "name": "b"}]
+              },
+              "items": [
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "y"},
+                    "rhs": {"kind": "LITERAL", "value": "1'b1"}
+                  },
+                  "patterns": [{"kind": "LITERAL", "value": "2'b1?"}]
+                },
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "y"},
+                    "rhs": {"kind": "LITERAL", "value": "1'b0"}
+                  },
+                  "patterns": []
+                }
+              ],
+              "kind": "CASE_STATEMENT",
+              "variant": "casez"
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "line": 11,
+        "sensitivity": "*"
+      }
+    ],
+    "assigns": [
+      {"lhs": {"kind": "IDENTIFIER", "name": "y"}, "line": 3, "rhs": {"kind": "IDENTIFIER", "name": "a"}},
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "w"},
+        "line": 5,
+        "rhs": {"kind": "UNARY_OP", "op": "~", "operand": {"kind": "IDENTIFIER", "name": "a"}}
+      }
+    ],
+    "end_line": 17,
+    "gate_primitives": [],
+    "instances": [],
+    "line": 2,
+    "name": "recovery",
+    "net_decls": [],
+    "notes": [
+      {"line": 4, "message": "dropped: expected SEMICOLON, got '#'", "severity": "error"},
+      {"line": 8, "message": "dropped: expected RPAREN, got ';'", "severity": "error"}
+    ],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "line": 2,
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {"direction": "input", "line": 2, "lsb": 0, "msb": 0, "name": "a", "scalar": true, "type": "logic"},
+      {"direction": "input", "line": 2, "lsb": 0, "msb": 0, "name": "b", "scalar": true, "type": "logic"},
+      {"direction": "output", "line": 2, "lsb": 0, "msb": 0, "name": "y", "scalar": true, "type": "logic"},
+      {"direction": "output", "line": 2, "lsb": 0, "msb": 0, "name": "z", "scalar": true, "type": "logic"},
+      {"direction": "output", "line": 2, "lsb": 0, "msb": 0, "name": "w", "scalar": true, "type": "logic"},
+      {"direction": "output", "line": 2, "lsb": 0, "msb": 0, "name": "v", "scalar": true, "type": "logic"}
+    ],
+    "pragmas": [],
+    "source_file": "recovery.sv"
+  }
+]

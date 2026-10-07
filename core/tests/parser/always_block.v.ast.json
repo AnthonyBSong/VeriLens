@@ -23,6 +23,7 @@
     "line": 1,
     "name": "dff",
     "net_decls": [],
+    "notes": [],
     "parameters": [],
     "ports": [
       {

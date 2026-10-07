@@ -223,7 +223,7 @@
       {"line": 36, "lsb": 0, "msb": 0, "name": "mem_n_we", "scalar": true, "type": "wire"},
       {"line": 37, "lsb": 0, "msb": 0, "name": "mem_nm1_we", "scalar": true, "type": "wire"},
       {
-        "expr": "$clog2call?-1:0",
+        "expr": "$clog2(NUM_ROWS)-1:0",
         "line": 38,
         "lsb": 0,
         "msb": 0,
@@ -233,7 +233,7 @@
         "unknown": true
       },
       {
-        "expr": "$clog2call?-1:0",
+        "expr": "$clog2(NUM_ROWS)-1:0",
         "line": 39,
         "lsb": 0,
         "msb": 0,
@@ -243,7 +243,7 @@
         "unknown": true
       },
       {
-        "expr": "$clog2call?-1:0",
+        "expr": "$clog2(NUM_ROWS)-1:0",
         "line": 40,
         "lsb": 0,
         "msb": 0,
@@ -253,7 +253,7 @@
         "unknown": true
       },
       {
-        "expr": "$clog2call?-1:0",
+        "expr": "$clog2(NUM_ROWS)-1:0",
         "line": 41,
         "lsb": 0,
         "msb": 0,
@@ -272,7 +272,7 @@
       {"line": 52, "lsb": 0, "msb": 17, "name": "u_next", "scalar": false, "type": "wire"},
       {"line": 93, "lsb": 0, "msb": 0, "name": "mem_n_we_muxed", "scalar": true, "type": "wire"},
       {
-        "expr": "$clog2call?-1:0",
+        "expr": "$clog2(NUM_ROWS)-1:0",
         "line": 94,
         "lsb": 0,
         "msb": 0,
@@ -284,7 +284,7 @@
       {"line": 95, "lsb": 0, "msb": 17, "name": "mem_n_wdata_muxed", "scalar": false, "type": "wire"},
       {"line": 111, "lsb": 0, "msb": 0, "name": "mem_nm1_we_muxed", "scalar": true, "type": "wire"},
       {
-        "expr": "$clog2call?-1:0",
+        "expr": "$clog2(NUM_ROWS)-1:0",
         "line": 112,
         "lsb": 0,
         "msb": 0,
@@ -295,6 +295,7 @@
       },
       {"line": 113, "lsb": 0, "msb": 17, "name": "mem_nm1_wdata_muxed", "scalar": false, "type": "wire"}
     ],
+    "notes": [],
     "parameters": [{"default": "30", "name": "NUM_ROWS"}],
     "ports": [
       {
@@ -362,7 +363,7 @@
       },
       {
         "direction": "input",
-        "expr": "$clog2call?-1:0",
+        "expr": "$clog2(NUM_ROWS)-1:0",
         "line": 26,
         "lsb": 0,
         "msb": 0,
@@ -391,7 +392,7 @@
       },
       {
         "direction": "input",
-        "expr": "$clog2call?-1:0",
+        "expr": "$clog2(NUM_ROWS)-1:0",
         "line": 29,
         "lsb": 0,
         "msb": 0,

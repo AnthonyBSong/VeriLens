@@ -137,6 +137,7 @@
       {"line": 12, "lsb": 0, "msb": 31, "name": "shifter", "scalar": false, "type": "logic"},
       {"line": 13, "lsb": 0, "msb": 5, "name": "count", "scalar": false, "type": "logic"}
     ],
+    "notes": [],
     "parameters": [],
     "ports": [
       {

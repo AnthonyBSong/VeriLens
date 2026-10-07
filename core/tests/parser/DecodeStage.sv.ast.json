@@ -123,6 +123,7 @@
     "line": 2,
     "name": "DecodeStage",
     "net_decls": [],
+    "notes": [],
     "parameters": [],
     "ports": [
       {

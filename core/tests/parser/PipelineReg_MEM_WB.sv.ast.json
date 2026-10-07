@@ -82,6 +82,7 @@
     "line": 2,
     "name": "PipelineReg_MEM_WB",
     "net_decls": [],
+    "notes": [],
     "parameters": [],
     "ports": [
       {

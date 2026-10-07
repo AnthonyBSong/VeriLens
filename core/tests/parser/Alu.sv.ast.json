@@ -214,6 +214,7 @@
     "line": 2,
     "name": "Alu",
     "net_decls": [],
+    "notes": [],
     "parameters": [],
     "ports": [
       {

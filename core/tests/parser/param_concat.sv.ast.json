@@ -8,6 +8,7 @@
     "line": 2,
     "name": "slave",
     "net_decls": [],
+    "notes": [],
     "parameters": [{"default": "32'hffff_0000", "name": "MASK"}, {"default": "1", "name": "N"}],
     "ports": [
       {
@@ -51,6 +52,7 @@
     "line": 6,
     "name": "param_concat",
     "net_decls": [],
+    "notes": [],
     "parameters": [{"default": "{32'h1,32'h2}", "name": "TABLE"}],
     "ports": [
       {

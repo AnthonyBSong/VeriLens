@@ -200,6 +200,7 @@
     "line": 2,
     "name": "ImmExtend",
     "net_decls": [],
+    "notes": [],
     "parameters": [],
     "ports": [
       {

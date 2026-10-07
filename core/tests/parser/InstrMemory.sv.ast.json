@@ -27,6 +27,7 @@
     "line": 2,
     "name": "InstrMemory",
     "net_decls": [{"line": 9, "lsb": 0, "msb": 31, "name": "mem", "scalar": false, "type": "logic"}],
+    "notes": [],
     "parameters": [{"default": "1024", "name": "DEPTH"}],
     "ports": [
       {

@@ -48,6 +48,7 @@
       {"line": 11, "lsb": 0, "msb": 3, "name": "byte_en", "scalar": false, "type": "logic"},
       {"line": 12, "lsb": 0, "msb": 31, "name": "aligned_data", "scalar": false, "type": "logic"}
     ],
+    "notes": [],
     "parameters": [],
     "ports": [
       {

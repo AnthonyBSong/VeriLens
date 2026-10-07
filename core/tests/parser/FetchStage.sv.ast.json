@@ -71,6 +71,7 @@
     "line": 2,
     "name": "FetchStage",
     "net_decls": [{"line": 11, "lsb": 0, "msb": 31, "name": "pc_reg", "scalar": false, "type": "logic"}],
+    "notes": [],
     "parameters": [],
     "ports": [
       {

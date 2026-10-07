@@ -157,6 +157,7 @@
     "line": 2,
     "name": "BranchUnit",
     "net_decls": [],
+    "notes": [],
     "parameters": [],
     "ports": [
       {

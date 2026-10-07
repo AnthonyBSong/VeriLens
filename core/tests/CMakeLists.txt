@@ -37,3 +37,8 @@ target_include_directories(validator_tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/.
 target_link_libraries(validator_tests PRIVATE GTest::gtest_main nlohmann_json::nlohmann_json)
 gtest_discover_tests(validator_tests)
 
+# Every example through the CLI under a wall-clock limit: a parser that stops making
+# progress fails here instead of hanging the suite. Exit 3 (dropped constructs) is allowed.
+add_test(NAME gen_ast_examples
+         COMMAND sh -c "$<TARGET_FILE:gen_ast> --no-validate ${CMAKE_CURRENT_SOURCE_DIR}/examples > /dev/null; test $? -le 3")
+set_tests_properties(gen_ast_examples PROPERTIES TIMEOUT 60)

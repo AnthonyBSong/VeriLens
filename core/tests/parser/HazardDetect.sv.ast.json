@@ -34,6 +34,7 @@
     "line": 2,
     "name": "HazardDetect",
     "net_decls": [],
+    "notes": [],
     "parameters": [],
     "ports": [
       {

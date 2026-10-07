@@ -146,6 +146,7 @@
     "line": 2,
     "name": "ForwardingUnit",
     "net_decls": [],
+    "notes": [],
     "parameters": [],
     "ports": [
       {

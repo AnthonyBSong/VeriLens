@@ -19,6 +19,7 @@
     "line": 1,
     "name": "and_gate",
     "net_decls": [{"line": 6, "lsb": 0, "msb": 0, "name": "y", "scalar": true, "type": "wire"}],
+    "notes": [],
     "parameters": [],
     "ports": [
       {

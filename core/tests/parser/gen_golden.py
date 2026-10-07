@@ -26,10 +26,12 @@ if not files:
 ok = err = 0
 for vfile in files:
     result = subprocess.run([str(gen_ast), str(vfile)], capture_output=True, text=True)
-    if result.returncode != 0:
+    if result.returncode not in (0, 3):   # 3: a construct was dropped (recorded in the module's notes)
         print(f"  ERROR {vfile.name}: {result.stderr.strip()}")
         err += 1
         continue
+    if result.returncode == 3:
+        print(f"  note  {vfile.name}: {result.stderr.strip().splitlines()[0]}")
     try:
         ast = json.loads(result.stdout)
     except json.JSONDecodeError as e:

@@ -1,0 +1,318 @@
+[
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "kind": "NONBLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "count"},
+              "rhs": {
+                "kind": "BINARY_OP",
+                "lhs": {"kind": "IDENTIFIER", "name": "count"},
+                "op": "+",
+                "rhs": {"kind": "LITERAL", "value": "1"}
+              }
+            },
+            {
+              "kind": "NONBLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "small"},
+              "rhs": {"kind": "LITERAL", "value": "8'd1"}
+            },
+            {
+              "kind": "NONBLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "s16"},
+              "rhs": {"kind": "LITERAL", "value": "0"}
+            },
+            {
+              "kind": "NONBLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "l64"},
+              "rhs": {"kind": "LITERAL", "value": "0"}
+            },
+            {
+              "kind": "NONBLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "n32"},
+              "rhs": {"kind": "LITERAL", "value": "0"}
+            },
+            {
+              "kind": "NONBLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "nib"},
+              "rhs": {"kind": "IDENTIFIER", "name": "nib2"}
+            },
+            {
+              "kind": "NONBLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "nib2"},
+              "rhs": {
+                "base": {"kind": "IDENTIFIER", "name": "nib_arr"},
+                "index": {"kind": "LITERAL", "value": "0"},
+                "kind": "BIT_SELECT"
+              }
+            },
+            {
+              "kind": "NONBLOCKING_ASSIGN",
+              "lhs": {
+                "base": {"kind": "IDENTIFIER", "name": "nib_arr"},
+                "index": {"kind": "LITERAL", "value": "1"},
+                "kind": "BIT_SELECT"
+              },
+              "rhs": {"kind": "IDENTIFIER", "name": "nib"}
+            },
+            {
+              "kind": "NONBLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "state"},
+              "rhs": {"kind": "IDENTIFIER", "name": "RUN"}
+            },
+            {
+              "kind": "NONBLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "pkt.valid"},
+              "rhs": {"kind": "IDENTIFIER", "name": "b_in"}
+            },
+            {
+              "kind": "NONBLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "pkt.data"},
+              "rhs": {
+                "base": {"kind": "IDENTIFIER", "name": "packed2d"},
+                "index": {"kind": "LITERAL", "value": "1"},
+                "kind": "BIT_SELECT"
+              }
+            },
+            {
+              "kind": "NONBLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "e"},
+              "rhs": {"kind": "IDENTIFIER", "name": "A"}
+            },
+            {
+              "kind": "NONBLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "sq.q"},
+              "rhs": {"kind": "IDENTIFIER", "name": "init_var"}
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "line": 44,
+        "sensitivity": "posedge clk"
+      }
+    ],
+    "assigns": [
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "w_init"},
+        "line": 33,
+        "rhs": {"kind": "IDENTIFIER", "name": "b_in"}
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "kept"},
+        "line": 37,
+        "rhs": {
+          "base": {
+            "base": {"kind": "IDENTIFIER", "name": "packed2d"},
+            "index": {"kind": "LITERAL", "value": "0"},
+            "kind": "BIT_SELECT"
+          },
+          "index": {"kind": "LITERAL", "value": "1"},
+          "kind": "BIT_SELECT"
+        }
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "y"},
+        "line": 38,
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {"kind": "IDENTIFIER", "name": "pkt.data"},
+          "op": "^",
+          "rhs": {"kind": "IDENTIFIER", "name": "pk_in"}
+        }
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "w_out"},
+        "line": 39,
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {"kind": "IDENTIFIER", "name": "w_init"},
+          "op": "|",
+          "rhs": {"kind": "IDENTIFIER", "name": "kept"}
+        }
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "tr"},
+        "line": 40,
+        "rhs": {"kind": "IDENTIFIER", "name": "b_in"}
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "uw"},
+        "line": 41,
+        "rhs": {"kind": "IDENTIFIER", "name": "b_in"}
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "scoped"},
+        "line": 42,
+        "rhs": {
+          "count": {"kind": "IDENTIFIER", "name": "sv_types_pkg::N"},
+          "kind": "REPLICATION",
+          "value": {"kind": "IDENTIFIER", "name": "b_in"}
+        }
+      }
+    ],
+    "end_line": 51,
+    "gate_primitives": [],
+    "instances": [],
+    "line": 7,
+    "name": "sv_types",
+    "net_decls": [
+      {"line": 19, "lsb": 0, "msb": 31, "name": "count", "scalar": false, "type": "reg"},
+      {"line": 20, "lsb": 0, "msb": 7, "name": "small", "scalar": false, "type": "reg"},
+      {"line": 21, "lsb": 0, "msb": 15, "name": "s16", "scalar": false, "type": "reg"},
+      {"line": 22, "lsb": 0, "msb": 63, "name": "l64", "scalar": false, "type": "reg"},
+      {"line": 23, "lsb": 0, "msb": 31, "name": "n32", "scalar": false, "type": "reg"},
+      {"line": 24, "lsb": 0, "msb": 3, "name": "nib", "scalar": false, "type": "logic"},
+      {
+        "expr": "nib_t",
+        "line": 25,
+        "lsb": 0,
+        "msb": 0,
+        "name": "nib2",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "expr": "nib_t",
+        "line": 25,
+        "lsb": 0,
+        "msb": 0,
+        "name": "nib_arr",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "expr": "state_t",
+        "line": 26,
+        "lsb": 0,
+        "msb": 0,
+        "name": "state",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "expr": "pkt_t",
+        "line": 27,
+        "lsb": 0,
+        "msb": 0,
+        "name": "pkt",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "expr": "enum",
+        "line": 28,
+        "lsb": 0,
+        "msb": 0,
+        "name": "e",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "expr": "struct",
+        "line": 29,
+        "lsb": 0,
+        "msb": 0,
+        "name": "sq",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {"line": 30, "lsb": 0, "msb": 0, "name": "tr", "scalar": true, "type": "tri"},
+      {"line": 31, "lsb": 0, "msb": 0, "name": "uw", "scalar": true, "type": "tri"},
+      {
+        "init": {"kind": "LITERAL", "value": "1'b0"},
+        "line": 32,
+        "lsb": 0,
+        "msb": 0,
+        "name": "init_var",
+        "scalar": true,
+        "type": "logic"
+      },
+      {"line": 33, "lsb": 0, "msb": 0, "name": "w_init", "scalar": true, "type": "wire"},
+      {"line": 34, "lsb": 0, "msb": 0, "name": "kept", "scalar": true, "type": "logic"},
+      {
+        "expr": "sv_types_pkg::N-1:0",
+        "line": 35,
+        "lsb": 0,
+        "msb": 0,
+        "name": "scoped",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      }
+    ],
+    "notes": [
+      {
+        "line": 32,
+        "message": "initial value of 'init_var' is not a driver (variable initializer)",
+        "severity": "warning"
+      }
+    ],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "line": 8,
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 9,
+        "lsb": 0,
+        "msb": 31,
+        "name": "packed2d",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 10,
+        "lsb": 0,
+        "msb": 0,
+        "name": "pk_in",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "line": 11,
+        "lsb": 0,
+        "msb": 0,
+        "name": "b_in",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "line": 12,
+        "lsb": 0,
+        "msb": 7,
+        "name": "y",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 13,
+        "lsb": 0,
+        "msb": 0,
+        "name": "w_out",
+        "scalar": true,
+        "type": "wire"
+      }
+    ],
+    "pragmas": [],
+    "source_file": "sv_types.sv"
+  }
+]

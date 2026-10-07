@@ -233,6 +233,7 @@
       {"line": 14, "lsb": 0, "msb": 31, "name": "q_shift", "scalar": false, "type": "logic"},
       {"line": 15, "lsb": 0, "msb": 5, "name": "count", "scalar": false, "type": "logic"}
     ],
+    "notes": [],
     "parameters": [],
     "ports": [
       {

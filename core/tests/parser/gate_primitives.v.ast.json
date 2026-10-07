@@ -17,6 +17,7 @@
       {"line": 3, "lsb": 0, "msb": 0, "name": "t1", "scalar": true, "type": "wire"},
       {"line": 3, "lsb": 0, "msb": 0, "name": "t2", "scalar": true, "type": "wire"}
     ],
+    "notes": [],
     "parameters": [],
     "ports": [
       {

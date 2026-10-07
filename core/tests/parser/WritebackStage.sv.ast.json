@@ -19,6 +19,7 @@
     "line": 2,
     "name": "WritebackStage",
     "net_decls": [],
+    "notes": [],
     "parameters": [],
     "ports": [
       {

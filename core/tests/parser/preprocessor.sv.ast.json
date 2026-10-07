@@ -1,0 +1,59 @@
+[
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "y"},
+        "line": 25,
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {"kind": "IDENTIFIER", "name": "a"},
+          "op": "+",
+          "rhs": {"kind": "LITERAL", "value": "8'd1"}
+        }
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "z"},
+        "line": 27,
+        "rhs": {
+          "cond": {"kind": "IDENTIFIER", "name": "s"},
+          "else": {"kind": "LITERAL", "value": "`UNDEFINED_MACRO"},
+          "kind": "CONDITIONAL",
+          "then": {"kind": "IDENTIFIER", "name": "a"}
+        }
+      }
+    ],
+    "end_line": 32,
+    "gate_primitives": [],
+    "instances": [],
+    "line": 20,
+    "name": "preprocessor",
+    "net_decls": [],
+    "notes": [],
+    "parameters": [],
+    "ports": [
+      {"direction": "input", "line": 21, "lsb": 0, "msb": 7, "name": "a", "scalar": false, "type": "wire"},
+      {"direction": "input", "line": 22, "lsb": 0, "msb": 0, "name": "s", "scalar": true, "type": "wire"},
+      {
+        "direction": "output",
+        "line": 23,
+        "lsb": 0,
+        "msb": 7,
+        "name": "y",
+        "scalar": false,
+        "type": "wire"
+      },
+      {
+        "direction": "output",
+        "line": 23,
+        "lsb": 0,
+        "msb": 7,
+        "name": "z",
+        "scalar": false,
+        "type": "wire"
+      }
+    ],
+    "pragmas": [],
+    "source_file": "preprocessor.sv"
+  }
+]
