@@ -25,6 +25,9 @@ public:
     std::vector<GatePrimitive> gate_primitives;
     std::vector<Assign>        assigns;
     std::vector<AlwaysBlock>   always_blocks;
+    // Parser notes: ERROR = a construct failed to parse and was dropped from the model,
+    // WARNING = a construct was skipped on purpose (initial block, function body, ...).
+    std::vector<ValidationError> notes;
 
     Module(const std::string& name, int line, int column)
         : Node(NodeKind::MODULE, line, column), name(name) {}

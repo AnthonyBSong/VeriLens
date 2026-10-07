@@ -31,6 +31,7 @@ public:
     std::vector<PortConnection>  connections;
     bool                         resolved = false; // set by Linker::link()
     bool                         wildcard = false; // true if `.*` wildcard was used
+    std::string                  array;            // range text of an instance array: `c u[3:0] (...)` -> "3:0"
 
     Instance(const std::string& module_name, const std::string& instance_name, int line, int column)
         : Node(NodeKind::INSTANCE, line, column),

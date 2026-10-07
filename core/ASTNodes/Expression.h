@@ -78,7 +78,7 @@ public:
     BinaryOpExpr(const std::string& op, ExprPtr lhs, ExprPtr rhs)
         : Expression(ExprKind::BINARY_OP), op(op), lhs(std::move(lhs)), rhs(std::move(rhs)) {}
     void validate(ValidationContext& ctx) const override {
-        if (lhs) lhs->validate(ctx);
+        if (lhs && op != "call") lhs->validate(ctx); // op "call": lhs is the function name
         if (rhs) rhs->validate(ctx);
     }
 };
