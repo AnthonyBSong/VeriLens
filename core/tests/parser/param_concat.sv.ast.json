@@ -1,0 +1,69 @@
+[
+  {
+    "always_blocks": [],
+    "assigns": [],
+    "end_line": 3,
+    "gate_primitives": [],
+    "instances": [],
+    "line": 2,
+    "name": "slave",
+    "net_decls": [],
+    "parameters": [{"default": "32'hffff_0000", "name": "MASK"}, {"default": "1", "name": "N"}],
+    "ports": [
+      {
+        "direction": "input",
+        "line": 2,
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "pragmas": [],
+    "source_file": "param_concat.sv"
+  },
+  {
+    "always_blocks": [],
+    "assigns": [],
+    "end_line": 11,
+    "gate_primitives": [{"instance": "a0", "line": 10, "ports": ["y", "{x0,x1}[0]", "clk"], "type": "and"}],
+    "instances": [
+      {
+        "connections": [{"expr": {"kind": "IDENTIFIER", "name": "clk"}, "port": "clk", "signal": "clk"}],
+        "instance": "s0",
+        "line": 8,
+        "module": "slave",
+        "parameters": [{"name": "MASK", "value": "{32'hf000_0000,32'hffff_0000}"}, {"name": "N", "value": "2"}],
+        "resolved": true,
+        "wildcard": false
+      },
+      {
+        "connections": [{"expr": {"kind": "IDENTIFIER", "name": "clk"}, "port": "clk", "signal": "clk"}],
+        "instance": "s1",
+        "line": 9,
+        "module": "slave",
+        "parameters": [{"name": "MASK", "value": "TABLE[0]"}, {"name": "N", "value": "3"}],
+        "resolved": true,
+        "wildcard": false
+      }
+    ],
+    "line": 6,
+    "name": "param_concat",
+    "net_decls": [],
+    "parameters": [{"default": "{32'h1,32'h2}", "name": "TABLE"}],
+    "ports": [
+      {
+        "direction": "input",
+        "line": 6,
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      }
+    ],
+    "pragmas": ["top"],
+    "source_file": "param_concat.sv"
+  }
+]

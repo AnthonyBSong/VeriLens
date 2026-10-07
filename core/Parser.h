@@ -49,6 +49,7 @@ private:
     void skipUntil(TokenType end);           // consume tokens up to and including `end`
     void skipStatement();                    // skip one statement (recursive on begin/end)
     void skipParens();                       // current must be LPAREN; skips balanced parens
+    std::string scanBalanced(bool stopAtSemicolon); // raw value text up to an unnested , ) ] } (or ;)
     void skipTypedef();                      // current must be TYPEDEF; consume through ';'
 
     // Top level

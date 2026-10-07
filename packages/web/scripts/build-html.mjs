@@ -21,7 +21,14 @@ const { parseLayoutFile } = await server.ssrLoadModule('/src/layout/dsl.ts');
 await server.close();
 
 const raw = JSON.parse(readFileSync(designPath, 'utf8'));
-const design = validateDesign(isVerilensAst(raw) ? fromVerilensAst(raw, { top }) : top ? { ...raw, top } : raw);
+let design;
+try {
+  design = validateDesign(isVerilensAst(raw) ? fromVerilensAst(raw, { top }) : top ? { ...raw, top } : raw);
+} catch (e) {
+  console.error(`error: ${e.message}`);
+  if (isVerilensAst(raw) && raw.length === 0) console.error('the AST has no modules: check the gen_ast errors above');
+  process.exit(1);
+}
 const layoutText = layoutPath ? readFileSync(layoutPath, 'utf8') : '';
 if (layoutText) {
   const r = parseLayoutFile(layoutText, design);

@@ -49,6 +49,7 @@ int main(int argc, char* argv[]) {
     if (inputs.empty()) { usage(); return 1; }
 
     Linker linker;
+    bool parse_failed = false;
     for (const auto& path : inputs) {
         std::string src = readFile(path);
         if (src.empty()) {
@@ -63,6 +64,7 @@ int main(int argc, char* argv[]) {
             linker.addModules(std::move(mods), path.filename().string());
         } catch (const std::exception& e) {
             std::cerr << "Error parsing " << path.filename() << ": " << e.what() << "\n";
+            parse_failed = true;
         }
     }
 
@@ -71,7 +73,7 @@ int main(int argc, char* argv[]) {
 
     // Diagnostics go to stderr so JSON output on stdout stays consumable
     // by downstream renderers. Errors flip the exit code.
-    int exit_code = 0;
+    int exit_code = parse_failed ? 3 : 0;   // 3: a file was dropped from the model
     if (run_validator) {
         Validator validator(linker);
         for (const auto& diag : validator.run()) {

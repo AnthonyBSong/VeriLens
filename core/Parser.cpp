@@ -96,6 +96,27 @@ void Parser::skipBlock() {
 }
 
 // Consume tokens until the matching end token. Used to skip function/task bodies.
+// Raw text of a value up to an unnested `,` or closing bracket (and `;` when
+// asked), crossing balanced (), [] and {} so a concatenation such as
+// `.MASK({32'h1, 32'h2})` or a range in a default stays in one piece.
+std::string Parser::scanBalanced(bool stopAtSemicolon) {
+    std::string text;
+    int depth = 0;
+    while (!check(TokenType::END_OF_FILE)) {
+        TokenType t = current().type;
+        if (t == TokenType::LPAREN || t == TokenType::LBRACKET || t == TokenType::LBRACE) {
+            depth++;
+        } else if (t == TokenType::RPAREN || t == TokenType::RBRACKET || t == TokenType::RBRACE) {
+            if (depth == 0) break;
+            depth--;
+        } else if (depth == 0 && (t == TokenType::COMMA || (stopAtSemicolon && t == TokenType::SEMICOLON))) {
+            break;
+        }
+        text += consume().lexeme;
+    }
+    return text;
+}
+
 void Parser::skipUntil(TokenType end) {
     while (!check(end) && !check(TokenType::END_OF_FILE)) consume();
     match(end);
@@ -582,21 +603,7 @@ std::vector<Parameter> Parser::parseParameterDeclaration() {
     while (true) {
         std::string name = expect(TokenType::IDENTIFIER).lexeme;
         std::string default_val;
-        if (match(TokenType::EQ)) {
-            int depth = 0;
-            while (!check(TokenType::END_OF_FILE)) {
-                if (check(TokenType::LPAREN)) {
-                    depth++;
-                } else if (check(TokenType::RPAREN)) {
-                    if (depth == 0) break;
-                    depth--;
-                } else if (depth == 0 &&
-                           (check(TokenType::SEMICOLON) || check(TokenType::COMMA))) {
-                    break;
-                }
-                default_val += consume().lexeme;
-            }
-        }
+        if (match(TokenType::EQ)) default_val = scanBalanced(/*stopAtSemicolon=*/true);
         params.emplace_back(name, default_val);
 
         if (!check(TokenType::COMMA))                       break;
@@ -641,18 +648,7 @@ Instance Parser::parseInstance() {
             bool named = check(TokenType::DOT) && peek(1).type == TokenType::IDENTIFIER &&
                          peek(2).type == TokenType::LPAREN;
             if (named) { consume(); po.name = consume().lexeme; consume(); }
-            int depth = 0;
-            while (!check(TokenType::END_OF_FILE)) {
-                if (check(TokenType::LPAREN)) {
-                    depth++;
-                } else if (check(TokenType::RPAREN)) {
-                    if (depth == 0) break;
-                    depth--;
-                } else if (depth == 0 && check(TokenType::COMMA)) {
-                    break;
-                }
-                po.value += consume().lexeme;
-            }
+            po.value = scanBalanced(/*stopAtSemicolon=*/false);
             if (named) expect(TokenType::RPAREN);
             inst.parameters.push_back(po);
             if (!match(TokenType::COMMA)) break;
@@ -745,14 +741,7 @@ std::vector<GatePrimitive> Parser::parseGatePrimitive() {
         std::vector<std::string> ports;
         while (!check(TokenType::RPAREN) && !check(TokenType::END_OF_FILE)) {
             // Collect one port expression as raw text (handles bit-selects, etc.)
-            std::string sig;
-            int depth = 0;
-            while (!check(TokenType::END_OF_FILE)) {
-                if      (check(TokenType::LPAREN)) { depth++; sig += consume().lexeme; }
-                else if (check(TokenType::RPAREN)) { if (depth == 0) break; depth--; sig += consume().lexeme; }
-                else if (depth == 0 && check(TokenType::COMMA)) break;
-                else sig += consume().lexeme;
-            }
+            std::string sig = scanBalanced(/*stopAtSemicolon=*/false);
             // trim leading/trailing whitespace
             auto s = sig.find_first_not_of(' ');
             auto e = sig.find_last_not_of(' ');
