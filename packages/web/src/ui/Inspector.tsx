@@ -28,6 +28,7 @@ export function Inspector() {
           <div className="kv"><span>kind</span><span>{cell.kind === 'instance' ? `instance of ${cell.module}${cell.resolved === false ? ' (black box)' : ''}` : `primitive ${cell.type}`}</span></div>
           {cell.source?.file && <div className="kv"><span>source</span><code>{cell.source.file}{cell.source.line ? `:${cell.source.line}` : ''}</code></div>}
           {cell.attrs?.sensitivity ? <div className="kv"><span>sensitivity</span><code>{String(cell.attrs.sensitivity)}</code></div> : null}
+          {cell.attrs?.array ? <div className="kv"><span>array</span><span>one cell stands for <code>{cell.id}[{String(cell.attrs.array)}]</code></span></div> : null}
           {cell.params && Object.keys(cell.params).length > 0 && (
             <div className="kv"><span>params</span><span>{Object.entries(cell.params).map(([k, v]) => `${k}=${v}`).join(', ')}</span></div>
           )}

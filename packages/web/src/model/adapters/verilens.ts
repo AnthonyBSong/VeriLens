@@ -25,18 +25,23 @@ export type VlStmt =
   | { kind: 'CASE_STATEMENT'; variant: string; expr: VlExpr; items: { patterns: VlExpr[]; body: VlStmt | null }[] };
 export interface VlInstance {
   module: string; instance: string; line?: number; resolved: boolean; wildcard: boolean;
+  /** Range text of an instance array: `c u[3:0] (...)` -> "3:0". One cell is emitted. */
+  array?: string;
   parameters: { name: string; value: string }[];
   connections: { port: string; signal: string; expr: VlExpr | null }[];
 }
+/** Parser note: error = a construct failed to parse and was dropped, warning = skipped on purpose. */
+export interface VlNote { severity: 'error' | 'warning'; line?: number; message: string }
 export interface VlModule {
   name: string; source_file: string; line?: number; end_line?: number; pragmas?: string[];
   parameters: { name: string; default: string }[];
   ports: VlPort[];
   net_decls: VlNet[];
   instances: VlInstance[];
-  gate_primitives: { type: string; instance: string; line?: number; ports: string[] }[];
+  gate_primitives: { type: string; instance: string; line?: number; ports: string[]; array?: string }[];
   assigns: { line?: number; lhs: VlExpr; rhs: VlExpr }[];
   always_blocks: { line?: number; sensitivity: string; body: VlStmt | null }[];
+  notes?: VlNote[];
 }
 
 export function isVerilensAst(x: unknown): x is VlModule[] {
@@ -135,6 +140,12 @@ function lower(ctx: Ctx, e: VlExpr | null, line?: number): Segment[] {
       return emitCell(ctx, type, e.op, { A: lower(ctx, e.operand, line) }, 'Y', line);
     }
     case 'BINARY_OP': {
+      if (e.op === 'call' && e.lhs.kind === 'IDENTIFIER' && e.rhs.kind === 'CONCAT') {
+        // function call f(a, b): a labelled cell with one input per argument
+        const inputs: Record<string, Segment[]> = {};
+        e.rhs.parts.forEach((p, i) => { inputs[`A${i + 1}`] = lower(ctx, p, line); });
+        return emitCell(ctx, 'call', `${e.lhs.name}()`, inputs, 'Y', line);
+      }
       const type = BINARY_TYPES[e.op] ?? 'binary';
       return emitCell(ctx, type, e.op, { A: lower(ctx, e.lhs, line), B: lower(ctx, e.rhs, line) }, 'Y', line);
     }
@@ -149,7 +160,7 @@ function identsOf(e: VlExpr | null | undefined, out: string[]) {
     case 'IDENTIFIER': out.push(baseIdent(e.name)); break;
     case 'LITERAL': break;
     case 'UNARY_OP': identsOf(e.operand, out); break;
-    case 'BINARY_OP': identsOf(e.lhs, out); identsOf(e.rhs, out); break;
+    case 'BINARY_OP': if (e.op !== 'call') identsOf(e.lhs, out); identsOf(e.rhs, out); break;
     case 'CONDITIONAL': identsOf(e.cond, out); identsOf(e.then, out); identsOf(e.else, out); break;
     case 'CONCAT': e.parts.forEach((p) => identsOf(p, out)); break;
     case 'REPLICATION': identsOf(e.count, out); identsOf(e.value, out); break;
@@ -214,6 +225,7 @@ function convertModule(vm: VlModule, all: Map<string, VlModule>): ModuleDef {
       ports: target ? undefined : unresolvedPorts, connections,
       params: Object.keys(params).length ? params : undefined,
       source: { file: vm.source_file, line: inst.line },
+      attrs: inst.array ? { array: inst.array } : undefined,
     });
   }
 
@@ -223,7 +235,7 @@ function convertModule(vm: VlModule, all: Map<string, VlModule>): ModuleDef {
     const connections: Record<string, Segment[]> = {};
     // gate ports are raw text in the core output; identifiers map to nets, anything else is kept as an opaque const
     g.ports.forEach((sig, i) => { connections[gports[i].name] = /^[A-Za-z_][\w$.]*$/.test(sig) ? [netRef(ctx, sig)] : [{ const: sig }]; });
-    ctx.cells.push({ id, kind: 'primitive', type: g.type, label: g.type, ports: gports, connections, source: { file: vm.source_file, line: g.line } });
+    ctx.cells.push({ id, kind: 'primitive', type: g.type, label: g.type, ports: gports, connections, source: { file: vm.source_file, line: g.line }, attrs: g.array ? { array: g.array } : undefined });
   });
 
   for (const a of vm.assigns) {
@@ -269,7 +281,7 @@ function convertModule(vm: VlModule, all: Map<string, VlModule>): ModuleDef {
     name: vm.name, ports, cells: ctx.cells, nets: [...ctx.nets.values()],
     params: Object.keys(params).length ? params : undefined,
     source: { file: vm.source_file, line: vm.line },
-    attrs: vm.pragmas?.length ? { pragmas: vm.pragmas } : undefined,
+    attrs: vm.pragmas?.length || vm.notes?.length ? { ...(vm.pragmas?.length ? { pragmas: vm.pragmas } : {}), ...(vm.notes?.length ? { notes: vm.notes } : {}) } : undefined,
   };
 }
 

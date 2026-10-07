@@ -57,6 +57,37 @@ describe('VeriLens AST adapter', () => {
   });
 });
 
+describe('VeriLens AST adapter: SystemVerilog additions', () => {
+  const base = { source_file: 'x.sv', parameters: [], net_decls: [], instances: [], gate_primitives: [], assigns: [], always_blocks: [] };
+  const port = (name: string, direction: 'input' | 'output'): VlModule['ports'][number] => ({ name, direction, type: 'logic', msb: 0, lsb: 0, scalar: true });
+
+  test('function calls become call cells and never implicit nets', () => {
+    const m: VlModule = { ...base, name: 'm', ports: [port('a', 'input'), port('b', 'input'), port('y', 'output')],
+      assigns: [{ lhs: { kind: 'IDENTIFIER', name: 'y' }, rhs: { kind: 'BINARY_OP', op: 'call', lhs: { kind: 'IDENTIFIER', name: 'f' }, rhs: { kind: 'CONCAT', parts: [{ kind: 'IDENTIFIER', name: 'a' }, { kind: 'IDENTIFIER', name: 'b' }] } } }],
+      always_blocks: [{ sensitivity: '*', body: { kind: 'BLOCKING_ASSIGN', lhs: { kind: 'IDENTIFIER', name: 'y' }, rhs: { kind: 'BINARY_OP', op: 'call', lhs: { kind: 'IDENTIFIER', name: '$clog2' }, rhs: { kind: 'CONCAT', parts: [{ kind: 'IDENTIFIER', name: 'a' }] } } } }] };
+    const d = validateDesign(fromVerilensAst([m]));
+    const call = d.modules.m.cells.find((c) => c.type === 'call')!;
+    expect(call.label).toBe('f()');
+    expect(call.connections).toEqual({ A1: [{ net: 'a' }], A2: [{ net: 'b' }], Y: [{ net: 'y' }] });
+    expect(d.modules.m.nets.map((n) => n.id)).not.toContain('f');
+    expect(d.modules.m.nets.map((n) => n.id)).not.toContain('$clog2');
+    const proc = d.modules.m.cells.find((c) => c.type === 'process')!;
+    expect(proc.ports!.map((p) => p.name)).toEqual(['a', 'y']);
+  });
+
+  test('instance arrays keep one cell with the range, notes land in module attrs', () => {
+    const leaf: VlModule = { ...base, name: 'leaf', ports: [port('i', 'input'), port('o', 'output')] };
+    const m: VlModule = { ...base, name: 'm', ports: [port('a', 'input'), port('y', 'output')],
+      instances: [{ module: 'leaf', instance: 'u', resolved: true, wildcard: false, array: '3:0', parameters: [], connections: [{ port: 'i', signal: 'a', expr: { kind: 'IDENTIFIER', name: 'a' } }, { port: 'o', signal: 'y', expr: { kind: 'IDENTIFIER', name: 'y' } }] }],
+      gate_primitives: [{ type: 'buf', instance: 'b', ports: ['y', 'a'], array: '1:0' }],
+      notes: [{ severity: 'error', line: 7, message: "dropped: expected SEMICOLON, got '#'" }] };
+    const d = validateDesign(fromVerilensAst([leaf, m]));
+    expect(d.modules.m.cells.find((c) => c.id === 'u')!.attrs).toEqual({ array: '3:0' });
+    expect(d.modules.m.cells.find((c) => c.id === 'b')!.attrs).toEqual({ array: '1:0' });
+    expect(d.modules.m.attrs?.notes).toEqual(m.notes);
+  });
+});
+
 describe('design model', () => {
   test('validation reports dangling references', () => {
     expect(() => validateDesign({ version: 1, top: 'x', modules: {} })).toThrow(/top module 'x' not found/);

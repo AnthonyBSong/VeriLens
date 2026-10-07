@@ -88,17 +88,27 @@ An array of modules as emitted by `build/core/tools/gen_ast`. The adapter in
 | connection expression (`{a, 2'b0}`, `x[3:0]`) | segment list, using the parsed `expr` tree from the core |
 | `assign y = a + b` | one primitive cell per operator; nested operators use generated `$…` nets |
 | `assign y = a` / `assign y = 8'd0` | `buf` cell |
+| `wire b = a;` | net `b` plus a `buf` cell (the implied continuous assignment) |
+| `f(a, b)`, `$clog2(N)` | `call` cell labelled `f()` with inputs `A1, A2…` |
 | `a[i]` with a non-constant index | `bitsel` / `partsel` cell |
+| `a[b+:w]` with constant `b`, `w` | plain part-select; otherwise a `partsel` cell whose `M` input is the `+:` operator cell and `L` is absent |
+| `c u[3:0] (...)`, `buf b[1:0] (...)` | one cell with `attrs.array = "3:0"` (shown in the inspector) |
+| `int i;`, `bit [3:0] c;`, typedef'd / enum / struct variables | nets; SV integer types get their real width, typedef'd types an unknown width named after the type |
+| interface port `bus_if.mst m` | `inout` port of unknown width named after the interface type; the interface instance is a black box |
 | `{N{a}}` | `repl` cell |
 | gate primitive `and g(y, a, b)` | primitive cell with ports `Y, A1, A2…` |
 | `always` block | `process` cell: inputs = signals read (plus clock/reset), outputs = signals written; a signal both read and written is state, not an input |
 | parameters used as identifiers | constants |
 | `// verilens: top` pragma | `design.top` (otherwise the unique root module, otherwise the first root) |
+| `notes` (parser diagnostics) | `attrs.notes` on the module; shown in the viewer's diagnostics drawer. `error` = a construct failed to parse and was dropped, `warning` = skipped on purpose (initial/final blocks, function and task bodies, specify, covergroup, event, real/time, variable initializers) |
 
-The core produces this from Verilog/SystemVerilog with its own lexer and parser
-(no regular-expression parsing). Not supported: `generate` semantics beyond
-flattening, interfaces, packages, user-defined types (identifiers of unknown
-types become implicit nets), and full SystemVerilog.
+The core produces this from Verilog/SystemVerilog with its own lexer, token
+preprocessor (`define/`ifdef/macros with arguments) and parser (no
+regular-expression parsing). A statement that fails to parse is dropped and
+reported in `notes`; the module survives. Not supported: `generate` semantics
+beyond flattening (every branch's contents are kept), interface contents and
+modports (interface ports and instances are honest black boxes), package
+contents (package-scoped names are kept as written), and `include` files.
 
 Preparation workflow:
 

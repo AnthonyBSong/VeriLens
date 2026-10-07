@@ -126,6 +126,9 @@ export function layoutModule(design: Design, path: InstancePath, mod: ModuleDef,
   for (const w of wires) for (const pl of w.polylines) for (const p of pl) { width = Math.max(width, p.x); height = Math.max(height, p.y); }
   if (mod.cells.length === 0 && mod.ports.length === 0) diagnostics.push({ severity: 'info', scope, message: 'empty module' });
   for (const c of mod.cells) if (c.kind === 'instance' && c.resolved === false) diagnostics.push({ severity: 'info', scope, message: `'${c.id}' is a black box (module '${c.module}' not in design)` });
+  // parser notes (core): dropped constructs are errors, skipped ones warnings
+  for (const n of (mod.attrs?.notes as { severity: 'error' | 'warning'; line?: number; message: string }[] | undefined) ?? [])
+    diagnostics.push({ severity: n.severity, scope, message: `${mod.source?.file ?? mod.name}${n.line ? `:${n.line}` : ''}: ${n.message}` });
   return { module: mod.name, scope, ok: true, width: width + PADDING, height: height + PADDING, nodes, wires, diagnostics, undriven };
 }
 
