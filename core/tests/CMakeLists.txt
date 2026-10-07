@@ -4,6 +4,7 @@ include(GoogleTest)
 
 set(CORE_SOURCES
     ../Lexer.cpp
+    ../Preprocessor.cpp
     ../Parser.cpp
     ../Linker.cpp
     ../Validator.cpp
@@ -35,3 +36,4 @@ add_executable(validator_tests
 target_include_directories(validator_tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/..)
 target_link_libraries(validator_tests PRIVATE GTest::gtest_main nlohmann_json::nlohmann_json)
 gtest_discover_tests(validator_tests)
+
