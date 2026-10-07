@@ -65,7 +65,7 @@ set +e; "$GEN" "${abs[@]}" > "$ast"; status=$?; set -e
 case $status in
   0) ;;
   2) echo ">> validator reported errors (see above); continuing with the structural model" >&2 ;;
-  3) echo ">> some files failed to parse (see above) and are missing from the model; continuing" >&2 ;;
+  3) echo ">> some constructs failed to parse (see above) and are missing from the model; continuing" >&2 ;;
   *) echo "error: gen_ast failed (exit $status)" >&2; exit $status ;;
 esac
 [[ -s "$ast" ]] || { echo "error: gen_ast produced no output" >&2; exit 1; }

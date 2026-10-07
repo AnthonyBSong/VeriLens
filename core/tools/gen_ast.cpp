@@ -73,7 +73,12 @@ int main(int argc, char* argv[]) {
 
     // Diagnostics go to stderr so JSON output on stdout stays consumable
     // by downstream renderers. Errors flip the exit code.
-    int exit_code = parse_failed ? 3 : 0;   // 3: a file was dropped from the model
+    int exit_code = parse_failed ? 3 : 0;   // 3: something was dropped from the model
+    for (const auto& mod : linker.modules())
+        for (const auto& n : mod.notes) {
+            std::cerr << Validator::format(n) << "\n";
+            if (n.severity == ValidationError::Severity::ERROR) exit_code = 3;
+        }
     if (run_validator) {
         Validator validator(linker);
         for (const auto& diag : validator.run()) {
