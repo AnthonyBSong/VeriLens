@@ -7,7 +7,7 @@ Verilog/SystemVerilog structural extractor (C++ `core/`) + interactive schematic
 - Launcher: `./verilens <inputs> [-l layout.yaml] [-t top] [--dev]` at the repo root is the single entry point (core build → `gen_ast` → `packages/web/scripts/build-html.mjs`, or the dev server with `VERILENS_SESSION_*` env vars served by the `verilens-session` Vite plugin at `/__verilens/session.json`).
 
 - Core: `cmake -S . -B build && cmake --build build`, tests `cd build && ctest`. JSON goldens in `core/tests/parser/*.ast.json` are regenerated with `python3 core/tests/parser/gen_golden.py` whenever the JSON shape changes.
-- Viewer: `cd packages/web && npm install && npm run dev | build | test | test:e2e`. Samples: `npm run gen:samples` rebuilds `samples/demo.design.json` from `samples/demo.ast.json` (which comes from `gen_ast samples/demo/demo.sv`).
+- Viewer: `cd packages/web && npm install && npm run dev | build | test | test:e2e`. Samples: `samples/demo.ast.json` and `samples/demo.design.json` are generated (gitignored) from `samples/demo/demo.sv` by `npm run gen:samples`, which `dev`, `build`, `typecheck` and `test` run first; it builds `gen_ast` if needed.
 
 ## Contract between core and viewer
 

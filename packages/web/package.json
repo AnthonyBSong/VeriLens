@@ -4,11 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predev": "npm run gen:samples",
     "dev": "vite",
+    "prebuild": "npm run gen:samples",
     "build": "tsc -b && vite build",
     "preview": "vite preview --port 4173",
+    "pretest": "npm run gen:samples",
     "test": "vitest run",
     "test:e2e": "playwright test",
+    "pretypecheck": "npm run gen:samples",
     "typecheck": "tsc -b",
     "gen:samples": "node scripts/gen-samples.mjs",
     "build:html": "node scripts/build-html.mjs"

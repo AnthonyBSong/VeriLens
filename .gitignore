@@ -1,5 +1,7 @@
 # build outputs
 build/
+packages/web/samples/demo.ast.json
+packages/web/samples/demo.design.json
 packages/web/coverage/
 coverage-core.xml
 

@@ -86,10 +86,12 @@ See `docs/FORMATS.md` for the exact contracts:
 - **Normalized design JSON** – `{ version: 1, top, modules }`. Validated on load.
 - **Layout YAML v1** – `defaults`, per-scope `constraints` (`leftOf`, `above`, `alignY`; required/preferred), `ports` order, `frames`.
 
-Samples in `samples/`: `demo/demo.sv` (source), `demo.ast.json`,
-`demo.design.json`, `demo.layout.yaml` (visibly changes placement: fixed 640×420
-compute frame, explicit port order, datapath row, controller above),
-`demo-conflict.layout.yaml` (every kind of validation error).
+Samples in `samples/`: `demo/demo.sv` (source), `demo.layout.yaml` (visibly
+changes placement: fixed 640×420 compute frame, explicit port order, datapath
+row, controller above), `demo-conflict.layout.yaml` (every kind of validation
+error). `demo.ast.json` and `demo.design.json` are generated from the source by
+`npm run gen:samples` (run automatically before `dev`, `build`, `typecheck` and
+`test`; it builds the core's `gen_ast` if needed) and are not committed.
 
 ## Architecture
 
