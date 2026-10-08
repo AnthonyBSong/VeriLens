@@ -5,6 +5,9 @@ packages/web/samples/demo.design.json
 packages/web/coverage/
 coverage-core.xml
 
+# dependencies are installed per package (npm install), never committed
+node_modules/
+
 # editors and tools
 .vscode/
 .claude/
