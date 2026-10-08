@@ -169,5 +169,5 @@ if __name__ == "__main__":
         src    = vfile.read_text()
         tokens = tokenize(src)
         out    = lexer_dir / (vfile.name + ".json")
-        out.write_text(json.dumps(tokens, indent=2))
+        out.write_text("[\n" + ",\n".join(json.dumps(t) for t in tokens) + "\n]\n")  # one token per line
         print(f"  {vfile.name} → {out.name}  ({len(tokens)} tokens)")

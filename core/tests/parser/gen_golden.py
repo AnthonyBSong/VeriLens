@@ -8,6 +8,20 @@ and writes <filename>.ast.json golden files into this directory (core/tests/pars
 import subprocess, json, sys
 from pathlib import Path
 
+
+def dump(v, ind=0):
+    """JSON with small nodes (<= 100 chars) on one line; keeps diffs short and the files 3-4x smaller than indent=2."""
+    flat = json.dumps(v)
+    if len(flat) <= 100 or not isinstance(v, (dict, list)) or not v:
+        return flat
+    pad = "  " * (ind + 1)
+    if isinstance(v, dict):
+        body = ",\n".join(f"{pad}{json.dumps(k)}: {dump(x, ind + 1)}" for k, x in v.items())
+        return "{\n" + body + "\n" + "  " * ind + "}"
+    body = ",\n".join(pad + dump(x, ind + 1) for x in v)
+    return "[\n" + body + "\n" + "  " * ind + "]"
+
+
 root        = Path(__file__).resolve().parent.parent.parent.parent
 gen_ast     = root / "build" / "core" / "tools" / "gen_ast"
 parser_dir  = Path(__file__).resolve().parent
@@ -39,7 +53,7 @@ for vfile in files:
         err += 1
         continue
     out = parser_dir / (vfile.name + ".ast.json")
-    out.write_text(json.dumps(ast, indent=2))
+    out.write_text(dump(ast) + "\n")
     print(f"  {vfile.name} → {out.name}")
     ok += 1
 
