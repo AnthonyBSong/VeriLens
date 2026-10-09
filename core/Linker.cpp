@@ -35,8 +35,3 @@ void Linker::link() {
         symbol_table_ptr_[name] = &modules_[idx];
 }
 
-const Module* Linker::lookup(const std::string& module_name) const {
-    auto it = symbol_table_.find(module_name);
-    if (it == symbol_table_.end()) return nullptr;
-    return &modules_[it->second];
-}

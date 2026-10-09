@@ -16,8 +16,6 @@ public:
 
     const std::vector<Module>& modules() const { return modules_; }
 
-    // Returns nullptr if not found.
-    const Module* lookup(const std::string& module_name) const;
 
     // The pointer-based symbol table ready for ValidationContext.
     const ValidationContext::SymbolTable& symbolTable() const { return symbol_table_ptr_; }

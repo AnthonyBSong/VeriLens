@@ -32,9 +32,6 @@ public:
     // the rest of the module survives.
     std::vector<Module> parse();
 
-    // Serialize the parsed AST to a JSON string (single-file, no linker)
-    std::string toAST();
-
 private:
     // Token streaming helpers
     const Token& current() const;

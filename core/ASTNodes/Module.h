@@ -15,7 +15,7 @@
 class Module : public Node {
 public:
     std::string                name;
-    std::string                source_file;  // set by gen_ast; empty when parsed via Parser::toAST()
+    std::string                source_file;  // set by the linker (Linker::addModules)
     int                        end_line = 0; // line of `endmodule`
     std::vector<std::string>   pragmas;      // from `// verilens: <word>` comments (see Lexer)
     std::vector<Parameter>     parameters;

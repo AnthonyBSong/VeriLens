@@ -1867,6 +1867,3 @@ std::string modulesToJSON(const std::vector<Module>& modules) {
     return root.dump(2);
 }
 
-std::string Parser::toAST() {
-    return modulesToJSON(parse());
-}
