@@ -1,5 +1,5 @@
 # build outputs
-build/
+build*/
 packages/web/samples/demo.ast.json
 packages/web/samples/demo.design.json
 packages/web/src/wasm/

@@ -1,5 +1,0 @@
-if(EXISTS "/Users/song/Projects/VeriLens/build-cov/core/tests/validator_tests_e3b0c442_tests.cmake")
-  include("/Users/song/Projects/VeriLens/build-cov/core/tests/validator_tests_e3b0c442_tests.cmake")
-else()
-  add_test(validator_tests_NOT_BUILT validator_tests_NOT_BUILT)
-endif()
