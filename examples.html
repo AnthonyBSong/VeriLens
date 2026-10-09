@@ -9,7 +9,7 @@
 <body>
 <main>
   <h1>Examples</h1>
-  <p class="lead">Two designs ship with the repository: a small streaming accelerator used by the tests and the docs, and a five-stage processor from the parser test suite.</p>
+  <p class="lead">Two designs ship with the repository: a small streaming accelerator used by the tests and the docs, and a five-stage RISC-V pipeline from the core test suite.</p>
 
   <h2 id="demo">Demo: streaming accelerator</h2>
   <p>Source: <code>packages/web/samples/demo/demo.sv</code>. A <code>top</code> with an input FIFO, a controller, a <code>compute</code> block (two instances of a processing-element module, an accumulator, a mux, an adder) and an output FIFO. It has buses, fanout (clock and reset), feedback (ready/valid back-pressure and the accumulator loop), constants and a struct-free, parser-friendly style.</p>
@@ -19,18 +19,20 @@
   <figure><img class="shot" src="assets/img/focus-compute.png" alt="compute focused as the main schematic"><figcaption><em>Focus module</em> on <code>compute</code>: the two PEs, the adder and mux, the <code>always_ff</code> register block, and feedback lanes below.</figcaption></figure>
   <figure><img class="shot" src="assets/img/focus-controller.png" alt="controller focused"><figcaption>The controller: comparators, gates, an <code>always_comb</code> next-state block and an <code>always_ff</code> state register, with the 2-bit <code>state</code> bus drawn thicker.</figcaption></figure>
 
-  <h2 id="procbase">ProcBase: a five-stage TinyRV2 processor</h2>
-  <p>Source: <code>core/tests/examples/ProcBase.v</code> and its dependencies, from a course processor lab. <code>ProcBase.v</code> carries the <code>// verilens: top</code> pragma, and <code>ProcBase.layout.yaml</code> next to it puts the control unit before and above the datapath, gives both a readable frame, orders the datapath ports, and pins the pipeline stage order inside <code>dpath</code>.</p>
+  <h2 id="pipeline">PipelinedCPU: a five-stage RISC-V pipeline</h2>
+  <p>Source: <code>core/tests/examples/PipelinedCPU.sv</code> and the nineteen modules it instantiates: the five stages, four pipeline registers, hazard detection, forwarding, and the ALU, register file, immediate extender, control unit, branch unit, memories and load/store unit inside the stages. <code>-t PipelinedCPU</code> picks the top module, and <code>PipelinedCPU.layout.yaml</code> next to it pins the stage order left to right, keeps the stages on one row with the pipeline registers between them, places hazard detection above decode and forwarding below execute, and gives the two biggest stages a readable frame.</p>
 <pre><code>cd core/tests/examples
-../../../verilens ProcBase.v ProcBaseDpath.v ProcBaseCtrl.v DropUnit.v ProcDpathAlu.v ProcDpathImmGen.v \
-  IntMulAlt.v Lookahead.v muxes.v arithmetic.v regfiles.v tinyrv2_encoding.v -l ProcBase.layout.yaml</code></pre>
-  <p>Twelve files, 22 modules. Six <code>vc_*</code> library cells (queues, enable registers, trace modules) are not part of the examples and render as dashed black boxes. <a href="demo/procbase.html" target="_blank" rel="noopener">Open the generated page ↗</a></p>
-  <figure><img class="shot" src="assets/img/procbase-top.png" alt="ProcBase top level"><figcaption>Top level: <code>ctrl</code> above and left of <code>dpath</code>, queues and the instruction drop unit around them, black boxes dashed.</figcaption></figure>
-  <figure><img class="shot" src="assets/img/procbase-expanded.png" alt="ProcBase with dpath expanded"><figcaption><code>dpath</code> expanded in its 960×560 frame: fetch, decode, execute, memory and writeback left to right; the surrounding boxes have not moved.</figcaption></figure>
-  <p>Things worth clicking: the <code>inst_D</code> bus from the datapath back to the controller (a feedback route), the <code>multiplier</code> instance three levels deep (<code>dpath → multiplier → …</code>), and the diagnostics drawer, which reports two multiply-driven nets caused by struct-field assigns in the original source.</p>
+../../../verilens PipelinedCPU.sv FetchStage.sv DecodeStage.sv ExecuteStage.sv MemoryStage.sv WritebackStage.sv \
+  PipelineReg_IF_ID.sv PipelineReg_ID_EX.sv PipelineReg_EX_MEM.sv PipelineReg_MEM_WB.sv HazardDetect.sv \
+  ForwardingUnit.sv Alu.sv RegFile.sv ImmExtend.sv ControlUnit.sv BranchUnit.sv InstrMemory.sv DataMemory.sv \
+  LoadStoreUnit.sv -t PipelinedCPU -l PipelinedCPU.layout.yaml</code></pre>
+  <p>Twenty files, twenty modules, every instance resolved. <a href="demo/pipeline.html" target="_blank" rel="noopener">Open the generated page ↗</a></p>
+  <figure><img class="shot" src="assets/img/pipeline-top.png" alt="PipelinedCPU top level"><figcaption>Top level: <code>fetch</code>, <code>decode</code>, <code>execute</code>, <code>memory</code> and <code>writeback</code> left to right with the pipeline registers between them, hazard detection above, forwarding below.</figcaption></figure>
+  <figure><img class="shot" src="assets/img/pipeline-expanded.png" alt="PipelinedCPU with execute expanded"><figcaption><code>execute</code> expanded in its 640×420 frame; the surrounding boxes have not moved.</figcaption></figure>
+  <p>Things worth clicking: the <code>stall</code> net from hazard detection back to <code>fetch</code> and the IF/ID register (a feedback route), the two forwarding selects into <code>execute</code>, and the writeback data returning to the register file inside <code>decode</code>.</p>
 
   <h2>Writing your own layout file</h2>
-  <p>Start from automatic layout, open the <em>Layout</em> tab, and add rules one at a time. Required rules are for things that must hold (stage order, a block that must sit left of another); preferred rules are for taste (rows, something above something else). The <a href="layout-dsl.html">DSL page</a> has the full semantics and the demo rule file; <code>core/tests/examples/ProcBase.layout.yaml</code> is the larger example.</p>
+  <p>Start from automatic layout, open the <em>Layout</em> tab, and add rules one at a time. Required rules are for things that must hold (stage order, a block that must sit left of another); preferred rules are for taste (rows, something above something else). The <a href="layout-dsl.html">DSL page</a> has the full semantics and the demo rule file; <code>core/tests/examples/PipelinedCPU.layout.yaml</code> is the larger example.</p>
 </main>
 <script src="assets/site.js"></script>
 </body>

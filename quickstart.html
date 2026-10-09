@@ -71,10 +71,12 @@ module top ( ... );</code></pre>
   <p>Open the <em>Layout</em> tab, edit the rules, press <em>Apply</em>. Rules that cannot hold are listed with the scope and rule id, and the previous layout stays on screen. Edit the YAML file on disk and press <em>Reload files</em> to re-read it. When it looks right, <em>Export HTML</em> writes the final page with the rules embedded. The DSL is documented in <a href="layout-dsl.html">Layout DSL</a>.</p>
 
   <h2>5. A complete example</h2>
-  <p>The repository ships a five-stage processor in <code>core/tests/examples</code>. This is the exact command behind the <a href="examples.html#procbase">ProcBase example</a>:</p>
+  <p>The repository ships a five-stage RISC-V pipeline in <code>core/tests/examples</code>. This is the exact command behind the <a href="examples.html#pipeline">PipelinedCPU example</a>:</p>
 <pre><code>cd core/tests/examples
-../../../verilens ProcBase.v ProcBaseDpath.v ProcBaseCtrl.v DropUnit.v ProcDpathAlu.v ProcDpathImmGen.v \
-  IntMulAlt.v Lookahead.v muxes.v arithmetic.v regfiles.v tinyrv2_encoding.v -l ProcBase.layout.yaml</code></pre>
+../../../verilens PipelinedCPU.sv FetchStage.sv DecodeStage.sv ExecuteStage.sv MemoryStage.sv WritebackStage.sv \
+  PipelineReg_IF_ID.sv PipelineReg_ID_EX.sv PipelineReg_EX_MEM.sv PipelineReg_MEM_WB.sv HazardDetect.sv \
+  ForwardingUnit.sv Alu.sv RegFile.sv ImmExtend.sv ControlUnit.sv BranchUnit.sv InstrMemory.sv DataMemory.sv \
+  LoadStoreUnit.sv -t PipelinedCPU -l PipelinedCPU.layout.yaml</code></pre>
 <script>
 // ---- guided tour (same-origin iframe). Every step draws an orange box around one region of the viewer.
 const SRC = 'demo/index.html?sample=layout';
