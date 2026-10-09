@@ -1,0 +1,8 @@
+# Codecov settings. Coverage is uploaded per job under the flags `core` and `web`
+# (.github/workflows/ci.yml); the badge is the merged number over both.
+ignore:
+  - "core/tests"
+  - "core/tools"
+  - "packages/web/e2e"
+  - "packages/web/scripts"
+  - "packages/web/tests"

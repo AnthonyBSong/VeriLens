@@ -6,6 +6,8 @@
 // Maps every Verilog keyword string to its TokenType.
 
 inline TokenType lookupKeyword(const std::string& word) {
+    // GCOVR_EXCL_START: a data table, not code. gcc's gcov gives every line of a
+    // multi-line initializer its own zero counter, which read as ~90 missed lines.
     static const std::unordered_map<std::string, TokenType> KEYWORDS = {
         // Module structure
         {"module",      TokenType::MODULE},
@@ -127,6 +129,7 @@ inline TokenType lookupKeyword(const std::string& word) {
         {"union",       TokenType::UNION},
         {"packed",      TokenType::PACKED},
     };
+    // GCOVR_EXCL_STOP
 
     auto it = KEYWORDS.find(word);
     return (it != KEYWORDS.end()) ? it->second : TokenType::IDENTIFIER;
