@@ -1,0 +1,41 @@
+[
+  {
+    "always_blocks": [],
+    "assigns": [
+      {"lhs": {"kind": "IDENTIFIER", "name": "b"}, "line": 2, "rhs": {"kind": "IDENTIFIER", "name": "a"}}
+    ],
+    "end_line": 4,
+    "gate_primitives": [],
+    "instances": [],
+    "line": 1,
+    "name": "cut",
+    "net_decls": [],
+    "notes": [
+      {"line": 4, "message": "dropped: expected an expression, got ''", "severity": "error"},
+      {"line": 4, "message": "dropped: expected END, got ''", "severity": "error"}
+    ],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "line": 1,
+        "lsb": 0,
+        "msb": 0,
+        "name": "a",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "line": 1,
+        "lsb": 0,
+        "msb": 0,
+        "name": "b",
+        "scalar": true,
+        "type": "unspecified"
+      }
+    ],
+    "pragmas": [],
+    "source_file": "truncated.v"
+  }
+]

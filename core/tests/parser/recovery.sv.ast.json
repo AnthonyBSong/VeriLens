@@ -94,5 +94,61 @@
     ],
     "pragmas": [],
     "source_file": "recovery.sv"
+  },
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "expr": {"kind": "IDENTIFIER", "name": "a"},
+              "items": [
+                {
+                  "body": {
+                    "kind": "BLOCKING_ASSIGN",
+                    "lhs": {"kind": "IDENTIFIER", "name": "y"},
+                    "rhs": {"kind": "LITERAL", "value": "1'b0"}
+                  },
+                  "patterns": []
+                }
+              ],
+              "kind": "CASE_STATEMENT",
+              "variant": "case"
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "line": 25,
+        "sensitivity": "*"
+      }
+    ],
+    "assigns": [],
+    "end_line": 29,
+    "gate_primitives": [],
+    "instances": [],
+    "line": 19,
+    "name": "bad_header",
+    "net_decls": [],
+    "notes": [
+      {"line": 19, "message": "module header: expected IDENTIFIER, got ')'", "severity": "error"},
+      {"line": 20, "message": "unexpected ')' ignored", "severity": "warning"},
+      {"line": 21, "message": "dropped: expected an expression, got ';'", "severity": "error"},
+      {
+        "line": 23,
+        "message": "defparam 'u.v.W' not applied (only inst.PARAM is supported)",
+        "severity": "warning"
+      },
+      {"line": 26, "message": "dropped: unexpected 'else'", "severity": "error"},
+      {"line": 27, "message": "dropped: expected an expression, got ';'", "severity": "error"},
+      {
+        "line": 22,
+        "message": "defparam: instance 'nothere' not found in this module",
+        "severity": "warning"
+      }
+    ],
+    "parameters": [],
+    "ports": [],
+    "pragmas": [],
+    "source_file": "recovery.sv"
   }
 ]

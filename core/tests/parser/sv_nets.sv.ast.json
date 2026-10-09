@@ -1,0 +1,310 @@
+[
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "c"},
+        "line": 32,
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {"kind": "IDENTIFIER", "name": "a"},
+          "op": "&",
+          "rhs": {"kind": "IDENTIFIER", "name": "b"}
+        }
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "w1"},
+        "line": 33,
+        "rhs": {
+          "base": {"kind": "IDENTIFIER", "name": "md"},
+          "index": {"kind": "LITERAL", "value": "0"},
+          "kind": "BIT_SELECT"
+        }
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "cw"},
+        "line": 34,
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {"kind": "IDENTIFIER", "name": "f2"},
+          "op": "call",
+          "rhs": {
+            "kind": "CONCAT",
+            "parts": [{"kind": "IDENTIFIER", "name": "a"}, {"kind": "IDENTIFIER", "name": "b"}]
+          }
+        }
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "bw"},
+        "line": 35,
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {"kind": "IDENTIFIER", "name": "$clog2"},
+          "op": "call",
+          "rhs": {"kind": "CONCAT", "parts": [{"kind": "LITERAL", "value": "8"}, {"kind": "LITERAL", "value": "2"}]}
+        }
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "pat"},
+        "line": 36,
+        "rhs": {"kind": "CONCAT", "parts": [{"kind": "LITERAL", "value": "0"}]}
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "pat2"},
+        "line": 37,
+        "rhs": {
+          "kind": "CONCAT",
+          "parts": [{"kind": "LITERAL", "value": "4'd1"}, {"kind": "LITERAL", "value": "4'd2"}]
+        }
+      }
+    ],
+    "end_line": 41,
+    "gate_primitives": [],
+    "instances": [
+      {
+        "array": "1:0",
+        "connections": [{"expr": {"kind": "IDENTIFIER", "name": "a"}, "port": "p", "signal": "a"}],
+        "instance": "u_arr",
+        "line": 39,
+        "module": "unknown_mod",
+        "parameters": [],
+        "resolved": false,
+        "wildcard": false
+      },
+      {
+        "connections": [],
+        "instance": "u1",
+        "line": 40,
+        "module": "known_sub",
+        "parameters": [{"name": "W", "value": "-1"}, {"name": "X", "value": "a?1:2"}],
+        "resolved": true,
+        "wildcard": true
+      }
+    ],
+    "line": 2,
+    "name": "sv_nets",
+    "net_decls": [
+      {"line": 11, "lsb": 0, "msb": 0, "name": "t0", "scalar": true, "type": "tri"},
+      {"line": 12, "lsb": 0, "msb": 0, "name": "t1", "scalar": true, "type": "tri"},
+      {"line": 13, "lsb": 0, "msb": 0, "name": "t2", "scalar": true, "type": "tri"},
+      {"line": 14, "lsb": 0, "msb": 0, "name": "wa", "scalar": true, "type": "wand"},
+      {"line": 15, "lsb": 0, "msb": 0, "name": "wo", "scalar": true, "type": "wor"},
+      {"line": 16, "lsb": 0, "msb": 0, "name": "gnd", "scalar": true, "type": "supply0"},
+      {"line": 17, "lsb": 0, "msb": 0, "name": "vcc", "scalar": true, "type": "supply1"},
+      {
+        "expr": "nets_pkg::word_t",
+        "line": 19,
+        "lsb": 0,
+        "msb": 0,
+        "name": "w1",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "expr": "word_t",
+        "line": 20,
+        "lsb": 0,
+        "msb": 0,
+        "name": "w2",
+        "scalar": false,
+        "type": "logic",
+        "unknown": true
+      },
+      {
+        "init": {"kind": "LITERAL", "value": "0"},
+        "line": 21,
+        "lsb": 0,
+        "msb": 31,
+        "name": "cnt",
+        "scalar": false,
+        "type": "reg"
+      },
+      {
+        "expr": "N-1:0][7:0",
+        "line": 26,
+        "lsb": 0,
+        "msb": 0,
+        "name": "md",
+        "scalar": false,
+        "type": "wire",
+        "unknown": true
+      },
+      {
+        "expr": "a?3:1:0",
+        "line": 27,
+        "lsb": 0,
+        "msb": 0,
+        "name": "cw",
+        "scalar": false,
+        "type": "wire",
+        "unknown": true
+      },
+      {
+        "expr": "md[0]:0",
+        "line": 28,
+        "lsb": 0,
+        "msb": 0,
+        "name": "bw",
+        "scalar": false,
+        "type": "wire",
+        "unknown": true
+      },
+      {
+        "expr": "md[1:0]:0",
+        "line": 29,
+        "lsb": 0,
+        "msb": 0,
+        "name": "pw2",
+        "scalar": false,
+        "type": "wire",
+        "unknown": true
+      },
+      {
+        "expr": "-1+2:0",
+        "line": 30,
+        "lsb": 0,
+        "msb": 0,
+        "name": "neg",
+        "scalar": false,
+        "type": "wire",
+        "unknown": true
+      },
+      {"line": 36, "lsb": 0, "msb": 7, "name": "pat", "scalar": false, "type": "wire"},
+      {"line": 37, "lsb": 0, "msb": 7, "name": "pat2", "scalar": false, "type": "wire"}
+    ],
+    "notes": [
+      {
+        "line": 21,
+        "message": "initial value of 'cnt' is not a driver (variable initializer)",
+        "severity": "warning"
+      }
+    ],
+    "parameters": [
+      {"default": "4", "name": "N"},
+      {"default": "8'd1", "name": "PW"},
+      {"default": "8'd2", "name": "PT"}
+    ],
+    "ports": [
+      {
+        "direction": "input",
+        "line": 3,
+        "lsb": 0,
+        "msb": 0,
+        "name": "a",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "line": 4,
+        "lsb": 0,
+        "msb": 0,
+        "name": "b",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "line": 5,
+        "lsb": 0,
+        "msb": 0,
+        "name": "c",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "line": 6,
+        "lsb": 0,
+        "msb": 0,
+        "name": "cc",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "line": 7,
+        "lsb": 0,
+        "msb": 0,
+        "name": "d",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "line": 8,
+        "lsb": 0,
+        "msb": 0,
+        "name": "pw",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "line": 9,
+        "lsb": 0,
+        "msb": 0,
+        "name": "tw",
+        "scalar": true,
+        "type": "unspecified"
+      }
+    ],
+    "pragmas": [],
+    "source_file": "sv_nets.sv"
+  },
+  {
+    "always_blocks": [],
+    "assigns": [
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "cc"},
+        "line": 44,
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {"kind": "IDENTIFIER", "name": "a"},
+          "op": "|",
+          "rhs": {"kind": "IDENTIFIER", "name": "b"}
+        }
+      }
+    ],
+    "end_line": 45,
+    "gate_primitives": [],
+    "instances": [],
+    "line": 43,
+    "name": "known_sub",
+    "net_decls": [],
+    "notes": [],
+    "parameters": [{"default": "1", "name": "W"}, {"default": "2", "name": "X"}],
+    "ports": [
+      {
+        "direction": "input",
+        "line": 43,
+        "lsb": 0,
+        "msb": 0,
+        "name": "a",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "input",
+        "line": 43,
+        "lsb": 0,
+        "msb": 0,
+        "name": "b",
+        "scalar": true,
+        "type": "unspecified"
+      },
+      {
+        "direction": "output",
+        "line": 43,
+        "lsb": 0,
+        "msb": 0,
+        "name": "cc",
+        "scalar": true,
+        "type": "unspecified"
+      }
+    ],
+    "pragmas": [],
+    "source_file": "sv_nets.sv"
+  }
+]

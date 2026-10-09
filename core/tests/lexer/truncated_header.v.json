@@ -1,0 +1,9 @@
+[
+{"type": "MODULE", "lexeme": "module"},
+{"type": "IDENTIFIER", "lexeme": "cut2"},
+{"type": "LPAREN", "lexeme": "("},
+{"type": "INPUT", "lexeme": "input"},
+{"type": "IDENTIFIER", "lexeme": "a"},
+{"type": "COMMA", "lexeme": ","},
+{"type": "END_OF_FILE", "lexeme": ""}
+]

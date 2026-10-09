@@ -1,0 +1,104 @@
+[
+  {
+    "always_blocks": [],
+    "assigns": [
+      {"lhs": {"kind": "IDENTIFIER", "name": "ub"}, "line": 15, "rhs": {"kind": "LITERAL", "value": "'1"}},
+      {"lhs": {"kind": "IDENTIFIER", "name": "uz"}, "line": 16, "rhs": {"kind": "LITERAL", "value": "'x"}},
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "uh"},
+        "line": 17,
+        "rhs": {"kind": "LITERAL", "value": "'hF"}
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "m"},
+        "line": 18,
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "base": {"kind": "IDENTIFIER", "name": "a"},
+            "kind": "PART_SELECT",
+            "lsb": {"kind": "LITERAL", "value": "0"},
+            "msb": {"kind": "LITERAL", "value": "3"}
+          },
+          "op": "%",
+          "rhs": {"kind": "LITERAL", "value": "4'd3"}
+        }
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "y"},
+        "line": 19,
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {
+            "kind": "BINARY_OP",
+            "lhs": {
+              "kind": "BINARY_OP",
+              "lhs": {
+                "kind": "CONCAT",
+                "parts": [{"kind": "IDENTIFIER", "name": "uh"}, {"kind": "IDENTIFIER", "name": "m"}]
+              },
+              "op": "^",
+              "rhs": {"kind": "IDENTIFIER", "name": "d"}
+            },
+            "op": "^",
+            "rhs": {
+              "kind": "CONCAT",
+              "parts": [{"kind": "LITERAL", "value": "4'd0"}, {"kind": "IDENTIFIER", "name": "b"}]
+            }
+          },
+          "op": "^",
+          "rhs": {
+            "kind": "CONCAT",
+            "parts": [
+              {"kind": "IDENTIFIER", "name": "ub"},
+              {"kind": "IDENTIFIER", "name": "uz"},
+              {"kind": "LITERAL", "value": "6'd0"}
+            ]
+          }
+        }
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "data"},
+        "line": 20,
+        "rhs": {"kind": "IDENTIFIER", "name": "c"}
+      }
+    ],
+    "end_line": 21,
+    "gate_primitives": [],
+    "instances": [],
+    "line": 2,
+    "name": "literals",
+    "net_decls": [
+      {"line": 15, "lsb": 0, "msb": 0, "name": "ub", "scalar": true, "type": "wire"},
+      {"line": 16, "lsb": 0, "msb": 0, "name": "uz", "scalar": true, "type": "wire"},
+      {"line": 17, "lsb": 0, "msb": 3, "name": "uh", "scalar": false, "type": "wire"},
+      {"line": 18, "lsb": 0, "msb": 3, "name": "m", "scalar": false, "type": "wire"}
+    ],
+    "notes": [],
+    "parameters": [
+      {"default": "3.14", "name": "PI"},
+      {"default": "1.2e+5", "name": "BIG"},
+      {"default": "2E-3", "name": "TINY"},
+      {"default": "1e3", "name": "K"}
+    ],
+    "ports": [
+      {"direction": "input", "line": 3, "lsb": 0, "msb": 0, "name": "clk", "scalar": true, "type": "wire"},
+      {
+        "direction": "inout",
+        "line": 4,
+        "lsb": 0,
+        "msb": 7,
+        "name": "data",
+        "scalar": false,
+        "type": "wire"
+      },
+      {"direction": "input", "line": 5, "lsb": 0, "msb": 7, "name": "a", "scalar": false, "type": "wire"},
+      {"direction": "input", "line": 6, "lsb": 0, "msb": 3, "name": "b", "scalar": false, "type": "wire"},
+      {"direction": "input", "line": 7, "lsb": 0, "msb": 7, "name": "c", "scalar": false, "type": "wire"},
+      {"direction": "input", "line": 8, "lsb": 0, "msb": 7, "name": "d", "scalar": false, "type": "wire"},
+      {"direction": "output", "line": 9, "lsb": 0, "msb": 7, "name": "y", "scalar": false, "type": "wire"}
+    ],
+    "pragmas": [],
+    "source_file": "literals.sv"
+  }
+]

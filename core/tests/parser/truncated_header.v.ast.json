@@ -1,0 +1,27 @@
+[
+  {
+    "always_blocks": [],
+    "assigns": [],
+    "end_line": 2,
+    "gate_primitives": [],
+    "instances": [],
+    "line": 1,
+    "name": "cut2",
+    "net_decls": [],
+    "notes": [{"line": 2, "message": "module header: expected RPAREN, got ''", "severity": "error"}],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "line": 1,
+        "lsb": 0,
+        "msb": 0,
+        "name": "a",
+        "scalar": true,
+        "type": "unspecified"
+      }
+    ],
+    "pragmas": [],
+    "source_file": "truncated_header.v"
+  }
+]

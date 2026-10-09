@@ -1,0 +1,192 @@
+[
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "body": [
+                {
+                  "kind": "NONBLOCKING_ASSIGN",
+                  "lhs": {"kind": "IDENTIFIER", "name": "q"},
+                  "rhs": {"kind": "IDENTIFIER", "name": "a"}
+                }
+              ],
+              "kind": "SEQ_BLOCK"
+            },
+            {
+              "body": [
+                {
+                  "kind": "NONBLOCKING_ASSIGN",
+                  "lhs": {"kind": "IDENTIFIER", "name": "acc"},
+                  "rhs": {
+                    "kind": "BINARY_OP",
+                    "lhs": {"kind": "IDENTIFIER", "name": "acc"},
+                    "op": "+",
+                    "rhs": {"kind": "LITERAL", "value": "8'd1"}
+                  }
+                }
+              ],
+              "kind": "SEQ_BLOCK"
+            },
+            {
+              "kind": "NONBLOCKING_ASSIGN",
+              "lhs": {
+                "base": {"kind": "IDENTIFIER", "name": "y"},
+                "index": {"kind": "IDENTIFIER", "name": "i"},
+                "kind": "BIT_SELECT"
+              },
+              "rhs": {
+                "base": {"kind": "IDENTIFIER", "name": "a"},
+                "index": {"kind": "IDENTIFIER", "name": "i"},
+                "kind": "BIT_SELECT"
+              }
+            },
+            {
+              "kind": "NONBLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "acc"},
+              "rhs": {"kind": "LITERAL", "value": "8'd0"}
+            },
+            {
+              "kind": "NONBLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "acc"},
+              "rhs": {
+                "kind": "BINARY_OP",
+                "lhs": {"kind": "IDENTIFIER", "name": "acc"},
+                "op": "+",
+                "rhs": {"kind": "LITERAL", "value": "8'd1"}
+              }
+            },
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "acc"},
+              "rhs": {
+                "kind": "BINARY_OP",
+                "lhs": {"kind": "IDENTIFIER", "name": "acc"},
+                "op": ">>",
+                "rhs": {"kind": "LITERAL", "value": "1"}
+              }
+            },
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "acc"},
+              "rhs": {
+                "kind": "BINARY_OP",
+                "lhs": {"kind": "IDENTIFIER", "name": "acc"},
+                "op": "<<<",
+                "rhs": {"kind": "LITERAL", "value": "1"}
+              }
+            },
+            {
+              "kind": "BLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "acc"},
+              "rhs": {
+                "kind": "BINARY_OP",
+                "lhs": {"kind": "IDENTIFIER", "name": "acc"},
+                "op": ">>>",
+                "rhs": {"kind": "LITERAL", "value": "1"}
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "line": 11,
+        "sensitivity": "posedge clk"
+      },
+      {
+        "body": {
+          "body": [
+            {
+              "kind": "NONBLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "q"},
+              "rhs": {"kind": "IDENTIFIER", "name": "a"}
+            },
+            {
+              "kind": "NONBLOCKING_ASSIGN",
+              "lhs": {"kind": "IDENTIFIER", "name": "y"},
+              "rhs": {"kind": "UNARY_OP", "op": "~", "operand": {"kind": "IDENTIFIER", "name": "a"}}
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "line": 20,
+        "sensitivity": ""
+      },
+      {
+        "body": {
+          "kind": "NONBLOCKING_ASSIGN",
+          "lhs": {"kind": "IDENTIFIER", "name": "acc"},
+          "rhs": {"kind": "LITERAL", "value": "8'd0"}
+        },
+        "line": 25,
+        "sensitivity": "posedge clk"
+      }
+    ],
+    "assigns": [],
+    "end_line": 42,
+    "gate_primitives": [],
+    "instances": [],
+    "line": 3,
+    "name": "sv_statements",
+    "net_decls": [{"line": 9, "lsb": 0, "msb": 3, "name": "i", "scalar": false, "type": "logic"}],
+    "notes": [
+      {"line": 27, "message": "skipped: initial block (not structural)", "severity": "warning"},
+      {"line": 37, "message": "skipped: initial block (not structural)", "severity": "warning"},
+      {"line": 38, "message": "skipped: initial block (not structural)", "severity": "warning"},
+      {"line": 39, "message": "skipped: initial block (not structural)", "severity": "warning"},
+      {"line": 40, "message": "skipped: initial block (not structural)", "severity": "warning"},
+      {"line": 41, "message": "skipped: initial block (not structural)", "severity": "warning"}
+    ],
+    "parameters": [],
+    "ports": [
+      {
+        "direction": "input",
+        "line": 4,
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "logic"
+      },
+      {
+        "direction": "input",
+        "line": 4,
+        "lsb": 0,
+        "msb": 0,
+        "name": "rst",
+        "scalar": true,
+        "type": "logic"
+      },
+      {"direction": "input", "line": 5, "lsb": 0, "msb": 3, "name": "a", "scalar": false, "type": "logic"},
+      {
+        "direction": "output",
+        "line": 6,
+        "lsb": 0,
+        "msb": 3,
+        "name": "q",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 6,
+        "lsb": 0,
+        "msb": 3,
+        "name": "y",
+        "scalar": false,
+        "type": "logic"
+      },
+      {
+        "direction": "output",
+        "line": 7,
+        "lsb": 0,
+        "msb": 7,
+        "name": "acc",
+        "scalar": false,
+        "type": "logic"
+      }
+    ],
+    "pragmas": [],
+    "source_file": "sv_statements.sv"
+  }
+]
