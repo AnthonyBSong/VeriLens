@@ -21,7 +21,11 @@ jobs:
       - name: Test
         run: ctest --test-dir build --output-on-failure
       - name: Coverage report
-        run: gcovr --root . --filter 'core/' --exclude 'core/tests/' --exclude 'core/tools/' --xml-pretty -o coverage-core.xml
+        # Line coverage only: branch data is stripped because Codecov counts a line
+        # with any untaken branch (every throw edge, every switch arm) as uncovered,
+        # which turned a 99% line figure into 73%. Tests and tools are excluded with
+        # patterns that match whatever path form gcc records.
+        run: gcovr --root . --filter 'core/' --exclude '.*/tests/.*' --exclude '.*/tools/.*' --exclude-branches-by-pattern '.*' --print-summary --xml-pretty -o coverage-core.xml
       - uses: codecov/codecov-action@v5
         with:
           files: coverage-core.xml
