@@ -1,0 +1,288 @@
+{
+  "tests": 46,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "AllExamples\/ParserFileTest",
+      "tests": 46,
+      "testsuite": [
+        {
+          "name": "MatchesGolden\/HazardDetect",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/HazardDetect.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/ControlUnit",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/ControlUnit.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/external_macros",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/external_macros.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/recovery",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/recovery.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/sv_skipped",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/sv_skipped.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/Multiplier",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/Multiplier.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/truncated",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/truncated.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/M10KMem",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/M10KMem.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/Alu",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/Alu.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/ColumnWrapper",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/ColumnWrapper.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/PipelineReg_MEM_WB",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/PipelineReg_MEM_WB.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/Divider",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/Divider.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/ImmExtend",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/ImmExtend.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/DataMemory",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/DataMemory.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/assign_wire",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/assign_wire.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/sv_nets",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/sv_nets.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/dataflow",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/dataflow.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/gate_primitives",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/gate_primitives.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/DecodeStage",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/DecodeStage.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/preprocessor",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/preprocessor.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/sv_generate",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/sv_generate.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/literals",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/literals.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/De1_SoC_Computer",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/De1_SoC_Computer.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/PipelineReg_ID_EX",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/PipelineReg_ID_EX.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/PipelineReg_IF_ID",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/PipelineReg_IF_ID.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/sv_types",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/sv_types.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/WritebackStage",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/WritebackStage.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/module_no_content",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/module_no_content.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/sv_expressions",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/sv_expressions.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/InstrMemory",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/InstrMemory.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/MemoryStage",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/MemoryStage.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/simple",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/simple.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/sv_statements",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/sv_statements.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/LoadStoreUnit",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/LoadStoreUnit.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/ExecuteStage",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/ExecuteStage.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/FetchStage",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/FetchStage.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/PipelineReg_EX_MEM",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/PipelineReg_EX_MEM.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/fsm",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/fsm.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/ForwardingUnit",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/ForwardingUnit.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/BranchUnit",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/BranchUnit.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/param_concat",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/param_concat.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/simple_module",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/simple_module.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/RegFile",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/RegFile.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/PipelinedCPU",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/PipelinedCPU.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/truncated_header",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/truncated_header.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        },
+        {
+          "name": "MatchesGolden\/always_block",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/always_block.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/parser\/parser_test.cpp",
+          "line": 41
+        }
+      ]
+    }
+  ]
+}

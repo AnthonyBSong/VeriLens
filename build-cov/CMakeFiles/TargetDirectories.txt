@@ -1,0 +1,16 @@
+/Users/song/Projects/VeriLens/build-cov/CMakeFiles/test.dir
+/Users/song/Projects/VeriLens/build-cov/CMakeFiles/edit_cache.dir
+/Users/song/Projects/VeriLens/build-cov/CMakeFiles/rebuild_cache.dir
+/Users/song/Projects/VeriLens/build-cov/core/CMakeFiles/test.dir
+/Users/song/Projects/VeriLens/build-cov/core/CMakeFiles/edit_cache.dir
+/Users/song/Projects/VeriLens/build-cov/core/CMakeFiles/rebuild_cache.dir
+/Users/song/Projects/VeriLens/build-cov/core/tools/CMakeFiles/gen_ast.dir
+/Users/song/Projects/VeriLens/build-cov/core/tools/CMakeFiles/test.dir
+/Users/song/Projects/VeriLens/build-cov/core/tools/CMakeFiles/edit_cache.dir
+/Users/song/Projects/VeriLens/build-cov/core/tools/CMakeFiles/rebuild_cache.dir
+/Users/song/Projects/VeriLens/build-cov/core/tests/CMakeFiles/lexer_tests.dir
+/Users/song/Projects/VeriLens/build-cov/core/tests/CMakeFiles/parser_tests.dir
+/Users/song/Projects/VeriLens/build-cov/core/tests/CMakeFiles/validator_tests.dir
+/Users/song/Projects/VeriLens/build-cov/core/tests/CMakeFiles/test.dir
+/Users/song/Projects/VeriLens/build-cov/core/tests/CMakeFiles/edit_cache.dir
+/Users/song/Projects/VeriLens/build-cov/core/tests/CMakeFiles/rebuild_cache.dir

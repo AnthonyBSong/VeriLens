@@ -1,0 +1,1 @@
+/usr/bin/c++ --coverage -g -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/gen_ast.dir/gen_ast.cpp.o CMakeFiles/gen_ast.dir/__/Lexer.cpp.o CMakeFiles/gen_ast.dir/__/Preprocessor.cpp.o CMakeFiles/gen_ast.dir/__/Parser.cpp.o CMakeFiles/gen_ast.dir/__/Linker.cpp.o CMakeFiles/gen_ast.dir/__/Validator.cpp.o -o gen_ast

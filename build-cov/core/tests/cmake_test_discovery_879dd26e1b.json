@@ -1,0 +1,345 @@
+{
+  "tests": 55,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "ValidatorProjectTest",
+      "tests": 1,
+      "testsuite": [
+        {
+          "name": "PipelinedCPUFullyLinked",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 80
+        }
+      ]
+    },
+    {
+      "name": "ValidatorErrors",
+      "tests": 8,
+      "testsuite": [
+        {
+          "name": "DuplicateInstanceName",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 143
+        },
+        {
+          "name": "ConnectionToMissingPort",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 149
+        },
+        {
+          "name": "PortConnectedTwice",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 155
+        },
+        {
+          "name": "UnconnectedOutputIsAWarning",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 161
+        },
+        {
+          "name": "DuplicateGateInstanceName",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 168
+        },
+        {
+          "name": "ReversedRanges",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 174
+        },
+        {
+          "name": "AlwaysWithoutSensitivityList",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 180
+        },
+        {
+          "name": "AssignTargetMustBeAnLValue",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 196
+        }
+      ]
+    },
+    {
+      "name": "AllExamples\/ValidatorSingleFileTest",
+      "tests": 46,
+      "testsuite": [
+        {
+          "name": "NoErrorsInIsolation\/HazardDetect",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/HazardDetect.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/ControlUnit",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/ControlUnit.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/external_macros",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/external_macros.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/recovery",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/recovery.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/sv_skipped",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/sv_skipped.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/Multiplier",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/Multiplier.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/truncated",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/truncated.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/M10KMem",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/M10KMem.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/Alu",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/Alu.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/ColumnWrapper",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/ColumnWrapper.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/PipelineReg_MEM_WB",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/PipelineReg_MEM_WB.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/Divider",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/Divider.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/ImmExtend",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/ImmExtend.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/DataMemory",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/DataMemory.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/assign_wire",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/assign_wire.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/sv_nets",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/sv_nets.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/dataflow",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/dataflow.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/gate_primitives",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/gate_primitives.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/DecodeStage",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/DecodeStage.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/preprocessor",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/preprocessor.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/sv_generate",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/sv_generate.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/literals",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/literals.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/De1_SoC_Computer",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/De1_SoC_Computer.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/PipelineReg_ID_EX",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/PipelineReg_ID_EX.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/PipelineReg_IF_ID",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/PipelineReg_IF_ID.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/sv_types",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/sv_types.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/WritebackStage",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/WritebackStage.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/module_no_content",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/module_no_content.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/sv_expressions",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/sv_expressions.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/InstrMemory",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/InstrMemory.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/MemoryStage",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/MemoryStage.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/simple",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/simple.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/sv_statements",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/sv_statements.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/LoadStoreUnit",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/LoadStoreUnit.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/ExecuteStage",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/ExecuteStage.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/FetchStage",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/FetchStage.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/PipelineReg_EX_MEM",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/PipelineReg_EX_MEM.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/fsm",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/fsm.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/ForwardingUnit",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/ForwardingUnit.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/BranchUnit",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/BranchUnit.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/param_concat",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/param_concat.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/simple_module",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/simple_module.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/RegFile",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/RegFile.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/PipelinedCPU",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/PipelinedCPU.sv\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/truncated_header",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/truncated_header.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        },
+        {
+          "name": "NoErrorsInIsolation\/always_block",
+          "value_param": "\"\/Users\/song\/Projects\/VeriLens\/core\/tests\/examples\/always_block.v\"",
+          "file": "\/Users\/song\/Projects\/VeriLens\/core\/tests\/validator\/validator_test.cpp",
+          "line": 44
+        }
+      ]
+    }
+  ]
+}
