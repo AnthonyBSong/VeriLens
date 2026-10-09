@@ -1,0 +1,26 @@
+# Layout rules for the PipelinedCPU example (five-stage RISC-V RV32I pipeline).
+# Pass with:  cd core/tests/examples && ../../../verilens <the .sv files> -t PipelinedCPU -l PipelinedCPU.layout.yaml
+# Semantics: packages/web/docs/FORMATS.md. Node names are instance names inside each scope.
+version: 1
+
+defaults:
+  nodeGap: 36
+  layerGap: 96
+
+scopes:
+  - scope: PipelinedCPU
+    constraints:
+      # pipeline stages left to right: IF -> ID -> EX -> MEM -> WB
+      - { id: if-before-id,  kind: leftOf, a: fetch,   b: decode,    gap: 80, strength: required }
+      - { id: id-before-ex,  kind: leftOf, a: decode,  b: execute,   gap: 80, strength: required }
+      - { id: ex-before-mem, kind: leftOf, a: execute, b: memory,    gap: 80, strength: required }
+      - { id: mem-before-wb, kind: leftOf, a: memory,  b: writeback, gap: 80, strength: required }
+      # the stages on one row, the pipeline registers fall in between
+      - { id: stage-row, kind: alignY, nodes: [fetch, decode, execute, memory, writeback], strength: preferred, weight: 3 }
+      # hazard detection above the decode stage, forwarding below the execute stage
+      - { id: hazard-above-decode, kind: above, a: hazard,  b: decode, gap: 60, strength: preferred, weight: 10 }
+      - { id: fwd-below-execute,   kind: above, a: execute, b: fwd,    gap: 60, strength: preferred, weight: 10 }
+    frames:
+      # the two stages with the most inside get frames large enough to read inline when expanded
+      - { node: decode,  width: 640, height: 420 }
+      - { node: execute, width: 640, height: 420 }

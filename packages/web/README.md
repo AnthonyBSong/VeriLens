@@ -36,19 +36,21 @@ Or use **Open…** in the toolbar to load `*.ast.json` / `*.design.json` and
 `*.yaml`, edit the rules in the **Layout** tab, **Apply**, and finish with
 **Export HTML**.
 
-## Real example: the 5-stage processor from the core tests
+## Real example: the five-stage RISC-V pipeline from the core tests
 
 ```sh
 cd core/tests/examples
-../../../verilens ProcBase.v ProcBaseDpath.v ProcBaseCtrl.v DropUnit.v ProcDpathAlu.v ProcDpathImmGen.v \
-  IntMulAlt.v Lookahead.v muxes.v arithmetic.v regfiles.v tinyrv2_encoding.v -l ProcBase.layout.yaml
+../../../verilens PipelinedCPU.sv FetchStage.sv DecodeStage.sv ExecuteStage.sv MemoryStage.sv WritebackStage.sv \
+  PipelineReg_IF_ID.sv PipelineReg_ID_EX.sv PipelineReg_EX_MEM.sv PipelineReg_MEM_WB.sv HazardDetect.sv \
+  ForwardingUnit.sv Alu.sv RegFile.sv ImmExtend.sv ControlUnit.sv BranchUnit.sv InstrMemory.sv DataMemory.sv \
+  LoadStoreUnit.sv -t PipelinedCPU -l PipelinedCPU.layout.yaml
 ```
 
-`ProcBase.v` carries the `// verilens: top` pragma; `ProcBase.layout.yaml` puts
-the control unit before and above the datapath, gives both a readable frame,
-orders the datapath ports, and pins the pipeline stage order inside `dpath`.
-The `vc_*` library cells that are not part of the examples render as black
-boxes.
+`-t PipelinedCPU` picks the top module (or put `// verilens: top` in the
+source). `PipelinedCPU.layout.yaml` pins the stage order left to right, puts
+the stages on one row with the pipeline registers between them, places hazard
+detection above decode and forwarding below execute, and gives the two biggest
+stages a frame large enough to read when expanded in place.
 
 ## Workflow: plan, then finalize
 

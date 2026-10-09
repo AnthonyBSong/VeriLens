@@ -13,7 +13,7 @@
 #
 # Examples:
 #   ./verilens rtl/ -l layout.yaml                 # build rtl.verilens.html and open it
-#   ./verilens core/tests/examples/ProcBase.v --dev
+#   ./verilens core/tests/examples/*.sv -t PipelinedCPU --dev
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

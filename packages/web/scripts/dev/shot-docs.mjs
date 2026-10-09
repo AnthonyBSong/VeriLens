@@ -1,7 +1,7 @@
 // Screenshots used by the documentation site (gh-pages).
 import { chromium } from '@playwright/test';
 import { mkdirSync } from 'node:fs';
-const out = process.argv[2]; mkdirSync(out, { recursive: true });
+const out = process.argv[2]; mkdirSync(out, { recursive: true }); // usage: node shot-docs.mjs <img dir> <PipelinedCPU.verilens.html>
 const browser = await chromium.launch({ channel: 'chrome' });
 const page = await browser.newPage({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2 });
 const ready = () => page.waitForSelector('.module-view[data-scope="top"] .cell[data-path="top/compute"]');
@@ -19,9 +19,10 @@ await page.screenshot({ path: out + '/focus-controller.png', clip: { x: 250, y: 
 await page.goto('http://localhost:4173/?sample=conflict'); await ready(); await page.waitForTimeout(300);
 await page.locator('.tabs button', { hasText: /^layout$/ }).click(); await page.waitForTimeout(200);
 await page.screenshot({ path: out + '/conflict-diagnostics.png' });
-await page.goto('file:///Users/song/Projects/VeriLens/out/ProcBase.verilens.html'); await page.waitForSelector('.module-view .cell'); await page.waitForTimeout(400);
-await page.screenshot({ path: out + '/procbase-top.png' });
-await page.click('[data-toggle="lab2_proc_ProcBase/dpath"]'); await page.waitForSelector('svg[data-nested="lab2_proc_ProcBase/dpath"] .module-view'); await page.waitForTimeout(300);
-await page.screenshot({ path: out + '/procbase-expanded.png' });
+const pipeline = process.argv[3]; // standalone page built by ./verilens for the PipelinedCPU example
+await page.goto('file://' + pipeline); await page.waitForSelector('.module-view .cell'); await page.waitForTimeout(400);
+await page.screenshot({ path: out + '/pipeline-top.png' });
+await page.click('[data-toggle="PipelinedCPU/execute"]'); await page.waitForSelector('svg[data-nested="PipelinedCPU/execute"] .module-view'); await page.waitForTimeout(300);
+await page.screenshot({ path: out + '/pipeline-expanded.png' });
 console.log('done');
 await browser.close();

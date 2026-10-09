@@ -119,28 +119,3 @@ TEST(ValidatorProjectTest, PipelinedCPUFullyLinked) {
     }
     EXPECT_EQ(errors, 0) << errors << " validation error(s) in linked pipeline";
 }
-
-TEST(ValidatorProjectTest, ProcBaseFullyLinked) {
-    path examples = path(__FILE__).parent_path().parent_path() / "examples";
-
-    // Core lab2_proc files that reference each other.
-    std::vector<std::string> proc_files = {
-        "ProcDpathAlu.v", "ProcDpathImmGen.v",
-        "ProcBaseCtrl.v", "ProcBaseDpath.v", "ProcBase.v",
-        "DropUnit.v",
-    };
-
-    std::vector<path> files;
-    for (const auto& name : proc_files)
-        files.push_back(examples / name);
-
-    Linker linker = build_linker(files);
-
-    Validator v(linker);
-    auto diags = v.run();
-
-    for (const auto& d : diags) {
-        EXPECT_NE(d.severity, ValidationError::Severity::ERROR)
-            << Validator::format(d);
-    }
-}

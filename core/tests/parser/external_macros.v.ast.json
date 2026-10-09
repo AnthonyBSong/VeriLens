@@ -1,0 +1,156 @@
+[
+  {
+    "always_blocks": [
+      {
+        "body": {
+          "body": [
+            {
+              "cond": {"kind": "IDENTIFIER", "name": "reset"},
+              "else": {
+                "cond": {
+                  "kind": "BINARY_OP",
+                  "lhs": {"kind": "IDENTIFIER", "name": "count"},
+                  "op": ">",
+                  "rhs": {"kind": "IDENTIFIER", "name": "limit"}
+                },
+                "else": {
+                  "kind": "NONBLOCKING_ASSIGN",
+                  "lhs": {"kind": "IDENTIFIER", "name": "count"},
+                  "rhs": {
+                    "kind": "BINARY_OP",
+                    "lhs": {"kind": "IDENTIFIER", "name": "count"},
+                    "op": "+",
+                    "rhs": {"kind": "LITERAL", "value": "1'b1"}
+                  }
+                },
+                "kind": "IF_STATEMENT",
+                "then": {
+                  "kind": "NONBLOCKING_ASSIGN",
+                  "lhs": {"kind": "IDENTIFIER", "name": "count"},
+                  "rhs": {
+                    "count": {"kind": "IDENTIFIER", "name": "p_nbits"},
+                    "kind": "REPLICATION",
+                    "value": {"kind": "LITERAL", "value": "1'b0"}
+                  }
+                }
+              },
+              "kind": "IF_STATEMENT",
+              "then": {
+                "kind": "NONBLOCKING_ASSIGN",
+                "lhs": {"kind": "IDENTIFIER", "name": "count"},
+                "rhs": {"kind": "LITERAL", "value": "`EXT_ZERO"}
+              }
+            }
+          ],
+          "kind": "SEQ_BLOCK"
+        },
+        "line": 32,
+        "sensitivity": "posedge clk"
+      }
+    ],
+    "assigns": [
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "over"},
+        "line": 29,
+        "rhs": {
+          "kind": "BINARY_OP",
+          "lhs": {"kind": "IDENTIFIER", "name": "count"},
+          "op": ">",
+          "rhs": {"kind": "IDENTIFIER", "name": "limit"}
+        }
+      },
+      {
+        "lhs": {"kind": "IDENTIFIER", "name": "msb"},
+        "line": 30,
+        "rhs": {
+          "base": {"kind": "IDENTIFIER", "name": "count"},
+          "index": {
+            "kind": "BINARY_OP",
+            "lhs": {"kind": "IDENTIFIER", "name": "c_width"},
+            "op": "-",
+            "rhs": {"kind": "LITERAL", "value": "1"}
+          },
+          "kind": "BIT_SELECT"
+        }
+      }
+    ],
+    "end_line": 52,
+    "gate_primitives": [],
+    "instances": [],
+    "line": 15,
+    "name": "ext_counter",
+    "net_decls": [],
+    "notes": [
+      {"line": 45, "message": "undefined macro '`EXT_TRACE_BEGIN' ignored", "severity": "warning"},
+      {
+        "line": 46,
+        "message": "skipped: begin/end block at module level (procedural code, not structural)",
+        "severity": "warning"
+      },
+      {"line": 50, "message": "undefined macro '`EXT_TRACE_END' ignored", "severity": "warning"}
+    ],
+    "parameters": [{"default": "8", "name": "p_nbits"}, {"default": "$bits(count)", "name": "c_width"}],
+    "ports": [
+      {
+        "direction": "input",
+        "line": 19,
+        "lsb": 0,
+        "msb": 0,
+        "name": "clk",
+        "scalar": true,
+        "type": "wire"
+      },
+      {
+        "direction": "input",
+        "line": 20,
+        "lsb": 0,
+        "msb": 0,
+        "name": "reset",
+        "scalar": true,
+        "type": "wire"
+      },
+      {
+        "direction": "input",
+        "expr": "p_nbits-1:0",
+        "line": 21,
+        "lsb": 0,
+        "msb": 0,
+        "name": "limit",
+        "scalar": false,
+        "type": "wire",
+        "unknown": true
+      },
+      {
+        "direction": "output",
+        "expr": "p_nbits-1:0",
+        "line": 22,
+        "lsb": 0,
+        "msb": 0,
+        "name": "count",
+        "scalar": false,
+        "type": "reg",
+        "unknown": true
+      },
+      {
+        "direction": "output",
+        "line": 23,
+        "lsb": 0,
+        "msb": 0,
+        "name": "over",
+        "scalar": true,
+        "type": "wire"
+      },
+      {
+        "direction": "output",
+        "line": 24,
+        "lsb": 0,
+        "msb": 0,
+        "name": "msb",
+        "scalar": true,
+        "type": "wire"
+      }
+    ],
+    "pragmas": [],
+    "source_file": "external_macros.v"
+  }
+]

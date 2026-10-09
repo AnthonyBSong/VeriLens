@@ -53,9 +53,9 @@ Legend: **ERROR** = parse error, the construct is dropped and reported.
       parser and skip them in the adapter.
 - [ ] **Hierarchical `defparam`** (`defparam u.v.W = 4`) is reported, not applied.
       Only `inst.PARAM` in the same module is applied.
-- [ ] **Procedural code at module level left by unexpanded macros** (course
-      libraries' `` `VC_TRACE_BEGIN `` ... `` `VC_TRACE_END ``) is skipped as one
-      block with a warning. Fine, but `-D`/`` `define `` on the command line would
+- [ ] **Procedural code at module level left by unexpanded macros** (trace
+      macros from a header that is not on the include path, see
+      `external_macros.v`) is skipped as one block with a warning. Fine, but `-D`/`` `define `` on the command line would
       let users expand such macros properly. Same mechanism as the include item.
 - [ ] **Generate elaboration**: `if`/`case` generate branches are all flattened
       into the module and instance arrays are one cell, so a `generate if`
