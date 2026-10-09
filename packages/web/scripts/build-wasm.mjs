@@ -19,8 +19,12 @@ const newest = Math.max(statSync(fileURLToPath(import.meta.url)).mtimeMs, ...sou
 if (existsSync(out) && statSync(out).mtimeMs > newest) process.exit(0);
 
 const includes = ['-I', core];
+// nlohmann/json.hpp: emcc only searches its own sysroot, so point it at the host copy.
+// Homebrew on macOS; a distro package (/usr/include) on Linux, searched after the
+// sysroot so Emscripten's own libc headers still win.
 const brew = spawnSync('brew', ['--prefix', 'nlohmann-json'], { encoding: 'utf8' });
-if (brew.status === 0) includes.push('-I', `${brew.stdout.trim()}/include`);
+if (brew.status === 0 && existsSync(`${brew.stdout.trim()}/include/nlohmann/json.hpp`)) includes.push('-I', `${brew.stdout.trim()}/include`);
+else for (const dir of ['/usr/local/include', '/usr/include']) if (existsSync(`${dir}/nlohmann/json.hpp`)) { includes.push('-idirafter', dir); break; }
 mkdirSync(new URL('../src/wasm/', import.meta.url), { recursive: true });
 const args = ['-O2', '-std=c++17', '-fwasm-exceptions', '--bind', ...includes, ...sources,
   '-sMODULARIZE', '-sEXPORT_ES6', '-sSINGLE_FILE', '-sALLOW_MEMORY_GROWTH', '-sENVIRONMENT=web', '-o', out];
