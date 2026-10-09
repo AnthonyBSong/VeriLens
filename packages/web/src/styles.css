@@ -77,7 +77,12 @@ code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 11px; }
 .tree-row .focus-btn { border: 0; background: none; padding: 0 4px; color: var(--muted); visibility: hidden; }
 .tree-row:hover .focus-btn { visibility: visible; }
 .modules { list-style: none; margin: 0; padding: 0; }
+.modules li { display: flex; align-items: center; }
 .modules li.focused .inst { font-weight: 600; }
+.modules li.top .inst::after { content: ' · top'; color: var(--muted); font-weight: 400; }
+.modules .top-btn { border: 0; background: none; padding: 0 4px; color: var(--muted); visibility: hidden; }
+.modules li:hover .top-btn { visibility: visible; }
+.modules .top-btn:disabled { visibility: hidden; }
 .modules .label { display: flex; flex-direction: column; width: 100%; }
 
 .layout-editor { display: flex; flex-direction: column; gap: 6px; height: 100%; }

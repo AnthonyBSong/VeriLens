@@ -119,6 +119,12 @@ export function loadDesign(design: Design, name: string) {
 
 export function setDesignError(message: string | null) { set({ designError: message }); }
 
+/** Re-root the loaded design at another module (a design load, so geometry is recomputed). */
+export function setTop(name: string) {
+  const d = state.design;
+  if (d && d.modules[name] && name !== d.top) loadDesign({ ...d, top: name }, state.designName);
+}
+
 export function setLayoutText(text: string) { set({ layoutText: text }); }
 
 /** Validate + apply the layout DSL. On errors, rules are rejected and the last valid layouts stay. */

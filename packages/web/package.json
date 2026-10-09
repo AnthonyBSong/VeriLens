@@ -14,7 +14,7 @@
     "test:e2e": "playwright test",
     "pretypecheck": "npm run gen:samples",
     "typecheck": "tsc -b",
-    "gen:samples": "node scripts/gen-samples.mjs",
+    "gen:samples": "node scripts/gen-samples.mjs && node scripts/build-wasm.mjs",
     "build:html": "node scripts/build-html.mjs"
   },
   "dependencies": {

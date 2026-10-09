@@ -7,7 +7,7 @@ Verilog/SystemVerilog structural extractor (C++ `core/`) + interactive schematic
 - Launcher: `./verilens <inputs> [-l layout.yaml] [-t top] [--dev]` at the repo root is the single entry point (core build → `gen_ast` → `packages/web/scripts/build-html.mjs`, or the dev server with `VERILENS_SESSION_*` env vars served by the `verilens-session` Vite plugin at `/__verilens/session.json`).
 
 - Core: `cmake -S . -B build && cmake --build build`, tests `cd build && ctest`. JSON goldens in `core/tests/parser/*.ast.json` are regenerated with `python3 core/tests/parser/gen_golden.py` whenever the JSON shape changes.
-- Viewer: `cd packages/web && npm install && npm run dev | build | test | test:e2e`. Samples: `samples/demo.ast.json` and `samples/demo.design.json` are generated (gitignored) from `samples/demo/demo.sv` by `npm run gen:samples`, which `dev`, `build`, `typecheck` and `test` run first; it builds `gen_ast` if needed.
+- Viewer: `cd packages/web && npm install && npm run dev | build | test | test:e2e`. Samples: `samples/demo.ast.json` and `samples/demo.design.json` are generated (gitignored) from `samples/demo/demo.sv` by `npm run gen:samples`, which `dev`, `build`, `typecheck` and `test` run first; it builds `gen_ast` if needed, then `scripts/build-wasm.mjs` compiles the core to `src/wasm/verilens.js` (gitignored, embedded wasm) with `em++` when Emscripten is installed, so Open/drop parses `.v`/`.sv` in the browser via `src/app/parser.ts`; without Emscripten the build skips it and Open reports that the browser parser is missing.
 
 ## Contract between core and viewer
 

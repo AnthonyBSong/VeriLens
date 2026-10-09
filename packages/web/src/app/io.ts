@@ -1,4 +1,5 @@
 // Loading designs (auto-detected format), samples, and self-contained HTML export.
+import { parseVerilog } from './parser';
 import type { Design } from '../model/design';
 import { validateDesign } from '../model/design';
 import { fromVerilensAst, isVerilensAst } from '../model/adapters/verilens';
@@ -23,13 +24,26 @@ export function loadSample(which: 'auto' | 'layout' | 'conflict') {
   loadDesign(design, `demo (${which === 'auto' ? 'automatic layout' : which === 'layout' ? 'with layout rules' : 'conflicting rules'})`);
 }
 
-export async function openFile(file: File) {
-  const text = await file.text();
+const isVerilog = (name: string) => /\.s?v$/i.test(name);
+
+/** Open/drop: .v/.sv sources are parsed in the browser (parser.ts); JSON is a
+ *  design; YAML is layout rules. Several sources at once are linked as one design. */
+export async function openFiles(files: File[]) {
+  const sources = files.filter((f) => isVerilog(f.name));
   try {
-    if (/\.ya?ml$/i.test(file.name)) { setLayoutText(text); applyLayoutText(text); return; }
-    loadDesign(designFromJson(text), file.name);
+    if (sources.length) {
+      const data = await parseVerilog(await Promise.all(sources.map(async (f) => ({ name: f.name, text: await f.text() }))));
+      if (data.diagnostics) console.warn(data.diagnostics);
+      loadDesign(designFromJson(JSON.stringify(data.ast)), sources.map((f) => f.name).join(' + '));
+    }
+    for (const f of files) {
+      if (isVerilog(f.name)) continue;
+      const text = await f.text();
+      if (/\.ya?ml$/i.test(f.name)) { setLayoutText(text); applyLayoutText(text); continue; }
+      loadDesign(designFromJson(text), f.name);
+    }
   } catch (e) {
-    setDesignError(`${file.name}: ${(e as Error).message}`);
+    setDesignError(`${files.map((f) => f.name).join(', ')}: ${(e as Error).message}`);
   }
 }
 

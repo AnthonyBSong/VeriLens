@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { expect, test, type Page } from '@playwright/test';
 
 // Geometry snapshot of everything drawn in a scope: cell transforms, port pins, wire paths.
@@ -143,4 +144,20 @@ test('conflicting layout rules are rejected with diagnostics while the last vali
   await expect(page.getByTestId('layout-errors')).toContainText('a-left-of-b -> b-left-of-a');
   await expect(page.getByTestId('diagnostics')).toContainText("unknown node 'nonexistent_block'");
   expect(await snapshot(page, 'top')).toEqual(before);
+});
+
+test('Open parses Verilog sources in the browser and links them; Set as top re-roots the design', async ({ page }) => {
+  await page.locator('input[type=file]').setInputFiles([
+    { name: 'demo.sv', mimeType: 'text/plain', buffer: readFileSync(new URL('../samples/demo/demo.sv', import.meta.url)) },
+    { name: 'extra.sv', mimeType: 'text/plain', buffer: Buffer.from('module extra(input a, output b); assign b = a; endmodule') },
+  ]);
+  await expect(page.locator('.design-name')).toHaveText('demo.sv + extra.sv');
+  await page.waitForSelector('.module-view[data-scope="top"] .cell[data-path="top/compute"]');
+  await page.locator('.sidebar button', { hasText: 'modules' }).click();
+  await expect(page.locator('.modules li', { hasText: 'extra' })).toBeVisible();
+  const row = page.locator('.modules li:not(.top)', { hasText: 'extra' });
+  await row.hover();
+  await row.locator('.top-btn').click();
+  await page.waitForSelector('.module-view[data-scope="extra"]');
+  await expect(page.locator('.modules li.top .inst')).toHaveText('extra');
 });

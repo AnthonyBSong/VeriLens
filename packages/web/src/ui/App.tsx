@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { bootFromEmbedded, fetchSession, loadSample, loadSession } from '../app/io';
+import { bootFromEmbedded, fetchSession, loadSample, loadSession, openFiles } from '../app/io';
 import { fitDesign, focusModule, select, setDesignError, useStore } from '../state/store';
 import { Canvas } from './Canvas';
 import { Inspector } from './Inspector';
@@ -34,7 +34,9 @@ export function App() {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
   return (
-    <div className={`app ${leftOpen ? '' : 'no-left'} ${rightOpen ? '' : 'no-right'}`}>
+    <div className={`app ${leftOpen ? '' : 'no-left'} ${rightOpen ? '' : 'no-right'}`}
+      onDragOver={(e) => e.preventDefault()}
+      onDrop={(e) => { e.preventDefault(); if (e.dataTransfer.files.length) void openFiles(Array.from(e.dataTransfer.files)); }}>
       <Toolbar />
       {leftOpen && <Sidebar />}
       <Canvas />

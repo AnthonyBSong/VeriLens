@@ -3,7 +3,7 @@ import { beforeEach, describe, expect, test } from 'vitest';
 import { validateDesign } from '../src/model/design';
 import { LayoutJobs } from '../src/layout/jobs';
 import type { ModuleLayout } from '../src/layout/types';
-import { applyLayoutText, ensureLayout, getState, loadDesign, resetStore, select, toggleExpand } from '../src/state/store';
+import { applyLayoutText, ensureLayout, getState, loadDesign, resetStore, select, setTop, toggleExpand } from '../src/state/store';
 
 const design = validateDesign(JSON.parse(readFileSync(new URL('../samples/demo.design.json', import.meta.url), 'utf8')));
 const demoYaml = readFileSync(new URL('../samples/demo.layout.yaml', import.meta.url), 'utf8');
@@ -25,6 +25,19 @@ describe('versioned layout jobs', () => {
 
 describe('store', () => {
   beforeEach(() => resetStore());
+
+  test('setTop re-roots the design without mutating it; unknown or same top is a no-op', async () => {
+    loadDesign(design, 'demo');
+    const child = Object.keys(design.modules).find((n) => n !== design.top)!;
+    setTop(child); await tick();
+    expect(getState().design?.top).toBe(child);
+    expect(getState().focus).toEqual([child]);
+    expect(getState().layouts[child]).toBeDefined();
+    expect(design.top).not.toBe(child);
+    const d = getState().design;
+    setTop('no-such-module'); setTop(child);
+    expect(getState().design).toBe(d);
+  });
 
   test('load computes the top layout once; stale duplicate requests are dropped', async () => {
     loadDesign(design, 'demo');

@@ -1,6 +1,6 @@
 import { useMemo, useRef, useState } from 'react';
 import { allInstancePaths, moduleAt, pathKey } from '../model/design';
-import { exportHtml, loadSample, openFile } from '../app/io';
+import { exportHtml, loadSample, openFiles } from '../app/io';
 import { fitDesign, fitSelection, forceRelayout, goBack, locateInstance, locateNet, setUi, useStore } from '../state/store';
 
 export function Toolbar() {
@@ -13,8 +13,8 @@ export function Toolbar() {
   return (
     <header className="toolbar">
       <span className="brand">VeriLens</span>
-      <button onClick={() => fileRef.current?.click()} title="Open a design JSON (gen_ast output or normalized) or a layout YAML">Open…</button>
-      <input ref={fileRef} type="file" accept=".json,.yaml,.yml" hidden onChange={(e) => { const f = e.target.files?.[0]; if (f) void openFile(f); e.target.value = ''; }} />
+      <button onClick={() => fileRef.current?.click()} title="Open Verilog sources (dev server), a design JSON, or a layout YAML — or drop them on the window">Open…</button>
+      <input ref={fileRef} type="file" accept=".v,.sv,.json,.yaml,.yml" multiple hidden onChange={(e) => { if (e.target.files?.length) void openFiles(Array.from(e.target.files)); e.target.value = ''; }} />
       <select value="" onChange={(e) => { if (e.target.value) loadSample(e.target.value as 'auto'); e.target.value = ''; }} title="Load a sample">
         <option value="">Samples…</option>
         <option value="auto">demo · automatic layout</option>

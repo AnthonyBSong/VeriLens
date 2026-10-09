@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import type { Design, InstancePath } from '../model/design';
 import { allInstancePaths, moduleAt, pathKey } from '../model/design';
-import { applyLayoutText, focusModule, locateInstance, setLayoutText, setUi, useStore } from '../state/store';
+import { applyLayoutText, focusModule, locateInstance, setLayoutText, setTop, setUi, useStore } from '../state/store';
 import { SAMPLE_LAYOUT, SAMPLE_CONFLICT_LAYOUT, reloadSession } from '../app/io';
 
 export function Sidebar() {
@@ -63,11 +63,12 @@ function ModulesList({ design }: { design: Design }) {
       {Object.values(design.modules).map((m) => {
         const inst = paths.filter((p) => moduleAt(design, p)?.name === m.name);
         return (
-          <li key={m.name} className={m.name === focusMod ? 'focused' : ''}>
+          <li key={m.name} className={`${m.name === focusMod ? 'focused' : ''} ${m.name === design.top ? 'top' : ''}`}>
             <button className="label" disabled={!inst.length} onClick={() => inst[0] && focusModule(inst[0])} title={inst.map(pathKey).join('\n') || 'not instantiated under top'}>
               <span className="inst">{m.name}</span>
               <span className="mod">{inst.length} inst · {m.cells.length} cells · {m.ports.length} ports{m.blackbox ? ' · black box' : ''}</span>
             </button>
+            <button className="top-btn" disabled={m.name === design.top} title={m.name === design.top ? 'current top' : 'Set as top'} onClick={() => setTop(m.name)}>⌂</button>
           </li>
         );
       })}
